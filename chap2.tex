@@ -1,0 +1,278 @@
+﻿\chapter{集合论的基本要素}\label{ux96c6ux5408ux8bbaux7684ux57faux672cux8981ux7d20}
+在前一章中，我们已经指出：对给定宏观态 \((N,V,E)\)，统计系统在任意时刻 \(t\) 都可能处于大量不同微观态之一。随着时间推移，系统不断在这些微观态之间跃迁，因此实验上观测到的通常是时间平均行为。于是，可在同一时刻考虑许多与原系统宏观态相同、但处于不同微观态的“假想副本”，并把它们组成\textbf{系综}（ensemble）。在通常条件下，系综的平均应与单个系统的长时平均一致。基于这一思想，我们建立\textbf{系综理论}（ensemble theory）。对于经典系统，最合适的形式化框架是\textbf{相空间}（phase space）。因此，我们先分析相空间的基本特征，再讨论各类系综。
+
+\section{经典系统的相空间}\label{ux7ecfux5178ux7cfbux7edfux7684ux76f8ux7a7aux95f4}
+
+在任意时刻 \(t\)，给定经典系统的微观状态，可以通过指定构成该系统的全部粒子的瞬时位置和动量来加以定义。因此，若系统中共有 \(N\) 个粒子，则微观状态的定义需要同时确定 \(3N\) 个位置坐标 \(q_1, q_2, \ldots, q_{3N}\)，以及 \(3N\) 个动量坐标 \(p_1, p_2, \ldots, p_{3N}\)。从几何学的角度来看，坐标系 \((q_i, p_i)\)，其中 \(i = 1, 2, \ldots, 3N\)，可以被视为一个 \(6N\) 维空间中的一个点。我们称这一空间为相空间，并将相点 \((q_i, p_i)\) 称作给定系统的代表性点。
+当然，坐标 \(q_{i}\) 和 \(p_{i}\) 都是时间 \(t\) 的函数；它们随 \(t\) 变化的具体方式，由正则运动方程决定。
+\begin{equation}
+    \tag{2.1.1}\label{eq:2.1.1}
+    \begin{aligned}
+        &\dot{q}_{i}=\frac{\partial H(q_{i},p_{i})}{\partial p_{i}}\\&\dot{p}_{i}=-\frac{\partial H(q_{i},p_{i})}{\partial q_{i}}
+    \end{aligned}
+\end{equation}
+其中 \(H(q_{i},p_{i})\) 是系统的哈密顿量。随着时间的推移，坐标系 \((q_{i},p_{i})\)——同样用于定义系统的微观状态——也在不断发生变化。相应地，我们在相空间中的代表性点，也会不断勾勒出一条
+其轨迹在任意时刻 \(t\) 的方向由速度矢量 \(\boldsymbol{v} \equiv (\dot{q}_{i}, \dot{p}_{i})\) 决定，而该速度矢量又可由运动方程（1）给出。不难看出，代表点的轨迹必然始终位于相空间的某一有限区域内；这是因为一个有限体积 \(V\) 直接限制了坐标 \(q_{i}\) 的取值，同时有限的能量 \(E\) 也限制了 \(q_{i}\) 和 \(p_{i}\) 的取值——这两者均通过哈密顿量 \(H(q_{i}, p_{i})\) 来加以约束。尤其是，如果系统的总能量被精确地确定为某个固定值，例如 \(E\)，那么相应的轨迹将被限定在"超曲面（hypersurface）"之内。
+\begin{equation}\tag{2.1.2}\label{eq:2.1.2}
+H ( q _ { i } , p _ { i } ) = E
+\end{equation}
+另一方面，若系统的总能量可能取任意值，介于 \((E-\frac{1}{2}\Delta, E+\frac{1}{2}\Delta)\) 之间，则对应的轨迹将被限制在由这些界限所界定的"超壳面（hypershell）"内。
+
+现在，如果我们考虑一组系统（即给定的系统，以及与之相伴的大量心理副本），那么在任意时刻 \(t\)，这组系统中的各个成员都将处于各种各样的可能微态之中；事实上，每一个微态都必须与该组系统中所有成员共同拥有的、被假定为统一的宏观状态相一致。在相空间中，这一情形的图景将呈现出一群代表点——每一名系统成员对应一个代表点，它们全都位于这一空间的"允许"区域之内。随着时间的推移，组中每个成员都会不断经历微态的变迁；相应地，构成这群代表点的各个代表点也会沿着各自的轨迹不断移动。这一运动的整体图景具有一些重要的特征，而这些特征最能用我们所称的\textbf{密度函数}（density function） \(\rho(q,p;t)\)来加以阐释\footnote{请注意，\((q,p)\)是\((q_i,p_i)≡(q_1,\ldots,q_{3N},p_1,\ldots,p_{3N})\)的缩写。} 。该函数的性质是：在任意时刻 \(t\)，相空间中点 \((q,p)\) 附近的"体积元"（\(d^{3N}q\,d^{3N}p\)）内的代表点数量，等于密度函数 \(\rho(q,p;t)\) 乘以 \(d^{3N}q\,d^{3N}p\)。显然，密度函数 \(\rho(q,p;t)\) 象征着组中各个成员在不同时间点上如何分布于所有可能的微态之中。因此，对于某一物理量 \(f(q,p)\)，其平均值 \(\langle f \rangle\)——在不同微态下的系统中可能有所不同——将被表示为：
+\begin{equation}\tag{2.1.3}\label{eq:2.1.3}
+\langle f \rangle = \frac { \int f ( q , p ) \rho ( q , p ; t ) d ^{3 N} q d ^{3 N} p } { \int \rho ( q , p ; t ) d ^{3 N} q \, d ^{3 N} p } .
+\end{equation}
+
+式\ref{eq:2.1.3}中的积分涵盖了整个相空间；然而，真正作出贡献的是相空间中那些密度非零区域（\(\rho \neq 0\)）。值得注意的是，一般来说，组平均值 \(\langle f \rangle\) 本身也是时间的函数。
+
+当 \(\rho\) 不随时间显式变化时，即在任何时刻：
+\begin{equation}
+    \tag{2.1.4}\label{eq:2.1.4}
+    \frac { \partial \rho } { \partial t } = 0 .
+\end{equation}
+显然，对于这样的系统，任意物理量 \(f(q,p)\) 的平均值 \(\langle f\rangle\) 都与时间无关。当然，一个处于稳态的系统才有资格被称作处于平衡状态的系统。要确定方程\ref{eq:2.1.4}成立的条件，我们必须对相空间中代表点的运动进行相当细致的研究。
+
+\section{刘维尔定理及其推论}\label{sec:2.2}
+
+考虑相空间中某一任意"体积"\(\omega\)，并设包围该体积的"表面"为\(\sigma\)；参见图~2.1。那么，该体积中代表点数量随时间增加的速率可表示为
+\begin{equation}\tag{2.2.1}\label{eq:2.2.1}
+\frac { \partial } { \partial t } \int _ { \omega } \rho \, d \omega ,
+\end{equation}
+其中 \(d\omega \equiv (d^{3N}q d^{3N}p)\)。另一方面，代表点从\(\omega\) 中"流出"的净速率（通过边界表面\(\sigma\)）则由以下公式给出
+\begin{equation}\tag{2.2.2}\label{eq:2.2.2}
+\int _ { \sigma } \rho \, \boldsymbol { v } \cdot \hat { \mathbf { n } } \, d \sigma ;
+\end{equation}
+在此，\(\boldsymbol{\nu}\) 是位于表面元素\(d\sigma\)区域内的代表点的速度矢量，而\(\hat{\boldsymbol{n}}\) 是垂直于该元素的（向外的）单位向量。根据散度定理，(2) 可以写成
+\begin{equation}\tag{2.2.3}\label{eq:2.2.3}
+\int _ { \omega } \mathrm { d i v } ( \rho \mathbf { v } ) d \omega ;
+\end{equation}
+当然，此处"散度"的运算意味着
+\begin{equation}\tag{2.2.4}\label{eq:2.2.4}
+\mathrm { d i v } ( \rho \mathbf { v } ) \equiv \sum _ { i = 1 } ^{3 N} \left\{ \frac { \partial } { \partial q _ { i } } ( \rho \dot { q } _ { i } ) + \frac { \partial } { \partial p _ { i } } ( \rho \dot { p } _ { i } ) \right\} .
+\end{equation}
+即，
+\begin{equation}\tag{2.2.5}\label{eq:2.2.5}
+\int _ { \omega } \left\{ \frac { \partial \rho } { \partial t } + \mathrm { d i v } ( \rho \mathbf { v } ) \right\} d \omega = 0 .
+\end{equation}
+现在，使积分（6）对所有任意体积\(\omega\)都为零的必要且充分条件，是被积函数本身在相空间的相关区域内处处为零。因此，我们必然有
+\begin{equation}\tag{2.2.6}\label{eq:2.2.6}
+\frac { \partial \rho } { \partial t } + \mathrm { d i v } ( \rho \pmb { v } ) = 0 ,
+\end{equation}
+这正是代表点群的"连续性方程"。
+将(4)和(7)结合在一起，我们得到
+\begin{equation}\tag{2.2.7}\label{eq:2.2.7}
+\frac { \partial \rho } { \partial t } + \sum _ { i = 1 } ^{3 N} \left( \frac { \partial \rho } { \partial q _ { i } } \dot { q } _ { i } + \frac { \partial \rho } { \partial p _ { i } } \dot { p } _ { i } \right) + \rho \sum _ { i = 1 } ^{3 N} \left( \frac { \partial \dot { q } _ { i } } { \partial q _ { i } } + \frac { \partial \dot { p } _ { i } } { \partial p _ { i } } \right) = 0 .
+\end{equation}
+最后这一组项会完全消去，因为根据运动方程，对于所有\(i\)，
+\begin{equation}\tag{2.2.8}\label{eq:2.2.8}
+\frac { \partial \dot { q } _ { i } } { \partial q _ { i } } = \frac { \partial ^{2} H ( q _ { i } , p _ { i } ) } { \partial q _ { i } \partial p _ { i } } \equiv \frac { \partial ^{2} H ( q _ { i } , p _ { i } ) } { \partial p _ { i } \partial q _ { i } } = - \frac { \partial \dot { p } _ { i } } { \partial p _ { i } } .
+\end{equation}
+此外，由于\(\rho \equiv \rho(q,p;t)\)，(8) 中剩余的项可以合并，形成\(\rho\)的"总"时间导数，其结果是
+\begin{equation}\tag{2.2.9}\label{eq:2.2.9}
+\frac { d \rho } { d t } = \frac { \partial \rho } { \partial t } + [ \rho , H ] = 0 .
+\end{equation}
+方程（10）体现了李奥维尔定理（1838年）。根据该定理，由随同某一代表点运动的观测者所观察到的"局部"密度，在时间上保持恒定。因此，这些代表点组成的群体在\ldots\ldots{}
+相空间的运动方式，与不可压缩流体在物理空间中的运动方式基本相同！
+然而，必须明确区分方程（10）与方程（2.1.4）这两者。前者源自粒子的基本力学原理，因此具有相当普遍的适用性；而后者仅仅是一种关于平衡状态的要求，在特定情况下，这一要求可能被满足，也可能不被满足。显然，确保这两条方程同时成立的条件是：
+\begin{equation}\tag{2.2.10}\label{eq:2.2.10}
+[ \rho , H ] = \sum _ { i = 1 } ^{3 N} \left( \frac { \partial \rho } { \partial q _ { i } } \dot { q } _ { i } + \frac { \partial \rho } { \partial p _ { i } } \dot { p } _ { i } \right) = 0 .
+\end{equation}
+现在，满足（11）的一种可能方式是假设：ρ——我们已经假定其并不依赖于时间——同样也与坐标\((q,p)\)无关，即：
+\begin{equation}\tag{2.2.11}\label{eq:2.2.11}
+\rho ( q , p ) = \mathrm { c o n s t . }
+\end{equation}
+在相空间的相应区域内（当然，在其他任何地方都为零）。从物理意义上讲，这一选择对应于这样一种系统集合：在任何时候，这些系统都均匀地分布在所有可能的微观状态之中。于是，集合平均值（2.1.3）便简化为：
+\begin{equation}\tag{2.2.12}\label{eq:2.2.12}
+\langle f \rangle = \frac { 1 } { \omega } \int _ { \omega } f ( q , p ) d \omega ;
+\end{equation}
+在此，\(\omega\)表示相空间相应区域的总"体积"。显然，在这种情况下，集合中的任意一个成员都有同等的可能性处于各种可能的微观状态之中，因为群中任意一个代表点，都有同等的可能性位于相空间允许区域内任意一个相点的邻近之处。这一表述通常被称为"各可能微观状态（或相空间允许区域内各体积元素）的先验等概率公设"；由此产生的集合则被称为微正则态。
+满足（11）的更一般方式是假设：ρ对\((q,p)\)的依赖仅通过哈密顿量\(H(q,p)\)的显式依赖来体现，即：
+\begin{equation}\tag{2.2.13}\label{eq:2.2.13}
+\rho ( q , p ) = \rho [ H ( q , p ) ] ;
+\end{equation}
+此时，方程（11）得以完全满足。方程（14）提供了一类密度函数，其对应的集合呈现出静止状态。在第三章中，我们将看到，在这一类集合中，最自然的选择是这样的：
+\begin{equation}\tag{2.2.14}\label{eq:2.2.14}
+\rho ( q , p ) \propto \exp [ - H ( q , p ) / k T ] .
+\end{equation}
+这样定义的系综被称为正则系综（canonical ensemble）。
+\section{微正则系综}\label{ux5faeux6b63ux5219ux7cfbux7efc}
+在这一集合中，系统的宏观状态由分子数 \(N\)、体积 \(V\) 和能量 \(E\) 确定。然而，鉴于第 1.4 节所阐述的考量，我们更倾向于指定一个能量范围，例如从 \((E-\frac{1}{2}\Delta)\) 到 \((E+\frac{1}{2}\Delta)\)，而非一个明确界定的能量值 \(E\)。一旦宏观状态被确定，该集合中的系统仍可选择位于众多可能的微观状态之一。相应地，在相空间中，集合的代表性点可以选择位于由以下条件所定义的"超壳"内的任意位置：
+\begin{equation}\tag{2.3.1}\label{eq:2.3.1}
+\left( E - \frac { 1 } { 2 } \Delta \right) \leq H ( q , p ) \leq \left( E + \frac { 1 } { 2 } \Delta \right) .
+\end{equation}
+包围于该壳体内的相空间体积由以下公式给出：
+\begin{equation}\tag{2.3.2}\label{eq:2.3.2}
+\omega = \int ^{\prime} d \omega \equiv \int ^{\prime} \left( d ^{3 N} q d ^{3 N} p \right) ,
+\end{equation}
+其中，求和积分仅限于符合条件 (1) 的相空间区域。显然，\(\omega\) 将是参数 \(N\)、\(V\)、\(E\) 以及 \(\Delta\) 的函数。
+如今，微正则系综是指一类系统，其密度函数 \(\rho\) 在任何时候都满足：
+\begin{equation}\tag{2.3.3}\label{eq:2.3.3}
+\begin{array}{r} { \rho ( q , p ) = \mathrm { c o n s t . }  \mathrm { i f } \, \left( E - \frac { 1 } { 2 } \Delta \right) \leq H ( q , p ) \leq \left( E + \frac { 1 } { 2 } \Delta \right) \Bigg \} \, . } \\{ 0  \mathrm { o t h e r w i s e }  } \end{array}
+\end{equation}
+因此，位于相关超壳体积元素 \(d\omega\) 中的代表性点数量的期望值，仅仅与 \(d\omega\) 成正比。换言之，我们在某一给定体积元素 \(d\omega\) 中找到代表性点的先验概率，与在超壳内任意位置的等效体积元素 \(d\omega\) 中找到代表性点的先验概率相同。用我们最初的说法来表达，这意味着集合中的任一成员在各种可能的微观状态中处于任意一种状态的先验概率是相同的。基于这些考量，\autoref{eq:2.2.13} 所给出的集合平均值 \(\langle f \rangle\) 具有了简单的物理意义。要理解这一点，我们可按如下步骤进行。
+由于所研究的集合是静态的，任何物理量 \(f\) 的集合平均值均与时间无关；因此，对其取时间平均并不会产生新的结果。由此，
+\begin{equation}\tag{2.3.4}\label{eq:2.3.4}
+\begin{array}{rl} & { \langle f \rangle \equiv \mathrm { t h e ~ e n s e m b l e ~ a v e r a g e ~ o f ~ } f } \\& { = \mathrm { t h e ~ t i m e ~ a v e r a g e ~ o f ~ ( t h e ~ e n s e m b l e ~ a v e r a g e ~ o f ~ } f ) . } \end{array}
+\end{equation}
+现在，时间平均与集合平均的过程完全独立，因此它们执行的顺序可以互换，而不会改变 \(\langle f \rangle\) 的值。因此，
+\(\langle f \rangle\) = 集合平均值（\(f\) 的时间平均）。
+如今，对于任何物理量而言，若在足够长的时间间隔内取时间平均，其结果对集合中的每一位成员来说都应相同——毕竟，我们所处理的不过是一个给定系统的心理副本而已。\(^{4}\) 因此，对其取集合平均值并无实质影响，我们可以写成：
+\begin{equation}\tag{2.3.5}\label{eq:2.3.5}
+\langle f \rangle = \mathrm { t h e \ l o n g - t i m e \ a v e r a g e \ o f } f ,
+\end{equation}
+后者可被集合中的任意成员所取用。此外，某一物理量的长期平均值，正是在给定系统上对该量进行测量所得到的结果；因此，它完全可以与通过实验预期获得的数值相等。由此，我们最终得到了：
+\begin{equation}\tag{2.3.6}\label{eq:2.3.6}
+\langle f \rangle = f \exp .
+\end{equation}
+这使我们得出了最重要的结论：任何物理量 \(f\) 的集合平均值，与在给定系统上进行相应测量时所预期获得的值完全一致。
+接下来，我们需要探寻微正则系综的力学性质与各组成系统的热力学性质之间是否存在某种联系。为此，我们注意到：给定系统的各种微观状态与相空间中的各个位置之间存在着直接的对应关系。因此，相空间中允许区域的体积 \(\omega\)，正是衡量该系统可访问的微观状态的多重性 \(\Gamma\) 的直接指标。为了在 \(\omega\) 之间建立数值上的对应关系，
+⁴要对这一论断作出严谨的论证，并非易事。我们可以清楚地看到：若对于集合中的任一特定成员，仅在较短的时间跨度内对量 \(f\) 进行平均，则其结果必然取决于该系统在该时间段内所经过的相应"微观状态子集"。在相空间中，这意味着平均只作用于"允许区域的一部分"。然而，如果我们选择使用足够长的时间间隔，那么可以预期系统几乎会经历所有可能的微观状态——且不带任何偏见或偏好；因此，平均过程的结果将仅取决于系统的宏观状态，而不再依赖于某个微观状态子集。相应地，在相空间中进行的平均，也将几乎覆盖允许区域的全部部分，同样"不带任何偏见或偏好"。换句话说，我们系统的代表性点将几乎均匀地穿越允许区域的每一个角落。这一表述蕴含着所谓的"遍历定理"或"遍历假设"，该假设最早由玻尔兹曼（1871年）提出。根据这一假设，一个代表性点的轨迹在时间流逝的过程中，会穿过相空间中相关区域的每一个点。然而，稍加思索便会发现，这一陈述本身尚需加以限定；我们不妨将其替换为所谓的"准遍历假设"，即：代表性点的轨迹在时间流逝的过程中，会穿越相关区域中任意一点的任意邻域。有关更多细节，请参阅特尔·哈尔（1954年、1955年）和法夸尔（1964年）。
+如今，当我们考察一组系统时，上述论述对组内每一个系统都应成立；因此，无论各系统初始状态（以及最终状态）如何，任何物理量 \(f\) 的长期平均值对于每一个系统而言都应保持一致。
+并且，我们还需要找到一个基本体积 \(\omega_{0}\)，可被视为"等价于一个微态"。一旦完成这一工作，我们便可说，在渐近意义上，
+\begin{equation}\tag{2.3.7}\label{eq:2.3.7}
+\Gamma = \omega / \omega _ { 0 } .
+\end{equation}
+系统的热力学行为将沿袭与第1.2至1.4节相同的方式，即通过以下关系式来实现：
+\begin{equation}\tag{2.3.8}\label{eq:2.3.8}
+S = k \ln \Gamma = k \ln ( \omega / \omega _ { 0 } ) ,  \mathrm { e t c . }
+\end{equation}
+因此，基本问题在于确定 \(\omega_{0}\)。根据维度分析，如式（2）所示，\(\omega_{0}\) 必须具有"角动量的 \(3N\) 次方"这一性质。为了精确求解 \(\omega_{0}\)，我们从相空间的角度以及量子态分布的角度出发，对若干简化系统进行了研究。
+\section{示例}\label{ux793aux4f8b_chap2}
+首先，我们考虑由单原子粒子构成的经典理想气体的问题；参见第1.4节。在微正则系综中，代表系统各成员的相空间体积 \(\omega\) 可以表示为：
+\begin{equation}\tag{2.3.9}\label{eq:2.3.9}
+\omega = V^{N}\int\cdots\int d^{3N}p .
+\end{equation}
+其中，积分受到如下条件的限制：(i) 系统中的粒子被约束于物理空间中，体积为 \(V\)；(ii) 系统的总能量位于 \((E-\frac{1}{2}\Delta)\) 和 \((E+\frac{1}{2}\Delta)\) 之间。由于在这种情况下，哈密顿量仅依赖于 \(p_i\)，因此可以轻松地对 \(q_i\) 进行积分；这些积分结果会得到一个因子 \(V^N\)。剩余的积分是：
+\begin{equation}\tag{2.3.10}\label{eq:2.3.10}
+\begin{aligned}
+\int\cdots\int d^{3N}p &= \int\cdots\int d^{3N}y, \quad y_i=\frac{p_i}{\sqrt{2m}}, \\
+2m\left(E-\frac{1}{2}\Delta\right) &\le \sum_{i=1}^{3N}y_i^2 \le 2m\left(E+\frac{1}{2}\Delta\right).
+\end{aligned}
+\end{equation}
+其值等于一个 \(3N\) 维超球壳的体积，该超球壳由半径分别为
+\begin{equation}\tag{2.3.11}\label{eq:2.3.11}
+\sqrt { \left[ 2 m \left( E + \frac { 1 } { 2 } \Delta \right) \right] }  \mathrm { a n d }  \sqrt { \left[ 2 m \left( E - \frac { 1 } { 2 } \Delta \right) \right] } .
+\end{equation}
+当 \(\Delta \ll E\) 时，这一体积可由壳体的厚度给出，其值几乎等于 \(\Delta(m/2E)^{1/2}\)，再乘以一个 \(3N\) 维超球的表面积，其半径为 \(\sqrt{(2mE)}\)。通过
+在附录~C的式（7）中，我们对这一积分得出结果
+\begin{equation}\tag{2.3.12}\label{eq:2.3.12}
+\Delta \left( \frac { m } { 2 E } \right) ^{1 / 2} \left\{ \frac { 2 \pi ^{3 N / 2} } { [ ( 3 N / 2 ) - 1 ] ! } ( 2 m E ) ^{( 3 N - 1 ) / 2} \right\} ,
+\end{equation}
+由此得到
+\begin{equation}\tag{2.3.13}\label{eq:2.3.13}
+\omega \simeq \frac { \Delta } { E } V ^{N} \frac { ( 2 \pi m E ) ^{3 N / 2} } { [ ( 3 N / 2 ) - 1 ] ! } .
+\end{equation}
+将式（2）与式（1.4.17 和 1.4.17a）进行比较，我们得到了所需的对应关系，即
+\begin{equation}\tag{2.3.14}\label{eq:2.3.14}
+( \omega / \Gamma ) _ { \mathrm { a s y m p } } \equiv \omega _ { 0 } = h ^{3 N} ;
+\end{equation}
+另请参阅问题2.9。一般来说，如果所研究的系统拥有 \(\mathcal{N}\) 个自由度，则所需的转换因子为
+\begin{equation}\tag{2.3.15}\label{eq:2.3.15}
+\omega _ { 0 } = h ^{\mathcal { N} } .
+\end{equation}
+对于单个粒子而言，\(\mathcal{N}=3\)；相应地，可用的微态数将随着渐近情形下等于相空间允许区域的体积除以 \(h^{3}\)。设 \(\Sigma(P)\) 表示一个自由粒子在物理空间中占据体积 \(V\)、其动量 \(p\) 不超过某一指定值 \(P\) 时所能拥有的微态数。那么
+\begin{equation}\tag{2.3.16}\label{eq:2.3.16}
+\Sigma ( P ) \approx \frac { 1 } { h ^{3} } \int \ldots \int \left( d ^{3} q \, d ^{3} p \right) = \frac { V } { h ^{3} } \frac { 4 \pi } { 3 } P ^{3} ,
+\end{equation}
+由此我们可得，对于动量介于 \(p\) 与 \(p+dp\) 之间的微态数
+\begin{equation}\tag{2.3.17}\label{eq:2.3.17}
+g ( p ) d p = \frac { d \Sigma ( p ) } { d p } d p \approx \frac { V } { h ^{3} } 4 \pi p ^{2} d p .
+\end{equation}
+用粒子能量来表述这些表达式时，它们的形式为
+\begin{equation}\tag{2.3.18}\label{eq:2.3.18}
+\Sigma \left( E \right) \approx \frac { V } { h ^{3} } \frac { 4 \pi } { 3 } ( 2 m E ) ^{3 / 2}
+\end{equation}
+并且
+\begin{equation}\tag{2.3.19}\label{eq:2.3.19}
+a ( \varepsilon ) d \varepsilon = \frac { d \Sigma ( \varepsilon ) } { d \varepsilon } d \varepsilon \approx \frac { V } { h ^{3} } 2 \pi ( 2 m ) ^{3 / 2} \varepsilon ^{1 / 2} d \varepsilon .
+\end{equation}
+接下来我们考虑的情况是：一维简谐振子。该系统的哈密顿量的经典表达式为
+\begin{equation}\tag{2.3.20}\label{eq:2.3.20}
+H ( q , p ) = \frac { 1 } { 2 } k q ^{2} + \frac { 1 } { 2 m } p ^{2} \, ,
+\end{equation}
+其中 \(k\) 是弹簧常数，\(m\) 是振动物体的质量。系统的空间坐标 \(q\) 和动量坐标 \(p\) 分别由以下公式给出
+\begin{equation}\tag{2.3.21}\label{eq:2.3.21}
+q = A \cos ( \omega t + \phi ) ,  p = m \dot { q } = - m \omega A \sin ( \omega t + \phi ) ,
+\end{equation}
+A 是振幅，\(\omega\) 是振动的角频率：
+\begin{equation}\tag{2.3.22}\label{eq:2.3.22}
+\omega = \sqrt { ( k / m ) } .
+\end{equation}
+振子的能量是运动的守恒量，其值为
+\begin{equation}\tag{2.3.23}\label{eq:2.3.23}
+E = \frac { 1 } { 2 } m \omega ^{2} A ^{2} .
+\end{equation}
+该系统的代表点 \((q,p)\) 在相空间中的轨迹，可通过从 \(q(t)\) 和 \(p(t)\) 的表达式（9）中消去 \(t\) 来确定；我们得到
+\begin{equation}\tag{2.3.24}\label{eq:2.3.24}
+\frac { q ^{2} } { ( 2 E / m \omega ^{2} ) } + \frac { p ^{2} } { ( 2 m E ) } = 1 ,
+\end{equation}
+这是一条椭圆轨迹，其长轴与 \(\sqrt{E}\) 成比例，因此面积也与 \(E\) 成正比；确切地说，这条椭圆的面积为 \(2\pi E/\omega\)。现在，若我们将振子的能量限制在区间 \((E-\frac{1}{2}\Delta,E+\frac{1}{2}\Delta)\) 内，则其在相空间中的代表点将被限定在由对应于能量值 \((E+\frac{1}{2}\Delta)\) 和 \((E-\frac{1}{2}\Delta)\) 的椭圆轨迹所围成的区域内。这一区域的"体积"（在本例中即面积）将为
+\begin{equation}\tag{2.3.25}\label{eq:2.3.25}
+\int \ldots \int  ( d q \, d p ) = \frac { 2 \pi \left( E + \frac { 1 } { 2 } \Delta \right) } { \omega } - \frac { 2 \pi \left( E - \frac { 1 } { 2 } \Delta \right) } { \omega } = \frac { 2 \pi \Delta } { \omega } .
+\end{equation}
+根据量子力学，简谐振子的能级由以下公式给出
+\begin{equation}\tag{2.3.26}\label{eq:2.3.26}
+E _ { n } = \left( n + \frac { 1 } { 2 } \right) \hbar \omega ;  n = 0 , 1 , 2 , \ldots
+\end{equation}
+从相空间角度看，可以说系统代表点必须沿着某一条“选定”的轨迹运动，如图~2.2 所示；在两条相邻轨迹之间，当 \(\Delta=\hbar\omega\) 时，相空间面积恰为 \(2\pi\hbar\)。\(^{5}\) 对任意 \(E\) 与 \(\Delta\)，只要 \(E \gg \Delta \gg \hbar\omega\)，允许能量区间内的本征态数近似为 \(\Delta/(\hbar\omega)\)。因此，每个量子态对应的相空间面积为 \(h\)，即与前述结论一致。
+
+在更一般的 \(2\mathcal{N}\) 维相空间中，任意点附近可分辨的最小“相空间体积元”约为 \(\hbar^{\mathcal{N}}\) 量级。于是，把相空间视为由基本单元构成，并把这些单元与量子态一一对应，是合理的。
+
+然而，仅凭不确定性关系仍不足以给出转换因子 \(\omega_0\) 的精确值。精确值仍需通过“微观态计数”与“相空间体积计算”的对应来确定。历史上，最先明确提出 \(\omega_0\) 形式的是 Tetrode（1912）。在其关于化学常数与单原子气体熵的工作中，他设定
+\begin{equation}\tag{2.3.27}\label{eq:2.3.27}
+\omega _ { 0 } = ( z h ) ^{\mathcal { N} } ,
+\end{equation}
+其中 \(z\) 起初被视为待定常数。通过与汞的实验数据比较，Tetrode 发现 \(z\) 非常接近 1，并据此推断 \(z=1\)。
+
+在极端相对论极限下，Bose（1924）也得到了同样结论。在其光子气体研究中，利用爱因斯坦关系
+\begin{equation}\tag{2.3.28}\label{eq:2.3.28}
+p = { \frac { h \nu } { c } } ,
+\end{equation}
+\begin{equation}\tag{2.3.29}\label{eq:2.3.29}
+V ( 4 \pi \nu ^{2} / c ^{3} ) d \nu ,
+\end{equation}
+并可将相空间模计数与 Rayleigh 振动模计数一一对应。对光子还需考虑两种偏振（或自旋）简并，因此计数式需整体乘以 2，但转换因子 \(h^3\) 不变。
+\section{问题}\label{ux95eeux9898_chap2}
+2.1. 证明相空间的体积元素
+\begin{equation}\tag{2.3.30}\label{eq:2.3.30}
+d \omega = \prod _ { i = 1 } ^{3 N} ( d q _ { i } d p _ { i } )
+\end{equation}
+在从 \((q,p)\) 的广义坐标变换为任意另一组广义坐标 \((Q,P)\) 时，相空间的体积元素仍保持不变。
+【提示】：在考虑这种最为一般的变换——即所谓的接触变换之前，不妨先考察一种点变换——在这种变换中，新的坐标 \(Q_i\) 与旧的坐标 \(q_i\) 只是彼此之间发生变换。
+2.2. （a）明确验证单个粒子的相空间体积元素 \(d\omega\) 在从直角坐标系 \((x,y,z,p_x,p_y,p_z)\) 变换为球面极坐标系 \((r,\theta,\phi,p_r,p_\theta,p_\phi)\) 时的不变性。
+（b）上述结果似乎与"等重量对应等立体角"的直观概念相矛盾，因为式 \(d\omega\) 中的 \(\sin\theta\) 这一因子却几乎难以察觉。请证明：如果我们对任何物理量进行平均处理——而该物理量对 \(p_\theta\) 和 \(p_\phi\) 的依赖仅源于粒子的动能——那么通过对这些变量进行积分后，我们确实会得到 \(\sin\theta\) 这一因子，它会以子元素 \((d\theta\,d\phi)\) 的形式出现。
+2.3. 从零能量线出发，在经典旋转体的（二维）相空间中，绘制等能线，将相空间划分为"体积"为 \(h\) 的各单元。计算这些态的能量，并将其与相应量子力学旋转体的能级进行比较。
+2.4. 通过计算相空间中相关区域的“体积”，证明角动量 \(\le M\) 的刚性转子可容纳的微态数为 \(\left(\frac{M}{\hbar}\right)^2\)。由此求与量子化角动量 \(M_j=\sqrt{j(j+1)}\,\hbar\) 对应的微态数，其中 \(j=0,1,2,\ldots\) 或 \(j=\frac{1}{2},\frac{3}{2},\frac{5}{2},\ldots\)。并解释其物理意义。
+
+提示：可在变量 \(\theta,\varphi\) 中处理，并用 \(M^{2}=p_{\theta}^{2}+(p_{\phi}/\sin\theta)^{2}\)。
+2.5. 考虑一个能量为 \(E\) 的粒子，在一维势阱 \(V(q)\) 中运动，其运动方程为：
+\begin{equation}\tag{2.3.31}\label{eq:2.3.31}
+m \hbar \left| \frac { d V } { d q } \right| \ll \{ m ( E - V ) \} ^{3 / 2} .
+\end{equation}
+证明粒子动量 \(p\) 的允许取值范围为：
+\begin{equation}\tag{2.3.32}\label{eq:2.3.32}
+\oint p d q = \Big ( n + { \frac { 1 } { 2 } } \Big ) h ,
+\end{equation}
+其中 \(n\) 为整数。
+
+2.6. 简单摆的广义坐标分别为角位移 \(\theta\) 和角动量 \(m l^{2} \dot{\theta}\)。从数学和图形两方面研究该系统相空间中相应轨迹的性质，并证明：一条轨迹所围成的面积 \(A\) 等于总能量 \(E\) 与摆的周期 \(\tau\) 的乘积。
+
+2.7. 推导出（i）给定能量 \(E\) 在一组 \(N\) 个一维谐振子之间分配的方式数的渐近表达式，其中谐振子的能级为 \(\left(n+\frac{1}{2}\right)\hbar\omega\)；\(n=0,1,2,\ldots\)，以及（ii）该系统相空间中相关区域的"体积"对应的表达式。建立这两项结果之间的对应关系，并说明转换因子 \(\omega_0\) 正好等于 \(h^N\)。
+
+2.8. 按照附录~C的方法，用积分替换方程（C.4）：
+\begin{equation}\tag{2.3.33}\label{eq:2.3.33}
+\int _ { 0 } ^{\infty} e ^{- r} r ^{2} d r = 2 ,
+\end{equation}
+证明
+\begin{equation}\tag{2.3.34}\label{eq:2.3.34}
+V _ { 3 N } = \int \ldots \int \prod _ { i = 1 } ^{N} \left( 4 \pi r _ { i } ^{2} d r _ { i } \right) = ( 8 \pi R ^{3} ) ^{N} / ( 3 N ) ! .
+\end{equation}
+利用这一结果，计算在三维空间中运动的 \(N\) 个粒子所构成的极端相对论性气体相空间中相关区域的"体积"。进而推导出该系统的各类热力学性质的表达式，并将你的结果与问题1.7中的结果进行比较。
+
+2.9. （a）求解积分
+\begin{equation}\tag{2.3.35}\label{eq:2.3.35}
+\begin{array}{r} { \int \ldots \int \ ( d x _ { 1 } \ldots d x _ { 3 N } ) } \\{ 0 \leq \sum _ { i = 1 } ^{3 N} | x _ { i } | \leq R } \end{array}
+\end{equation}
+并利用该积分，确定在一维空间中运动的 \(3N\) 个粒子所构成的极端相对论性气体相空间中相关区域的"体积"。同时，确定在该粒子系统中，将给定能量 \(E\) 分配到各粒子上的方式数，并证明：在渐近情况下，\(\omega_0 = h^{3N}\)。
+（b）将该系统的热力学性质与问题2.8中所讨论的系统进行比较。
+

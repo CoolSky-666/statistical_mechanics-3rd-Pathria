@@ -1,0 +1,1031 @@
+﻿\chapter*{Appendix} 
+
+\section{边界条件对量子态分布的影响}\label{ux8fb9ux754cux6761ux4ef6ux5bf9ux91cfux5b50ux6001ux5206ux5e03ux7684ux5f71ux54cd}
+
+在本附录中，我们将在不同边界条件下，研究受限连续介质中单粒子态的渐近分布。为简化起见，我们考虑一个边长分别为 \(a\)、\(b\) 和 \(c\) 的长方体封闭区域。自由粒子薛定谔方程的可接受解为
+\begin{equation}\tag{17.1.1}\label{eq:17.1.1}
+\nabla ^{2} \psi + k ^{2} \psi = 0  \left( k = p \hbar ^{- 1} \right) ,
+\end{equation}
+这些解满足狄利克雷边界条件（即，在边界上处处 \(\psi=0\)），其形式为
+\begin{equation}\tag{17.1.2}\label{eq:17.1.2}
+\psi _ { l m n } ( \pmb { r } ) \propto \sin \left( \frac { l \pi x } { a } \right) \sin \left( \frac { m \pi y } { b } \right) \sin \left( \frac { n \pi z } { c } \right) ,
+\end{equation}
+其中
+\begin{equation}\tag{17.1.3}\label{eq:17.1.3}
+k = \pi \left( \frac { l ^{2} } { a ^{2} } + \frac { m ^{2} } { b ^{2} } + \frac { n ^{2} } { c ^{2} } \right) ^{1 / 2} ;  l , m , n = 1 , 2 , 3 , \ldots .
+\end{equation}
+需要注意的是，在这种情况下，量子数 \(l\)、\(m\) 或 \(n\) 都不能为零，因为那样会导致波函数恒等于零。相反，若我们采用诺伊曼边界条件（即，在边界上处处 \(\frac{\partial\psi}{\partial n}=0\)），则得到的解为
+\begin{equation}\tag{17.1.4}\label{eq:17.1.4}
+\psi _ { l m n } ( \pmb { r } ) \propto \cos \left( \frac { l \pi x } { a } \right) \cos \left( \frac { m \pi y } { b } \right) \cos \left( \frac { n \pi z } { c } \right) ,
+\end{equation}
+其中
+\begin{equation}\tag{17.1.5}\label{eq:17.1.5}
+l , m , n = 0 , 1 , 2 , \ldots ;
+\end{equation}
+显然，此时量子数的零值已获准！然而，在每一种情况下，量子数的负整数值都不会产生新的波函数。
+总共有 \(g(K)\) 个不同的波函数 \(\psi\)，其波数 \(k\) 不超过给定的值 \(K\)，可以表示为
+\begin{equation}\tag{17.1.6}\label{eq:17.1.6}
+g ( K ) = \sum _ { l , m , n } ^{\prime} f ( l , m , n ) ,
+\end{equation}
+其中对于属于集合（3）或（5）的 \((l,m,n)\) 数字，\(f(l,m,n)=1\)；每种情况下的求和 \(\sum'\) 均受以下条件限制：
+\begin{equation}\tag{17.1.7}\label{eq:17.1.7}
+\left( \frac { l ^{2} } { a ^{2} } + \frac { m ^{2} } { b ^{2} } + \frac { n ^{2} } { c ^{2} } \right) \leq \frac { K ^{2} } { \pi ^{2} } .
+\end{equation}
+我们现在定义一个求和
+\begin{equation}\tag{17.1.8}\label{eq:17.1.8}
+G ( K ) = \sum _ { l , m , n } ^{\prime} f ^{*} ( l , m , n ) ,
+\end{equation}
+其中对于所有整数值 \(l\)、\(m\) 和 \(n\)（正整数、负整数或零），\(f^{*}(l,m,n)=1\)，而 \((l,m,n)\) 数字的限制条件与（7）中所述一致。通过建立项之间的对应关系，我们可以证明：
+\begin{equation}\tag{17.1.9}\label{eq:17.1.9}
+\begin{aligned}
+\sum_{l,m,n}^{\prime} f(l,m,n)
+&= \frac{1}{8}\Bigg[
+\sum_{l,m,n}^{\prime} f^{*}(l,m,n) \\
+&\mp \Big\{
+\sum_{l,m}^{\prime} f^{*}(l,m,0)
++ \sum_{l,n}^{\prime} f^{*}(l,0,n)
++ \sum_{m,n}^{\prime} f^{*}(0,m,n)
+\Big\} \\
+&+ \Big\{
+\sum_{l}^{\prime} f^{*}(l,0,0)
++ \sum_{m}^{\prime} f^{*}(0,m,0)
++ \sum_{n}^{\prime} f^{*}(0,0,n)
+\Big\}
+\mp 1
+\Bigg].
+\end{aligned}
+\end{equation}
+这里的正号与负号分别对应狄利克雷边界条件与诺伊曼边界条件。
+显然，（9）右侧的第一个求和表示椭球体中的晶格点数量（\(^{1}\)）——即 \(X^{2}/a^{2}+Y^{2}/b^{2}+Z^{2}/c^{2}\) = \(K^{2}/\pi^{2}\)；接下来的三个求和分别表示该椭球体在以 \(Z\)、\(Y\) 和 \(X\) 平面为截面的椭圆中的晶格点数量；最后三个求和则表示椭球体主轴上的晶格点数量。如果 \(a\)、\(b\) 和 \(c\) 相较于 \(\pi/K\) 而言足够大，我们就可以将这些数字分别替换为相应的体积、面积和长度，其结果为
+\begin{equation}\tag{17.1.10}\label{eq:17.1.10}
+\begin{aligned}
+g(K)={}&\frac{K^3}{6\pi^2}(abc)
+\mp \frac{K^2}{8\pi}(ab+ca+bc) \\
+&+ \frac{K}{4\pi}(a+b+c)
+\mp \frac{1}{8}
++ E(K).
+\end{aligned}
+\end{equation}
+此处的"\(E(K)\)"一词，指在进行上述替换操作时所造成的净误差。因此，我们发现，本结果中的主要项与封闭区域的体积成正比；而第一修正项则与该区域的表面积成正比（因而代表一种"表面效应"）；接下来的阶数项则以"边缘效应"和"角落效应"的形式出现。
+如今，查阅有关"给定区域内晶格点数量"计算方法的相关文献可知，式（10）中误差项\(E(K)\)的阶为\(O(K^{\alpha})\)，其中\(1 < \alpha < 1.4\)；因此，\(g(K)\)的式（10）仅在表面项这一层次上才具有可靠性。鉴于此，我们可以写成：
+\begin{equation}\tag{17.1.11}\label{eq:17.1.11}
+g ( K ) = \frac { K ^{3} } { 6 \pi ^{2} } V \mp \frac { K ^{2} } { 16 \pi } S + \mathrm { a ~ l o w e r - o r d e r ~ r e m a i n d e r } ;
+\end{equation}
+¹ 术语"在椭球体内"指的是"不位于椭球体外部"，也就是说，那些"位于椭球体上的"晶格点同样被纳入考量。后续各处的类似表述亦具有相似的含义。
+以\(\varepsilon^{*}\)为变量，其中
+\begin{equation}\tag{17.1.12}\label{eq:17.1.12}
+\varepsilon ^{*} = \frac { 8 m L ^{2} } { h ^{2} } \varepsilon = \frac { 4 L ^{2} } { h ^{2} } P ^{2} = \frac { L ^{2} } { \pi ^{2} } K ^{2} ,
+\end{equation}
+式（11）可简化为文中的式（1.4.15）和式（1.4.16）。
+在周期性边界条件的情况下，即
+\begin{equation}\tag{17.1.13}\label{eq:17.1.13}
+\psi ( x , y , z ) = \psi ( x + a , y , z ) = \psi ( x , y + b , z ) = \psi ( x , y , z + c ) ,
+\end{equation}
+合适的波函数为
+\begin{equation}\tag{17.1.14}\label{eq:17.1.14}
+\psi _ { l m n } ( \mathbf { r } ) \propto \exp \{ i ( \mathbf { k } \cdot \mathbf { r } ) \} ,
+\end{equation}
+其中
+\begin{equation}\tag{17.1.15}\label{eq:17.1.15}
+k = 2 \pi \left( { \frac { l } { a } } , { \frac { m } { b } } , { \frac { n } { c } } \right) ;  l , m , n = 0 , \pm 1 , \pm 2 , \ldots .
+\end{equation}
+自由粒子态的数量\(g(K)\)现可表示为
+\begin{equation}\tag{17.1.16}\label{eq:17.1.16}
+g ( K ) = \sum _ { l , m , n } ^{\prime} f ^{*} ( l , m , n ) ,
+\end{equation}
+使得
+\begin{equation}\tag{17.1.17}\label{eq:17.1.17}
+( l ^{2} / a ^{2} + m ^{2} / b ^{2} + n ^{2} / c ^{2} ) \leq K ^{2} / ( 4 \pi ^{2} ) .
+\end{equation}
+这正是半轴长度分别为\(Ka/2\pi\)、\(Kb/2\pi\)和\(Kc/2\pi\)的椭球体内的晶格点数量；若考虑先前情形中所做的近似，其值恰好等于式（11）中的体积项。因此，在周期性边界条件的情况下，我们在状态密度的表达式中并未得到表面项。
+如需进一步了解该主题的相关信息，请参阅费多索夫（1963年、1964年）、帕特里亚（1966年）、查巴与帕特里亚（1973年）以及巴尔特斯与希尔夫（1976年）的著作。
+\section{某些数学函数}\label{b-ux67d0ux4e9bux6570ux5b66ux51fdux6570}
+在本附录中，我们将概述若干对本文主题具有特殊重要意义的数学函数的主要性质。
+我们首先从伽马函数\(\Gamma(\nu)\)入手，它与阶乘函数\((\nu - 1)!\)完全相同，并由以下积分定义：
+\begin{equation}\tag{17.2.1}\label{eq:17.2.1}
+\Gamma ( \nu ) \equiv ( \nu - 1 ) ! = \int _ { 0 } ^{\infty} e ^{- x} x ^{\nu - 1} d x ;  \nu > 0 .
+\end{equation}
+首先，我们注意到
+\begin{equation}\tag{17.2.2}\label{eq:17.2.2}
+\Gamma ( 1 ) \equiv 0 ! = 1 .
+\end{equation}
+接下来，通过分部积分法，我们得到了递推公式
+\begin{equation}\tag{17.2.3}\label{eq:17.2.3}
+\Gamma ( \nu ) = \frac { 1 } { \nu } \Gamma ( \nu + 1 ) ,
+\end{equation}
+由此可以得出
+\begin{equation}\tag{17.2.4}\label{eq:17.2.4}
+\Gamma ( \nu + \mathbf { 1 } ) = \nu ( \nu - 1 ) \cdots ( 1 + p ) p \Gamma ( p ) ,  0 < p \leq 1 ,
+\end{equation}
+其中\(p\)为\(\nu\)的小数部分。对于\(\nu\)的整数值（例如\(\nu=n\)），我们有熟悉的表示方式
+\begin{equation}\tag{17.2.5}\label{eq:17.2.5}
+\Gamma ( n + 1 ) \equiv n ! = n ( n - 1 ) \cdots 2 \cdot 1 ;
+\end{equation}
+另一方面，若\(\nu\)为半整数（例如\(\nu = m + \frac{1}{2}\)），则
+\begin{equation}\tag{17.2.6}\label{eq:17.2.6}
+\begin{aligned}
+\Gamma\!\left(m+\frac{1}{2}\right)
+&\equiv \left(m-\frac{1}{2}\right)! \\
+&= \left(m-\frac{1}{2}\right)\left(m-\frac{3}{2}\right)\cdots\frac{3}{2}\cdot\frac{1}{2}\,
+\Gamma\!\left(\frac{1}{2}\right) \\
+&= \frac{(2m-1)(2m-3)\cdots3\cdot1}{2^m}\,\pi^{1/2}.
+\end{aligned}
+\end{equation}
+其中已运用了式（21）的公式，据此，
+\begin{equation}\tag{17.2.7}\label{eq:17.2.7}
+\Gamma \left( \frac { 1 } { 2 } \right) \equiv \left( - \frac { 1 } { 2 } \right) ! = \pi ^{1 / 2} .
+\end{equation}
+通过反复应用递推公式（3），函数\(\Gamma(\nu)\)的定义可以推广至所有\(\nu\)，除了\(\nu=0, -1, -2, \ldots\)，在这些点上，该函数存在奇点。可通过将\(\nu\)设为\(-n+\varepsilon\)来确定\(\Gamma(\nu)\)在奇点邻近的性质，其中\(n=0, 1, 2, \ldots\)，且\(|\varepsilon| \ll 1\)；再利用式（3）重复计算\(n+1\)次，即可得到
+\begin{equation}\tag{17.2.8}\label{eq:17.2.8}
+\begin{array}{r} { \Gamma ( - n + \varepsilon ) = \frac { 1 } { ( - n + \varepsilon ) ( - n + 1 + \varepsilon ) \cdots ( - 1 + \varepsilon ) \varepsilon } \Gamma ( 1 + \varepsilon ) } \\{ \approx \frac { ( - 1 ) ^{n} } { n ! \varepsilon } . } \end{array}
+\end{equation}
+将\(x\)替换为\(\alpha y^{2}\)，式（1）可化为
+\begin{equation}\tag{17.2.9}\label{eq:17.2.9}
+\Gamma \left( \nu \right) = 2 \alpha ^{\nu} \int _ { 0 } ^{\infty} e ^{- \alpha y ^ { 2} } y ^{2 \nu - 1} d y ,  \nu > 0 .
+\end{equation}
+由此我们得到了另一组密切相关的积分，即
+\begin{equation}\tag{17.2.10}\label{eq:17.2.10}
+I _ { 2 \nu - 1 } \equiv \int _ { 0 } ^{\infty} e ^{- \alpha y ^ { 2} } y ^{2 \nu - 1} d y = \frac { 1 } { 2 \alpha ^{\nu} } \Gamma ( \nu ) ,  \nu > 0 ;
+\end{equation}
+通过改变记号，该积分可写成
+\begin{equation}\tag{17.2.11}\label{eq:17.2.11}
+I _ { \nu } \equiv \int _ { 0 } ^{\infty} e ^{- \alpha y ^ { 2} } y ^{\nu} d y = \frac { 1 } { 2 \alpha ^{( \nu + 1 ) / 2} } \Gamma \left( \frac { \nu + 1 } { 2 } \right) ,  \nu > - 1 .
+\end{equation}
+我们不难发现，上述积分满足以下关系
+\begin{equation}\tag{17.2.12}\label{eq:17.2.12}
+I _ { \nu + 2 } = - \frac { \partial } { \partial \alpha } I _ { \nu } .
+\end{equation}
+积分\(I_{\nu}\)在我们的研究中频繁出现，因此我们特意将其中部分积分的数值明确列出：
+\begin{equation}\tag{17.2.13}\label{eq:17.2.13}
+I _ { 0 } = \frac { 1 } { 2 } \left( \frac { \pi } { \alpha } \right) ^{1 / 2} ,  I _ { 2 } = \frac { 1 } { 4 } \left( \frac { \pi } { \alpha ^{3} } \right) ^{1 / 2} ,  I _ { 4 } = \frac { 3 } { 8 } \left( \frac { \pi } { \alpha ^{5} } \right) ^{1 / 2} \cdots ,
+\end{equation}
+而
+\begin{equation}\tag{17.2.14}\label{eq:17.2.14}
+I _ { 1 } = \frac { 1 } { 2 \alpha } ,  I _ { 3 } = \frac { 1 } { 2 \alpha ^{2} } ,  I _ { 5 } = \frac { 1 } { \alpha ^{3} } , \cdots .
+\end{equation}
+在讨论这些积分时，不妨顺便指出，
+\begin{equation}\tag{17.2.15}\label{eq:17.2.15}
+\begin{array}{rl} { \int _ { - \infty } ^{\infty} e ^{- \alpha y ^ { 2} } y ^{\nu} d y = 0 } & {  \mathrm { i f ~ } \nu \mathrm { ~ i s ~ a n ~ o d d ~ i n t e g e r } } \\{ = 2 I _ { \nu } } & {  \mathrm { i f ~ } \nu \mathrm { ~ i s ~ a n ~ e v e n ~ i n t e g e r } . } \end{array}
+\end{equation}
+接下来，我们来考察两个伽马函数的乘积，即\(\Gamma(\mu)\)与\(\Gamma(\nu)\)。借助表示式（9），令\(\alpha=1\)，我们有
+\begin{equation}\tag{17.2.16}\label{eq:17.2.16}
+\Gamma ( \mu ) \Gamma ( \nu ) = 4 \int _ { 0 } ^{\infty} \int _ { 0 } ^{\infty} e ^{- ( x ^ { 2} + y ^{2} ) } x ^{2 \mu - 1} y ^{2 \nu - 1} d x d y ,  \mu > 0 , \nu > 0 .
+\end{equation}
+转换为极坐标\((r, \theta)\)后，式（15）变为
+\begin{equation}\tag{17.2.17}\label{eq:17.2.17}
+\begin{aligned}
+\Gamma(\mu)\Gamma(\nu)
+&= 4\int_0^{\infty} e^{-r^2}r^{2(\mu+\nu)-1}dr
+\int_0^{\pi/2}\cos^{2\mu-1}\theta\,\sin^{2\nu-1}\theta\,d\theta \\
+&= 2\Gamma(\mu+\nu)\int_0^{\pi/2}\cos^{2\mu-1}\theta\,\sin^{2\nu-1}\theta\,d\theta.
+\end{aligned}
+\end{equation}
+现在，我们通过积分定义β函数\(B(\mu, \nu)\)，
+\begin{equation}\tag{17.2.18}\label{eq:17.2.18}
+\begin{aligned}
+B(\mu,\nu)&=2\int_0^{\pi/2}\cos^{2\mu-1}\theta\,\sin^{2\nu-1}\theta\,d\theta,\\
+&\qquad \mu>0,\ \nu>0.
+\end{aligned}
+\end{equation}
+我们得到了一条重要的关系：
+\begin{equation}\tag{17.2.19}\label{eq:17.2.19}
+B ( \mu , \nu ) = \frac { \Gamma ( \mu ) \Gamma ( \nu ) } { \Gamma ( \mu + \nu ) } = B ( \nu , \mu ) .
+\end{equation}
+将\(\cos^{2}\theta=\eta\)代入，式（17）便转化为标准形式
+\begin{equation}\tag{17.2.20}\label{eq:17.2.20}
+B ( \mu , \nu ) = \int _ { 0 } ^{1} \eta ^{\mu - 1} ( 1 - \eta ) ^{\nu - 1} d \eta ,  \mu > 0 , \nu > 0 ,
+\end{equation}
+而当\(\mu=\nu=\frac{1}{2}\)这一特殊情形发生时，
+\begin{equation}\tag{17.2.21}\label{eq:17.2.21}
+B \left( \frac { 1 } { 2 } , \frac { 1 } { 2 } \right) = 2 \int _ { 0 } ^{\pi / 2} d \theta = \pi .
+\end{equation}
+结合式（2）和式（18），式（20）得以推导出
+\begin{equation}\tag{17.2.22}\label{eq:17.2.22}
+\Gamma \left( \frac { 1 } { 2 } \right) = \pi ^{1 / 2} .
+\end{equation}
+斯特林公式对于\(\nu\)！现在，我们推导出阶乘函数的一个渐近表达式
+\begin{equation}\tag{17.2.23}\label{eq:17.2.23}
+\nu ! = \int _ { 0 } ^{\infty} e ^{- x} x ^{\nu} d x
+\end{equation}
+对于\(\nu \gg 1\)，我们不难发现，当\(\nu \gg 1\)时，该积分的主要贡献来自\(x\)位于点\(x = \nu\)附近、宽度约为\(\sqrt{\nu}\)的区域。鉴于此，我们采用换元法，
+\begin{equation}\tag{17.2.24}\label{eq:17.2.24}
+x = \nu + ( \sqrt { \nu } ) u ,
+\end{equation}
+通过这一换元，式（22）可化为
+\begin{equation}\tag{17.2.25}\label{eq:17.2.25}
+\nu ! = \sqrt { \nu \left( \frac { \nu } { e } \right) ^{\nu} } \int _ { - \sqrt { \nu } } ^{\infty} e ^{- ( \sqrt { \nu} ) u } \left( 1 + \frac { u } { \sqrt { \nu } } \right) ^{\nu} d u .
+\end{equation}
+在式（24）中，被积函数在 \(u=0\) 以及其两侧均取得最大值——单位值。而在最大值的两侧，该函数会迅速衰减至零，这表明我们可以将其近似为高斯函数。因此，我们对被积函数的对数进行在 \(u=0\) 处的展开，并通过取其指数来重建被积函数；由此得到
+\begin{equation}\tag{17.2.26}\label{eq:17.2.26}
+\nu ! = \sqrt { \nu } \left( \frac { \nu } { e } \right) ^{\nu} \int _ { - \sqrt { \nu } } ^{\infty} \exp \left\{ - \frac { u ^{2} } { 2 } + \frac { u ^{3} } { 3 \sqrt { \nu } } - \frac { u ^{4} } { 4 \nu } + \cdots \right\} d u .
+\end{equation}
+若 \(\nu\) 足够大，则式（25）中的被积函数可被单因子 \(\exp(-u^2/2)\) 所取代；此外，由于该积分的主要贡献仅来自那些 \(u\) 的范围，在该范围内 \(|u|\) 约等于一，因此可以将积分下限替换为 \(-\infty\)。由此我们得到了斯特林公式
+\begin{equation}\tag{17.2.27}\label{eq:17.2.27}
+\nu ! \approx \sqrt { ( 2 \pi \nu ) ( \nu / e ) ^{\nu} } ,  \nu \gg 1 .
+\end{equation}
+更为细致的分析得出斯特林级数
+\begin{equation}\tag{17.2.28}\label{eq:17.2.28}
+\nu ! = \sqrt { ( 2 \pi \nu ) \left( \frac { \nu } { e } \right) ^{\nu} } \left[ 1 + \frac { 1 } { 12 \nu } + \frac { 1 } { 28 8 \nu ^{2} } - \frac { 13 9 } { 51 84 0 \nu ^{3} } - \frac { 57 1 } { 24 88 32 0 \nu ^{4} } + \cdots \right] .
+\end{equation}
+接下来，我们来考察函数 \(\ln(\nu!)\)。对应于式（27），对于大 \(\nu\)，我们有
+\begin{equation}\tag{17.2.29}\label{eq:17.2.29}
+\ln \left( \nu ! \right) = \left( \nu + \frac { 1 } { 2 } \right) \ln \nu - \nu + \frac { 1 } { 2 } \ln \left( 2 \pi \right) + \left[ \frac { 1 } { 12 \nu } - \frac { 1 } { 36 0 \nu ^{3} } + \frac { 1 } { 12 60 \nu ^{5} } - \frac { 1 } { 16 80 \nu ^{7} } + \cdots \right] .
+\end{equation}
+在大多数实际应用中，我们可以写成
+\begin{equation}\tag{17.2.30}\label{eq:17.2.30}
+\ln ( \nu ! ) \approx ( \nu \ln \nu - \nu ) .
+\end{equation}
+我们注意到，式（29）可以通过简单地运用欧拉-麦克劳林公式获得。由于 \(\nu\) 很大，我们只需考虑其整数值；根据定义，
+\begin{equation}\tag{17.2.31}\label{eq:17.2.31}
+\ln ( n ! ) = \sum _ { i = 1 } ^{n} ( \ln i ) .
+\end{equation}
+将求和替换为积分，我们得到
+\begin{equation}\tag{17.2.32}\label{eq:17.2.32}
+\begin{array}{rl} & { \ln ( n ! ) \simeq \int _ { 1 } ^{n} ( \ln x ) d x = ( x \ln x - x ) \bigg | _ { x = 1 } ^{x = n} } \\& { \approx ( n \ln n - n ) , } \end{array}
+\end{equation}
+这一结果与式（29）完全一致。
+然而，我们必须提醒大家的是：尽管近似式（29）本身已经足够精确，但将其取指数并写出 \(\nu! \approx (\nu/e)^{\nu}\) 却是错误的。因为这种做法会使得 \(\nu!\) 的计算结果受到一个 \(O(\nu^{1/2})\) 的影响，而这个影响值可能相当可观——详见式（26）。在 \(\ln(\nu!)\) 的表达式中，相应的项确实可以忽略不计。
+狄拉克 \(\delta\) 函数 我们从高斯分布函数入手
+\begin{equation}\tag{17.2.33}\label{eq:17.2.33}
+p ( x , x _ { 0 } , \sigma ) = \frac { 1 } { \sqrt { ( 2 \pi ) \sigma } } e ^{- ( x - x _ { 0} ) ^{2} / 2 \sigma ^{2} } ,
+\end{equation}
+该函数满足归一化条件
+\begin{equation}\tag{17.2.34}\label{eq:17.2.34}
+\int _ { - \infty } ^{\infty} p ( x , x _ { 0 } , \sigma ) d x = 1 .
+\end{equation}
+函数 \(p(x)\) 关于其最大值所在的位置 \(x_0\) 对称；该最大值的高度与参数 \(\sigma\) 成反比，而其宽度则与 \(\sigma\) 成正比，曲线下的总面积始终为一个常数。随着 \(\sigma\) 越来越小，函数 \(p(x)\) 的宽度会越来越窄，在中心点 \(x_0\) 处则会越来越高，且在所有 \(\sigma\) 下都满足条件（31）——参见图 B.1。
+当 \(\sigma \to 0\) 时，我们得到一个函数，其在 \(x = x_0\) 处的值无限大，而在 \(x \neq x_0\) 处却趋近于零，曲线下的面积依然等于一。这种极限形式的
+\begin{equation}\tag{17.2.35}\label{eq:17.2.35}
+\begin{array}{rl} { ) } & { { } \delta ( x - x _ { 0 } ) = 0  \mathrm { ~ f o r ~ a l l ~ } x \neq x _ { 0 } , } \end{array}
+\end{equation}
+\begin{equation}\tag{17.2.36}\label{eq:17.2.36}
+( \mathrm { i i } )  \int _ { - \infty } ^{\infty} \delta ( x - x _ { 0 } ) d x = 1 .
+\end{equation}
+条件（32）和（33）本身即意味着，在\(x = x_0\)处，\(\delta(x - x_0) = +\infty\)；同时，式（33）中的积分区间不必从\(-\infty\)一直延伸到\(+\infty\)；事实上，只要包含点\(x = x_0\)的任意区间即可。因此，我们可以将式（33）改写为
+\begin{equation}\tag{17.2.37}\label{eq:17.2.37}
+\int _ { A } ^{B} \delta ( x - x _ { 0 } ) d x = 1  \mathrm { i f } \, A < x _ { 0 } < B .
+\end{equation}
+由此可知，对于任意光滑且连续的函数\(f(x)\)，
+\begin{equation}\tag{17.2.38}\label{eq:17.2.38}
+\int _ { A } ^{B} f ( x ) \delta ( x - x _ { 0 } ) d x = f ( x _ { 0 } )  { \mathrm { i f ~ } } A < x _ { 0 } < B .
+\end{equation}
+另一种常用于表示狄拉克δ函数的极限过程如下：
+\begin{equation}\tag{17.2.39}\label{eq:17.2.39}
+\delta ( x - x _ { 0 } ) = \operatorname* { L i m } _ { \gamma \to 0 } \frac { \gamma } { \pi \left\{ ( x - x _ { 0 } ) ^{2} + \gamma ^{2} \right\} } .
+\end{equation}
+要理解这一表示方式的合理性，我们注意到：对于\(x \neq x_0\)，该函数的衰减速度为\(\gamma\)；而当\(x = x_0\)时，其衰减速度则为\(\gamma^{-1}\)；此外，对于所有\(\gamma\)，
+\begin{equation}\tag{17.2.40}\label{eq:17.2.40}
+\int _ { - \infty } ^{\infty} \frac { \gamma } { \pi \left\{ ( x - x _ { 0 } ) ^{2} + \gamma ^{2} \right\} } d x = \frac { 1 } { \pi } \left[ \tan ^{- 1} \frac { ( x - x _ { 0 } ) } { \gamma } \right] _ { - \infty } ^{\infty} = 1 .
+\end{equation}
+狄拉克δ函数的一个积分表示形式是
+\begin{equation}\tag{17.2.41}\label{eq:17.2.41}
+\delta ( x - x _ { 0 } ) = \frac { 1 } { 2 \pi } \int _ { - \infty } ^{\infty} e ^{i k ( x - x _ { 0} ) } d k ,
+\end{equation}
+这意味着，狄拉克δ函数是"常数的傅里叶变换"。我们注意到，当\(x = x_{0}\)时，式（38）中的被积函数在整个积分区间内均为1，因此函数会发散。另一方面，当\(x \neq x_{0}\)时，被积函数的振荡特性使得积分结果趋近于零。最后，当我们将该函数在包含点\(x = x_{0}\)的区间上进行积分时，
+\begin{equation}\tag{17.2.42}\label{eq:17.2.42}
+\frac { 1 } { 2 \pi } \int _ { - \infty } ^{\infty} \left[ \int _ { x _ { 0 } - L } ^{x _ { 0} + L } e ^{i k ( x - x _ { 0} ) } d x \right] d k = \int _ { - \infty } ^{\infty} \frac { e ^{i k L} - e ^{- i k L} } { 2 \pi ( i k ) } d k = \int _ { - \infty } ^{\infty} \frac { \sin ( k L ) } { \pi k } d k = 1 ,
+\end{equation}
+无论选择何种\(L\)，都可得出同样的结论。
+通过观察狄拉克δ函数的积分表示形式与其先前的表示方法之间的关系，颇具启发性。为此，我们在式（38）的被积函数中引入了一个收敛因子\(\exp(-\gamma k^2)\)，其中\(\gamma\)是一个很小的正数。当\(\gamma\)趋近于0时，所得函数应能精确再现狄拉克δ函数；因此，我们预期
+\begin{equation}\tag{17.2.43}\label{eq:17.2.43}
+\delta ( x - x _ { 0 } ) = \frac { 1 } { 2 \pi } \operatorname* { L i m } _ { \gamma \to 0 } \int _ { - \infty } ^{\infty} e ^{i k ( x - x _ { 0} ) - \gamma k ^{2} } d k .
+\end{equation}
+如果我们回想一下，
+\begin{equation}\tag{17.2.44}\label{eq:17.2.44}
+\int _ { - \infty } ^{\infty} \cos ( k x ) e ^{- \gamma k ^ { 2} } \, d k = 2 \int _ { 0 } ^{\infty} \cos ( k x ) e ^{- \gamma k ^ { 2} } \, d k = \sqrt { \left( \frac { \pi } { \gamma } \right) e ^{- x ^ { 2} / 4 \gamma } } \, ,
+\end{equation}
+同时，
+\begin{equation}\tag{17.2.45}\label{eq:17.2.45}
+\int _ { - \infty } ^{\infty} \sin ( k x ) e ^{- \gamma k ^ { 2} } d k = 0 .
+\end{equation}
+据此，式（40）变为
+\begin{equation}\tag{17.2.46}\label{eq:17.2.46}
+\delta ( x - x _ { 0 } ) = \operatorname* { L i m } _ { \gamma \to 0 } \frac { 1 } { \sqrt { ( 4 \pi \gamma ) } } e ^{- ( x - x _ { 0} ) ^{2} / 4 \gamma } ,
+\end{equation}
+这正是我们最初所采用的表示方式。\(^{2}\)
+最后，狄拉克δ函数的记号可以轻松推广至多维空间。例如，在\(n\)维空间中，
+\begin{equation}\tag{17.2.47}\label{eq:17.2.47}
+\delta ( \pmb { r } ) = \delta ( x _ { 1 } ) \cdots \delta ( x _ { n } ) ,
+\end{equation}
+这样，
+\begin{equation}\tag{17.2.48}\label{eq:17.2.48}
+\begin{array}{rl} { \mathrm { ( i ) } } & { { } \delta ( \pmb { r } ) = 0  \mathrm { f o r ~ a l l ~ } r \neq 0 , } \end{array}
+\end{equation}
+\begin{equation}\tag{17.2.49}\label{eq:17.2.49}
+( \mathrm { i i } )  \int _ { - \infty } ^{\infty} \cdots \int _ { - \infty } ^{\infty} \delta ( \boldsymbol { r } ) d x _ { 1 } \cdots d x _ { n } = 1 .
+\end{equation}
+狄拉克δ函数的积分表示形式为
+\begin{equation}\tag{17.2.50}\label{eq:17.2.50}
+\delta ( \pmb { r } ) = \frac { 1 } { ( 2 \pi ) ^{n} } \int _ { - \infty } ^{\infty} \cdots \int _ { - \infty } ^{\infty} e ^{i ( \pmb { k} \cdot \pmb { r } ) } d ^{n} k .
+\end{equation}
+再一次，我们或许可以这样书写
+\begin{equation}\tag{17.2.51}\label{eq:17.2.51}
+\begin{array}{rl} & { \delta ( \pmb { r } ) = \frac { 1 } { ( 2 \pi ) ^{n} } \operatorname* { L i m } _ { \gamma \to 0 } \int _ { - \infty } ^{\infty} \cdots \int _ { - \infty } ^{\infty} e ^{i ( \pmb { k} \cdot \pmb { r } ) - \gamma k ^{2} } d ^{n} k } \\& {  = \operatorname* { L i m } _ { \gamma \to 0 } \left( \frac { 1 } { 4 \pi \gamma } \right) ^{n / 2} e ^{- r ^ { 2} / 4 \gamma } . } \end{array}
+\end{equation}
+\section{\texorpdfstring{"体积"与"表面积"——n维球体的体积，半径为 \(R\)}{"体积"与"表面积"——n维球体的体积，半径为 R}}\label{c-ux4f53ux79efux4e0eux8868ux9762ux79efnux7ef4ux7403ux4f53ux7684ux4f53ux79efux534aux5f84ux4e3a-r}
+考虑一个 n 维空间，在这个空间中，点的位置用向量 \(r\) 表示，即 \(v\) 个笛卡尔坐标分量 \((x_1,\ldots,x_n)\)。在这个空间中，"体积元素"\(dV_h\) 将是
+\begin{equation}\tag{17.3.1}\label{eq:17.3.1}
+d ^{n} r = \prod _ { i = 1 } ^{n} ( d x _ { i } ) ;
+\end{equation}
+相应地，半径为 \(R\) 的球体的"体积"\(V_{n}\) 可以表示为
+\begin{equation}\tag{17.3.2}\label{eq:17.3.2}
+V_{n}(R)=\int\cdots\int\prod_{i=1}^{n}(dx_{i}).\\0\leq\sum_{i=1}^{n}x_{i}^{2}\leq R^{2}
+\end{equation}
+² 读者可以验证，将收敛因子 \(\exp(-\gamma|k|)\) 引入 (38)，而非 \(\exp(-\gamma k^{2})\)，会得到式 (36) 的表示形式。
+显然，\(V_{n}\) 与 \(R^{n}\) 成正比，因此我们可以将其写成
+\begin{equation}\tag{17.3.3}\label{eq:17.3.3}
+V _ { n } ( R ) = C _ { n } R ^{n} ,
+\end{equation}
+其中 \(C_{n}\) 是一个仅依赖于空间维度的常数。显然，"体积元素"\(dV_{n}\) 也可以写成
+\begin{equation}\tag{17.3.4}\label{eq:17.3.4}
+d V _ { n } = S _ { n } ( R ) d R = n C _ { n } R ^{n - 1} d R ,
+\end{equation}
+其中 \(S_{n}(R)\) 表示球体的"表面积"。
+为了求解 \(C_{n}\)，我们利用以下公式
+\begin{equation}\tag{17.3.5}\label{eq:17.3.5}
+\int _ { - \infty } ^{\infty} \exp ( - x ^{2} ) d x = \pi ^{1 / 2} .
+\end{equation}
+将 \(n\) 个这样的积分相乘，每个积分对应一个 \(x_i\)，我们得到
+\begin{equation}\tag{17.3.6}\label{eq:17.3.6}
+\begin{aligned}
+\pi^{n/2}
+&=\int_{x_i=-\infty}^{x_i=\infty}
+\exp\!\left(-\sum_{i=1}^{n}x_i^2\right)\prod_{i=1}^{n}(dx_i) \\
+&=\int_0^{\infty}\exp(-R^2)\,nC_nR^{n-1}\,dR \\
+&= nC_n\cdot\frac{1}{2}\Gamma\!\left(\frac{n}{2}\right)
+=\left(\frac{n}{2}\right)!C_n.
+\end{aligned}
+\end{equation}
+在此过程中，我们运用了公式 (B.11)，其中 \(\alpha = 1\)。因此，
+\begin{equation}\tag{17.3.7}\label{eq:17.3.7}
+C _ { n } = \pi ^{n / 2} \Big / \Big ( \frac { n } { 2 } \Big ) ! ,
+\end{equation}
+于是，
+\begin{equation}\tag{17.3.8}\label{eq:17.3.8}
+V _ { n } ( R ) = \frac { \pi ^{n / 2} } { ( n / 2 ) ! } R ^{n}  \mathrm { a n d }  S _ { n } ( R ) = \frac { 2 \pi ^{n / 2} } { \Gamma ( n / 2 ) } R ^{n - 1} ,
+\end{equation}
+这些正是我们所期望的结果。
+或者，你也可以选择从一开始就使用球极坐标系——例如，在计算傅里叶变换时，就可以直接采用这种坐标系。
+\begin{equation}\tag{17.3.9}\label{eq:17.3.9}
+I ( k ) = \int f ( r ) e ^{i k \cdot r} d ^{n} r .
+\end{equation}
+在这种情况下，
+\begin{equation}\tag{17.3.10}\label{eq:17.3.10}
+d ^{n} r = r ^{n - 1} ( \sin \theta _ { 1 } ) ^{n - 2} \cdots ( \sin \theta _ { n - 2 } ) ^{1} d r \, d \theta _ { 1 } \cdots d \theta _ { n - 2 } d \phi ,
+\end{equation}
+其中 \(\theta_{i}\) 的取值范围为 0 到 \(\pi\)，而 \(\phi\) 的取值范围为 0 到 \(2\pi\)。我们将极轴定为 \(k\) 方向，于是式（17.3.8） 变为
+\begin{equation}\tag{17.3.11}\label{eq:17.3.11}
+I ( \pmb { k } ) = \int f ( r ) e ^{i k r \cos \theta _ { 1} } r ^{n - 1} ( \sin \theta _ { 1 } ) ^{n - 2} \cdots ( \sin \theta _ { n - 2 } ) ^{1} d r \, d \theta _ { 1 } \cdots d \theta _ { n - 2 } d \phi .
+\end{equation}
+对角坐标 \(\theta_{1}, \theta_{2}, \theta_{3}, \ldots, \theta_{n-2}\) 和 \(\phi\) 进行积分，会得到如下因子
+\begin{equation}\tag{17.3.12}\label{eq:17.3.12}
+\pi ^{1 / 2} \Gamma \left( \frac { n - 1 } { 2 } \right) \left( \frac { 2 } { k r } \right) ^{( n - 2 ) / 2} J _ { ( n - 2 ) / 2 } ( k r ) \times B \left( \frac { n - 2 } { 2 } , \frac { 1 } { 2 } \right) \cdot B \left( \frac { n - 3 } { 2 } , \frac { 1 } { 2 } \right) \cdots B \left( 1 , \frac { 1 } { 2 } \right) \cdot 2 \pi ,
+\end{equation}
+其中 \(J_{\nu}(x)\) 是普通的贝塞尔函数，而 \(B(\mu,\nu)\) 是贝塔函数；请参阅公式 (B.17) 和 (B.18)。此时，式（17.3.10） 变为
+\begin{equation}\tag{17.3.13}\label{eq:17.3.13}
+I ( \pmb { k } ) = ( 2 \pi ) ^{n / 2} \int _ { 0 } ^{\infty} f ( r ) \left( \frac { 1 } { k r } \right) ^{( n - 2 ) / 2} J _ { ( n - 2 ) / 2 } ( k r ) r ^{n - 1} d r ,
+\end{equation}
+这便是我们的主要结果。
+在 \(k \to 0\) 的极限下，\(J_{\nu}(kr) \to \left(\frac{1}{2}kr\right)^{\nu}/\Gamma(\nu+1)\)，因此，
+\begin{equation}\tag{17.3.14}\label{eq:17.3.14}
+I ( 0 ) = \frac { 2 \pi ^{n / 2} } { \Gamma ( n / 2 ) } \int _ { 0 } ^{\infty} f ( r ) r ^{n - 1} d r ,
+\end{equation}
+这与 (3) 和 (7b) 相一致。另一方面，如果我们把 \(f(r)\) 视为常数，比如 \(1/(2\pi)^n\)，那么我们应当能够得到 n 维 Dirac \(\delta\) 函数的另一种表示形式；请参阅式（17.3.8） 和 (B.47)。由此，我们从 (11) 得到，
+\begin{equation}\tag{17.3.15}\label{eq:17.3.15}
+\delta ( \pmb { k } ) = \frac { 1 } { ( 2 \pi ) ^{n / 2} } \int _ { 0 } ^{\infty} \left( \frac { 1 } { k r } \right) ^{( n - 2 ) / 2} J _ { ( n - 2 ) / 2 } ( k r ) r ^{n - 1} d r .
+\end{equation}
+作为验证，我们在式（13）的被积函数中引入了一个因子 \(\exp(-\alpha r^{2})\)，从而得到
+\begin{equation}\tag{17.3.16}\label{eq:17.3.16}
+\delta ( \pmb { k } ) = \operatorname* { L i m } _ { \alpha \to 0 } \frac { 1 } { ( 2 \pi ) ^{n / 2} } \int _ { 0 } ^{\infty} e ^{- \alpha r ^ { 2} } \left( \frac { 1 } { k r } \right) ^{( n - 2 ) / 2} J _ { ( n - 2 ) / 2 } ( k r ) r ^{n - 1} d r = \operatorname* { L i m } _ { \alpha \to 0 } \left( \frac { 1 } { 4 \pi \alpha } \right) ^{n / 2} e ^{- k ^ { 2} / 4 \alpha } ,
+\end{equation}
+与式（B.49）完全一致。另一方面，如果我们使用因子 \(\exp(-\alpha r)\) 而非 \(\exp(-\alpha r^2)\)，则会得到
+\begin{equation}\tag{17.3.17}\label{eq:17.3.17}
+\delta ( k ) = \operatorname* { L i m } _ { \alpha \to 0 } \Gamma \left( \frac { n + 1 } { 2 } \right) \frac { \alpha } { \{ \pi ( k ^{2} + \alpha ^{2} ) \} ^{( n + 1 ) / 2} } ,
+\end{equation}
+这正是对式（B.36）的推广。
+\section{关于玻色-爱因斯坦函数}\label{d-ux5173ux4e8eux73bbux8272-ux7231ux56e0ux65afux5766ux51fdux6570}
+在玻色-爱因斯坦体系的理论中，我们常常遇到如下类型的积分：
+\begin{equation}\tag{17.4.1}\label{eq:17.4.1}
+G _ { \nu } ( z ) = \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z ^{- 1} e ^{x} - 1 }  ( 0 \leq z < 1 , \nu > 0 ; z = 1 , \nu > 1 ) .
+\end{equation}
+在本附录中，我们研究了 \(G_{\nu}(z)\) 在参数 \(z\) 所规定范围 \(^{3}\) 内的行为。首先，我们注意到：
+\begin{equation}\tag{17.4.2}\label{eq:17.4.2}
+\operatorname* { L i m } _ { z \to 0 } G _ { \nu } ( z ) = \int _ { 0 } ^{\infty} z e ^{- x} x ^{\nu - 1} d x = z \Gamma ( \nu ) .
+\end{equation}
+因此，引入另一类函数 \(g_{\nu}(z)\) 似乎十分有用，使得
+\begin{equation}\tag{17.4.3}\label{eq:17.4.3}
+g _ { \nu } ( z ) \equiv \frac { 1 } { \Gamma ( \nu ) } G _ { \nu } ( z ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z ^{- 1} e ^{x} - 1 } .
+\end{equation}
+对于小的 \(z\)，式（3）中的被积函数可以按 \(z\) 的幂级数展开，其结果为
+\begin{equation}\tag{17.4.4}\label{eq:17.4.4}
+g _ { \nu } ( z ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} x ^{\nu - 1} \sum _ { l = 1 } ^{\infty} ( z e ^{- x} ) ^{l} d x = \sum _ { l = 1 } ^{\infty} \frac { z ^{l} } { l ^{\nu} } = z + \frac { z ^{2} } { 2 ^{\nu} } + \frac { z ^{3} } { 3 ^{\nu} } + \cdots ;
+\end{equation}
+因此，在 \(z \ll 1\) 的情况下，对于所有 \(\nu\)，函数 \(g_{\nu}(z)\) 其行为与 \(z\) 本身相当。此外，\(g_{\nu}(z)\) 是一个单调递增的函数，其在物理上所关心的范围内，最大值出现在 \(z \to 1\) 时；随后，当 \(\nu > 1\) 时，\(g_{\nu}(z)\) 会趋近于黎曼ζ函数 \(\zeta(\nu)\)：
+\begin{equation}\tag{17.4.5}\label{eq:17.4.5}
+g _ { \nu } ( 1 ) = \sum _ { l = 1 } ^{\infty} \frac { 1 } { l ^{\nu} } = \zeta ( \nu )  ( \nu > 1 ) .
+\end{equation}
+一些 \(\zeta(\nu)\) 的数值如下：
+\begin{equation}\tag{17.4.6}\label{eq:17.4.6}
+\begin{array}{rl} & { \zeta ( 2 ) = \frac { \pi ^{2} } { 6 } \simeq 1 . 64 49 3 ,  \zeta ( 4 ) = \frac { \pi ^{4} } { 90 } \simeq 1 . 08 23 2 ,  \zeta ( 6 ) = \frac { \pi ^{6} } { 94 5 } \simeq 1 . 01 73 4 , } \\& { \zeta \left( \frac { 3 } { 2 } \right) \simeq 2 . 61 23 8 ,  \zeta \left( \frac { 5 } { 2 } \right) \simeq 1 . 34 14 9 ,  \zeta \left( \frac { 7 } { 2 } \right) \simeq 1 . 12 67 3 , } \end{array}
+\end{equation}
+最后，
+\begin{equation}\tag{17.4.7}\label{eq:17.4.7}
+\zeta ( 3 ) \simeq 1 . 20 20 6 ,  \zeta ( 5 ) \simeq 1 . 03 69 3 ,  \zeta ( 7 ) \simeq 1 . 00 83 5 .
+\end{equation}
+对于 \(\nu \leq 1\)，函数 \(g_{\nu}(z)\) 随 \(z\) 趋近于 1 时会发散。而 \(\nu = 1\) 的情形则相对简单，因为此时 \(g_{\nu}(z)\) 已经具备了封闭形式：
+\begin{equation}\tag{17.4.8}\label{eq:17.4.8}
+g _ { 1 } ( z ) = \int _ { 0 } ^{\infty} \frac { d x } { z ^{- 1} e ^{x} - 1 } = \ln ( 1 - z e ^{- x} ) \bigg | _ { 0 } ^{\infty} = - \ln ( 1 - z ) .
+\end{equation}
+当 \(z \to 1\) 时，\(g_{1}(z)\) 会以对数方式发散。将 \(z = e^{-\alpha}\) 代入，我们得到
+\begin{equation}\tag{17.4.9}\label{eq:17.4.9}
+g _ { 1 } ( e ^{- \alpha} ) = - \ln ( 1 - e ^{- \alpha} ) \xrightarrow { \alpha \rightarrow 0 } \ln ( 1 / \alpha ) .
+\end{equation}
+\(^{3}\)Clunie 在 1954 年曾讨论过 \(G_{\nu}(z)\) 在 \(z > 1\) 时的行为。
+对于 \(\nu < 1\)，当 \(\alpha \to 0\) 时，\(g_{\nu}(e^{-\alpha})\) 的行为可按如下方式确定：
+\begin{equation}\tag{17.4.10}\label{eq:17.4.10}
+g _ { \nu } ( e ^{- \alpha} ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { e ^{\alpha + x} - 1 } \approx \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { \alpha + x } .
+\end{equation}
+设 \(x = \alpha\tan^{2}\theta\)，并利用式（B.17），我们得到
+\begin{equation}\tag{17.4.11}\label{eq:17.4.11}
+g _ { \nu } ( e ^{- \alpha} ) \approx \frac { \Gamma ( 1 - \nu ) } { \alpha ^{1 - \nu} }  ( 0 < \nu < 1 ) .
+\end{equation}
+式（8）将 \(g_{\nu}(e^{-\alpha})\) 函数在 \(\alpha=0\) 处的奇点孤立出来；该函数的其余部分可以按 \(\alpha\) 的幂级数展开，其结果如罗宾逊（1951）所指出的那样。
+\begin{equation}\tag{17.4.12}\label{eq:17.4.12}
+g _ { \nu } ( e ^{- \alpha} ) = \frac { \Gamma ( 1 - \nu ) } { \alpha ^{1 - \nu} } + \sum _ { i = 0 } ^{\infty} \frac { ( - 1 ) ^{i} } { i ! } \zeta ( \nu - i ) \alpha ^{i} ,
+\end{equation}
+\(\zeta(s)\) 是黎曼ζ函数，且已通过解析延拓扩展至所有 \(s \neq 1\)。对 \(g_{\nu}(z)\) 进行简单的求导，即可得出递推关系
+\begin{equation}\tag{17.4.13}\label{eq:17.4.13}
+z \frac { \partial } { \partial z } [ g _ { \nu } ( z ) ] \equiv \frac { \partial } { \partial ( \ln z ) } g _ { \nu } ( z ) = g _ { \nu - 1 } ( z ) .
+\end{equation}
+这一关系可从级数展开式（4）中轻松推导出来，但同样也可以从定义积分（3）中得出。因此，我们有
+\begin{equation}\tag{17.4.14}\label{eq:17.4.14}
+z \frac { \partial } { \partial z } [ g _ { \nu } ( z ) ] = \frac { z } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { e ^{x} x ^{\nu - 1} d x } { ( e ^{x} - z ) ^{2} } .
+\end{equation}
+通过分部积分法，我们得到
+\begin{equation}\tag{17.4.15}\label{eq:17.4.15}
+z \frac { \partial } { \partial z } \left[ g _ { \nu } ( z ) \right] = \frac { z } { \Gamma ( \nu ) } \left[ - \frac { x ^{\nu - 1} } { e ^{x} - z } \Big | _ { 0 } ^{\infty} + ( \nu - 1 ) \int _ { 0 } ^{\infty} \frac { x ^{\nu - 2} d x } { e ^{x} - z } \right] .
+\end{equation}
+在两个极限处，积分部分都消去了（前提是 \(\nu > 1\)），而尚未被积分的部分恰好等于 \(g_{\nu-1}(z)\)。因此，对于所有 \(\nu > 1\)，递推式（17.4.10） 的有效性得到了证实。
+将 (10) 作为函数 \(g_{\nu}(z)\) 定义的一部分，可以将该函数的概念扩展至所有 \(\nu\)，包括 \(\nu \leq 0\)。按照这一思路，罗宾逊证明了，对于所有 \(\nu < 1\) 以及所有非整数的 \(\nu > 1\)，式（17.4.9） 都适用。而对于 \(\nu = m\) 这一正整数，我们则有：
+\begin{equation}\tag{17.4.16}\label{eq:17.4.16}
+g _ { m } ( e ^{- \alpha} ) = \frac { ( - 1 ) ^{m - 1} } { ( m - 1 ) ! } \left[ \sum _ { i = 1 } ^{m - 1} \frac { 1 } { i } - \ln \alpha \right] \alpha ^{m - 1} + \sum _ { i \neq m - 1 } ^{\infty} \frac { ( - 1 ) ^{i} } { i ! } \zeta ( m - i ) \alpha ^{i} .
+\end{equation}
+式（17.4.9） 和 式（17.4.11） 共同为小 \(\alpha\) 条件下的函数 \(g_{\nu}(e^{-\alpha})\) 提供了完整的描述；可以验证，这两个表达式均符合递推关系。
+\begin{equation}\tag{17.4.17}\label{eq:17.4.17}
+\frac { \partial } { \partial \alpha } g _ { \nu } ( e ^{- \alpha} ) = - g _ { \nu - 1 } ( e ^{- \alpha} ) .
+\end{equation}
+对于特殊情形 \(\nu = \frac{5}{2}\)、\(\frac{3}{2}\) 和 \(\frac{1}{2}\)，我们从 (9) 中得出
+\begin{equation}\tag{17.4.18}\label{eq:17.4.18}
+g _ { 5 / 2 } ( \alpha ) = 2 . 36 \alpha ^{3 / 2} + 1 . 34 - 2 . 61 \alpha - 0 . 73 0 \alpha ^{2} + 0 . 03 47 \alpha ^{3} + \cdots ,
+\end{equation}
+\begin{equation}\tag{17.4.19}\label{eq:17.4.19}
+g _ { 3 / 2 } ( \alpha ) = - 3 . 54 \alpha ^{1 / 2} + 2 . 61 + 1 . 46 \alpha - 0 . 10 4 \alpha ^{2} + 0 . 00 42 5 \alpha ^{3} + \cdots ,
+\end{equation}
+\begin{equation}\tag{17.4.20}\label{eq:17.4.20}
+g _ { 1 / 2 } ( \alpha ) = 1 . 77 \alpha ^{- 1 / 2} - 1 . 46 + 0 . 20 8 \alpha - 0 . 01 28 \alpha ^{2} + \cdots .
+\end{equation}
+此处所引用的项足以在所有 \(\alpha \leq 1\) 时，使精度达到 1\% 以上。伦敦（1954）已在 \(0 \leq \alpha \leq 2\) 的范围内对这些函数的数值进行了表格化处理。第~7~章和第~9~章中涉及相对论玻色子的若干重要积分的数值如下：
+\begin{equation}\tag{17.4.21}\label{eq:17.4.21}
+\int _ { 0 } ^{\infty} x ^{2} \ln ( 1 - e ^{- x} ) d x = - 2 \zeta ( 4 ) = - \frac { \pi ^{4} } { 45 } \, ,
+\end{equation}
+\begin{equation}\tag{17.4.22}\label{eq:17.4.22}
+\int _ { 0 } ^{\infty} \frac { x ^{2} } { e ^{x} - 1 } d x = 2 \zeta ( 3 ) \simeq 2 . 40 41 1 ,
+\end{equation}
+\begin{equation}\tag{17.4.23}\label{eq:17.4.23}
+\int _ { 0 } ^{\infty} \frac { x ^{3} } { e ^{x} - 1 } d x = 6 \zeta ( 4 ) = \frac { \pi ^{4} } { 15 } .
+\end{equation}
+\section{关于费米-狄拉克函数}\label{e-ux5173ux4e8eux8d39ux7c73-ux72c4ux62c9ux514bux51fdux6570}
+在费米-狄拉克系统的理论中，我们会遇到这类积分
+\begin{equation}\tag{17.5.1}\label{eq:17.5.1}
+F _ { \nu } ( z ) = \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z ^{- 1} e ^{x} + 1 }  ( 0 \leq z < \infty , \nu > 0 ) .
+\end{equation}
+在本附录中，我们研究 \(F_{\nu}(z)\) 在参数 \(z\) 全范围内的行为。出于与玻色-爱因斯坦积分相同的原因，我们在此引入另一函数 \(f_{\nu}(z)\)，使得
+\begin{equation}\tag{17.5.2}\label{eq:17.5.2}
+f _ { \nu } ( z ) \equiv \frac { 1 } { \Gamma ( \nu ) } F _ { \nu } ( z ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z ^{- 1} e ^{x} + 1 } .
+\end{equation}
+对于小 \(z\)，(2) 中的被积函数可以按 \(z\) 的幂级数展开，其结果为
+\begin{equation}\tag{17.5.3}\label{eq:17.5.3}
+f _ { \nu } ( z ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} x ^{\nu - 1} \sum _ { l = 1 } ^{\infty} ( - 1 ) ^{l - 1} ( z e ^{- x} ) ^{l} d x = \sum _ { l = 1 } ^{\infty} ( - 1 ) ^{l - 1} \frac { z ^{l} } { l ^{\nu} } = z - \frac { z ^{2} } { 2 ^{\nu} } + \frac { z ^{3} } { 3 ^{\nu} } - \cdots ;
+\end{equation}
+因此，对于 \(z \ll 1\)，对于所有 \(\nu\)，函数 \(f_{\nu}(z)\) 的行为近似等同于 \(z\) 本身。
+函数 \(f_{\nu}(z)\) 与玻色-爱因斯坦函数 \(g_{\nu}(z)\) 之间的关系如下：
+\begin{equation}\tag{17.5.4}\label{eq:17.5.4}
+f _ { \nu } ( z ) = g _ { \nu } ( z ) - 2 ^{1 - \nu} g _ { \nu } ( z ^{2} )  ( 0 \leq z < 1 , \, \nu > 0 ; \, z = 1 , \, \nu > 1 ) .
+\end{equation}
+这有助于确定第~9~章中所需的相对论费米-狄拉克积分的数值：
+\begin{equation}\tag{17.5.5}\label{eq:17.5.5}
+\int _ { 0 } ^{\infty} x ^{2} \ln ( 1 + e ^{- x} ) d x = { \frac { 7 \pi ^{4} } { 36 0 } } ,
+\end{equation}
+\begin{equation}\tag{17.5.6}\label{eq:17.5.6}
+\int _ { 0 } ^{\infty} \frac { x ^{2} } { e ^{x} + 1 } d x = \frac { 3 \zeta ( 3 ) } { 2 } \simeq 1 . 80 30 9 ,
+\end{equation}
+\begin{equation}\tag{17.5.7}\label{eq:17.5.7}
+\int _ { 0 } ^{\infty} { \frac { x ^{3} } { e ^{x} + 1 } } d x = { \frac { 7 \pi ^{4} } { 12 0 } } .
+\end{equation}
+函数 \(f_{\nu}(z)\) 和 \(f_{\nu-1}(z)\) 通过递推关系相连
+\begin{equation}\tag{17.5.8}\label{eq:17.5.8}
+z \frac { \partial } { \partial z } [ f _ { \nu } ( z ) ] \equiv \frac { \partial } { \partial ( \ln z ) } f _ { \nu } ( z ) = f _ { \nu - 1 } ( z ) ;
+\end{equation}
+这一关系可从级数展开式（17.5.3） 中轻松推导出来，但同样也可以从定义积分 (2) 中得出。
+为了研究费米-狄拉克积分在大 \(z\) 时的行为，我们引入了变量
+\begin{equation}\tag{17.5.9}\label{eq:17.5.9}
+\xi = \ln z ,
+\end{equation}
+因此，
+\begin{equation}\tag{17.5.10}\label{eq:17.5.10}
+F _ { \nu } ( e ^{\xi} ) \equiv \Gamma ( \nu ) f _ { \nu } ( e ^{\xi} ) = \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { e ^{x - \xi} + 1 } .
+\end{equation}
+对于大 \(\xi\)，式（8）中的情形主要由因子 \((e^{x-\xi}+1)^{-1}\) 所主导。该因子偏离其极限值——即当 \(x\to\infty\) 时为零，当 \(x\to0\) 时则接近于一——仅在点 \(x=\xi\) 的邻近区域中才具有显著影响；参见图 E.1。这一"显著区域"的宽度为 \(O(1)\)，远小于总的有效积分区间，后者为 \(O(\xi)\)。因此，在最低阶近似下，我们可以用一个阶梯函数来替代图 E.1 中的实际曲线，即：
+最终得到
+\begin{equation}\tag{17.5.11}\label{eq:17.5.11}
+F _ { \nu } ( e ^{\xi} ) = \frac { \xi ^{\nu} } { \nu } - \int _ { 0 } ^{\xi} \frac { ( \xi - \eta _ { 1 } ) ^{\nu - 1} d \eta _ { 1 } } { e ^{\eta _ { 1} } + 1 } + \int _ { 0 } ^{\infty} \frac { ( \xi + \eta _ { 2 } ) ^{\nu - 1} d \eta _ { 2 } } { e ^{\eta _ { 2} } + 1 } .
+\end{equation}
+由于 \(\xi \gg 1\)，而我们的被积函数仅在 \(\eta\) 约等于 1 时才具有显著意义，因此可以将第一项积分的上限替换为 \(\infty\)。此外，我们还可以在两个积分中使用相同的变量 \(\eta\)，结果便是
+\begin{equation}\tag{17.5.12}\label{eq:17.5.12}
+F _ { \nu } ( e ^{\xi} ) \approx \frac { \xi ^{\nu} } { \nu } + \int _ { 0 } ^{\infty} \frac { ( \xi + \eta ) ^{\nu - 1} - ( \xi - \eta ) ^{\nu - 1} } { e ^{\eta} + 1 } d \eta
+\end{equation}
+\begin{equation}\tag{17.5.13}\label{eq:17.5.13}
+= \frac { \xi ^{\nu} } { \nu } + 2 \sum _ { j = 1 , 3 , 5 , \ldots } { \binom { \nu - 1 } { j } } \left[ \xi ^{\nu - 1 - j} \int _ { 0 } ^{\infty} \frac { \eta ^{j} } { e ^{\eta} + 1 } d \eta \right] ;
+\end{equation}
+在最后一步中，式（14）被积函数的分子已按 \(\eta\) 的幂次展开。现在，
+\begin{equation}\tag{17.5.14}\label{eq:17.5.14}
+\frac { 1 } { \Gamma ( j + 1 ) } \int _ { 0 } ^{\infty} \frac { \eta ^{j} } { e ^{\eta} + 1 } d \eta = 1 - \frac { 1 } { 2 ^{j + 1} } + \frac { 1 } { 3 ^{j + 1} } - \cdots = \left( 1 - \frac { 1 } { 2 ^{j} } \right) \zeta ( j + 1 ) ;
+\end{equation}
+参见式（2）和式（3），其中 \(\nu=j+1\)，\(z=1\)。将式（16）代入式（15），我们得到
+\begin{equation}\tag{17.5.15}\label{eq:17.5.15}
+\begin{array}{rl} & { f _ { \nu } ( e ^{\xi} ) = \frac { \xi ^{\nu} } { \Gamma ( \nu + 1 ) } \left[ 1 + 2 \nu \sum _ { j = 1 , 3 , 5 \dots } \left\{ ( \nu - 1 ) \cdots ( \nu - j ) \left( 1 - \frac { 1 } { 2 j } \right) \frac { \xi ( j + 1 ) } { \xi ^{j + 1} } \right\} \right] } \\& { = \frac { \xi ^{\nu} } { \Gamma ( \nu + 1 ) } \left[ 1 + \nu ( \nu - 1 ) \frac { \pi ^{2} } { 6 } \frac { 1 } { \xi ^{2} } + \nu ( \nu - 1 ) ( \nu - 2 ) ( \nu - 3 ) \frac { 7 \pi ^{4} } { 36 0 } \frac { 1 } { \xi ^{4} } + \cdots \right] , } \end{array}
+\end{equation}
+这正是所求的渐近公式——通常被称为索默费尔德引理（参见索默费尔德，1928）。\(^{4}\)
+通过同样的方法，我们还可以推导出以下渐近结果，它显然是对式（17）的推广：
+\begin{equation}\tag{17.5.16}\label{eq:17.5.16}
+\int _ { 0 } ^{\infty} \frac { \phi ( x ) d x } { e ^{x - \xi} + 1 } = \int _ { 0 } ^{\xi} \phi ( x ) d x + \frac { \pi ^{2} } { 6 } \left( \frac { d \phi } { d x } \right) _ { x = \xi } + \frac { 7 \pi ^{4} } { 36 0 } \left( \frac { d ^{3} \phi } { d x ^{3} } \right) _ { x = \xi } + \frac { 31 \pi ^{6} } { 15 12 0 } \left( \frac { d ^{5} \phi } { d x ^{5} } \right) _ { x = \xi } + \cdots ,
+\end{equation}
+其中 \(\phi(x)\) 是任意在 \(x\) 上行为良好的函数。值得注意的是，该展开式的数值系数正逐渐逼近极限值 2。
+布莱克莫尔（1962）曾对函数 \(f_{\nu}(e^{\xi})\) 在 \(-4 \leq \xi \leq +10\) 范围内的数值进行了表格化处理；他的表格涵盖了从 0 到 +5 的所有整数阶，以及从 \(-\frac{1}{2}\) 到 \(+\frac{9}{2}\) 的所有半奇整数阶。
+\section{一种对理想玻色气体及玻色-爱因斯坦凝聚起始阶段的严格分析}\label{f-ux4e00ux79cdux5bf9ux7406ux60f3ux73bbux8272ux6c14ux4f53ux53caux73bbux8272-ux7231ux56e0ux65afux5766ux51ddux805aux8d77ux59cbux9636ux6bb5ux7684ux4e25ux683cux5206ux6790}
+在本附录中，我们研究了理想玻色气体的问题——在方程（7.2.1）中，对于N的原始求和式，不随意从其项中提取凝聚态项（\(\varepsilon=0\)），而是将余项近似为从\(\varepsilon=0\)到\(\varepsilon=\infty\)的积分。相反，我们将借助一些可追溯至19世纪初波义耳和雅可比的数学恒等式，原样对这一原始求和式进行求值。幸运的是，这些恒等式消除了将求和式近似为积分的必要性，并且所得结果适用于任意N的取值（不过，在实际应用中，我们通常可以假设N远大于1）。有关此方法的详细说明，请参阅Pathria（1983）以及文中所引的相关文献。
+我们考虑一种理想玻色气体，其中粒子质量为\(m\)，被限制在立方体几何结构\(L \times L \times L\)中，并受到周期性边界条件的约束，因此单粒子能级由以下公式给出：
+\begin{equation}\tag{17.6.1}\label{eq:17.6.1}
+\varepsilon = \frac { h ^{2} } { 2 m L ^{2} } \left( n _ { 1 } ^{2} + n _ { 2 } ^{2} + n _ { 3 } ^{2} \right) ,  ( n _ { i } = 0 , \pm 1 , \pm 2 , \ldots ) .
+\end{equation}
+\(^{4}\)罗兹（1950）所做的更为细致的分析，以及随后丁格尔（1956）的进一步研究表明，从方程（13）过渡到方程（14）时，遗漏了一个项；而对于较大的\(\xi\)，该项的阶数为\(e^{-\xi}\)。事实证明，这一项是\(\cos\{(\nu-1)\pi\}F_{\nu}(e^{-\xi})\equiv\cos\{(\nu-1)\pi\}F_{\nu}(1/z)\)。当\(z\)较大时，这一项几乎等于\(\cos\{(\nu-1)\pi\}/z\)，因此与方程（17）中出现的任何其他项相比，其影响可以忽略不计。当然，对于\(\nu=\frac{1}{2}\)、\(\frac{3}{2}\)、\(\frac{5}{2}\)等数值——这些数值正是费米-狄拉克统计学中大多数重要应用所涉及的值——所缺失的项实际上为零。
+对于\(\nu=2\)，加入这一缺失项后，我们得到如下恒等式：
+\begin{equation}\tag{17.6.2}\label{eq:17.6.2}
+f _ { 2 } ( e ^{\xi} ) + f _ { 2 } ( e ^{- \xi} ) = \frac { 1 } { 2 } \xi ^{2} + \frac { \pi ^{2} } { 6 } ,
+\end{equation}
+该恒等式与第8.3.B节的内容密切相关。
+于是，求和式（7.1.2）的形式变为：
+\begin{equation}\tag{17.6.3}\label{eq:17.6.3}
+\begin{array}{rl} & { N = \sum _ { \varepsilon } \left( e ^{\alpha + \beta \varepsilon} - 1 \right) ^{- 1} = \sum _ { \varepsilon } \sum _ { j = 1 } ^{\infty} e ^{- j ( \alpha + \beta \varepsilon )} } \\& { = \sum _ { j = 1 } ^{\infty} e ^{- j \alpha} \left[ \sum _ { n _ { 1 } } e ^{- j w n _ { 1} ^{2} } \sum _ { n _ { 2 } } e ^{- j w n _ { 2} ^{2} } \sum _ { n _ { 3 } } e ^{- j w n _ { 3} ^{2} } \right] , } \end{array}
+\end{equation}
+其中\(\alpha = -\mu/kT\)，\(\beta = 1/kT\)，并且
+\begin{equation}\tag{17.6.4}\label{eq:17.6.4}
+w = \frac { \beta \hbar ^{2} } { 2 m L ^{2} } = \pi \left( \frac { \lambda } { L } \right) ^{2} ,
+\end{equation}
+\(\lambda\)（即\(h/\sqrt{2\pi m k T}\)）是粒子的平均热波长。
+为了求解式（2）中的求和项，我们运用泊松求和公式（参见Schwartz，1966）：
+\begin{equation}\tag{17.6.5}\label{eq:17.6.5}
+\sum _ { n = - \infty } ^{\infty} f ( n ) = \sum _ { q = - \infty } ^{\infty} F ( q ) ;  F ( q ) = \int _ { - \infty } ^{\infty} f ( x ) e ^{2 \pi i q x} d x .
+\end{equation}
+当然，函数\(F(q)\)是原始函数\(f(n)\)的傅里叶变换。若选择\(f(n) = e^{-jwn^2}\)，我们便得到了一条极为精彩的恒等式：
+\begin{equation}\tag{17.6.6}\label{eq:17.6.6}
+\sum _ { n = - \infty } ^{\infty} e ^{- j w n ^ { 2} } = \sqrt { \frac { \pi } { j w } } \sum _ { q = - \infty } ^{\infty} e ^{- \pi ^ { 2} q ^{2} / j w } .
+\end{equation}
+值得注意的是，式（5）中\(q=0\)的项，正是当我们用积分代替对\(n\)的求和时所得到的结果——这正是在处理这一问题时通常采用的方式。因此，那些\(q\neq0\)的项，代表了由于单粒子态的离散性而产生的修正项。利用式（5）分别对式（2）中的三个求和项进行计算，我们得到：
+\begin{equation}\tag{17.6.7}\label{eq:17.6.7}
+\begin{array}{rl} & { N = \displaystyle \sum _ { j = 1 } ^{\infty} e ^{- j \alpha} \displaystyle \prod _ { i = 1 } ^{3} \left[ \sqrt { \frac { \pi } { j w } } \sum _ { q _ { i } } e ^{- \pi ^ { 2} q _ { i } ^{2} / j w } \right] } \\& { = \left( \frac { \pi } { w } \right) ^{3 / 2} \displaystyle \sum _ { q } \displaystyle \sum _ { j = 1 } ^{\infty} \frac { e ^{- j \alpha} } { j ^{3 / 2} } \exp \left[ - \frac { \pi ^{2} } { j w } \left( q _ { 1 } ^{2} + q _ { 2 } ^{2} + q _ { 3 } ^{2} \right) \right] } \\& { = \displaystyle \frac { L ^{3} } { \lambda ^{3} } \displaystyle \sum _ { j = 1 } ^{\infty} \left[ \frac { e ^{- j \alpha} } { j ^{3 / 2} } + \sum _ { q } ^{\prime} \frac { e ^{- j \alpha} } { j ^{3 / 2} } \exp \left( - \frac { \pi ^{2} } { j w } \left( q _ { 1 } ^{2} + q _ { 2 } ^{2} + q _ { 3 } ^{2} \right) \right) \right] , } \end{array}
+\end{equation}
+在第二组项中，对求和符号的标注表明，已将 \(q=0\) 项从该求和中剔除。
+式（6）中的 \(q=0\) 项，正是系统激发态中总粒子数的本征结果，即 \(Vg_{3/2}(e^{-\alpha})/\lambda^{3}\)。在第二组项中，对 \(j\) 的求和可以
+通过直接推广恒等式（4）来完成这一运算，即
+\begin{equation}\tag{17.6.8}\label{eq:17.6.8}
+\sum _ { n = a } ^{b} f ( n ) = \frac { 1 } { 2 } f ( a ) + \frac { 1 } { 2 } f ( b ) + \sum _ { l = - \infty } ^{\infty} F _ { a , b } ( l ) ;  F _ { a , b } ( l ) = \int _ { a } ^{b} f ( x ) e ^{2 \pi i l x} d x ,
+\end{equation}
+其中 \(a\) 和 \(b\) 是整数，且 \(b > a\)。将（7）应用于式（6）中的求和项，我们得到
+\begin{equation}\tag{17.6.9}\label{eq:17.6.9}
+\begin{aligned}\sum_{j=1}^{\infty}j^{-3/2}e^{-j\alpha}e^{-\gamma(\boldsymbol{q})/j}&=\sum_{j=0}^{\infty}j^{-3/2}e^{-j\alpha}e^{-\gamma(\boldsymbol{q})/j}\\&=\sqrt{\frac{\pi}{\gamma(\boldsymbol{q})}}\sum_{l=-\infty}^{\infty}\exp\biggl[-2\sqrt{\gamma(\boldsymbol{q})}\left(\alpha+2\pi\:il\right)^{1/2}\biggr],\end{aligned}
+\end{equation}
+其中
+\begin{equation}\tag{17.6.10}\label{eq:17.6.10}
+\gamma ( q ) = \frac { \pi ^{2} q ^{2} } { w } = \frac { \pi L ^{2} q ^{2} } { \lambda ^{2} } > 0 .
+\end{equation}
+我们很容易注意到，无论 \(\alpha\) 取何值，\(l \neq 0\) 的项最多仅占 \(\exp(-L/\lambda)\) 量级；而当 \(L \gg \lambda\) 时，这些项几乎可以忽略不计。因此，如果我们只保留 \(l=0\) 项，就不会产生任何阶为 \((\lambda/L)^n\) 的误差。由此我们得到
+\begin{equation}\tag{17.6.11}\label{eq:17.6.11}
+N \approx \frac { L ^{3} } { \lambda ^{3} } \left[ g _ { 3 / 2 } \left( e ^{- \alpha} \right) + \pi ^{1 / 2} \alpha ^{1 / 2} S \left( y \right) \right] ,
+\end{equation}
+其中
+\begin{equation}\tag{17.6.12}\label{eq:17.6.12}
+S ( y ) = \sum _ { q } ^{\prime} \frac { e ^{- 2 R ( q )} } { R ( q ) } ;  R ( q ) = y \sqrt { q _ { 1 } ^{2} + q _ { 2 } ^{2} + q _ { 3 } ^{2} } ,
+\end{equation}
+而 \(y\) 的值由以下公式给出
+\begin{equation}\tag{17.6.13}\label{eq:17.6.13}
+y = \pi ^{1 / 2} \alpha ^{1 / 2} \frac { L } { \lambda } .
+\end{equation}
+根据方程（13.6.36），参数 \(y\) 是以系统相关长度 \(\xi\) 为基准，衡量系统横向尺寸 \(L\) 的一个指标——确切地说，\(y = L/2\xi\)。因此，我们预期，随着系统温度的降低并进入相变区域，在接近相变点的微小温度范围内，该参数会从极其庞大的数值逐渐减小至极其微小的数值。我们稍后会进一步探讨这一问题的这一方面。
+在此阶段，值得指出的是，如果将式（10）中出现的 \(q\) 求和替换为积分——而这只有在 \(y \to 0\) 的极限情况下才成立——我们便可以从式（9）中得出
+\begin{equation}\tag{17.6.14}\label{eq:17.6.14}
+N \approx \frac { L ^{3} } { \lambda ^{3} } \left[ g _ { 3 / 2 } \left( e ^{- \alpha} \right) + \pi ^{1 / 2} \alpha ^{1 / 2} \left( \frac { \pi } { y ^{3} } \right) \right] = \frac { L ^{3} } { \lambda ^{3} } g _ { 3 / 2 } \left( e ^{- \alpha} \right) + \frac { 1 } { \alpha } ,
+\end{equation}
+与第7.1节中获得的本征结果完全一致，且 \(\alpha \ll 1\)。为了了解在进行这一替换时所犯"误差程度"，我们必须更精确地计算这一求和。为此，我们借助另一条数学恒等式——该恒等式最早由 Chaba 和 Pathria 在1975年提出——即
+\begin{equation}\tag{17.6.15}\label{eq:17.6.15}
+\sum _ { q } ^{\prime} \left[ \frac { y ^{2} } { q ^{2} \left( y ^{2} + \pi ^{2} q ^{2} \right) } + \frac { \pi } { q } e ^{- 2 y q} \right] = 2 \pi y + \frac { \pi ^{2} } { y ^{2} } + C _ { 3 } ,
+\end{equation}
+其中
+\begin{equation}\tag{17.6.16}\label{eq:17.6.16}
+C _ { 3 } = \pi \operatorname* { l i m } _ { y \to 0 } \left( \sum _ { q } ^{\prime} \frac { e ^{- 2 y q} } { q } - \int _ { \mathrm { a l l } q } \frac { e ^{- 2 y q} } { q } d q \right) \simeq - 8 . 91 36 .
+\end{equation}
+重要的是要指出，常数 \(C_{3}\) 与简单立方晶格的马德隆常数有着直接的联系；例如，可参阅 Harris 和 Monkhorst（1970）。由于式（13）左侧的第二部分求和与 \(S(y)\) 成正比，我们可以将式（9）改写为如下形式
+\begin{equation}\tag{17.6.17}\label{eq:17.6.17}
+N \approx \frac { L ^{3} } { \lambda ^{3} } g _ { 3 / 2 } \left( e ^{- \alpha} \right) + \frac { L ^{2} } { \lambda ^{2} } \frac { \pi } { y ^{2} } + \frac { L ^{2} } { \lambda ^{2} } \left( \frac { C _ { 3 } } { \pi } + 2 y - \frac { y ^{2} } { \pi } \sum _ { q } ^{\prime} \frac { 1 } { q ^{2} \left( y ^{2} + \pi ^{2} q ^{2} \right) } \right) .
+\end{equation}
+我们注意到，式（15）右侧的第二项等于 \(1/\alpha\)——当 \(\alpha \ll 1\) 时，这一值恰好等于 \(N_0\)。因此，在我们的分析中，凝聚态自然地涌现出来，而无需像传统处理方式那样过早地将其提取出来。
+鉴于对于小的 \(\alpha\) 来说，
+\begin{equation}\tag{17.6.18}\label{eq:17.6.18}
+g _ { 3 / 2 } \left( e ^{- \alpha} \right) \approx \zeta \left( \frac { 3 } { 2 } \right) - 2 \pi ^{1 / 2} \alpha ^{1 / 2} ,
+\end{equation}
+式（15）进一步简化为
+\begin{equation}\tag{17.6.19}\label{eq:17.6.19}
+N \approx \frac { L ^{3} } { \lambda ^{3} } \zeta \left( 3 / 2 \right) + N _ { 0 } + \frac { L ^{2} } { \lambda ^{2} } \left( \frac { C _ { 3 } } { \pi } - \frac { y ^{2} } { \pi } \sum _ { q } ^{\prime} \frac { 1 } { q ^{2} \left( y ^{2} + \pi ^{2} q ^{2} \right) } \right) .
+\end{equation}
+引入本征体相变温度 \(T_{c}(\infty)\)，其定义如式（7.1.24）所示，
+\begin{equation}\tag{17.6.20}\label{eq:17.6.20}
+T _ { c } ( \infty ) = \frac { h ^{2} } { 2 \pi \, m k } \left[ \frac { N } { L ^{3} \zeta \left( \frac { 3 } { 2 } \right) } \right] ^{2 / 3} = T \frac { \lambda ^{2} } { L ^{2} } \left[ \frac { N } { \zeta \left( \frac { 3 } { 2 } \right) } \right] ^{2 / 3} ;
+\end{equation}
+从式（17）中我们得到了期望的结果，即
+\begin{equation}\tag{17.6.21}\label{eq:17.6.21}
+N _ { 0 } = N \left[ 1 - \left( \frac { T } { T _ { c } ( \infty ) } \right) ^{3 / 2} \right] + \frac { L ^{2} } { \lambda ^{2} } \left( - \frac { C _ { 3 } } { \pi } + \frac { y ^{2} } { \pi } \sum _ { q } ^{\prime} \frac { 1 } { q ^{2} \left( y ^{2} + \pi ^{2} q ^{2} \right) } \right) .
+\end{equation}
+该表达式的前半部分是关于 \(N_{0}\) 的标准本征结果，而后半部分则代表了对该量的"有限尺寸修正"。更重要的是，虽然这里的主项阶数为 \(N\)，但修正项的阶数却为 \(N^{2/3}\)。在热力学极限下，修正项将完全失去其重要性，我们最终只保留由传统处理方法得出的常规结果。
+最后，我们研究缩放参数 \(y\) 随温度 \(T\) 的变化；通过这一研究，我们也能考察相关长度 \(\xi\) 和凝聚分数 \(f\)（即 \(N_0/N\)）如何随着温度从高于 \(T_c(\infty)\) 的区域向低于 \(T_c(\infty)\) 的区域逐渐增长。为此，我们引入一个缩放温度，定义为 \(t=[T-T_c(\infty)]/T_c(\infty)\)，并分别在三个不同的区域中研究这一问题：
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对于 \(t > 0\)，且满足 \(1 \gg t \gg N^{-1/3}\)，我们利用问题 7.3 中所给出的 \(\alpha\) 的结果。将该结果与式（11）结合，我们得到
+\end{enumerate}
+\begin{equation}\tag{17.6.22}\label{eq:17.6.22}
+y \approx \frac { 3 } { 4 } \left[ \zeta \left( \frac { 3 } { 2 } \right) \right] ^{2 / 3} N ^{1 / 3} t ,
+\end{equation}
+\begin{equation}\tag{17.6.23}\label{eq:17.6.23}
+\xi \approx \frac { 2 } { 3 } \left[ \zeta \left( \frac { 3 } { 2 } \right) \right] ^{- 2 / 3} \ell t ^{- 1} ,
+\end{equation}
+\begin{equation}\tag{17.6.24}\label{eq:17.6.24}
+f \approx \frac { 16 \pi } { 9 } \left[ \zeta \left( \frac { 3 } { 2 } \right) \right] ^{- 2} N ^{- 1} t ^{- 2} ,
+\end{equation}
+其中 \(\ell\)（即 \(L/N^{1/3}\)）为系统中的平均原子间距离。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对于 \(|t|=O(N^{-1/3})\)，参数 \(y=O(1)\)，其数值需通过数值计算来确定。在 \(t=0\) 时，该数值由方程 \(S(y_0)=2\) 确定；参见式（9）和式（16）。由此我们得到：\(y_0\approx0.973\)。在这一区域，相关长度 \(\xi\) 为 \(O(L)\)，凝聚分数为 \(O(N^{-1/3})\)。
+\item
+  对于 \(t < 0\)，且满足 \(1 \gg |t| \gg N^{-1/3}\)，我们得到
+\end{enumerate}
+\begin{equation}\tag{17.6.25}\label{eq:17.6.25}
+y \approx \sqrt { \frac { 2 \pi } { 3 } } \left[ \zeta \left( \frac { 3 } { 2 } \right) \right] ^{- 1 / 3} N ^{- 1 / 6} | t | ^{- 1 / 2} ,
+\end{equation}
+\begin{equation}\tag{17.6.26}\label{eq:17.6.26}
+\xi \approx \sqrt { \frac { 3 } { 8 \pi } } \left[ \zeta \left( \frac { 3 } { 2 } \right) \right] ^{1 / 3} \frac { L ^{3 / 2} } { \ell ^{1 / 2} } \left| t \right| ^{1 / 2} ,
+\end{equation}
+\begin{equation}\tag{17.6.27}\label{eq:17.6.27}
+f \approx { \frac { 3 } { 2 } } | t | .
+\end{equation}
+由此我们看到，在围绕 \(t=0\) 的温度区间 \(O(N^{-1/3})\) 内，参数 \(y\) 从 \(O(N^{1/3})\) 逐渐下降至 \(O(N^{-1/6})\)，而相关长度 \(\xi\) 则从 \(O(\ell)\) 增长至 \(O(L^{3/2}/\ell^{1/2})\)，同时凝聚体分数 \(f\) 也从 \(O(N^{-1})\) 增长至 \(O(1)\)。随着 \(N \to \infty\)，过渡区域会坍缩至一个奇异点 \(t=0\)，而玻色-爱因斯坦凝聚现象则演变为临界现象。
+\section{关于沃森函数}\label{g-ux5173ux4e8eux6c83ux68eeux51fdux6570}
+在本附录中，我们将研究这些函数的渐近行为。
+\begin{equation}\tag{17.7.1}\label{eq:17.7.1}
+W _ { d } ( \phi ) = \int _ { 0 } ^{\infty} e ^{- \phi x} \left[ e ^{- x} I _ { 0 } ( x ) \right] ^{d} d x
+\end{equation}
+对于 \(0 \leq \phi \ll 1\)。首先，我们注意到，若将 \(\phi = 0\)，则只有当 \(d > 2\) 时，所得积分才收敛。要理解这一点，我们可以观察到：当 \(\phi = 0\) 时，当 \(x\) 趋于无穷大时，被积函数可能会出现发散问题。
+\begin{equation}\tag{17.7.2}\label{eq:17.7.2}
+\left[ e ^{- x} I _ { 0 } ( x ) \right] ^{d} \approx ( 2 \pi x ) ^{- d / 2}  ( x \gg 1 ) .
+\end{equation}
+显然，只要 \(d > 2\)，积分就一定会收敛；否则，积分将发散。因此，我们得出结论：
+\begin{equation}\tag{17.7.3}\label{eq:17.7.3}
+W _ { d } ( 0 ) = \int _ { 0 } ^{\infty} [ e ^{- x} I _ { 0 } ( x ) ] ^{d} \, d x
+\end{equation}
+对于 \(d > 2\)，该积分是存在的。
+接下来，我们考察导数。
+\begin{equation}\tag{17.7.4}\label{eq:17.7.4}
+W _ { d } ^{\prime} ( \phi ) = - \int _ { 0 } ^{\infty} e ^{- \phi x} [ e ^{- x} I _ { 0 } ( x ) ] ^{d} x d x .
+\end{equation}
+基于上述相同的论证，我们得出结论：
+\begin{equation}\tag{17.7.5}\label{eq:17.7.5}
+W _ { d } ^{\prime} ( 0 ) = - \int _ { 0 } ^{\infty} \left[ e ^{- x} I _ { 0 } ( x ) \right] ^{d} x d x
+\end{equation}
+对于 \(d > 4\)，该结果更加简单。
+接下来，我们来看导数。
+\begin{equation}\tag{17.7.6}\label{eq:17.7.6}
+\begin{array}{rl} & { W _ { d } ^{\prime} ( \phi ) = - \int _ { 0 } ^{\infty} e ^{- y} \Big [ e ^{- y / \phi} I _ { 0 } ( y / \phi ) \Big ] ^{d} \frac { 1 } { \phi ^{2} } y d y } \\& { \approx - \frac { 1 } { ( 2 \pi ) ^{d / 2} \phi ^{( 4 - d ) / 2} } \int _ { 0 } ^{\infty} e ^{- y} y ^{( 2 - d ) / 2} d y  ( \phi \ll 1 ) } \\& { = - \frac { \Gamma \{ ( 4 - d ) / 2 \} } { ( 2 \pi ) ^{d / 2} \phi ^{( 4 - d ) / 2} } . } \end{array}
+\end{equation}
+对式（17.7.6） 按 \(\phi\) 进行积分，并结合之前关于 \(W_{d}(0)\) 的讨论，我们得到了所需的结论：
+\begin{equation}\tag{17.7.7}\label{eq:17.7.7}
+\Bigl [ ( 2 \pi ) ^{- d / 2} \Gamma \{ ( 2 - d ) / 2 \} \phi ^{- ( 2 - d ) / 2} + \mathrm { c o n s t . }
+\end{equation}
+\begin{equation}\tag{17.7.8}\label{eq:17.7.8}
+\mathrm { f o r }  d = 2
+\end{equation}
+\begin{equation}\tag{17.7.9}\label{eq:17.7.9}
+\Big | \; W _ { d } ( 0 ) - ( 2 \pi ) ^{- d / 2} | \Gamma \{ ( 2 - d ) / 2 \} | \phi ^{( d - 2 ) / 2} \; \; \; \; \; \; \; \; \mathrm { f o r } \; \; \; 2 < d < 4 .
+\end{equation}
+对于 \(d > 4\)，我们得到了一个更为简单的结果：
+\begin{equation}\tag{17.7.10}\label{eq:17.7.10}
+W _ { d } ( \phi ) \approx W _ { d } ( 0 ) - | W _ { d } ^{\prime} ( 0 ) | \phi ,
+\end{equation}
+在这种情况下，\(W_{d}(0)\) 和 \(W_{d}^{\prime}(0)\) 都是存在的。
+当 \(d=4\) 时，存在一些需要解决的问题，可以通过将式（17.7.4） 中的积分拆分为两部分来加以简化：
+\begin{equation}\tag{17.7.11}\label{eq:17.7.11}
+\int _ { 0 } ^{\infty} = \int _ { 0 } ^{1} + \int _ { 1 } ^{\infty} .
+\end{equation}
+第一部分显然是有限的；当 \(\phi \rightarrow 0\) 时，函数 \(W_{4}^{\prime}(\phi)\) 的发散，源于第二部分——对于 \(\phi \ll 1\)，该部分可以写成：
+\begin{equation}\tag{17.7.12}\label{eq:17.7.12}
+\approx \int _ { 1 } ^{\infty} e ^{- \phi x} ( 2 \pi x ) ^{- 2} x d x = \frac { 1 } { 4 \pi ^{2} } E _ { 1 } ( \phi ) ,
+\end{equation}
+其中 \(E_{1}(\phi)\) 是指数积分；参见 Abramowitz 和 Stegun（1964），第~5~章。由于当 \(\phi \ll 1\) 时，\(E_{1}(\phi) \approx -\ln \phi\)，我们得出结论：
+\begin{equation}\tag{17.7.13}\label{eq:17.7.13}
+W _ { 4 } ^{\prime} ( \phi ) \approx \frac { 1 } { 4 \pi ^{2} } \ln \phi .
+\end{equation}
+对式（17.7.11） 按 \(\phi\) 进行积分，我们得到：
+\begin{equation}\tag{17.7.14}\label{eq:17.7.14}
+W _ { 4 } ( \phi ) \approx W _ { 4 } ( 0 ) - \frac { 1 } { 4 \pi ^{2} } \phi \ln ( 1 / \phi ) .
+\end{equation}
+式（17.7.7） 、 式（17.7.8） 和 (12) 构成了本附录的主要成果。
+作为记录，我们引用几组数据：
+\begin{equation}\tag{17.7.15}\label{eq:17.7.15}
+W _ { 3 } ( 0 ) = 0 . 50 54 6 ,  W _ { 4 } ( 0 ) = 0 . 30 98 7 .
+\end{equation}
+\section{热力学关系}\label{h-ux70edux529bux5b66ux5173ux7cfb}
+以下这四组关于偏导数的方程，有时被称为"四大著名公式"。它们使得在任意一个系统中轻松推导出热力学关系，或进行转换。
+从一个系统到另一个系统的相互关系；所谓"系统"，是指一个系统所依赖的全部热力学参数集合。如果量 \(x\)、\(y\)、\(z\) 之间存在相互关联，则
+\begin{equation}\tag{17.8.1}\label{eq:17.8.1}
+\left( \frac { \partial x } { \partial y } \right) _ { z } = 1 \, \Big / \, \left( \frac { \partial y } { \partial x } \right) _ { z } ,
+\end{equation}
+\begin{equation}\tag{17.8.2}\label{eq:17.8.2}
+\left( \frac { \partial } { \partial z } \left( \frac { \partial y } { \partial x } \right) _ { z } \right) _ { x } = \left( \frac { \partial } { \partial x } \left( \frac { \partial y } { \partial z } \right) _ { x } \right) _ { z } ,
+\end{equation}
+\begin{equation}\tag{17.8.3}\label{eq:17.8.3}
+\left( { \frac { \partial x } { \partial y } } \right) _ { z } \left( { \frac { \partial y } { \partial z } } \right) _ { x } \left( { \frac { \partial z } { \partial x } } \right) _ { y } = - 1 ,
+\end{equation}
+\begin{equation}\tag{17.8.4}\label{eq:17.8.4}
+\left( \frac { \partial x } { \partial y } \right) _ { w } = \left( \frac { \partial x } { \partial y } \right) _ { z } + \left( \frac { \partial x } { \partial z } \right) _ { y } \left( \frac { \partial z } { \partial y } \right) _ { w } .
+\end{equation}
+\section{\texorpdfstring{熵 \(S(N,V,U)\) 与微正则系综}{熵 S(N,V,U) 与微正则系综}}\label{ux71b5-snvu-ux4e0eux5faeux6b63ux5219ux7cfbux7efc}
+熵描述的是一个封闭、等容、绝热的系统，因此它既是内能、体积和分子数的函数：
+\begin{equation}\tag{17.9.1}\label{eq:17.9.1}
+d S = \frac { 1 } { T } d U + \frac { P } { T } d V - \frac { \mu } { T } d N ,
+\end{equation}
+\begin{equation}\tag{17.9.2}\label{eq:17.9.2}
+\frac { 1 } { T }  =  \left( \frac { \partial S } { \partial U } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.9.3}\label{eq:17.9.3}
+\frac { P } { T } = \left( \frac { \partial S } { \partial V } \right) _ { U , N } ,
+\end{equation}
+\begin{equation}\tag{17.9.4}\label{eq:17.9.4}
+\frac { \mu } { T } = - \left( \frac { \partial S } { \partial N } \right) _ { U , V } .
+\end{equation}
+熵的麦克斯韦关系式为
+\begin{equation}\tag{17.9.5}\label{eq:17.9.5}
+\left( \frac { \partial ( 1 / T ) } { \partial V } \right) _ { U , N } = \left( \frac { \partial ( P / T ) } { \partial U } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.9.6}\label{eq:17.9.6}
+\left( \frac { \partial ( 1 / T ) } { \partial N } \right) _ { U , V } = - \left( \frac { \partial ( \mu / T ) } { \partial U } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.9.7}\label{eq:17.9.7}
+\left( \frac { \partial ( P / T ) } { \partial N } \right) _ { U , V } = - \left( \frac { \partial ( \mu / T ) } { \partial V } \right) _ { U , N } .
+\end{equation}
+熵的确定依据是微正则系综中的微观状态数
+\begin{equation}\tag{17.9.8}\label{eq:17.9.8}
+\Gamma ( N , V , U ; \Delta U ) = \mathrm { T r } \big ( \Delta _ { \Delta U } ( \mathcal { H } - U ) \big ) ,
+\end{equation}
+其中 \(\mathcal{H}\) 是系统的哈密顿量，而 \(\Delta_{\Delta U}(x)\) 是阶跃函数，在 \(0\) 到 \(\Delta U\) 的范围内取值为 \(1\)，否则为 \(0\)。这里的 \(\Gamma(N,V,U;\Delta U)\) 表示离散的
+在能量区间 \(U\) 与 \(U + \Delta U\) 之间的量子态。此时，熵可表示为
+\begin{equation}\tag{17.9.9}\label{eq:17.9.9}
+S ( N , V , U ) = k \ln \Gamma ( N , V , U ; \Delta U ) .
+\end{equation}
+熵的本体值并不依赖于 \(\Delta U\) 的取值。
+\section{\texorpdfstring{赫尔姆霍兹自由能 \(A(N,V,T)=U-TS\) 与规范系综}{赫尔姆霍兹自由能 A(N,V,T)=U-TS 与规范系综}}\label{ux8d6bux5c14ux59c6ux970dux5179ux81eaux7531ux80fd-anvtu-ts-ux4e0eux89c4ux8303ux7cfbux7efc}
+赫尔姆霍兹自由能描述的是一个封闭、等容、等温的系统，因此它既是温度、体积和分子数的函数：
+\begin{equation}\tag{17.10.1}\label{eq:17.10.1}
+d A = - S d T - P d V + \mu d N ,
+\end{equation}
+\begin{equation}\tag{17.10.2}\label{eq:17.10.2}
+S = - \left( \frac { \partial A } { \partial T } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.10.3}\label{eq:17.10.3}
+P = - \left( \frac { \partial A } { \partial V } \right) _ { T , N } ,
+\end{equation}
+\begin{equation}\tag{17.10.4}\label{eq:17.10.4}
+\mu = \left( { \frac { \partial A } { \partial N } } \right) _ { T , V } .
+\end{equation}
+赫尔姆霍兹自由能的麦克斯韦关系式为
+\begin{equation}\tag{17.10.5}\label{eq:17.10.5}
+\left( \frac { \partial S } { \partial V } \right) _ { T , N } = \left( \frac { \partial P } { \partial T } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.10.6}\label{eq:17.10.6}
+\left( \frac { \partial S } { \partial N } \right) _ { T , V } = - \left( \frac { \partial \mu } { \partial T } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.10.7}\label{eq:17.10.7}
+\left( \frac { \partial P } { \partial N } \right) _ { T , V } = - \left( \frac { \partial \mu } { \partial V } \right) _ { T , N } .
+\end{equation}
+赫尔姆霍兹自由能由规范配分函数决定
+\begin{equation}\tag{17.10.8}\label{eq:17.10.8}
+Q _ { N } ( V , T ) = \mathrm { T r } \left( \exp ( - \beta \mathcal { H } ) \right) = \int e ^{- \beta U} \left\{ \frac { 1 } { \Delta U } \Gamma ( N , V , U ; \Delta U ) \right\} d U .
+\end{equation}
+赫尔姆霍兹自由能的表达式为
+\begin{equation}\tag{17.10.9}\label{eq:17.10.9}
+A ( N , V , T ) = - k T \mathrm { l n } \, Q _ { N } ( V , T ) .
+\end{equation}
+\section{\texorpdfstring{热力学势 \(\Pi(\mu,V,T)=-A+\mu N=PV\) 与大正则系综}{热力学势 \textbackslash Pi(\textbackslash mu,V,T)=-A+\textbackslash mu N=PV 与大正则系综}}\label{ux70edux529bux5b66ux52bf-pimuvt-amu-npv-ux4e0eux5927ux6b63ux5219ux7cfbux7efc}
+热力学势描述的是一个开放、等容、等温的系统，因此它既是温度、体积和化学势的函数：
+\begin{equation}\tag{17.11.1}\label{eq:17.11.1}
+d \Pi = S d T + P d V + N d \mu \, ,
+\end{equation}
+\begin{equation}\tag{17.11.2}\label{eq:17.11.2}
+S = \left( \frac { \partial \Pi } { \partial T } \right) _ { V , \mu } ,
+\end{equation}
+\begin{equation}\tag{17.11.3}\label{eq:17.11.3}
+P \equiv \left( \frac { \partial \Pi } { \partial V } \right) _ { T , \mu } ,
+\end{equation}
+\begin{equation}\tag{17.11.4}\label{eq:17.11.4}
+N = \left( { \frac { \partial \Pi } { \partial \mu } } \right) _ { T , V } .
+\end{equation}
+热力学势的麦克斯韦关系为
+\begin{equation}\tag{17.11.5}\label{eq:17.11.5}
+\left( \frac { \partial S } { \partial V } \right) _ { T , \mu } = \left( \frac { \partial P } { \partial T } \right) _ { V , \mu } ,
+\end{equation}
+\begin{equation}\tag{17.11.6}\label{eq:17.11.6}
+\left( \frac { \partial S } { \partial \mu } \right) _ { T , V } = \left( \frac { \partial N } { \partial T } \right) _ { V , \mu } ,
+\end{equation}
+\begin{equation}\tag{17.11.7}\label{eq:17.11.7}
+\left( \frac { \partial P } { \partial \mu } \right) _ { T , V } = \left( \frac { \partial N } { \partial V } \right) _ { T , \mu } .
+\end{equation}
+热力学势仅依赖于一个广延量——体积 \(V\)，因此 \(\Pi(\mu,V,T)=P(\mu,T)V\)，即压力等于热力学势除以单位体积。因此，我们可以通过压力 \(P\)、熵密度 \(s=S/V\) 和粒子数密度 \(n=n/V\) 来书写更为简洁的热力学关系：
+\begin{equation}\tag{17.11.8}\label{eq:17.11.8}
+d P = s d T + n d \mu \, ,
+\end{equation}
+\begin{equation}\tag{17.11.9}\label{eq:17.11.9}
+s = \left( \frac { \partial P } { \partial T } \right) _ { \mu } ,
+\end{equation}
+\begin{equation}\tag{17.11.10}\label{eq:17.11.10}
+n = \left( { \frac { \partial P } { \partial \mu } } \right) _ { T } ,
+\end{equation}
+\begin{equation}\tag{17.11.11}\label{eq:17.11.11}
+\left( { \frac { \partial s } { \partial \mu } } \right) _ { T } = \left( { \frac { \partial n } { \partial T } } \right) _ { \mu } .
+\end{equation}
+热力学势和压力均由大可统计配分函数决定。
+\begin{equation}\tag{17.11.12}\label{eq:17.11.12}
+\mathcal { Q } ( \mu , V , T ) = \mathrm { T r } \left( \exp ( - \beta \mathcal { H } + \beta \mu N ) \right) = \sum _ { N = 0 } ^{\infty} e ^{\beta \mu N} Q _ { N } ( V , T ) ,
+\end{equation}
+其结果为
+\begin{equation}\tag{17.11.13}\label{eq:17.11.13}
+P ( \mu , T ) \equiv \frac { \Pi ( \mu , V , T ) } { V } \equiv \frac { k T } { V } \ln \mathcal { Q } ( \mu , V , T ) .
+\end{equation}
+吉布斯自由能 \(G(N,P,T)=A+PV=U-TS+PV=\mu N\)，以及等压系综。
+吉布斯自由能描述的是一个封闭、等压、等温的体系，因此它同时依赖于温度、压力和分子数：
+\begin{equation}\tag{17.11.14}\label{eq:17.11.14}
+d G = - S d T + V d P + \mu d N ,
+\end{equation}
+\begin{equation}\tag{17.11.15}\label{eq:17.11.15}
+S = - \left( \frac { \partial G } { \partial T } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.16}\label{eq:17.11.16}
+V = \left( \frac { \partial G } { \partial P } \right) _ { T , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.17}\label{eq:17.11.17}
+\mu = \left( \frac { \partial G } { \partial N } \right) _ { T , P } .
+\end{equation}
+吉布斯自由能的麦克斯韦关系为
+\begin{equation}\tag{17.11.18}\label{eq:17.11.18}
+\left( \frac { \partial S } { \partial P } \right) _ { T , N } = - \left( \frac { \partial V } { \partial T } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.19}\label{eq:17.11.19}
+\left( \frac { \partial S } { \partial N } \right) _ { T , P } = - \left( \frac { \partial \mu } { \partial T } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.20}\label{eq:17.11.20}
+\left( \frac { \partial V } { \partial N } \right) _ { T , P } = \left( \frac { \partial \mu } { \partial P } \right) _ { T , N } .
+\end{equation}
+吉布斯自由能仅依赖于一个广延量——粒子数 \(N\)，因此 \(G(N,P,T)=N\mu(P,T)\)，即化学势是每粒子的吉布斯自由能。因此，我们可以通过压力 \(P\)、每粒子的熵 \(s=S/N\) 以及比容 \(\nu=V/N\) 来书写更为简洁的热力学关系：
+\begin{equation}\tag{17.11.21}\label{eq:17.11.21}
+d \mu = - s d T + \nu d P ,
+\end{equation}
+\begin{equation}\tag{17.11.22}\label{eq:17.11.22}
+s = - \left( { \frac { \partial \mu } { \partial T } } \right) _ { P } ,
+\end{equation}
+\begin{equation}\tag{17.11.23}\label{eq:17.11.23}
+\nu = \left( \frac { \partial \mu } { \partial P } \right) _ { T } ,
+\end{equation}
+\begin{equation}\tag{17.11.24}\label{eq:17.11.24}
+\left( \frac { \partial s } { \partial P } \right) _ { T } = - \left( \frac { \partial v } { \partial T } \right) _ { P } .
+\end{equation}
+吉布斯自由能和化学势均由等压配分函数决定。
+\begin{equation}\tag{17.11.25}\label{eq:17.11.25}
+Y _ { N } ( P , T ) = \mathrm { T r } \left( \exp ( - \beta \mathcal { H } - \beta P V ) \right) = \frac { 1 } { \lambda ^{3} } \int _ { 0 } ^{\infty} e ^{- \beta P V} Q _ { N } ( V , T ) d V ;
+\end{equation}
+此处采用热德 Broglie 波长的立方来使配分函数无量纲化，在经典热力学极限下已不再重要。由此我们得出结论
+\begin{equation}\tag{17.11.26}\label{eq:17.11.26}
+G ( N , P , T ) = N \mu ( P , T ) = - k T \ln Y _ { N } ( P , T ) .
+\end{equation}
+等压系综常用于计算机模拟中，以避免在一级相变过程中出现的两相区域。
+内部能量 \(U(N,V,S)\)
+内部能量描述的是一个封闭、等容、绝热的体系，因此它既依赖于熵、体积，也依赖于分子数：
+\begin{equation}\tag{17.11.27}\label{eq:17.11.27}
+d U = T d S - P d V + \mu d N ,
+\end{equation}
+\begin{equation}\tag{17.11.28}\label{eq:17.11.28}
+T = \left( \frac { \partial U } { \partial S } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.29}\label{eq:17.11.29}
+P = - \left( \frac { \partial U } { \partial V } \right) _ { S , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.30}\label{eq:17.11.30}
+\mu = \left( { \frac { \partial U } { \partial N } } \right) _ { S , V } .
+\end{equation}
+内部能量的麦克斯韦关系为
+\begin{equation}\tag{17.11.31}\label{eq:17.11.31}
+\left( \frac { \partial T } { \partial V } \right) _ { S , N } = - \left( \frac { \partial P } { \partial S } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.32}\label{eq:17.11.32}
+\left( \frac { \partial T } { \partial N } \right) _ { S , V } = \left( \frac { \partial \mu } { \partial S } \right) _ { V , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.33}\label{eq:17.11.33}
+\left( \frac { \partial P } { \partial N } \right) _ { S , V } = - \left( \frac { \partial \mu } { \partial V } \right) _ { S , N } .
+\end{equation}
+焓 \(H(N,P,S)=U+PV\)
+焓描述的是一个封闭的、等压的、绝热体系，因此它既是熵、压力和分子数的函数。
+\begin{equation}\tag{17.11.34}\label{eq:17.11.34}
+d H = T d S + V d P + \mu d N ,
+\end{equation}
+\begin{equation}\tag{17.11.35}\label{eq:17.11.35}
+T = \left( \frac { \partial H } { \partial S } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.36}\label{eq:17.11.36}
+V = \left( \frac { \partial H } { \partial P } \right) _ { S , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.37}\label{eq:17.11.37}
+\mu = \left( \frac { \partial H } { \partial N } \right) _ { S , P } .
+\end{equation}
+焓的麦克斯韦关系式为
+\begin{equation}\tag{17.11.38}\label{eq:17.11.38}
+\left( \frac { \partial T } { \partial P } \right) _ { S , N } = \left( \frac { \partial V } { \partial S } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.39}\label{eq:17.11.39}
+\left( \frac { \partial T } { \partial N } \right) _ { S , P } = \left( \frac { \partial \mu } { \partial S } \right) _ { P , N } ,
+\end{equation}
+\begin{equation}\tag{17.11.40}\label{eq:17.11.40}
+\left( \frac { \partial V } { \partial N } \right) _ { S , P } = \left( \frac { \partial \mu } { \partial P } \right) _ { S , N } .
+\end{equation}
+这种体系常被化学家用于描述在实验室中以固定压力进行的快速化学反应，其反应速率过快，以至于无法与环境进行充分的热量交换。
+磁自由能 \(F(T,H)=U(S,M)-TS-HM\)
+磁自由能描述的是在温度 \(T\) 和磁场 \(H\) 下，具有固定磁偶极子数量的系统。热力学关系和麦克斯韦关系为
+\begin{equation}\tag{17.11.41}\label{eq:17.11.41}
+d F = - S d T - M d H ,
+\end{equation}
+\begin{equation}\tag{17.11.42}\label{eq:17.11.42}
+S = - \left( { \frac { \partial F } { \partial T } } \right) _ { H } ,
+\end{equation}
+\begin{equation}\tag{17.11.43}\label{eq:17.11.43}
+M = - \left( \frac { \partial F } { \partial H } \right) _ { T } ,
+\end{equation}
+\begin{equation}\tag{17.11.44}\label{eq:17.11.44}
+\left( { \frac { \partial S } { \partial H } } \right) _ { T } = \left( { \frac { \partial M } { \partial T } } \right) _ { H } .
+\end{equation}
+该体系由固定场规范系综定义，其中自旋 \{\(\mathbf{s}_i\)\} 的规范配分函数，其偶极矩为 \(\mu\)，交换能量为 \(J_{ij}\)，为
+\begin{equation}\tag{17.11.45}\label{eq:17.11.45}
+Q _ { N } ( T , H ) = \mathrm { T r } \left( \exp ( - \beta \mathcal { H } ) \right) = \sum _ { \{ s \} } \exp \left( \sum _ { ( i , j ) } K _ { i j } s _ { i } \cdot s _ { j } + h \sum _ { i } s _ { z , i } \right) ,
+\end{equation}
+其中耦合常数为 \(K_{ij}=J_{ij}/kT\)，场耦合为 \(h=\mu H/kT\)。磁自由能则可表示为
+\begin{equation}\tag{17.11.46}\label{eq:17.11.46}
+F ( T , H ) = - k T \ln Q _ { N } ( T , H ) .
+\end{equation}
+凸性与方差
+根据热力学第二定律得出的熵 S 的凸性要求，所有自由能的二阶导数都具有唯一的符号。这些导数均与不同统计量的方差成正比。几个重要的例子包括热容、
+等温压缩率以及磁化率：
+\begin{equation}\tag{17.11.47}\label{eq:17.11.47}
+C _ { V } = T \left( \frac { \partial S } { \partial T } \right) _ { V , N } = - \left( \frac { \partial ^{2} A } { \partial T ^{2} } \right) _ { V , N } = \frac { \left\langle \mathcal { H } ^{2} \right\rangle - \left\langle \mathcal { H } \right\rangle ^{2} } { k T ^{2} } \geq 0 ,
+\end{equation}
+\begin{equation}\tag{17.11.48}\label{eq:17.11.48}
+\kappa _ { T } = \frac { 1 } { n ^{2} } \left( \frac { \partial n } { \partial \mu } \right) _ { T } = \frac { 1 } { n ^{2} } \left( \frac { \partial ^{2} P } { \partial \mu ^{2} } \right) _ { T } = \left( \frac { 1 } { n k T } \right) \frac { \left\langle N ^{2} \right\rangle - \left\langle N \right\rangle ^{2} } { \left\langle N \right\rangle } \geq 0 ,
+\end{equation}
+\begin{equation}\tag{17.11.49}\label{eq:17.11.49}
+\chi _ { T } = \left( \frac { \partial M } { \partial H } \right) _ { T } = - \left( \frac { \partial ^{2} F } { \partial H ^{2} } \right) _ { T } = \frac { \left\langle M ^{2} \right\rangle - \left\langle M \right\rangle ^{2} } { k T } \geq 0 .
+\end{equation}
+I 伪随机数
+计算机模拟中使用的随机数并非真正意义上的随机，而是伪随机数。它们旨在尽可能地呈现出随机序列的诸多特征，但其生成过程却基于简单的整数算法。"任何认为可以通过算术方法生成随机数字的人，当然都处于罪恶之中。因为正如多次指出的那样，根本不存在所谓的`随机数'——只存在生成随机数的方法，而严格的算术程序当然并不属于此类方法。"（冯·诺伊曼，1951年）冯·诺伊曼的这句玩笑并非旨在劝阻人们使用伪随机数，而是希望引导用户深入了解这些数是如何生成的、它们的统计特性以及潜在的弱点。在众多领域的计算机模拟中，伪随机数生成器至关重要；然而，在未经过充分测试之前，不应盲目信任某台生成器。关于如何创建和通过实证测试来检验伪随机数生成器的理论方法，已有大量文献可供参考，例如克努特（1997年）、勒库耶（1988年、1999年）以及普雷斯等人（2007年）。
+最常用且经过广泛测试的伪随机数生成器类别，均基于模大、通常为质数的整数运算。最简单的生成器类别是质数模线性同余法，它能够生成范围在{[}1, 2, \ldots, m-1{]}内的伪随机数，其中m为质数。每个新生成的数都是根据以下公式，以先前的数为基础：
+\begin{equation}\tag{17.11.50}\label{eq:17.11.50}
+r _ { j } = a \, r _ { j - 1 } { \bmod { m } } ,
+\end{equation}
+其中乘数\(a\)是一个经过精心选择并经实证验证的整数，且小于\(m\)。如果\(a\)的选择得当，该生成器将生成一串整数，该序列会在调用生成器\(m-1\)次后才开始重复，而这一序列恰好会完整地包含从\(1\)到\(m-1\)的所有整数一次。在开区间\((0,1)\)内生成的伪随机浮点数，可通过将整数乘以\(m^{-1}\)来实现。这样，便可在零与一之间，以均匀分布的方式生成一组浮点数，其数值范围为\(m-1\)个值。序列中不会出现浮点数\(0.0\)和\(1.0\)。在许多实现中，所选的模数往往小于\(2^{31}\)，以便能够正确表示整数。
+以4字节为单位进行生成。这种形式的生成器在大约20亿次调用后会重复出现。对于某些应用而言，这或许尚可接受，但对于科学计算代码来说，往往显得不足。即便是简单的模拟，也可能耗尽这样一种简单生成器的资源。不过，通过将不同模数和乘数的线性同余生成器组合使用，可以实现更长的周期，并降低统计上的相关性（L'Ecuyer, 1988）。以下算法利用两个线性同余生成器生成一个均匀分布的伪随机浮点数\(r\)，其序列的重复周期远比单个生成器要长。
+\section{算法}\label{ux7b97ux6cd5}
+\(q_{j}=a_{1}q_{j-1}\bmod m_{1}\)
+\(s_{j}=a_{2}s_{j-1}\bmod m_{2}\)
+\(z=(q_{j}-s_{j})\)
+若\(z\leq0\)，则\(z=z+m_{1}-1\)
+\(r=z\,m_{1}^{-1}\)
+组合生成器的周期长度等于\(m_{1}-1\)与\(m_{2}-1\)的非公因子之积。L'Ecuyer（1988）建议采用以下乘数与模数：\(m_{1}=2147483563=2^{31}-85\)，\(a_{1}=40014\)，\(m_{2}=2147483399=2^{31}-249\)，以及\(a_{2}=40692\)。这两个独立的生成器在频谱测试及其他相关性测试中表现优异（Knuth, 1997），且\((m_{1}-1)/2\)与\((m_{2}-1)/2\)相对互质，因此该生成器的周期为\(2.3\times10^{18}\)。由于\(a_{i}m_{i}<2^{53}\)，这一算法在高级语言中可极为轻松地实现，且借助IEEE双精度浮点运算即可完成。L'Ecuyer（1988）以及Press等人（2007）还展示了如何利用4字节整数运算来实现这些生成器。此外，还可以对伪随机数的排列顺序进行打乱，以进一步提升统计特性（Bays and Durham, 1976）。
+还有多种其他类型的伪随机数算法，市面上也有多款性能优良的生成器，它们已在计算领域得到广泛检验，并被广泛应用于科学文献中；有关综述，请参阅Newman和Barkema（1999）、Gentle（2003）以及Landau和Binder（2009）。不过需注意的是，伪随机序列中细微的相关性可能导致与精确结果相比产生极其显著的偏差，因此务必谨慎行事；请参考Ferrenberg、Landau和Wong（1992）、Beale（1996）以及图I.1。不同类型的生成器具有不同的相关性特征，因此，如果需要对计算机代码进行测试，更换基于不同算法的生成器有时会是一种行之有效的策略。
+\section{高斯分布的伪随机数}\label{ux9ad8ux65afux5206ux5e03ux7684ux4f2aux968fux673aux6570}
+我们常常需要从均值为原点、方差为1的高斯分布中抽取伪随机数：\(P(g)=\exp(-g^{2}/2)/\sqrt{2\pi}\)。以下算法基于Box和Muller（1958）提出的算法，用于从两组均匀分布的伪随机数中生成高斯分布的伪随机数。
+\(g_{2}=y\,w\)
+\(^{5}\) 一种广泛使用且备受信赖的伪随机数生成器，其细微的关联性已被证明会对某些MC模拟的结果产生不利影响——那就是R250反馈移位寄存器生成器。R250通过将两个先前存储在250元素表中的随机整数进行异或运算，生成一个正四字节的伪随机整数\(r_{i}\)，且\(0 \leq r_{i} < 2^{31}\)。与其他生成器类似，R250将{[}0,1{]}区间内的浮点数，通过将伪随机整数除以\(2^{31}\)来生成。这种特殊的反馈移位寄存器算法运行速度极快，并能生成相当不相关的随机对\(\langle r_{k}r_{k-i} \rangle = 1/4\)，其中\(i \neq 0\)。三元组也同样不相关，\(\langle r_{k}r_{k-i}r_{k-j} \rangle = 1/8\)，仅存在一种特定的三元组相关性\(\langle r_{k}r_{k-103}r_{k-250} \rangle\)，而这一相关性实际上会导致结果为\((6/7)(1/8)\)，而非正确的\(1/8\)；详情请参见Heuer、Dunweg和Ferrenberg（1997）。所有涉及这些三元组的更高阶相关性，同样会受到显著影响。这种三元组相关性偏离了14\%，却可能对蒙特卡洛模拟的结果造成重大影响（Ferrenberg、Landau和Wong，1992；Beale，1996）。
+

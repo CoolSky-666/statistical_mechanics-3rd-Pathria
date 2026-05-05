@@ -1,0 +1,747 @@
+﻿\chapter{简单气体理论}
+如今，我们已完全掌握了用于推导多种物理系统宏观性质的正式理论框架。然而，在大多数情况下，推导过程往往面临严重的数学难题，因此人们不得不将分析范围限制在更简单的系统类型，或对实际系统进行简化建模。实际上，即便是在这些受限的研究中，分析过程也往往分阶段进行，而第一阶段的分析往往高度"理想化"。这种理想化的最佳范例，便是我们熟悉的理想气体——对其研究不仅有助于熟练掌握数学方法，还能深刻揭示自然界中真实存在的气体所表现出的物理行为。事实上，理想气体理论也正是建立在这一理想化基础之上的；详情请参见第~10~章。
+在本章中，我们拟推导并详细探讨遵从量子统计规律的简单气体系统的最基本性质；讨论将涵盖双原子气体、多原子气体以及化学平衡等关键特征。
+\section{在量子力学微正则系综中的理想气体}\label{ux5728ux91cfux5b50ux529bux5b66ux5faeux6b63ux5219ux7cfbux7efcux4e2dux7684ux7406ux60f3ux6c14ux4f53}
+我们考虑一个由\(N\)个相互不干扰、彼此无法区分的粒子组成的气体系统，该系统被限制在体积为\(V\)的空间中，并共享给定的能量\(E\)。在这种情况下，我们所关注的统计量是\(\Omega(N,V,E)\)，其定义为：在宏观状态\((N,V,E)\)下，系统可达到的各不同微观状态的数量。在计算这一数量时，我们必须牢记：若未能以恰当的方式充分考虑粒子的不可区分性，所得到的结果在经典极限下可能并不成立，甚至可能难以接受。基于此，我们按照以下步骤进行推导。
+由于在大体积的情况下，系统中单个粒子的能量级彼此非常接近，我们可以将能谱划分为大量"能级组"，这些组可被称为能量单元；详见图~6.1。设\(\varepsilon_i\)为某一能级的平均能量，\(g_i\)为第\(i\)个能量单元中的（任意）能级数量；我们假设所有\(g_i \gg 1\)。在特定情形下，我们可能会发现，第1个能量单元中有\(n_1\)个粒子，第2个能量单元中有\(n_2\)个粒子，以此类推。显然，分布序列\(\{n_i\}\)必须满足以下条件：
+\begin{equation}\tag{6.1.1}\label{eq:6.1.1}
+\sum _ { i } n _ { i } = N
+\end{equation}
+其中，\(W\{n_i\}\) 表示与分布集合 \(\{n_i\}\) 相关的不同微观状态数量；而求和符号 \(\prime\) 则对所有符合条件 (1) 和 (2) 的分布集合求和。接下来，
+\begin{equation}\tag{6.1.2}\label{eq:6.1.2}
+W ^{\{ n _ { i} \} } = \prod _ { i } w ( i ) ,
+\end{equation}
+其中，\(w(i)\) 表示与光谱中第 \(i\) 个能量单元相关联的不同微观状态数量（即包含 \(n_i\) 个粒子，并分布在该单元的 \(g_i\) 个能级上的微观态数），而乘积对光谱中所有能量单元求取。显然，\(w(i)\) 是将 \(n_i\) 个相同且不可区分粒子分配到第 \(i\) 个单元中 \(g_i\) 个能级的总方式数。在玻色-爱因斯坦情形下，这一数值由式（3.8.25）给出：
+\begin{equation}\tag{6.1.3}\label{eq:6.1.3}
+w _ { \mathrm { B . E . } } ( \vec { i } ) = \frac { ( n _ { i } + g _ { i } - 1 ) ! } { n _ { i } ! \, ( g _ { i } - 1 ) ! } ,
+\end{equation}
+因此，
+\begin{equation}\tag{6.1.4}\label{eq:6.1.4}
+W _ { \mathrm { B . E . } } \{ n _ { i } \} = \prod _ { i } \frac { ( n _ { i } + g _ { i } - 1 ) ! } { n _ { i } ! ( g _ { i } - 1 ) ! } .
+\end{equation}
+在费米-狄拉克情形下，任何一个能级都不能容纳超过一个粒子；因此，\(n_{i}\) 的值不能超过 \(g_{i}\)。此时，\(w(i)\) 的数值则由"将 \(g_{i}\) 个能级划分为两个子组——一个由 \(n_{i}\) 个能级组成（每个能级将各有一个粒子），另一个由 \((g_{i} - n_{i})\) 个能级组成（这些能级将空置）"的方式给出。这一数值由以下公式给出：
+\begin{equation}\tag{6.1.5}\label{eq:6.1.5}
+w _ { \mathrm { F . D . } } ( i ) = \frac { g _ { i } ! } { n _ { i } ! \left( g _ { i } - n _ { i } \right) ! } ,
+\end{equation}
+因此，
+\begin{equation}\tag{6.1.6}\label{eq:6.1.6}
+W _ { \mathrm { F . D . } } \{ n _ { i } \} = \prod _ { i } \frac { g _ { i } ! } { n _ { i } ! ( g _ { i } - n _ { i } ) ! } .
+\end{equation}
+为完整性起见，我们也可以纳入经典情形——或者说通常所称的麦克斯韦-玻尔兹曼情形。在该情形下，粒子被视为可区分的，因此任意一个 \(n_i\) 粒子均可独立地被置于任意一个 \(g_i\) 个能级中，且由此产生的各种态均可被视为彼此不同；这些态的数量显然为 \((g_i)^{n_i}\)。此外，在这种情形下，分布集合 \(\{n_i\}\) 本身也被视为可以被获得的，
+\begin{equation}\tag{6.1.7}\label{eq:6.1.7}
+\frac { N ! } { n _ { 1 } ! n _ { 2 } ! \ldots }
+\end{equation}
+通过不同的方式，当引入吉布斯修正因子后，会得到一个"权重因子"。
+\begin{equation}\tag{6.1.8}\label{eq:6.1.8}
+\frac { 1 } { n _ { 1 } ! n _ { 2 } ! \ldots } = \prod _ { i } \frac { 1 } { n _ { i } ! } ;
+\end{equation}
+另请参阅第 1.6 节，尤其是式 (1.6.2)。将这两个结果结合在一起，我们得到
+\begin{equation}\tag{6.1.9}\label{eq:6.1.9}
+W _ { \mathrm { M . B . } } \{ n _ { i } \} = \prod _ { i } \frac { ( g _ { i } ) ^{n _ { i} } } { n _ { i } ! } .
+\end{equation}
+现在，系统的熵将由以下公式给出：
+\begin{equation}\tag{6.1.10}\label{eq:6.1.10}
+S ( N , V , E ) = k \ln \Omega ( N , V , E ) = k \ln \left[ \sum _ { \{ n _ { i } \} } ^{\prime} W \{ n _ { i } \} \right] .
+\end{equation}
+可以证明，在我们分析所处的条件下，(12) 式右侧求和项的对数，可以近似为该求和中最大项的对数；请参阅问题 3.4。因此，我们可以将 (12) 式替换为
+\begin{equation}\tag{6.1.11}\label{eq:6.1.11}
+S ( N , V , E ) \approx k \ln W \{ n _ { i } ^{*} \} ,
+\end{equation}
+其中，\(n_{i}^{*}\) 是能够使 \(W\{n_{i}\}\) 数值达到最大化的分布集合；而 \(n_{i}^{*}\) 这些数值显然正是分布参数 \(n_{i}\) 的最可能取值。然而，这一最大化过程必须在约束条件下进行——即保持总量 \(N\) 和能量 \(E\) 保持恒定。这一问题可以通过拉格朗日乘数法来解决，具体参见第 3.2 节。现在，我们用来确定最可能分布集合 \(n_{i}^{*}\) 的条件，如\autoref{eq:6.1.1}、\autoref{eq:6.1.2} 和\autoref{eq:6.1.13} 所示，
+\begin{equation}\tag{6.1.12}\label{eq:6.1.12}
+\delta \ln W \{ n _ { i } \} - \left[ \alpha \sum _ { i } \delta n _ { i } + \beta \sum _ { i } \varepsilon _ { i } \delta n _ { i } \right] = 0 .
+\end{equation}
+对于 \(\ln W\{n_i\}\)，根据\autoref{eq:6.1.6}、\autoref{eq:6.1.8} 和\autoref{eq:6.1.11}，假设不仅所有 \(g_i\) 都足够大，而且所有 \(n_i\) 也均远大于 1（因此可以对这些表达式中出现的所有阶乘应用斯特林近似公式 \(\ln(x!) \approx x \ln x - x\)），
+\begin{equation}\tag{6.1.13}\label{eq:6.1.13}
+\begin{array}{rl} & { \ln W \{ n _ { i } \} = \sum _ { i } \ln w ( i ) } \\& {  \approx \sum _ { i } \left[ n _ { i } \ln \left( \frac { g _ { i } } { n _ { i } } - a \right) - \frac { g _ { i } } { a } \ln \left( 1 - a \frac { n _ { i } } { g _ { i } } \right) \right] , } \end{array}
+\end{equation}
+其中，对于 B.E. 情况，\(a = -1\)；对于 F.D. 情况，\(a = +1\)；而对于 M.B. 情况，\(a = 0\)。于是，\autoref{eq:6.1.14} 变为
+\begin{equation}\tag{6.1.14}\label{eq:6.1.14}
+\sum _ { i } \left[ \ln \left( \frac { g _ { i } } { n _ { i } } - \alpha \right) - \alpha - \beta \varepsilon _ { i } \right] _ { n _ { i } = n _ { i } ^{*} } \delta n _ { i } = 0 .
+\end{equation}
+鉴于\autoref{eq:6.1.16} 中增量 \(\delta n_{i}\) 的任意性，我们必然有（对于所有 \(i\)）
+\begin{equation}\tag{6.1.15}\label{eq:6.1.15}
+\ln \left( \frac { g _ { i } } { n _ { i } ^{*} } - a \right) - \alpha - \beta \varepsilon _ { i } = 0 ,
+\end{equation}
+因此，\(^{1}\)
+\begin{equation}\tag{6.1.16}\label{eq:6.1.16}
+n _ { i } ^{*} = \frac { g _ { i } } { e ^{\alpha + \beta \varepsilon _ { i} } + a } .
+\end{equation}
+\(n_{i}^{*}\) 与 \(g_{i}\) 成正比这一事实，促使我们对这一量进行如下解释：
+\begin{equation}\tag{6.1.17}\label{eq:6.1.17}
+\frac { n _ { i } ^{*} } { g _ { i } } = \frac { 1 } { e ^{\alpha + \beta \varepsilon _ { i} } + a } ,
+\end{equation}
+实际上，这一量正是第 \(i\) 个能级中每单位能量的粒子数——也就是单个能量水平 \(\varepsilon_i\) 中的最可能粒子数。顺便一提，我们的最终结果（18a）完全独立于粒子的能量水平的分组方式。
+只要每个能级的层数足够多，粒子就会被分组到各个能级中。正如第 6.2 节所展示的那样，公式（18a）也可以完全不通过将能量水平分组为能级的方式来推导；事实上，只有在这种情况下，这一结果才真正具有可接受性！
+将\autoref{eq:6.1.18} 代入\autoref{eq:6.1.15}，我们得到气体的熵为
+\begin{equation}\tag{6.1.18}\label{eq:6.1.18}
+\begin{array}{r} { \frac { S } { k } \approx \ln W \{ n _ { i } ^{*} \} = \sum _ { i } \left[ n _ { i } ^{*} \ln \left( \frac { g _ { i } } { n _ { i } ^{*} } - a \right) - \frac { g _ { i } } { a } \ln \left( 1 - a \frac { n _ { i } ^{*} } { g _ { i } } \right) \right] } \\{ = \sum _ { i } \left[ n _ { i } ^{*} \left( \alpha + \beta \varepsilon _ { i } \right) + \frac { g _ { i } } { a } \ln \left\{ 1 + a e ^{- \alpha - \beta \varepsilon _ { i} } \right\} \right] . } \end{array}
+\end{equation}
+\autoref{eq:6.1.19} 右侧的第一项同等于 \(\alpha N\)，而第二项则同等于 \(\beta E\)。因此，对于第三项，我们有
+\begin{equation}\tag{6.1.19}\label{eq:6.1.19}
+\frac { 1 } { a } \sum _ { i } g _ { i } \ln \left\{ 1 + a e ^{- \alpha - \beta \varepsilon _ { i} } \right\} = \frac { S } { k } - \alpha N - \beta E .
+\end{equation}
+如今，这里参数 \(\alpha\) 和 \(\beta\) 的物理意义，与第 4.3 节中的解释完全一致，即
+\begin{equation}\tag{6.1.20}\label{eq:6.1.20}
+\alpha = - \frac { \mu } { k T } ,  \beta = \frac { 1 } { k T } ;
+\end{equation}
+欲确认这一点，请参阅第 6.2 节。因此，\autoref{eq:6.1.20} 的右侧等于
+\begin{equation}\tag{6.1.21}\label{eq:6.1.21}
+\frac { S } { \bar { k } } + \frac { \mu N } { \bar { k } T } - \frac { E } { \bar { k } T } = \frac { G - ( E - T S ) } { k T } = \frac { P V } { \bar { k } T } .
+\end{equation}
+因此，系统的热力学压力由以下公式给出
+\begin{equation}\tag{6.1.22}\label{eq:6.1.22}
+P V = \frac { k T } { a } \sum _ { i } \left[ g _ { i } \ln \left\{ 1 + a e ^{- \alpha - \beta \varepsilon _ { i} } \right\} \right] .
+\end{equation}
+在麦克斯韦-玻尔兹曼情形下（\(a \rightarrow 0\)），\autoref{eq:6.1.23} 变为
+\begin{equation}\tag{6.1.23}\label{eq:6.1.23}
+P V = k T \sum _ { i } g _ { i } e ^{- \alpha - \beta \varepsilon _ { i} } = k T \sum _ { i } n _ { i } ^{*} = N k T ,
+\end{equation}
+这是经典理想气体所熟悉的状态方程。请注意，对于麦克斯韦-玻尔兹曼情形，式（24）成立，且与能量谱 \(\varepsilon_{i}\) 的具体细节无关。
+人们会发现，式（23）中的表达式 \(a^{-1}\sum_i[\cdots]\) 与热力学量 \(PV/kT\) 相等，理应与理想气体的 \(q\)-势一致。因此，我们有望通过这一表达式获得该系统的所有宏观性质。不过，在进一步证明这一点之前，我们首先需要在正则系综与巨正则系综下，对理想气体理论进行系统性推导。
+\section{其他量子力学系综下的理想气体}\label{ux5176ux4ed6ux91cfux5b50ux529bux5b66ux7edfux8ba1ux6001ux4e0bux7684ux7406ux60f3ux6c14ux4f53}
+在正则系综中，某一系统的热力学性质是通过其配分函数推导得出的。
+\begin{equation}\tag{6.2.1}\label{eq:6.2.1}
+Q _ { N } ( V , T ) = \sum _ { E } e ^{- \beta E} ,
+\end{equation}
+其中 \(E\) 表示系统的能级，而 \(\beta = 1/kT\)。现在，我们可以将某一能量值 \(E\) 用单粒子能量 \(\varepsilon\) 来表示；例如，
+\begin{equation}\tag{6.2.2}\label{eq:6.2.2}
+E = \sum _ { \varepsilon } n _ { \varepsilon } \varepsilon ,
+\end{equation}
+其中 \(n_{\varepsilon}\) 是处于单粒子能量状态 \(\varepsilon\) 中的粒子数。这些数值 \(n_{\varepsilon}\) 必须满足以下条件：
+\begin{equation}\tag{6.2.3}\label{eq:6.2.3}
+\sum _ { \varepsilon } n _ { \varepsilon } = N .
+\end{equation}
+于是，式（1）可以写成：
+\begin{equation}\tag{6.2.4}\label{eq:6.2.4}
+Q _ { N } ( V , T ) = \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} g \{ n _ { \varepsilon } \} e ^{- \beta \sum _ { \varepsilon} n _ { \varepsilon } \varepsilon } ,
+\end{equation}
+其中 \(g\{n_{\varepsilon}\}\) 是适用于分布集合 \(\{n_{\varepsilon}\}\) 的统计权重因子，而求和符号 \(\sum'\) 则遍历所有符合约束条件（3）的分布集合。不同情况下的统计权重因子分别为：
+\begin{equation}\tag{6.2.5}\label{eq:6.2.5}
+g _ { \mathrm { B . E . } } \{ n _ { \varepsilon } \} = 1 ,
+\end{equation}
+\begin{equation}\tag{6.2.6}\label{eq:6.2.6}
+g _ { \mathrm { F . D . } } \{ n _ { \varepsilon } \} = \left\{ \begin{array}{ll} { 1 } & { \mathrm { i f ~ a l l ~ } n _ { \varepsilon } = 0 \mathrm { ~ o r ~ } 1 } \\{ 0 } & { \mathrm { o t h e r w i s e } , } \end{array} \right.
+\end{equation}
+并且
+\begin{equation}\tag{6.2.7}\label{eq:6.2.7}
+g _ { \mathrm { M . B . } } \{ n _ { \varepsilon } \} = \prod _ { \varepsilon } \frac { 1 } { n _ { \varepsilon } ! } .
+\end{equation}
+需要注意的是，在本研究中，我们处理的是单粒子态作为独立的状态，无需将其归入若干个"单元"之中；事实上，权重因子（5）、（6）和（7）均能直接从各自的前驱因子（6.1.6）、（6.1.8）和（6.1.11）中推导而来——只需将所有 \(g_i = 1\) 即可。
+首先，我们先推导麦克斯韦-玻尔兹曼情形。将式（7）代入式（4），我们得到：
+\begin{equation}\tag{6.2.8}\label{eq:6.2.8}
+\begin{array}{r} { Q _ { N } ( V , T ) = \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} \left[ \left( \prod _ { \varepsilon } \frac { 1 } { n _ { \varepsilon } ! } \right) \prod _ { \varepsilon } \left( e ^{- \beta \varepsilon} \right) ^{n _ { \varepsilon} } \right] } \\{ = \frac { 1 } { N ! } \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} \left[ \frac { N ! } { \prod _ { \varepsilon } n _ { \varepsilon } ! } \prod _ { \varepsilon } \left( e ^{- \beta \varepsilon} \right) ^{n _ { \varepsilon} } \right] . } \end{array}
+\end{equation}
+由于这里的求和运算受制于条件（3），因此可以借助多项式定理进行计算，其结果为：
+\begin{equation}\tag{6.2.9}\label{eq:6.2.9}
+\begin{array}{r} { Q _ { N } ( V , T ) = \frac { 1 } { N ! } \left[ \sum _ { \varepsilon } e ^{- \beta \varepsilon} \right] ^{N} } \\{ = \frac { 1 } { N ! } [ Q _ { 1 } ( V , T ) ] ^{N} , } \end{array}
+\end{equation}
+这与式（3.5.15）的结果一致。当然，\(Q_{1}\) 的计算过程非常简单。利用单粒子能级介于 \(\varepsilon\) 与 \(\varepsilon + d\varepsilon\) 之间的数量的渐近公式（2.4.7），我们得以得出：
+\begin{equation}\tag{6.2.10}\label{eq:6.2.10}
+\begin{array}{rlr} & { } & { Q _ { 1 } ( V , T ) \equiv \sum _ { \varepsilon } e ^{- \beta \varepsilon} \approx \frac { 2 \pi V } { \hbar ^{3} } ( 2 m ) ^{3 / 2} \int _ { 0 } ^{\infty} e ^{- \beta \varepsilon} \varepsilon ^{1 / 2} d \varepsilon } \\& { } & { = V / \lambda ^{3} , } \end{array}
+\end{equation}
+其中，\(\lambda\) {[}等于 \(h/(2\pi mkT)^{1/2}\){]} 是粒子的平均热波长。因此，
+\begin{equation}\tag{6.2.11}\label{eq:6.2.11}
+Q _ { N } ( V , T ) = \frac { V ^{N} } { N ! \lambda ^{3 N} } ,
+\end{equation}
+由此可推导出该系统的完整热力学关系；例如，请参阅第 3.5 节。此外，我们还得到了该系统的巨配分函数
+\begin{equation}\tag{6.2.12}\label{eq:6.2.12}
+\mathcal { Q } ( z , V , T ) = \sum _ { N = 0 } ^{\infty} z ^{N} Q _ { N } ( V , T ) = \exp ( z V / \lambda ^{3} ) ;
+\end{equation}
+与\autoref{eq:4.4.3} 进行比较。我们知道，该系统的热力学同样可以由 \(\mathcal{Q}\) 的表达式完美地推导出来。
+在玻色-爱因斯坦和费米-狄拉克两种情形下，我们将 (5) 和 (6) 代入 (4)，即可得到：
+\begin{equation}\tag{6.2.13}\label{eq:6.2.13}
+Q _ { N } ( V , T ) = \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} \left( e ^{- \beta \sum _ { \varepsilon} n _ { \varepsilon } \varepsilon } \right) ;
+\end{equation}
+B.E. 和 F.D. 两种情形之间的差异，源于数值 \(n_{\varepsilon}\) 可取的不同取值。鉴于求和符号 \(\sum'\) 所受的限制，要在这些情形中对配分函数 \(Q_{N}\) 进行明确计算，显得相当繁琐。相比之下，巨配分函数 \(\mathcal{Q}\) 却更容易处理；我们有
+\begin{equation}\tag{6.2.14}\label{eq:6.2.14}
+\begin{array}{r} { \mathcal { Q } ( z , V , T ) = \displaystyle \sum _ { N = 0 } ^{\infty} \left[ z ^{N} \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} e ^{- \beta \sum _ { \varepsilon} n _ { \varepsilon } \varepsilon } \right] } \\{ = \displaystyle \sum _ { N = 0 } ^{\infty} \left[ \sum _ { \{ n _ { \varepsilon } \} } ^{\prime} \prod _ { \varepsilon } \left( z e ^{- \beta \varepsilon} \right) ^{n _ { \varepsilon} } \right] . } \end{array}
+\end{equation}
+现在，\autoref{eq:6.2.14} 中的双重求和——先对满足总数量 \(N\) 固定值约束的数值 \(n_{\varepsilon}\) 进行求和，再对所有可能的 \(N\) 值进行求和——实际上等同于对所有可能的 \(n_{\varepsilon}\) 值进行求和，且彼此之间互不相关。因此，我们可以写作
+\begin{equation}\tag{6.2.15}\label{eq:6.2.15}
+\begin{array}{rl} & { \mathcal { Q } ( z , V , T ) = \sum _ { n _ { 0 } , n _ { 1 } , \ldots } \left[ \left( z e ^{- \beta \varepsilon _ { 0} } \right) ^{n _ { 0} } \left( z e ^{- \beta \varepsilon _ { 1} } \right) ^{n _ { 1} } \ldots \right] } \\& {  = \left[ \sum _ { n _ { 0 } } \left( z e ^{- \beta \varepsilon _ { 0} } \right) ^{n _ { 0} } \right] \left[ \sum _ { n _ { 1 } } \left( z e ^{- \beta \varepsilon _ { 1} } \right) ^{n _ { 1} } \right] \ldots . } \end{array}
+\end{equation}
+在玻色-爱因斯坦情形下，\(n_{s}\) 可以是 0、1、2\ldots\ldots；而在费米-狄拉克情形下，\(n_{s}\) 只能是 0 或 1。因此，
+\begin{equation}\tag{6.2.16}\label{eq:6.2.16}
+\mathcal { Q } ( z , V , T ) = \left\{ \begin{array}{ll} { \displaystyle \prod _ { \varepsilon } \frac { 1 } { ( 1 - z e ^{- \beta \varepsilon} ) } } & { \mathrm { i n ~ t h e ~ B . E . ~ c a s e , ~ w i t h ~ z e ^{- \beta \varepsilon} < 1 } } \\{ \displaystyle \prod _ { \varepsilon } ( 1 + z e ^{- \beta \varepsilon} ) } & { \mathrm { i n ~ t h e ~ F . D . ~ c a s e . } } \end{array} \right.
+\end{equation}
+系统的 \(q\) 势由此给出为
+\begin{equation}\tag{6.2.17}\label{eq:6.2.17}
+\begin{array}{r} { q ( z , V , T ) \equiv \frac { P V } { k T } \equiv \ln \mathcal { Q } ( z , V , T ) } \\{ = \mp \sum _ { \varepsilon } \ln ( 1 \mp z e ^{- \beta \varepsilon} ) ; } \end{array}
+\end{equation}
+与\autoref{eq:6.1.23} 进行比较，其中 \(g_{i}=1\)。将逸度（fugacity）\(z\) 与\autoref{eq:6.1.23} 中的量 \(e^{-\alpha}\) 对应是自然的；相应地，\(\alpha=-\mu/kT\)。一如往常，\autoref{eq:6.2.17} 中的上（下）符号分别对应于玻色（费米）情形。
+最终，我们可以将 \(q\) 的结果以适用于三种情形的形式写成：
+\begin{equation}\tag{6.2.18}\label{eq:6.2.18}
+q ( z , V , T ) \equiv \frac { P V } { k T } = \frac { 1 } { a } \sum _ { \varepsilon } \ln ( 1 + a z e ^{- \beta \varepsilon} ) ,
+\end{equation}
+其中 \(a = -1\)、\(+1\) 或 \(0\)，具体取决于支配该系统的统计规律。尤其是，经典情形（\(a \rightarrow 0\)）给出了
+\begin{equation}\tag{6.2.19}\label{eq:6.2.19}
+q _ { \mathrm { M . B . } } = z \sum _ { \varepsilon } e ^{- \beta \varepsilon} = z Q _ { 1 } ,
+\end{equation}
+与\autoref{eq:4.4.4} 相一致。从\autoref{eq:6.2.18} 可知，
+\begin{equation}\tag{6.2.20}\label{eq:6.2.20}
+\overline { { N } } \equiv z \left( \frac { \partial q } { \partial z } \right) _ { V , T } = \sum _ { \varepsilon } \frac { 1 } { z ^{- 1} e ^{\beta \varepsilon} + a }
+\end{equation}
+并且
+\begin{equation}\tag{6.2.21}\label{eq:6.2.21}
+\overline { { E } } \equiv - \left( \frac { \partial q } { \partial \beta } \right) _ { z , V } = \sum _ { \varepsilon } \frac { \varepsilon } { z ^{- 1} e ^{\beta \varepsilon} + a } .
+\end{equation}
+与此同时，能量水平 \(\varepsilon\) 的平均占据数 \(\langle n_{\varepsilon}\rangle\) 也得以确定，详见\autoref{eq:6.2.14} 和\autoref{eq:6.2.17}，
+\begin{equation}\tag{6.2.22}\label{eq:6.2.22}
+\begin{array}{rl} & { \langle n _ { \varepsilon } \rangle = \frac { 1 } { Q } \left[ - \frac { 1 } { \beta } \left( \frac { \partial \mathcal { Q } } { \partial \varepsilon } \right) _ { z , T , \mathrm { ~ a l l ~ o t h e r ~ } \varepsilon } \right] } \\& { \equiv - \frac { 1 } { \beta } \left( \frac { \partial q } { \partial \varepsilon } \right) _ { z , T , \mathrm { ~ a l l ~ o t h e r ~ } \varepsilon } } \\& { = \frac { 1 } { z ^{- 1} e ^{\beta \varepsilon} + a } , } \end{array}
+\end{equation}
+与式（20）和式（21）相一致。将我们的最终结果（22）与其对应项（6.1.18a）进行比较，我们发现，单粒子态的占据数 \(n\) 的平均值 \(\langle n \rangle\) 与最可能值 \(n^{*}\) 确实完全相同。
+\section{占据数的统计性质}\label{ux503eux5411ux6570ux7684ux7edfux8ba1ux6027ux8d28}
+式（6.2.22）将单粒子态的能量为 \(\varepsilon\) 时的平均占据数，以 \((\varepsilon - \mu)/kT\) 这一量的显式函数形式给出：
+\begin{equation}\tag{6.3.1}\label{eq:6.3.1}
+\langle n _ { \varepsilon } \rangle = \frac { 1 } { e ^{( \varepsilon - \mu ) / k T} + a } .
+\end{equation}
+该数量的函数行为如图~6.2所示。在费米-狄拉克情形下（\(a=+1\)），平均占据数永远不会超过 1，因为变量 \(n_{\varepsilon}\) 本身只能取 0 或 1。此外，当 \(\varepsilon<\mu\) 且 \(|\varepsilon-\mu|\gg kT\) 时，平均占据数会趋近于其最大可能值 1。而在玻色-爱因斯坦情形下（\(a=-1\)），必须满足 \(\mu < \varepsilon\)（对所有单粒子能级）；请参见式（6.2.16a）。事实上，当 \(\mu\) 等于最低能级 \(\varepsilon_0\) 时，该特定能级的占据数会无限增大，从而引发玻色-爱因斯坦凝聚现象；详见第7.1节和第7.2节。对于
+这与条件（5.5.20）相一致。
+接下来，我们将考察变量 \(n_{\varepsilon}\) 的统计涨落。在对导致式（6.2.22）的计算进行进一步推导后，我们得到
+\begin{equation}\tag{6.3.2}\label{eq:6.3.2}
+\langle n _ { \varepsilon } ^{2} \rangle = \frac { 1 } { Q } \left[ \left( - \frac { 1 } { \beta } \frac { \partial } { \partial \varepsilon } \right) ^{2} Q \right] _ { z , T , \mathrm { ~ a l l ~ o t h e r ~ } \varepsilon } ;
+\end{equation}
+由此可得
+\begin{equation}\tag{6.3.3}\label{eq:6.3.3}
+\begin{array}{rl} & { \langle n _ { \varepsilon } ^{2} \rangle - \langle n _ { \varepsilon } \rangle ^{2} = \left[ \left( - \frac { 1 } { \beta } \frac { \partial } { \partial \varepsilon } \right) ^{2} \ln \mathcal { Q } \right] _ { z , T , \mathrm { ~ a l l ~ o t h e r ~ } \varepsilon } } \\& {  = \left[ \left( - \frac { 1 } { \beta } \frac { \partial } { \partial \varepsilon } \right) \langle n _ { \varepsilon } \rangle \right] _ { z , T } . } \end{array}
+\end{equation}
+对于相对均方差，我们得出结果（无论粒子遵循何种统计分布）
+\begin{equation}\tag{6.3.4}\label{eq:6.3.4}
+\frac { \langle n _ { \varepsilon } ^{2} \rangle - \langle n _ { \varepsilon } \rangle ^{2} } { \langle n _ { \varepsilon } \rangle ^{2} } = \left( \frac { 1 } { \beta } \frac { \partial } { \partial \varepsilon } \right) \left\{ \frac { 1 } { \langle n _ { \varepsilon } \rangle } \right\} = z ^{- 1} e ^{\beta \varepsilon} ;
+\end{equation}
+当然，这一量的实际数值将取决于粒子的统计分布，因为在给定的粒子密度（\(N/V\)）和给定的温度 \(T\) 下，不同统计分布下 \(z\) 的取值也会有所不同。
+将式（8）改写成如下形式，似乎更具启发性
+\begin{equation}\tag{6.3.5}\label{eq:6.3.5}
+\frac { \langle n _ { \varepsilon } ^{2} \rangle - \langle n _ { \varepsilon } \rangle ^{2} } { \langle n _ { \varepsilon } \rangle ^{2} } = \frac { 1 } { \langle n _ { \varepsilon } \rangle } - a .
+\end{equation}
+在经典情形下（\(a=0\)），相对涨落呈正态分布。而在费米-狄拉克情形下，相对涨落的表达式为 \(1/\langle n_{\varepsilon}\rangle-1\)，其值低于正常水平，并随着 \(\langle n_{\varepsilon}\rangle\) 趋近于1而逐渐趋于零。而在玻色-爱因斯坦情形下，涨落明显高于正常水平。² 显然，这一结论同样适用于光子气体，进而也适用于黑体辐射中的振子态。在后一种情境下，爱因斯坦早在1909年便依据普朗克的方法推导出了这一结果，并指出，涨落表达式中的项1可能源于辐射的波动特性，而项 \(1/\langle n_{\varepsilon}\rangle\) 则源自光子的粒子特性；有关详细内容，请参阅基特尔（1958）和特尔哈尔回顾（1968）。
+与涨落问题密切相关的是"光子束中的统计相关性"这一问题，这一现象已通过实验被观测到（参见汉伯里·布朗和
+Twiss（1956年、1957年、1958年）曾对这些涨落的量子统计性质进行了理论阐释（参见Purcell，1956年；Kothari与Auluck，1957年）。如需更多详细信息，请参考Mandel、Sudarshan和Wolf（1964年）以及Holliday与Sage（1964年）的相关文献。
+为了更深入地理解占有数的统计特性，我们来计算量 \(p_{\varepsilon}(n)\)——即在能量为 \(\varepsilon\) 的状态中恰好存在 \(n\) 个粒子的概率。根据式（6.2.14b），我们可以推导出 \(p_{\varepsilon}(n) \propto (ze^{-\beta\varepsilon})^{n}\)。经过归一化处理后，在玻色-爱因斯坦情形下，该表达式变为：
+\begin{equation}\tag{6.3.6}\label{eq:6.3.6}
+\begin{array}{r} { p _ { \varepsilon } ( n ) | _ { \mathrm { B . E . } } = \left( z e ^{- \beta \varepsilon} \right) ^{n} \left[ 1 - z e ^{- \beta \varepsilon} \right] } \\{ = \left( \frac { \langle n _ { \varepsilon } \rangle } { \langle n _ { \varepsilon } \rangle + 1 } \right) ^{n} \frac { 1 } { \langle n _ { \varepsilon } \rangle + 1 } = \frac { ( \langle n _ { \varepsilon } \rangle ) ^{n} } { ( \langle n _ { \varepsilon } \rangle + 1 ) ^{n + 1} } . } \end{array}
+\end{equation}
+在费米-狄拉克情形下，我们得到
+\begin{equation}\tag{6.3.7}\label{eq:6.3.7}
+\begin{array}{r} { p _ { \varepsilon } ( n ) | _ { \mathrm { F . D . } } = \left( z e ^{- \beta \varepsilon} \right) ^{n} \left[ 1 + z e ^{- \beta \varepsilon} \right] ^{- 1} } \\{ = \left\{ \begin{array}{ll} { 1 - \langle n _ { \varepsilon } \rangle } & { \mathrm { f o r }  n = 0 } \\{ \langle n _ { \varepsilon } \rangle } & { \mathrm { f o r }  n = 1 . } \end{array} \right. } \end{array}
+\end{equation}
+在麦克斯韦-玻尔兹曼情形下，我们得到 \(p_{\varepsilon}(n) \propto (ze^{-\beta\varepsilon})^{n}/n!\)，而非原来的 \(p_{\varepsilon}(n)\)；请参阅式（6.2.8）。经过归一化处理后，我们得到
+\begin{equation}\tag{6.3.8}\label{eq:6.3.8}
+p _ { \varepsilon } ( n ) | _ { \mathrm { M . B . } } = \frac { \left( z e ^{- \beta \varepsilon} \right) ^{n} / n ! } { \exp \left( z e ^{- \beta \varepsilon} \right) } = \frac { ( \langle n _ { \varepsilon } \rangle ) ^{n} } { n ! } e ^{- \langle n _ { \varepsilon} \rangle } .
+\end{equation}
+式（6.3.8）对应的是泊松分布，其变量方差等于其平均值本身；可与式（6.3.5）在 \(a=0\) 时进行对比。它也与理想经典系统构成的巨正则系综中总粒子数 \(N\) 的分布相似；请参阅问题4.4。此外，我们还注意到，在这种情况下，\(p_{\varepsilon}(n)/p_{\varepsilon}(n-1)\) 的比值会随着 \(n\) 的增大而呈反比关系，这正是无相关事件所遵循的“正常”统计行为。
+另一方面，玻色-爱因斯坦情形下的分布则是几何分布，其公比为 \(\langle n_{\varepsilon}\rangle/(\langle n_{\varepsilon}\rangle+1)\)。这意味着，一个状态 \(\varepsilon\) 自身再增加一个粒子的概率，与该状态已占据的粒子数量无关；因此，与"正常"的统计行为相比，玻色子表现出一种特殊的"成簇"倾向，即它们之间存在正向的统计关联性。相比之下，费米子则呈现出负向的统计关联性。
+\section{动力学考量}\label{ux52a8ux529bux5b66ux8003ux91cf}
+理想气体的热力学压力由式（6.1.23）或（6.2.18）给出。鉴于体积 \(V\) 很大，单个粒子的能量态 \(\varepsilon\) 之间的距离将非常接近。
+彼此十分接近，以至于对它们的求和可以替换为积分。由此，我们得到
+\begin{equation}\tag{6.4.1}\label{eq:6.4.1}
+\begin{array}{rl} & { P = \frac { k T } { a } \int _ { 0 } ^{\infty} \ln \Big [ 1 + a z e ^{- \beta \varepsilon ( p )} \Big ] \frac { 4 \pi \, p ^{2} d p } { h ^{3} } } \\& {  = \frac { 4 \pi \, k T } { a h ^{3} } \left[ \frac { p ^{3} } { 3 } \ln \Big [ 1 + a z e ^{- \beta \varepsilon ( p )} \Big ] \Big | _ { 0 } ^{\infty} + \int _ { 0 } ^{\infty} \frac { p ^{3} } { 3 } \frac { a z e ^{- \beta \varepsilon ( p )} } { 1 + a z e ^{- \beta \varepsilon ( p )} } \beta \frac { d \varepsilon } { d p } d p \right] . } \end{array}
+\end{equation}
+积分部分在两个极限处都趋近于零，而表达式的其余部分则简化为
+\begin{equation}\tag{6.4.2}\label{eq:6.4.2}
+P = \frac { 4 \pi } { 3 h ^{3} } \int _ { 0 } ^{\infty} \frac { 1 } { z ^{- 1} e ^{\beta \varepsilon ( p )} + a } \left( p \frac { d \varepsilon } { d p } \right) p ^{2} d p .
+\end{equation}
+现在，系统的总粒子数由
+\begin{equation}\tag{6.4.3}\label{eq:6.4.3}
+N = \int \langle n _ { p } \rangle \frac { V d ^{3} p } { h ^{3} } = \frac { 4 \pi V } { h ^{3} } \int _ { 0 } ^{\infty} \frac { 1 } { z ^{- 1} e ^{\beta \varepsilon ( p )} + a } p ^{2} d p .
+\end{equation}
+将式（1）与式（2）进行比较，我们可以写出
+\begin{equation}\tag{6.4.4}\label{eq:6.4.4}
+P = \frac { 1 } { 3 } \frac { N } { V } \left\langle p \frac { d \varepsilon } { d p } \right\rangle = \frac { 1 } { 3 } n \langle p u \rangle ,
+\end{equation}
+其中，\(n\) 为气体中的粒子密度，\(u\) 为单个粒子的速度。若能量 \(\varepsilon\) 与动量 \(p\) 的关系形式为 \(\varepsilon \propto p^{s}\)，则
+\begin{equation}\tag{6.4.5}\label{eq:6.4.5}
+P = \frac { s } { 3 } n \langle \varepsilon \rangle = \frac { s } { 3 } \frac { E } { V } ;
+\end{equation}
+特别地，当 \(s=1\) 和 \(s=2\) 时，其具体情形很容易识别。需要指出的是，式（3）和式（4）的结论与粒子所遵循的统计分布无关。
+式（3）的结构表明，气体的压力本质上源自粒子的物理运动；因此，它应当仅凭动力学原理便可推导出来。为此，我们考虑气体中的粒子对容器壁的轰击作用。以图~6.3中的一侧壁为例，取一个面积为 \(dA\) 的元素，该元素与 z 轴方向正交。将注意力集中在那些速度介于 \(\boldsymbol{u}\) 与 \(\boldsymbol{u}+\boldsymbol{du}\) 之间的粒子上；单位体积内此类粒子的数量可记作 \(nf(\boldsymbol{u})du\)，其中
+\begin{equation}\tag{6.4.6}\label{eq:6.4.6}
+\intop_{\mathrm{all~}\boldsymbol{u}}f(\boldsymbol{u})d\boldsymbol{u}=1.
+\end{equation}
+\begin{equation}\tag{6.4.7}\label{eq:6.4.7}
+P = 2 n  \int _ { u _ { x } = - \infty } ^{\infty} \int _ { u _ { y } = - \infty } ^{\infty} \int _ { u _ { z } = 0 } ^{\infty} p _ { z } u _ { z } f ( u ) d u _ { x } d u _ { y } d u _ { z } .
+\end{equation}
+由于（i）\(f(\boldsymbol{u})\) 仅依赖于 \(u\)，而（ii）乘积 \((p_{z}u_{z})\) 是 \(u_{z}\) 的偶函数，上述结果可写成
+\begin{equation}\tag{6.4.8}\label{eq:6.4.8}
+P = n \int \left( p _ { z } u _ { z } \right) f ( u ) d u .
+\end{equation}
+将式（7）与式（5）进行比较，我们得到
+\begin{equation}\tag{6.4.9}\label{eq:6.4.9}
+\begin{array}{rl} & { P = n \langle p _ { z } u _ { z } \rangle = n \langle p u \cos ^{2} \theta \rangle } \\& { = \frac { 1 } { 3 } n \langle p u \rangle , } \end{array}
+\end{equation}
+这一结果与式（3）完全相同。
+³显然，只有那些 \(u_{z} > 0\) 的速度才在此处具有实际意义。
+以类似的方式，我们还可以确定气体粒子通过壁上某一孔洞（面积为单位）的扩散速率。这一速率由下式给出，与式（6）相比，
+\begin{equation}\tag{6.4.10}\label{eq:6.4.10}
+\begin{array}{rl} { R = n } & { \int _ { u _ { x } = - \infty } ^{\infty} \int _ { u _ { y } = - \infty } ^{\infty} \int _ { u _ { z } = 0 } ^{\infty} u _ { z } f ( u ) d u _ { x } d u _ { y } d u _ { z } } \\& { = n \int _ { \phi = 0 } ^{2 \pi} \int _ { \theta = 0 } ^{\pi / 2} \int _ { u = 0 } ^{\infty} \{ u \cos \theta f ( u ) \} ( u ^{2} \sin \theta \, d u d \theta \, d \phi ) ; } \end{array}
+\end{equation}
+请注意，条件 \(u_{z} > 0\) 限制了角度 \(\theta\) 的取值范围，即从 0 到 \(\pi/2\)。通过对 \(\theta\) 和 \(\phi\) 进行积分，我们得到
+\begin{equation}\tag{6.4.11}\label{eq:6.4.11}
+R = n \pi \int _ { 0 } ^{\infty} f ( \mathbf { u } ) u ^{3} \, d \mathbf { u } .
+\end{equation}
+鉴于以下事实，
+\begin{equation}\tag{6.4.12}\label{eq:6.4.12}
+\int _ { 0 } ^{\infty} f ( u ) ( 4 \pi \, u ^{2} \, d u ) = 1 ,
+\end{equation}
+方程（12）可以写成
+\begin{equation}\tag{6.4.13}\label{eq:6.4.13}
+R = \frac { 1 } { 4 } n \langle u \rangle .
+\end{equation}
+再次强调，这一结果与粒子所遵循的统计规律无关。
+显而易见，逸出粒子的速度分布与容器内粒子的速度分布有着显著差异。其原因在于：首先，逸出粒子的 \(u_{z}\) 速度分量必须为正（这在分布中引入了一定的各向异性）；其次，\(u_{z}\) 值较大的粒子会以更高的权重出现，而该权重与 \(u_{z}\) 的值成正比——详见方程（10）。因此，一方面，逸出粒子携带着净向前动量，从而导致容器产生反冲力；另一方面，每粒粒子携带的能量相对较高，使得容器中的气体不仅压力和密度不断下降，温度也逐渐降低——参见问题 6.14。
+\section{由具有内部运动的分子构成的气体系统}\label{ux7531ux5177ux6709ux5185ux90e8ux8fd0ux52a8ux7684ux5206ux5b50ux6784ux6210ux7684ux6c14ux4f53ux7cfbux7edf}
+在我们迄今为止的大多数研究中，我们仅考虑了分子运动的平移部分。尽管这种运动形式在气体系统中始终存在，但其他
+方面，本质上与分子的内部运动有关，也同样存在。在计算此类系统的物理性质时，自然会将这些运动所产生的贡献纳入考量。在此过程中，我们假定：(i) 分子间相互作用的影响可以忽略不计，以及 (ii) 非简并性准则
+\begin{equation}\tag{6.5.1}\label{eq:6.5.1}
+n \lambda ^{3} = \frac { n h ^{3} } { ( 2 \pi m k T ) ^{3 / 2} } \ll 1
+\end{equation}
+已得到满足；这使我们的系统成为理想气体、玻尔兹曼气体。在这些假设下——而在大量应用中，这些假设往往能很好地成立——系统的配分函数可表示为
+\begin{equation}\tag{6.5.2}\label{eq:6.5.2}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! } [ Q _ { 1 } ( V , T ) ] ^{N} ,
+\end{equation}
+其中
+\begin{equation}\tag{6.5.3}\label{eq:6.5.3}
+Q _ { 1 } ( V , T ) = \frac { V } { \lambda ^{3} } j ( T ) ;
+\end{equation}
+方括号内的因子正是我们熟悉的分子平移配分函数，而 \(j(T)\) 则是对应于内部运动的配分函数。后者可以写成
+\begin{equation}\tag{6.5.4}\label{eq:6.5.4}
+j ( T ) = \sum _ { i } g _ { i } e ^{- \varepsilon _ { i} / k T } ,
+\end{equation}
+其中 \(\varepsilon_{i}\) 是与内部运动状态相关联的能量（由量子数 \(i\) 表征），而 \(g_{i}\) 则是该状态的多重度。
+分子内部运动所作出的贡献，除了平移自由度之外，可直接从函数 \(j(T)\) 中推导得出。我们得到
+\begin{equation}\tag{6.5.5}\label{eq:6.5.5}
+A _ { \mathrm { i n t } } = - N k T \ln j ,
+\end{equation}
+\begin{equation}\tag{6.5.6}\label{eq:6.5.6}
+\mu _ { \mathrm { i n t } } = - k T \ln j ,
+\end{equation}
+\begin{equation}\tag{6.5.7}\label{eq:6.5.7}
+S _ { \mathrm { i n t } } = N k \left( \ln j + T \frac { \partial } { \partial T } \ln j \right) ,
+\end{equation}
+\begin{equation}\tag{6.5.8}\label{eq:6.5.8}
+U _ { \mathrm { i n t } } = N k T ^{2} \, \frac { \partial } { \partial T } \ln j ,
+\end{equation}
+并且
+\begin{equation}\tag{6.5.9}\label{eq:6.5.9}
+( C _ { V } ) _ { \mathrm { i n t } } = N k \frac { \partial } { \partial T } \left\{ T ^{2} \frac { \partial } { \partial T } \ln j \right\} .
+\end{equation}
+因此，本研究的核心问题在于：在已知分子内部状态的前提下，如何推导出函数 \(j(T)\) 的显式表达式。为此，我们注意到，分子的内部状态由以下四个要素决定：(i) 电子态，(ii) 核心态，(iii) 振动态，以及 (iv) 旋转态。严格来说，这四种激发模式之间相互作用；然而，在许多情况下，它们可以被独立地加以处理。于是，我们可以写出
+\begin{equation}\tag{6.5.10}\label{eq:6.5.10}
+j ( T ) = j _ { \mathrm { e l e c } } ( T ) j _ { \mathrm { n u c } } ( T ) j _ { \mathrm { v i b } } ( T ) j _ { \mathrm { r o t } } ( T ) ,
+\end{equation}
+由此可知，分子内部运动对系统各项热力学性质所作的净贡献，可表示为这四种贡献的简单求和。不过，在同核分子（如 AA）的情形下，有一种相互作用发挥着特殊的作用，即核态与旋转态之间的相互作用。在这种情况下，我们不妨改写为
+\begin{equation}\tag{6.5.11}\label{eq:6.5.11}
+j ( T ) = j _ { \mathrm { e l e c } } ( T ) j _ { \mathrm { n u c - r o t } } ( T ) j _ { \mathrm { v i b } } ( T ) .
+\end{equation}
+接下来，我们将按照复杂程度递增的顺序，对各类体系展开这一问题的研究。
+\section{单原子分子}\label{ux5355ux539fux5b50ux5206ux5b50}
+为简化起见，我们考虑一种单原子气体，其温度使得热能 \(kT\) 与电离能 \(\varepsilon_{\mathrm{ion}}\) 相比微不足道；对于不同的原子而言，这一条件大致为 \(T \ll \varepsilon_{\mathrm{ion}} / k \sim 10^{4}-10^{5} \mathrm{K}\)。在这样的温度下，气体中电离原子的数量几乎可以忽略不计。同样，处于激发态的原子亦然——因为任何激发态与原子基态之间的能级差，通常都与电离能本身处于同一数量级。因此，我们可以将气体中的所有原子都视为处于其（电子）基态。
+如今，有一类特殊的原子，即氦、氖、氩等，它们在基态下既不具有轨道角动量，也不具有自旋（\(L = S = 0\)）。它们的（电子）基态显然为单重态，且 \(g_e = 1\)。然而，原子核却存在一种简并度，这种简并度源于原子核自旋可能存在的不同取向。⁴ 如果该自旋的值为 \(S_n\)，则相应的简并因子 \(g_n = 2S_n + 1\)。此外，单原子分子不可能具备任何振动态或旋转态。因此，此类分子的内部配分函数（3a）可表示为
+\begin{equation}\tag{6.5.12}\label{eq:6.5.12}
+j ( T ) = ( g ) _ { \mathrm { g r . s t . } } = g e \cdot g n = 2 S _ { n } + 1 .
+\end{equation}
+众所周知，核自旋的存在会在电子态中产生所谓的超精细结构。然而，该结构的能级间隔在几乎所有我们所关心的温度范围内，都远小于 \(kT\)；具体而言，这些能级间隔对应的温度范围大约为 \(10^{-1}\) 到 \(10^{0}\) K。因此，在计算分立函数 \(j(T)\) 时，可以忽略电子态的超精细分裂，而可通过一个简并因子来考虑核自旋所带来的多重度。
+方程（4）至（8）告诉我们，在这种情况下，原子的内部运动仅会对气体的化学势和熵等性质作出贡献；它们并不会对内能和比热产生贡献。
+另一方面，如果基态不具有轨道角动量，却具有自旋（\(L=0\), \(S\neq0\)——例如，碱金属原子的情况），那么基态仍然不会出现精细结构；不过，它将具有一个简并度 \(g_{e}=2S+1\)。因此，内部分立函数 \(j(T)\) 将被乘以一个 \((2S+1)\) 的因子，而气体的化学势和熵等性质也会相应地发生改变。
+在其他情况下，原子的基态可能同时具有轨道角动量和自旋（\(L \neq 0, S \neq 0\)）；此时，基态将呈现出明确的精细结构。一般来说，该结构的能级间隔与 \(kT\) 相当；因此，在计算分立函数时，必须将精细结构各组成部分的能量纳入考量。由于这些组成部分的总角动量 \(J\) 各不相同，相应的分立函数可写为
+\begin{equation}\tag{6.5.13}\label{eq:6.5.13}
+j _ { \mathrm { e l e c } } ( T ) = \sum _ { J } ( 2 J + 1 ) e ^{- \varepsilon _ { J} / k T } .
+\end{equation}
+上述表达式在以下极限情况下会大大简化：
+（a）当 \(kT \gg \varepsilon_J\) 时，
+\begin{equation}\tag{6.5.14}\label{eq:6.5.14}
+j _ { \mathrm { e l e c } } ( T ) \simeq \sum _ { J } ( 2 J + 1 ) = ( 2 L + 1 ) ( 2 S + 1 ) .
+\end{equation}
+（b）当 \(kT \ll \varepsilon_J\) 时，
+\begin{equation}\tag{6.5.15}\label{eq:6.5.15}
+j _ { \mathrm { e l e c } } ( T ) \simeq ( 2 J _ { 0 } + 1 ) e ^{- \varepsilon _ { 0} / k T } ,
+\end{equation}
+其中 \(J_{0}\) 是原子在最低能态下的总角动量，\(\varepsilon_{0}\) 是该原子在最低能态下的能量。无论哪种情况，电子运动均不对气体的比热作出贡献。当然，在中温条件下，我们确实会观察到这一属性的贡献。而且，鉴于无论在高温还是低温下，比热往往趋近于平移部分的值 \(\frac{3}{2}Nk\)，其在某一与精细结构能级间距相当的温度下，必然会经历一个最大值。⁵ 不用多说，每种情况下都必须考虑核自旋所带来的多重度 \((2S_{n}+1)\)。
+\section{B 二原子分子}\label{b-ux4e8cux539fux5b50ux5206ux5b50}
+现在我们来考虑一种二原子气体，其温度使得 \(kT\) 相对于解离能而言非常小；对于不同的分子而言，这再次等同于以下条件：
+\(T \ll \varepsilon_{\mathrm{diss}} / k \sim 10^{4}-10^{5} \mathrm{K}\)。在这些温度下，气体中解离的分子数量几乎可以忽略不计。与此同时，在大多数情况下，激发态的分子也几乎不存在，因为将任何一种激发态与分子的基态相分离，其能量一般与解离能本身相当。因此，在对 \(j(T)\) 进行计算时，我们只需考虑分子的最低电子态。
+在大多数情况下，最低电子态是无简并的：\(g_{e}=1\)。此时，我们无需再进一步考虑电子态如何为气体的热力学性质作出贡献。然而，某些分子（尽管数量并不多）在其最低电子态中，要么（i）具有非零轨道角动量（\(\Lambda\neq0\)），要么（ii）具有非零自旋（\(S\neq0\)），要么（iii）两者兼而有之。在情况（i）中，电子态会获得双简并度，对应于轨道角动量相对于分子轴的两种可能取向；7 因此，\(g_{e}=2\)。在情况（ii）中，该状态会获得 \(2S+1\) 的简并度，对应于自旋的空间量子化。8
+在这两种情况下，气体的化学势和熵都会因电子态的多重性而发生改变，而能量和比热则保持不变。在情况（iii）中，我们会遇到一种精细结构，因此需要进行较为细致的研究，因为这种结构的能级间隔通常与 \(kT\) 具有同一数量级。特别是对于双线性精细结构项，例如在 NO 分子中出现的那类项（\(\Pi_{1/2,3/2}\)，能级间隔为 178 K，其各组分本身则是 \(\Lambda\) 双线性），电子配分函数为：
+\begin{equation}\tag{6.5.16}\label{eq:6.5.16}
+j _ { \mathrm { e l e c } } ( T ) = g _ { 0 } + g _ { 1 } e ^{- \Delta / k T} ,
+\end{equation}
+其中 \(g_{0}\) 和 \(g_{1}\) 分别为两个组分的简并度因子，而 \(\Delta\) 则为其能级间隔。通过公式（4）至公式（8），我们可以计算（11）对气体各项热力学性质所作的贡献。尤其是，我们得到对比热的贡献为：
+\begin{equation}\tag{6.5.17}\label{eq:6.5.17}
+( C _ { V } ) _ { \mathrm { e l e c } } = N k \frac { ( \Delta / k T ) ^{2} } { [ 1 + ( g _ { 0 } / g _ { 1 } ) e ^{\Delta / k T} ] \ [ 1 + ( g _ { 1 } / g _ { 0 } ) e ^{- \Delta / k T} ] } .
+\end{equation}
+值得注意的是，无论是在 \(T \ll \Delta/k\) 的情况下，还是在 \(T \gg \Delta/k\) 的情况下，这一贡献都为零；只有在某一特定温度 \(\sim \Delta/k\) 时，其贡献才达到最大值；与单原子分子的情况进行对比即可发现这一点。
+在氧分子中，会出现一种特殊的状况。其基态的\(^{3}\Sigma\)能级与第一激发态\(^{1}\Delta\)能级之间的能量差约为11,250 K，而解离能则约为55,000 K。因此，相关因子\(e^{-\varepsilon_{1}/kT}\)即使在因子\(e^{-\varepsilon_{\mathrm{diss}}/kT}\)并不显著的情况下，其影响也可能相当显著——以温度为2000至6000 K为例。
+严格来说，所讨论的能级会分裂成两个子能级——即所谓的\(\Lambda\)双线态。然而，这两个能级之间的能量差非常小，以至于我们可以安全地将其忽略不计。
+从热力学的角度来看，由此产生的能级间的能量差同样可以忽略不计；以O₂的极窄三线态为例便是一个很好的说明。
+接下来，我们来探讨分子振动状态对气体热力学性质的影响。为了了解这一效应在何种温度范围内将变得显著，我们注意到，不同双原子气体对应的量子能量尺度——即 \(\hbar\omega\)——大约为 \(10^{3}\,\mathrm{K}\)。因此，在约 \(10^{4}\,\mathrm{K}\) 或更高的温度下，我们才能获得完全的贡献（符合等分定理的预测），而在约 \(10^{2}\,\mathrm{K}\) 或更低的温度下，则几乎不会产生任何贡献。假设温度尚不足以激发高能量的振动模式；此时，原子核振动幅度依然很小，因而呈现谐振特性。对于频率为 \(\omega\) 的某一振动模式，其能级可由众所周知的公式 \((n+\frac{1}{2})\hbar\omega\) 给出。\(^{9}\)
+振动配分函数\(j_{\mathrm{vib}}(T)\)的计算过程相当简单，详见第3.8节。由于所涉及的级数收敛速度很快，理论上可以将求和范围正式扩展至\(n=\infty\)。随后，系统各项热力学性质的相应贡献将由式（3.8.16）至式（3.8.21）给出。特别是，
+\begin{equation}\tag{6.5.18}\label{eq:6.5.18}
+( C _ { V } ) _ { \mathrm { v i b } } = N k \left( \frac { \Theta _ { \nu } } { T } \right) ^{2} \frac { e ^{\Theta _ { \nu} / T } } { ( e ^{\Theta _ { \nu} / T } - \mathbf { 1 } ) ^{2} } ;  \Theta _ { \nu } = \frac { \hbar \omega } { k } .
+\end{equation}
+我们注意到，当温度\(T \gg \Theta_{\nu}\)时，振动比热几乎等于等分定理所给出的值\(Nk\)；反之，振动比热总是小于\(Nk\)。尤其在\(T \ll \Theta_{\nu}\)时，比热趋于零（参见图~6.4）；此时，振动自由度被称作"冻结"。
+当温度足够高，且伴随着大 \(n\) 的振动被激发时，非谐性以及分子振动模式与转动能级之间相互作用的影响都会变得至关重要。\(^{10}\) 然而，由于这种现象仅在 \(n\) 较大时才会发生，因此我们甚至可以通过经典方法来确定对各类热力学量的相应修正；请参阅问题 3.29 和 3.30。我们发现，\(C_{\mathrm{vib}}\) 的一阶修正与气体温度成正比。
+最后，我们来考虑（i）原子核状态以及（ii）分子转动能级的影响；在必要时，我们应充分考虑这些模式之间的相互作用。对于异核分子，如 \(AB\)，这种相互作用几乎不具重要意义；然而，在同核分子，如 \(AA\) 中，这种相互作用却至关重要。因此，我们可以将这两种情况分别加以考虑。
+在异核情况下，原子核的状态可以与分子的转动能级分开处理。按照与单原子分子相同的方式进行推导，我们得出结论：原子核状态的影响已得到充分考虑。
+\begin{equation}\tag{6.5.19}\label{eq:6.5.19}
+\varepsilon _ { \mathrm { r o t } } = l ( l + 1 ) \hbar ^{2} / 2 I ,  l = 0 , 1 , 2 , \ldots ;
+\end{equation}
+在此，\(I = \mu r_{0}^{2}\)，其中 \(\mu = m_{1}m_{2}/(m_{1}+m_{2})\) 是原子核的约化质量，\(r_{0}\) 是它们之间的平衡距离。分子的转动能级配分函数由此可得
+\begin{equation}\tag{6.5.20}\label{eq:6.5.20}
+\begin{array}{rl} & { j _ { \mathrm { r o t } } ( T ) = \displaystyle \sum _ { l = 0 } ^{\infty} ( 2 l + 1 ) \exp \left\{ - l ( l + 1 ) \frac { \hbar ^{2} } { 2 I k T } \right\} } \\& {  = \displaystyle \sum _ { l = 0 } ^{\infty} ( 2 l + 1 ) \exp \left\{ - l ( l + 1 ) \frac { \Theta _ { r } } { T } \right\} ;  \Theta _ { r } = \frac { \hbar ^{2} } { 2 I k } . } \end{array}
+\end{equation}
+除氢和氘同位素所涉及的气体外，所有气体的 \(\Theta_{r}\) 值都远低于室温。例如，HCl 的 \(\Theta_{r}\) 值约为 15 K；N₂、O₂ 和 NO 的 \(\Theta_{r}\) 值介于 2 K 到 3 K 之间，而 Cl₂ 的 \(\Theta_{r}\) 值则约为一度的三分之一。另一方面，H₂、D₂ 和 HD 的 \(\Theta_{r}\) 值分别为 85 K、43 K 和 64 K。
+这些数值使我们得以大致了解，转动能级离散性所引发的影响预计将在哪些温度范围内显著显现。
+对于 \(T \gg \Theta_{r}\)，旋转态的能谱可以近似为连续谱。于是，式（16）中的求和项将被积分所取代：
+\begin{equation}\tag{6.5.21}\label{eq:6.5.21}
+j _ { \mathrm { r o t } } ( T ) \approx \int _ { 0 } ^{\infty} ( 2 l + 1 ) \exp \left\{ - l ( l + 1 ) \frac { \Theta _ { r } } { T } \right\} d l = \frac { T } { \Theta _ { r } } .
+\end{equation}
+旋转比热则可表示为
+\begin{equation}\tag{6.5.22}\label{eq:6.5.22}
+( C _ { V } ) _ { \mathrm { r o t } } = N k ,
+\end{equation}
+这与能量均分定理相一致。
+借助欧拉-麦克劳林公式，我们可以对式（16）中的求和项进行更精确的计算，即
+\begin{equation}\tag{6.5.23}\label{eq:6.5.23}
+\sum _ { n = 0 } ^{\infty} f ( n ) = \int _ { 0 } ^{\infty} f ( x ) d x + { \frac { 1 } { 2 } } f ( 0 ) - { \frac { 1 } { 12 } } f ^{\prime} ( 0 ) + { \frac { 1 } { 72 0 } } f ^{\prime \prime \prime} ( 0 ) - { \frac { 1 } { 30 , 24 0 } } f ^{\mathrm { v} } ( 0 ) + \cdots .
+\end{equation}
+将
+\begin{equation}\tag{6.5.24}\label{eq:6.5.24}
+f ( x ) = ( 2 x + 1 ) \exp \{ - x ( x + 1 ) \Theta _ { r } / T \} ,
+\end{equation}
+我们得到
+\begin{equation}\tag{6.5.25}\label{eq:6.5.25}
+j _ { \mathrm { r o t } } ( T ) = \frac { T } { \Theta _ { r } } + \frac { 1 } { 3 } + \frac { 1 } { 15 } \frac { \Theta _ { r } } { T } + \frac { 4 } { 31 5 } \left( \frac { \Theta _ { r } } { T } \right) ^{2} + \cdots ,
+\end{equation}
+这便是所谓的穆尔霍兰德公式；正如预期的那样，该公式的主要项与经典的配分函数（17）完全相同。相应的比热结果为
+\begin{equation}\tag{6.5.26}\label{eq:6.5.26}
+( C _ { V } ) _ { \mathrm { r o t } } = N k \left\{ 1 + \frac { 1 } { 45 } \left( \frac { \Theta _ { r } } { T } \right) ^{2} + \frac { 16 } { 94 5 } \left( \frac { \Theta _ { r } } { T } \right) ^{3} + \cdots \right\} ,
+\end{equation}
+这表明，在高温下，旋转比热会随温度降低，并最终趋近于经典值 \(Nk\)。因此，在高温（但仍是有限的温度）下，双原子气体的旋转比热会高于经典值。另一方面，当 \(T \to 0\) 时，旋转比热必须趋近于零。由此我们得出结论：旋转比热至少会经历一个最大值。数值研究表明，该最大值仅出现在约 \(0.8\Theta_r\) 的温度下，其值约为 \(1.1Nk\)；参见图~6.5。
+由此可得，以最低阶近似计算，
+\begin{equation}\tag{6.5.27}\label{eq:6.5.27}
+( C _ { V } ) _ { \mathrm { r o t } } \simeq 12 N k \left( \frac { \Theta _ { r } } { T } \right) ^{2} e ^{- 2 \Theta _ { r} / T } .
+\end{equation}
+因此，随着 \(T \rightarrow 0\)，比热会呈指数级下降至零；再次参见图~6.5。由此我们得出结论：在足够低的温度下，分子的旋转自由度也会被"冻结"。
+在此阶段，值得指出的是，由于分子的内部运动对气体的压力并无任何贡献（因为 \(A_{\mathrm{int}}\) 与 \(V\) 无关），因此对于双原子气体和单原子气体而言，量 \(C_{P}-C_{V}\) 的值是相同的。此外，在本节开头所作的假设下，该量在所有相关温度下的值都将等于经典值 \(Nk\)。因此，在足够低的温度下（当分子的旋转自由度以及振动自由度都被"冻结"时），仅凭借平动运动，
+\begin{equation}\tag{6.5.28}\label{eq:6.5.28}
+C _ { V } = \frac { 3 } { 2 } N k ,  C _ { P } = \frac { 5 } { 2 } N K ;  \gamma = \frac { 5 } { 3 } .
+\end{equation}
+随着温度升高，分子的转动自由度开始"逐渐松弛"，直至达到远高于\(\Theta_{r}\)、但又远低于\(\Theta_{\nu}\)的温度；此时，分子的转动自由度被完全激发，而振动自由度则仍处于"冻结"状态。
+随着温度进一步升高，分子的振动自由度也开始逐渐松弛，直至达到远高于\(\Theta_{v}\)的温度。此时，分子的振动自由度也被完全激发，我们便得到了
+\begin{equation}\tag{6.5.29}\label{eq:6.5.29}
+C _ { V } = \frac { 7 } { 2 } N k ,  C _ { P } = \frac { 9 } { 2 } N k ;  \gamma = \frac { 9 } { 7 } .
+\end{equation}
+这些特征在图~6.6中得以展现，图中绘制了HD、HT和DT三种气体的\(C_{P}\)实验结果。我们注意到，由于\(\Theta_{r}\)与\(\Theta_{\nu}\)之间的差异相当大，由式（6.7.25）所描述的情形在相当宽广的温度范围内均适用。顺便一提，对于大多数二原子气体而言，室温下的状况与式（6.7.25）所描述的情形基本一致。
+接下来，我们来研究同核分子的情况，例如\(AA\)。首先，我们考虑高温极限情形，在这种情况下，经典近似依然适用。此时，分子的转动运动可以被视作分子轴——即连接两个原子核的直线——绕着一条"旋转轴"旋转。这条旋转轴垂直于分子轴，并且通过分子的质心。分子轴的两种对立位置，即对应于方位角\(\phi\)和\(\phi + \pi\)的位置，仅仅因为两个相同的原子核互换位置而有所不同，因此它们实际上只对应于分子的一种独特状态。因此，在计算配分函数时，角度\(\phi\)的取值范围应为\((0, \pi)\)，而非通常的\((0, 2\pi)\)。此外，由于转动能量与角度\(\phi\)无关，这一因素对分子配分函数的影响仅在于会降低
+其数值为原来的两倍。因此，在经典近似下，我们得到：\(^{11}\)
+\begin{equation}\tag{6.5.30}\label{eq:6.5.30}
+j _ { \mathrm { n u c - r o t } } ( T ) = ( 2 S _ { A } + 1 ) ^{2} \frac { T } { 2 \Theta _ { r } } .
+\end{equation}
+显然，这里的两倍因子不会影响气体的比热；因此，在经典近似下，同核分子气体的比热与异核分子气体的比热是相同的。
+相比之下，在相对较低的温度下，会引发显著的变化，此时旋转运动的状态必须被视为离散状态。这些变化源于核态与旋转态之间的耦合，而这种耦合又源自核-旋转波函数的对称性特征。如第5.4节所讨论的那样，一个物理态的总波函数在两个相同粒子互换时，必须是对称的或反对称的（具体取决于所涉及粒子遵循的统计规律）。如今，双原子分子的旋转波函数根据量子数\(l\)是偶数还是奇数而呈现对称或反对称的特性。另一方面，核波函数由两个核的自旋函数线性组合而成，其对称性特征则取决于该组合的形成方式。不难看出，在我们所构造的\((2S_{A}+1)^{2}\)种不同组合中，只有\((S_{A}+1)(2S_{A}+1)\)种在核互换时为对称的，而其余的\(S_{A}(2S_{A}+1)\)则为反对称的。¹² 在构建总波函数时，作为核波函数与旋转波函数的乘积，我们接下来按照如下步骤进行：
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  如果核均为费米子（\(S_{A}=\frac{1}{2},\frac{3}{2},\ldots\)），如分子\(H_{2}\)所示，那么总波函数必须是反对称的。为了实现这一点，我们可以将其中任意一种\(S_{A}(2S_{A}+1)\)的反对称核波函数与任意一种偶数\(l\)的旋转波函数相联系；或者将任意一种\((S_{A}+1)(2S_{A}+1)\)的对称核波函数与任意一种奇数\(l\)的旋转波函数相联系。相应地，此类分子的核-旋转配分函数将为
+\end{enumerate}
+\begin{equation}\tag{6.5.31}\label{eq:6.5.31}
+j _ { \mathrm { n u c - r o t } } ^{\mathrm { ( F . D . )} } ( T ) = S _ { A } ( 2 S _ { A } + 1 ) r _ { \mathrm { e v e n } } + ( S _ { A } + 1 ) ( 2 S _ { A } + 1 ) r _ { \mathrm { o d d } } ,
+\end{equation}
+¹¹ 似乎很有启发性的是，不妨在此简要阐述旋转配分函数的纯经典推导过程。通过将分子的转动分别用角度\((\theta,\phi)\)以及相应的动量\((p_{\theta},p_{\phi})\)来加以限定，动能可被表示为：
+\begin{equation}\tag{6.5.32}\label{eq:6.5.32}
+\varepsilon _ { \mathrm { r o t } } = \frac { 1 } { 2 I } p _ { \theta } ^{2} + \frac { 1 } { 2 I \sin ^{2} \theta } p _ { \phi } ^{2} ,
+\end{equation}
+由此
+\begin{equation}\tag{6.5.33}\label{eq:6.5.33}
+j _ { \mathrm { r o t } } ( T ) = \frac { 1 } { \hbar ^{2} } \int \mathrm { e } ^{- \varepsilon _ { \mathrm { r o t} } / k T } ( d p _ { \theta } d p _ { \phi } d \theta \, d \phi ) = \frac { I k T } { \pi \hbar ^{2} } \, \int _ { 0 } ^{\phi _ { \mathrm { m a x} } } d \phi .
+\end{equation}
+对于异核分子，\(\phi_{\mathrm{max}}=2\pi\)；而对于同核分子，则\(\phi_{\mathrm{max}}=\pi\)。
+¹² 例如，参见Schiff（1968年，第41节）。
+其中
+\begin{equation}\tag{6.5.34}\label{eq:6.5.34}
+r _ { \mathrm { e v e n } } = \sum _ { l = 0 , 2 , \ldots } ^{\infty} ( 2 l + 1 ) \exp \{ - l ( l + 1 ) \Theta _ { r } / T \}
+\end{equation}
+以及
+\begin{equation}\tag{6.5.35}\label{eq:6.5.35}
+r _ { \mathrm { o d d } } = \sum _ { l = 1 , 3 , \ldots } ^{\infty} ( 2 l + 1 ) \exp \{ - l ( l + 1 ) \Theta _ { r } / T \} .
+\end{equation}
+（ii）若原子核为玻色子（\(S_{A}=0,1,2,\ldots\)），如分子 \(D_{2}\) 中所呈现的那样，其总波函数必须是对称的。为实现这一要求，我们可以将任意一个 \((S_{A}+1)(2S_{A}+1)\) 对称的核波函数与任意一个偶数 \(l\) 的转动波函数相联系；或者将任意一个 \(S_{A}(2S_{A}+1)\) 反对称的核波函数与任意一个奇数 \(l\) 的转动波函数相联系。由此，我们得到
+\begin{equation}\tag{6.5.36}\label{eq:6.5.36}
+j _ { \mathrm { n u c - r o t } } ^{\mathrm { ( B . E . )} } ( T ) = ( S _ { A } + 1 ) ( 2 S _ { A } + 1 ) r _ { \mathrm { e v e n } } + S _ { A } ( 2 S _ { A } + 1 ) r _ { \mathrm { o d d } } .
+\end{equation}
+在高温下，导致式（29）和式（30）中各项贡献最大的是较大的 \(l\) 值。此时，这两项之差已微乎其微，因此我们有
+\begin{equation}\tag{6.5.37}\label{eq:6.5.37}
+r _ { \mathrm { e v e n } } \simeq r _ { \mathrm { o d d } } \simeq \frac { 1 } { 2 } j _ { \mathrm { r o t } } ( T ) = T / 2 \Theta _ { r } ;
+\end{equation}
+参见式（16）和式（17）。因此，
+\begin{equation}\tag{6.5.38}\label{eq:6.5.38}
+j _ { \mathrm { n u c - r o t } } ^{\mathrm { ( B . E . )} } \simeq j _ { \mathrm { n u c - r o t } } ^{\mathrm { ( F . D . )} } = ( 2 S _ { A } + 1 ) ^{2} T / 2 \Theta _ { r } ,
+\end{equation}
+与我们先前得出的结果（27）一致。在这种情况下，支配原子核的统计规律对气体的热力学行为影响并不显著。
+当气体温度处于与 \(\Theta_{r}\) 值相近的范围内时，情况会发生变化。此时，我们认为气体主要由两种组分组成，通常分别称为“正构”和“反构”，它们在平衡状态下的相对浓度由配分函数两部分的相对大小决定——无论采用式（28）还是式（31），视具体情况而定。通常，人们会将具有较大统计权重的组分称为“正构”。因此，在费米子的情况下（如 H₂），正构与反构的比例为
+\begin{equation}\tag{6.5.39}\label{eq:6.5.39}
+n ^{\mathrm { ( F . D . )} } = \frac { ( S _ { A } + \mathbf { 1 } ) r _ { \mathrm { o d d } } } { S _ { A } r _ { \mathrm { e v e n } } } ,
+\end{equation}
+而在玻色子的情况下（如 \(D_{2}\)），相应的比例则为
+\begin{equation}\tag{6.5.40}\label{eq:6.5.40}
+n ^{\mathrm { ( B . E . )} } = \frac { ( S _ { A } + 1 ) r _ { \mathrm { e v e n } } } { S _ { A } r _ { \mathrm { o d d } } } .
+\end{equation}
+随着温度升高，因子 \(r_{\mathrm{odd}}/r_{\mathrm{even}}\) 趋近于 1，且每种情况下的比率 \(n\) 都接近于与温度无关的值 \((S_{A}+1)/S_{A}\)。以 H₂ 为例，该极限值为 3（因为 \(S_{A}=\frac{1}{2}\)），而 D₂ 的对应比值则为 2（因为 \(S_{A}=1\)）。在温度足够低的情况下，我们只需保留式（29）和式（30）中的主要项，其结果是
+\begin{equation}\tag{6.5.41}\label{eq:6.5.41}
+\frac { r _ { \mathrm { o d d } } } { r _ { \mathrm { e v e n } } } \simeq 3 \exp \left( - \frac { 2 \Theta _ { r } } { T } \right)  ( T \ll \Theta _ { r } ) ,
+\end{equation}
+随着 \(T \to 0\)，该比值趋于零。在费米子的情况下，该比值趋于零；而在玻色子的情况下，则趋于无穷大。因此，随着 \(T \to 0\)，氢气完全变为反构态，而氘气则完全变为正构态；当然，在这两种情况下，分子最终都会稳定在转动能级 \(l = 0\)。
+在中等温度下，要计算气体的热力学性质，必须采用平衡比（34）或（35），以及复合分压函数（28）或（31）。然而，人们发现，通过上述方法得出的理论结果通常与实验所得结果并不一致。这一差异最终由丹尼森（1927）予以解决。他指出，通常用于实验的氢气或氘气样品，在正构异构体与反构异构体的相对含量方面，并未达到热平衡状态。这些样品通常在远高于\(\Theta_{r}\)的室温下制备并保存，因此，其中的正构异构体与反构异构体比例几乎等于极限值\((S_{A}+1)S_{A}\)。
+如果此时将温度降低，人们本应预期该比例会按照式（34）或（35）的变化而变化。然而，事实并非如此，原因如下：由于分子从一种存在形式转变为另一种存在形式时，涉及其一个原子核自旋的翻转，因此该过程的跃迁概率非常小。实际上，相关的时间尺度竟高达一年！显然，在有限的短时间内，我们不可能期望真正达到真实的平衡比\(n\)。因此，即便在较低的温度下，我们通常得到的也是一组非平衡状态下的两种独立物质的混合物，其相对浓度早已被预先设定好。因此，分压函数（28）和（31）本身并不适用；我们更应直接利用它们来计算比热。
+\begin{equation}\tag{6.5.42}\label{eq:6.5.42}
+C ^{( \mathrm { F . D .} ) } = \frac { S _ { A } } { 2 S _ { A } + 1 } C _ { \mathrm { e v e n } } + \frac { S _ { A } + 1 } { 2 S _ { A } + 1 } C _ { \mathrm { o d d } }
+\end{equation}
+且
+\begin{equation}\tag{6.5.43}\label{eq:6.5.43}
+C ^{( \mathrm { B . E .} ) } = \frac { S _ { A } + 1 } { 2 S _ { A } + 1 } C _ { \mathrm { e v e n } } + \frac { S _ { A } } { 2 S _ { A } + 1 } C _ { \mathrm { o d d } } ,
+\end{equation}
+其中
+\begin{equation}\tag{6.5.44}\label{eq:6.5.44}
+C _ { \mathrm { e v e n / o d d } } = N k \frac { \partial } { \partial T } \left\{ T ^{2} ( \partial / \partial T ) \ln r _ { \mathrm { e v e n / o d d } } \right\} .
+\end{equation}
+因此，我们必须分别计算\(C_{\mathrm{even}}\)和\(C_{\mathrm{odd}}\)，然后借助公式（37）或（38），根据具体情况推导出旋转比热的净值。
+与等分定理相符。
+就振动状态而言，我们首先注意到，与双原子分子不同，多原子分子并非只具有一种振动自由度，而是具有多种振动自由度。特别是，由 \(n\) 个原子组成的非共线分子拥有 \(3n-6\) 个振动自由度，其中 \(3n\) 个自由度中，有 \(6\) 个用于平动和转动运动。另一方面，由 \(n\) 个原子组成的共线分子则拥有 \(3n-5\) 个振动自由度，因为在这种情况下，转动运动仅涉及两个自由度，而非三个自由度。振动自由度对应于一组特征频率 \(\omega_i\) 的正常模式。有时，其中某些频率的值可能相同；此时我们称之为简并频率。\(^{15}\)
+在谐振子近似下，这些正常模式可以彼此独立地进行处理。分子的振动配分函数则由各正常模式对应的配分函数之乘积给出，即：
+\begin{equation}\tag{6.5.45}\label{eq:6.5.45}
+\dot { J } _ { \mathrm { v i b } } ( T ) = \prod _ { i } \frac { e ^{- \Theta _ { i} / 2 T } } { 1 - e ^{- \Theta _ { i} / T } } ;  \Theta _ { i } = \frac { \hbar \omega _ { i } } { k } ,
+\end{equation}
+\(^{13}\)例如，H₂O（等腰三角形）的对称数 \(\gamma\) 为 2，NH₃（正三角锥）的对称数为 3，而CH₄（四面体）和C₆H₆（正六边形）的对称数则为 12。对于异核分子，其对称数为 1。
+\(^{14}\)在共线分子的情况下，如 N₂O 或 CO₂，其旋转自由度仅有两个；因此，\(j_{\mathrm{rot}}^{\mathrm{C}}(T)\) 可以表示为 \((2IkT/\hbar^{2})\)，其中 \(I\) 是分子的两个转动惯量的共同值；请参见式（6.7.17）。当然，我们还必须考虑对称数 \(\gamma\)。在本文所引用的示例中，空间上呈不对称结构的分子 N₂O 具有对称数 1，而空间上呈对称结构的分子 CO₂ 则具有对称数 2。
+\(^{15}\)例如，在共线分子 OCO 的正常振动模式中，有四个频率，其中两个对应于（横向）弯曲模式——即 O C O——彼此相等；而另外两个对应于沿分子轴方向的（纵向）振动模式——即 \(\leftarrow\) O C \(\rightarrow\) \(\leftarrow\) O 和 \(\leftarrow\) O C O\(\rightarrow\)——则彼此不同；请参见问题 6.28。
+而振动比热则由各独立模式所贡献的总和给出：
+\begin{equation}\tag{6.5.46}\label{eq:6.5.46}
+C _ { \mathrm { v i b } } = N k \sum _ { i } \left\{ \left( \frac { \Theta _ { i } } { T } \right) ^{2} \frac { e ^{\Theta _ { i} / T } } { \left( e ^{\Theta _ { i} / T } - 1 \right) ^{2} } \right\} .
+\end{equation}
+一般来说，各个 \(\Theta_{i}\) 的数值大约为 \(10^{3}\) K；以在脚注15中提到的二氧化碳为例，\(\Theta_{1}=\Theta_{2}=960\) K，\(\Theta_{3}=1,990\) K，\(\Theta_{4}=3,510\) K。当温度远高于所有 \(\Theta_{i}\) 时，气体的比热将由能量均分理论给出，即每种正常振动模式的比热为 \(Nk\)。然而，在实际操作中，这一极限几乎无法实现，因为多原子分子通常会在达到如此之高的温度之前就发生分解。其次，多原子分子的不同频率 \(\omega_{i}\) 通常分布在相当宽广的数值范围内。因此，随着温度升高，不同的振动模式会逐渐被"纳入"这一过程之中；而在这些"纳入"之间，气体的比热在相当长的温度区间内可能保持恒定。
+\section{化学平衡}\label{ux5316ux5b66ux5e73ux8861}
+化学反应中各化学物质的平衡浓度，是由各组分的化学势所决定的。以化学物质 A 和 B 反应生成化学物质 X 和 Y 为例，其化学计量系数分别为 \(\nu_A\)、\(\nu_B\)、\(\nu_X\) 和 \(\nu_Y\)：
+\begin{equation}\tag{6.6.1}\label{eq:6.6.1}
+\nu _ { A } A + \nu _ { B } B \rightleftharpoons \nu _ { X } X + \nu _ { Y } Y \, .
+\end{equation}
+每一场发生的独立反应都会根据化学计量系数改变各组分的分子数量。若初始时各组分的分子数分别为 \(N_{A}^{0}\)、\(N_{B}^{0}\)、\(N_{X}^{0}\) 和 \(N_{Y}^{0}\)，则在经过 \(\Delta N\) 次化学反应后，各组分的分子数将变为 \(N_{A}=N_{A}^{0}-\nu_{A}\Delta N\)、\(N_{B}=N_{B}^{0}-\nu_{B}\Delta N\)、\(N_{X}=N_{X}^{0}+\nu_{X}\Delta N\) 和 \(N_{Y}=N_{Y}^{0}+\nu_{Y}\Delta N\)。若 \(\Delta N>0\)，则该反应正向进行，使 \(X\) 和 \(Y\) 的分子数增加；若 \(\Delta N<0\)，则该反应逆向进行，使 \(A\) 和 \(B\) 的分子数增加。若反应发生在压力固定的封闭等温体系中，吉布斯自由能 \(G(N_{A},N_{B},N_{X},N_{Y},P,T)\) 将发生变化，变化量为
+\begin{equation}\tag{6.6.2}\label{eq:6.6.2}
+\Delta G = ( - \nu _ { A } \mu _ { A } - \nu _ { B } \mu _ { B } + \nu _ { X } \mu _ { X } + \nu _ { Y } \mu _ { Y } ) \Delta N ,
+\end{equation}
+其中 \(\mu_{A}=\left(\frac{\partial G}{\partial N_{A}}\right)_{T, P}\) 是物种 A 的化学势，以此类推；具体参见第 3.3 节、第 4.7 节以及附录 H。由于系统越接近平衡，吉布斯自由能便会降低，因此 \(\Delta G \leq 0\)。当系统达到化学平衡时，吉布斯自由能达到最小值，故 \(\Delta G=0\)。这为我们提供了化学反应的一般性关系式。
+式（6.8.1） 中反应的平衡状态，即
+\begin{equation}\tag{6.6.3}\label{eq:6.6.3}
+\nu _ { A } \mu _ { A } + \nu _ { B } \mu _ { B } = \nu _ { X } \mu _ { X } + \nu _ { Y } \mu _ { Y } .
+\end{equation}
+请注意，若将一种作为催化剂的化学物种以等量同时加入方程（1）的两侧，那么平衡关系（3）将不受影响。因此，催化剂可以提高接近平衡的速度，而不会对平衡状态本身产生任何影响。
+如果自由能可以近似表示为各组分自由能之和，例如在理想气体或稀溶液中，那么我们便能够推导出各组分平衡密度之间的一条简单关系。根据方程（3.5.10）和（6.5.4），由具有内部自由度的分子构成的经典理想气体的亥姆霍兹自由能可写为
+\begin{equation}\tag{6.6.4}\label{eq:6.6.4}
+A ( N , V , T ) = N \varepsilon + N k T \ln \left( \frac { N \lambda ^{3} } { V } \right) - N k T - N k T \ln j ( T ) ,
+\end{equation}
+其中，\(\varepsilon\) 为分子的基态能量；\(\lambda = h/\sqrt{2\pi mkT}\) 是热德布罗意波长；\(j(T)\) 是分子内部自由度的配分函数。由此可得组分 A 的化学势为
+\begin{equation}\tag{6.6.5}\label{eq:6.6.5}
+\mu _ { A } = \left( \frac { \partial A } { \partial N _ { A } } \right) _ { T , V } = \varepsilon _ { A } + k T \ln \left( n _ { A } \lambda _ { A } ^{3} \right) - k T \ln j _ { A } ( T ) ,
+\end{equation}
+其中 \(n_{A}\) 为组分 A 的数密度。平衡条件（3）则可表示为
+\begin{equation}\tag{6.6.6}\label{eq:6.6.6}
+\frac { [ X ] ^{\nu X} [ Y ] ^{\nu Y} } { [ A ] ^{\nu A} [ B ] ^{\nu B} } = K ( T ) = \exp \left( - \beta \Delta \mu ^{( 0 )} \right) \, ,
+\end{equation}
+其中 \([A] = n_{A}/n_{0}\)，依此类推，
+\begin{equation}\tag{6.6.7}\label{eq:6.6.7}
+\Delta \mu ^{( 0 )} = \nu _ { X } \mu _ { X } ^{( 0 )} + \nu _ { Y } \mu _ { Y } ^{( 0 )} - \nu _ { A } \mu _ { A } ^{( 0 )} - \nu _ { B } \mu _ { B } ^{( 0 )} \ ,
+\end{equation}
+\begin{equation}\tag{6.6.8}\label{eq:6.6.8}
+\mu _ { A } ^{( 0 )} = \varepsilon _ { A } + k T \ln \left( n _ { 0 } \lambda _ { A } ^{3} \right) - k T \ln j _ { A } ( T ) , \mathrm { ~ e t c . }
+\end{equation}
+而 \(K(T)\) 即为平衡常数。
+方程（6）被称为质量作用定律。数值 \(n_{0}\) 为标准数密度，而 \(\mu_{A}^{(0)}\) 等则为在温度 \(T\) 且标准数密度 \(n_{0}\) 下各组分的化学势。数值 \(\Delta\mu^{(0)}\) 表示在标准密度下每进行一次化学反应所对应的吉布斯自由能变化。需要注意的是，反应常数 \(K(T)\) 仅是温度的函数，并通过方程（6）决定在温度 \(T\) 时处于平衡状态的各组分密度。通常，气体的标准数密度被选取为在温度 \(T\) 且标准压力下的理想气体数密度，即 \(n_{0}=(1\ \mathrm{atm})/kT\)。水溶液的标准密度通常为
+被选定为每升一摩尔。化学表中的吉布斯自由能是以元素的标准状态为基准来表示的。
+现在我们来考察一个具体例子——内燃机中烃类与氧气的燃烧反应。用于驱动清洁公交车和汽车、以天然气为燃料的反应为
+\begin{equation}\tag{6.6.9}\label{eq:6.6.9}
+\mathrm { C H } _ { 4 } + 2 \mathrm { O } _ { 2 } \rightleftharpoons \mathrm { C O } _ { 2 } + 2 \mathrm { H } _ { 2 } \mathrm { O } \, .
+\end{equation}
+主要反应产物为二氧化碳和水蒸气，但该反应也会生成一氧化碳。
+\begin{equation}\tag{6.6.10}\label{eq:6.6.10}
+2 \mathrm { C H } _ { 4 } + 3 \mathrm { O } _ { 2 } \rightleftharpoons 2 \mathrm { C O } + 4 \mathrm { H } _ { 2 } \mathrm { O } \, .
+\end{equation}
+对于一款清洁燃烧发动机而言，其首要目标是在尽可能减少碳氧化物生成的同时，使几乎全部的烃类燃料得以完全燃烧。通过将反应式（8）与反应式（9）相结合，我们得到了一种直接的反应：一氧化碳、氧气与二氧化碳之间发生反应：
+\begin{equation}\tag{6.6.11}\label{eq:6.6.11}
+2 \mathrm { C O } + \mathrm { O } _ { 2 } \rightleftharpoons 2 \mathrm { C O } _ { 2 } \, .
+\end{equation}
+公式（6）现在给出了CO与CO₂的平衡比为
+\begin{equation}\tag{6.6.12}\label{eq:6.6.12}
+\frac { [ \mathrm { C O } ] } { [ \mathrm { C O } _ { 2 } ] } = \sqrt { \frac { 1 } { K ( T ) [ \mathrm { O } _ { 2 } ] } } \, .
+\end{equation}
+在温度约为1500K时，随着发动机气缸内的燃烧过程进行，平衡常数K约等于10¹⁰，因此一氧化碳作为燃烧产物以百万分之几的浓度存在——而那些未处于平衡状态的燃烧反应，其一氧化碳浓度往往远高于平衡值。在发动机的做功冲程中，尾气会迅速冷却。当这些气体以约600K的温度从排气口排出时，平衡常数K约为10⁴⁰，按理说，这应该会导致尾气中几乎不含一氧化碳。然而，由于反应速率通常过慢，无法在快速冷却过程中使一氧化碳浓度维持在化学平衡状态，因此尾气中一氧化碳的含量仍接近于在较高温度下测得的较大值。¹⁶ 幸运的是，剩余的一氧化碳可以在排气温度下，通过使用铂和钯作为催化剂的催化转化器转化为二氧化碳，从而提高反应速率。公式（11）表明，通过增加反应中氧气的浓度，可以降低一氧化碳的含量。实现这一目标的方法是：让发动机以略低于反应式（8）化学计量点的烃类/空气比运行。这样既能减少燃烧本身所残留的一氧化碳量，又能使多余的氧气留在尾气中，供催化转化器使用。
+\section{问题}\label{ux95eeux9898_chap6}
+6.1. 证明理想气体在热力学平衡状态下的熵可由以下公式给出
+\begin{equation}\tag{6.6.13}\label{eq:6.6.13}
+S = k \sum _ { \varepsilon } [ \langle n _ { \varepsilon } + 1 \rangle \mathrm { l n } \langle n _ { \varepsilon } + 1 \rangle - \langle n _ { \varepsilon } \rangle \mathrm { l n } \langle n _ { \varepsilon } \rangle ]
+\end{equation}
+对于费米子，其熵可由以下公式给出
+\begin{equation}\tag{6.6.14}\label{eq:6.6.14}
+S = k \sum _ { \varepsilon } [ - \langle 1 - n _ { \varepsilon } \rangle \ln \langle 1 - n _ { \varepsilon } \rangle - \langle n _ { \varepsilon } \rangle \ln \langle n _ { \varepsilon } \rangle ]
+\end{equation}
+更一般地，熵还可写成以下形式。请验证这些结果是否与通用公式一致。
+\begin{equation}\tag{6.6.15}\label{eq:6.6.15}
+S = - k \sum _ { \varepsilon } \left\{ \sum _ { n } p _ { \varepsilon } ( n ) \ln p _ { \varepsilon } ( n ) \right\} \, ,
+\end{equation}
+其中，\(p_{\varepsilon}(n)\) 表示在能量状态\(\varepsilon\)中恰好存在\(n\)个粒子的概率。
+6.2. 对于三种不同的统计方式，根据各自的概率\(p_{\varepsilon}(n)\)，推导出有关量\(\langle n_{\varepsilon}^{2}\rangle - \langle n_{\varepsilon}\rangle^{2}\)的相应表达式。请证明，在一般情况下，
+\begin{equation}\tag{6.6.16}\label{eq:6.6.16}
+\langle n _ { \varepsilon } ^{2} \rangle - \langle n _ { \varepsilon } \rangle ^{2} = k T \left( \frac { \partial \langle n _ { \varepsilon } \rangle } { \partial \mu } \right) _ { T } ;
+\end{equation}
+将其与嵌入巨正则系综中的系统对应的结论（4.5.3）进行比较。
+6.3. 请参阅第6.2节，并证明：若某一能级\(\varepsilon\)的占据数\(n_{\varepsilon}\)仅取\(0,1,\ldots,l\)这几种值，则该能级的平均占据数可由以下公式给出：
+\begin{equation}\tag{6.6.17}\label{eq:6.6.17}
+\langle n _ { \varepsilon } \rangle = \frac { 1 } { z ^{- 1} e ^{\beta \varepsilon} - 1 } - \frac { l + 1 } { ( z ^{- 1} e ^{\beta \varepsilon} ) ^{l + 1} - 1 } .
+\end{equation}
+验证当\(l=1\)时，得到的是\(\langle n_{\varepsilon}\rangle_{\mathrm{F.D.}}\)；而当\(l\to\infty\)时，则会得到\(\langle n_{\varepsilon}\rangle_{\mathrm{B.E.}}\)。
+6.4. 由粒子电荷为\(e\)、粒子密度为\(n(\boldsymbol{r})\)所表征的带电粒子系统，其势能可表示为：
+\begin{equation}\tag{6.6.18}\label{eq:6.6.18}
+U = \frac { e ^{2} } { 2 } \iint \frac { n ( \pmb { r } ) n ( \pmb { r } ^{\prime} ) } { | \pmb { r } - \pmb { r } ^{\prime} | } d \pmb { r } d \pmb { r } ^{\prime} + e \int n ( \pmb { r } ) \phi _ { \mathrm { e x t } } ( \pmb { r } ) d \pmb { r } ,
+\end{equation}
+其中\(\phi_{\mathrm{ext}}(\boldsymbol{r})\)为外部电场的势。假设系统的熵除一个常数项外，可由下式给出：
+\begin{equation}\tag{6.6.19}\label{eq:6.6.19}
+S = - k \int n ( \mathbf { r } ) \ln n ( \mathbf { r } ) d \mathbf { r } ;
+\end{equation}
+将此式与公式（3.3.13）进行比较。利用这些表达式，推导出由粒子密度\(n(\boldsymbol{r})\)和总势能\(\phi(\boldsymbol{r})\)所满足的平衡方程，其中后者为
+\begin{equation}\tag{6.6.20}\label{eq:6.6.20}
+\phi _ { \mathrm { e x t } } ( \pmb { r } ) + e \int \frac { n ( \pmb { r } ^{\prime} ) } { | \pmb { r } - \pmb { r } ^{\prime} | } d \pmb { r } ^{\prime} .
+\end{equation}
+6.5. 证明在遵循麦克斯韦---玻尔兹曼分布的系统中，分子能量\(\varepsilon\)的均方根偏差等于平均分子能量\(\overline{\varepsilon}\)的\(\sqrt{(2/3)}\)倍。将这一结果与问题3.18中的结果进行对比。
+6.6. 证明对于任意分子速度分布律，
+\begin{equation}\tag{6.6.21}\label{eq:6.6.21}
+\left\{ \langle u \rangle \left\langle \frac { 1 } { u } \right\rangle \right\} \geq 1 .
+\end{equation}
+验证麦克斯韦分布下该量的值为\(4/\pi\)。
+6.7. 通过炉内一扇小窗，窗口内充满高温气体\(T\)，观测到气体分子所发射的光谱线。由于分子运动的影响，每条光谱线都会出现多普勒展宽。证明一条光谱线的相对强度\(I(\lambda)\)随波长\(\lambda\)的变化规律为：
+\begin{equation}\tag{6.6.22}\label{eq:6.6.22}
+I ( \lambda ) \propto \exp \left\{ - \frac { m c ^{2} ( \lambda - \lambda _ { 0 } ) ^{2} } { 2 \lambda _ { 0 } ^{2} k T } \right\} ,
+\end{equation}
+其中\(m\)为分子质量，\(c\)为光速，\(\lambda_{0}\)为该光谱线的平均波长。
+6.8. 一种由 \(N\) 个粒子组成的理想经典气体，每个粒子质量为 \(m\)，被封闭在一个高度为 \(L\) 的竖直圆柱体内，置于均匀重力场（加速度为 \(g\)）中，并处于热力学平衡状态；最终，\(N\) 和 \(L\) 都趋于无穷大。求解该气体的配分函数，并推导其主要热力学性质表达式。解释为何该系统比热大于自由空间中相应系统的比热。
+6.9. 基于离心机的铀浓缩：天然铀由两种同位素组成：\(^{238}\)U 和 \(^{235}\)U，其含量分别占 99.27\% 和 0.72\%。若将六氟化铀气体 UF₆ 注入一个内半径为 R 的快速旋转空心金属圆柱体内，该气体在内半径处的平衡压力最大；而轴向与内半径之间的同位素浓度差异，有助于实现 \(^{235}\)U 浓度的富集。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对于在以角速度 ω 旋转的圆柱坐标系中运动的质点，写出其拉格朗日函数 \(\mathcal{L}(\{q_{k},\dot{q}_{k}\})\)，并运用勒让德变换进行推导。
+\end{enumerate}
+\begin{equation}\tag{6.6.23}\label{eq:6.6.23}
+\mathcal { H } ( \{ q _ { k } , p _ { k } \} ) = \sum _ { k } p _ { k } \dot { q } _ { k } - \mathcal { L } ,
+\end{equation}
+为了证明，在该圆柱坐标系中，单粒子哈密顿量 \(\mathcal{H}\) 是
+\begin{equation}\tag{6.6.24}\label{eq:6.6.24}
+\mathcal { H } ( r , \theta , z , p _ { r } , p _ { \theta } , p _ { z } ) = \frac { p _ { r } ^{2} } { 2 m } + \frac { ( p _ { \theta } - m r ^{2} \omega ) ^{2} } { 2 m r ^{2} } + \frac { p _ { z } ^{2} } { 2 m } \, .
+\end{equation}
+忽略分子的内部自由度，因为这些自由度不会影响位置函数下的密度。证明此处所示的单粒子配分函数可以写成
+\begin{equation}\tag{6.6.25}\label{eq:6.6.25}
+Q _ { 1 } ( V , T ) = \frac { 1 } { h ^{3} } \int _ { - \infty } ^{\infty} d p _ { r } \int _ { - \infty } ^{\infty} d p _ { \theta } \int _ { - \infty } ^{\infty} d p _ { z } \int d r \int d \theta \int d z \exp \left( - \beta \mathcal { H } \right) ,
+\end{equation}
+通过构建笛卡尔坐标系与圆柱坐标系之间变换的雅可比矩阵，来对相空间积分进行计算。以封闭形式求解配分函数 \(Q_1\)，并确定该系统的亥姆霍兹自由能。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  确定在旋转圆柱体内，N 个气体分子随距离 r 从轴心变化的数密度 \(n(r)\)。证明在极限条件 \(\omega \to 0\) 下，密度将趋于均匀，其值为 \(n = N/\pi R^2 H\)。求出圆柱内半径 R 处的压力与圆柱轴心处的压力之比，并将其表示为 \(\omega\) 和 \(R\) 的函数。
+\item
+  在室温下，评估两种同位素不同的 UF₆ 气体在 ωR=500 m/s 条件下的压力比。证明 \(^{238}\)U 的压力比大约比 \(^{235}\)U 的压力比大 20\%，因此在靠近轴心处提取气体，能够获得更高浓度的 \(^{235}\)U。通过一系列离心机，可以进一步提高 \(^{235}\)U 的浓度，从而制备出可用于发电反应堆或核武器的可裂变级铀。毫不意外，这项技术也成为了人们关注的焦点，因为它可能引发核扩散问题。
+\end{enumerate}
+6.10. (a) 证明：若温度均匀，则经典气体在均匀重力场中的压力会随着高度的增加而按气压公式递减。
+\begin{equation}\tag{6.6.26}\label{eq:6.6.26}
+P ( z ) = P ( 0 ) \exp \left\{ - m g z / k T \right\} ,
+\end{equation}
+其中各符号均具有其通常的含义。\(^{17}\)
+（b）推导出适用于绝热大气的相应公式，即在该大气中，其状态下的 \((PV^{\gamma})\) 保持不变，而非 \((PV)\)。同时，研究在这样的大气中，温度 \(T\) 和密度 \(n\) 随高度的变化规律。
+6.11.（a）证明，在相对论性玻尔兹曼气体中，粒子的动量分布为：
+\begin{equation}\tag{6.6.27}\label{eq:6.6.27}
+f ( p ) d p = C e ^{- \beta c ( p ^ { 2} + m _ { 0 } ^{2} c ^{2} ) ^{1 / 2} } p ^{2} d p ,
+\end{equation}
+其中，归一化常数为
+\begin{equation}\tag{6.6.28}\label{eq:6.6.28}
+C = \frac { \beta } { m _ { 0 } ^{2} c K _ { 2 } ( \beta m _ { 0 } c ^{2} ) } \, ,
+\end{equation}
+\(K_{\nu}(z)\) 是一种修正贝塞尔函数。
+（b）验证在非相对论性极限下（\(kT \ll m_0c^2\)），我们能够恢复得到麦克斯韦分布。
+\begin{equation}\tag{6.6.29}\label{eq:6.6.29}
+f ( p ) d p = \left( \frac { \beta } { 2 \pi m _ { 0 } } \right) ^{3 / 2} e ^{- \beta p ^ { 2} / 2 m _ { 0 } } ( 4 \pi p ^{2} \, d p ) ,
+\end{equation}
+而在极端相对论性极限下（\(kT \gg m_0c^2\)），我们可得
+\begin{equation}\tag{6.6.30}\label{eq:6.6.30}
+f ( p ) d p = { \frac { ( \beta c ) ^{3} } { 8 \pi } } e ^{- \beta p c} ( 4 \pi p ^{2} \, d p ) .
+\end{equation}
+（c）验证，从一般意义上讲，
+\begin{equation}\tag{6.6.31}\label{eq:6.6.31}
+\langle p u \rangle = 3 \, k T .
+\end{equation}
+6.12.（a）考虑气体分子在从后退壁面反射时所损失的平移能量，推导出理想非相对论气体准静态绝热膨胀的著名关系式。
+\begin{equation}\tag{6.6.32}\label{eq:6.6.32}
+P V ^{\gamma} = \mathrm { c o n s t . } ,
+\end{equation}
+其中，\(\gamma = (3a+2)/3a\)，\(a\) 为气体总能量与平移能量之比。
+（b）证明，在极端相对论性气体的情况下，\(\gamma = (3a+1)/3a\)。
+6.13.（a）确定在某一单位时间内，气体分子在单位面积的壁面上发生的碰撞次数，且入射角介于 \(\theta\) 与 \(\theta + d\theta\) 之间。
+（b）确定在某一单位时间内，气体分子在单位面积的壁面上发生的碰撞次数，且分子速度介于 \(u\) 与 \(u + du\) 之间。
+（c）当分子 \(AB\) 的正常平移能量大于 \(10^{-19}\) J 时，该分子便会发生解离。证明：将气体温度从 300 K 提升至 310 K，使解离反应 \(AB \rightarrow A + B\) 的速率提升了两倍多。
+6.14.考虑 Maxwell 气体的分子通过容器壁上面积为 \(a\) 的开口进行扩散。
+（a）证明，尽管容器内的分子具有平均动能 \(\frac{3}{2}kT\)，但扩散出来的分子平均动能却为 \(2kT\)，其中 \(T\) 为气体的准静态平衡温度。
+\(^{17}\) 这个公式最早由玻尔兹曼于 1879 年提出。有关其推导过程的深入研究，请参阅沃尔顿（1969）。
+（b）假设扩散过程极其缓慢，以至于容器内的气体始终处于准静态平衡状态，求解气体的密度、温度和压力随时间的变化规律。
+6.15．在海拔30,000米处，一个聚乙烯气球被充入氦气，压力为\(10^{-2}\) atm，温度为300 K。气球的直径为10米，表面布满了无数个直径为\(10^{-5}\) 米的微小孔洞。如果在1小时内有1\%的气体泄漏出去，那么气球表面积每平方米至少需要有多少个这样的孔洞？
+6.16．考虑两种玻尔兹曼气体A和B，其压力分别为\(P_A\)和\(P_B\)，温度分别为\(T_A\)和\(T_B\)，它们分别处于空间中的两个区域中，并通过隔板上一个极其狭窄的开口相互连通；参见图~6.8。证明，由两种分子的相互扩散所导致的动态平衡状态满足以下条件：
+\begin{equation}\tag{6.6.33}\label{eq:6.6.33}
+P _ { A } / P _ { B } = ( m _ { A } T _ { A } / m _ { B } T _ { B } ) ^{1 / 2} \, ,
+\end{equation}
+与其采用\(P_{A}=P_{B}\)（若平衡状态是由流体动力学流动所导致，则应采用这一条件）。
+图~6.8　气体A和气体B的分子正在进行双向扩散。
+A（\(P_A\)，\(T_A\)）
+B（\(P_B\)，\(T_B\)）
+6.17．一个初始温度为\(T\)的小球，被浸入一理想玻尔兹曼气体中，该气体的温度为\(T_0\)。假设撞击小球的分子首先被吸收，随后又以与小球温度相同的温度重新发射出来，求解小球温度随时间的变化规律。
+【注：可以假设小球的半径远小于分子的平均自由程。】
+6.18．证明，在麦克斯韦分布的气体中，两分子相对速度的平均值是分子相对于容器壁的平均速度的\(\sqrt{2}\)倍。
+【注：对于均方根速度（而非平均速度），类似的结果在更为一般化的条件下同样成立。】
+5.19．从麦克斯韦分布的气体中随机选取两个分子，它们的总能量介于\(E\)与\(E + dE\)之间的概率是多少？验证\(\langle E \rangle = 3kT\)。
+6.20．氦原子最低电子态\(^{1}S_{0}\)与第一激发态\(^{3}S_{1}\)之间的能级差为159,843 cm\(^{-1}\)。在温度为6000 K的氦气样品中，评估激发态原子的相对比例。
+6.21．推导出在足够高的温度下，使分子旋转运动可近似采用经典力学描述的反应H\(_2\) + D\(_2\) ↔ 2HD的平衡常数\(K(T)\)的表达式。并证明\(K(\infty) = 4\)。
+6.22。借助欧拉-麦克劳林公式（6.5.19），推导出由方程（6.5.29）和（6.5.30）所定义的 \(r_{\mathrm{even}}\) 和 \(r_{\mathrm{odd}}\) 的高温展开式，并得到由方程（6.5.39）所定义的 \(C_{\mathrm{even}}\) 和 \(C_{\mathrm{odd}}\) 的相应展开式。将这些结果的数学趋势与图~6.7中相应曲线的性质进行对比分析。同时，研究两种比热的低温行为，并再次将您的结果与上述曲线的相关部分进行比较。
+6.23。氢分子中原子间的势能由半经验的莫尔斯势给出。
+\begin{equation}\tag{6.6.34}\label{eq:6.6.34}
+V ( r ) = V _ { 0 } \{ e ^{- 2 ( r - r _ { 0} ) / a } - 2 e ^{- ( r - r _ { 0} ) / a } \} ,
+\end{equation}
+其中 \(V_{0}=7\times10^{-12}\) 英制能量单位，\(r_{0}=8\times10^{-9}\) 厘米，\(a=5\times10^{-9}\) 厘米。计算转动能级和振动量子的能量，并估算分子的转动能级和振动模式在何种温度下会开始对氢气的比热贡献。
+3.24。证明，由于旋转作用，双原子分子核间距离平衡值的分数变化可表示为：
+\begin{equation}\tag{6.6.35}\label{eq:6.6.35}
+\frac { \Delta r _ { 0 } } { r _ { 0 } } \simeq \left( \frac { \hbar } { \mu r _ { 0 } ^{2} \omega } \right) ^{2} J ( J + 1 ) = 4 \left( \frac { \Theta _ { r } } { \Theta _ { \nu } } \right) ^{2} J ( J + 1 ) ;
+\end{equation}
+在此，\(\omega\) 是分子恰好处于该振动态时的角频率。在典型情况下，估算这一分数的数值。
+6.25。氧原子的基态为三重态，具有以下精细结构：
+\begin{equation}\tag{6.6.36}\label{eq:6.6.36}
+\varepsilon _ { J = 2 } = \varepsilon _ { J = 1 } - 15 8 . 5 \, \mathrm { c m } ^{- 1} = \varepsilon _ { J = 0 } - 22 6 . 5 \, \mathrm { c m } ^{- 1} .
+\end{equation}
+计算在300 K时，样品中原子氧原子占据不同 \(J\) 能级的相对比例。
+6.26。计算O₂分子第一激发电子态——即 \(^{1}\Delta\) 且 \(g_{e}=2\)——对赫尔姆霍尔茨自由能以及在5000 K温度下氧气体比热的贡献；该能级与基态之间的能级差为7824 cm⁻¹，即 \(^{3}\Sigma\) 且 \(g_{e}=3\)。如果O₂分子在两种电子态下的参数 \(\Theta_{r}\) 和 \(\Theta_{v}\) 不同，这些结果又会如何变化？
+6.27。具有三个自由度的转子的转动动能可以表示为：
+\begin{equation}\tag{6.6.37}\label{eq:6.6.37}
+\varepsilon _ { \mathrm { r o t } } = \frac { M _ { \xi } ^{2} } { 2 I _ { 1 } } + \frac { M _ { \eta } ^{2} } { 2 I _ { 2 } } + \frac { M _ { \zeta } ^{2} } { 2 I _ { 3 } } ,
+\end{equation}
+其中 \((\xi,\eta,\zeta)\) 是在旋转参考系中的坐标，其轴与转子的主轴重合；而 \((M_{\xi},M_{\eta},M_{\zeta})\) 则是相应的角动量。在转子相空间中进行积分，推导出经典近似下配分函数 \(j_{\mathrm{rot}}(T)\) 的表达式（6.5.41）。
+6.28．确定在标准状况下，二氧化碳的平动、转动和振动贡献对摩尔熵和摩尔比热的贡献。假设采用理想气体状态方程，并使用以下数据：分子量 \(M = 44.01\)；CO₂ 分子的转动惯量 \(I = 71.67 \times 10^{-40}\) g cm²；各振动模式的波数分别为：\(\overline{v}_1 = \overline{v}_2 = 667.3\) cm⁻¹，\(\overline{v}_3 = 1383.3\) cm⁻¹，以及 \(\overline{v}_4 = 2439.3\) cm⁻¹。
+6.29．在温度为 300 K 的条件下，求氨的摩尔比热。假设采用理想气体状态方程，并使用以下数据：主要转动惯量为 \(I_{1} = 4.44 \times 10^{-40}\) g cm²，\(I_{2} = I_{3} = 2.816 \times 10^{-40}\) g cm²；各振动模式的波数分别为：\(\overline{v}_{1} = \overline{v}_{2} = 3336\) cm⁻¹，\(\overline{v}_{3} = \overline{v}_{4} = 950\) cm⁻¹，\(\overline{v}_{5} = 3414\) cm⁻¹，以及 \(\overline{v}_{6} = 1627\) cm⁻¹。
+6.30．从平衡条件（6.6.3）推导出平衡浓度方程（6.6.6）。
+6.31．利用以下数值，求解反应 \(2\mathrm{CO}+\mathrm{O}_{2}\rightleftharpoons2\mathrm{CO}_{2}\) 的平衡常数。在燃烧温度 \(T=1500\,\mathrm{K}\) 时：\(\beta\mu_{\mathrm{CO}_{2}}^{(0)}=-60.95\)，\(\beta\mu_{\mathrm{CO}}^{(0)}=-35.18\)，以及 \(\beta\mu_{\mathrm{O}_{2}}^{(0)}=-27.08\)。利用这些数据，计算当 \([\mathrm{O}_{2}] = 0.01\) 时，\(\mathrm{CO}\) 与 \(\mathrm{CO}_{2}\) 的质量分数 \([\mathrm{CO}]/[\mathrm{CO}_{2}]\)。同样地，针对催化转化器温度 \(T=600\,\mathrm{K}\)，其 \(\beta\mu_{\mathrm{CO}_{2}}^{(0)}=-103.45\)，\(\beta\mu_{\mathrm{CO}}^{(0)}=-45.38\)，以及 \(\beta\mu_{\mathrm{O}_{2}}^{(0)}=-23.49\)。
+6.32．推导出反应 N₂ + O₂ ⇔ 2N₂O 的平衡常数 \(K(T)\) 的表达式，该表达式基于基态能级变化 \(\Delta\varepsilon_0 = 2\varepsilon_{\text{NO}} - \varepsilon_{\text{N}_2} - \varepsilon_{\text{O}_2}\)，以及双原子分子的振动和转动配分函数，并参考第 6.5 节的相关结果。给出预测，即在哪些温度范围内，转动模式会受到经典激发，而振动模式则被抑制；而在更高温度下，无论是转动模型还是振动模型都会被经典激发。
+6.33．分析燃烧反应
+\begin{equation}\tag{6.6.38}\label{eq:6.6.38}
+\mathrm { C H } _ { 4 } + 2 \mathrm { O } _ { 2 } \rightleftharpoons \mathrm { C O } _ { 2 } + 2 \mathrm { H } _ { 2 } \mathrm { O } \, ,
+\end{equation}
+假设在燃烧温度下，平衡常数 \(K(T) \gg 1\)。请证明：若在化学计量点或仅略低于化学计量点进行燃烧（即氧气充足，足以将所有甲烷完全氧化），则排气中CH₄的含量会很低。求出CH₄在平衡状态下的浓度，其表达式应以初始过量的O₂量为参数。根据数据 \(\beta\mu_{\mathrm{CO}_2}^{(0)} = -60.95\)、\(\beta\mu_{\mathrm{O}_2}^{(0)} = -27.08\)、\(\beta\mu_{\mathrm{CH}_4}^{(0)} = -31.95\) 和 \(\beta\mu_{\mathrm{H₂O}}^{(0)} = -44.62\)，确定在 \(T = 1500\) K 时的平衡常数。
+6.34. 求出该反应的平衡电离分数。
+\begin{equation}\tag{6.6.39}\label{eq:6.6.39}
+\mathrm { N a } \rightleftharpoons \mathrm { N a } ^{+} + e ^{-}
+\end{equation}
+在钠蒸气中。将三种粒子均视为理想的经典单原子气体。钠的电离能为 5.139 eV，Na⁺ 离子自旋为零，而中性钠以及自由电子自旋均为 \(\frac{1}{2}\)。推导出 Saha 公式，用于计算中性等离子体中 Na⁺ 的电离分数 {[}Na⁺{]}/({[}Na⁺{]})，并将其与温度的关系式表示出来，同时保持总密度不变。以选定的总密度为变量，绘制电离分数随温度变化的曲线图。
+【注意，本次计算与早期宇宙重组时期，氢离子化分数随温度变化的计算非常相似；详见第 9.8 节。】
+
+
+

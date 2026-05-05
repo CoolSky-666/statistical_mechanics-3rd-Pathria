@@ -1,0 +1,489 @@
+﻿\chapter{巨观规范态}\label{ux5de8ux89c2ux89c4ux8303ux6001}
+在前一章中，我们建立了正则系综的理论框架，并提出了一套操作方案，用于推导给定物理系统的各类热力学性质。通过那里所讨论的实例，这一方法的有效性已清晰可见；在本教材后续的研讨中，这一方法的实用性将更加凸显。然而，对于许多物理和化学问题而言，正则系综理论的适用范围却相当有限，因此似乎有必要对这一理论进行进一步推广。促成这一推广的动机，在物理意义上与从微正则系综走向正则系综的动机如出一辙——它只是下一步自然推广。其根源在于：不仅系统能量，粒子数也几乎从未以“直接”方式被精确测量；我们只能通过间接探查来估算其数值。从概念上讲，我们可以将 \(N\) 和 \(E\) 都视为变量，并将其期望值 \(\langle N \rangle\) 和 \(\langle E \rangle\) 对应于相应热力学量。
+研究变量 \(N\) 和 \(E\) 统计规律的程序不言自明。我们可以选择（i）将给定系统 \(A\) 置于一个大型储库 \(A'\) 中，该储库可与之交换能量和粒子；或者（ii）将 \(A\) 视为巨正则系综（grand canonical ensemble）中的成员，该系综由给定系统 \(A\) 及大量（想象中的）副本组成，成员之间彼此交换能量和粒子。无论采用哪种方式，最终结果在渐近意义上都是相同的。
+\section{系统与粒子-能量储罐之间的平衡}\label{ux7cfbux7edfux4e0eux7c92ux5b50-ux80fdux91cfux50a8ux7f50ux4e4bux95f4ux7684ux5e73ux8861}
+我们把给定系统\(A\)视为置于一个大型储罐\(A'\)之中，该储罐能够与之实现能量和粒子的相互交换；参见图~4.1。经过一段时间后，系统与储罐应达到相互平衡的状态。此时，根据第1.3节的论述，系统与储罐将具有共同的温度\(T\)和共同的化学势\(\mu\)。然而，系统\(A\)在任意时刻所能拥有的总粒子数\(N^{(0)}\)和总能量\(E^{(0)}\)的份额，仍然是变量（其取值原则上可以介于零与一之间）。如果在某一特定时刻，系统\(A\)恰好处于一种状态，其特征为粒子数为\(N_{r}\)、能量为\(E_{s}\)，那么储罐中的粒子数将为\(N_{r}^{\prime}\)，其能量也将为\(E_{s}^{\prime}\)，从而有
+\begin{equation}\tag{4.1.1}\label{eq:4.1.1}
+N _ { r } + N _ { r } ^{\prime} = N ^{( 0 )} = \mathrm { c o n s t . }
+\end{equation}
+\begin{equation}\tag{4.1.2}\label{eq:4.1.2}
+P _ { r , s } \propto \Omega ^{\prime} ( N ^{( 0 )} - N _ { r } , E ^{( 0 )} - E _ { s } ) .
+\end{equation}
+同样地，基于式（3）和式（4），我们可以写出
+\begin{equation}\tag{4.1.3}\label{eq:4.1.3}
+\begin{aligned}\ln\Omega'(N^{(0)}-N_r,E^{(0)}-E_s)&=\ln\Omega'(N^{(0)},E^{(0)})\\&+\left(\frac{\partial\ln\Omega^{\prime}}{\partial N^{\prime}}\right)_{N^{\prime}=N^{(0)}}(-N_r)+\left(\frac{\partial\ln\Omega^{\prime}}{\partial E^{\prime}}\right)_{E^{\prime}=E^{(0)}}(-E_s)+\cdots\\&\simeq\ln\Omega'\langle N^{(0)},E^{(0)}\rangle+\frac{\mu'}{kT'}N_r-\frac{1}{kT'}E_s;\end{aligned}
+\end{equation}
+参见式（1.2.3）、式（1.2.7）、式（1.3.3）以及式（1.3.5）。在此，\(\mu'\) 和 \(T'\) 分别代表该库的化学势与温度（亦即该给定系统的温度）。
+同样如此。根据式（5）和式（6），我们得到了所需的结论：
+\begin{equation}\tag{4.1.4}\label{eq:4.1.4}
+P _ { r , s } \propto \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } ,
+\end{equation}
+其中
+\begin{equation}\tag{4.1.5}\label{eq:4.1.5}
+\alpha = - \mu / k T ,  \beta = 1 / k T .
+\end{equation}
+经过归一化处理，最终结果变为
+\begin{equation}\tag{4.1.6}\label{eq:4.1.6}
+P _ { r , s } = \frac { \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } { \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } ;
+\end{equation}
+分母中的求和运算遍历了系统 \(A\) 可达的所有 \((N_{r}, E_{s})\) 状态。请注意，我们最终得到的 \(P_{r,s}\) 表达式与所选库的选取方式无关。
+接下来，我们将从系综理论的角度来审视同样的问题。
+\section{巨正则系综中的系统}\label{ux5927ux5747ux503cux96c6ux5408ux4e2dux7684ux7cfbux7edf}
+现在，我们设想一组由 \(\mathcal{N}\) 个完全相同的系统构成的集合（当然，这些系统可以被标记为 \(1, 2, \ldots, \mathcal{N}\)），它们共同拥有总粒子数 \(\mathcal{N}\overline{N}\) 和总能量 \(\mathcal{N}\overline{E}\)。设 \(n_{r,s}\) 表示在任意时刻 \(t\)，系统 \(A\) 拥有 \(N_{r}\) 个粒子和 \(E_{s}\) 单位能量的系统数量；显然，
+\begin{equation}\tag{4.2.1}\label{eq:4.2.1}
+\sum _ { r , s } n _ { r , s } = \mathcal { N } ,
+\end{equation}
+\begin{equation}\tag{4.2.2}\label{eq:4.2.2}
+\sum _ { r , s } n _ { r , s } N _ { r } = \mathcal { N } \overline { { N } } ,
+\end{equation}
+并且
+\begin{equation}\tag{4.2.3}\label{eq:4.2.3}
+\sum _ { r , s } n _ { r , s } E _ { s } = \mathcal { N } \overline { { E } } .
+\end{equation}
+任何满足约束条件（1）的 \(n_{r,s}\) 数组，都代表着我们集合中各成员之间粒子与能量分配的一种可能方式。此外，这种分配方式可以通过 \(W\{n_{r,s}\}\) 种不同的方式实现，其中
+\begin{equation}\tag{4.2.4}\label{eq:4.2.4}
+W \{ n _ { r , s } \} = \frac { \mathcal { N } ! } { \prod _ { r , s } ( n _ { r , s } ! ) } .
+\end{equation}
+为了简化起见，今后我们将使用符号 \(\overline{N}\) 和 \(\overline{E}\) 来代替 \(\langle N\rangle\) 和 \(\langle E\rangle\)。
+现在，我们可以将最可能的分布模式 \(\{n_{r,s}^{*}\}\) 定义为：该模式能够使式（2）中的表达式取得最大值，同时满足约束条件（1）。通过传统的推导过程，如第3.2节所示，我们可得对于一大组系统而言，
+\begin{equation}\tag{4.2.5}\label{eq:4.2.5}
+\frac { n _ { r , s } ^{*} } { \mathcal { N } } = \frac { \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } { \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } ;
+\end{equation}
+与规范系综对应的方程（3.2.10）进行比较。或者，我们也可以定义数字 \(n_{r,s}\) 的期望值（或平均值），即
+\begin{equation}\tag{4.2.6}\label{eq:4.2.6}
+\langle n _ { r , s } \rangle = \frac { \sum _ { \{ n _ { r , s } \} } ^{\prime} n _ { r , s } W \{ n _ { r , s } \} } { \sum _ { \{ n _ { r , s } \} } ^{\prime} W \{ n _ { r , s } \} } \, ,
+\end{equation}
+其中，求和符号"′"用于遍历所有符合条件（1）的分布方案。通过达尔文与福勒的方法，可以推导出 \(\langle n_{r,s}\rangle\) 的渐近表达式——与第3.2节中的相应推导唯一的区别在于，在本例中，我们将不得不处理多变量（复数）函数。不过，推导过程基本沿袭了相似的路径，其结果是
+\begin{equation}\tag{4.2.7}\label{eq:4.2.7}
+\operatorname* { L i m } _ { \mathcal { N } \to \infty } \frac { \langle n _ { r , s } \rangle } { \mathcal { N } } \simeq \frac { n _ { r , s } ^{*} } { \mathcal { N } } = \frac { \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } { \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } ,
+\end{equation}
+与式（4.1.9）一致。迄今尚未确定的参数 \(\alpha\) 和 \(\beta\) 最终由以下方程确定
+\begin{equation}\tag{4.2.8}\label{eq:4.2.8}
+\overline { { N } } = \frac { \sum _ { r , s } N _ { r } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } { \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } \equiv - \frac { \partial } { \partial \alpha } \left\{ \ln \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } \right\}
+\end{equation}
+以及
+\begin{equation}\tag{4.2.9}\label{eq:4.2.9}
+\overline { { E } } = \frac { \sum _ { r , s } E _ { s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } { \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } } \equiv - \frac { \partial } { \partial \beta } \left\{ \ln \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } \right\} ,
+\end{equation}
+其中，此处的量 \(\overline{N}\) 和 \(\overline{E}\) 均应预先指定。
+\section{各种统计量的物理意义}\label{ux5404ux79cdux7edfux8ba1ux91cfux7684ux7269ux7406ux610fux4e49}
+为了建立大偏能系综的统计性质与所研究系统热力学之间的联系，我们引入了一个量 \(q\)，其定义如下
+\begin{equation}\tag{4.3.1}\label{eq:4.3.1}
+q \equiv \ln \left\{ \sum _ { r , s } \exp \left( - \alpha N _ { r } - \beta E _ { s } \right) \right\} ;
+\end{equation}
+量 \(q\) 是参数 \(\alpha\) 和 \(\beta\) 以及所有 \(E_{\mathrm{s}}\) 的函数。通过对 \(q\) 求微分，并利用式（4.2.5）、（4.2.6）和（4.2.7），我们得到
+\begin{equation}\tag{4.3.2}\label{eq:4.3.2}
+d q = - \overline { { { N } } } d \alpha - \overline { { { E } } } d \beta - \frac { \beta } { \mathcal { N } } \sum _ { r , s } \langle n _ { r , s } \rangle \, d E _ { s } ,
+\end{equation}
+因此，
+\begin{equation}\tag{4.3.3}\label{eq:4.3.3}
+d ( q + \alpha \overline { { { N } } } + \beta \overline { { { E } } } ) = \beta \left( \frac { \alpha } { \beta } d \overline { { { N } } } + d \overline { { { E } } } - \frac { 1 } { \mathcal { N } } \sum _ { r , s } \langle n _ { r , s } \rangle \, d E _ { s } \right) .
+\end{equation}
+为了理解该等式右侧各项的含义，我们可将括号内的表达式与热力学第一定律的表述进行对比，即，
+\begin{equation}\tag{4.3.4}\label{eq:4.3.4}
+\delta Q = d \overline { { { E } } } + \delta W - \mu d \overline { { { N } } } ,
+\end{equation}
+其中，各符号均具有其通常的含义。接下来，这种对应关系似乎已成必然：
+\begin{equation}\tag{4.3.5}\label{eq:4.3.5}
+\delta W = - \frac { 1 } { \mathcal { N } } \sum _ { r , s } \langle n _ { r , s } \rangle \, d E _ { s } ,  \mu = - \alpha / \beta \, ,
+\end{equation}
+由此得出，
+\begin{equation}\tag{4.3.6}\label{eq:4.3.6}
+d ( q + \alpha \overline { { N } } + \beta \overline { { E } } ) = \beta \delta Q .
+\end{equation}
+参数 \(\beta\) 作为热量 \(\delta Q\) 的积分因子，必须与绝对温度 \(T\) 的倒数相等，因此我们可以写成
+\begin{equation}\tag{4.3.7}\label{eq:4.3.7}
+\beta = 1 / k T
+\end{equation}
+并由此，
+\begin{equation}\tag{4.3.8}\label{eq:4.3.8}
+\alpha = - \mu / k T .
+\end{equation}
+\(^{3}\)这一量最初由克拉默斯提出，他将其称为 \(q\)-势。
+此时，量 \((q+\alpha\overline{N}+\beta\overline{E})\) 将被等同于热力学变量 \(S/k\)；相应地，
+\begin{equation}\tag{4.3.9}\label{eq:4.3.9}
+q = \frac { S } { k } - \alpha \overline { { { N } } } - \beta \overline { { { E } } } = \frac { T S + \mu \overline { { { N } } } - \overline { { { E } } } } { k T } .
+\end{equation}
+然而，\(\mu\overline{N}\) 与系统 Gibbs 自由能 \(G\) 完全相同，因此也等于 \((\overline{E}-TS+PV)\)。所以，最终，
+\begin{equation}\tag{4.3.10}\label{eq:4.3.10}
+q \equiv \ln \left\{ \sum _ { r , s } \exp { ( - \alpha N _ { r } - \beta E _ { s } ) } \right\} = \frac { P V } { k T } .
+\end{equation}
+\autoref{eq:4.3.10} 为给定系统的热力学性质与相应巨正则系综统计性质之间提供了至关重要的联系。因此，这一关系在本章所发展出的理论框架中具有核心地位。
+为了推导进一步的结果，我们更倾向于引入一个参数 \(z\)，其定义如下：
+\begin{equation}\tag{4.3.11}\label{eq:4.3.11}
+z \equiv e ^{- \alpha} = e ^{\mu / k T} ;
+\end{equation}
+通常将参数 \(z\) 称为系统的活度。以 \(z\) 为变量时，\(q\)-势能可表示为：
+\begin{equation}\tag{4.3.12}\label{eq:4.3.12}
+q \equiv \ln \left\{ \sum _ { r , s } z ^{N _ { r} } e ^{- \beta E _ { s} } \right\}
+\end{equation}
+\begin{equation}\tag{4.3.13}\label{eq:4.3.13}
+= \ln \left\{ \sum _ { N _ { r } = 0 } ^{\infty} z ^{N _ { r} } Q _ { N _ { r } } ( V , T ) \right\}  ( \mathrm { w i t h ~ } Q _ { 0 } \equiv 1 ) ,
+\end{equation}
+因此，我们可以写成
+\begin{equation}\tag{4.3.14}\label{eq:4.3.14}
+q ( z , V , T ) \equiv \ln \mathcal { Q } ( z , V , T ) ,
+\end{equation}
+其中
+\begin{equation}\tag{4.3.15}\label{eq:4.3.15}
+\mathcal { Q } ( z , V , T ) \equiv \sum _ { N _ { r } = 0 } ^{\infty} z ^{N _ { r} } Q _ { N _ { r } } ( V , T )  ( \mathrm { w i t h } \; Q _ { 0 } \equiv 1 ) .
+\end{equation}
+需要注意的是，在从\autoref{eq:4.3.12} 进入\autoref{eq:4.3.13} 的过程中，我们（在心理上）对能量值 \(E_{s}\) 进行了求和，而 \(N_{r}\) 保持固定，从而得到了配分函数 \(Q_{N_{r}}(V,T)\)；当然，\(Q_{N_{r}}\) 对 \(V\) 的依赖性源于 \(E_{s}\) 对 \(V\) 的依赖性。而在从\autoref{eq:4.3.13} 进入\autoref{eq:4.3.14} 的过程中，我们（同样在心理上）对所有整数 \(N_{r}=0,1,2,\cdots,\infty\) 进行了求和，从而得到了系统的"大配分函数"\(\mathcal{Q}(z,V,T)\)。因此，我们已经将 \(q\)-势能与 \(PV/kT\) 等同起来，而它正是大配分函数的对数。
+看来，要计算巨配分函数 \(\mathcal{Q}(z,V,T)\)，我们必须先按照常规流程来计算配分函数 \(Q(N,V,T)\)。原则上，这的确如此。然而，在实践中我们发现，许多情况下直接精确计算配分函数极其困难，而对巨配分函数进行计算往往能取得显著进展。尤其在处理量子统计和/或粒子间相互作用影响较为重要的系统时，这一点尤为明显——详见第 6.2 节和第 10.1 节。此时，巨正则系综的理论框架便展现出极大价值。
+现在，我们已具备条件，可以完整地写出从给定系统的 \(q\)-势能出发，推导其主要热力学量的完整方法。首先，我们来计算系统的压力：
+\begin{equation}\tag{4.3.16}\label{eq:4.3.16}
+P(z,V,T)=\frac{kT}Vq(z,V,T)\equiv\frac{kT}V\ln\boldsymbol{Q}(z,V,T).
+\end{equation}
+接下来，将 \(\overline{N}\) 记作 \(N\)，将 \(\overline{E}\) 记作 \(U\)，并借助\autoref{eq:4.2.6} 、 \autoref{eq:4.2.7} 和 (11) 得到：
+\begin{equation}\tag{4.3.17}\label{eq:4.3.17}
+N ( z , V , T ) = z \left[ \frac { \partial } { \partial z } q ( z , V , T ) \right] _ { V , T } = k T \left[ \frac { \partial } { \partial \mu } q ( \mu , V , T ) \right] _ { V , T }
+\end{equation}
+以及
+\begin{equation}\tag{4.3.18}\label{eq:4.3.18}
+U ( z , V , T ) = - \left[ \frac { \partial } { \partial \beta } q ( z , V , T ) \right] _ { z , V } = k T ^{2} \left[ \frac { \partial } { \partial T } q ( z , V , T ) \right] _ { z , V } .
+\end{equation}
+通过消去方程（16）与方程（17）中的\(z\)，可得系统的状态方程，亦即\((P,V,T)\)关系式。另一方面，通过消去方程（17）与方程（18）中的\(z\)，可得\(U\)作为\(N\)、\(V\)和\(T\)的函数，并由此易于推导出定容热容为\((\partial U/\partial T)_{N,V}\)。亥姆霍兹自由能的表达式为
+\begin{equation}\tag{4.3.19}\label{eq:4.3.19}
+\begin{array}{r} { A = N \mu - P V = N k T \ln z - k T \ln \mathcal { Q } ( z , V , T ) } \\{ = - k T \ln \frac { \mathcal { Q } ( z , V , T ) } { z ^{N} } , } \end{array}
+\end{equation}
+该公式可与正则系综公式 \(A = -kT\ln Q(N,V,T)\) 相比较；另请参阅问题4.2。最后，我们对系统的熵进行了计算：
+\begin{equation}\tag{4.3.20}\label{eq:4.3.20}
+S = \frac { U - A } { T } = k T \left( \frac { \partial q } { \partial T } \right) _ { z , V } - N k \ln z + k q .
+\end{equation}
+\section{示例}\label{ux793aux4f8b}
+接下来，我们将研究几道简单的题目，其明确目的在于展示\(q\)势方法的运作原理。本节并非旨在充分展现该方法的强大之处，因为我们仅将探讨那些能够以与前几章所介绍的方法同样高效地解决的问题。只有在研究涉及量子统计效应以及粒子间相互作用所产生的效应的问题时，新方法的真正威力才会显现出来；而这类问题将在本文的后续章节中大量出现。
+我们在此首先提出的研究问题是经典理想气体的问题。在第3.5节中，我们已经证明，该系统的配分函数\(Q_{N}(V,T)\)可以表示为
+\begin{equation}\tag{4.4.1}\label{eq:4.4.1}
+Q _ { N } ( V , T ) = \frac { [ Q _ { 1 } ( V , T ) ] ^{N} } { N ! } ,
+\end{equation}
+其中\(Q_{1}(V,T)\)可被视为系统中单个粒子的配分函数。首先，我们应当注意到，式（1）并未对粒子的内部运动模式施加任何限制；若这些运动模式确实存在，它们只会通过\(Q_{1}\)对结果产生影响。其次，我们应牢记，分母中出现的\(N!\)因子，源于构成气体的粒子实际上彼此无法区分这一事实。与粒子不可区分性密切相关的是，这些粒子并不具有局域性——否则，我们便可以通过它们的具体位置来加以区分；例如，可将第3.8节中所研究的谐振子系统与之进行对比。由于我们的粒子不具有局域性，它们可以存在于自身所能支配的空间中的任意位置；因此，\(Q_{1}\)函数将与\(V\)成正比：
+\begin{equation}\tag{4.4.2}\label{eq:4.4.2}
+Q _ { 1 } ( V , T ) = V f ( T ) ,
+\end{equation}
+其中\(f(T)\)仅取决于温度这一变量。由此，我们得到了气体的巨配分函数
+\begin{equation}\tag{4.4.3}\label{eq:4.4.3}
+\begin{array}{r} { \mathcal { Q } ( z , V , T ) = \displaystyle \sum _ { N _ { r } = 0 } ^{\infty} z ^{N _ { r} } Q _ { N _ { r } } ( V , T ) = \displaystyle \sum _ { N _ { r } = 0 } ^{\infty} \frac { \{ z V f ( T ) \} ^{N _ { r} } } { N _ { r } ! } } \\{ = \exp \{ z V f ( T ) \} , } \end{array}
+\end{equation}
+该表达式给出了
+\begin{equation}\tag{4.4.4}\label{eq:4.4.4}
+q ( z , V , T ) = z V f ( T ) .
+\end{equation}
+从式（4.3.16）至式（4.3.20），最终得出以下结果：
+\begin{equation}\tag{4.4.5}\label{eq:4.4.5}
+P = z k T f ( T ) ,
+\end{equation}
+\begin{equation}\tag{4.4.6}\label{eq:4.4.6}
+N = z V f ( T ) ,
+\end{equation}
+\begin{equation}\tag{4.4.7}\label{eq:4.4.7}
+U = z V k T ^{2} f ^{\prime} ( T ) ,
+\end{equation}
+\begin{equation}\tag{4.4.8}\label{eq:4.4.8}
+A = N k T \ln z - z V k T f ( T ) ,
+\end{equation}
+以及
+\begin{equation}\tag{4.4.9}\label{eq:4.4.9}
+S = - N k \ln z + z V k \{ T f ^{\prime} ( T ) + f ( T ) \} .
+\end{equation}
+通过消去式（5）与式（6）之间的\(z\)，我们得到该系统的状态方程：
+\begin{equation}\tag{4.4.10}\label{eq:4.4.10}
+P V = N k T .
+\end{equation}
+我们注意到，式（10）无论函数\(f(T)\)的形态如何都成立。接下来，通过消去式（6）与式（7）之间的\(z\)，我们得到
+\begin{equation}\tag{4.4.11}\label{eq:4.4.11}
+U = N k T ^{2} f ^{\prime} ( T ) / f ( T ) ,
+\end{equation}
+由此可得
+\begin{equation}\tag{4.4.12}\label{eq:4.4.12}
+C _ { V } = N k \frac { 2 T f ( T ) f ^{\prime} ( T ) + T ^{2} \{ f ( T ) f ^{\prime \prime} ( T ) - [ f ^{\prime} ( T ) ] ^{2} \} } { [ f ( T ) ] ^{2} } .
+\end{equation}
+在简单情况下，函数\(f(T)\)会直接与\(T\)的某次幂成正比。假设\(f(T) \propto T^n\)，则式（11）和式（12）变为
+\begin{equation}\tag{4.4.13}\label{eq:4.4.13}
+U = n ( N k T )
+\end{equation}
+并且
+\begin{equation}\tag{4.4.14}\label{eq:4.4.14}
+C _ { V } = n ( N k ) .
+\end{equation}
+因此，在这种情况下，气体的压力与气体的能量密度成正比，而比例常数为\(1/n\)。读者应当记得，当\(n=3/2\)时，对应的是非相对论性气体；而当\(n=3\)时，则对应于极端的相对论性气体。
+最后，通过消去式（6）与式（8）及式（9）之间的\(z\)，我们得到\(A\)和\(S\)分别作为\(N\)、\(V\)和\(T\)的函数。这基本上完成了我们对经典理想气体的研究。
+在此需要考虑的下一个问题，是独立且局域化的粒子系统——这一模型在某些方面可以近似视为固体。从数学上讲，
+这个问题与谐振子系统的问题类似。在两种情况下，构成系统的微观实体彼此可区分。此类系统的配分函数\(Q_{N}(V,T)\)可以写成
+\begin{equation}\tag{4.4.15}\label{eq:4.4.15}
+Q _ { N } ( V , T ) = [ Q _ { 1 } ( V , T ) ] ^{N} .
+\end{equation}
+与此同时，鉴于粒子的局域性，单个粒子的配分函数\(Q_{1}(V,T)\)本质上与系统所占据的体积无关。因此，我们可以写出
+\begin{equation}\tag{4.4.16}\label{eq:4.4.16}
+Q _ { 1 } ( V , T ) = \phi ( T ) ,
+\end{equation}
+其中\(\phi(T)\)仅取决于温度。进而，我们得到该系统的巨配分函数
+\begin{equation}\tag{4.4.17}\label{eq:4.4.17}
+\mathcal { Q } ( z , V , T ) = \sum _ { N _ { r } = 0 } ^{\infty} [ z \phi ( T ) ] ^{N _ { r} } = [ 1 - z \phi ( T ) ] ^{- 1} ;
+\end{equation}
+显然，量\(z\phi(T)\)必须保持在1以下，以便对\(N_r\)的求和收敛。
+系统的热力学可直接由式（15）推导得出。首先，
+\begin{equation}\tag{4.4.18}\label{eq:4.4.18}
+P \equiv \frac { k T } { V } q ( z , T ) = - \frac { k T } { V } \ln \{ 1 - z \phi ( T ) \} .
+\end{equation}
+由于\(z\)和\(T\)均为广延变量，因此式（16）的右侧在\(V \to \infty\)时趋近于零。因此，在热力学极限下，\(P = 0\)。\^{}\{4\} 对于其他感兴趣的物理量，我们借助式（4.3.17）至式（4.3.20）得以求得，
+\begin{equation}\tag{4.4.19}\label{eq:4.4.19}
+N = \frac { z \phi ( T ) } { 1 - z \phi ( T ) } ,
+\end{equation}
+\begin{equation}\tag{4.4.20}\label{eq:4.4.20}
+U = \frac { z k T ^{2} \phi ^{\prime} ( T ) } { 1 - z \phi ( T ) } \, ,
+\end{equation}
+\begin{equation}\tag{4.4.21}\label{eq:4.4.21}
+A = N k T \ln z + k T \ln \{ 1 - z \phi ( T ) \} ,
+\end{equation}
+以及
+\begin{equation}\tag{4.4.22}\label{eq:4.4.22}
+S = - N k l n z - k l n \{ 1 - z \phi ( T ) \} + \frac { z k T \phi ^{\prime} ( T ) } { 1 - z \phi ( T ) } .
+\end{equation}
+从式（17）中，我们得到
+\begin{equation}\tag{4.4.23}\label{eq:4.4.23}
+z \phi ( T ) = \frac { N } { N + 1 } \simeq 1 - \frac { 1 } { N }  ( N \gg 1 ) .
+\end{equation}
+\^{}\{4\} 在后续内容中我们会发现，\(P\)实际上以\((\ln N)/N\)的规律消失。
+由此可以得出
+\begin{equation}\tag{4.4.24}\label{eq:4.4.24}
+1 - z \phi ( T ) = \frac { 1 } { N + 1 } \simeq \frac { 1 } { N } .
+\end{equation}
+目前，式（17）至式（20）给出了
+\begin{equation}\tag{4.4.25}\label{eq:4.4.25}
+U / N = k T ^{2} \phi ^{\prime} ( T ) / \phi ( T ) ,
+\end{equation}
+\begin{equation}\tag{4.4.26}\label{eq:4.4.26}
+A / N = - k T \mathrm { l n } \phi ( T ) + O \biggl ( \frac { \mathrm { l n } N } { N } \biggr ) ,
+\end{equation}
+并且
+\begin{equation}\tag{4.4.27}\label{eq:4.4.27}
+S / N k = \ln \phi ( T ) + T \phi ^{\prime} ( T ) / \phi ( T ) + O \biggl ( \frac { \ln N } { N } \biggr ) .
+\end{equation}
+将
+\begin{equation}\tag{4.4.28}\label{eq:4.4.28}
+\phi ( T ) = [ 2 \sinh ( \hbar \omega / 2 k T ) ] ^{- 1}
+\end{equation}
+代入这些公式，我们得到了与量子力学一维谐振子系统相关的结果。代入
+\begin{equation}\tag{4.4.29}\label{eq:4.4.29}
+\phi ( T ) = k T / \hbar \omega ,
+\end{equation}
+另一方面，这一代入则会得到与经典一维谐振子系统相关的结果。
+作为推论，我们在此探讨固---气平衡问题。考虑一个单组分系统，其中存在两种相——固相和气相——且二者处于平衡状态，均被置于一个体积为V、温度为T的封闭容器中。由于各相均可自由交换粒子，因此相互平衡的状态意味着它们的化学势相等；而这一条件又意味着它们具有相同的逸度。现在，气相的逸度\(z_{\mathrm{g}}\)由下式给出，参见式（6）：
+\begin{equation}\tag{4.4.30}\label{eq:4.4.30}
+z _ { g } = \frac { N _ { g } } { V _ { g } f ( T ) } ,
+\end{equation}
+其中\(N_{g}\)为气相中的粒子数，\(V_{g}\)为气相所占的体积；在典型情况下，\(V_{g} \simeq V\)。另一方面，固相的逸度\(z_{s}\)由式（21）给出：
+\begin{equation}\tag{4.4.31}\label{eq:4.4.31}
+\mathcal { Z } _ { S } \simeq \frac { 1 } { \phi ( T ) } .
+\end{equation}
+将式（25）与式（26）相等，我们可得气相中的平衡粒子密度为
+\begin{equation}\tag{4.4.32}\label{eq:4.4.32}
+N _ { g } / V _ { g } = f ( T ) / \phi ( T ) .
+\end{equation}
+如今，若气相的密度足够低，且系统的温度足够高，则气压\(P\)将由下式给出
+\begin{equation}\tag{4.4.33}\label{eq:4.4.33}
+P _ { \mathrm { v a p o r } } = \frac { N _ { g } } { V _ { g } } k T = k T \frac { f ( T ) } { \phi ( T ) } .
+\end{equation}
+具体而言，我们可以假设气相为单原子气体；此时，函数\(f(T)\)的形式为
+\begin{equation}\tag{4.4.34}\label{eq:4.4.34}
+f ( T ) = ( 2 \pi m k T ) ^{3 / 2} / h ^{3} .
+\end{equation}
+另一方面，若将固相近似为一组三维谐振子，其特征频率为\(\omega\)（爱因斯坦模型），则函数\(\phi(T)\)将为
+\begin{equation}\tag{4.4.35}\label{eq:4.4.35}
+\phi ( T ) = [ 2 \sinh ( h \omega / 2 k T ) ] ^{- 3} .
+\end{equation}
+然而，这里存在一个重要的区别。在固体中，一个原子的能量状态比自由原子更加稳定——正因如此，要将固体转化为独立原子，必须具备一定的阈值能量。设\(\varepsilon\)为每原子所需的该能量值，这在某种程度上意味着，导致函数（29）和（30）的能谱零点\(\varepsilon_{g}\)和\(\varepsilon_{s}\)彼此之间发生了位移，位移量为\(\varepsilon\)。要对函数\(f(T)\)与\(\phi(T)\)进行真正意义上的比较，就必须将这一点纳入考量。由此，我们可得气压为
+\begin{equation}\tag{4.4.36}\label{eq:4.4.36}
+P _ { \mathrm { v a p o r } } = k T \left( \frac { 2 \pi m k T } { h ^{2} } \right) ^{3 / 2} [ 2 \sinh ( \hbar \omega / 2 k T ) ] ^{3} e ^{- \varepsilon / k T} .
+\end{equation}
+顺便一提，我们注意到，式（27）同样为我们提供了形成固相的必要条件。这一条件显然为：
+\begin{equation}\tag{4.4.37}\label{eq:4.4.37}
+N > V { \frac { f ( T ) } { \phi ( T ) } } ,
+\end{equation}
+其中 \(N\) 为系统中粒子的总数量。或者，这也意味着：
+\begin{equation}\tag{4.4.38}\label{eq:4.4.38}
+T < T _ { c } ,
+\end{equation}
+其中 \(T_{c}\) 是由隐含关系所决定的特征温度。
+\begin{equation}\tag{4.4.39}\label{eq:4.4.39}
+\frac { f ( T _ { c } ) } { \phi ( T _ { c } ) } = \frac { N } { V } .
+\end{equation}
+一旦两种相出现，数值 \(N_{g}(T)\) 将由式（27）确定；而其余部分 \(N - N_{g}\) 则构成固相。
+\section{巨正则系综中的密度与能量涨落：与其他系综的对应关系}\label{ux5de8ux6b63ux5219ux7cfbux7efcux6da8ux843dux5bf9ux5e94}
+在巨正则系综中，对于系综内任意一个成员而言，变量 \(N\) 和 \(E\) 的取值范围均可在零与无穷之间变化。因此，从表面上看，巨正则系综似乎与其前代（正则系综与微正则系综）有明显差异。然而，就热力学而言，通过该系综得到的结果与其他两种系综是一致的。其根本原因在于：在成员间波动的物理量中，相对波动通常可以忽略不计。因此，尽管不同系综给同一物理系统提供不同环境条件，系统整体行为却不会受到显著影响。
+为了更好地理解这一点，我们评估某一给定物理系统在巨正则系综下粒子密度 \(n\) 和能量 \(E\) 的相对波动。回想一下，
+\begin{equation}\tag{4.5.1}\label{eq:4.5.1}
+\overline { { N } } = \frac { \sum _ { r , s } N _ { r } e ^{- \alpha N _ { r} - \beta E _ { s } } } { \sum _ { r , s } e ^{- \alpha N _ { r} - \beta E _ { s } } } \, ,
+\end{equation}
+由此很容易得出结论：
+\begin{equation}\tag{4.5.2}\label{eq:4.5.2}
+\left( \frac { \partial \overline { { N } } } { \partial \alpha } \right) _ { \beta , E _ { s } } = - \overline { { N ^{2} } } + \overline { { N } } ^{2} .
+\end{equation}
+因此，
+\begin{equation}\tag{4.5.3}\label{eq:4.5.3}
+\overline { { ( \Delta N ) ^{2} } } \equiv \overline { { N ^{2} } } - \overline { { N } } ^{2} = - \left( \frac { \partial \overline { { N } } } { \partial \alpha } \right) _ { T , V } = k T \left( \frac { \partial \overline { { N } } } { \partial \mu } \right) _ { T , V } .
+\end{equation}
+根据式（3），我们可得粒子密度 \(n\) 的相对均方差（即 \(N/V\)）。
+\begin{equation}\tag{4.5.4}\label{eq:4.5.4}
+\frac { ( \Delta n ) ^{2} } { \overline { { n } } ^{2} } = \frac { ( \Delta N ) ^{2} } { \overline { { N } } ^{2} } = \frac { k T } { \overline { { N } } ^{2} } \left( \frac { \partial \overline { { N } } } { \partial \mu } \right) _ { T , V } .
+\end{equation}
+以变量 \(\nu\)（即 \(V/\overline{N}\)）来表示，我们可以写成：
+\begin{equation}\tag{4.5.5}\label{eq:4.5.5}
+\frac { ( \Delta n ) ^{2} } { \overline { { n } } ^{2} } = \frac { k T v ^{2} } { V ^{2} } \left( \frac { \partial ( V / v ) } { \partial \mu } \right) _ { T , V } = - \frac { k T } { V } \left( \frac { \partial v } { \partial \mu } \right) _ { T } .
+\end{equation}
+为了将这一结果转化为更实用的形式，我们回顾热力学关系
+\begin{equation}\tag{4.5.6}\label{eq:4.5.6}
+d \mu = \nu d P - s d T ,
+\end{equation}
+根据该关系，当温度 \(T\) 保持恒定时，\(\mu\) 的变化量等于 \(\nu\) 乘以压强的变化量。于是，式（5）可化为：
+\begin{equation}\tag{4.5.7}\label{eq:4.5.7}
+\frac { \overline { { ( \Delta n ) ^{2} } } } { \overline { { n } } ^{2} } = - \frac { k T } { V } \frac { 1 } { \nu } \left( \frac { \partial \nu } { \partial P } \right) _ { T } = \frac { k T } { V } \kappa _ { T } ,
+\end{equation}
+其中 \(\kappa_{T}\) 是系统的等温压缩率。
+因此，给定系统中粒子密度的相对均方根波动通常为 \(O(N^{-1/2})\)，因而可忽略不计。然而，也存在例外，例如相变附近。在这些情况下，系统压缩率可能异常增大，等温线几乎“变平”。以临界点为例，压缩率会发散，不再是强度量。第~12~章和第~14~章所述有限尺寸标度理论表明，在临界点处 \(\kappa_{T}(T_{c}) \sim N^{\gamma / d \nu}\)。对于实验液-汽临界点，\(\kappa_{T}(T_{c}) \sim N^{0.63}\)；相应地，密度均方根波动增长可快于 \(N^{1/2}\)（本例约为 \(N^{0.82}\)）。因此，在相变区域尤其临界点附近，系统粒子密度会出现异常强波动（如临界乳光）。在这种情况下，应优先采用巨正则系综框架，因为它更能准确反映实际物理情形。
+接下来，我们将考察系统能量的波动。按照常规流程，我们得到
+\begin{equation}\tag{4.5.8}\label{eq:4.5.8}
+\overline { { ( \Delta E ) ^{2} } } \equiv \overline { { E ^{2} } } - \overline { { E } } ^{2} = - \left( \frac { \partial \overline { { E } } } { \partial \beta } \right) _ { z , V } = k T ^{2} \left( \frac { \partial U } { \partial T } \right) _ { z , V } .
+\end{equation}
+为了将式（8）转化为更易于理解的形式，我们将其写成
+\begin{equation}\tag{4.5.9}\label{eq:4.5.9}
+\left( \frac { \partial U } { \partial T } \right) _ { z , V } = \left( \frac { \partial U } { \partial T } \right) _ { N , V } + \left( \frac { \partial U } { \partial N } \right) _ { T , V } \left( \frac { \partial N } { \partial T } \right) _ { z , V } ,
+\end{equation}
+其中，符号 \(N\) 既可以表示 \(\overline{N}\)，也可以互换使用。鉴于
+\begin{equation}\tag{4.5.10}\label{eq:4.5.10}
+N = - \left( \frac { \partial } { \partial \alpha } \ln \mathcal { Q } \right) _ { \beta , V } ,  U = - \left( \frac { \partial } { \partial \beta } \ln \mathcal { Q } \right) _ { \alpha , V } ,
+\end{equation}
+我们有
+\begin{equation}\tag{4.5.11}\label{eq:4.5.11}
+\left( \frac { \partial N } { \partial \beta } \right) _ { \alpha , V } = \left( \frac { \partial U } { \partial \alpha } \right) _ { \beta , V }
+\end{equation}
+因此，
+\begin{equation}\tag{4.5.12}\label{eq:4.5.12}
+\left( \frac { \partial N } { \partial T } \right) _ { z , V } = \frac { 1 } { T } \left( \frac { \partial U } { \partial \mu } \right) _ { T , V } .
+\end{equation}
+将式（9）和式（12）代入式（8），并牢记量 \((\partial U/\partial T)_{N,V}\) 即为熟悉的 \(C_V\)，我们得到
+\begin{equation}\tag{4.5.13}\label{eq:4.5.13}
+\overline { { ( \Delta E ) ^{2} } } = k T ^{2} C _ { V } + k T \left( \frac { \partial U } { \partial N } \right) _ { T , V } \left( \frac { \partial U } { \partial \mu } \right) _ { T , V } .
+\end{equation}
+借助式（3.6.3）和式（3），我们最终得到
+\begin{equation}\tag{4.5.14}\label{eq:4.5.14}
+\overline { { ( \Delta E ) ^{2} } } = \langle ( \Delta E ) ^{2} \rangle _ { \mathrm { c a n } } + \left\{ \left( \frac { \partial U } { \partial N } \right) _ { T , V } \right\} ^{2} \overline { { ( \Delta N ) ^{2} } } .
+\end{equation}
+公式（14）极具启发性；它告诉我们，巨正则系综中系统的能量 \(E\) 的均方波动量，等于其在经典系综中所应具有的值，并额外加上一个因粒子数 \(N\) 也处于波动状态而产生的贡献。同样地，在通常情况下，系统能量密度的相对均方波动量几乎可以忽略不计。然而，在相变区域，由于该公式中的第二项作用，该变量的数值可能会出现异常巨大的波动。
+\section{热力学相图}\label{ux70edux529bux5b66ux76f8ux56fe}
+在过去150年里，热力学与统计力学取得的巨大成就之一，便是对相变的研究。统计力学为多种多样的材料热力学相提供了精确模型的基础，并促使我们对相变及临界现象有了深入的理解。
+凝聚态物质存在多种相态，这些相态取决于诸如温度、压力、磁场等热力学参数。通过热力学与统计力学，我们可以确定各相的性质，以及不同相之间发生的相变位置与特征。热力学相是指相图中那些热力学性质可表示为热力学参数的解析函数的区域；而相变则是相图中那些热力学性质非解析的点、线或面。本文的剩余部分主要致力于运用统计力学来阐释材料相态及其相变的特性。
+图~4.2(b)是\(P\)-\(V\)平面的相图，展示了在共存线上，压力与比容\(v(=V/N)\)的关系。虚线分别表示两图中的三相点压力和临界压力。水平的连线是等温线在穿越共存线时所经过的部分，它们清晰地展现了\(v\)的不连续性。从下往上依次为：连接固相与气相的升华连线、连接三种相的三相点连线，以及一系列固液和液汽连线。请注意，液相和气相的比容不断接近，并且在临界点处均等于临界比容\(v_c\)。
+气相、液相和固相的性质如下：
+气相是一种低密度气体，其状态可由理想气体状态方程\(P = nkT\)准确描述，但需通过维里展开式进行修正；详情请参阅第~6~章和第~10~章。
+液相是一种密度较高的流体，原子间存在强烈的相互作用。该流体表现出典型的短程配对相关性和散射结构，相关内容详见第10.7节。由中子散射测定的氩的结构因子和配对相关函数如图~10.8所示。在高于临界温度\(T_{c}\)的温度下，已无法区分液态与气态。在这一超临界相中，从低密度气态到高密度液态，其密度随温度和压力呈平滑变化。第10.1至10.3节中所发展的维里展开式，恰当地描述了超临界区域。严格来说，只有在液---汽共存线附近，才能准确区分液相与汽相，因为在此区域内，可以平稳地从一种相演化至另一种相，而无需跨越相界面。
+固相是一种面心立方晶体结构，具有长程有序性，因此其散射结构因子呈现出布拉格峰，如第10.7节所述。固相的热力学性质在第7.3节中有详细阐述。
+单一相内的所有平衡热力学性质均是热力学参数的解析函数；而相变则被定义为热力学平衡性质在相图中不再解析的点。如图~4.2(a)所示，共存线或一级相变线将相图中的不同相分开。热力学密度在共存线处出现不连续。在图~4.2(b)的\(P-V\)相图中，这种不连续通过水平连接线得以体现，这些连接线将两种相中特定体积的不同值相连。通常情况下，诸如比容\(v=V/N\)、每粒子熵\(s=S/N\)、内能密度\(u=U/V\)等所有密度，在一级相变线处均会呈现不连续。\(P-V\)相图中共存线的斜率取决于相变的潜热以及共存相的特定体积；具体细节请参见第4.7节。三种相在三相点处同时存在。
+液---汽共存线从三相点延伸至一级相变线末端的临界点。在液---汽共存线上，比容存在不连续性；然而，当比容为\(\nu_{c}\)时，该不连续性的尺度会趋近于零——详见图~4.2(b)。通过临界点，所有密度均是\(T\)和\(P\)的连续函数。正因如此，临界点被称为连续相变，有时也被称为二阶相变。尽管热力学密度是连续的，但临界点处的热力学行为却并非解析的，因为例如，比热和等温压缩率均在临界点处发散。临界点的另一项重要特性是相关长度的发散，这导致了广泛材料类别中临界点的普遍性行为。临界点理论在第~12~章、第~13~章和第~14~章中得到系统阐述。
+经典统计力学为理解多种多样的材料的相图及热力学性质提供了一个框架。然而，在低温条件下，量子力学与量子统计扮演着至关重要的角色——此时，热德布罗意波长\(\lambda = h/\sqrt{2\pi mkT}\)的大小与\ldots\ldots 相当。
+决定了相界的位置。请注意，化学势是指每分子的吉布斯自由能；请参阅问题4.6及附录H。假设有一个装有 \(N\) 个分子的圆柱体，其处于恒定压力 \(P\) 和恒定温度 \(T\) 下，即处于等温、等压的体系中。设该圆柱体初始包含两种相：气相（A）和液相（B），因此总分子数为 \(N = N_A + N_B\)，吉布斯自由能为 \(G = G_A(N_A, P, T) + G_B(N_B, P, T)\)。如果在该压力和温度下，两种相无法共存，随着系统逐渐接近平衡状态，各相中的分子数将会发生变化。随着各相中分子数的变化，吉布斯自由能也会相应地发生改变。
+\begin{equation}\tag{4.5.15}\label{eq:4.5.15}
+d G = \left( \frac { \partial G _ { \mathrm { A } } } { \partial N _ { \mathrm { A } } } \right) _ { T , P } d N _ { \mathrm { A } } + \left( \frac { \partial G _ { \mathrm { B } } } { \partial N _ { \mathrm { B } } } \right) _ { T , P } d N _ { \mathrm { B } } = ( \mu _ { \mathrm { A } } - \mu _ { \mathrm { B } } ) d N _ { \mathrm { A } } ,
+\end{equation}
+其中 \(dN_{\mathrm{A}}\) 表示相A中分子数的变化。
+在平衡状态下，吉布斯自由能达到最小值，因此 \(dG \leq 0\)。若 \(\mu_{\mathrm{A}} > \mu_{\mathrm{B}}\)，则随着系统向平衡状态靠近，相 B 中的分子数量将增加，而相 A 中的分子数量将减少；若 \(\mu_{\mathrm{A}} < \mu_{\mathrm{B}}\)，则相 A 中的分子数量将增加，而相 B 中的分子数量将减少。当化学势相等时，吉布斯自由能与两相中分子的数量无关。因此，在共存状态下，化学势是相等的：
+\begin{equation}\tag{4.5.16}\label{eq:4.5.16}
+\mu _ { \mathrm { A } } = \mu _ { \mathrm { B } } .
+\end{equation}
+我们来考虑一个熟悉的水的例子。在常压和常温下，水存在三种相态：液态水、固态冰以及水蒸气，其 \(P-T\) 相图与图~4.2(a) 中所示的氩气相图颇为相似——水的 \(P-V\) 相图则略有不同，因为液相的密度大于固态冰相的密度；请参阅问题 4.15 和 4.20。在 \(P=1\) atm 的条件下，水与水蒸气在 \(T=100^{\circ}\mathrm{C}\) 时共存，这一温度即为"沸点"——尽管沸腾是一个非平衡过程，但沸腾却始于当平衡蒸汽压等于当地大气压的温度。假设在 \(T=99^{\circ}\mathrm{C}\) 下，存在一包含液态水和水蒸气的双相样品。在恒容装置中，很容易制备出同时含有液态水和水蒸气的双相样品。如果空间足够大，液态水会不断蒸发，直到水蒸气压力达到该温度下的共存压力 \(P_{\sigma}(99^{\circ}\mathrm{C})=0.965\,\mathrm{atm}\)。随后，若将施加的压力升高至 \(P=1\) atm 并保持恒定，同时维持恒定的温度 \(T=99^{\circ}\mathrm{C}\)，系统将偏离平衡状态。在恒压条件下，系统将通过降低
+当水蒸气凝结成液相，直至系统完全转变为液态水。这一过程会降低吉布斯自由能，直至其达到由该压力和温度下液态水的化学势所决定的平衡值。
+另一方面，若 \(T=100^{\circ}\mathrm{C}\)，且 \(P=1\,\mathrm{atm}\)，此时液相与气相的化学势相等，因此任何水蒸气与液态水的组合，其吉布斯自由能均相同。随着热量的加入或移除，水与水蒸气的比例会发生变化。水的汽化潜热 \(L_{\nu}=540\,\mathrm{cal/g}=2260\,\mathrm{kJ/kg}\) 是将液体转化为气体所需的热量。
+共存压力 \(P_{\sigma}(T)\) 确定了 \(P-T\) 平面上任意两个相之间的相界，如图~4.2(a) 所示。根据式（4.6.3），共存压力满足
+\begin{equation}\tag{4.5.17}\label{eq:4.5.17}
+\mu _ { \mathrm { A } } ( P _ { \sigma } ( T ) , T ) = \mu _ { \mathrm { B } } ( P _ { \sigma } ( T ) , T ) .
+\end{equation}
+化学势的导数之间存在如下关系：
+\begin{equation}\tag{4.5.18}\label{eq:4.5.18}
+\left( \frac { \partial \mu _ { \mathrm { A } } } { \partial T } \right) _ { P } + \left( \frac { \partial \mu _ { \mathrm { A } } } { \partial P } \right) _ { T } \frac { d P _ { \sigma } } { d T } = \left( \frac { \partial \mu _ { \mathrm { B } } } { \partial T } \right) _ { P } + \left( \frac { \partial \mu _ { \mathrm { B } } } { \partial P } \right) _ { T } \frac { d P _ { \sigma } } { d T } ,
+\end{equation}
+而每粒子熵 \(s = S/N\) 以及比容 \(\nu = V/N\) 分别由以下公式给出：
+\begin{equation}\tag{4.5.19}\label{eq:4.5.19}
+s = - \left( { \frac { \partial \mu } { \partial T } } \right) _ { P } ,
+\end{equation}
+\begin{equation}\tag{4.5.20}\label{eq:4.5.20}
+\nu = \left( { \frac { \partial \mu } { \partial P } } \right) _ { T } ;
+\end{equation}
+参见式（4.5.6）。式（5）和式（6）给出了克劳修斯-克拉佩龙方程。
+\begin{equation}\tag{4.5.21}\label{eq:4.5.21}
+\frac { d P _ { \sigma } } { d T } = \frac { s _ { B } - s _ { A } } { v _ { B } - v _ { A } } = \frac { \Delta s } { \Delta v } = \frac { L } { T \Delta v } ,
+\end{equation}
+其中 \(L = T\Delta s\) 是每粒子的潜热。共存曲线的斜率取决于每粒子熵与每粒子比容的不连续性。式（7）对所有一级相变均具有非常普遍的适用性，可用于根据温度确定共存曲线；详见第4.4节、问题4.11以及4.14至4.16。
+在三相点处，三种相的化学势相等：
+\begin{equation}\tag{4.5.22}\label{eq:4.5.22}
+\mu _ { \mathrm { A } } = \mu _ { \mathrm { B } } = \mu _ { \mathrm { C } } .
+\end{equation}
+定义三相点的三条共存线的斜率彼此相关，因为 \(\Delta s_{AB} + \Delta s_{BC} + \Delta s_{CA} = 0\)，且 \(\Delta \nu_{AB} + \Delta \nu_{BC} + \Delta \nu_{CA} = 0\)。这保证了三相点处两相之间的每条共存线都"指向"第三相；参见问题4.17。
+\section{问题}\label{ux95eeux9898_chap4}
+4.1. 证明，在巨正则系综中，系统的熵可以表示为：
+\begin{equation}\tag{4.5.23}\label{eq:4.5.23}
+S = - k \sum _ { r , s } P _ { r , s } \ln P _ { r , s } ,
+\end{equation}
+其中 \(P_{r,s}\) 的表达式由式（4.1.9）给出。
+4.2. 在热力学极限条件下（当系统的广义性质趋于无穷大，而其狭义性质保持不变时），系统 \(q\) 位势可以通过仅取求和中最大项来计算。
+\begin{equation}\tag{4.5.24}\label{eq:4.5.24}
+\sum _ { N _ { r } = 0 } ^{\infty} z ^{N _ { r} } Q _ { N _ { r } } ( V , T ) .
+\end{equation}
+验证这一陈述，并从物理角度解释其结果。
+4.3. 一个体积为 \(V^{(0)}\) 的容器中含有 \(N^{(0)}\) 个分子。假设各个分子的位置之间完全无任何关联，计算区域体积为 \(V\)（位于容器中的任意位置）恰好包含 \(N\) 个分子的概率 \(P(N,V)\)。
+（a）证明 \(\overline{N} = N^{(0)}p\)，并且 \((\Delta N)_{\mathrm{r.m.s.}} = \{N^{(0)}p(1-p)\}^{1/2}\)，其中 \(p = V/V^{(0)}\)。
+（b）证明，如果 \(N^{(0)}p\) 和 \(N^{(0)}(1-p)\) 都是较大的数值，那么函数 \(P(N,V)\) 将呈现出高斯分布的形态。
+（c）进一步地，若 \(p \ll 1\) 且 \(N \ll N^{(0)}\)，则函数 \(P(N,V)\) 将呈现泊松分布的形态：
+\begin{equation}\tag{4.5.25}\label{eq:4.5.25}
+P ( N ) = e ^{- \overline { { N} } } \frac { ( \overline { { N } } ) ^{N} } { N ! } .
+\end{equation}
+在巨正则系综中，系统恰好拥有 \(N\) 个粒子的概率由以下公式给出：
+\begin{equation}\tag{4.5.26}\label{eq:4.5.26}
+p ( N ) = \frac { z ^{N} Q _ { N } ( V , T ) } { Q ( z , V , T ) } .
+\end{equation}
+验证该陈述，并证明在经典理想气体的情形下，大可统计系中粒子在各成员之间的分布完全服从泊松分布。分别从通用公式（4.5.3）和泊松分布出发，计算该系统的\(\Delta N\)的均方根值，并证明两者结果一致。
+4.5. 证明，系统在大可统计系中的熵表达式（4.3.20）也可以写成如下形式：
+\begin{equation}\tag{4.5.27}\label{eq:4.5.27}
+S = k \left[ \frac { \partial } { \partial T } ( T q ) \right] _ { \mu , V } .
+\end{equation}
+4.6. 定义等压分区函数
+\begin{equation}\tag{4.5.28}\label{eq:4.5.28}
+Y _ { N } ( P , T ) = \frac { 1 } { \lambda ^{3} } \int _ { 0 } ^{\infty} Q _ { N } ( V , T ) e ^{- \beta P V} d V .
+\end{equation}
+证明在热力学极限条件下，吉布斯自由能（4.7.1）与\(Y_{N}(P,T)\)成正比。对经典理想气体求解等压分区函数，并证明\(PV=NkT\)。【立方体因子——即热德 Broglie 波长的三次方——用于使分区函数无量纲化，在热力学极限条件下并不计入吉布斯自由能。】
+4.7. 考虑一个封闭在体积为\(V\)的箱内的经典非相互作用双原子分子系统，其温度为\(T\)。单个分子的哈密顿量由以下公式给出：
+\begin{equation}\tag{4.5.29}\label{eq:4.5.29}
+H ( \pmb { r } _ { 1 } , \pmb { r } _ { 2 } , \pmb { p } _ { 1 } , \pmb { p } _ { 2 } ) = \frac { 1 } { 2 m } ( p _ { 1 } ^{2} + p _ { 2 } ^{2} ) + \frac { 1 } { 2 } K | \pmb { r } _ { 1 } - \pmb { r } _ { 2 } | ^{2} .
+\end{equation}
+研究该系统的热力学性质，包括量\(\langle r_{12}^{2}\rangle\)随\(T\)的变化规律。
+4.8. 确定“磁性”原子组成的气态系统的巨配分函数（其中 \(J=\frac{1}{2}\)，\(g=2\)）。这些原子除了具有动能外，还具有磁势能，其大小分别为 \(\mu_{B}H\) 或 \(-\mu_{B}H\)，取决于它们相对于外加磁场 \(H\) 的取向。推导该系统的磁化率表达式，并计算当磁场从 \(H\) 逐渐减小至零、且在恒容恒温条件下系统释放的热量。
+4.9. 通过构建系统的巨配分函数，研究固---汽平衡问题（第4.4节）。
+4.10. 在一个表面，若存在\(N_0\)个吸附位点，则有\(N(\leq N_0)\)个气体分子吸附在其上。证明吸附分子的化学势可表示为：
+\begin{equation}\tag{4.5.30}\label{eq:4.5.30}
+\mu = k T \ln \frac { N } { ( N _ { 0 } - N ) a ( T ) } ,
+\end{equation}
+其中 \(a(T)\) 为单个吸附分子的分区函数。通过构建巨配分函数以及系统配分函数，求解该问题。【忽略吸附分子之间的相互作用。】
+4.11. 研究单组分体系中气相与吸附相之间的平衡状态。证明气相中的压力可由朗格缪尔方程给出：
+\begin{equation}\tag{4.5.31}\label{eq:4.5.31}
+P _ { g } = \frac { \theta } { 1 - \theta } \times ( \mathrm { a ~ c e r t a i n ~ f u n c t i o n ~ o f ~ t e m p e r a t u r e } ) ,
+\end{equation}
+其中，\(\theta\) 是吸附位点中被吸附分子占据的平衡分数。
+4.12. 证明在巨正则系综中的系统中，
+\begin{equation}\tag{4.5.32}\label{eq:4.5.32}
+\{ \overline { { ( N E ) } } - \overline { { N } } \, \overline { { E } } \} = \left( \frac { \partial \, U } { \partial \, N } \right) _ { T , V } \overline { { ( \Delta N ) ^{2} } } .
+\end{equation}
+4.13. 定义一个量 \(J\) 为
+\begin{equation}\tag{4.5.33}\label{eq:4.5.33}
+J = E - N \mu = T S - P V .
+\end{equation}
+证明在巨正则系综中的系统中，
+\begin{equation}\tag{4.5.34}\label{eq:4.5.34}
+\overline { { ( \Delta J ) ^{2} } } = k T ^{2} C _ { V } + \left\{ \left( \frac { \partial U } { \partial N } \right) _ { T , V } - \mu \right\} ^{2} \overline { { ( \Delta N ) ^{2} } } .
+\end{equation}
+4.14. 假设水的汽化潜热 \(L_{\mathrm{v}}=2260 \mathrm{kJ} / \mathrm{kg}\) 与温度无关，且液相的比容与气相的比容相比可以忽略不计，即 \(\nu_{\mathrm{vapor}}=k T / P_{\sigma}(T)\)。通过积分克劳修斯-卡佩朗方程（4.7.7），得到共存压力随温度变化的表达式。将你的结果与从三相点至 \(200^{\circ} \mathrm{C}\) 的水的实验汽压进行比较。在 \(373 \mathrm{K}\) 时的平衡汽压为 \(101 \mathrm{kPa}=1 \mathrm{atm}\)。
+4.15. 假设冰的升华潜热 \(L_{\mathrm{s}}=2500 \mathrm{kJ} / \mathrm{kg}\) 与温度无关，且固相的比容与气相的比容相比可以忽略不计，即 \(\nu_{\mathrm{vapor}}=k T / P_{\sigma}(T)\)。通过积分克劳修斯-卡佩朗方程（4.7.7），得到共存压力随温度变化的表达式。将你的结果与从 \(T=0\) 到三相点的冰的实验汽压进行比较。在三相点处的平衡汽压为 612 Pa。
+4.16. 计算水在三相点附近（\(T = 273.16\,\mathrm{K}\)）的固液转变线的斜率，已知其熔化潜热为 \(80\,\mathrm{cal/g}\)，液相的密度为 \(1.00\,\mathrm{g/cm}^3\)，而冰相的密度为 \(0.92\,\mathrm{g/cm}^3\)。估算在 \(P = 100\,\mathrm{atm}\) 条件下的熔化温度。
+4.17. 证明克劳修斯-卡佩朗方程（4.7.7）保证了某物质在三相点处的每一条共存曲线都"指向"第三相；例如，固---气共存线的斜率介于固---液共存线和液---气共存线的斜率之间。
+4.18. 使用图~4.3中所示的P--T相图，绘制氦-4的P--V相图。
+4.19. 推导出克劳修斯-卡佩朗方程（4.7.7）的等价形式，用于求解共存化学势的斜率随温度的变化。利用这样一个事实：在共存曲线上，两个不同相中的压力 \(P(\mu, T)\) 是相等的。
+4.20. 绘制水的 \(P\)--\(T\) 和 \(P\)--\(V\) 相图，并考虑液相的质量密度大于固相的质量密度这一事实。
+

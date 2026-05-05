@@ -1,0 +1,1519 @@
+﻿\chapter{相变：临界现象、普遍性与标度行为}\label{ux76f8ux53d8ux4e34ux754cux73b0ux8c61ux666eux904dux6027ux4e0eux6807ux5ea6ux884cux4e3a}
+许多物理现象，其研究方法已广泛应用于统计力学的理论框架中，总体上可分为两大类。在第一类中，所给系统的微观组成成分，或可被视为在实际操作中几乎不相互作用；因此，系统的所有热力学性质均可直接由对各组成成分能级的了解而得出。属于这一类别的典型例子包括：气体的比热（第1.4节和第6.5节）、固体的比热（第7.4节）、化学反应及平衡常数（第6.6节）、理想玻色气体的凝聚（第7.1节和第7.2节）、黑体辐射的光谱分布（第7.3节）、金属的基本电子理论（第8.3节）、顺磁性现象（第3.9节和第8.2节）等等。对于固体而言，原子间的相互作用确实扮演着重要的物理角色；然而，由于在相当宽广的温度范围内，原子的实际位置并不会显著偏离其平均值，我们便可以将问题重新表述为所谓的"正则坐标"，并将该固体视为"由几乎不相互作用的谐振子组成的整体"。值得注意的是，属于第一类现象最显著的特征在于：除玻色-爱因斯坦凝聚外，相关系统的热力学性质均是平滑且连续的！
+然而，属于第二类的现象则呈现出截然不同的局面。在大多数情况下，所给系统的热力学性质会表现出解析性的不连续性或奇点，而这些不连续性往往对应着各类相变的发生。属于这一类别的典型例子包括：气体的凝聚、固体的熔化、与相共存相关的现象（尤其是在临界点附近）、混合物与溶液的行为（包括相分离的开始）、铁磁性和反铁磁性现象、合金中的有序-无序转变、从液态He I到液态He II的超流体转变、从正常态到超导态的转变，等等。这些系统中粒子间相互作用的显著特征在于：它们无法通过问题坐标的变换而被"消除"；因此，整个系统的能级与各组成成分的能级之间，不可能以任何简单的方式建立起对应关系。相反，人们发现，在有利条件下，大量微观
+系统的组成成分之间往往呈现出一种高度协同、相互作用的倾向。这种协同行为在某一特定温度 \(T_{c}\) 下具有宏观意义，该温度被称为系统的临界温度，并由此引发前文所列举的一系列现象。
+与研究协同现象相关的数学问题相当复杂且艰巨。\^{}\{1\} 为了便于计算，人们不得不引入一些模型，在这些模型中，粒子间的相互作用被大大简化，但仍保留了那些对问题的协同特性至关重要的特征。随后，人们希望通过对这些简化的模型进行理论研究——尽管这些模型的分析依然充满重重困难——能够重现实际物理系统所展现的最基础的现象特征。以磁性相变为例，我们可以考虑一种晶格结构，在这种结构中，除邻近自旋之间的相互作用外，其他所有相互作用均被忽略。事实证明，如此简化的模型几乎能准确捕捉到这一现象的所有基本特征——尤其是在接近临界点的附近区域。而将距离较远的自旋间相互作用纳入模型时，这些特征并不会发生显著变化；只要晶格的维度保持一致，即使更换不同的晶格结构，这些特征也基本不会受到影响。不仅如此，这些特征甚至可以被许多其他物理系统所共享，而且只需作少量调整，便可应用于多种截然不同的相变过程——例如，从顺磁性到液态，而非从顺磁性到铁磁性。这种"多元中的统一"恰恰是相变现象的典型特征——我们计划在本章以及接下来的两章中对此展开深入探讨，但在那之前，先来简单介绍一些预备知识。
+\section{关于凝聚问题的一般性说明}\label{ux5173ux4e8eux51ddux805aux95eeux9898ux7684ux4e00ux822cux6027ux8bf4ux660e}
+我们考虑一个由 \(N\) 个粒子组成的系统，该系统遵循经典统计或量子统计规律，但需注意的是，系统的总势能可以表示为两个粒子间势能之和 \(u(r_{ij})\)，其中 \(i < j\)。函数 \(u(r)\) 应满足以下条件：
+\begin{equation}\tag{12.1.1}\label{eq:12.1.1}
+\begin{array}{r} { u ( r ) = + \infty  \mathrm { f o r }  r \leq \sigma , } \\{ 0 > u ( r ) > - \varepsilon  \mathrm { f o r }  \sigma < r < r ^{*} \biggr \} ; } \\{ u ( r ) = 0  \mathrm { f o r }  r \geq r ^{*} \biggr \} } \end{array}
+\end{equation}
+参见图~12.1。因此，每个粒子可被视为一个直径为 \(\sigma\) 的刚性球体，其周围环绕着一个范围为 \(r^{*}\)、深度为 \(\varepsilon\)（最大值）的吸引力势场。从实际应用的角度来看，条件 (1) 并未对双体势能施加任何"严重限制"，因为自然界中通常遇到的粒子间势能并不具备实质性的
+（i）在热力学极限条件下（即当 \(N\) 和 \(V \to \infty\) 且 \(N/V\) 的比值保持不变时），量 \(N^{-1} \ln Q\) 仅依赖于比容 \(\nu\)（即 \(V/N\)）和温度 \(T\)；这一极限形式可记作 \(f(\nu,T)\)。自然地，我们将 \(f(\nu,T)\) 与系统的亥姆霍兹自由能 \(A\) 相对应，而 \(A\) 即为系统的亥姆霍兹自由能。此时，热力学压力 \(P\) 可以表示为
+\begin{equation}\tag{12.1.2}\label{eq:12.1.2}
+P ( v , T ) = - \left( \frac { \partial A } { \partial V } \right) _ { N , T } = k T \left( \frac { \partial f } { \partial v } \right) _ { T } ,
+\end{equation}
+这一结果表明，该量严格为非负值。
+（ii）函数 \(f(\nu,T)\) 在处处呈凹形，因此 \((P,\nu)\) 曲线的斜率 \((\partial P/\partial\nu)_T\) 永远不为正。虽然在高温下，对于所有 \(\nu\)，该斜率均为负值；但在低温下，却可能存在一个或多个区域，在这些区域内斜率等于零，从而导致系统具备无限压缩性！在 \((P,\nu)\) 图中，此类区域的存在对应于给定系统中两种或多种不同密度相共存；换言之，这正是系统发生相变的直接证据。在此背景下，值得注意的是：只要采用系统的准确配分函数，就绝不会出现具有非物理性正斜率区域的范德华型等温线。在
+³ 麦克斯韦构造法的物理依据，可借助吉布斯自由能密度 \(g(T,P)\) 来理解。由于 \(dg = -sdT + vdP\)，且在"校正"后的等温线上 \(dP =dT = 0\)，因此可以得出 \(g_{1} = g_{3}\)；参见图~12.2。要从理论等温线上获得相同的结果（该等温线上 \(dT = 0\)，但 \(dP \neq 0\)），显然需要使沿等温线从状态1到状态3积分的量 \(vdP\) 为零；这便引出了"面积相等定理"。
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  等温线中存在一个绝对平坦的部分，其两端还存在数学奇点，严格来说，这是极限过程 \(N \to \infty\) 的必然结果。倘若 \(N\) 是有限的，并且使用的是精确的配分函数，那么由关系式
+\end{enumerate}
+\begin{equation}\tag{12.1.3}\label{eq:12.1.3}
+P ^{\prime} = k T \bigg ( \frac { \partial \ln Q } { \partial V } \bigg ) _ { N , T } ,
+\end{equation}
+将摆脱数学上的奇点。等温线中通常尖锐的拐角将被圆滑处理；与此同时，等温线原本平坦的部分并不会完全呈平直状态——在较大的 \(N\) 值下，该部分会呈现出微小的负斜率。事实上，在这种情况下，量 \(P'\) 并非仅依赖于 \(\nu\) 和 \(T\)；它同样还取决于数值 \(N\)，尽管这种依赖关系在热力学上几乎可以忽略不计。
+如果我们采用由精确的配分函数 \(Q_{N}\) 所得的广义配分函数 \(\varrho\)，即
+\begin{equation}\tag{12.1.4}\label{eq:12.1.4}
+\mathcal { Q } ( z , V , T ) = \sum _ { N \geq 0 } Q _ { N } ( V , T ) z ^{N} ,
+\end{equation}
+结果亦然。要理解这一点，我们注意到：对于真实分子而言，在给定体积 \(V\) 的情况下，变量 \(N\) 会被一个上限所限制，例如 \(N_{m}\)，即能够"紧密堆积"地填充整个体积 \(V\) 的分子数；显然，\(N_{m} \sim V/\sigma^{3}\)。当 \(N > N_{m}\) 时，系统的势能将趋于无穷大；因此，
+\begin{equation}\tag{12.1.5}\label{eq:12.1.5}
+Q _ { N } ( N > N _ { m } ) \equiv 0 .
+\end{equation}
+因此，在实际应用中，\autoref{eq:12.1.4} 中的幂级数实际上是一个关于 \(z\)（且 \(z \geq 0\)）的多项式，其次数为 \(N_{m}\)。由于各系数 \(Q_{N}\) 都为正，且 \(Q_{0} \equiv 1\)，因此和式 \(\mathcal{Q} \geq 1\)。由此可知，热力学势 \(\ln \mathcal{Q}\) 是一个对参数 \(z\)、\(V\) 和 \(T\) 而言行为良好的函数。因此，只要 \(V\)（以及随之而来的 \(N_{m}\)）保持有限，我们就不会预期从该势能推导出的任何函数中出现奇点或间断。只有在极限情形 \((V, N_{m}) \rightarrow \infty\) 下，才可能出现非解析的行为。
+我们现在通过以下关系定义 \(P'\)：
+\begin{equation}\tag{12.1.6}\label{eq:12.1.6}
+P ^{\prime} = { \frac { k T } { V } } \ln Q  ( V { \mathrm { ~ f i n i t e } } ) ;
+\end{equation}
+由于 \(Q \geq 1\)，因此 \(P' \geq 0\)。粒子平均数以及该数量的方差，可由如下公式给出：
+\begin{equation}\tag{12.1.7}\label{eq:12.1.7}
+\overline { { N } } = \left( \frac { \partial \ln \mathcal { Q } } { \partial \ln z } \right) _ { V , T }
+\end{equation}
+以及
+\begin{equation}\tag{12.1.8}\label{eq:12.1.8}
+\overline { { N ^{2} } } - \overline { { N } } ^{2} \equiv \overline { { ( N - \overline { { N } } ) ^{2} } } = \left( \frac { \partial \overline { { N } } } { \partial \ln z } \right) _ { V , T } ,
+\end{equation}
+分别如第 4.2 节和第 4.5 节所示。据此，
+\begin{equation}\tag{12.1.9}\label{eq:12.1.9}
+\left( \frac { \partial \ln \mathcal { Q } } { \partial \overline { { N } } } \right) _ { V , T } = \left( \frac { \partial \ln \mathcal { Q } } { \partial \ln z } \right) _ { V , T } \Bigg / \left( \frac { \partial \overline { { N } } } { \partial \ln z } \right) _ { V , T } = \frac { \overline { { N } } } { \overline { { N ^{2} - \overline { { N } } ^{2} } } } .
+\end{equation}
+同时，将 \(\overline{\nu}\) 定义为 \(V/\overline{N}\)，并利用 \autoref{eq:12.1.6}，我们得到
+\begin{equation}\tag{12.1.10}\label{eq:12.1.10}
+\left( \frac { \partial \ln \mathcal { Q } } { \partial \overline { { N } } } \right) _ { V , T } = \frac { V } { k T } \left( \frac { \partial P ^{\prime} } { \partial \overline { { N } } } \right) _ { V , T } = - \frac { \overline { { v } } ^{2} } { k T } \left( \frac { \partial P ^{\prime} } { \partial \overline { { v } } } \right) _ { V , T } .
+\end{equation}
+将 \autoref{eq:12.1.9} 与 \autoref{eq:12.1.10} 进行比较，我们得出
+\begin{equation}\tag{12.1.11}\label{eq:12.1.11}
+\left( \frac { \partial P ^{\prime} } { \partial \overline { { v } } } \right) _ { V , T } = - \frac { k T } { V ^{2} } \frac { \overline { { N } } ^{3} } { \overline { { N } } ^{2} - \overline { { N } } ^{2} } ,
+\end{equation}
+这显然是非正的。\(^{4}\) 对于有限的 \(V\)，\autoref{eq:12.1.11} 从来不会变为零；因此，\(P'\) 也绝不会严格恒定。不过，在某一特定区域内，\(\partial P'/\partial\bar{\nu}\) 的斜率可能极其微小——事实上，其值甚至可以低至 \(O(1/\bar{N})\)；这样的区域几乎难以与相变区分开来，因为在宏观尺度上，该区域内的 \(P'\) 值几乎可以视为常数。\(^{5}\)
+现在，我们通过极限关系来定义系统的压力：
+\begin{equation}\tag{12.1.12}\label{eq:12.1.12}
+P ( \overline { { v } } , T ) = \operatorname* { L i m } _ { V \rightarrow \infty } P ^{\prime} \left( \overline { { v } } , T ; V \right) = k T \operatorname* { L i m } _ { V \rightarrow \infty } \left( \frac { 1 } { V } \ln \mathcal { Q } ( z , V , T ) \right) ,
+\end{equation}
+那么，在一组等温线中，我们可以预期会出现一个完全平坦的区域（\(\partial P/\partial \bar{v} \equiv 0\)），其尖角处则会引发数学上的奇点。此时，平均粒子密度 \(\bar{n}\) 将由以下公式给出：
+\begin{equation}\tag{12.1.13}\label{eq:12.1.13}
+\overline { { n } } = \operatorname* { L i m } _ { V \rightarrow \infty } \left[ \frac { 1 } { V } \frac { \partial \ln \mathcal { Q } ( z , V , T ) } { \partial \ln z } \right] ;
+\end{equation}
+在此有必要指出，运算 \(V \to \infty\) 与运算 \(\partial/\partial \ln z\) 并不能随意互换。
+顺便一提，我们注意到，从精确的配分函数 \(Q_{N}\) 得到的巨配分函数 \(\mathcal{Q}\) 所呈现的图景，实际上仍然
+即使我们采用了近似形式的 \(Q_{N}\)，这一结果依然保持不变。这是因为，前几段所阐述的论证过程，完全未涉及 \(Q_{N}\) 函数的实际形式。因此，如果近似形式的 \(Q_{N}\) 在规范系综中导致了范德华型的环路，如图~12.2 所示，那么在巨规范系综中使用该近似形式的 \(Q_{N}\)，将得到不包含此类环路的等温线（Hill, 1953）。
+在范·霍夫之后，杨和李（1952）提出了一种替代性方法，该方法能够对凝结现象及其他类似相变进行严谨的数学分析。在他们的方法中，研究的重点主要在于量 \(P\) 和 \(\overline{n}\) 的解析行为，也就是 \autoref{eq:12.1.12} 和 \autoref{eq:12.1.13} 中它们作为 \(z\) 与温度 \(T\) 函数时的性质。问题的探讨以"巨配分函数 \(\mathcal{Q}\) 在复数 \(z\) 平面上的零点"为切入点，着重考察这些零点在平面上的分布情况，以及随着系统体积的增大，它们的演化规律。对于实数且正的 \(z\)，\(\mathcal{Q} \geq 1\)，因此在 \(z\) 平面上，没有任何零点会位于实数正轴上。然而，当 \(V \to \infty\) 时，随着 \autoref{eq:12.1.4} 这一多项式的次数不断增大，零点的数量也无限增长；零点的分布预计将趋于连续，并且根据 \(T\) 的不同，零点最终可能在某一点或若干点 \(z_c\) 上汇聚于实数正轴。若真如所言，我们的 \(P(z)\) 和 \(\overline{n}(z)\) 函数，即便仅沿实数轴变化 \(z\)，由于其与 \(\ln \mathcal{Q}\) 函数之间的关系，仍有可能在 \(z = z_c\) 这些点处出现奇异性。这种奇异性的存在，将预示着系统中相变的开始。有关此方法的更多细节，请参阅本书第一版的第 12.3 节和第 12.4 节；此外，还可参考 Griffiths（1972，第 50--58 页）。
+\section{范德华气体的凝结}\label{ux8303ux5fb7ux534eux6c14ux4f53ux7684ux51ddux7ed3}
+我们从最简单、也是历史上最早出现的、经历气液相变的理论模型入手。这一模型通常被称为范德华气体，并遵循状态方程，详见式（10.3.9）。
+\begin{equation}\tag{12.2.1}\label{eq:12.2.1}
+P = \frac { R T } { v - b } - \frac { a } { v ^{2} } ,
+\end{equation}
+\(v\) 为气体的摩尔体积；参数 \(a\) 和 \(b\) 则分别对应于一摩尔气体。我们回顾一下，虽然 \(a\) 表示系统中分子间吸引力的大小，而 \(b\) 则表示当两个分子彼此靠得太近时所作用的斥力；因此，\(b\) 也可被视为分子所占据的"有效空间"——这得益于每个分子都具有有限的体积。在第 10.3 节中，状态方程（1）是在明确假设 \(v \gg b\) 的前提下推导出来的；在此，我们将以范德华气体为例，假定即使 \(v\) 与 \(b\) 相当，该方程依然成立。
+由式（1）得出的等温线如图~12.3 所示。我们注意到，对于高于临界温度 \(T_{c}\) 的温度，\(P\) 会随着 \(\nu\) 单调递减。对于
+因此，数值
+\begin{equation}\tag{12.2.2}\label{eq:12.2.2}
+\mathcal { K } \equiv R T _ { c } / P _ { c } \nu _ { c } = 8 / 3 = 2 . 66 6 . . . .
+\end{equation}
+由此我们发现，尽管 \(P_{c}\)、\(\nu_{c}\) 和 \(T_{c}\) 会因系统而异（由相互作用参数 \(a\) 和 \(b\) 决定），但只要这些系统都遵循相同的（即范德华）状态方程，量 \(\mathcal{K}\) 却拥有一个普遍适用的共同值。实验结果确实表明，对于一大类物质而言，\(\mathcal{K}\) 的数值几乎相同；例如，四氯化碳、乙醚和甲酸乙酯的 \(\mathcal{K}\) 值分别为 3.677、3.814 和 3.895。虽然彼此接近，但并不完全一致，且距离范德华理论中的数值仍有较大差距。不过，普适性的概念依然存在（尽管范德华状态方程未必能真正适用）。
+如今，人们不禁想要探究：是否能够将状态方程本身写成一种通用的形式。我们发现，通过引入缩减变量，这一目标确实可以实现。
+\begin{equation}\tag{12.2.3}\label{eq:12.2.3}
+P _ { r } = \frac { P } { P _ { c } } ,  v _ { r } = \frac { \nu } { v _ { c } } ,  T _ { r } = \frac { T } { T _ { c } } .
+\end{equation}
+利用式（1）和式（2），我们很容易得到缩减后状态方程。
+\begin{equation}\tag{12.2.4}\label{eq:12.2.4}
+\left( P _ { r } + \frac { 3 } { v _ { r } ^{2} } \right) ( 3 v _ { r } - 1 ) = 8 T _ { r } ,
+\end{equation}
+显然，该方程对于所有遵循范德华原始状态方程（1）的系统而言都具有普遍性；我们在此所做的，只是将可观测量 \(P\)、\(\nu\) 和 \(T\) 以它们的临界值为基准进行缩放，从而将相互作用参数 \(a\) 和 \(b\) "置于背景之中"。若两个不同的系统恰好处于由 \(\nu_r\) 和 \(T_r\) 的相同值所表征的状态，则它们的 \(P_r\) 也应相同；此时，这两个系统被称为"对应状态"，正因如此，刚才所阐述的这一结论被称作"对应状态定律"。显而易见，从式（1）到式（5）的推导过程，正是将我们从一种多元化的表述，转变为一种统一性的陈述！
+接下来，我们将考察范德华体系在临界点附近区域的行为。为此，我们写出：
+\begin{equation}\tag{12.2.5}\label{eq:12.2.5}
+P _ { r } = 1 + \pi ,  v _ { r } = 1 + \psi ,  T _ { r } = 1 + t .
+\end{equation}
+式（5）随后变为：
+\begin{equation}\tag{12.2.6}\label{eq:12.2.6}
+\pi \left( 2 + 7 \psi + 8 \psi ^{2} + 3 \psi ^{3} \right) + 3 \psi ^{3} = 8 t \left( 1 + 2 \psi + \psi ^{2} \right) .
+\end{equation}
+首先，在临界等温线（\(t=0\)）上，以及在临界点附近较近的区域（\(|\pi|, |\psi| \ll 1\)），我们得到了一个简单而渐近的结论。
+\begin{equation}\tag{12.2.7}\label{eq:12.2.7}
+\pi \approx - \frac { 3 } { 2 } \psi ^{3} ,
+\end{equation}
+这表明了临界等温线在临界点处的"平坦程度"。接下来，我们考察当从下方接近临界点时，\(\psi\) 随 \(t\) 的变化规律。为此，我们将式（7）改写为：
+\begin{equation}\tag{12.2.8}\label{eq:12.2.8}
+3 \psi ^{3} + 8 \left( \pi - t \right) \psi ^{2} + \left( 7 \pi - 16 t \right) \psi + 2 \left( \pi - 4 t \right) \simeq 0 .
+\end{equation}
+仔细观察共存曲线在靠近其顶部时的对称形状（此时 \(|t| \ll 1\)），我们会发现，式（9）中三个根 \(\psi_1\)、\(\psi_2\) 和 \(\psi_3\)——这些根源自原始状态方程（1）中 \(\nu_1\)、\(\nu_2\) 和 \(\nu_3\) 的极限行为，随着 \(T\) 趋向 \(T_c-\) 时发生的变化——其大小关系为：\(|\psi_2| \ll |\psi_{1,3}|\)，而 \(|\psi_1| \approx |\psi_3|\)。这意味着，在我们所关注的区域内，
+\begin{equation}\tag{12.2.9}\label{eq:12.2.9}
+\pi \approx 4 t ,
+\end{equation}
+因此，式（9）中的其中一个根 \(\psi_2\) 基本上会消失，而另外两个根则由以下公式给出：
+\begin{equation}\tag{12.2.10}\label{eq:12.2.10}
+\psi ^{2} + 8 t \psi + 4 t \simeq 0 .
+\end{equation}
+我们预期，这里的中间项将可以忽略不计（这一点将在最终结果中得到证实），从而得到：
+\begin{equation}\tag{12.2.11}\label{eq:12.2.11}
+\psi _ { 1 , 3 } \approx \pm 2 | t | ^{1 / 2} ;
+\end{equation}
+请注意，这里的正号表示气相，负号表示液相。
+最后，我们来考察系统的等温压缩率。在缩减变量的框架下，该压缩率本质上由量 \(-(\partial\psi/\partial\pi)_t\) 决定。仅保留主导项，我们便可以从式（7）中得出\ldots\ldots{}
+\begin{equation}\tag{12.2.12}\label{eq:12.2.12}
+- \left( \frac { \partial \psi } { \partial \pi } \right) _ { t } \approx \frac { 2 } { 7 \pi + 9 \psi ^{2} - 16 t } .
+\end{equation}
+对于 \(t > 0\)，我们沿临界等压线（\(\psi = 0\)）接近临界点；利用 \autoref{eq:12.2.12}，并结合 \autoref{eq:12.2.10}，我们得到
+\begin{equation}\tag{12.2.13}\label{eq:12.2.13}
+- \left( \frac { \partial \psi } { \partial \pi } \right) _ { t \rightarrow 0 + } \approx \frac { 1 } { 6 t } .
+\end{equation}
+对于 \(t < 0\)，我们沿共存曲线（在该曲线上 \(\psi^2 \approx -4t\)）接近临界点；此时我们得到
+\begin{equation}\tag{12.2.14}\label{eq:12.2.14}
+- \left( \frac { \partial \psi } { \partial \pi } \right) _ { t \rightarrow 0 - } \approx \frac { 1 } { 12 | t | } .
+\end{equation}
+作为记录，我们在此引用范德华气体的比热 \(C_{V}\) 的相关结果（Uhlenbeck, 1966；Thompson, 1988）
+\begin{equation}\tag{12.2.15}\label{eq:12.2.15}
+C _ { V } \approx \left\{ \begin{array}{ll} { ( C _ { V } ) _ { \mathrm { i d e a l } } + \frac { 9 } { 2 } N k \left( 1 + \frac { 28 } { 25 } t \right) } & {  ( t \leq 0 ) } \\{ ( C _ { V } ) _ { \mathrm { i d e a l } } } & {  ( t > 0 ) , } \end{array} \right.
+\end{equation}
+这些结果表明，在临界点处存在一个有限的跃迁。
+\autoref{eq:12.2.8}、\autoref{eq:12.2.11}、\autoref{eq:12.2.13}、\autoref{eq:12.2.14} 和 \autoref{eq:12.2.15} 描述了范德华体系在气液相变过程中所展现的临界行为的本质。尽管它在多个重要方面与真实物理系统的临界行为有所不同，但这种行为却在诸多研究中反复出现，而这些研究大多与气液相变并无直接关联。事实上，正是这种特定的行为模式，成为评估更复杂理论成果时所依据的基准。
+\section{相变的动力学模型}\label{ux76f8ux53d8ux7684ux52a8ux529bux5b66ux6a21ux578b}
+许多发生相变的物理化学系统，其行为在不同程度上都可以用"由一系列晶格站点构成的模型来描述，其中仅存在依赖于邻近站点占据状态的最邻近相互作用。"这一看似朴素的模型，实际上已经足够完善，能够为理解多种现象提供统一的理论基础，例如铁磁性和反铁磁性、气液相变和液固相变、合金中的有序-无序转变、二元溶液中的相分离等等。毫无疑问，这一模型在很大程度上简化了其所要描述的实际物理系统；然而，它依然保留了问题的核心物理特征——这些特征正是导致系统中长程有序结构得以传播的关键因素。因此，这一模型确实会促使给定系统发生相变，而这种相变的本质是一种协同效应。
+我们发现，用铁磁学的语言来表述我们的问题十分方便；稍后，我们将建立这种语言与适用于其他物理现象的语言之间的对应关系。因此，我们把每个 \(N\) 个晶格位置都视为由一个具有磁矩 \(\mu\) 的原子占据，其磁矩的大小为 \(g\mu_{B}\sqrt{[J(J+1)]}\)，且该原子在空间中可取 \((2J+1)\) 种离散取向。这些取向构成了对某一晶格位置"不同可能的占位方式"；相应地，整个晶格可以有 \((2J+1)^{N}\) 种不同的构型。每一种构型都对应着一种能量 \(E\)，该能量源于相邻原子之间相互作用所产生的。
+晶格以及整个晶格与外加磁场 \(\boldsymbol{B}\) 之间的相互作用。随后，通过在规范系综中进行统计分析，我们便能够确定净磁化强度 \(M\) 的期望值 \(\overline{M}(B,T)\)。当温度低于某一特定（临界）温度 \(T_c\) 时，系统中存在自发磁化 \(\overline{M}(0,T)\)；而当温度高于该温度时，这一现象则消失。由此，我们可以将此现象解释为系统在 \(T=T_c\) 时发生的铁磁相变。
+理论与实验研究均表明，对于所有铁磁材料而言，其自发磁化强度 \(\overline{M}(0,T)\) 随温度的变化规律最符合 \(J=\frac{1}{2}\) 这一数值；参见图~12.4。因此，人们不禁倾向于推断：铁磁现象仅与电子自旋有关，而与电子的轨道运动并无直接关联。这一观点进一步得到了旋磁性实验的证实（Barnett, 1944；Scott, 1951, 1952），在这些实验中，研究人员或反转自由悬浮样品的磁化状态并观察其产生的旋转，或对样品施加旋转并观测其磁化状态；前者被称为爱因斯坦--德哈斯法，后者则称为Barnett法。通过这些实验，我们可以推导出样品的相应 g 值，在每种情况下，该值都接近于 2——众所周知，这一数值正是与电子自旋相关。因此，在讨论铁磁现象的问题时，我们可以特别设定：\(\mu=2\mu_{B}\sqrt{s(s+1)}\)，其中 \(s\) 是与电子自旋相关的量子数。当 \(s=\frac{1}{2}\) 时，每个晶格位置仅能取两种取向，即 \(s_{z}=+\frac{1}{2}\)（此时 \(\mu_{z}=+\mu_{B}\)）和 \(s_{z}=-\frac{1}{2}\)（此时 \(\mu_{z}=-\mu_{B}\)）。整个晶格因而可以有 \(2^{N}\) 种构型；图~12.5 展示了其中一种构型。
+我们现将目光投向两个相邻自旋 \(s_i\) 和 \(s_j\) 之间的相互作用能的性质。根据量子力学，该能量的形式为 \(K_{ij} \pm J_{ij}\)，其中正号适用于"反平行"自旋（\(S=0\)），负号则适用于"平行"自旋（\(S=1\)）。在此，\(K_{ij}\) 是两自旋之间的直接或库仑能，而 \(J_{ij}\) 则是\ldots\ldots{}
+与此同时，
+\begin{equation}\tag{12.3.1}\label{eq:12.3.1}
+J _ { i j } = \int \psi _ { j } ^{*} ( 1 ) \psi _ { i } ^{*} ( 2 ) u _ { i j } \psi _ { j } ( 2 ) \psi _ { i } ( 1 ) d \tau _ { 1 } d \tau _ { 2 } ,
+\end{equation}
+\(u_{ij}\) 代表相关的相互作用势。当自旋处于"平行"状态与"反平行"状态之间时，其能量差可表示为
+\begin{equation}\tag{12.3.2}\label{eq:12.3.2}
+\varepsilon \uparrow \uparrow - \varepsilon \uparrow \downarrow = - 2 J _ { i j } .
+\end{equation}
+若 \(J_{ij} > 0\)，则 \(\uparrow\uparrow\) 状态在能量上优于 \(\uparrow\downarrow\) 状态；此时，我们便开始探寻铁磁性的可能性。反之，若 \(J_{ij} < 0\)，情况则相反，我们则会看到反铁磁性的可能性。
+将两种状态——\(\uparrow\uparrow\) 和 \(\downarrow\downarrow\)——的相互作用能用一个统一的表达式来表示，似乎十分有用；为此，我们考虑标量积的特征值。
+\begin{equation}\tag{12.3.3}\label{eq:12.3.3}
+\begin{array}{r} { s _ { i } \cdot s _ { j } = \frac { 1 } { 2 } \left\{ ( s _ { i } + s _ { j } ) ^{2} - s _ { i } ^{2} - s _ { j } ^{2} \right\} } \\{ = \frac { 1 } { 2 } S ( S + 1 ) - s ( s + 1 ) , } \end{array}
+\end{equation}
+当 \(S=1\) 时，其值为 \(+\frac{1}{4}\)；当 \(S=0\) 时，其值为 \(-\frac{3}{4}\)。因此，我们可以将 \(i\) 和 \(j\) 自旋之间的相互作用能表示为
+\begin{equation}\tag{12.3.4}\label{eq:12.3.4}
+\varepsilon _ { i j } = \mathrm { c o n s t . } - 2 J _ { i j } ( \pmb { s } _ { i } \cdot \pmb { s } _ { j } ) ,
+\end{equation}
+这一表达式与能量差（3）相一致。此处常数的具体数值并不重要，因为无论能量差如何，总可以任意添加一个常数项。通常情况下，当两自旋之间的距离增大时，交换相互作用 \(J_{ij}\) 会迅速衰减。
+自旋之间的距离逐渐增大。因此，在第一近似下，我们可将 \(J_{ij}\) 视为可忽略不计，仅对那些最近邻对而言（对于这些对，其值可使用同一个符号 \(J\) 来表示）。整个晶格的相互作用能则可表示为
+\begin{equation}\tag{12.3.5}\label{eq:12.3.5}
+E = \mathrm { c o n s t . } - 2 J \sum _ { \mathrm { n . n . } } ( s _ { i } \cdot s _ { j } ) ,
+\end{equation}
+求和范围涵盖晶格中所有最近邻对。基于式（6）构建的晶格相互作用能模型，即为海森堡模型（1928年）。
+如果我们改用一个截断表达式，而非式（6），则可得到一个更为简单的模型。在该表达式中，乘积 \((\mathbf{s}_i \cdot \mathbf{s}_j)\)——其值等于和 \((s_{ix} s_{jx} + s_{iy} s_{jy} + s_{iz} s_{jz})\)——被替换为单个项 \(s_{iz} s_{jz}\)；采用这一简化模型的一个原因在于，它并不一定需要量子力学的处理方式（因为用于计算 \(E\) 的截断表达式中的所有变量都是对易的）。现在，式（6）可以写成：
+\begin{equation}\tag{12.3.6}\label{eq:12.3.6}
+E = \mathrm { c o n s t . } - J \sum _ { \mathrm { n . n . } } \sigma _ { i } \sigma _ { j } ,
+\end{equation}
+其中新符号 \(\sigma_{i}\)（或 \(\sigma_{j}\)）表示"向上"自旋时取值为 +1，表示"向下"自旋时取值为 -1；需要注意的是，随着新符号的引入，我们依然有：\(\varepsilon_{\uparrow\uparrow} - \varepsilon_{\uparrow\downarrow} = -2J\)。基于式（7）的模型被称为伊辛模型；该模型最早由伦茨于1920年提出，随后由他的学生伊辛于1925年对其进行了深入研究。7
+如果我们抑制自旋的 \(z\) 分量，而保留 \(x\) 和 \(y\) 分量，则会得到另一种不同的模型。该模型最初由松原和松田于1956年提出，作为一种量子晶格气体模型，可能与液态氦\(^{4}\) 的超流相变有关。这种被称为 XY 模型的模型的临界行为已由贝茨及其同事进行了详细研究，他们还特别强调了该模型在研究绝缘铁磁体中的重要性（参见贝茨等人，1968--1974）。
+将伊辛模型和 XY 模型视为各向异性海森堡模型的特例——其相互作用参数分别为 \(J_{x}\)、\(J_{y}\) 和 \(J_{z}\)——似乎十分恰当；其中，伊辛模型对应于 \(J_{x}\) 和 \(J_{y}\) 远小于 \(J_{z}\) 的情形，而 XY 模型则恰好相反。通过引入一个参数 \(n\)，表示进入系统哈密顿量的自旋分量数，我们可以将伊辛模型、XY 模型以及海森堡模型分别视为对应于 \(n\) 值 1、2 和 3。正如稍后将要看到的那样，参数 \(n\) 与晶格的维度 \(d\) 共同构成了决定某一特定系统临界行为质性特征的基本要素集合。不过，在此阶段，我们仍把注意力集中在伊辛模型上——它不仅是最易于分析的模型，而且还能统一地阐释从铁磁体、气---液、液体混合物、二元合金等各类不同体系中发生的相变研究。
+为了研究伊辛模型的统计力学，我们忽略占据不同晶格位置的原子所具有的动能，因为相变现象本质上是原子间相互作用能的结果；而在相互作用能中，我们仅纳入近邻贡献，希望远邻贡献不会对结果产生质的改变。为了固定\(z\)方向，并能够研究磁化率等性质，我们将晶格置于一个沿"向上"方向的外部磁场\(\boldsymbol{B}\)中；此时，自旋\(\sigma_{i}\)将拥有额外的势能\(-\mu B \sigma_{i}\)。\^{}\{8\} 系统在配置\(\{\sigma_{1}, \sigma_{2}, \ldots, \sigma_{N}\}\)下的哈密顿量可表示为
+\begin{equation}\tag{12.3.7}\label{eq:12.3.7}
+H \{ \sigma _ { i } \} = - J \sum _ { \mathrm { n . n . } } \sigma _ { l } \sigma _ { j } - \mu B \sum _ { i } \sigma _ { i } ,
+\end{equation}
+而配分函数则为
+\begin{equation}\tag{12.3.8}\label{eq:12.3.8}
+\begin{array}{rl} & { \mathrm { Q } _ { N } ( B , T ) = \sum _ { \sigma _ { 1 } } \sum _ { \sigma _ { 2 } } \ldots \sum _ { \sigma _ { N } } \exp [ - \beta H \{ \sigma _ { i } \} ] } \\& {  = \sum _ { \sigma _ { 1 } } \sum _ { \sigma _ { 2 } } \ldots \sum _ { \sigma _ { N } } \exp \Big [ \beta J \sum _ { \mathrm { n . n . } } \sigma _ { i } \sigma _ { j } + \beta \mu B \sum _ { i } \sigma _ { i } \Big ] . } \end{array}
+\end{equation}
+系统的亥姆霍兹自由能、内能、比热以及净磁化强度，随后可通过以下公式得出
+\begin{equation}\tag{12.3.9}\label{eq:12.3.9}
+A ( B , T ) = - k T \ln Q _ { N } ( B , T ) ,
+\end{equation}
+\begin{equation}\tag{12.3.10}\label{eq:12.3.10}
+U ( B , T ) = - T ^{2} \frac { \partial } { \partial T } \left( \frac { A } { T } \right) = k T ^{2} \frac { \partial } { \partial T } \ln Q _ { N } ,
+\end{equation}
+\begin{equation}\tag{12.3.11}\label{eq:12.3.11}
+C ( B , T ) = \frac { \partial U } { \partial T } = - T \frac { \partial ^{2} A } { \partial T ^{2} } ,
+\end{equation}
+以及
+\begin{equation}\tag{12.3.12}\label{eq:12.3.12}
+\overline { { { M } } } ( B , T ) = \mu \left( \sum _ { i } \sigma _ { i } \right) = \overline { { { \left( - \frac { \partial H } { \partial B } \right) } } } = \frac { 1 } { \beta } \left( \frac { \partial \ln Q _ { N } } { \partial B } \right) _ { T } = - \left( \frac { \partial A } { \partial B } \right) _ { T } .
+\end{equation}
+显然，量\(\overline{M}(0,T)\)给出了系统的自发磁化强度；若在低于某一临界温度\(T_{c}\)的温度下，该量不为零，则在\(T<T_{c}\)时，系统将呈现铁磁性；而在\(T>T_{c}\)时，系统则表现为顺磁性。在临界温度本身，系统预计将表现出某种奇异的行为。
+显而易见，整个系统的能级将会出现简并现象，也就是说，各种不同的配置\{\(\sigma_{i}\)\}并不都具有各自独特的能量值。事实上，某一特定配置的能量并不依赖于所有细节参数的值。
+\^{}\{8\} 今后，我们改用符号\(\mu\)来代替\(\mu_{B}\)。
+变量\(\sigma_{i}\)；其仅取决于若干个数值，例如"向上"自旋的总数\(N_{+}\)、"向上-向上"近邻对的总数\(N_{++}\)等等。要理解这一点，我们还定义了其他一些数值：\(N_{-}\)为"向下"自旋的总数，\(N_{-}\)为"向下-向下"近邻对的总数，而\(N_{+-}\)则为具有相反自旋的近邻对的总数。数值\(N_{+}\)和\(N_{-}\)之间必须满足以下关系
+\begin{equation}\tag{12.3.13}\label{eq:12.3.13}
+N _ { + } + N _ { - } = N .
+\end{equation}
+如果用\(q\)来表示晶格的配位数，即每个晶格位置的近邻数量，\^{}\{9\} 那么我们还有以下关系
+\begin{equation}\tag{12.3.14}\label{eq:12.3.14}
+q N _ { + } = 2 N _ { + + } + N _ { + - } ,
+\end{equation}
+\begin{equation}\tag{12.3.15}\label{eq:12.3.15}
+q N _ { - } = 2 N _ { -- } + N _ { + - } .
+\end{equation}
+借助这些关系，我们可以将所有数值用其中任意两个来表示，比如\(N_{+}\)和\(N_{++}\)。因此
+\begin{equation}\tag{12.3.16}\label{eq:12.3.16}
+N _ { - } = N - N _ { + } ,  N _ { + - } = q N _ { + } - 2 N _ { + + } ,  N _ { -- } = \frac { 1 } { 2 } q N - q N _ { + } + N _ { + + } ;
+\end{equation}
+值得注意的是，所有类型最邻近邻居对的总数，正如预期的那样，可以用以下公式表示：
+\begin{equation}\tag{12.3.17}\label{eq:12.3.17}
+N _ { + + } + N _ { -- } + N _ { + - } = \frac { 1 } { 2 } q N .
+\end{equation}
+当然，系统的哈密顿量也可以用 \(N_{+}\) 和 \(N_{++}\) 来表示；根据式（8），并在上述关系的辅助下，
+\begin{equation}\tag{12.3.18}\label{eq:12.3.18}
+\begin{array}{rl} & { H _ { N } ( N _ { + } , N _ { + + } ) = - J ( N _ { + + } + N _ { -- } - N _ { + - } ) - \mu B ( N _ { + } - N _ { - } ) } \\& {  = - J \Big ( \frac { 1 } { 2 } q N - 2 q N _ { + } + 4 N _ { + + } \Big ) - \mu B ( 2 N _ { + } - N ) . } \end{array}
+\end{equation}
+现在，设 \(g_{N}(N_{+},N_{++})\) 为"在晶格中，\(N\) 个自旋可以以特定方式排列，从而获得预先指定的 \(N_{+}\) 和 \(N_{++}\) 数值的distinct方式数量"。于是，系统的配分函数可写成
+\begin{equation}\tag{12.3.19}\label{eq:12.3.19}
+Q _ { N } ( B , T ) = \sum _ { N _ { + } , N _ { + + } } ^{\prime} g _ { N } ( N _ { + } , N _ { + + } ) \exp \{ - \beta H _ { N } ( N _ { + } , N _ { + + } ) \} ,
+\end{equation}
+\^{}\{9\}线性链的配位数显然为 2；对于二维晶格——即蜂窝状晶格、方晶格和三角晶格——其配位数分别为 3、4 和 6；而对于三维晶格——即简单立方晶格、体心立方晶格和面心立方晶格——其配位数分别为 6、8 和 12。
+也就是说，
+\begin{equation}\tag{12.3.20}\label{eq:12.3.20}
+e ^{- \beta A} = e ^{\beta N \left( \frac { 1} { 2 } q J - \mu B \right) } \sum _ { N _ { + } = 0 } ^{N} e ^{- 2 \beta ( q J - \mu B ) N _ { +} } \sum _ { N _ { + + } } ^{'} g _ { N } ( N _ { + } , N _ { + + } ) e ^{4 \beta J N _ { + +} } ,
+\end{equation}
+其中，式（21）中的求和符号 \(\prime\) 指的是对所有与固定值 \(N_{+}\) 相符的 \(N_{++}\) 值进行求和，随后再对所有可能的 \(N_{+}\) 值进行求和，即从 \(N_{+}=0\) 到 \(N_{+}=N\)。因此，核心问题在于确定所研究的各种晶格对应的组合函数 \(g_{N}(N_{+},N_{++})\)。
+\section{晶格气体与二元合金}\label{ux6676ux683cux6c14ux4f53ux4e0eux4e8cux5143ux5408ux91d1}
+除了铁磁体之外，伊辛模型也易于被改编用于模拟其他一些系统的行为。其中更为常见的包括晶格气体和二元合金。
+晶格气体
+尽管人们早已认识到，针对伊辛模型得出的结果同样适用于"已占据"与"未占据"晶格位置的系统（即晶格中"原子"与"空穴"的系统），但正是杨振宁与李政道（1952年）首次使用"晶格气体"这一术语来描述此类系统。根据定义，晶格气体是由 \(N_{a}\) 个原子组成的集合，这些原子只能占据空间中的离散位置——这些位置构成了具有配位数 \(q\) 的晶格结构。
+每个晶格位置至多可被一个原子占据，而当两个已被占据的晶格位置相互作用时，其相互作用能不为零，例如为 \(-\varepsilon_0\)，前提是这两个位置构成最邻近邻居对。气体的构型能则由以下公式给出：
+\begin{equation}\tag{12.4.1}\label{eq:12.4.1}
+E = - \varepsilon _ { 0 } N _ { a a } ,
+\end{equation}
+其中，\(N_{aa}\) 表示系统某一特定构型中所有最近邻对（即已占据位点的最近邻对）的总数。设 \(g_{N}(N_{a},N_{aa})\) 表示"在假设为不可区分的气体中，将 \(N_{a}\) 个原子分配到晶格的 \(N\) 个位点上，从而得到某一预先设定的 \(N_{aa}\) 值的多种不同方式的数量"。在忽略原子动能的情况下，系统的配分函数可表示为：
+\begin{equation}\tag{12.4.2}\label{eq:12.4.2}
+Q _ { N _ { a } } ( N , T ) = \sum _ { N _ { a a } } ^{\prime} g _ { N } \left( N _ { a } , N _ { a a } \right) e ^{\beta \varepsilon _ { 0} N _ { a a } } ,
+\end{equation}
+其中，求和符号 \(\prime\) 用于遍历所有与给定的 \(N_{a}\) 和 \(N\) 值相一致的 \(N_{aa}\) 值；显然，此处的数值 \(N\) 扮演着作为气体所拥有的"总体积"的角色。
+转而进入大正则态，我们对系统的巨配分函数进行如下表述：
+\begin{equation}\tag{12.4.3}\label{eq:12.4.3}
+\mathcal { Q } ( z , N , T ) = \sum _ { N _ { a } = 0 } ^{N} z ^{N _ { a} } Q _ { N _ { a } } ( N , T ) .
+\end{equation}
+于是，气体中原子的压力 \(P\) 以及平均原子数 \(\overline{N}_{a}\) 分别由以下公式给出：
+\begin{equation}\tag{12.4.4}\label{eq:12.4.4}
+e ^{\beta P N} = \sum _ { N _ { a } = 0 } ^{N} z ^{N _ { a} } \sum _ { N _ { a a } } ^{'} g _ { N } \left( N _ { a } , N _ { a a } \right) e ^{\beta \varepsilon _ { 0} N _ { a a } }
+\end{equation}
+并且
+\begin{equation}\tag{12.4.5}\label{eq:12.4.5}
+\frac { \overline { { N } } _ { a } } { N } = \frac { 1 } { \nu } = \frac { z } { k T } \left( \frac { \partial P } { \partial z } \right) _ { T } ;
+\end{equation}
+在此，\(\nu\) 表示气体每粒子的平均体积（以晶格"原胞体积"为单位进行测量）。
+为了在晶格气体与铁磁体之间建立正式的对应关系，我们将当前的公式与前一节中所确立的公式进行对比，尤其是 \autoref{eq:12.4.4} 与前一节末尾给出的配分函数表达式。首先需要注意的是，铁磁体的规范态对应于晶格气体的大正则态。其余的对应关系则概括在下表中：
+\begin{equation}\tag{12.4.6}\label{eq:12.4.6}
+\begin{aligned}\text{The lattice gas}&&\textit{The ferromagnet}\\N_{a},N-N_{a}&&\leftrightarrow&&N_{+},N-N_{+}(=N_{-})\\\varepsilon_{0}&&\leftrightarrow&&4J\\z&&\leftrightarrow&&\exp\{-2\beta(qJ-\mu B)\}\\P&&\leftrightarrow&&-\left(\frac{A}{N}+\frac{1}{2}qJ-\mu B\right)\\\frac{\overline{N}_{a}}{N}\left(=\frac{1}{\nu}\right)&&\leftrightarrow&&\frac{\overline{N}_{+}}{N}\left(=\frac{1}{2}\left\{\frac{\overline{M}}{N\mu}+1\right\}\right),\end{aligned}
+\end{equation}
+其中
+\begin{equation}\tag{12.4.7}\label{eq:12.4.7}
+\overline { { M } } = \mu \left( \overline { { N } } _ { + } - \overline { { N } } _ { - } \right) = \mu ( 2 \overline { { N } } _ { + } - N ) .
+\end{equation}
+此外，我们还注意到，公式（5）的铁磁体类比形式将是
+\begin{equation}\tag{12.4.8}\label{eq:12.4.8}
+\frac { \overline { { N } } _ { + } } { N } = \frac { 1 } { k T } \left\{ \frac { \partial \left( A / N + \frac { 1 } { 2 } q J - \mu B \right) } { 2 \beta \partial \left( q J - \mu B \right) } \right\} _ { T } = \frac { 1 } { 2 } \left[ - \frac { 1 } { N \mu } \left( \frac { \partial A } { \partial B } \right) _ { T } + 1 \right]
+\end{equation}
+根据 \autoref{eq:12.3.13}，该公式应具有预期的形式
+\begin{equation}\tag{12.4.9}\label{eq:12.4.9}
+\frac { \overline { { N } } _ { + } } { N } = \frac { 1 } { 2 } \left( \frac { \overline { { M } } } { N \mu } + 1 \right) .
+\end{equation}
+人们不禁要问：晶格气体是否与自然界中的任何真实物理系统相对应？直接的回答是：如果我们让晶格常数趋近于零（从而从离散结构过渡到连续结构），并同时在晶格气体的公式中加入与理想气体对应的项（即动能项），那么这一模型或许能够模拟真实原子通过狄拉克函数势相互作用的气体行为。因此，研究此类系统中是否存在相变的可能性，对于理解真实气体中的相变现象可能具有一定价值。其中，当 \(\varepsilon_0 > 0\) 时——这表明最近邻之间存在吸引力——这一情形经常被用作气液转变的潜在模型之一。
+另一方面，如果相互作用为斥力（\(\varepsilon_0 < 0\)），使得"被占据"与"未被占据"交替分布的构型更为 favored，那么我们便得到一个与凝固理论密切相关、颇具研究价值的模型；然而，在此类研究中，晶格常数必须保持有限。因此，多位学者致力于研究该模型的反铁磁版本，并希望借此对液态-固态相变有所启示。有关这些研究的文献综述，请参阅Brush（1967）所撰写的论文。
+二元合金
+在伊辛模型的理论分析领域，早期的大部分研究都与合金中的有序-无序相变相关。在合金中——更具体地说，是在二元合金中——我们拥有由两种原子组成的晶格结构，分别记作1号原子和2号原子，其原子数分别为\(N_{1}\)和\(N_{2}\)。在一种以\(N_{11}\)、\(N_{22}\)以及\(N_{12}\)这三种最邻近配对原子数为特征的构型下，合金的构型能可表示为：
+\begin{equation}\tag{12.4.10}\label{eq:12.4.10}
+E = \varepsilon _ { 11 } N _ { 11 } + \varepsilon _ { 22 } N _ { 22 } + \varepsilon _ { 12 } N _ { 12 } ,
+\end{equation}
+其中\(\varepsilon_{11}\)、\(\varepsilon_{22}\)和\(\varepsilon_{12}\)具有显而易见的含义。与铁磁体的情况类似，\(E\)表达式中出现的各种数值，均可用\(N\)、\(N_{1}\)以及\(N_{11}\)等数值来表示（此处仅\(N_{11}\)为变量）。于是，方程（9）变为：
+\begin{equation}\tag{12.4.11}\label{eq:12.4.11}
+\begin{array}{rl} & { E = \varepsilon _ { 11 } N _ { 11 } + \varepsilon _ { 22 } \left( \frac { 1 } { 2 } q N - q N _ { 1 } + N _ { 11 } \right) + \varepsilon _ { 12 } \left( q N _ { 1 } - 2 N _ { 11 } \right) } \\& {  = \frac { 1 } { 2 } q \varepsilon _ { 22 } N + q ( \varepsilon _ { 12 } - \varepsilon _ { 22 } ) N _ { 1 } + ( \varepsilon _ { 11 } + \varepsilon _ { 22 } - 2 \varepsilon _ { 12 } ) N _ { 11 } . } \end{array}
+\end{equation}
+如今，该系统与晶格气体之间的对应关系已十分直观：
+\begin{equation}\tag{12.4.12}\label{eq:12.4.12}
+\begin{aligned}\text{The lattice gas}&&\textit{The binary alloy}\\N_{a},N-N_{a}&&\leftrightarrow&&N_{1},N-N_{1}(=N_{2})\\-\varepsilon_{0}&&\leftrightarrow&&(\varepsilon_{11}+\varepsilon_{22}-2\varepsilon_{12})\\A&&\leftrightarrow&&A-\frac{1}{2}q\varepsilon_{22}N-q(\varepsilon_{12}-\varepsilon_{22})N_{1}\end{aligned}
+\end{equation}
+与铁磁体的对应关系同样可以建立起来；特别是，这要求\(\varepsilon_{11} = \varepsilon_{22} = -J\)，而\(\varepsilon_{12} = +J\)。
+在绝对零度时，我们的合金将处于构型能最低的状态，而这也将是构型秩序最高的状态。我们预期，此时两种原子将占据彼此互斥的位点，因此可以说，1号原子只位于位点\(a，而2号原子只位于位点\)b。随着温度升高，位点发生交换；在热运动的作用下，系统的有序性开始逐渐瓦解。最终，两种原子被"混杂"得如此之深，以至于"a"位点对于1号原子而言是`正确'的，而"b"位点对于2号原子而言则是`正确'的这一概念也逐渐消失；从构型的角度来看，系统的行为便如同由\(N_1 + N_2\)个本质上相同种类的原子构成的集合体。
+\section{零次近似下的伊辛模型}\label{ux96f6ux6b21ux8fd1ux4f3cux4e0bux7684ux4f0aux8f9bux6a21ux578b}
+1928年，戈尔斯基基于这样一种假设——即从"有序"位置向"无序"位置转移一个原子所耗费的功（换言之，从"正确"位点转移到"错误"位点）与系统中所处的有序程度成正比——对二元合金中的有序-无序相变进行了统计学研究。这一观点随后由布拉格和威廉姆斯进一步发展：他们首次提出了我们如今所理解的长程有序概念，并借助相对简单的数学方法，得出了能够解释相关实验数据主要定性特征的结果。布拉格-威廉姆斯近似的基本假设是：给定体系中单个原子的能量，是由整个体系中普遍存在的（平均）有序程度所决定的，而非由邻近原子的（波动性）构型所决定的。从这一意义上说，该近似等同于魏斯在1907年提出的平均分子场（或内部场）理论，该理论旨在解释铁磁材料的磁性行为。
+将这一近似称为零阶近似似乎再自然不过，因为其特性对晶格的详细结构，甚至对晶格的维度，都完全不敏感。我们预期，基于这一近似所得出的结果将会变得更加可靠。
+随着与某一特定原子相互作用的邻居数量不断增加（即当 \(q \rightarrow \infty\) 时），局部的、波动性的影响的重要性随之减弱。\^{}\{10\}
+现在，我们通过这样一个极具启发性的关系，来定义给定构型下的长程有序参数 \(L\)：
+\begin{equation}\tag{12.5.1}\label{eq:12.5.1}
+L = \frac { 1 } { N } \sum _ { i } \sigma _ { i } = \frac { N _ { + } - N _ { - } } { N } = 2 \frac { N _ { + } } { N } - 1  ( - 1 \leq L \leq + 1 ) ,
+\end{equation}
+该关系可表示为
+\begin{equation}\tag{12.5.2}\label{eq:12.5.2}
+N _ { + } = \frac { N } { 2 } ( 1 + L )  \mathrm { a n d }  N _ { - } = \frac { N } { 2 } ( 1 - L ) .
+\end{equation}
+由此，磁化强度 \(M\) 可以表示为
+\begin{equation}\tag{12.5.3}\label{eq:12.5.3}
+M = ( N _ { + } - N _ { - } ) \mu = N \mu L  ( - N \mu \leq M \leq + N \mu ) ;
+\end{equation}
+因此，参数 \(L\) 是衡量系统中净磁化强度的直接指标。对于完全随机的构型，\(\overline{N}_{+}=\overline{N}_{-}=\frac{1}{2}N\)；此时，\(L\) 和 \(M\) 的期望值均同为零。
+如今，本着当前近似的精神，我们将哈密顿量的第一部分（12.3.8）替换为表达式 \(-J(\frac{1}{2}q\bar{\sigma})\sum_{i}\sigma_{i}\)，也就是说，对于给定的 \(\sigma_{i}\)，我们将每个 \(q\sigma_{j}\) 替换为 \(\bar{\sigma}\)，同时引入因子 \(\frac{1}{2}\)，以避免重复计算最邻近的配对。借助公式（1），并注意到 \(\bar{\sigma}\equiv\bar{L}\)，我们得以得到系统的总构型能量：
+\begin{equation}\tag{12.5.4}\label{eq:12.5.4}
+E = - \frac { 1 } { 2 } \left( q J \overline { { { L } } } \right) N L - ( \mu B ) N L .
+\end{equation}
+于是，\(E\) 的期望值可表示为
+\begin{equation}\tag{12.5.5}\label{eq:12.5.5}
+U = - \frac { 1 } { 2 } q J N \overline { { { L } } } ^{2} - \mu B N \overline { { { L } } } .
+\end{equation}
+在同样的近似下，一个"向上"自旋的总体构型能与一个"向下"自旋的总体构型能之间的差值，也就是把一个"向上"自旋翻转为"向下"自旋所需的能量，可由下式给出，见 \autoref{eq:12.3.8}：
+\begin{equation}\tag{12.5.6}\label{eq:12.5.6}
+\begin{array}{r} { \Delta \varepsilon = - J ( q \overline { { \sigma } } ) \Delta \sigma - \mu B \Delta \sigma } \\{ = 2 \mu \left( \frac { q J } { \mu } \overline { { \sigma } } + B \right) , } \end{array}
+\end{equation}
+\^{}\{10\}就目前的近似方法而言，我们不妨顺便提及：早期构建二元溶液理论的尝试，都基于这样一个假设：溶液中的原子会随机混合。事实证明，基于这一随机混合假设所得到的结果，在数学上与基于平均场近似所得的结果完全等价；详情请参见问题12.12和12.13。
+因为在这里，\(\Delta\sigma = -2\)。因此，量 \(qJ\overline{\sigma}/\mu\) 扮演着魏斯内部（分子）场的角色；其确定性取决于：(i) 系统中普遍存在的长程有序的平均值，以及 (ii) 一个给定自旋 \(i\) 与其最近的 \(q\) 个邻居之间耦合强度 \(qJ\)。随后，平衡状态下 \(\overline{N}_{+}\) 和 \(\overline{N}_{-}\) 的相对数值便依据玻尔兹曼原理得出，即
+\begin{equation}\tag{12.5.7}\label{eq:12.5.7}
+\overline { { N } } _ { - } / \overline { { N } } _ { + } = \exp \bigl ( - \Delta \varepsilon / k T \bigr ) = \exp \bigl \{ - 2 \mu ( B ^{\prime} + B ) / k T \bigr \} \, ,
+\end{equation}
+其中 \(B'\) 表示内部分子场：
+\begin{equation}\tag{12.5.8}\label{eq:12.5.8}
+B ^{\prime} = q J \overline { { { \sigma } } } / \mu = q J \left( \overline { { { M } } } / N \mu ^{2} \right) .
+\end{equation}
+将式（2）代入式（7），并牢记式（8），我们得到关于 \(\overline{L}\) 的表达式
+\begin{equation}\tag{12.5.9}\label{eq:12.5.9}
+\frac { 1 - \overline { { L } } } { 1 + \overline { { L } } } = \exp \left\{ - 2 ( q \overline { { J \overline { { L } } } } + \mu B ) / k T \right\}
+\end{equation}
+或者，等价地，
+\begin{equation}\tag{12.5.10}\label{eq:12.5.10}
+\frac { q J \overline { { { L } } } + \mu B } { k T } = \frac { 1 } { 2 } \ln \frac { 1 + \overline { { { L } } } } { 1 - \overline { { { L } } } } = \operatorname { t a n h } ^{- 1} \overline { { { L } } } .
+\end{equation}
+为了探究自发磁化的可能性，我们令 \(B \rightarrow 0\)，这将导致以下关系
+\begin{equation}\tag{12.5.11}\label{eq:12.5.11}
+\overline { { L } } _ { 0 } = \operatorname { t a n h } \left( \frac { q J \overline { { L } } _ { 0 } } { k T } \right) .
+\end{equation}
+方程（11）可以通过图形法求解；请参见图~12.6。对于任意温度 \(T\)，\(\overline{L}_{0}(T)\) 的合适数值，由直线 \(y=L_{0}\) 与曲线 \(y=\tanh(qJL_{0}/kT)\) 的交点决定。显然，解 \(\overline{L}_{0}=0\) 总是存在的；然而，我们感兴趣的却是非零解，如果存在的话。对于这些解，我们注意到：由于曲线（ii）的斜率从初始值 \(qJ/kT\) 变化至最终值 \(0\)，而直线（i）的斜率则始终为 \(1\)，因此，只有当且仅当：
+\begin{equation}\tag{12.5.12}\label{eq:12.5.12}
+q J / k T > 1 ,
+\end{equation}
+也就是说，
+\begin{equation}\tag{12.5.13}\label{eq:12.5.13}
+T < q J / k = T _ { c } ,  \mathrm { s a y } .
+\end{equation}
+由此我们得到了一个临界温度 \(T_{c}\)，在该温度之下，系统能够获得非零的自发磁化；而在该温度之上，系统则无法实现自发磁化。自然地，我们将 \(T_{c}\) 与系统的居里温度相联系——这一温度标志着系统从铁磁行为转变为顺磁行为，或反之亦然。
+从图~12.6以及式（11）中可以清楚地看出，如果\(\overline{L}_0\)是该问题的一个解，那么\(-\overline{L}_0\)也同样是该问题的解。造成这种解的双重性原因在于，在
+通过数值求解方程（11），可以精确地获得\(\overline{L}_{0}(T)\)随\(T\)的变化规律；然而，其总体趋势其实已可在图~12.6中一目了然。我们注意到，在\(T=qJ/k(=T_{c})\)时，直线\(y=L_{0}\)与曲线\(y=\tanh(qJL_{0}/kT)\)在原点处相切；此时对应的解为\(\overline{L}_{0}(T_{c})=0\)。随着\(T\)的降低，曲线的初始斜率逐渐增大，且交点会迅速远离原点；相应地，\(\overline{L}_{0}(T)\)会随着\(T\)低于\(T_{c}\)而迅速上升。为了近似描述\(\overline{L}_{0}(T)\)在\(T=T_{c}\)附近随\(T\)的变化关系，我们可将方程（11）改写为\(\overline{L}_{0}=\tanh(\overline{L}_{0}T_{c}/T)\)，并利用近似公式\(\tanh x\simeq x-x^{3}/3\)，得到
+\begin{equation}\tag{12.5.14}\label{eq:12.5.14}
+\overline { { L } } _ { 0 } ( T ) \approx \{ 3 ( 1 - T / T _ { c } ) \} ^{1 / 2}  ( T \lesssim T _ { c } , B \rightarrow 0 ) .
+\end{equation}
+另一方面，随着\(T \to 0\)，\(\bar{L}_0 \to 1\)，这与渐近关系一致。
+\begin{equation}\tag{12.5.15}\label{eq:12.5.15}
+\overline { { L } } _ { 0 } ( T ) \approx 1 - 2 \exp ( - 2 T _ { c } / T )  \{ ( T / T _ { c } ) \ll 1 \} .
+\end{equation}
+图~12.7展示了\(\overline{L}_{0}(T)\)与\(T\)的关系图，以及铁、镍、钴和磁铁矿的相关实验数据；我们发现，两者之间的吻合度并不算差。
+在利用式（11）完成最后一步之后，我们得到的结果是：对于所有 \(T > T_c\)，\(U_0(T)\) 和 \(C_0(T)\) 都恒等于零。然而，当从下方逼近过渡温度 \(T_c\) 时，其比热的值却如式（14）和式（17）所示，
+\begin{equation}\tag{12.5.16}\label{eq:12.5.16}
+C _ { 0 } ( T _ { c } - ) = \operatorname* { L i m } _ { x \to 0 } \left\{ \frac { N k \cdot 3 x } { \frac { ( 1 - x ) ^{2} } { 1 - 3 x } - ( 1 - x ) } \right\} = \frac { 3 } { 2 } N k .
+\end{equation}
+因此，比热在相变点处呈现出不连续性。另一方面，随着 \(T \rightarrow 0\)，比热会趋近于零，这与公式中的表述一致，详见式（15）和式（17）。
+\begin{equation}\tag{12.5.17}\label{eq:12.5.17}
+C _ { 0 } ( T ) \approx 4 N k \left( \frac { T _ { c } } { T } \right) ^{2} \exp ( - 2 T _ { c } / T ) .
+\end{equation}
+图~12.8 展示了 \(C_0(T)\) 函数的完整趋势。
+值得注意的是，当温度高于 \(T_{c}\) 时，系统的构型能和比热都趋近于零，这直接源于这样一个事实：在当前的近似下，系统在较低温度下所遵循的构型秩序，在 \(T \rightarrow T_{c}\) 时被彻底抹去。因此，构型熵以及\ldots\ldots{}
+\begin{equation}\tag{12.5.18}\label{eq:12.5.18}
+\chi ( B , T ) = \left( { \frac { \partial { \overline { { M } } } } { \partial B } } \right) _ { T } = N \mu \left( { \frac { \partial { \overline { { L } } } } { \partial B } } \right) _ { T } = { \frac { N \mu ^{2} } { k } } { \frac { 1 - { \overline { { L } } } ^{2} ( B , T ) } { T - T _ { c } \{ 1 - { \overline { { L } } } ^{2} ( B , T ) \} } } .
+\end{equation}
+正是我们预期中，对于一个能够存在 \(2^{N}\) 种等可能微观状态的系统所应得出的结果。¹² 所有这些微观状态发生的概率均相等，这一事实再次与这样一个事实相关联：在 \(T \geq T_{c}\) 时，系统中根本不存在任何（构型）秩序。
+接下来，我们开始研究系统的磁化率。利用式（10），我们得到：
+\begin{equation}\tag{12.5.19}\label{eq:12.5.19}
+\chi ( B , T ) = \left( { \frac { \partial { \overline { { M } } } } { \partial B } } \right) _ { T } = N \mu \left( { \frac { \partial { \overline { { L } } } } { \partial B } } \right) _ { T } = { \frac { N \mu ^{2} } { k } } { \frac { 1 - { \overline { { L } } } ^{2} ( B , T ) } { T - T _ { c } \{ 1 - { \overline { { L } } } ^{2} ( B , T ) \} } } .
+\end{equation}
+对于 \(\overline{L} \ll 1\)（在高温条件下，对于较宽范围的 \(B\) 来说这一条件成立，而在 \(T_{c}\) 附近，如果 \(B\) 较小，这一条件同样适用），我们可得居里-魏斯定律：
+\begin{equation}\tag{12.5.20}\label{eq:12.5.20}
+\chi _ { 0 } ( T ) \approx ( N \mu ^{2} / k ) ( T - T _ { c } ) ^{- 1}  ( T \gtrsim T _ { c } , B \to 0 ) ,
+\end{equation}
+¹² 请回顾式（3.3.14），其中 \(S = k\ln\Omega\)。
+这一结果可以与先前为顺磁体系推导出的居里定律进行对比；参见式（3.9.12）。对于 \(T\) 小于 \(T_{c}\)，但又接近 \(T_{c}\) 的情况，我们同样使用式（14），并得到：
+\begin{equation}\tag{12.5.21}\label{eq:12.5.21}
+\chi _ { 0 } ( T ) \approx ( N \mu ^{2} / 2 k ) ( T _ { c } - T ) ^{- 1}  ( T \lesssim T _ { c } , B \to 0 ) .
+\end{equation}
+实验表明，居里-魏斯定律在相当高的精度下均能被满足，只不过由此得出的\(T_{c}\)的经验值总是略高于该材料的真实转变温度；例如，在镍的情况下，通过这种方式得到的经验\(T_{c}\)值约为650 K，而实际的转变温度却大约为631 K。顺便一提，我们还应指出：当\(T \rightarrow 0\)时，低场磁化率会趋近于零，这与公式
+\begin{equation}\tag{12.5.22}\label{eq:12.5.22}
+\chi _ { 0 } ( T ) \approx \frac { 4 N \mu ^{2} } { k T } \exp ( - 2 T _ { c } / T ) .
+\end{equation}
+最后，我们来考察在\(T = T_{c}\)时，\(\bar{L}\)与\(B\)之间的关系。再次利用式（10），并采用近似 \(\tanh^{-1}x \approx x + x^{3}/3\)，我们得到
+\begin{equation}\tag{12.5.23}\label{eq:12.5.23}
+\overline { { L } } \approx ( 3 \mu B / k T _ { c } ) ^{1 / 3}  ( T = T _ { c } , B \rightarrow 0 ) .
+\end{equation}
+在此，我们想强调的是：遵循范德华状态方程的气液系统与采用布拉格-威廉姆斯近似处理的磁性系统之间存在着极其显著的相似性。尽管这两种系统在物理性质上截然不同，但其近似程度之高，使得在临界区域中，支配各物理量幂律行为的指数竟完全相同；例如，可将 \autoref{eq:12.5.14} 与 \autoref{eq:12.2.11} 进行比较，将 \autoref{eq:12.5.22} 与 \autoref{eq:12.2.13} 和 \autoref{eq:12.2.14} 进行比较，再将 \autoref{eq:12.5.24} 与 \autoref{eq:12.2.8} 进行对比，同时还要考虑比热的行为。只要我们采用与本节平均场理论精神相近的方法，就会一次又一次地看到这种相似性。
+在结束对所谓"零阶近似"的讨论之前，我们想证明，这一近似恰好等同于随机混合近似（该近似最初应用于二元溶液理论中）。根据 \autoref{eq:12.3.19}，在无外加磁场的情况下，平均构型能量可表示为
+\begin{equation}\tag{12.5.24}\label{eq:12.5.24}
+U _ { 0 } = - J \left( \frac { 1 } { 2 } q N - 2 q \overline { { N } } _ { + } + 4 \overline { { N } } _ { + + } \right) .
+\end{equation}
+与此同时，本方法中的式（2）和式（16）给出
+\begin{equation}\tag{12.5.25}\label{eq:12.5.25}
+\overline { { N } } _ { + } = \frac { 1 } { 2 } N \big ( 1 + \overline { { L } } _ { 0 } \big )  \mathrm { a n d }  U _ { 0 } = - \frac { 1 } { 2 } q J N \overline { { L } } _ { 0 } ^{2} .
+\end{equation}
+将式（25）与式（26）相结合，我们得到
+\begin{equation}\tag{12.5.26}\label{eq:12.5.26}
+\overline { { N } } _ { + + } = \frac { 1 } { 8 } q N \big ( 1 + \overline { { L } } _ { 0 } \big ) ^{2} \, ,
+\end{equation}
+因此，
+\begin{equation}\tag{12.5.27}\label{eq:12.5.27}
+{ \frac { \overline { { N } } ^{+ +} } { \frac { 1 } { 2 } q N } } = \left( { \frac { \overline { { N } } ^{+} } { N } } \right) ^{2} .
+\end{equation}
+因此，晶格中出现"上-上"最近邻自旋对的概率，恰好等于出现"上"自旋概率的平方；换句话说，尽管存在由耦合常数 \(J\) 表征的最近邻相互作用，但晶格中相邻自旋之间并不存在任何特定的相关性。换言之，除了由长程有序（由参数 \(\overline{L}\) 表征）所统计得出的秩序之外，系统中根本不存在短程有序。由此可知，在当前近似下，我们的系统由特定数量的"上"自旋组成，即 \(N(1+\overline{L})/2\) 个，以及相应数量的"下"自旋，即 \(N(1-\overline{L})/2\) 个，它们以完全随机的方式分布在 \(N\) 个晶格位置上——这与将 \(N(1+\overline{L})/2\) 个某一类原子与 \(N(1-\overline{L})/2\) 个另一类原子以完全随机的方式混合，从而得到 \(N\) 个原子的二元溶液的情形类似；另请参见问题 12.4。对于这种混合方式，我们显然有
+\begin{equation}\tag{12.5.28}\label{eq:12.5.28}
+\begin{array}{rl} & { \overline { { N } } _ { + + } = \frac { 1 } { 2 } q N \left( \frac { 1 + \overline { { L } } } { 2 } \right) ^{2} ,  \overline { { N } } _ { -- } = \frac { 1 } { 2 } q N \left( \frac { 1 - \overline { { L } } } { 2 } \right) ^{2} , } \\& { \overline { { N } } _ { + - } = 2 \cdot \frac { 1 } { 2 } q N \left( \frac { 1 + \overline { { L } } } { 2 } \right) \left( \frac { 1 - \overline { { L } } } { 2 } \right) , } \end{array}
+\end{equation}
+由此得出
+\begin{equation}\tag{12.5.29}\label{eq:12.5.29}
+\frac { \overline { { N } } _ { + + } \overline { { N } } _ { -- } } { ( \overline { { N } } _ { + - } ) ^{2} } = \frac { 1 } { 4 } .
+\end{equation}
+第 12.6 节　一阶近似下的伊辛模型
+前一节所探讨的几种方法，自然可以推广为一种更为精确的近似方法。平均场方法自然而然地导向贝特近似（贝特，1935；拉什布鲁克，1938），该近似对给定自旋与其最近邻之间的相互作用进行了更为准确的处理。另一方面，随机混合方法则导向准化学近似（古根海姆，1935；福勒与古根海姆，1940），该近似在长程有序所统计得出的秩序之上，进一步考虑了晶格特有的短程有序。正如古根海姆（1938）和昌（1939）所证明的那样，这两种方法对于伊辛模型的计算结果是相同的。值得一提的是，将这些近似方法扩展到更高阶，或将其应用于海森堡模型，并不会得到完全相同的结果。
+在贝特近似中，给定自旋 \(\sigma_{0}\) 被视为一个群体的中心成员，该群体由该自旋及其 \(q\) 个最近邻自旋构成；在写出该群体的哈密顿量时，既精确地考虑了中心自旋与其 \(q\) 个邻居之间的相互作用，又通过一个平均分子场 \(B'\) 来考虑这些邻居与其他晶格自旋之间的相互作用。因此
+\begin{equation}\tag{12.5.30}\label{eq:12.5.30}
+H _ { q + 1 } = - \mu B \sigma _ { 0 } - \mu \Big ( B + B ^{\prime} \Big ) \sum _ { j = 1 } ^{q} \sigma _ { j } - J \sum _ { j = 1 } ^{q} \sigma _ { 0 } \sigma _ { j } ,
+\end{equation}
+\(B\) 为作用于晶格的外加磁场。内部磁场 \(B'\) 的确定依据自洽条件，该条件要求中心自旋的平均值 \(\overline{\sigma}_0\) 与任意一个 \(q\) 个邻近自旋的平均值 \(\overline{\sigma}_j\) 相同。这一整体自旋群的配分函数 \(Z\) 由以下公式给出：
+\begin{equation}\tag{12.5.31}\label{eq:12.5.31}
+\begin{array}{rl} { Z = } & { \sum _ { \sigma _ { 0 } , \sigma _ { j } = \pm 1 } \exp \left[ \frac { 1 } { k T } \left\{ \mu B \sigma _ { 0 } + \mu \left( B + B ^{\prime} \right) \sum _ { j = 1 } ^{q} \sigma _ { j } + J \sum _ { j = 1 } ^{q} \sigma _ { 0 } \sigma _ { j } \right\} \right] } \\{ = } & { \sum _ { \sigma _ { 0 } , \sigma _ { j } = \pm 1 } \exp \left[ \alpha \sigma _ { 0 } + \left( \alpha + \alpha ^{\prime} \right) \sum _ { j = 1 } ^{q} \sigma _ { j } + \gamma \sum _ { j = 1 } ^{q} \sigma _ { 0 } \sigma _ { j } \right] , } \end{array}
+\end{equation}
+其中
+\begin{equation}\tag{12.5.32}\label{eq:12.5.32}
+\alpha = \frac { \mu B } { k T } ,  \alpha ^{\prime} = \frac { \mu B ^{\prime} } { k T }  \mathrm { a n d }  \gamma = \frac { J } { k T } .
+\end{equation}
+现在，式（2）的右侧可以写成两部分之和：一部分对应于 \(\sigma_{0}=+1\)，另一部分对应于 \(\sigma_{0}=-1\)，即，
+\begin{equation}\tag{12.5.33}\label{eq:12.5.33}
+Z = Z _ { + } + Z _ { - } ,
+\end{equation}
+其中
+\begin{equation}\tag{12.5.34}\label{eq:12.5.34}
+\begin{array}{rl} & { Z _ { \pm } = \sum _ { \sigma _ { j } = \pm 1 } \exp \left[ \pm \alpha + \left( \alpha + \alpha ^{\prime} \pm \gamma \right) \sum _ { j = 1 } ^{q} \sigma _ { j } \right] } \\& { = e ^{\pm \alpha} \left[ 2 \cosh \left( \alpha + \alpha ^{\prime} \pm \gamma \right) \right] ^{q} . } \end{array}
+\end{equation}
+因此，中心自旋的平均值可表示为
+\begin{equation}\tag{12.5.35}\label{eq:12.5.35}
+\overline { { \sigma } } _ { 0 } = \frac { Z _ { + } - Z _ { - } } { Z } ,
+\end{equation}
+而其任意一个 \(q\) 个邻近自旋的平均值则由式（2）和式（4）给出，
+\begin{equation}\tag{12.5.36}\label{eq:12.5.36}
+\begin{array}{rl} & { \overline { { \sigma } } _ { j } = \frac { 1 } { q } \left( \overline { { \sum _ { j = 1 } ^{q} \sigma _ { j } } } \right) = \frac { 1 } { q } \left( \frac { 1 } { Z } \frac { \partial Z } { \partial \alpha ^{\prime} } \right) } \\& { = \frac { 1 } { Z } \left\{ Z _ { + } \operatorname { t a n h } \left( \alpha + \alpha ^{\prime} + \gamma \right) + Z _ { - } \operatorname { t a n h } \left( \alpha + \alpha ^{\prime} - \gamma \right) \right\} . } \end{array}
+\end{equation}
+将式（5）与式（6）相等，我们得到
+\begin{equation}\tag{12.5.37}\label{eq:12.5.37}
+Z _ { + } \left\{ 1 - \operatorname { t a n h } \left( \alpha + \alpha ^{\prime} + \gamma \right) \right\} = Z _ { - } \left\{ 1 + \operatorname { t a n h } \left( \alpha + \alpha ^{\prime} - \gamma \right) \right\} .
+\end{equation}
+代入式（4）中 \(Z_{+}\) 和 \(Z_{-}\) 的表达式，我们最终得到
+\begin{equation}\tag{12.5.38}\label{eq:12.5.38}
+e ^{2 \alpha ^ { \prime} } = \left\{ \frac { \cosh \left( \alpha + \alpha ^{\prime} + \gamma \right) } { \cosh \left( \alpha + \alpha ^{\prime} - \gamma \right) } \right\} ^{q - 1} .
+\end{equation}
+方程（8）决定了 \(\alpha'\)，而 \(\alpha'\) 又反过来决定了晶格的磁性行为。为了研究自发磁化的可能性，我们令 \(\alpha(\mu B/kT)=0\)。此时，方程（8）简化为
+\begin{equation}\tag{12.5.39}\label{eq:12.5.39}
+\alpha ^{\prime} = \frac { q - 1 } { 2 } \ln \left\{ \frac { \cosh \left( \alpha ^{\prime} + \gamma \right) } { \cosh \left( \alpha ^{\prime} - \gamma \right) } \right\} .
+\end{equation}
+在无相互作用的情况下（\(\gamma=0\)），\(\alpha'\) 显然为零。而在存在相互作用的情况下（\(\gamma\neq0\)），\(\alpha'\) 仍可能为零，除非 \(\gamma\) 超过某一临界值，例如 \(\gamma_{c}\)。为了确定这一数值，我们对式（9）的右侧进行泰勒展开，以 \(\alpha'=0\) 为基准点，结果为
+\begin{equation}\tag{12.5.40}\label{eq:12.5.40}
+\alpha ^{\prime} = ( q - 1 ) \operatorname { t a n h } \gamma \left\{ \alpha ^{\prime} - \operatorname { s e c h } ^{2} \gamma \frac { \alpha ^{\prime 3} } { 3 } + \cdots \right\} .
+\end{equation}
+我们注意到，对于所有 \(\gamma\)，\(\alpha'=0\) 都是问题的一个可能解；然而，这并不值得我们关注。要获得非零解，必须满足
+\begin{equation}\tag{12.5.41}\label{eq:12.5.41}
+( q - 1 ) \operatorname { t a n h } \gamma > 1 ,
+\end{equation}
+即
+\begin{equation}\tag{12.5.42}\label{eq:12.5.42}
+\gamma > \gamma _ { c } = \operatorname { t a n h } ^{- 1} \left( { \frac { 1 } { q - 1 } } \right) = { \frac { 1 } { 2 } } \ln \left( { \frac { q } { q - 2 } } \right) .
+\end{equation}
+从温度的角度来看，这意味着
+\begin{equation}\tag{12.5.43}\label{eq:12.5.43}
+T < T _ { c } = \frac { 2 J } { k } \Bigg / \ln \Bigg ( \frac { q } { q - 2 } \Bigg ) ,
+\end{equation}
+这决定了晶格的居里温度。从式（10）中，我们还推导出：对于低于居里温度、但接近居里温度的温度，
+\begin{equation}\tag{12.5.44}\label{eq:12.5.44}
+\begin{array}{rl} & { \alpha ^{\prime} \simeq \left\{ 3 \cosh ^{2} \gamma _ { c } \left[ ( q - 1 ) \operatorname { t a n h } \gamma - 1 \right] \right\} ^{1 / 2} \simeq \left\{ 3 ( q - 1 ) ( \gamma - \gamma _ { c } ) \right\} ^{1 / 2} } \\& { \simeq \left\{ 3 ( q - 1 ) \frac { J } { k T _ { c } } \left( 1 - \frac { T } { T _ { c } } \right) \right\} ^{1 / 2} . } \end{array}
+\end{equation}
+参数 \(\overline{L}\) 是系统中长程有序性的度量，根据定义，它等于 \(\overline{\sigma}\)。通过式（5）和式（7），我们得到
+\begin{equation}\tag{12.5.45}\label{eq:12.5.45}
+\overline { { L } } = \frac { ( Z _ { + } / Z _ { - } ) - 1 } { ( Z _ { + } / Z _ { - } ) + 1 } = \frac { \sinh ( 2 \alpha + 2 \alpha ^{\prime} ) } { \cosh ( 2 \alpha + 2 \alpha ^{\prime} ) + \exp ( - 2 \gamma ) } .
+\end{equation}
+在 \(B \to 0\) 的极限下（即 \(\alpha \to 0\)），以及在低于居里温度、但接近居里温度的温度范围内（\(\gamma \gtrsim \gamma_c\)；\(\alpha' \simeq 0\)），我们得到
+\begin{equation}\tag{12.5.46}\label{eq:12.5.46}
+\overline { { L } } _ { 0 } = \frac { \sinh ( 2 \alpha ^{\prime} ) } { \cosh ( 2 \alpha ^{\prime} ) + \exp ( - 2 \gamma ) } \simeq \frac { 2 \alpha ^{\prime} } { 1 + ( q - 2 ) / q } = \frac { q } { q - 1 } \alpha ^{\prime} .
+\end{equation}
+代入式（12）和式（13），我们得到
+\begin{equation}\tag{12.5.47}\label{eq:12.5.47}
+\overline { { L } } _ { 0 } \simeq \left[ 3 \frac { q } { q - 1 } \left\{ \frac { q } { 2 } \mathrm { l n } \left( \frac { q } { q - 2 } \right) \right\} \left( 1 - \frac { T } { T _ { c } } \right) \right] ^{1 / 2} .
+\end{equation}
+我们注意到，当 \(q \gg 1\) 时，\autoref{eq:12.5.12} 和 \autoref{eq:12.5.16} 分别简并为其零阶近似形式 \autoref{eq:12.5.13} 和 \autoref{eq:12.5.14}；在两种情况下，随着 \(T\) 从下方趋近于 \(T_c\)，\(\bar{L}_0\) 都会以 \((T_c - T)^{1/2}\) 的方式消失。我们还注意到，在本近似下，自发磁化曲线的总体形状与零阶近似时相同，详见图~12.7。当然，在本例中，该曲线会明确依赖于配位数 \(q\)，在 \(q\) 较小时曲线最为陡峭，而随着 \(q\) 的增大，曲线的斜率逐渐减小，最终趋于由零阶近似给出的极限形式。
+接下来，我们将研究晶格中相邻自旋之间可能存在的相关性。为此，我们用参数 \(\alpha\)、\(\alpha'\) 和 \(\gamma\) 来计算 \(\overline{N}_{++}\)、\(\overline{N}_{--}\) 和 \(\overline{N}_{+-}\) 的数值，并将所得表达式与基于均值场近似的结果进行比较。通过对（2）中的所有自旋（来自该群的自旋）进行求和，除 \(\sigma_0\) 和 \(\sigma_1\) 外，我们得到
+\begin{equation}\tag{12.5.48}\label{eq:12.5.48}
+Z = \sum _ { \sigma _ { 0 } , \sigma _ { 1 } = \pm 1 } \left[ \exp \{ \alpha \sigma _ { 0 } + ( \alpha + \alpha ^{\prime} ) \sigma _ { 1 } + \gamma \sigma _ { 0 } \sigma _ { 1 } \} \left\{ 2 \cosh ( \alpha + \alpha ^{\prime} + \gamma \sigma _ { 0 } ) \right\} ^{q - 1} \right] .
+\end{equation}
+将此式写成三部分之和，分别对应于以下三种情况：（i）\(\sigma_{0}=\sigma_{1}=+1\)，（ii）\(\sigma_{0}=\sigma_{1}=-1\)，以及（iii）\(\sigma_{0}=-\sigma_{1}=\pm1\)，我们得到
+\begin{equation}\tag{12.5.49}\label{eq:12.5.49}
+Z = Z _ { + + } + Z _ { -- } + Z _ { + - } ,
+\end{equation}
+自然而然地，
+\begin{equation}\tag{12.5.50}\label{eq:12.5.50}
+\overline { { N } } _ { + + } : \overline { { N } } _ { -- } : \overline { { N } } _ { + - } : : Z _ { + + } : Z _ { -- } : Z _ { + - } .
+\end{equation}
+因此，我们同样利用（8）式，得到
+\begin{equation}\tag{12.5.51}\label{eq:12.5.51}
+\begin{array}{rlr} & { } & { \overline { { N } } _ { + + } \propto e ^{( 2 \alpha + \alpha ^ { \prime} + \gamma ) } \left\{ 2 \cosh ( \alpha + \alpha ^{\prime} + \gamma ) \right\} ^{q - 1} , } \\& { } & { \overline { { N } } _ { -- } \propto e ^{( - 2 \alpha - \alpha ^ { \prime} + \gamma ) } \left\{ 2 \cosh ( \alpha + \alpha ^{\prime} - \gamma ) \right\} ^{q - 1} } \\& { } & { = e ^{( - 2 \alpha - 3 \alpha ^ { \prime} + \gamma ) } \{ 2 \cosh ( \alpha + \alpha ^{\prime} + \gamma ) \} ^{q - 1} , } \end{array}
+\end{equation}
+并且
+\begin{equation}\tag{12.5.52}\label{eq:12.5.52}
+\begin{array}{rl} & { \overline { { N } } _ { + - } \propto e ^{( - \alpha ^ { \prime} - \gamma ) } \left\{ 2 \cosh ( \alpha + \alpha ^{\prime} + \gamma ) \right\} ^{q - 1} + e ^{( \alpha ^ { \prime} - \gamma ) } \left\{ 2 \cosh ( \alpha + \alpha ^{\prime} - \gamma ) \right\} ^{q - 1} } \\& {  = 2 e ^{( - \alpha ^ { \prime} - \gamma ) } \{ 2 \cosh ( \alpha + \alpha ^{\prime} + \gamma ) \} ^{q - 1} . } \end{array}
+\end{equation}
+通过借助关系式对这些表达式进行归一化，
+\begin{equation}\tag{12.5.53}\label{eq:12.5.53}
+\overline { { N } } _ { + + } + \overline { { N } } _ { -- } + \overline { { N } } _ { + - } = \frac { 1 } { 2 } q N ,
+\end{equation}
+我们得到了所期望的结果
+\begin{equation}\tag{12.5.54}\label{eq:12.5.54}
+( \overline { { N } } _ { + + } , \overline { { N } } _ { -- } , \overline { { N } } _ { + - } ) = \frac { 1 } { 2 } q N \frac { \left( e ^{2 \alpha + 2 \alpha ^ { \prime} + \gamma } , e ^{- 2 \alpha - 2 \alpha ^ { \prime} + \gamma } , 2 e ^{- \gamma} \right) } { 2 \left\{ e ^{\gamma} \cosh ( 2 \alpha + 2 \alpha ^{\prime} ) + e ^{- \gamma} \right\} } ,
+\end{equation}
+其中，
+\begin{equation}\tag{12.5.55}\label{eq:12.5.55}
+\frac { \overline { { N } } _ { + + } \overline { { N } } _ { -- } } { \left( \overline { { N } } _ { + - } \right) ^{2} } = \frac { 1 } { 4 } e ^{4 \gamma} = \frac { 1 } { 4 } e ^{4 J / k T} .
+\end{equation}
+最后的结果与基于随机混合近似的结论大相径庭，即（12.5.30）。两者的差异在于多出的一个因子 \(\exp(4J/kT)\)，对于 \(J>0\) 来说，该因子更有利于平行自旋对 \(\uparrow\uparrow\) 和 \(\downarrow\downarrow\) 的形成，而非反平行自旋对 \(\uparrow\downarrow\) 和 \(\downarrow\uparrow\)。事实上，我们可以将这一基本过程视为
+\begin{equation}\tag{12.5.56}\label{eq:12.5.56}
+\uparrow \uparrow + \downarrow \Leftrightarrow \ 2 \uparrow \downarrow ,
+\end{equation}
+这使得"向上"旋转与"向下"旋转的总数量保持不变，仿佛发生了一种"化学反应"。该反应自左向右进行时为吸热反应（需要消耗4焦耳的能量才能完成反应），而自右向左进行时则为放热反应（释放4焦耳的能量）。方程（22）由此构成了这一反应的质量作用定律，方程右侧的表达式即为该反应的平衡常数。从历史上看，古根海姆将方程（22）作为其对伊辛模型进行"准化学"处理的起点；直到后来，他才证明自己的处理方法与本文所阐述的贝特近似结果是等价的。
+方程（22）告诉我们，对于\(J > 0\)，同类邻居之间（\(\uparrow\)和\(\uparrow\)，或\(\downarrow\)和\(\downarrow\)）存在正相关关系，而异类邻居之间（\(\uparrow\)和\(\downarrow\)）则存在负相关关系；这些相关性正是最邻近相互作用的直接结果。因此，在系统中必然存在一种特定的短程有序结构，它超越了由长程有序结构在统计意义上所衍生出的秩序。为了更清晰地说明这一点，我们注意到，即使长程有序结构消失（\(\alpha + \alpha' = 0\)），仍会保留一定的短程有序性。例如，根据方程（21），我们得到
+\begin{equation}\tag{12.5.57}\label{eq:12.5.57}
+\left( \overline { { N } } _ { + + } , \overline { { N } } _ { -- } , \overline { { N } } _ { + - } \right) _ { \overline { { L } } = 0 } = \frac { 1 } { 2 } q N \frac { \left( e ^{\gamma} , e ^{\gamma} , 2 e ^{- \gamma} \right) } { 4 \cosh \gamma }
+\end{equation}
+只有在\(\gamma \to 0\)的极限下，该式才会简并为随机混合的结果，参见 \autoref{eq:12.5.29}，其中\(\overline{L} = 0\)。
+在零次近似下，方程（25）应适用于高于\(T_{c}\)的所有温度；然而，我们发现，在这些温度下，更为精确的近似结果是由方程（24）给出的。
+接下来，我们计算在无外加场的情况下（\(\alpha=0\)）晶格的构型能\(U_0\)以及比热\(C_0\)。鉴于 \autoref{eq:12.5.25}，
+\begin{equation}\tag{12.5.58}\label{eq:12.5.58}
+U _ { 0 } = - J \biggl ( \frac { 1 } { 2 } q N - 2 q \overline { { N } } _ { + } + 4 \overline { { N } } _ { + + } \biggr ) _ { \alpha = 0 } .
+\end{equation}
+\(\overline{N}_{++}\)的表达式由方程（21）给出，而\(\overline{N}_{+}\)的表达式则可由方程（14）得出：
+\begin{equation}\tag{12.5.59}\label{eq:12.5.59}
+( \overline { { N } } _ { + } ) _ { \alpha = 0 } = \frac { 1 } { 2 } N ( 1 + \overline { { L } } _ { 0 } ) = \frac { 1 } { 2 } N \frac { \exp ( 2 \alpha ^{\prime} ) + \exp ( - 2 \gamma ) } { \cosh ( 2 \alpha ^{\prime} ) + \exp ( - 2 \gamma ) } .
+\end{equation}
+方程（26）随后给出了
+\begin{equation}\tag{12.5.60}\label{eq:12.5.60}
+U _ { 0 } = - \frac { 1 } { 2 } q J N \frac { \cosh ( 2 \alpha ^{\prime} ) - \exp ( - 2 \gamma ) } { \cosh ( 2 \alpha ^{\prime} ) + \exp ( - 2 \gamma ) } ,
+\end{equation}
+其中\(\alpha'\)由方程（9）确定。在\(T > T_c\)时，\(\alpha' = 0\)，因此
+\begin{equation}\tag{12.5.61}\label{eq:12.5.61}
+U _ { 0 } = - \frac { 1 } { 2 } q J N \frac { 1 - \exp ( - 2 \gamma ) } { 1 + \exp ( - 2 \gamma ) } = - \frac { 1 } { 2 } q J N \operatorname { t a n h } \gamma .
+\end{equation}
+显然，这一结果完全源于系统在\(T_{c}\)以上依然存在的短程有序结构。至于比热，我们得到
+\begin{equation}\tag{12.5.62}\label{eq:12.5.62}
+C _ { 0 } / N k = \frac { 1 } { 2 } q \gamma ^{2} \mathrm { s e c h } ^{2} \gamma  ( T > T _ { c } ) .
+\end{equation}
+当\(T \rightarrow \infty\)时，\(C_0\)会以\(T^{-2}\)的规律消失。值得注意的是，在相变温度之上仍存在非零的比热，这正是当前近似方法的一大亮点——因为它使我们的模型
+这一结果是 \(T = T_c +\) 时对应结果的 \((3q-2)\) 倍；请与式（31）进行比较。因此，相变点处的比热突变值为：
+由
+\begin{equation}\tag{12.5.63}\label{eq:12.5.63}
+\frac { 1 } { N k } \Delta C _ { 0 } = \frac { 3 } { 8 } \frac { q ^{2} ( q - 2 ) } { ( q - 1 ) } \left\{ \ln \left( \frac { q } { q - 2 } \right) \right\} ^{2} .
+\end{equation}
+可以验证，当 \(q \gg 1\) 时，上述结果会简并为由零阶近似得出的结果。
+最后，我们来考察在 \(T = T_c\) 时 \(\overline{L}\) 与 \(B\) 之间的关系。利用式（8）和式（14），在 \(\alpha\) 和 \(\alpha'\) 都远小于 1、且 \(\gamma = \gamma_{c}\) 的条件下，我们得到：
+\begin{equation}\tag{12.5.64}\label{eq:12.5.64}
+\overline { { L } } \approx \left\{ 3 q ^{2} \mu B / ( q - 1 ) ( q - 2 ) k T _ { c } \right\} ^{1 / 3}  ( T = T _ { c } , B \rightarrow 0 ) ;
+\end{equation}
+与 \autoref{eq:12.5.24} 进行比较。关于 \(\chi_{0}\) 的行为，请参阅问题 12.16。
+顺便指出，根据式（12），配位数为 \(q=2\) 的晶格的相变温度为零，这实际上意味着一维伊辛链不会发生相变。这一结果与对一维晶格进行精确处理所得到的结果完全一致；详见第 13.2 节。事实上，对于配位数为 \(q=2\) 的晶格，任何由贝特近似得出的结果，都与相应的精确结果完全相同（参见问题 13.3）；另一方面，当 \(q=2\) 时，布拉格-威廉姆斯近似则最为不可靠。
+对于 \(q=2\)，\(T_{c}\) 为零（而非 \(2J/k\)）这一结果，与以下事实相符：对于任意 \(q\)，第一近似所得到的转变温度都比零阶近似更接近于正确的 \(T_{c}\) 值。同样地，那些决定在 \(T=T_{c}\) 附近各物理量定量行为的振幅亦是如此，尽管支配这种行为的各类幂律中的指数依然保持不变；例如，可将 \autoref{eq:12.5.16} 与 \autoref{eq:12.5.14} 进行比较，将 \autoref{eq:12.5.35} 与 \autoref{eq:12.5.24} 进行对比，同时也可以观察到比热的行为特征。事实上，我们发现，随着对平均场近似不断进行逐次改进，虽然理论计算所得的 \(T_{c}\) 值以及各物理量的定量行为（由振幅所确定）均有所提升，但其定性行为却并未发生改变（即由指数所决定的性质）。有关高阶近似的详细说明，请参阅 Domb（1960）。
+Bethe 近似的一个重要优点在于，它能够清晰地揭示晶格维度在系统相变过程中的作用。由于对于 \(q=2\)，\(T_c=0\)，且此后 \(T_c\) 随 \(q\) 的增加而稳步上升，这使得人们有理由推断：尽管线性 Ising 链在任何有限温度下都不会发生相变，但更高的维度却能促进这一现象的发生。事实上，有人认为，一维链中不存在相变，本质上是因为：由于相互作用的范围极其短，链中任意两部分之间的"通信"往往会被中间的一个缺陷完全中断。即使相互作用范围得以扩大——只要其范围始终有限——情况几乎不会发生变化。只有当相互作用真正变得长程时，即 \(J_{ij} \sim |i-j|^{-(1+\sigma)}\)（\(\sigma>0\)），才有可能在有限温度下发生相变——不过，前提是 \(\sigma<1\)；若 \(\sigma>1\)，则又回到了\ldots\ldots{}
+在无相变的情况下，而介于两者之间的 \(\sigma=1\) 情况仍存在争议。更多细节请参阅 Griffiths（1972，第89--94页）。
+Peierls（1936）率先证明，在足够低的温度下，二维或三维的 Ising 模型必然会发生相变。他将晶格视为由两类域组成：一类包含"向上"自旋，另一类包含"向下"自旋，并以一系列边界将相邻域分隔开来。基于能量分析，他提出：在二维或三维晶格中，0K 时存在的长程有序结构在有限温度下仍能持续存在。如需更多细节，请参阅 Griffiths（1972，第59--66页）。
+\section{关键指数}\label{ux5173ux952eux6307ux6570}
+相变理论中一个基本问题，就是要研究给定系统在临界点附近的行为。我们知道，这种行为的显著特征在于：与该系统相关的各种物理量在临界点处都呈现出奇异性。通常，我们用幂律来描述这些奇异点，而这些幂律由一组临界指数所决定，这些指数决定了给定系统临界行为的定性特征。首先，我们确定一个序参量 \(m\)，以及与其对应的有序场 \(h\)，使得当 \(h \to 0\) 时，\(m\) 趋向于一个极限值 \(m_0\)，且在 \(T \geq T_c\) 时 \(m_0 = 0\)，而在 \(T < T_c\) 时 \(m_0 \neq 0\)。对于磁性系统而言，\(m\) 的自然候选者是第 12.5 节和第 12.6 节中的参数 \(\overline{L} (\equiv \overline{\sigma})\)；而 \(h\) 则被定义为量 \(\mu B / kT_c\)。对于气液系统，我们可以采用密度差 \((\rho_l - \rho_c)\) 或 \(|\rho_g - \rho_c|\) 作为 \(m\) 的值，同时采用压力差 \((P - P_c)\) 作为 \(h\) 的值。随后，各类临界指数便按如下方式定义：
+当 \(T \to T_{c}\) 从下方逼近时，\(m_{0} \to 0\) 的过程，正是定义指数 \(\beta\) 的依据：
+\begin{equation}\tag{12.7.1}\label{eq:12.7.1}
+m _ { 0 } \sim ( T _ { c } - T ) ^{\beta}  ( h \to 0 , T \lesssim T _ { c } ) .
+\end{equation}
+当 \(T \to T_{c}\) 从上方（或从下方）逼近时，低场磁化率 \(\chi_{0}\) 发生发散的过程，正是定义指数 \(\gamma\)（或 \(\gamma'\)）的依据：
+\begin{equation}\tag{12.7.2}\label{eq:12.7.2}
+\chi _ { 0 } \sim \left( \frac { \partial m } { \partial h } \right) _ { T , h \rightarrow 0 } \sim \left\{ \begin{array}{ll} { ( T - T _ { c } ) ^{- \gamma} } & { ( h \rightarrow 0 , T \gtrsim T _ { c } ) } \\{ ( T _ { c } - T ) ^{- \gamma ^ { \prime} } } & { ( h \rightarrow 0 , T \lesssim T _ { c } ) ; } \end{array} \right.
+\end{equation}
+在气液相变过程中，\(\chi_{0}\) 扮演着重要角色，其作用由系统的等温压缩率 \(\kappa_{T} = \rho^{-1}(\partial\rho/\partial P)_{T}\) 所承担。接下来，我们通过以下关系定义一个指数 \(\delta\)：
+\begin{equation}\tag{12.7.3}\label{eq:12.7.3}
+m | _ { T = T _ { c } } \sim h ^{1 / \delta}  ( T = T _ { c } , h \rightarrow 0 ) ;
+\end{equation}
+在气液系统的情况下，\(\delta\) 是衡量临界点处临界等温线"平坦程度"的指标；此时，
+\begin{equation}\tag{12.7.4}\label{eq:12.7.4}
+\left| P - P _ { c } \right| _ { T = T _ { c } } \sim \left| \rho - \rho _ { c } \right| ^{\delta}  ( T = T _ { c } , P \rightarrow P _ { c } ) .
+\end{equation}
+最后，我们基于气液系统的比热 \(C_V\) 定义了指数 \(\alpha\) 和 \(\alpha'\)：
+\begin{equation}\tag{12.7.5}\label{eq:12.7.5}
+C _ { V } \sim \left\{ \begin{array}{ll} { { ( T - T _ { c } ) ^{- \alpha} } } & { { ( T \gtrsim T _ { c } ) } } \\{ { ( T _ { c } - T ) ^{- \alpha ^ { \prime} } } } & { { ( T \lesssim T _ { c } ) . } } \end{array} \right.
+\end{equation}
+结合上述关系，尤其是 \autoref{eq:12.7.5}，我们想强调的是，在某些情况下，所讨论的指数数值相对较小；因此，更恰当的做法是将指数写成
+\begin{equation}\tag{12.7.6}\label{eq:12.7.6}
+f ( t ) \sim \frac { | t | ^{- \lambda} - 1 } { \lambda }  ( | t | \ll 1 ) .
+\end{equation}
+若 \(\lambda > 0\)，函数 \(f(t)\) 在 \(t = 0\) 处将呈现幂律发散；而当 \(\lambda \to 0\) 时，函数 \(f(t)\) 将转变为对数发散：
+\begin{equation}\tag{12.7.7}\label{eq:12.7.7}
+f ( t ) \sim \ln ( 1 / | t | )  ( | t | \ll 1 ) .
+\end{equation}
+无论哪种情况，导数 \(f'(t) \sim |t|^{-(1+\lambda)}\)。
+对第12.2至12.6节所推导出的结果进行的调查表明，对于满足范德华状态方程的气液系统，或对于采用平均场近似处理的磁性系统（无论我们指的是何种精度的近似），各类临界指数均相同：
+\begin{equation}\tag{12.7.8}\label{eq:12.7.8}
+\beta = \frac { 1 } { 2 } ,  \gamma = \gamma ^{\prime} = 1 ,  \delta = 3 ,  \alpha = \alpha ^{\prime} = 0 .
+\end{equation}
+在表12.1中，我们整理了多种系统的临界指数实验数据，其中包括上述提到的那些系统；为求全面起见，我们在此还加入了另外两个指数——\(\nu\)和\(\eta\)的数据，它们将在第12.12节中予以定义。我们发现，尽管在某一特定类别内，不同系统之间某类指数（例如\(\beta\)）的观测值差异极小（甚至跨类别之间也相差不大），但这些数值却与基于平均场近似所得的结果大相径庭。显然，我们需要一种与平均场理论截然不同的相变理论。
+首先，一些问题随之而来：
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  这些指数彼此之间是否完全独立，还是相互关联？若后者成立，那么究竟有多少个指数是真正独立的？
+\item
+  它们究竟依赖于给定系统哪些特征？这包括这样一个问题：为什么在彼此差异如此之大的系统中，它们的差异却如此之小？
+\item
+  我们如何从基本原理出发来计算这些指数？
+\end{enumerate}
+关于问题(i)的答案很简单：是的，各类指数确实遵循一定的关系，因此并非完全独立。这些关系以不等式的形式呈现，由热力学原理所决定，接下来我们将深入探讨这些关系。
+表12.1 临界指数实验数据
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+临界指数
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+磁性系统 (a)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+气液系统 (b)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+二元流体混合物 (c)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+二元合金 (d)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+铁电系统 (e)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+超流氦4 (f)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+平均场理论结果
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\alpha, \alpha'\) & 0.0--0.2 & 0.1--0.2 & 0.05--0.15 & --- & --- & \$\$-\(0.026\) & 0 \\
+\(\beta\) & 0.30--0.36 & 0.32--0.35 & 0.30--0.34 & \(0.305 \pm 0.005\) & 0.33--0.34 & --- & \(1/2\) \\
+\(\gamma\) & 1.2--1.4 & 1.2--1.3 & 1.2--1.4 & \(1.24 \pm 0.015\) & \(1.0 \pm 0.2\) & 无法获取 & 1 \\
+\(\gamma'\) & 1.0--1.2 & 1.1--1.2 & --- & \(1.23 \pm 0.025\) & \(1.23 \pm 0.02\) & 无法获取 & 1 \\
+\(\delta\) & 4.2--4.8 & 4.6--5.0 & 4.0--5.0 & --- & --- & 无法获取 & 3 \\
+\(\nu\) & 0.62--0.68 & --- & --- & \(0.65 \pm 0.02\) & 0.5--0.8 & 0.675 & \(1/2\) \\
+\(\eta\) & 0.03--0.15 & --- & --- & 0.03--0.06 & --- & --- & 0 \\
+\end{longtable}
+(b)Voronel（1976）；Rowlinson和Swinton（1982）。
+(c)Rowlinson和Swinton（1982）。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  阿尔斯-尼尔森（1976）；数据仅适用于β黄铜。
+\item
+  卡达诺夫等人（1967）；《线与玻璃》（1977）。
+\item
+  艾勒斯（1980）。
+\end{enumerate}
+在第12.8节中；在现代相变理论中，参见第12.10至12.12节以及第~14~章，这些关系会以等式的形式出现，而且这些（限制性）关系的数量之多，使得在大多数情况下，只有两个指数真正独立。
+至于问题(ii)，事实证明，我们的指数取决于问题中极少数几个特征或参数，这也解释了为什么在某一类系统中，它们彼此之间的差异如此之小（同样，即使同一类中的系统彼此差异巨大，它们之间的差异也十分有限）。似乎起关键作用的特征包括：(a) 系统所嵌入的空间维度 \(d\)；(b) 问题的序参量的组分数 \(n\)；以及 (c) 系统中微观相互作用的范围。
+就相互作用而言，真正重要的只是它们是短程相互作用（其中包括最邻近相互作用这一特例），还是长程相互作用。在前者情况下，由最邻近相互作用所得到的临界指数值保持不变——无论是否纳入更远邻近相互作用；而在后者情况下，假设 \(J_{ij} \sim |i-j|^{-(d+\sigma)}\)，其中 \(\sigma > 0\)，则临界指数会依赖于 \(\sigma\)。除非另有说明，否则我们假定给定系统中起作用的微观相互作用均为短程相互作用；此时，临界指数仅取决于 \(d\) 和 \(n\)——为了便于教学目的，这两者均可被视为连续变量。
+就 \(d\) 而言，我们还记得贝特近似，它通过协调数 \(q\)，凸显了晶格维度所发挥的特殊作用。我们还应记得，尽管 \(T_c\) 的理论值以及问题的各种振幅都受到 \(q\) 的影响，但临界指数却并未受到影响。在更为精确的理论中，我们发现临界指数更多地直接依赖于 \(d\)，且仅
+间接依赖于 \(q\)；然而，对于给定的 \(d\)，它们并不依赖于晶格的结构细节（包括 \(q\) 的数量）。
+就\(n\)而言，主要区别在于：在具有离散对称性的伊辛模型（\(n=1\)，\(\sigma_i=+1\)或\(-1\)）与其它具有连续对称性的模型（\(n\geq2\)）之间存在显著差异——对于后者，\(\sigma_{i\alpha}\)的取值范围为\(-1\leq\sigma_{i\alpha}\leq+1\)，其中\(\alpha=1,\ldots,n\)，且\(|\sigma_i|=1\)。在前者中，当\(d\leq1\)时，\(T_c=0\)；而当\(d>1\)时，\(T_c\)则不为零；在后者中，当\(d\leq2\)时，\(T_c=0\)；而当\(d>2\)时，\(T_c\)则不为零。\(^{13}\) 无论哪种情况，临界指数都既依赖于\(d\)，也依赖于\(n\)；不过，当\(d>4\)时，这些指数便不再依赖于\(d\)和\(n\)，并且其数值与均方场论所给出的结果完全一致。关于这一普遍性背后的物理机制，将在第12.13节中进行详细探讨。顺便一提，我们注意到：对于给定的\(d\)和\(n\)，临界指数并不取决于构成系统的自旋是采用经典方法还是量子力学方法来处理。
+至于问题（iii），评估临界指数的显而易见的方法，是针对各类模型开展精确（或近乎精确）的分析——这一任务正是第~13~章的全部内容。另一种替代方案则源自重正化群理论，该理论在第~14~章中予以阐述。第12.9节中进行了一项适度的临界指数评估尝试，所得结果虽与实验数据不符，却为我们揭示了诸多关于所谓"经典"方法缺陷的深刻教训。
+\section{热力学不等式}\label{ux70edux529bux5b66ux4e0dux7b49ux5f0f}
+最早由拉什布鲁克（Rushbrooke，1963年）推导出的、将临界指数联系起来的严格关系表明，对于任何经历相变的物理系统，
+\begin{equation}\tag{12.8.1}\label{eq:12.8.1}
+( \alpha ^{\prime} + 2 \beta + \gamma ^{\prime} ) \geq 2 .
+\end{equation}
+若以磁性系统为例，证明不等式（1）的过程十分简单。我们首先从热力学公式出发，计算恒磁场比热容\(C_H\)与恒磁化强度比热容\(C_M\)之差（参见问题3.40）。
+\(^{13}\) 特殊情形下，当\(n=2\)且\(d=2\)时，其性质与其它情形截然不同；有关详细内容，请参阅第13.7节。
+\begin{equation}\tag{12.8.2}\label{eq:12.8.2}
+C _ { H } - C _ { M } = - T \left( \frac { \partial H } { \partial T } \right) _ { M } \left( \frac { \partial M } { \partial T } \right) _ { H } = T \chi ^{- 1} \left\{ \left( \frac { \partial M } { \partial T } \right) _ { H } \right\} ^{2} .
+\end{equation}
+由于\(C_{M} \geq 0\)，由此可得
+\begin{equation}\tag{12.8.3}\label{eq:12.8.3}
+C _ { H } \geq T \chi ^{- 1} \left\{ \left( \frac { \partial M } { \partial T } \right) _ { H } \right\} ^{2} .
+\end{equation}
+现在，当我们将\(H\)趋近于0，同时从下方逐渐降低温度至\(T_c\)时，我们得到
+\begin{equation}\tag{12.8.4}\label{eq:12.8.4}
+D _ { 1 } ( T _ { c } - T ) ^{- \alpha ^ { \prime} } \geq D _ { 2 } T _ { c } ( T _ { c } - T ) ^{\gamma ^ { \prime} + 2 ( \beta - 1 ) } ,
+\end{equation}
+其中\(D_{1}\)和\(D_{2}\)为正的常数；在此，我们采用了幂律关系（12.7.1、2b以及5b）。\(^{14}\) 不等式（4）同样可以写成
+\begin{equation}\tag{12.8.5}\label{eq:12.8.5}
+( T _ { c } - T ) ^{2 - ( \alpha ^ { \prime} + 2 \beta + \gamma ^{\prime} ) } \geq D _ { 2 } T _ { c } / D _ { 1 } .
+\end{equation}
+由于\((T_c - T)\)可以被任意地缩小，因此若\((\alpha' + 2\beta + \gamma') < 2\)，则不等式（5）将无法成立。由此可见，拉什布鲁克不等式（1）已然得以确立。
+为进一步建立不等式，我们借助亥姆霍兹自由能\(A(T,M)\)的凸性性质。由于\(dA = -SdT + HdM\)，
+\begin{equation}\tag{12.8.6}\label{eq:12.8.6}
+\left( \frac { \partial A } { \partial T } \right) _ { M } = - S ,  \left( \frac { \partial ^{2} A } { \partial T ^{2} } \right) _ { M } = - \left( \frac { \partial S } { \partial T } \right) _ { M } = - \frac { C _ { M } } { T } \leq 0
+\end{equation}
+并且
+\begin{equation}\tag{12.8.7}\label{eq:12.8.7}
+\left( \frac { \partial A } { \partial M } \right) _ { T } = H ,  \left( \frac { \partial ^{2} A } { \partial M ^{2} } \right) _ { T } = \left( \frac { \partial H } { \partial M } \right) _ { T } = \frac { 1 } { \chi } \geq 0 .
+\end{equation}
+由此可知，\(A(T,M)\) 在 \(T\) 上为凹函数，而在 \(M\) 上则为凸函数。接下来，我们着手证明格里菲斯不等式（1965a、b）。
+\begin{equation}\tag{12.8.8}\label{eq:12.8.8}
+\alpha ^{\prime} + \beta ( \delta + 1 ) \geq 2 .
+\end{equation}
+考虑一个在零磁场下、温度为 \(T_{1}\) 且低于 \(T_{c}\) 的磁性系统。根据 \autoref{eq:12.7.7}，\(A(T, M)\) 只依赖于 \(T\)，因此我们可以将其表示为：
+\begin{equation}\tag{12.8.9}\label{eq:12.8.9}
+A ( T _ { 1 } , M ) = A ( T _ { 1 } , 0 )  ( - M _ { 1 } \leq M \leq M _ { 1 } ) ,
+\end{equation}
+其中 \(M_{1}\) 是在温度 \(T_{1}\) 下的自发磁化强度；参见图~12.10。将 \autoref{eq:12.8.6} 应用于 \autoref{eq:12.8.9}，我们得到：
+\begin{equation}\tag{12.8.10}\label{eq:12.8.10}
+S ( T _ { 1 } , M ) = S ( T _ { 1 } , 0 )  ( - M _ { 1 } \leq M \leq M _ { 1 } ) .
+\end{equation}
+现在，我们定义了两个新函数
+\begin{equation}\tag{12.8.11}\label{eq:12.8.11}
+A ^{*} ( T , M ) = \{ A ( T , M ) - A _ { c } \} + ( T - T _ { c } ) S _ { c }
+\end{equation}
+以及
+\begin{equation}\tag{12.8.12}\label{eq:12.8.12}
+S ^{*} ( T , M ) = S ( T , M ) - S _ { c } ,
+\end{equation}
+\(^{14}\)回想一下，气体-液体系统与磁体之间的对应关系，人们或许会好奇：为什么我们选用 \(C_{H}\) 而不是 \(C_{M}\) 来代替 \(C_{V}\)？原因在于，由于我们让 \(H \rightarrow 0\)，同时让 \(T \rightarrow T_{c}-\)，并让 \(M \rightarrow 0\)。正如费舍尔在 1967 年所论证的那样，在这里所考虑的极限情况下，\(C_{H}\) 和 \(C_{M}\) 具有相同的奇异行为。事实上，可以证明：若当 \(T \rightarrow T_{c}\) 时，\(C_{M}/C_{H}\) 的比值趋于 1，则 \((\alpha' + 2\beta + \gamma')\) 必须大于 2；反之，若该比值趋于小于 1，则 \((\alpha' + 2\beta + \gamma') = 2\)。有关详细内容，请参阅斯坦利（1971），第 4.1 节。
+其中 \(A_{c} = A(T_{c},0)\)，\(S_{c} = S(T_{c},0)\)。由此可知，
+\begin{equation}\tag{12.8.13}\label{eq:12.8.13}
+\left( \frac { \partial A ^{*} } { \partial T } \right) _ { M } = - S ^{*} ,  \left( \frac { \partial ^{2} A ^{*} } { \partial T ^{2} } \right) _ { M } = - \left( \frac { \partial S ^{*} } { \partial T } \right) _ { M } = - \frac { C _ { M } } { T } \leq 0 .
+\end{equation}
+因此，\(A^*\) 在 \(T\) 上同样为凹函数。从几何上看，这意味着：对于任意 \(T_1\) 的选取，当 \(M\) 固定在 \(M_1\) 时，曲线 \(A^*(T)\) 位于 \(T = T_1\) 处的切线之下，即，
+\begin{equation}\tag{12.8.14}\label{eq:12.8.14}
+A ^{*} ( T , \mathcal { M } _ { 1 } ) \leq A ^{*} ( T _ { 1 } , \mathcal { M } _ { 1 } ) + \left( \frac { \partial A ^{*} } { \partial T } \right) _ { M _ { 1 } , T = T _ { 1 } } ( T - T _ { 1 } ) ;
+\end{equation}
+参见图~12.11。将 \(T = T_c\) 代入 \autoref{eq:12.8.14}，我们得到
+\begin{equation}\tag{12.8.15}\label{eq:12.8.15}
+A ^{*} ( T _ { c } , M _ { 1 } ) \leq A ^{*} ( T _ { 1 } , M _ { 1 } ) - S ^{*} ( T _ { 1 } , M _ { 1 } ) ( T _ { c } - T _ { 1 } )
+\end{equation}
+鉴于 \autoref{eq:12.8.9} 至 \autoref{eq:12.8.12}，这一表达式可写成
+\begin{equation}\tag{12.8.16}\label{eq:12.8.16}
+A ^{*} ( T _ { c } , M _ { 1 } ) \leq A ^{*} ( T _ { 1 } , 0 ) - S ^{*} ( T _ { 1 } , 0 ) ( T _ { c } - T _ { 1 } ) .
+\end{equation}
+再次利用函数 \(A^{*}(T)\) 的凹性——不过这次是在 \(T = T_{c}\) 处（此时 \(M\) 固定为零，且斜率 \((\partial A^{*}/\partial T)\) 为零），我们得到，参见 (14)，
+\begin{equation}\tag{12.8.17}\label{eq:12.8.17}
+A ^{*} ( T , 0 ) \leq A ^{*} ( T _ { c } , 0 ) .
+\end{equation}
+现在，将 \(T = T_{1}\) 代入 \autoref{eq:12.8.17}，并注意到根据定义 \(A^{*}(T_{c},0)=0\)，我们得到
+\begin{equation}\tag{12.8.18}\label{eq:12.8.18}
+A ^{*} ( T _ { 1 } , 0 ) \leq 0 .
+\end{equation}
+将 \autoref{eq:12.8.16} 与 \autoref{eq:12.8.18} 结合起来，我们最终得到
+\begin{equation}\tag{12.8.19}\label{eq:12.8.19}
+A ^{*} ( T _ { c } , M _ { 1 } ) \leq - ( T _ { c } - T _ { 1 } ) S ^{*} ( T _ { 1 } , 0 ) ,
+\end{equation}
+适用于所有 \(T_{1} < T_{c}\)。
+下一步非常简单。我们让 \(T_1 \rightarrow T_c-\)，从而 \(M_1 \rightarrow 0\)，并随之
+\begin{equation}\tag{12.8.20}\label{eq:12.8.20}
+A ^{*} ( T _ { c } , M _ { 1 } ) = \left[ \int _ { 0 } ^{M _ { 1} } H d M \right] \approx D M _ { 1 } ^{\delta + 1} \approx D ^{\prime} ( T _ { c } - T _ { 1 } ) ^{\beta ( \delta + 1 )} ,
+\end{equation}
+同时
+\begin{equation}\tag{12.8.21}\label{eq:12.8.21}
+S ^{*} ( T _ { 1 } , 0 ) = \int _ { T _ { c } } ^{T _ { 1} } \frac { C ( T , 0 ) } { T } d T \approx - \frac { D ^{\prime \prime} } { T _ { c } } ( T _ { c } - T _ { 1 } ) ^{1 - \alpha ^ { \prime} } ,
+\end{equation}
+其中 \(D\)、\(D'\) 和 \(D"\) 是正的常数；在此，我们采用了幂律（12.7.1、3 和 5b）。将式（20）和式（21）代入式（19），我们得到
+\begin{equation}\tag{12.8.22}\label{eq:12.8.22}
+( T _ { c } - T _ { 1 } ) ^{2 - \alpha ^ { \prime} - \beta ( \delta + 1 ) } \geq D ^{\prime} T _ { c } / D ^{\prime \prime} .
+\end{equation}
+再次强调，由于 \((T_{c}-T_{1})\) 可以被任意地缩小，若 \(\alpha^{\prime}+\beta(\delta+1)<2\)，则式（22）将不成立。因此，格里菲斯不等式（8）得以确立。值得注意的是，与仅与 \(T<T_{c}\) 相关的拉什布鲁克不等式不同，本不等式涉及两个这样的指数——\(\alpha^{\prime}\) 和 \(\beta\)——而与一个指数 \(\delta\) 相关，该指数则对应于临界等温线 (\(T=T_{c}\))。
+虽然不等式（1）和（8）在热力学上是精确的，但格里菲斯还推导出了若干其他不等式，这些不等式依赖于对所研究系统作出某些合理的假设。我们引用其中的两条
+其中的两条，无需证明：
+\begin{equation}\tag{12.8.23}\label{eq:12.8.23}
+\gamma ^{\prime} \geq \beta ( \delta - 1 )
+\end{equation}
+\begin{equation}\tag{12.8.24}\label{eq:12.8.24}
+\gamma \geq ( 2 - \alpha ) ( \delta - 1 ) / ( \delta + 1 ) .
+\end{equation}
+有关此类不等式的完整列表，请参阅格里菲斯（1972），第102页，并在该书中提供了原始论文的参考文献。
+在继续深入之前，读者不妨先验证一下，表12.1中先前给出的临界指数实验数据，是否确实符合本节所证明或引用的各类不等式。在此关联中，重要的一点是：平均场指数（\(\alpha=\alpha'=0\)，\(\beta=1/2\)，\(\gamma=\gamma'=1\)，\(\delta=3\)）均能以等式的形式满足所有这些关系。
+\section{朗道的唯象理论}\label{ux6d1bux6717ux7684ux552fux8c61ux7406ux8bba}
+早在1937年，兰道就尝试对所有二阶相变进行统一的描述——所谓二阶相变，是指自由能的二阶导数（即比热和磁化率，或在流体情况下为等温压缩率）在临界点处出现发散，而一阶导数（即熵和磁化强度，或在流体情况下为密度）则保持连续。他强调了序参量 \(m_{0}\) 的重要性（在相变的高温侧取值为零，在低温侧则不为零），并提出，通过将系统的自由能按 \(m_{0}\) 的幂级数展开，即可确定某一系统临界行为的基本特征（因为我们知道，在临界点附近，\(m_{0} \ll 1\)）。他还认为，在没有有序场（\(h=0\)）的情况下，系统的上下对称性要求所提出的展开式仅包含 \(m_{0}\) 的偶数次幂。因此，系统的零场自由能 \(\psi_{0}\)（即 \(A_{0}/NkT\)）可以写成：
+\begin{equation}\tag{12.9.1}\label{eq:12.9.1}
+\psi _ { 0 } ( t , m _ { 0 } ) = q ( t ) + r ( t ) m _ { 0 } ^{2} + s ( t ) m _ { 0 } ^{4} + \cdots  \left( t = \frac { T - T _ { c } } { T _ { c } } , | t | \ll 1 \right) ;
+\end{equation}
+与此同时，系数 \(q(t)\)、\(r(t)\)、\(s(t)\)\ldots\ldots 可以写成：
+\begin{equation}\tag{12.9.2}\label{eq:12.9.2}
+q ( t ) = \sum _ { k \geq 0 } q _ { k } t ^{k} ,  r ( t ) = \sum _ { k \geq 0 } r _ { k } t ^{k} ,  s ( t ) = \sum _ { k \geq 0 } s _ { k } t ^{k} , \ldots .
+\end{equation}
+随后，通过求解 \(\psi_{0}\) 对 \(m_{0}\) 的极小值，即可确定序参量的平衡值；若仅保留 (1) 中所示的项，且根据热力学稳定性要求 \(s(t) > 0\)，则可得：
+\begin{equation}\tag{12.9.3}\label{eq:12.9.3}
+r ( t ) m _ { 0 } + 2 s ( t ) m _ { 0 } ^{3} = 0 .
+\end{equation}
+因此，\(m_{0}\) 的平衡值要么为 0，要么为 \(\pm\sqrt{[-r(t)/2s(t)]}\)。虽然第一种解并不太引人关注，但这也是我们唯一会在 \(t>0\) 时遇到的解；真正导致系统发生自发磁化的，是后一种解。为了得到符合物理意义的结果，即参照 \autoref{eq:12.8.9} 至 \autoref{eq:12.8.11}，我们必须在 \autoref{eq:12.8.2} 中满足：\(r_{0}=0\)，\(r_{1}>0\)，且 \(s_{0}>0\)，其结果为：
+\begin{equation}\tag{12.9.4}\label{eq:12.9.4}
+| m _ { 0 } | \approx [ ( r _ { 1 } / 2 s _ { 0 } ) | t | ] ^{1 / 2}  ( t \lesssim 0 ) ,
+\end{equation}
+从而得出 \(\beta = 1/2\)。
+自由能的渐近表达式为：
+\begin{equation}\tag{12.9.5}\label{eq:12.9.5}
+\psi _ { 0 } ( t , m _ { 0 } ) \approx q _ { 0 } + r _ { 1 } t m _ { 0 } ^{2} + s _ { 0 } m _ { 0 } ^{4}  ( r _ { 1 } , s _ { 0 } > 0 ) ,
+\end{equation}
+如图~12.12 所示。我们发现，对于 \(t \geq 0\)，只存在一个最小值，该最小值位于 \(m_0 = 0\)；而在 \(t = 0\)，该最小值则较为平缓。另一方面，当 \(t < 0\) 时，我们则有两个最小值，分别位于 \(m_0 = \pm m_s\)，如 \autoref{eq:12.8.4} 所示，而最大值则出现在 \(m_0 = 0\)。由于 \(\psi_{0}\) 在 \(m_0\) 上必须呈凸形，以确保系统的磁化率非负，如 \autoref{eq:12.8.7} 所示，因此我们必须用一条直线来替代曲线中位于 \(m_0 = -m_s\) 和 \(m_0 = +m_s\) 之间的非凸部分（在该直线上，磁化率将趋于无穷大）。这一替换方式，与第 12.1 节和第 12.2 节中所采用的麦克斯韦构造颇为相似。
+我们现将系统置于一个正的有序场 \(h\) 之下。若该场为弱场，自由能的表达式中唯一的变化仅在于新增一项 \(-hm\)。此外，我们不妨忽略 \((hm)\) 的任何高次幂的出现，以及任何相关的修正项。
+既然系数已经存在，我们现在可以写出
+\begin{equation}\tag{12.9.6}\label{eq:12.9.6}
+\psi _ { h } ( t , m ) = - h m + q ( t ) + r ( t ) m ^{2} + s ( t ) m ^{4} .
+\end{equation}
+现在，\(m\) 的平衡值由以下公式给出\^{}\{15\}。
+\begin{equation}\tag{12.9.7}\label{eq:12.9.7}
+- h + 2 r ( t ) m + 4 s ( t ) m ^{3} = 0 .
+\end{equation}
+系统的低场磁化率，以 \(N\mu^{2}/kT\) 为单位，最终得出：
+\begin{equation}\tag{12.9.8}\label{eq:12.9.8}
+\chi = \left( \frac { \partial h } { \partial m } \right) _ { t } ^{- 1} = \frac { 1 } { 2 r ( t ) + 12 s ( t ) m ^{2} } ,
+\end{equation}
+在 \(h \to 0\) 的极限下成立。对于 \(t > 0\)，\(m\) 趋近于零，我们得到
+\begin{equation}\tag{12.9.9}\label{eq:12.9.9}
+\chi \approx 1 / 2 r _ { 1 } t  ( t \gtrsim 0 ) ,
+\end{equation}
+由此得出 \(\gamma=1\)。另一方面，对于 \(t<0\)，\(m\) 趋近于 \(\sqrt{[(r_1/2s_0)|t]]}\)，详见式（4）；此时我们得到
+\begin{equation}\tag{12.9.10}\label{eq:12.9.10}
+\chi \approx 1 / 4 r _ { 1 } | t |  ( t \lesssim 0 ) ,
+\end{equation}
+由此得出 \(\gamma'=1\)。最后，若我们在式（7）中令 \(t=0\)，则可得 \(h\) 与 \(m\) 之间的如下关系：
+\begin{equation}\tag{12.9.11}\label{eq:12.9.11}
+h \approx 4 s _ { 0 } m ^{3}  ( h \rightarrow 0 ) ,
+\end{equation}
+由此得出 \(\delta = 3\)。
+接下来，我们将考察比热 \(C_{h}\) 和 \(C_{m}\)。若 \(t > 0\)，则当 \(h \to 0\) 时，\(m\) 也趋于零；因此，在这一极限条件下，\(C_{h}\) 与 \(C_{m}\) 并无差别。式（1）据此给出，以 \(Nk\) 为单位，
+\begin{equation}\tag{12.9.12}\label{eq:12.9.12}
+C _ { h } = C _ { m } = - \left( \frac { \partial ^{2} \psi _ { 0 } } { \partial t ^{2} } \right) _ { m \rightarrow 0 } = - ( 2 q _ { 2 } + 6 q _ { 3 } t + \cdots )  ( t \gtrsim 0 ) .
+\end{equation}
+对于 \(t < 0\)，我们有
+\begin{equation}\tag{12.9.13}\label{eq:12.9.13}
+\begin{array}{rl} & { C _ { m } = - \Big [ ( 2 q _ { 2 } + 6 q _ { 3 } t + \cdots ) + ( 2 r _ { 2 } + \cdots ) m _ { s } ^{2} + \cdots \Big ] } \\& { = - \Big [ 2 q _ { 2 } + \{ 6 q _ { 3 } - ( r _ { 1 } r _ { 2 } / s _ { 0 } ) \} t + \ldots \Big ]  ( t \lesssim 0 ) . } \end{array}
+\end{equation}
+接下来，利用 \autoref{eq:12.8.2} 以及 \autoref{eq:12.8.4} 和 \autoref{eq:12.8.10}，我们得到
+\begin{equation}\tag{12.9.14}\label{eq:12.9.14}
+C _ { h } - C _ { m } = \left( \frac { \partial h } { \partial m } \right) _ { t } \left\{ \left( \frac { \partial m } { \partial t } \right) _ { h } \right\} ^{2} \approx \frac { r _ { 1 } ^{2} } { 2 s _ { 0 } }  ( t \lesssim 0 ) .
+\end{equation}
+\^{}\{15\}在此需要指出的是，从式（1）到式（6）的推导过程，实际上等价于对亥姆霍兹自由能 \(A\) 进行勒让德变换，将其转换为吉布斯自由能 \(G\)（即 \(A-HM\)），而式（7）则与 \((\partial A/\partial M)_{T}=H\) 这一关系相仿。
+由此可见，尽管 \(C_{m}\) 在 \(t=0\) 时具有尖峰状奇点，但 \(C_{h}\) 却发生了幅度为
+\begin{equation}\tag{12.9.15}\label{eq:12.9.15}
+( C _ { h } ) _ { t \rightarrow 0 - } - ( C _ { h } ) _ { t \rightarrow 0 + } \approx r _ { 1 } ^{2} / 2 s _ { 0 } .
+\end{equation}
+由此可知，\(\alpha = \alpha' = 0\)。
+朗道理论最引人注目的特点在于，它所给出的临界指数与第12.5节和第12.6节的平均场理论（或第12.2节的范德华理论）完全一致。实际上，该理论的推导远不止于此：它首先给出了系统自由能的表达式，其中包含参数 \(q_k, r_k, s_k, \ldots\)——这些参数分别代表了给定系统的结构以及作用于其中的相互作用。随后，研究进一步表明：尽管在临界点附近，各种物理量的振幅确实会依赖于这些参数，但临界指数却不会！这种临界指数的普遍性表明，我们面对的是一类系统：尽管它们在结构上存在差异，但其临界行为在该类系统的所有成员中却在本质上保持一致。由此引出了"通用性类别"的概念——如果朗道的理论是正确的，那么这一类别将相当庞大。然而，事实上，朗道理论中对"通用性"这一概念的夸大程度相当高；实际上，存在着许多不同的通用性类别——每一个类别都由第12.7节中的参数 \(d\) 和 \(n\) 以及微观相互作用的范围来界定——因此，同一类别内的临界指数是相同的，而不同类别之间的临界指数却各不相同。按照朗道理论的构建方式，参数 \(n\) 基本上等于 1（因为序参量 \(m_0\) 被视为一个标量），参数 \(d\) 完全不发挥任何作用（不过稍后我们会看到，当 \(d > 4\) 时，平均场理论的指数实际上对所有 \(n\) 都适用），而微观相互作用则被隐含地设定为长程相互作用。16
+针对朗道理论常被提出的质疑之一是：既然我们完全清楚，给定系统的热力学函数在 \(t=0\) 时将出现奇异点，那么在 \(m=0\) 附近对自由能进行泰勒展开显然是一个错误的起点。尽管这一质疑确实成立，但值得指出的是，一个正则函数（1）或（6）会导出状态方程（3）或（7），而该状态方程在 \(t\to 0-\) 时得到的结果与 \(t\to 0+\) 时得到的结果并不相同——同样地，无论是 \(h\to 0+\) 还是 \(h\to 0-\)，其结果也各不相同。关键在于：我们并非在所有 \(t\) 下都直接使用式（1）或（6）；在 \(t<0\) 时，我们转而采用一种经过修正的形式，即通过麦克斯韦构造加以"校正"后的形式（参见图~12.12）。这样一来，奇点的本质得以完整捕捉，不过由于奇点的性质与原始展开式的性质紧密相关，其本质绝不可能与平均场理论的类型有太大差异。那么，问题来了：如何改进朗道理论，使其能够更圆满地描绘临界现象？在尚未进行精确分析之前，人们不禁要问：是否可以对朗道方法进行某种推广，引入不止一种普适性类别，从而获得比目前所呈现的图景更为清晰、更为完善的描述？事实证明，由维多姆（1965）、多姆和亨特（1965）以及帕塔辛斯基和波克罗夫斯基（1966）等人率先提出的标度方法，为这一领域迈出了正确的一步。
+\section{热力学函数的标度假设}\label{ux70edux529bux5b66ux51fdux6570ux7684ux6807ux5ea6ux5047ux8bbe}
+标度方法将相变研究的范围远远超出了平均场理论的范畴，它分别源自三个不同的源头——维多姆（1965）致力于寻找一种范德华状态方程的推广形式，以适应非经典指数；多姆和亨特（1965）分析了在磁性系统临界点处，自由能高阶导数的级数展开在磁场作用下的行为；而帕塔辛斯基和波克罗夫斯基（1966）则研究了构成系统的自旋多点相关函数的行为。这三位学者最终得出了同一形式的热力学状态方程。随后，卡达诺夫（1966a）提出了一种标度假设，不仅能够从该状态方程推导出相应的热力学关系，还能得出若干关于临界指数之间的联系，而这些联系最终被证实为与第12.8节的研究结果相一致的等式。这一方法也清晰地阐明了为何只需两个独立的参数即可描述所讨论奇点的本质；其余相关参数则随之自然推导而来。
+为了为这一发展奠定基础，我们先回到由朗道理论推导出的状态方程，即 \autoref{eq:12.9.7}，并将其写成渐近形式：
+\begin{equation}\tag{12.10.1}\label{eq:12.10.1}
+h ( t , m ) \approx 2 r _ { 1 } t m + 4 s _ { 0 } m ^{3} .
+\end{equation}
+鉴于关系式 \autoref{eq:12.9.4}，我们可将 \autoref{eq:12.10.1} 改写为以下形式：
+\begin{equation}\tag{12.10.2}\label{eq:12.10.2}
+h ( t , m ) \approx \frac { r _ { 1 } ^{3 / 2} } { s _ { 0 } ^{1 / 2} } | t | ^{3 / 2} \left[ 2 \operatorname { s g n } ( t ) \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{1 / 2} } \frac { m } { | t | ^{1 / 2} } \right) + 4 \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{1 / 2} } \frac { m } { | t | ^{1 / 2} } \right) ^{3} \right] .
+\end{equation}
+由此可知，
+\begin{equation}\tag{12.10.3}\label{eq:12.10.3}
+m ( t , h ) \approx \frac { r _ { 1 } ^{1 / 2} } { s _ { 0 } ^{1 / 2} } | t | ^{1 / 2} \times \mathrm { ~ a ~ f u n c t i o n ~ o f ~ } \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{3 / 2} } \frac { h } { | t | ^{3 / 2} } \right)
+\end{equation}
+并且，在朗道理论的框架下，此处出现的函数对于所有符合该理论的系统而言都是普遍适用的。同样地，自由能 \(\psi_{h}(t,m)\) 中与之相关的部分——即决定奇点性质的部分——可以表示为：
+\begin{equation}\tag{12.10.4}\label{eq:12.10.4}
+\begin{array}{rlr} & { } & { \psi _ { h } ^{( s )} ( t , m ) \approx - h m + r _ { 1 } t m ^{2} + s _ { 0 } m ^{4} } \\& { } & { = \frac { r _ { 1 } ^{2} } { s _ { 0 } } t ^{2} \left[ - \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{3 / 2} } \frac { h } { | t | ^{3 / 2} } \right) \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{1 / 2} } \frac { m } { | t | ^{1 / 2} } \right) + \mathrm { s g n } ( t ) \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{1 / 2} } \frac { m } { | t | ^{1 / 2} } \right) ^{2} \right. } \\& { } & { \left. + \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{1 / 2} } \frac { m } { | t | ^{1 / 2} } \right) ^{4} \right] . } \end{array}
+\end{equation}
+将式（3）代入式（5），可得
+\begin{equation}\tag{12.10.5}\label{eq:12.10.5}
+\psi ^{( s )} ( t , h ) \approx \frac { r _ { 1 } ^{2} } { s _ { 0 } } t ^{2} \times \mathrm { a ~ f u n c t i o n ~ o f ~ } \left( \frac { s _ { 0 } ^{1 / 2} } { r _ { 1 } ^{3 / 2} } \frac { h } { | t | ^{3 / 2} } \right) ,
+\end{equation}
+其中，此处出现的函数同样具有普遍性。作为验证，我们发现，对式（6）关于 \(h\) 求导，很容易得到式（3）。
+正如式（3）所表达的那样，状态方程最显著的特点在于：它不再像以往那样是 \(m\)、\(h\) 和 \(t\) 三个变量之间的常见关系，而是仅由两个变量来描述，即 \(m/|t|^{1/2}\) 与 \(h/|t|^{3/2}\)。因此，通过将 \(m\) 以 \(|t|^{1/2}\) 为尺度进行缩放，将 \(h\) 以 \(|t|^{3/2}\) 为尺度进行缩放，我们实际上将变量总数减少了一个。同样地，我们用式（6）取代了式（4），后者将自由能 \(\psi\) 中的奇异性部分，以 \(t^2\) 为尺度进行缩放，并将其表示为单个变量 \(h\) 的函数，而 \(h\) 又以 \(|t|^{3/2}\) 为尺度进行缩放。这种有效变量数量的减少，可被视为缩放方法取得的首项重要成果。
+下一步工作是将式（6）加以推广，从而写出：
+\begin{equation}\tag{12.10.6}\label{eq:12.10.6}
+\psi ^{( s )} ( t , h ) \approx F | t | ^{2 - \alpha} f ( G h / | t | ^{\Delta} ) ,
+\end{equation}
+其中，\(\alpha\) 和 \(\Delta\) 是适用于给定普适性类中所有系统的通用常数；\(f(x)\) 是一个普遍适用的函数，预计其具有两个不同的分支：\(f_{+}\) 用于 \(t > 0\)，\(f_{-}\) 用于 \(t < 0\)；而 \(F\) 和 \(G\)（如同 \(r_{1}\) 和 \(s_{0}\)）则是特定研究系统所特有的非通用参数。我们预期，\(\alpha\) 和 \(\Delta\) 将决定问题的所有临界指数，而各类幂律中出现的幅度，则将由 \(F\)、\(G\) 以及函数 \(f(x)\) 及其导数在 \(x\) 趋近于零时的极限值所决定。式（7）构成了所谓的"缩放假设"，当该假设获得重正化群理论的正当性时，其地位将得到极大提升；详见第 14.1 节和第 14.3 节。
+首先需要指出的是，在式（7）中，函数 \(f(x)\) 之外的 \(|t|\) 的指数被选定为 \((2-\alpha)\)，而非对应平均场表达式（6）中的 2。这样做，是为了确保能正确再现比热奇点。其次，当跨越临界等温线（\(t=0\)）时，若不出现任何奇点，这要求在临界点高温侧的指数与低温侧的指数保持一致，即：
+\begin{equation}\tag{12.10.7}\label{eq:12.10.7}
+\alpha ^{\prime} = \alpha  \mathrm { a n d }  \gamma ^{\prime} = \gamma .
+\end{equation}
+从式（7）中可以很容易地推导出
+\begin{equation}\tag{12.10.8}\label{eq:12.10.8}
+m ( t , h ) = - \left( \frac { \partial \psi ^{( s )} } { \partial h } \right) _ { t } \approx - F G | t | ^{2 - \alpha - \Delta} f ^{\prime} ( G h / | t | ^{\Delta} )
+\end{equation}
+并且
+\begin{equation}\tag{12.10.9}\label{eq:12.10.9}
+\chi ( t , h ) = - \left( \frac { \partial ^{2} \psi ^{( s )} } { \partial h ^{2} } \right) _ { t } \approx - F G ^{2} | t | ^{2 - \alpha - 2 \Delta} f ^{\prime \prime} ( G h / | t | ^{\Delta} ) .
+\end{equation}
+令 \(h \rightarrow 0\)，我们得到自发磁化强度为
+\begin{equation}\tag{12.10.10}\label{eq:12.10.10}
+m ( t , 0 ) \approx B | t | ^{\beta}  ( t \lesssim 0 ) ,
+\end{equation}
+其中
+\begin{equation}\tag{12.10.11}\label{eq:12.10.11}
+B = - F G f _ { - } ^{\prime} ( 0 ) ,  \beta = 2 - \alpha - \Delta ,
+\end{equation}
+而对于低场磁化率，
+\begin{equation}\tag{12.10.12}\label{eq:12.10.12}
+\chi ( t , 0 ) \approx | t | ^{- \gamma} \left\{ \begin{array}{ll} { C _ { + } } & { ( t \gtrsim 0 ) } \\{ C _ { - } } & { ( t \lesssim 0 ) , } \end{array} \right.
+\end{equation}
+其中
+\begin{equation}\tag{12.10.13}\label{eq:12.10.13}
+C _ { \pm } = - F G ^{2} f _ { \pm } ^{\prime \prime} ( 0 ) ,  \gamma = \alpha + 2 \Delta - 2 .
+\end{equation}
+将式（12b）与式（14b）相结合，我们得到
+\begin{equation}\tag{12.10.14}\label{eq:12.10.14}
+\Delta = \beta + \gamma = 2 - \alpha - \beta ,
+\end{equation}
+因此，
+\begin{equation}\tag{12.10.15}\label{eq:12.10.15}
+\alpha + 2 \beta + \gamma = 2 .
+\end{equation}
+为了恢复 \(\delta\)，我们将式（9）中的函数 \(f'(x)\) 写成 \(x^{\beta/\Delta}g(x)\)，从而
+\begin{equation}\tag{12.10.16}\label{eq:12.10.16}
+m ( t , h ) \approx - F G ^{( 1 + \beta / \Delta )} h ^{\beta / \Delta} g ( G h / | t | ^{\Delta} ) .
+\end{equation}
+通过求解式（17），我们可以写出
+\begin{equation}\tag{12.10.17}\label{eq:12.10.17}
+| t | \approx G ^{1 / \Delta} h ^{1 / \Delta} \times \mathrm { a ~ f u n c t i o n ~ o f ~ } ( F G ^{( 1 + \beta / \Delta )} h ^{\beta / \Delta} / m ) .
+\end{equation}
+由此可知，在临界等温线（\(t=0\)）上，式（18）中所出现的函数的自变量将具有一个通用值（该值使函数变为零），其结果是
+\begin{equation}\tag{12.10.18}\label{eq:12.10.18}
+m \sim F G ^{( 1 + \beta / \Delta )} h ^{\beta / \Delta}  ( t = 0 ) .
+\end{equation}
+将 \autoref{eq:12.10.19} 与 \autoref{eq:12.7.3} 进行比较，我们得出
+\begin{equation}\tag{12.10.19}\label{eq:12.10.19}
+\delta = \Delta / \beta .
+\end{equation}
+将式（20）与先前的若干关系——即式（12b）和式（15）——相结合，我们得到
+\begin{equation}\tag{12.10.20}\label{eq:12.10.20}
+\alpha + \beta ( \delta + 1 ) = 2
+\end{equation}
+并且
+\begin{equation}\tag{12.10.21}\label{eq:12.10.21}
+\gamma = \beta ( \delta - 1 ) .
+\end{equation}
+最后，将式（21）与式（22）相结合，我们得到
+\begin{equation}\tag{12.10.22}\label{eq:12.10.22}
+\gamma = ( 2 - \alpha ) ( \delta - 1 ) / ( \delta + 1 ) .
+\end{equation}
+为完整起见，我们还写下在 \(h=0\) 时的比热 \(C_{h}\) 的表达式
+\begin{equation}\tag{12.10.23}\label{eq:12.10.23}
+C _ { h } ^{( s )} ( t , 0 ) = - \left. \frac { \partial ^{2} \psi ^{( s )} } { \partial t ^{2} } \right| _ { h \rightarrow 0 } \approx - ( 2 - \alpha ) ( 1 - \alpha ) F | t | ^{- \alpha} \left\{ \begin{array}{ll} { f _ { + } ( 0 ) } & { ( t \gtrsim 0 ) } \\{ f _ { - } ( 0 ) } & { ( t \lesssim 0 ) . } \end{array} \right.
+\end{equation}
+由此可见，尺度假设（7）导出了系统关键指数之间的一系列关系，这凸显出其中仅有两个指数真正独立。将这些关系与第12.8节中所出现的相应关系进行对比——即（16）、（21）、（22）和（23），以及（12.8.1）、（12.8.8）、（12.8.23）和（12.8.24）——我们感到十分满意，因为它们彼此一致；不过，目前的这些关系比那里的那些要严格得多。除了指数关系之外，我们在此还得到了问题中各振幅之间的关系；尽管这些振幅各自并非普遍适用，但其中某些组合却恰好具有普遍性。例如，由方程（7）、（11）和（13）中所出现的系数构成的组合（\(FC_{\pm}/B^{2}\)）是普遍适用的，具体见方程（12a）和（14a）。同样地，比率 \(C_{+}/C_{-}\) 也具有普遍性。有关此问题的更多详细信息，请参阅沃森（1969）的原始论文，以及普里夫曼、霍恩伯格和阿哈罗尼（1991）所作的综述。
+现在我们提出这样一个问题：为什么"通用类"会存在呢？换句话说，为什么在结构迥异的众多系统中，竟然会归于同一通用类，并因此拥有共同的关键指数和共同的标度函数？答案在于，系统微观组成成分之间的相关性所发挥的作用——随着温度 \(T\) 趋近于临界温度 \(T_c\)，这些相关性变得足够强大，足以在系统中超越宏观尺度，从而使得局部层面的结构细节不再具有重要意义。接下来，我们将把注意力转向这一问题中的重要方面。
+\section{相关性和涨落的作用}\label{ux76f8ux5173ux6027ux548cux6da8ux843dux7684ux4f5cux7528}
+通过向感兴趣的系统散射辐射——包括光、X射线、中子等——我们可以从多个方面深入了解临界现象；请参阅第10.7.A节。在标准的散射实验中，一束经过良好准直的光或其他辐射，其已知波长为 \(\lambda\)，被照射到样品上，并测量在与散射角 \(\theta\) 之间散射的光的强度 \(I(\theta)\)。
+光束的"前向"方向。辐射的波矢量 \(\mathbf{k}\) 发生了位移，该位移与参数 \(\theta\) 和 \(\lambda\) 之间的关系为：
+\begin{equation}\tag{12.11.1}\label{eq:12.11.1}
+| \pmb { k } | = \frac { 4 \pi } { \lambda } \sin \frac { 1 } { 2 } \theta .
+\end{equation}
+如今，散射强度 \(I(\theta)\) 由介质中的波动所决定。如果介质完全均匀（即空间上各向同性），则根本不会发生任何散射！若我们考虑的是来自流体的光散射，那么相关的波动对应于折射率不同的区域，进而对应着不同的粒子密度 \(n(\mathbf{r})\)。对于中子从磁性材料中散射的情况，与之相关的则是自旋或磁化密度的波动，诸如此类。在此，我们需要研究归一化后的散射强度 \(I(\theta;T,H)/I^{\mathrm{ideal}}(\theta)\)，其中 \(I(\theta;T,H)\) 是在角度 \(\theta\) 处观测到的实际散射强度，而该强度通常会受到温度、磁场等因素的影响；而 \(I^{\mathrm{ideal}}(\theta)\) 则是当导致散射的单个粒子（或自旋）能够被彼此相距足够远，从而不再相互作用、彼此之间完全无相关性时，本应发生的散射情况。事实证明，这一归一化后的散射强度本质上与以下量成正比：
+\begin{equation}\tag{12.11.2}\label{eq:12.11.2}
+\tilde { g } ( \boldsymbol { k } ) = \int \boldsymbol { g } ( \boldsymbol { r } ) e ^{i \boldsymbol { k} \cdot \boldsymbol { r } } d \boldsymbol { r } ,
+\end{equation}
+它代表了相应实空间相关函数 \(g(\boldsymbol{r})\) 的傅里叶变换，该函数将在稍后予以定义。
+随着系统临界点（例如流体）的接近，我们会观察到散射强度大幅增强，尤其是在低角度下。根据 \autoref{eq:12.10.1} 和 \autoref{eq:12.10.2}，这对应于流体中长波长的密度波动。在临界区域内，散射强度之大，甚至可以肉眼清晰可见，尤其是通过"临界乳光"这一现象。然而，这种现象绝不仅限于流体。例如，若在铁中对中子进行散射，且处于居里点附近，我们同样会看到低角度中子散射强度的显著增长，如图~12.13 所示。我们可以发现，在小角度散射中，\(I(\theta;T)\) 随温度的变化呈现出一个明显的峰值；随着角度不断减小，这个峰值会越来越接近 \(T_c\)。当然，我们永远无法直接观测到零度散射，因为那样的话，我们实际上会接收到迎面而来的束流本身；不过，我们仍可将这一结果外推至零度。当我们将这一结果外推时，会发现零度散射 \(I(0;T)\) 在 \(T_c\) 时实际上会发散。这是临界乳光现象最显著的表现形式，而且具有普遍性。只要能够开展适当的散射实验，这种现象就会出现。从经验上讲，对于小角度散射，我们可以写出：
+\begin{equation}\tag{12.11.3}\label{eq:12.11.3}
+I _ { \mathrm { m a x } } ( \theta ) \sim k ^{- \lambda _ { 1} } ,  \{ T _ { \mathrm { m a x } } ( \theta ) - T _ { c } \} \sim k ^{\lambda _ { 2} } ,
+\end{equation}
+因此，
+\begin{equation}\tag{12.11.4}\label{eq:12.11.4}
+I _ { \mathrm { m a x } } ( \theta ) \{ T _ { \mathrm { m a x } } ( \theta ) - T _ { c } \} ^{\lambda _ { 1} / \lambda _ { 2 } } = \mathrm { c o n s t . }
+\end{equation}
+\begin{equation}\tag{12.11.5}\label{eq:12.11.5}
+g ( i , j ) = \overline { { \sigma _ { i } \sigma _ { j } } } - \overline { { \sigma } } _ { i } \overline { { \sigma } } _ { j } .
+\end{equation}
+对于\(i=j\)的情况，式（5）表示"站点\(i\)处变量\(\sigma\)取值的均方波动"；另一方面，随着站点\(i\)和\(j\)之间的距离无限增大，自旋\(\sigma_i\)和\(\sigma_j\)将变得彼此无关，因此\(\overline{\sigma_i\sigma_j} \to \overline{\sigma_i\sigma_j}\)，而函数\(g(i,j) \to 0\)。
+鉴于式（5）也可以写成如下形式：
+\begin{equation}\tag{12.11.6}\label{eq:12.11.6}
+g ( i , j ) = \overline { { ( \sigma _ { i } - \overline { { \sigma } } _ { i } ) ( \sigma _ { j } - \overline { { \sigma } } _ { j } ) } } ,
+\end{equation}
+函数 \(g(i,j)\) 也可以被视为衡量"系统中各站点 \(i\) 和 \(j\) 的序参量波动之间相关性"的指标。这一点颇具道理，因为 \(\sigma_i\) 完全可以被恰当地视为与站点 \(i\) 相关的局部波动序参量，正如 \(\overline{\sigma}\) 是整个系统的序参量一样。接下来，我们将建立 \(g(i,j)\) 函数与系统若干重要热力学性质之间的联系。
+我们从系统的配分函数入手，见 \autoref{eq:12.3.9}，
+\begin{equation}\tag{12.11.7}\label{eq:12.11.7}
+Q _ { N } ( H , T ) = \sum _ { \{ \sigma _ { i } \} } \exp \left[ \beta J \sum _ { \mathrm { n . n . } } \sigma _ { i } \sigma _ { j } + \beta \mu H \sum _ { i } \sigma _ { i } \right] ,
+\end{equation}
+其中各个符号均具有其通常的含义。由此可得
+\begin{equation}\tag{12.11.8}\label{eq:12.11.8}
+\frac { \partial } { \partial H } ( \ln Q _ { N } ) = \beta \mu \left( \sum _ { i } \sigma _ { i } \right) = \beta \overline { { { M } } } ,
+\end{equation}
+其中 \(M(= \mu \sum_{i} \sigma_{i})\) 表示系统的净磁化强度。接下来，由于
+\begin{equation}\tag{12.11.9}\label{eq:12.11.9}
+\begin{array}{r} { \frac { \partial ^{2} } { \partial H ^{2} } ( \ln Q _ { N } ) = \frac { \partial } { \partial H } \left( \frac { 1 } { Q _ { N } } \frac { \partial Q _ { N } } { \partial H } \right) = \frac { 1 } { Q _ { N } } \frac { \partial ^{2} Q _ { N } } { \partial H ^{2} } - \frac { 1 } { Q _ { N } ^{2} } \left( \frac { \partial Q _ { N } } { \partial H } \right) ^{2} } \\{ = \beta ^{2} ( \overline { { M ^{2} } } - \overline { { M } } ^{2} ) , } \end{array}
+\end{equation}
+我们得到系统的磁化率
+\begin{equation}\tag{12.11.10}\label{eq:12.11.10}
+\begin{aligned}\chi\equiv\frac{\partial\overline{M}}{\partial H}&=\beta(\overline{M^2}-\overline{M}^2)\\&=\beta\mu^2\left\{\overline{\left(\sum_i\sigma_i\right)^2}-\overline{\left(\sum_i\sigma_i\right)}^2\right\}=\beta\mu^2\sum_i\sum_jg(i,j).\end{aligned}
+\end{equation}
+式（10a）通常被称为波动-磁化率关系；它可与流体的相应关系相比较，即式（4.5.7），该式将等温压缩率 \(\kappa_{T}\) 与系统中的密度涨落联系起来。式（10）和式（4.5.7）构成了第15.6节稍后将要讨论的波动-耗散定理的平衡极限。另一方面，式（10b）则将 \(\chi\) 与所有 \(i\) 和 \(j\) 上的相关函数 \(g(i,j)\) 的求和联系起来；在假设系统均匀性的前提下，这一表达式可写为
+\begin{equation}\tag{12.11.11}\label{eq:12.11.11}
+\chi = N \beta \mu ^{2} \sum _ { r } g ( r )  ( r = r _ { j } - r _ { i } ) .
+\end{equation}
+将 \(r\) 视为连续变量，式（11）可写为
+\begin{equation}\tag{12.11.12}\label{eq:12.11.12}
+\chi = \frac { N \beta \mu ^{2} } { a ^{d} } \int g ( \mathbf { r } ) d \mathbf { r } ,
+\end{equation}
+其中 \(a\) 是微观尺度，例如晶格常数，其定义方式如下：\(Na^{d}=V\)，即系统的体积；对于流体同样适用的类似结果，请参阅式（10.7.14）。最后，通过式（2）对函数 \(g(r)\) 进行傅里叶变换，我们发现
+\begin{equation}\tag{12.11.13}\label{eq:12.11.13}
+\chi = \frac { N \beta \mu ^{2} } { a ^{d} } \tilde { g } ( 0 ) ;
+\end{equation}
+将这一结果与流体的式（10.7.21）进行对比。
+我们的下一个任务是确定函数 \(g(\boldsymbol{r})\) 和 \(\tilde{g}(\boldsymbol{k})\) 的数学形式。在尚未进行精确计算之前，让我们先来看看平均场理论在这方面能提供哪些帮助。根据 Kadanoff（1976b）的观点，我们考虑一个受非均匀外部磁场 \(H\) 影响的磁性系统，即 \(H=\{H_{i}\}\)，其中 \(H_{i}\) 表示站点 \(i\) 处的磁场。借助平均场近似，变量 \(\sigma_{i}\) 的热平均值可由 \autoref{eq:12.5.10} 给出，
+\begin{equation}\tag{12.11.14}\label{eq:12.11.14}
+\overline { { \sigma } } _ { i } = \mathrm { t a n h } ( \beta \mu H _ { \mathrm { e f f } } ) ,
+\end{equation}
+其中
+\begin{equation}\tag{12.11.15}\label{eq:12.11.15}
+H _ { \mathrm { e f f } } = H _ { i } + ( J / \mu ) \sum _ { \mathrm { n . n . } } \overline { { \sigma } } _ { j } ;
+\end{equation}
+请注意，鉴于 \(H\) 的不均匀性，\autoref{eq:12.5.10} 中的乘积 \((q\overline{\sigma})\) 已被替换为对自旋 \(i\) 所有最近邻的 \(\overline{\sigma}_j\) 的和。如果 \(\overline{\sigma}\) 在空间中变化缓慢，即施加的磁场并不过于不均匀，则可将 \autoref{eq:12.11.15} 近似为
+\begin{equation}\tag{12.11.16}\label{eq:12.11.16}
+H _ { \mathrm { e f f } } \simeq H _ { i } + ( q J / \mu ) \overline { { \sigma } } _ { i } + ( c J a ^{2} / \mu ) \nabla ^{2} \overline { { \sigma } } _ { i } ,
+\end{equation}
+其中 \(c\) 是一个量级约为 1 的数，其真实值取决于晶格的结构；而 \(a\) 则是等效晶格常数；需要注意的是，包含 \(\nabla\overline{\sigma}_{i}\) 的项在对 \(q\) 个最近邻进行求和时会相互抵消，这些最近邻本应以某种对称的方式排列在站点 \(i\) 的周围。与此同时，对于小 \(x\)，函数 \(\tanh x\) 可近似为 \(x - \frac{x^3}{3}\)。仅保留必要的项，我们从 \autoref{eq:12.10.14} 和 \autoref{eq:12.10.16} 得到
+\begin{equation}\tag{12.11.17}\label{eq:12.11.17}
+\beta \mu H _ { i } = ( 1 - q \beta J ) \overline { { \sigma } } _ { i } + \frac { 1 } { 3 } ( q \beta J ) ^{3} \overline { { \sigma } } _ { i } ^{3} - c \beta J a ^{2} \nabla ^{2} \overline { { \sigma } } _ { i } .
+\end{equation}
+现在，临界条件为 \(\{H_{i}\}=0\) 以及 \(q\beta_{c}J=1\)；参见 \autoref{eq:12.5.13}。因此，在接近临界点时，我们可以引入我们熟悉的变量
+\begin{equation}\tag{12.11.18}\label{eq:12.11.18}
+h _ { i } = \beta \mu H _ { i } ,  t = ( T - T _ { c } ) / T _ { c } \simeq ( \beta _ { c } - \beta ) / \beta _ { c } ;
+\end{equation}
+\autoref{eq:12.10.17} 最终可简化为
+\begin{equation}\tag{12.11.19}\label{eq:12.11.19}
+\left( t + \frac { 1 } { 3 } \overline { { \sigma } } _ { i } ^{2} - c ^{\prime} a ^{2} \nabla ^{2} \right) \overline { { \sigma } } _ { i } = h _ { i } ,
+\end{equation}
+其中 \(c'\) 是另一个量级约为 1 的数。\autoref{eq:12.10.19} 通过考虑 \(\overline{\sigma}\) 的不均匀性，对朗道理论的 \autoref{eq:12.10.1} 进行了推广。
+对 \autoref{eq:12.10.19} 关于 \(h_{j}\) 求导，我们得到
+\begin{equation}\tag{12.11.20}\label{eq:12.11.20}
+\left( t + \overline { { \sigma } } _ { i } ^{2} - c ^{\prime} a ^{2} \nabla ^{2} \right) \frac { \partial \overline { { \sigma } } _ { i } } { \partial h _ { j } } = \delta _ { i , j } .
+\end{equation}
+"响应函数"\(\partial\overline{\sigma}_{i}/\partial h_{j}\) 与相关函数 \(g(i,j)\) 完全相同，因此，\autoref{eq:12.10.20} 可写成
+\begin{equation}\tag{12.11.21}\label{eq:12.11.21}
+\left( t + \overline { { \sigma } } _ { i } ^{2} - c ^{\prime} a ^{2} \nabla ^{2} \right) g ( i , j ) = \delta _ { i , j } .
+\end{equation}
+对于 \(t > 0\) 且 \(\{h_i\} \to 0\)，\(\overline{\sigma}_i \to 0\)；此时，\autoref{eq:12.10.21} 变为
+\begin{equation}\tag{12.11.22}\label{eq:12.11.22}
+\Big ( t - c ^{\prime} a ^{2} \nabla ^{2} \Big ) g ( i , j ) = \delta _ { i , j } .
+\end{equation}
+假设晶格是均匀的，因此 \(g(i,j)=g(r)\)，其中 \(r=r_j-r_i\)；并通过引入傅里叶变换，\autoref{eq:12.10.22} 获得如下形式
+\begin{equation}\tag{12.11.23}\label{eq:12.11.23}
+\left( t + c ^{\prime} a ^{2} k ^{2} \right) \tilde { g } ( k ) = \mathrm { c o n s t } .
+\end{equation}
+由此可知，\(\tilde{g}(\boldsymbol{k})\) 仅依赖于模长 \(k\)（考虑到晶格的假设对称性，这并不令人意外）。因此
+\begin{equation}\tag{12.11.24}\label{eq:12.11.24}
+\tilde { g } ( k ) \sim \frac { 1 } { t + c ^{\prime} a ^{2} k ^{2} } ,
+\end{equation}
+\(^{17}\)谨记 \(\overline{M}=\mu\Sigma_{i}\overline{\sigma}_{i}\)，我们将场 \(\{H_{i}\}\) 改为 \(\{H_{i}+\delta H_{i}\}\)，其结果是
+\begin{equation}\tag{12.11.25}\label{eq:12.11.25}
+\delta \overline { { { M } } } = \mu \sum _ { \dot { i } } \left[ \sum _ { j } ( \partial \overline { { { \sigma } } } _ { i } / \partial H _ { j } ) \delta H _ { j } \right] .
+\end{equation}
+为了简便起见，我们令所有 \(\delta H_{j}\) 相同；于是
+\begin{equation}\tag{12.11.26}\label{eq:12.11.26}
+( \delta \overline { { { M } } } / \delta H ) = \mu \sum _ { i } \sum _ { j } ( \partial \overline { { { \sigma } } } _ { i } / \partial H _ { j } ) .
+\end{equation}
+将此与 \autoref{eq:12.10.10} 进行比较，我们推断出 \((\partial\overline{\sigma}_i/\partial H_j)=\beta\mu g(i,j)\)，进而 \((\partial\overline{\sigma}_i/\partial h_j)=g(i,j)\)。
+这正是最初为流体推导出的著名奥恩斯坦-泽尔尼克公式。
+现在，对 \(\tilde{g}(k)\) 进行逆傅里叶变换，我们得到（忽略那些对当前论证并不至关重要的数值因子）
+\begin{equation}\tag{12.11.27}\label{eq:12.11.27}
+g ( r ) \sim \int \frac { e ^{- i k \cdot r} } { t + c ^{\prime} a ^{2} k ^{2} } d ^{d} ( k a )
+\end{equation}
+\begin{equation}\tag{12.11.28}\label{eq:12.11.28}
+\sim \int _ { 0 } ^{\infty} \frac { a ^{d} } { t + c ^{\prime} a ^{2} k ^{2} } \left( \frac { 1 } { k r } \right) ^{( d - 2 ) / 2} J _ { ( d - 2 ) / 2 } ( k r ) k ^{d - 1} d k ;
+\end{equation}
+参见附录~C中的式子（8）和（11）。式（25b）中的积分已列于表格中；请参阅格拉德施泰因与雷日克（1965，第686页）。我们得到
+\begin{equation}\tag{12.11.29}\label{eq:12.11.29}
+g ( r ) \sim \left( \frac { a ^{2} } { \xi r } \right) ^{( d - 2 ) / 2} K _ { ( d - 2 ) / 2 } \left( \frac { r } { \xi } \right)  \{ \xi = a ( c ^{\prime} / t ) ^{1 / 2} \} ,
+\end{equation}
+\(K_{\mu}(x)\) 是一种修正贝塞尔函数。当 \(x \gg 1\) 时，\(K_{\mu}(x) \sim x^{-1/2}e^{-x}\)；因此，式（26）给出
+\begin{equation}\tag{12.11.30}\label{eq:12.11.30}
+g ( r ) \sim \frac { a ^{d - 2} } { \xi ^{( d - 3 ) / 2} r ^{( d - 1 ) / 2} } e ^{- r / \xi}  ( r \gg \xi ) .
+\end{equation}
+另一方面，当 \(x \ll 1\) 时，对于 \(\mu > 0\)，\(K_{\mu}(x) \sim x^{-\mu}\)；式（26）则给出
+\begin{equation}\tag{12.11.31}\label{eq:12.11.31}
+g ( r ) \sim \frac { a ^{d - 2} } { r ^{d - 2} }  ( r \ll \xi ; d > 2 ) .
+\end{equation}
+在特殊情况下 \(d=2\) 时，我们得到
+\begin{equation}\tag{12.11.32}\label{eq:12.11.32}
+g ( r ) \sim \ln ( \xi / r )  ( r \ll \xi ; d = 2 ) .
+\end{equation}
+值得注意的是，当 \(d=3\) 时，式（26）的简化程度会显著提升。由于对于所有 \(x\)，\(K_{1/2}(x)\) 都恰好等于 \((\pi/2x)^{1/2}e^{-x}\)，
+\begin{equation}\tag{12.11.33}\label{eq:12.11.33}
+g ( r ) | _ { d = 3 } \sim \frac { a } { r } e ^{- r / \xi}
+\end{equation}
+对于所有 \(r\)。式（30）是奥恩斯坦与泽尔尼克的又一重要成果。
+显然，此处出现的量 \(\xi\) 是衡量"系统中自旋-自旋（或密度-密度）相关性所延伸的距离"的指标——也因此得名"相关长度"。只要 \(T\) 显著高于 \(T_{c}\)，\(\xi = O(a)\)；参见式（26）。然而，随着 \(T\) 接近 \(T_{c}\)，\(\xi\) 会无限增大——最终在 \(T = T_{c}\) 时发散。由此产生的奇点同样属于幂律型：
+\begin{equation}\tag{12.11.34}\label{eq:12.11.34}
+\xi \sim a t ^{- 1 / 2}  ( t \gtrsim 0 ) .
+\end{equation}
+\(\xi\) 在 \(T=T_{c}\) 处的发散，或许是我们对临界现象有更全面理解时所掌握的最重要线索。随着 \(\xi\) 趋向无穷大，相关性将扩展至整个系统，为长程秩序的传播铺平道路（尽管导致这一现象的根本微观相互作用本身却是短程的）。此外，由于相关性在系统中延伸至宏观尺度，任何在微观层面区分不同系统结构细节的现象都将变得不再重要，从而导向普遍性的行为！
+回到式子（13）和（24），我们发现 \(\chi\) 中的奇点确实属于均场理论所预期的类型，即
+\begin{equation}\tag{12.11.35}\label{eq:12.11.35}
+\chi \sim \tilde { g } ( 0 ) \sim t ^{- 1}  ( t \gtrsim 0 ) .
+\end{equation}
+鉴于上述结果，我们可以写出
+\begin{equation}\tag{12.11.36}\label{eq:12.11.36}
+\frac { 1 } { \tilde { g } ( k ) } \sim \frac { 1 } { \chi } ( 1 + \xi ^{2} k ^{2} ) .
+\end{equation}
+在所谓的奥恩斯坦-泽尔尼克分析中，我们绘制 \(1/\tilde{g}(k)\)（或 \(1/I(k)\)，其中 \(I(k)\) 是在角度 \(\theta\) 处散射的光强，详见 \autoref{eq:12.10.1}）在临界区域与 \(k^2\) 的关系图。对于小 \(k\)（即 \(ka \lesssim 0.1\)，上述处理成立的范围），数据点几乎呈一条直线，其与纵轴的交点所确定的 \(\chi(t)\) 值即可用来计算。随着 \(t\) 趋近于 0，该交点趋于零，但随后的等温线仍大致彼此平行；显然，斜率的减小有助于确定 \(\xi(t)\)。在 \(t \simeq 0\) 时，这些图谱显示出轻微的向下弯曲，表明偏离了 \(k^2\) 法则，转而进入了 \(k\) 的幂次略低于 2 的情形。最后，关于本节前文图~12.13 中的 \(I(\theta;T)\) 图，根据 \autoref{eq:12.11.24}，曲线的峰值应出现在 \(t=0\)，且峰值的高度应为 \(\sim k^{-2}\)（即基本上 \(\sim \theta^{-2}\)）；因此，依据 \(\tilde{g}(k)\) 的平均场表达式，\autoref{eq:12.10.3} 中的指数 \(\lambda_1\) 应为 2，而 \(\lambda_2\) 则应为 0。
+\section{\texorpdfstring{临界指数 \(\nu\) 和 \(\eta\)}{临界指数 \textbackslash nu 和 \textbackslash eta}}\label{ux4e34ux754cux6307ux6570-nu-ux548c-eta}
+根据平均场理论，\(\xi\) 在 \(T=T_{c}\) 时的发散行为由幂律（12.11.31）所支配，其临界指数为 \(\frac{1}{2}\)。然而，我们预期实际系统中的实验数据可能并不完全符合这一规律。因此，我们引入了一个新的临界指数 \(\nu\)，使得
+\begin{equation}\tag{12.12.1}\label{eq:12.12.1}
+\xi \sim t ^{- \nu}  ( h \to 0 , t \stackrel { > } { \sim } 0 ) .
+\end{equation}
+秉承标度假设的精神，参见第 12.10 节，对于 \(t \lesssim 0\) 的对应指数 \(\nu'\) 将与 \(\nu\) 相同。表 12.1 在第 12.7 节中显示
+从多种不同系统中获得的 \(\nu\) 实验结果表明：尽管各系统间 \(\nu\) 的观测值变化极小，但它们与平均场理论的预测值之间仍存在显著差异。
+就相关函数而言，对于 \(t \gtrsim 0\) 的情况，可以用一类类似于 \autoref{eq:12.11.27} 的规律很好地加以描述，即
+\begin{equation}\tag{12.12.2}\label{eq:12.12.2}
+g ( r ) \sim e ^{- r / \xi ( t )} \times \mathrm { s o m e ~ p o w e r ~ o f ~ } r  ( t \gtrsim 0 ) ,
+\end{equation}
+其中 \(\xi(t)\) 由 \autoref{eq:12.11.1} 给出。在这一 regime 下，\(g(r)\) 随 \(r\) 的变化主要受指数项的支配，因此当 \(r\) 超过 \(\xi\) 时，\(g(r)\) 会迅速下降（通常 \(\xi\) 的大小约为晶格常数 \(a\)）。随着 \(t\) 趋近于 0，进而 \(\xi\) 趋近于无穷大，\(g(r)\) 的行为预计将类似于 \autoref{eq:12.11.28} 或 \autoref{eq:12.11.29}。然而，现在出现了一个问题：在二维伊辛模型中，我们已获得了 \(T = T_c\) 时 \(g(r)\) 的精确表达式（参见第 13.4 节），根据该表达式，
+\begin{equation}\tag{12.12.3}\label{eq:12.12.3}
+g ( r ) \sim r ^{- 1 / 4}  ( d = 2 , n = 1 , t = 0 ) ,
+\end{equation}
+这与平均场表达式 \autoref{eq:12.11.29} 截然不同。因此，我们对经典结果进行了推广，以
+\begin{equation}\tag{12.12.4}\label{eq:12.12.4}
+g ( r ) \sim r ^{- ( d - 2 + \eta )}  ( t = 0 ) ,
+\end{equation}
+引入了另一个关键的指数——\(\eta\)。显然，二维伊辛模型的\(\eta\)值为\(\frac{1}{4}\)，这一结果甚至可以通过对某些实际上为二维系统的实验加以验证。表12.1列出了三维某些系统中\(\eta\)的实验值；通常情况下，\(\eta\)会是一个很小的数值，因此要可靠地测量它相当困难。
+接下来，我们将推导出一些与指数\(\nu\)和\(\eta\)相关的标度关系。首先，我们以缩放形式写出相关函数\(g(r; t, h)\)及其傅里叶变换\(\tilde{g}(k; t, h)\)。为此，我们注意到：虽然\(h\)随\(t^{\Delta}\)变化，但\(r\)唯一自然可依的标度变量是\(\xi\)；相应地，\(r\)将随\(t^{-\nu}\)变化。因此，我们可以写成：
+\begin{equation}\tag{12.12.5}\label{eq:12.12.5}
+g ( r ; t , h ) \approx \frac { G ( r t ^{\nu} , h / t ^{\Delta} ) } { r ^{d - 2 + \eta} } ,  \tilde { g } ( k ; t , h ) \approx \frac { \tilde { G } ( k / t ^{\nu} , h / t ^{\Delta} ) } { k ^{2 - \eta} } ,
+\end{equation}
+其中，函数\(G(x,y)\)和\(\tilde{G}(z,y)\)，如同指数\(\Delta\)、\(\nu\)和\(\eta\)一样，对于某一特定的普适类而言都是通用的；在式（5）中，为了简化起见，我们已将那些在不同系统之间因类别而异的非通用参数予以省略。在场强为零（\(h=0\)）的情况下，式（5）可简化为：
+\begin{equation}\tag{12.12.6}\label{eq:12.12.6}
+g ( r ; t , 0 ) \approx \frac { G _ { 0 } ( r t ^{\nu} ) } { r d - 2 + \eta } ,  \tilde { g } ( k ; t , 0 ) \approx \frac { \tilde { G } _ { 0 } ( k / t ^{\nu} ) } { k ^{2 - \eta} } ,
+\end{equation}
+其中，\(G_{0}(x)\)和\(\tilde{G}_{0}(z)\)同样具有普遍性。在临界点\((h=0, t=0)\)，我们只需得到：
+\begin{equation}\tag{12.12.7}\label{eq:12.12.7}
+g _ { c } ( r ) \sim \frac { 1 } { r ^{d - 2 + \eta} } ,  \tilde { g } _ { c } ( k ) \sim \frac { 1 } { k ^{2 - \eta} } .
+\end{equation}
+现在，我们回顾 \autoref{eq:12.11.12}，该式将\(\chi\)与\(g(\boldsymbol{r})\)在\(d\boldsymbol{r}\)上的积分联系起来，并将 \autoref{eq:12.12.6} 代入其中。我们忽略非通用参数以及数值因子后，得到：
+\begin{equation}\tag{12.12.8}\label{eq:12.12.8}
+\chi \sim \int \frac { G _ { 0 } ( r t ^{\nu} ) } { r ^{d - 2 + \eta} } r ^{d - 1} \, d r .
+\end{equation}
+通过变量替换，我们得到：
+\begin{equation}\tag{12.12.9}\label{eq:12.12.9}
+\chi \sim t ^{- ( 2 - \eta ) \nu} .
+\end{equation}
+借助\(\chi\)的标准行为，我们得出：
+\begin{equation}\tag{12.12.10}\label{eq:12.12.10}
+\gamma = ( 2 - \eta ) \nu .
+\end{equation}
+值得注意的是，同样的标度关系也可以通过引用 \autoref{eq:12.11.13} 和 \autoref{eq:12.12.7} 来获得；其论证思路是：在极限\(k \to 0\)时，函数\(\tilde{G}_0(z)\)必须满足\(\sim z^{2-\eta}\)（从而消去了\(k\)），最终得到的结果与 \autoref{eq:12.12.9} 完全一致。顺便一提，在临界区域，
+\begin{equation}\tag{12.12.11}\label{eq:12.12.11}
+\chi \sim \xi ^{2 - \eta} .
+\end{equation}
+式（10）与费舍尔不等式（1969）相一致。
+\begin{equation}\tag{12.12.12}\label{eq:12.12.12}
+\gamma \leq ( 2 - \eta ) \nu ,
+\end{equation}
+显然，该模型对平均场指数（\(\gamma=1\)、\(\nu=\frac{1}{2}\)、\(\eta=0\)）感到十分满意；同时，它与表12.1中先前给出的实验数据也高度吻合。事实上，当已知\(\gamma\)和\(\nu\)时，通过这一关系式从\(\eta\)这一难以捉摸的指数中提取\(\eta\)的方法，远比直接通过实验测定\(\eta\)要高效得多。顺便一提，\(\eta\)的存在也解释了奥恩斯坦-泽尔尼克图中\(1/\tilde{g}(k)\)与\(k^2\)的关系在\(k\to0\)时呈现出的轻微向下弯曲现象——因为此时\(1/\tilde{g}(k)\)的合适表达式为：
+\begin{equation}\tag{12.12.13}\label{eq:12.12.13}
+\frac { 1 } { \tilde { g } ( k ) } \sim \frac { 1 } { \chi } ( 1 + \xi ^{2 - \eta} k ^{2 - \eta} ) ,
+\end{equation}
+而非 \autoref{eq:12.11.33}。
+接下来，我们将推导出另一条涉及\(\nu\)的指数关系；不过，首先需要注意的是，迄今为止所推导出的所有指数关系均未明确依赖于系统的维度\(d\)（尽管各指数的实际数值确实随\(d\)而变化）。然而，有一条重要的关系却明确地将\(d\)纳入其中。为此，让我们先来直观地理解一下\ldots\ldots{}
+在系统内部（例如磁性系统）中，当\(t\to0\)时，情况会如何发展？在某一时刻，相关长度\(\xi\)会显著大于原子间距，从而导致交替磁化方向的磁畴开始出现。我们越接近临界点，这些磁畴的尺寸就越大；事实上，可以说任意一个此类磁畴的体积\(\Omega\)大约为\(\xi^d\)。而系统自由能密度的奇异部分，或者说这些磁畴中的任何一个，则由下式给出，参见 \autoref{eq:12.10.7}，其中\(h=0\)：
+\begin{equation}\tag{12.12.14}\label{eq:12.12.14}
+f ^{( s )} ( t ) \sim t ^{2 - \alpha} ,
+\end{equation}
+该部分在\(t\to0\)时会趋近于零。与此同时，磁畴的体积\(\Omega\)则会趋于无穷大。自然而然地，我们期望作为密度的\(f^{(s)}\)会随着\(\Omega^{-1}\)而趋近于零，即：
+\begin{equation}\tag{12.12.15}\label{eq:12.12.15}
+f ^{( s )} ( t ) \sim \Omega ^{- 1} \sim \xi ^{- d} \sim t ^{d _ { \nu} } .
+\end{equation}
+将 \autoref{eq:12.11.13} 与 \autoref{eq:12.11.14} 进行比较，我们得到了所需的这一关系：
+\begin{equation}\tag{12.12.16}\label{eq:12.12.16}
+d \nu = 2 - \alpha ,
+\end{equation}
+这一关系通常被称为"超标度关系"——旨在强调：它超越了第12.10节中普通的标度理论框架，且在不借助其他因素（如磁畴体积\(\Omega\)）的情况下，根本无法从其推导出来。
+\autoref{eq:12.11.15} 中的这一关系与约瑟夫森不等式（1967年）相一致：
+\begin{equation}\tag{12.12.17}\label{eq:12.12.17}
+d \nu \geq 2 - \alpha ,  d \nu ^{\prime} \geq 2 - \alpha ^{\prime} ,
+\end{equation}
+由索卡尔（1981）进行了严格证明；当然，标度理论并不会区分与 \(t>0\) 相关的指数与与 \(t<0\) 相关的指数。值得注意的是，经典指数（\(\nu=\frac{1}{2},\alpha=0\)）仅在 \(d=4\) 时满足式（15），这表明超标度关系——即式（15）以及由此衍生出的所有其他关系——其地位远不同于那些未明确涉及 \(d\) 的其他标度关系。将在第~14~章中详述的重整化群理论，揭示了为何超标度关系在相当普遍的情况下应予期待，为何它们通常适用于 \(d<4\)，却在 \(d>4\) 时失效；另请参见第12.13节。读者可以验证，式（15）与表12.1中的实验数据吻合得相当好，且当 \(d=3\) 时亦然；此外，通过精确求解不同模型，或几乎精确求解这些模型，如第~13~章所展示的那样，理论推导出的指数同样符合该式。
+将式（15）与其他标度关系相结合，详见第12.10节，我们可写出
+\begin{equation}\tag{12.12.18}\label{eq:12.12.18}
+d \nu = 2 - \alpha = 2 \beta + \gamma = \beta ( \delta + \mathbf { 1 } ) = \gamma ( \delta + \mathbf { 1 } ) / ( \delta - \mathbf { 1 } ) .
+\end{equation}
+由此可知，
+\begin{equation}\tag{12.12.19}\label{eq:12.12.19}
+2 - \eta = \gamma / \nu = d ( \delta - 1 ) / ( \delta + 1 ) ,
+\end{equation}
+这与巴金汉-冈顿不等式（1969）相一致。
+\begin{equation}\tag{12.12.20}\label{eq:12.12.20}
+2 - \eta \leq d ( \delta - 1 ) / ( \delta + 1 ) .
+\end{equation}
+请注意，实验观测表明，在三维磁性体系中，\(\delta < 4.8\)，这意味着 \(\eta \geq 0.034\)。
+\section{最后一瞥：平均场理论}\label{ux6700ux540eux4e00ux77a5ux5e73ux5747ux573aux7406ux8bba}
+现在我们回到这个问题：为什么平均场理论无法真实反映实际系统中临界现象的本质？简而言之，因为它忽略了涨落。正如第12.11节所强调的那样，一个给定系统中微观组分之间的相关性正是相变现象的核心所在，正是通过这些相关性，系统才得以获得长程有序结构（即使微观相互作用本身是短程的）。与此同时，相关性与涨落之间存在着如此直接的联系，正如 \autoref{eq:12.11.6} 所示，二者彼此相伴而生，并且随着临界点的临近，涨落逐渐成为系统中占据主导地位的特征。因此，忽视涨落正是平均场理论的一个严重缺陷。
+现在的问题是：平均场理论究竟是否始终有效？换句话说，涨落真的可以被忽略吗？为了回答这一问题，我们回顾波动敏感性关系（12.11.10a），即
+\begin{equation}\tag{12.13.1}\label{eq:12.13.1}
+\chi = ( \overline { { M ^{2} } } - \overline { { M } } ^{2} ) / k T = \overline { { ( \Delta M ) ^{2} } } / k T
+\end{equation}
+并将其改写为
+\begin{equation}\tag{12.13.2}\label{eq:12.13.2}
+\overline { { ( \Delta M ) ^{2} } } / \overline { { M } } ^{2} = k T \chi / \overline { { M } } ^{2} .
+\end{equation}
+如今，要使忽略涨落的行为成立，我们必须具备：
+\begin{equation}\tag{12.13.3}\label{eq:12.13.3}
+k T \chi \ll \overline { { { M } } } ^{2} .
+\end{equation}
+要求（3）通常被称为金茨堡准则（1960年）；如需更详尽地探讨该准则及其相关的物理实例，请参阅Als-Nielsen和Birgeneau（1977）。
+我们对一个体积为\(\Omega \sim \xi^{d}\)、接近但低于临界点的区域应用条件（3）；在此，我们假设系统为伊辛型系统（\(n=1\)），因此在\(t<0\)时，\(\xi\)是有限的。借助\(\chi\)和\(\overline{M}\)的幂律行为，我们得到
+\begin{equation}\tag{12.13.4}\label{eq:12.13.4}
+k T _ { c } ( A \xi ^{d} | t | ^{- \gamma} ) \ll ( B \xi ^{d} | t | ^{\beta} ) ^{2}  ( t \lesssim 0 ) ,
+\end{equation}
+其中\(A\)和\(B\)为正的常数。由于\(\xi \sim a|t|^{-\nu}\)，我们得出
+\begin{equation}\tag{12.13.5}\label{eq:12.13.5}
+| t | ^{d \nu - 2 \beta - \gamma} \ll B ^{2} a ^{d} / A k T _ { c } .
+\end{equation}
+鉴于标度关系\(\alpha + 2\beta + \gamma = 2\)，我们不妨改写为
+\begin{equation}\tag{12.13.6}\label{eq:12.13.6}
+| t | ^{d \nu - ( 2 - \alpha )} \ll D ,
+\end{equation}
+其中\(D\)为一个数量级约为1的正数。\^{}\{19\} 要使平均场理论（\(\nu=\frac{1}{2},\alpha=0\)）成立，条件（6）应变为
+\begin{equation}\tag{12.13.7}\label{eq:12.13.7}
+| t | ^{( d - 4 ) / 2} \ll D .
+\end{equation}
+现在，由于可以将\(|t|\)任意缩小，除非\(d > 4\)，否则条件（7）将被违反。因此，我们得出结论：平均场理论在\(d > 4\)时才成立；由此推论，当\(d \leq 4\)时，平均场理论便不再适用。
+上述结果仅适用于标量模型（\(n=1\)）。在第13.5节中，我们将看到，在球形模型的场景下——即当\(n\to\infty\)时——当\(d>4\)时，平均场理论的结果依然适用。这意味着，一旦\(d>4\)，波动就可以被忽略。而根据预期，随着\(n\)的减小，波动本应随之减小；因此，对于所有\(n\)而言，平均场理论在\(d>4\)时的适用性都应得以保持。
+通常情况下，当一个系统正在经历相变时，表达式（2）——该表达式用于衡量系统的相对波动幅度——的数值应大致为1。条件（6）则表明，指数\(\nu\)和\(\alpha\)遵循超标度关系
+\begin{equation}\tag{12.13.8}\label{eq:12.13.8}
+d \nu = 2 - \alpha .
+\end{equation}
+经验表明，当\(d<4\)时，这一关系确实得到了满足。当\(d=4\)时，平均场理论开始占据主导地位；此后，对于所有\(d>4\)，其临界指数均固定在平均场值上（这些值既不依赖于\(d\)，也不依赖于\(n\)）。维度\(d=4\)常被称作所研究系统类型中的上临界维数。
+对本节开头所提出的问题，另一种不同的思考方式是：考察系统的比热。根据平均场理论，在临界点处，系统的比热会发生跳跃式突变；而在实际系统中，比热却呈现出弱的发散行为。那么，问题来了：究竟是什么因素导致了这种被平均场理论所忽略的发散现象？答案再次在于"对涨落的忽视"。为了更清晰地理解这一点，我们来考察系统的内能——在没有外场作用的情况下，内能可表示为：
+\begin{equation}\tag{12.13.9}\label{eq:12.13.9}
+U = - J \left( \sum _ { \mathrm { n . n . } } \sigma _ { i } \sigma _ { j } \right) = - J \sum _ { \mathrm { n . n . } } \overline { { \sigma _ { i } \sigma _ { j } } } .
+\end{equation}
+在平均场理论中，我们用\(\overline{\sigma_{i}\sigma_{j}}\)替换为\(\overline{\sigma_{i}\sigma_{j}}(=\overline{\sigma}^{2})\)，如 \autoref{eq:12.5.5} 所示，这一替换导致比热出现了跳跃式突变，其幅度为\(\frac{3}{2}/Nk\)；参见 \autoref{eq:12.5.18}。
+在平均场理论中被忽略的U的涨落部分，可以写成：
+\begin{equation}\tag{12.13.10}\label{eq:12.13.10}
+U _ { f } = - J \sum _ { \mathrm { n . n . } } ( \overline { { \sigma _ { i } \sigma _ { j } } } - \overline { { \sigma } } _ { i } \overline { { \sigma } } _ { j } ) = - J \sum _ { \mathrm { n . n . } } g ( r _ { i j } ) ,
+\end{equation}
+其中，\(g(r)\)为自旋-自旋相关函数，我们可以使用平均场表达式 \autoref{eq:12.11.26} 来求解；因此，我们实际上是在利用平均场理论本身来预测其自身的局限性。由于 \autoref{eq:12.13.10} 中最近邻距离 \(r_{ij}\) 都远小于 \(\xi\)，人们很容易倾向于将 \(g(r_{ij})\) 用零阶近似 \autoref{eq:12.11.28} 来代替。然而，这种做法会得到一个与温度无关的项，而该项并不会对系统的比热产生贡献。因此，我们必须转向下一个近似形式，而这一近似可以通过使用渐近公式来获得。
+\begin{equation}\tag{12.13.11}\label{eq:12.13.11}
+\left\{ \begin{array}{ll} { \displaystyle { \frac { 1 } { 2 } } \Gamma ( \mu ) \left( \frac { 1 } { 2 } x \right) ^{- \mu} + \frac { 1 } { 2 } \Gamma ( - \mu ) \left( \frac { 1 } { 2 } x \right) ^{\mu} } & { \mathrm { f o r }  0 < \mu < 1 } \end{array} \right.
+\end{equation}
+\begin{equation}\tag{12.13.12}\label{eq:12.13.12}
+\left. K _ { \mu } ( x ) \right| _ { x \ll 1 } \approx \left\{ x ^{- 1} + \left( { \frac { 1 } { 2 } } x \right) \ln \left( { \frac { 1 } { 2 } } x \right) \right.
+\end{equation}
+\begin{equation}\tag{12.13.13}\label{eq:12.13.13}
+\left\{ \begin{array}{ll} { \displaystyle { \frac { 1 } { 2 } } \Gamma ( \mu ) \left( \frac { 1 } { 2 } x \right) ^{- \mu} - \frac { 1 } { 2 } \Gamma ( \mu - 1 ) \left( \frac { 1 } { 2 } x \right) ^{2 - \mu} } & { \mathrm { f o r }  \mu > 1 , } \end{array} \right.
+\end{equation}
+其中，\(\mu=(d-2)/2\)，且\(x=r_{ij}/\xi\)。\(U_{f}\)中随温度变化的部分，源自式（11）中的第二项（或更多项）；考虑到这里的\(\xi\)大约为\(a^{-1/2}\)，我们得到\(^{20}\)
+\begin{equation}\tag{12.13.14}\label{eq:12.13.14}
+( U _ { f } / N J ) _ { \mathrm { t h e r m a l } } \sim \left\{ \begin{array}{ll} { t ^{( d - 2 ) / 2} } & { \mathrm { f o r }  2 < d < 4 } \\{ t \ln ( 1 / t ) } & { \mathrm { f o r }  d = 4 } \\{ t } & { \mathrm { f o r }  d > 4 . } \end{array} \right.
+\end{equation}
+于是，对于\(d > 4\)，比热的奇异性确实是一种"跳跃式突变"，因此平均场理论在此情形下依然适用。而对于\(d = 4\)，\(C_f\)表现出对数型发散；而当\(d < 4\)时，则呈现幂律发散，这使得平均场理论在\(d \leq 4\)时不再适用。
+值得深思的是，波动-相关谱中的哪一部分\(\tilde{g}(k)\)，在\(t=0\)时对比热的发散起到了显著的贡献？为此，我们对以下内容进行了研究：
+它表明，对于\(d > 4\)，比热的奇异性确实是"跳跃式突变"，因此平均场理论在此情形下依然适用。而对于\(d = 4\)，\(C_f\)表现出对数型发散；而当\(d < 4\)时，则呈现幂律发散，这使得平均场理论在\(d \leq 4\)时不再适用。
+仔细观察波动-相关谱\(\tilde{g}(k)\)，会发现其中哪些部分对比热在\(t=0\)时的发散起到了关键作用。为此，我们对以下内容进行了研究：
+即\(-\partial\mathbf{g}(r_{ij})/\partial t\)这一量，它本质上决定了\(C_f\)在临界点附近的形态；参见 \autoref{eq:12.13.10}。利用 \autoref{eq:12.11.25}，我们得到
+\begin{equation}\tag{12.13.15}\label{eq:12.13.15}
+- \frac { \partial g ( r _ { i j } ) } { \partial t } \sim a ^{d} \int \frac { e ^{- i k \cdot r _ { i j} } } { t ^{2} ( 1 + \xi ^{2} k ^{2} ) ^{2} } k ^{d - 1} d k .
+\end{equation}
+如今，那些远大于 \(\xi^{-1}\) 的 \(k\) 值对这个积分的贡献微乎其微；唯一显著的贡献仅来自 \((0, k_{\max})\) 这一区间，其中 \(k_{\max} = O(\xi^{-1})\)；此外，由于 \(r_{ij} \ll \xi\)，这些 \(k\) 值对应的指数项基本上等于 1。因此，\autoref{eq:12.13.15} 可以写成：
+\begin{equation}\tag{12.13.16}\label{eq:12.13.16}
+- \frac { \partial g ( r _ { i j } ) } { \partial t } \sim a ^{d} \int \frac { k ^{d - 1} d k } { t ^{2} ( 1 + \xi ^{2} k ^{2} ) ^{2} }
+\end{equation}
+对于 \(d < 4\)，该表达式呈 \((a/\xi)^d t^{-2} \sim t^{(d-4)/2}\) 的形式；可与 \autoref{eq:12.12.13} 进行对比。由此可见，问题临界行为中最为重要的贡献，源自那些长度尺度 \(k^{-1}\) 约为 \(\xi\) 或更长的涨落；而长度尺度较短的涨落所贡献的贡献几乎可以忽略不计。事实上，只有后者才有可能在原子尺度上捕捉到系统的结构细节；由于它们在引发这一现象的过程中并不起重要作用，因此临界行为的精确本质与系统结构细节无关。这也解释了为什么尽管宏观层面的系统结构差异巨大，但在临界行为方面却可能归入同一个普适类。
+\section{问题}\label{ux95eeux9898_chap12}
+12.1. 假设在威耳姆斯展开式中，
+\begin{equation}\tag{12.13.17}\label{eq:12.13.17}
+\frac { P \nu } { k T } = 1 - \sum _ { j = 1 } ^{\infty} \frac { j } { j + 1 } \beta _ { j } \left( \frac { \lambda ^{3} } { \nu } \right) ^{j} ,
+\end{equation}
+其中 \(\beta_{j}\) 是系统的不可约簇积分，而在临界区域，只有 \(j=1\) 和 \(j=2\) 的项才具有可观测的意义。求出临界点处 \(\beta_{1}\) 与 \(\beta_{2}\) 之间的关系，并证明 \(kT_{c}/P_{c}\nu_{c}=3\)。
+12.2. 假设采用迪特里奇状态方程，
+\begin{equation}\tag{12.13.18}\label{eq:12.13.18}
+P ( \nu - b ) = k T \exp ( - a / k T \nu ) ,
+\end{equation}
+用参数 \(a\) 和 \(b\) 来计算给定系统的临界常数 \(P_{c}\)、\(\nu_{c}\) 和 \(T_{c}\)，并证明量 \(kT_{c}/P_{c}v_{c}=e^{2}/2\simeq3.695\)。
+进一步证明，关于迪特里奇状态方程，以下陈述均成立：
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  该方程给出的第二威耳姆斯系数 \(B_{2}\) 与范德华方程所得结果完全一致。
+\item
+  对于所有 \(P\) 值以及 \(T \geq T_{c}\)，该方程均能得出唯一的 \(\nu\) 值。
+\item
+  在 \(T < T_{c}\) 时，对于某些 \(P\) 值，存在三种可能的 \(\nu\) 值；而临界体积 \(\nu_{c}\) 总是介于这三种体积中的最大值与最小值之间。
+\item
+  迪特里奇状态方程所得到的临界指数，与范德华方程所得结果完全一致。
+\end{enumerate}
+12.3. 考虑一种遵从修正范德华状态方程的非理想气体，
+\begin{equation}\tag{12.13.19}\label{eq:12.13.19}
+( P + a / v ^{n} ) ( v - b ) = R T  ( n > 1 ) .
+\end{equation}
+考察该系统的临界常数 \(P_{c}\)、\(\nu_{c}\) 和 \(T_{c}\)，以及临界指数 \(\beta\)、\(\gamma\)、\(\gamma'\) 和 \(\delta\) 是如何随系统中粒子数 \(n\) 的变化而变化的。
+12.4. 根据 \autoref{eq:12.5.2}，定义
+\begin{equation}\tag{12.13.20}\label{eq:12.13.20}
+p = ( 1 + L ) / 2  { \mathrm { a n d } }  q = ( 1 - L ) / 2  ( - 1 \leq L \leq 1 )
+\end{equation}
+作为在由 \(N\) 个自旋构成的晶格中随机选取一个自旋时，该自旋为"向上"或"向下"的概率。随后，系统的配分函数可表示为
+\begin{equation}\tag{12.13.21}\label{eq:12.13.21}
+Q ( B , T ) = \sum _ { L } g ( L ) e ^{\beta N ( \frac { 1} { 2 } q J L ^{2} + \mu B L ) } ,
+\end{equation}
+其中 \(g(L)\) 是与特定值 \(L\) 相关的多重度因子，即，
+\begin{equation}\tag{12.13.22}\label{eq:12.13.22}
+g ( L ) = N ! / ( N p ) ! ( N q ) ! ;
+\end{equation}
+请注意，在此处编写哈密顿量时，我们假定了随机混合的假设，据此，
+\begin{equation}\tag{12.13.23}\label{eq:12.13.23}
+( N _ { + + } + N _ { -- } - N _ { + - } ) = \frac { 1 } { 2 } q N ( p ^{2} + q ^{2} - 2 p q ) = \frac { 1 } { 2 } q N L ^{2} .
+\end{equation}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  确定使 \autoref{eq:12.13.21} 中项最大化的 \(L\) 值 \(L^{*}\)。并验证 \(L^{*}\) 与 \autoref{eq:12.5.10} 所给出的平均值 \(\overline{L}\) 完全一致。
+\item
+  写出系统的自由能 \(A\) 和内能 \(U\)，并证明熵 \(S\) 满足以下关系：
+\end{enumerate}
+\begin{equation}\tag{12.13.24}\label{eq:12.13.24}
+S ( B , T ) = - N k ( p ^{*} \ln p ^{*} + q ^{*} \ln q ^{*} ) ,
+\end{equation}
+其中 \(p^{*}=p(L^{*})\)，\(q^{*}=q(L^{*})\)。
+12.5. 利用第 12.4 节所建立的对应关系，将前一问题的结果应用于晶格气体的情形。特别地，证明压力 \(P\) 和每粒子体积 \(\nu\) 分别为
+\begin{equation}\tag{12.13.25}\label{eq:12.13.25}
+P = \mu B - \frac { 1 } { 8 } q \varepsilon _ { 0 } \left( 1 + \overline { { { L } } } ^{2} \right) - \frac { 1 } { 2 } k T \ln \left( \frac { 1 - \overline { { { L } } } ^{2} } { 4 } \right)
+\end{equation}
+和
+\begin{equation}\tag{12.13.26}\label{eq:12.13.26}
+\nu ^{- 1} = \frac { 1 } { 2 } ( { \bf 1 } \pm \overline { { { L } } } ) .
+\end{equation}
+验证该系统的临界常数为：\(T_{c}=q\varepsilon_{0}/4k\)，\(P_{c}=kT_{c}(\ln2-\frac{1}{2})\)，且 \(\nu_{c}=2\)，因此，量 \(kT_{c}/P_{c}\nu_{c}=1/(\ln4-1)\simeq2.589\)。
+12.6. 考虑一种具有无限范围相互作用的伊辛模型，其中每个自旋都以相同强度与其他所有自旋相互作用：
+\begin{equation}\tag{12.13.27}\label{eq:12.13.27}
+H = - c \sum _ { i < j } \sigma _ { i } \sigma _ { j } - \mu B \sum _ { i } \sigma _ { i } .
+\end{equation}
+用参数 \(L(=N^{-1}\Sigma_{i}\sigma_{i})\) 表示该哈密顿量，并证明在 \(N\to\infty\) 和 \(c\to0\) 的极限下，采用均场理论（其中 \(J=Nc/q\)）对于该模型而言是精确的。
+12.7. 在均场近似下，研究基于相互作用 \autoref{eq:12.3.6} 的铁磁体海森堡模型，并证明该模型同样会引发与伊辛模型中所遇到的相变类型相同的现象。
+模型。特别地，证明相变温度 \(T_{c}\) 和居里-魏斯常数 \(C\) 分别为
+\begin{equation}\tag{12.13.28}\label{eq:12.13.28}
+T _ { c } = \frac { q J } { k } \frac { 2 s ( s + 1 ) } { 3 }  \mathrm { a n d }  C = \frac { N ( g \mu _ { B } ) ^{2} } { V k } \frac { s ( s + 1 ) } { 3 } .
+\end{equation}
+请注意，比值 \(T_{c}/CV=2qJ/N(g\mu_{B})^{2}\) 是该问题的分子场常数；请将其与 \autoref{eq:12.5.8} 进行对比。
+12.8. 在平均场近似下，研究海森堡模型的自发磁化，并考察\(\overline{L}_{0}\)随温度\(T\)的变化规律：（i）在临界温度附近，即\((1-T/T_{c}) \ll 1\)时；（ii）在温度足够低的情况下，即\(T/T_{c} \ll 1\)时。将这些结果与伊辛模型中的 \autoref{eq:12.5.14} 和 \autoref{eq:12.5.15} 进行比较。
+在此关联中，需要指出的是，在极低温度下，实验数据与本文推导出的理论公式并不一致。相反，我们发现与公式\(\bar{L}_{0}=\{1-A(kT/J)^{3/2}\}\)的拟合度要好得多，其中\(A\)为一个数值常数（在简单立方晶格的情况下，其值为0.1174）。该公式被称为布洛赫的\(T^{3/2}\)定律，可由铁磁性自旋波理论推导得出；参见Wannier（1966），第15.5节。
+12.9. 反铁磁体的特征在于交换积分\(J\)为负值，这使得相邻自旋倾向于彼此反平行排列。假设某一晶格结构可以被划分为两个相互渗透的子晶格，分别记作\(a\)和\(b\)，使得属于每个子晶格——即\(a和\)b——的自旋都倾向于朝向同一方向排列，而这两个子晶格中自旋的排列方向则彼此相反。利用伊辛模型以及海森堡模型的相互作用，并在平均场近似下，计算此类晶格在高温下的顺磁性磁化率。
+12.10. 反铁磁体的奈尔温度\(T_{N}\)定义为：在该温度以下，子晶格\(a\)和\(b\)分别具有非零的自发磁化\(M_{a}\)和\(M_{b}\)。求解前一个问题所描述模型的\(T_{N}\)。
+12.11. 假设晶体晶格中的每一个原子均可处于多种内部状态之中（可用符号\(\sigma\)表示），且处于状态 \(\sigma'\) 的原子与其最近邻处于状态 \(\sigma''\) 的原子之间的相互作用能记作 \(u(\sigma',\sigma'')=u(\sigma'',\sigma')\)。设 \(f(\sigma)\) 为原子处于特定状态 \(\sigma\) 的概率，且与原子最近邻所处的状态无关。由此，晶格的相互作用能与晶格的熵可分别写成：
+\begin{equation}\tag{12.13.29}\label{eq:12.13.29}
+E = \frac { 1 } { 2 } q N \sum _ { \sigma ^{\prime} , \sigma ^{\prime \prime} } u ( \sigma ^{\prime} , \sigma ^{\prime \prime} ) f ( \sigma ^{\prime} ) f ( \sigma ^{\prime \prime} )
+\end{equation}
+以及
+\begin{equation}\tag{12.13.30}\label{eq:12.13.30}
+S / N k = - \sum _ { \sigma } f ( \sigma ) \ln f ( \sigma ) ,
+\end{equation}
+分别。通过最小化自由能（\(E-TS\)），证明函数\(f(\sigma)\)的平衡值由下式决定：
+\begin{equation}\tag{12.13.31}\label{eq:12.13.31}
+f ( \sigma ) = C \exp \{ - ( q / k T ) \Sigma _ { \sigma ^{\prime} } u ( \sigma , \sigma ^{\prime} ) f ( \sigma ^{\prime} ) \} ,
+\end{equation}
+其中，\(C\) 为归一化常数。进一步证明，在特殊情况下，当 \(u(\sigma',\sigma'')=-J\sigma'\sigma''\) 时（其中 \(\sigma\) 可以取 \(+1\) 或 \(-1\)），该方程可简化为 Weiss 方程 \autoref{eq:12.5.11}，且
+\[
+f(\sigma)=\frac{1}{2}\left(1+\overline{L}_{0}\sigma\right).
+\]
+12.12. 考虑一种二元合金，其中含有 \(N_A\) 个 A 类型原子和 \(N_B\) 个 B 类型原子，因此两种组分的相对浓度分别为：\(x_A = N_A/(N_A + N_B) \leq \frac{1}{2}\)，\(x_B = N_B/(N_A + N_B) \geq \frac{1}{2}\)。远程有序度 \(X\) 的值为：
+\begin{equation}\tag{12.13.32}\label{eq:12.13.32}
+\begin{aligned}
+\begin{bmatrix} A \\ a \end{bmatrix} &= \frac{1}{2} N x_{A}(1+X), \qquad
+\begin{bmatrix} A \\ b \end{bmatrix} = \frac{1}{2} N x_{A}(1-X), \\
+\begin{bmatrix} B \\ a \end{bmatrix} &= \frac{1}{2} N (x_{B}-x_{A}X), \qquad
+\begin{bmatrix} B \\ b \end{bmatrix} = \frac{1}{2} N (x_{B}+x_{A}X) .
+\end{aligned}
+\end{equation}
+其中 \(N = N_A + N_B\)，而符号 \(\begin{bmatrix} A \\ a \end{bmatrix}\) 表示在子晶格 \(a\) 中占据的 A 类型原子的数量，以此类推。在布喇格--威廉姆斯近似下，不同种类的最近邻对数量可以直接写出；例如，
+\begin{equation}\tag{12.13.33}\label{eq:12.13.33}
+\left[ { \frac { A A } { a b } } \right] = { \frac { 1 } { 2 } } q N \cdot x _ { A } ( 1 + X ) \cdot x _ { A } ( 1 - X ) ,
+\end{equation}
+诸如此类。晶格的构型能则由 \autoref{eq:12.4.9} 得到。在同一近似下，晶格的熵为 \(S = k \ln W\)，其中
+\begin{equation}\tag{12.13.34}\label{eq:12.13.34}
+W = \frac{\left(\frac{1}{2}N\right)!}{\left[ A_a \right]!\left[ B_a \right]!} \cdot \frac{\left(\frac{1}{2}N\right)!}{\left[ A_b \right]!\left[ B_b \right]!} .
+\end{equation}
+通过最小化晶格的自由能，证明平衡状态下 \(X\) 的值由下式决定：
+\begin{equation}\tag{12.13.35}\label{eq:12.13.35}
+\frac { X } { x _ { B } + x _ { A } X ^{2} } = \operatorname { t a n h }  \left( \frac { 2 q x _ { A } \varepsilon } { k T } X \right) ;  \varepsilon = \frac { 1 } { 2 } \left( \varepsilon _ { 11 } + \varepsilon _ { 22 } \right) - \varepsilon _ { 12 } > 0 .
+\end{equation}
+需要注意的是，在浓度相等的特殊情况下（\(x_{A} = x_{B} = \frac{1}{2}\)），该方程会简并为更为熟悉的形式
+\begin{equation}\tag{12.13.36}\label{eq:12.13.36}
+X = \tanh \left( \frac{q\varepsilon}{2kT} X \right) .
+\end{equation}
+进一步证明，系统的转变温度由下式给出：
+\begin{equation}\tag{12.13.37}\label{eq:12.13.37}
+T _ { c } = 4 x _ { A } ( 1 - x _ { A } ) T _ { c } ^{0} ,
+\end{equation}
+其中 \(T_{c}^{0}=(q\varepsilon/2k)\) 是在浓度相等情况下的转变温度。
+【注意：在柯克伍德近似中（参见 Kubo（1965），问题 5.19），\(T_{c}^{0}\) 实际上等于 \((\varepsilon/k)\{1-\sqrt{(1-(4/q)]}\}^{-1}\)，这一表达式可写成 \((q\varepsilon/2k)(1-1/q+\cdots)\)。在这一阶次上，贝特近似同样得出相同的结果。】
+12.13。考虑由 \(N_A\) 个类型为 \(A\) 的原子和 \(N_B\) 个类型为 \(B\) 的原子组成的两组分溶液，这些原子应随机分布在单晶格的 \(N = N_A + N_B\) 个晶位上。设最近邻对 \(AA\)、\(BB\) 和 \(AB\) 的能量分别为 \(\varepsilon_{11}\)、\(\varepsilon_{22}\) 和 \(\varepsilon_{12}\)，则在布拉格-威廉姆斯近似下，写出该系统的自由能，并求出两种组分的化学势 \(\mu_A\) 和 \(\mu_B\)。接下来，证明如果 \(\varepsilon = (\varepsilon_{11} + \varepsilon_{22} - 2\varepsilon_{12}) < 0\)，即同种原子之间表现出更强的邻近亲和力，那么在低于某一临界温度 \(T_c\) 的温度下（其表达式为 \(q|\varepsilon|/2k\)），该溶液将分离成两个相对浓度不同的相。
+【注：有关硬球玻色子与费米子异构体混合物中相分离的研究，以及该研究对氦\(^{3}\)--氦\(^{4}\)溶液实际行为的适用性，请参阅 Cohen 和 van Leeuwen（1960, 1961）。】
+12.14。对布拉格-威廉姆斯近似 \autoref{eq:12.5.29} 进行修改，加入一个短程有序参数 \(s\)，使得
+\begin{equation}\tag{12.13.38}\label{eq:12.13.38}
+\begin{array}{rlr} & { } & { \overline { { N } } _ { + + } = \frac { 1 } { 2 } q N \gamma \left( \frac { 1 + \overline { { L } } } { 2 } \right) ^{2} ( 1 + s ) , \, \overline { { N } } _ { -- } = \frac { 1 } { 2 } q N \gamma \left( \frac { 1 - \overline { { L } } } { 2 } \right) ^{2} ( 1 + s ) , } \\& { } & { \overline { { N } } _ { + - } = 2 \cdot \frac { 1 } { 2 } q N \gamma \left( \frac { 1 + \overline { { L } } } { 2 } \right) \left( \frac { 1 - \overline { { L } } } { 2 } \right) ( 1 - s ) . } \end{array}
+\end{equation}
+（a）根据最近邻对总数为 \(\frac{1}{2}qN\) 这一条件，求解 \(\gamma\)。（b）证明该模型的临界温度 \(T_{c}\) 为 \((1-s^{2})qJ/k\)。
+（c）确定在 \(T=T_{c}\) 时比热奇点的性质，并将你的结果与第12.5节的布拉格-威廉姆斯近似以及第12.6节的贝特近似进行比较。
+12.15。证明在贝特近似中，当 \(T=T_{c}\) 时，伊辛晶格的熵可表示为：
+\begin{equation}\tag{12.13.39}\label{eq:12.13.39}
+\frac { S _ { c } } { N k } = \ln 2 + \frac { q } { 2 } \ln \left( 1 - \frac { 1 } { q } \right) - \frac { q ( q - 2 ) } { 4 ( q - 1 ) } \ln \left( 1 - \frac { 2 } { q } \right) .
+\end{equation}
+将这一结果与布拉格-威廉姆斯近似所得的 \autoref{eq:12.5.20} 进行比较。
+12.16。考察贝特近似下伊辛模型在低场磁化率 \(\chi_{0}\) 的临界行为，并将你的结果与布拉格-威廉姆斯近似的 \autoref{eq:12.5.22} 进行对比。
+12.17。若函数 \(f(x)\) 在区间 \((a,b)\) 上满足以下性质，则称其为凹函数：
+\begin{equation}\tag{12.13.40}\label{eq:12.13.40}
+f \{ \lambda x _ { 1 } + ( 1 - \lambda ) x _ { 2 } \} \geq \lambda f ( x _ { 1 } ) + ( 1 - \lambda ) f ( x _ { 2 } ) ,
+\end{equation}
+其中 \(x_{1}\) 和 \(x_{2}\) 是区间 \((a,b)\) 内的任意两点，而 \(\lambda\) 是区间 \((0,1)\) 内的一个正数。这意味着连接点 \(x_{1}\) 和 \(x_{2}\) 的弦位于曲线 \(f(x)\) 的下方。请证明，这也意味着曲线 \(f(x)\) 在区间 \((a,b)\) 内的任意一点处的切线都位于曲线 \(f(x)\) 的上方；或者，等价地说，该区间内 \(f(x)\) 的二阶导数 \(\partial^{2}f/\partial x^{2}\) 均小于或等于零。
+12.18。鉴于热力学关系
+\begin{equation}\tag{12.13.41}\label{eq:12.13.41}
+C _ { V } = T V ( \partial ^{2} P / \partial T ^{2} ) _ { V } - T N ( \partial ^{2} \mu / \partial T ^{2} ) _ { V }
+\end{equation}
+对于一种流体，若\(\mu\)为系统的化学势，杨和杨（1964）指出，当\(C_V\)在\(T=T_c\)处出现奇点时，\((\partial^2P/\partial T^2)_V\)、\((\partial^2\mu/\partial T^2)_V\)，或二者同时出现奇点。通过以下方式定义一个指数\(\Theta\)：
+\begin{equation}\tag{12.13.42}\label{eq:12.13.42}
+( \partial ^{2} P / \partial T ^{2} ) _ { V } \sim ( T _ { c } - T ) ^{- \Theta}  ( T \lesssim T _ { c } ) ,
+\end{equation}
+并证明（格里菲斯，1965b）
+\begin{equation}\tag{12.13.43}\label{eq:12.13.43}
+\Theta \leq \alpha ^{\prime} + \beta  \mathrm { a n d }  \Theta \leq ( 2 + \alpha ^{\prime} \delta ) / ( \delta + 1 ) .
+\end{equation}
+12.19。求解 \autoref{eq:12.9.5} 中系数 \(r_{1}\) 和 \(s_{0}\) 的数值，分别对应第12.5节的布拉格-威廉姆斯近似以及第12.6节的贝特近似。
+
+利用这些 \(r_{1}\) 和 \(s_{0}\) 的值，验证 \autoref{eq:12.9.4}、\autoref{eq:12.9.9}、\autoref{eq:12.9.10}、\autoref{eq:12.9.11} 和 \autoref{eq:12.9.15} 能够正确复现零次近似与一次近似的结果。
+12.20。考虑一个系统，其朗道自由能的表达式经过了修改，即
+\begin{equation}\tag{12.13.44}\label{eq:12.13.44}
+\psi _ { h } ( t , m ) = - h m + q ( t ) + r ( t ) m ^{2} + s ( t ) m ^{4} + u ( t ) m ^{6} ,
+\end{equation}
+其中\(u(t)\)为一个固定的正数。对变量\(m\)求\(\psi\)的极小值，并考察自发磁化强度\(m_0\)随参数\(r\)和\(s\)的变化规律。特别地，需证明以下结论：21
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对于\(\bar{r}>0\)且\(s>-(3ur)^{1/2}\)，唯一的真实解为\(m_0=0\)。
+\item
+  对于\(r>0\)且\(s>-(3ur)^{1/2}\)，唯一的真实解为\(m_0=0\)。
+\item
+  对于\(r>0\)且\(-(4ur)^{1/2}<s\leq-(3ur)^{1/2}\)，\(m_0=0\)或\(\pm m_1\)，其中\(m_1^2=\frac{\sqrt{(s^2 - 3ur)^{-s}}}{3u}\)。然而，在\(m_0=0\)处\(\psi\)的最小值低于在\(m_0=\pm m_1\)处的最小值，因此\(m_0\)的最终平衡值为0。
+\item
+  对于\(r>0\)且\(s=-(4ur)^{1/2}\)，\(m_0=0\)或\(\pm (r/u)^{1/4}\)。此时，在\(m_0=0\)处\(\psi\)的最小值与在\(m_0=\pm (r/u)^{1/4}\)处的最小值高度相同，因此，出现非零的自发磁化强度的可能性与零磁化强度的可能性不相上下。
+\end{enumerate}
+\^{}\{21\}为了理清思路，我们不妨将\((r,s)\)平面作为我们的"参数空间"。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  对于\(r>0\)且\(s<-(4ur)^{1/2}\)，\(m_0=\pm m_1\)——这表明发生了第一类相变（因为此处两种可能的状态在\(m\)上仅相差有限值）。对于\(r\)为正的直线\(s=-(4ur)^{1/2}\)，通常被称为"第一类相变线"。
+\item
+  对于\(r=0\)且\(s<0\)，\(m_0=\pm(2|s|/3u)^{1/2}\)。
+\item
+  对于\(r<0\)，对于所有\(s\)，\(m_0=\pm m_1\)。随着\(r\)趋近于0，若\(s\)为正，则\(m_1\)也将趋于0。
+\end{enumerate}
+对于 \(r = 0\) 和 \(s > 0\)，只有 \(m_0 = 0\) 是该方程的唯一解。将这一结果与 (f) 结合起来，我们得出结论：当 \(s\) 为正时，直线 \(r = 0\) 是"二阶相变线"。因为在此处可用的两种状态在 \(m\) 上的差异可以忽略不计。
+一阶相变线与二阶相变线在点 \((r=0, s=0)\) 处相交，这一点通常被称为三重临界点（Griffiths, 1970）。
+12.21. 在前一个问题中，令 \(s=0\)，并沿 \(r\) 轴方向接近三重临界点，设定 \(r \approx r_{1}t\)。证明在该模型中，三重临界点所对应的临界指数为
+\begin{equation}\tag{12.13.45}\label{eq:12.13.45}
+\alpha = \frac { 1 } { 2 } , \beta = \frac { 1 } { 4 } , \gamma = 1 , \mathrm { ~ a n d ~ } \delta = 5 .
+\end{equation}
+12.22. 考虑一种靠近其临界点的流体，其等温线如图~12.3 所示。假设该流体的吉布斯自由能的奇异性部分可表示为
+\begin{equation}\tag{12.13.46}\label{eq:12.13.46}
+G ^{( s )} ( T , P ) \sim | t | ^{2 - \alpha} g ( \pi / | t | ^{\Delta} ) ,
+\end{equation}
+其中 \(\pi = (P - P_{c})/P_{c}\)，\(t = (T - T_{c})/T_{c}\)，而 \(g(x)\) 是一个通用函数，其分支分别为 \(g_{+}\)，适用于 \(t > 0\)；以及 \(g_{-}\)，适用于 \(t < 0\)。在后一种情况下，函数 \(g_{-}\) 在一个 \(\pi\) 值处具有无穷大曲率，该值随 \(t\) 平滑变化，且满足 \(\pi(0) = 0\)，同时 \(\left(\frac{\partial\pi}{\partial t}\right)_{t\to0} = \text{常数}\)。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  利用上述 \(G^{(s)}\) 的表达式，确定在 \(t \rightarrow 0\) 时，两种相的密度 \(\rho_{l}\) 和 \(\rho_{g}\) 如何逐渐接近。
+\item
+  同时确定，当沿着临界等温线（\(t = 0\)）接近临界点时，\((P - P_{c})\) 与 \((\rho - \rho_{c})\) 又如何变化。
+\item
+  还需考察等温压缩率 \(\kappa_{T}\)、绝热压缩率 \(\kappa_{S}\)、比热 \(C_{P}\) 和 \(C_{V}\)、体积膨胀系数 \(\alpha_{P}\)，以及汽化潜热 \(l\) 的临界行为。
+\end{enumerate}
+12.23. 考虑一种状态方程模型，在临界点附近，可写成
+\begin{equation}\tag{12.13.47}\label{eq:12.13.47}
+h \approx a m ( t + b m ^{2} ) ^{\Theta}  ( 1 < \Theta < 2 ; a , b > 0 ) .
+\end{equation}
+确定该模型的临界指数 \(\beta\)、\(\gamma\) 和 \(\delta\)，并验证它们是否满足标度关系（12.10.22）。
+12.24. 假设相关函数 \(g(\boldsymbol{r}_i, \boldsymbol{r}_j)\) 仅依赖于距离 \(r = |\boldsymbol{r}_j - \boldsymbol{r}_i|\)，则证明对于 \(r \neq 0\)，\(g(r)\) 满足以下微分方程
+\begin{equation}\tag{12.13.48}\label{eq:12.13.48}
+\frac { d ^{2} g } { d r ^{2} } + \frac { d - 1 } { r } \frac { d g } { d r } - \frac { 1 } { \xi ^{2} } g = 0 .
+\end{equation}
+验证 \autoref{eq:12.11.27} 对 \(g(r)\) 的描述，在 \(r \gg \xi\) 的 regime 下仍满足该方程；而在 \(r \ll \xi\) 的 regime 下，则满足另一表达式 \autoref{eq:12.11.28}。
+12.25. 考虑第 12.11 节中的相关函数 \(g(r; t, h)\)，其中 \(h > 0\)。22 假设该函数具有如下行为：
+\begin{equation}\tag{12.13.49}\label{eq:12.13.49}
+g ( r ) \sim e ^{- r / \xi ( t , h )} \times \mathrm { s o m e \ p o w e r \ o f \ } \ r  ( t \gtrsim 0 ) ,
+\end{equation}
+使得\(\xi(0,h)\sim h^{-\nu^{c}}\)。证明\(\nu^{c}=\nu/\Delta\)。
+接下来，假设磁化率\(\chi(0,h)\sim h^{-\gamma^{c}}\)。证明\(\gamma^{c}=\gamma/\Delta=(\delta-1)/\delta\)。
+²² 更多细节请参见Tarko和Fisher（1975）。
+12.26. 液态He\(^{4}\) 在温度\(T \simeq 2.17\)K 处发生超流相变。在这种情况下，序参量是一个复数\(\Psi\)，它与玻色凝聚密度\(\rho_{0}\)之间的关系为
+\begin{equation}\tag{12.13.50}\label{eq:12.13.50}
+\rho _ { 0 } \sim | \Psi | ^{2} \sim | t | ^{2 \beta}  ( t \lesssim 0 ) .
+\end{equation}
+另一方面，超流密度\(\rho_{s}\)的表现形式为
+\begin{equation}\tag{12.13.51}\label{eq:12.13.51}
+\rho _ { S } \sim | t | ^{\nu}  ( t \lesssim 0 ) .
+\end{equation}
+证明该比值\(^{23}\)
+\begin{equation}\tag{12.13.52}\label{eq:12.13.52}
+( \rho _ { 0 } / \rho _ { s } ) \sim | t | ^{\eta \nu}  ( t \lesssim 0 ) .
+\end{equation}
+12.27. 液体的表面张力\(\sigma\)在\(T \rightarrow T_{c}\)时，会从下方逐渐趋近于零。通过以下公式定义一个指数\(\mu\)：
+\begin{equation}\tag{12.13.53}\label{eq:12.13.53}
+\sigma \sim | t | ^{\mu}  ( t \lesssim 0 ) .
+\end{equation}
+将\(\sigma\)定义为"与液---汽界面单位面积相关联的自由能"，并据此论证\(\mu=(d-1)\nu=(2-\alpha)(d-1)/d\)。
+【注：对表面张力实验数据的分析结果表明：\(\mu = 1.27 \pm 0.02\)，这与大多数液体的\(\alpha \simeq 0.1\)这一事实相符。】
+²³ 对于磁性系统而言，相应的比值为\(M_{0}^{2}/\Gamma\)，其中\(M_{0}\)为自发磁化强度，\(\Gamma\)为系统的螺旋模量；有关详细信息，请参阅Fisher、Barber和Jasnow（1973）。
+
+

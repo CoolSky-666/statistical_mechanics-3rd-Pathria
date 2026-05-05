@@ -1,0 +1,1221 @@
+\chapter{相互作用系统的统计力学：量子场方法}\label{ux76f8ux4e92ux4f5cux7528ux7cfbux7edfux7684ux7edfux8ba1ux529bux5b66ux91cfux5b50ux573aux65b9ux6cd5}
+
+在本章中，我们介绍了一种处理由相互作用粒子组成的系统的另一种方法。该方法基于"量子场"的概念，其特征在于场算符 \(\psi(\boldsymbol{r})\) 及其共轭算符 \(\psi^{\dagger}(\boldsymbol{r})\)，它们满足一组明确规定的对易关系。借助这些算符，我们可以定义一个数算符 \(\hat{N}\) 和一个哈密顿算符 \(\hat{H}\)，从而为任意有限数量的粒子、且具有任意有限能量的系统提供一种合适的表示方式。由于其形式上与薛定谔表述相似，以量子场为表达框架的表述通常被称为系统的二次量子化。为了便于计算，场算符 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\) 常常被表示为一组单粒子波函数 \(\{u_{\alpha}(\boldsymbol{r})\}\) 的叠加形式，其中系数分别为 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\)；后者实际上就是湮灭算符和创建算符，而这两者同样满足一组明确规定的对易关系。随后，算符 \(\hat{N}\) 和 \(\hat{H}\) 可以用算符 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 来表示，而最终的表述非常适合基于算子代数进行处理；因此，许多原本繁琐的计算，如今可以以或直或曲的方式顺利完成。
+\section{二次量子化的理论框架}\label{ux4e8cux6b21ux91cfux5b50ux5316ux7684ux7406ux8bbaux6846ux67b6}
+要将粒子系统用量子场来表示，我们引入场算符 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\)，它们对于位置坐标 \(\boldsymbol{r}\) 的所有值都予以定义，并在希尔伯特空间中发挥作用；该空间中的向量对应于量子场的某一特定状态。在所有 \(\boldsymbol{r}\) 下，场算符 \(\psi\) 和 \(\psi^{\dagger}\) 的取值，代表了场的自由度；由于 \(\boldsymbol{r}\) 是一个连续变量，这些自由度的数量是无穷无尽的。若给定系统由玻色子组成，则场算符 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\) 满足对易关系
+\begin{equation}\tag{11.1.1}\label{eq:11.1.1}
+[ \psi ( \boldsymbol { r } ) , \psi ^{\dagger} ( \boldsymbol { r } ^{\prime} ) ] = \delta ( \boldsymbol { r } - \boldsymbol { r } ^{\prime} )
+\end{equation}
+\begin{equation}\tag{11.1.2}\label{eq:11.1.2}
+[ \psi ( \pmb { r } ) , \psi ( \pmb { r } ^{\prime} ) ] = [ \psi ^{\dagger} ( \pmb { r } ) , \psi ^{\dagger} ( \pmb { r } ^{\prime} ) ] = 0 ,
+\end{equation}
+其中符号 \([A,B]\) 表示给定算符 \(A\) 和 \(B\) 的对易子 \((AB-BA)\)。另一方面，如果给定系统由费米子组成，则场算符满足以下规则
+\begin{equation}\tag{11.1.3}\label{eq:11.1.3}
+\{ \psi ( \pmb { r } ) , \psi ^{\dagger} ( \pmb { r ^{\prime} } ) \} = \delta ( \pmb { r } - \pmb { r ^{\prime} } )
+\end{equation}
+\begin{equation}\tag{11.1.4}\label{eq:11.1.4}
+\{ \psi ( \pmb { r } ) , \psi ( \pmb { r } ^{\prime} ) \} = \{ \psi ^{\dagger} ( \pmb { r } ) , \psi ^{\dagger} ( \pmb { r } ^{\prime} ) \} = 0 ,
+\end{equation}
+???? \(\{A, B\}\) ?????? \(A\) ? \(B\) ????? \((AB+BA)\)????????? \(\psi(\boldsymbol{r})\) ? \(\psi^\dagger(\boldsymbol{r})\) ??????? \autoref{eq:11.1.4} ??????????
+\begin{equation}\tag{11.1.5}\label{eq:11.1.5}
+\psi ( \pmb { r } ) \psi ( \pmb { r } ^{\prime} ) = - \psi ( \pmb { r } ^{\prime} ) \psi ( \pmb { r } ) ,  \therefore \psi ( \pmb { r } ) \psi ( \pmb { r } ) = 0  \mathrm { f o r ~ a l l } \, \pmb { r } ;
+\end{equation}
+同样地，
+\begin{equation}\tag{11.1.6}\label{eq:11.1.6}
+\psi ^{\dagger} ( \pmb { r } ) \psi ^{\dagger} ( \pmb { r } ^{\prime} ) = - \psi ^{\dagger} ( \pmb { r } ^{\prime} ) \psi ^{\dagger} ( \pmb { r } ) ,  \therefore \psi ^{\dagger} ( \pmb { r } ) \psi ^{\dagger} ( \pmb { r } ) = 0  \mathrm { f o r ~ a l l ~ } \pmb { r } .
+\end{equation}
+显然，对于玻色子相关的场算子而言，不存在这样的性质。在接下来的讨论中，我们将看到，玻色子场算子的对易规则（1）与费米子场算子的对易规则（2）之间的数学差异，与薛定谔表述中相应波函数对称性属性的根本不同密切相关。当然，在各自的框架下，这两组规则（1）和（2）本质上都是公理化的。
+我们现在通过如下定义引入两个厄米算子——粒子数算子 \(\hat{N}\) 以及哈密顿算子 \(\hat{H}\)，这些定义同样适用于玻色子和费米子：
+\begin{equation}\tag{11.1.7}\label{eq:11.1.7}
+\hat { N } \equiv \int d ^{3} r \psi ^{\dagger} ( \pmb { r } ) \psi \left( \pmb { r } \right)
+\end{equation}
+并且
+\begin{equation}\tag{11.1.8}\label{eq:11.1.8}
+\begin{array}{rlr} & { } & { \hat { H } \equiv - \, \frac { \hbar ^{2} } { 2 m } \int d ^{3} r \psi ^{\dagger} ( \pmb { r } ) \nabla ^{2} \psi ( \pmb { r } ) } \\& { } & { + \, \frac { 1 } { 2 } \iint d ^{3} r _ { 1 } d ^{3} r _ { 2 } \psi ^{\dagger} ( \pmb { r } _ { 1 } ) \psi ^{\dagger} ( \pmb { r } _ { 2 } ) u ( \pmb { r } _ { 1 } , \pmb { r } _ { 2 } ) \psi ( \pmb { r } _ { 2 } ) \psi ( \pmb { r } _ { 1 } ) , } \end{array}
+\end{equation}
+其中，\(u(\boldsymbol{r}_{1}, \boldsymbol{r}_{2})\) 表示给定系统中的两体相互作用势。将 \(\psi^{\dagger}(\boldsymbol{r})\psi(\boldsymbol{r})\) 这一乘积视为场的数密度算子，这再自然不过。上述定义与薛定谔表述中对应物理量期望值的表达式之间存在着相当明显的相似性。然而，这种相似性仅是"形式上的"，因为当我们关注的是给定系统的波函数（这些波函数为 \(c\) 数）时，这里我们所关注的是相应物质场的算子。我们可以轻松验证，无论\ldots\ldots{}
+算子 \(\psi(\boldsymbol{r})\) 和 \(\psi^\dagger(\boldsymbol{r})\) 所遵守的对易规则表明，算子 \(\hat{N}\) 和 \(\hat{H}\) 是对易的：
+\begin{equation}\tag{11.1.9}\label{eq:11.1.9}
+[ \hat { N } , \hat { H } ] = 0 ;
+\end{equation}
+因此，算子 \(\hat{N}\) 和 \(\hat{H}\) 可以同时进行对角化。
+现在，我们选择希尔伯特空间的一个完备正交基，使得该基中的任意向量 \(|\Phi_{n}\rangle\) 都是算子 \(\hat{N}\) 和 \(\hat{H}\) 的共同本征态。因此，我们可以用符号 \(|\Psi_{NE}\rangle\) 来表示基中的任意特定成员，并满足以下性质：
+\begin{equation}\tag{11.1.10}\label{eq:11.1.10}
+\hat { N } | \Psi _ { N E } \rangle = N | \Psi _ { N E } \rangle ,  \hat { H } | \Psi _ { N E } \rangle = E | \Psi _ { N E } \rangle
+\end{equation}
+并且
+\begin{equation}\tag{11.1.11}\label{eq:11.1.11}
+\langle \Psi _ { N E } | \Psi _ { N E } \rangle = 1 .
+\end{equation}
+向量 \(|\Psi_{00}\rangle\) 代表场的真空态，通常用符号 \(|0\rangle\) 表示，且假定其唯一性；它具有显而易见的性质：
+\begin{equation}\tag{11.1.12}\label{eq:11.1.12}
+\hat { N } | 0 \rangle = \hat { H } | 0 \rangle = 0  \mathrm { a n d }  \langle 0 | 0 \rangle = 1 .
+\end{equation}
+接下来我们注意到，无论我们采用玻色子的交换规则（1）还是费米子的交换规则（2），算符 \(\hat{N}\) 以及算符 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\) 都满足交换关系。
+\begin{equation}\tag{11.1.13}\label{eq:11.1.13}
+[ \psi ( \pmb { r } ) , \hat { N } ] = \psi ( \pmb { r } )  \mathrm { a n d }  [ \psi ^{\dagger} ( \pmb { r } ) , \hat { N } ] = - \psi ^{\dagger} ( \pmb { r } ) ,
+\end{equation}
+由此可以推导出：
+\begin{equation}\tag{11.1.14}\label{eq:11.1.14}
+\hat { N } \psi \left( \pmb { r } \right) | \Psi _ { N E } \rangle = \left( \psi \left( \pmb { r } \right) \hat { N } - \psi \left( \pmb { r } \right) \right) | \Psi _ { N E } \rangle = ( N - 1 ) \psi \left( \pmb { r } \right) | \Psi _ { N E } \rangle
+\end{equation}
+并且
+\begin{equation}\tag{11.1.15}\label{eq:11.1.15}
+\hat { N } \psi ^{\dagger} ( \pmb { r } ) | \Psi _ { N E } \rangle = \left( \psi ^{\dagger} ( \pmb { r } ) \hat { N } + \psi ^{\dagger} ( \pmb { r } ) \right) | \Psi _ { N E } \rangle = ( N + 1 ) \psi ^{\dagger} ( \pmb { r } ) | \Psi _ { N E } \rangle .
+\end{equation}
+???\(\psi(\boldsymbol{r})|\Psi_{NE}\rangle\) ???? \(\hat{N}\) ??????????? \((N-1)\)?????? \(\psi(\boldsymbol{r})\) ???? \(|\Psi_{NE}\rangle\) ????????????????????\(\psi^\dagger(\boldsymbol{r})|\Psi_{NE}\rangle\) ??? \(\hat{N}\) ?????????? \((N+1)\)?????? \(\psi^\dagger(\boldsymbol{r})\) ???? \(|\Psi_{NE}\rangle\) ????????????????????????????????????? \(\boldsymbol{r}\) ?????????????????????????????????? \autoref{eq:11.1.29} ? \autoref{eq:11.1.30}???? \(\psi^\dagger\) ?????? \(|0\rangle\)??????? \(\hat{N}\) ??????? 0?1?2?\ldots\ldots{}
+另一方面，将算符 \(\psi\) 应用于真空态 \(|0\rangle\) 时，结果无非是零，因为出于显而易见的原因，我们不能让算符 \(\hat{N}\) 具有负的特征值。当然，如果我们多次将算符 \(\psi\) 应用于态 \(|\Psi_{NE}\rangle\)，最终会得到真空态；此时，依据所选基的正交性，
+\begin{equation}\tag{11.1.16}\label{eq:11.1.16}
+\langle \Phi _ { n } | \psi ( \pmb { r } _ { 1 } ) \psi ( \pmb { r } _ { 2 } ) \ldots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle = 0
+\end{equation}
+除非态 \(|\Phi_{n}\rangle\) 本身是真空态，在这种情况下，我们将会得到非零的结果。基于后一种结果，我们可以定义一个关于 \(N\) 个坐标 \(r_{1}, r_{2}, \ldots, r_{N}\) 的函数，即：
+\begin{equation}\tag{11.1.17}\label{eq:11.1.17}
+\Psi _ { N E } ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) = ( N ! ) ^{- 1 / 2} \langle 0 | \psi ( \pmb { r } _ { 1 } ) \ldots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle .
+\end{equation}
+显然，函数 \(\Psi_{NE}(r_{1},\ldots,r_{N})\) 与场中位于点 \(r_{1},\ldots,r_{N}\) 的 \(N\) 个粒子的集合有着密切联系，因为正是这些场中的特定点上它们的湮灭，才将我们带到了场的真空态。要准确理解这一函数的含义，我们首先注意到，在玻色子（费米子）的情况下，该函数对于 \(N\) 个坐标中的任意两个进行互换是对称的（反对称的）；请分别参见式（1b）和式（2b）。其次，该函数的模长等于 1，其具体证明如下。
+根据 \(\Psi_{NE}(\boldsymbol{r}_1,\ldots,\boldsymbol{r}_N)\) 的定义，
+\begin{equation}\tag{11.1.18}\label{eq:11.1.18}
+\begin{array}{rl} & { \int d ^{3 N} r \Psi _ { N E } ^{*} ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) \Psi _ { N E } ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) } \\& {  = ( N ! ) ^{- 1} \int d ^{3 N} r \langle \Psi _ { N E } | \psi ^{\dagger} ( \pmb { r } _ { N } ) \ldots \psi ^{\dagger} ( \pmb { r } _ { 1 } ) | 0 \rangle \langle 0 | \psi ( \pmb { r } _ { 1 } ) \ldots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle } \\& {  = ( N ! ) ^{- 1} \int d ^{3 N} r \sum _ { n } \langle \Psi _ { N E } | \psi ^{\dagger} ( \pmb { r } _ { N } ) \ldots \psi ^{\dagger} ( \pmb { r } _ { 1 } ) | \Phi _ { n } \rangle \langle \Phi _ { n } | \psi ( \pmb { r } _ { 1 } ) \ldots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle } \\& {  = ( N ! ) ^{- 1} \int d ^{3 N} r \langle \Psi _ { N E } | \psi ^{\dagger} ( \pmb { r } _ { N } ) \ldots \psi ^{\dagger} ( \pmb { r } _ { 2 } ) \psi ^{\dagger} ( \pmb { r } _ { 1 } ) \psi ( \pmb { r } _ { 1 } ) \psi ( \pmb { r } _ { 2 } ) \ldots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle ; } \end{array}
+\end{equation}
+此处已利用了方程（12）——该方程对所有 \(|\Phi_{n}\rangle\) 都成立，但不包括真空态——以及这样一个事实：在所选基底的完整正交集上，对 \(|\Phi_{n}\rangle\langle\Phi_{n}|\) 的求和等价于单位算子。接下来，我们对 \(r_{1}\) 进行积分，得到如下因子：
+\begin{equation}\tag{11.1.19}\label{eq:11.1.19}
+\int d ^{3} r _ { 1 } \psi ^{\dagger} ( \pmb { r _ { 1 } } ) \psi ( \pmb { r _ { 1 } } ) = \hat { N } .
+\end{equation}
+接下来，我们对 \(r_{2}\) 进行积分，得到如下因子：
+\begin{equation}\tag{11.1.20}\label{eq:11.1.20}
+\int d ^{3} \pmb { r } _ { 2 } \psi ^{\dagger} ( \pmb { r } _ { 2 } ) \hat { N } \psi ( \pmb { r } _ { 2 } ) = \int d ^{3} \pmb { r } _ { 2 } \psi ^{\dagger} ( \pmb { r } _ { 2 } ) \psi ( \pmb { r } _ { 2 } ) ( \hat { N } - 1 ) = \hat { N } ( \hat { N } - 1 ) ;
+\end{equation}
+参见方程（10）。通过迭代计算，我们得到
+\begin{equation}\tag{11.1.21}\label{eq:11.1.21}
+\begin{array}{rl} & { \int d ^{3 N} r \Psi _ { N E } ^{*} ( \pmb { r } _ { 1 } , \dots , \pmb { r } _ { N } ) \Psi _ { N E } ( \pmb { r } _ { 1 } , \dots , \pmb { r } _ { N } ) } \\& {  = ( \pmb { N } ! ) ^{- 1} \langle \Psi _ { N E } | \hat { N } ( \hat { N } - 1 ) ( \hat { N } - 2 ) \dots \mathrm { ~ u p ~ t o ~ } N \mathrm { ~ f a c t o r s } | \Psi _ { N E } \rangle } \\& {  = ( \pmb { N } ! ) ^{- 1} N ! \langle \Psi _ { N E } | \Psi _ { N E } \rangle = 1 . } \end{array}
+\end{equation}
+最后，我们可以证明：无论是玻色子还是费米子，函数 \(\Psi_{NE}(\boldsymbol{r}_1,\ldots,\boldsymbol{r}_N)\) 都满足该微分方程，详见问题 11.1。
+\begin{equation}\tag{11.1.22}\label{eq:11.1.22}
+\left( - \frac { \hbar ^{2} } { 2 m } \sum _ { i = 1 } ^{N} \nabla _ { i } ^{2} + \sum _ { i < j } u _ { i j } \right) \Psi _ { N E } ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) = E \Psi _ { N E } ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) ,
+\end{equation}
+这实际上就是 \(N\) 个粒子系统的薛定谔方程。因此，函数 \(\Psi_{NE}(\boldsymbol{r}_{1},\ldots,\boldsymbol{r}_{N})\) 是该系统的薛定谔波函数，其本征能量为 \(E\)；相应地，乘积 \(\Psi_{NE}^{*}\Psi_{NE}\) 就是当系统恰好处于具有能量 \(E\) 的本征态时，系统中各粒子位于坐标 \((\boldsymbol{r}_{1},\ldots,\boldsymbol{r}_{N})\) 附近的概率密度。由此，我们确立了量子场理论表述与薛定谔表述之间的理想对应关系。顺便一提，我们还记录下函数 \(\Psi_{NE}^{*}(\boldsymbol{r}_{1},\ldots,\boldsymbol{r}_{N})\) 的量子场表达式——它是波函数 \(\Psi_{NE}(\boldsymbol{r}_{1},\ldots,\boldsymbol{r}_{N})\) 的复共轭，即：
+\begin{equation}\tag{11.1.23}\label{eq:11.1.23}
+\Psi _ { N E } ^{*} ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) = ( N ! ) ^{- 1 / 2} \langle \Psi _ { N E } | \psi ^{\dagger} ( \pmb { r } _ { N } ) \ldots \psi ^{\dagger} ( \pmb { r } _ { 1 } ) | 0 \rangle .
+\end{equation}
+现在，我们引入一组完整的单粒子波函数 \(u_{\alpha}(\mathbf{r})\) 的正交集，其中下标 \(\alpha\) 用于标识不同的单粒子态；例如，它可以是该态的能量特征值（或动量 \(\mathbf{p}\)，以及与该态相关的自旋分量 \(\sigma\)）。鉴于这些波函数的正交性，
+\begin{equation}\tag{11.1.24}\label{eq:11.1.24}
+\int d ^{3} r \; u _ { \alpha } ^{*} ( \boldsymbol { r } ) u _ { \beta } ( \boldsymbol { r } ) = \delta _ { \alpha \beta } .
+\end{equation}
+场算符 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\) 现在可以按波函数 \(u_{\alpha}(\boldsymbol{r})\) 展开：
+\begin{equation}\tag{11.1.25}\label{eq:11.1.25}
+\psi ( \boldsymbol { r } ) = \sum _ { \alpha } a _ { \alpha } u _ { \alpha } ( \boldsymbol { r } )
+\end{equation}
+以及
+\begin{equation}\tag{11.1.26}\label{eq:11.1.26}
+\psi ^{\dagger} ( \pmb { r } ) = \sum _ { \alpha } a _ { \alpha } ^{\dagger} u _ { \alpha } ^{*} ( \pmb { r } ) .
+\end{equation}
+与方程（18）和（19）相对应的公式有
+\begin{equation}\tag{11.1.27}\label{eq:11.1.27}
+a _ { \alpha } = \int d ^{3} r \psi ( \mathbf { r } ) u _ { \alpha } ^{*} ( \mathbf { r } )
+\end{equation}
+以及
+\begin{equation}\tag{11.1.28}\label{eq:11.1.28}
+a _ { \alpha } ^{\dagger} = \int d ^{3} r \psi ^{\dagger} ( \pmb { r } ) u _ { \alpha } ( \pmb { r } ) .
+\end{equation}
+与场变量 \(\psi(\boldsymbol{r})\) 和 \(\psi^{\dagger}(\boldsymbol{r})\) 一样，系数 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 也是作用于相应希尔伯特空间中各元素的算子。事实上，现在，算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 已经承担起场自由度的角色。
+将式（18）和式（19）代入规则组（1）或（2），并利用 \(u_{\alpha}\) 的闭合性质，即
+我们得到，对于算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\)，其对易关系为
+\begin{equation}\tag{11.1.29}\label{eq:11.1.29}
+\sum _ { \alpha } u _ { \alpha } ( \boldsymbol { r } ) u _ { \alpha } ^{*} ( \boldsymbol { r } ^{\prime} ) = \delta ( \boldsymbol { r } - \boldsymbol { r } ^{\prime} ) ,
+\end{equation}
+\begin{equation}\tag{11.1.30}\label{eq:11.1.30}
+[ a _ { \alpha } , a _ { \beta } ] = [ a _ { \alpha } ^{\dagger} , a _ { \beta } ^{\dagger} ] = 0
+\end{equation}
+在玻色子的情况下，
+\begin{equation}\tag{11.1.31}\label{eq:11.1.31}
+\{ a _ { \alpha } , a _ { \beta } ^{\dagger} \} = \delta _ { \alpha \beta }
+\end{equation}
+\begin{equation}\tag{11.1.32}\label{eq:11.1.32}
+\{ a _ { \alpha } , a _ { \beta } \} = \{ a _ { \alpha } ^{\dagger} , a _ { \beta } ^{\dagger} \} = 0
+\end{equation}
+在费米子的情况下。在后一种情况下，算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 具有某些明确的性质，这些性质可直接从式（24b）中推导出来，即
+\begin{equation}\tag{11.1.33}\label{eq:11.1.33}
+a _ { \alpha } a _ { \beta } = - a _ { \beta } a _ { \alpha } ,  \therefore a _ { \alpha } a _ { \alpha } = 0  { \mathrm { f o r ~ a l l ~ } } \alpha ;
+\end{equation}
+同样地
+\begin{equation}\tag{11.1.34}\label{eq:11.1.34}
+a _ { \alpha } ^{\dagger} a _ { \beta } ^{\dagger} = - a _ { \beta } ^{\dagger} a _ { \alpha } ^{\dagger} ,  : : a _ { \alpha } ^{\dagger} a _ { \alpha } ^{\dagger} = 0  \mathrm { f o r ~ a l l ~ } \alpha .
+\end{equation}
+对于与玻色子相关的算子，并不存在这样的性质。我们很快就会看到，玻色子算子的对易关系与费米子算子的对易关系之间这一至关重要的差异，与这样一个事实密切相关：尽管费米子必须遵守泡利不相容原理所施加的限制，但玻色子则不受此类限制。
+接下来，我们着手将算子 \(\hat{N}\) 和 \(\hat{H}\) 表示为 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 的形式。将式（18）和式（19）代入式（3），我们得到
+\begin{equation}\tag{11.1.35}\label{eq:11.1.35}
+\begin{array}{rl} & { \hat { N } = \int d ^{3} r \sum _ { \alpha , \beta } a _ { \alpha } ^{\dagger} a _ { \beta } u _ { \alpha } ^{*} ( \boldsymbol { r } ) u _ { \beta } ( \boldsymbol { r } ) = \sum _ { \alpha , \beta } a _ { \alpha } ^{\dagger} a _ { \beta } \delta _ { \alpha \beta } } \\& { = \sum _ { \alpha } a _ { \alpha } ^{\dagger} a _ { \alpha } . } \end{array}
+\end{equation}
+自然地，我们不妨将算子 \(a_{\alpha}^{\dagger}a_{\alpha}\) 称作与单粒子态 \(\alpha\) 相关的粒子数算子。我们将该算子记作 \(\hat{N}_{\alpha}\)：
+\begin{equation}\tag{11.1.36}\label{eq:11.1.36}
+\hat { N } _ { \alpha } = a _ { \alpha } ^{\dagger} a _ { \alpha } .
+\end{equation}
+我们很容易验证，无论是玻色子还是费米子，算子 \(\hat{N}_{\alpha}\) 都彼此对易；因此，它们可以被同时对角化。据此，我们可以选择一个完备的正交基，使得基中的任意向量都是所有算子 \(\hat{N}_{\alpha}\) 的共同本征态。² 设基中的某一特定成员用向量 \(|n_{0},n_{1},\ldots,n_{\alpha},\ldots\rangle\) 来表示，或用更简短的符号 \(|\Phi_{n}\rangle\) 来表示，其具有如下性质：
+\begin{equation}\tag{11.1.37}\label{eq:11.1.37}
+\hat { N } _ { \alpha } | \Phi _ { n } \rangle = n _ { \alpha } | \Phi _ { n } \rangle
+\end{equation}
+并且
+\begin{equation}\tag{11.1.38}\label{eq:11.1.38}
+\langle \Phi _ { n } | \Phi _ { n } \rangle = 1 ;
+\end{equation}
+在场的态 \(|\Phi_{n}\rangle\) 中，算子 \(\hat{N}_{\alpha}\) 的特征值 \(n_{\alpha}\) 表示给定系统中粒子在单粒子态 \(\alpha\) 中的数量。对于所有 \(\alpha\)，若某一个基矢的 \(n_{\alpha}=0\)，则该基矢将代表场的真空态；我们用符号 \(|\Phi_{0}\rangle\) 来表示真空态，由此有
+\begin{equation}\tag{11.1.39}\label{eq:11.1.39}
+\hat { N } _ { \alpha } | \Phi _ { 0 } \rangle = 0  \mathrm { f o r ~ a l l ~ } \alpha ,  \mathrm { a n d }  \langle \Phi _ { 0 } | \Phi _ { 0 } \rangle = 1 .
+\end{equation}
+接下来我们注意到，无论我们采用玻色子的交换规则（23）还是费米子的交换规则（24），算子 \(\hat{N}_{\alpha}\) 以及算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 都满足交换关系。
+\begin{equation}\tag{11.1.40}\label{eq:11.1.40}
+[ a _ { \alpha } , \hat { N } _ { \alpha } ] = a _ { \alpha }  \mathrm { a n d }  [ a _ { \alpha } ^{\dagger} , \hat { N } _ { \alpha } ] = - a _ { \alpha } ^{\dagger} ,
+\end{equation}
+由此可以推导出
+\begin{equation}\tag{11.1.41}\label{eq:11.1.41}
+\hat { N } _ { \alpha } a _ { \alpha } | \Phi _ { n } \rangle = ( a _ { \alpha } \hat { N } _ { \alpha } - a _ { \alpha } ) | \Phi _ { n } \rangle = ( n _ { \alpha } - 1 ) a _ { \alpha } | \Phi _ { n } \rangle
+\end{equation}
+² 这种场的表示方法通常被称为"粒子数表示法"。
+并且
+\begin{equation}\tag{11.1.42}\label{eq:11.1.42}
+\hat { N } _ { \alpha } a _ { \alpha } ^{\dagger} | \Phi _ { n } \rangle = ( a _ { \alpha } ^{\dagger} \hat { N } _ { \alpha } + a _ { \alpha } ^{\dagger} ) | \Phi _ { n } \rangle = ( n _ { \alpha } + 1 ) a _ { \alpha } ^{\dagger} | \Phi _ { n } \rangle .
+\end{equation}
+显然，态 \(a_{\alpha}|\Phi_{n}\rangle\) 也是算子 \(\hat{N}_{\alpha}\) 的本征态，但其特征值为 \((n_{\alpha}-1)\)；因此，将算子 \(a_{\alpha}\) 应用于场的态 \(|\Phi_{n}\rangle\) 会从场中消灭一个粒子。同样地，态 \(a_{\alpha}^{\dagger}|\Phi_{n}\rangle\) 是算子 \(\hat{N}_{\alpha}\) 的本征态，其特征值为 \((n_{\alpha}+1)\)；因此，将算子 \(a_{\alpha}^{\dagger}\) 应用于态 \(|\Phi_{n}\rangle\) 会在场中产生一个粒子。因此，算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 被称为湮灭算子和创建算子。当然，在每一种情况下，湮灭或创建的过程都与单粒子态 \(\alpha\) 相关；然而，事件发生的精确位置（在坐标空间中的具体位置）仍然无法确定——请参见方程（20）和（21）。现在，由于将算子 \(a_{\alpha}\) 或 \(a_{\alpha}^{\dagger}\) 应用于场的态 \(|\Phi_{n}\rangle\) 并不会改变除 \(\hat{N}_{\alpha}\) 之外的粒子数算子的特征值，因此我们可以写出
+\begin{equation}\tag{11.1.43}\label{eq:11.1.43}
+a _ { \alpha } | n _ { 0 } , n _ { 1 } , \ldots , n _ { \alpha } , \ldots \rangle = A ( n _ { \alpha } ) | n _ { 0 } , n _ { 1 } , \ldots , n _ { \alpha } - 1 , \ldots \rangle
+\end{equation}
+并且
+\begin{equation}\tag{11.1.44}\label{eq:11.1.44}
+a _ { \alpha } ^{\dagger} | n _ { 0 } , n _ { 1 } , \ldots , n _ { \alpha } , \ldots \rangle = B ( n _ { \alpha } ) | n _ { 0 } , n _ { 1 } , \ldots , n _ { \alpha } + { \bf 1 } , \ldots \rangle ,
+\end{equation}
+其中，因子 \(A(n_{\alpha})\) 和 \(B(n_{\alpha})\) 可以借助支配算子 \(a_{\alpha}\) 和 \(a_{\alpha}^{\dagger}\) 的交换规则来确定。对于玻色子，
+\begin{equation}\tag{11.1.45}\label{eq:11.1.45}
+A ( n _ { \alpha } ) = \sqrt { n _ { \alpha } } ,  B ( n _ { \alpha } ) = \sqrt { ( n _ { \alpha } + 1 ) } ;
+\end{equation}
+因此，如果我们认为态 \(|\Phi_{n}\rangle\) 是通过反复应用创建算子而从真空态 \(|\Phi_{0}\rangle\) 中产生的，那么我们可以写出
+\begin{equation}\tag{11.1.46}\label{eq:11.1.46}
+| \Phi _ { n } \rangle = \frac { 1 } { \sqrt { ( n _ { 0 } ! n _ { 1 } ! \ldots n _ { \alpha } ! \ldots ) } } ( a _ { 0 } ^{\dagger} ) ^{n _ { 0} } ( a _ { 1 } ^{\dagger} ) ^{n _ { 1} } \ldots ( a _ { \alpha } ^{\dagger} ) ^{n _ { \alpha} } \ldots | \Phi _ { 0 } \rangle .
+\end{equation}
+对于费米子而言，算符 \(a_{\alpha}^{\dagger}\) 满足反交换关系，因此有 \(a_{\alpha}^{\dagger}a_{\beta}^{\dagger}=-a_{\beta}^{\dagger}a_{\alpha}^{\dagger}\)；由此可知，除非明确规定 \(a_{\alpha}^{\dagger}\) 在真空态上作用的顺序，否则仍会存在一个相位因子 \(\pm1\) 的不确定性。为了明确起见，我们约定如下：如式（36）所示，\(a_{\alpha}^{\dagger}\) 的排列顺序为下标递增，此时相位因子为 +1。其次，由于 \(a_{\alpha}^{\dagger}a_{\alpha}^{\dagger}\) 的乘积现已为零，式（36）中任意一个 \(n_{\alpha}\) 都不可能大于 1；因此，费米子算符 \(\hat{N}_{\alpha}\) 的特征值仅限于 0 和 1，而这正是泡利不相容原理所要求的。³ 因此，式（36）中的因子 \([\Pi_{\alpha}(n_{\alpha}!)]^{-1/2}\) 同样等于 1。
+\(^{3}\) 这一点也可以通过观察费米子算符 \(\hat{N}_{\alpha}\) 满足的恒等式来理解。
+\begin{equation}\tag{11.1.47}\label{eq:11.1.47}
+\hat { N } _ { \alpha } ^{2} = a _ { \alpha } ^{\dagger} \, a _ { \alpha } \, a _ { \alpha } ^{\dagger} \, a _ { \alpha } = a _ { \alpha } ^{\dagger} ( 1 - a _ { \alpha } ^{\dagger} a _ { \alpha } ) a _ { \alpha } = a _ { \alpha } ^{\dagger} a _ { \alpha } = \hat { N } _ { \alpha }  ( \mathrm { s i n c e } \, \, a _ { \alpha } ^{\dagger} a _ { \alpha } ^{\dagger} a _ { \alpha } a _ { \alpha } \equiv 0 ) .
+\end{equation}
+费米子的特征值 \(n_{\alpha}\) 亦然如此。因此，\(n_{\alpha}^{2}=n_{\alpha}\)，这意味着 \(n_{\alpha}=0\) 或 \(1\)。
+顺便指出，在费米子的情况下，运算式（33）只有在 \(n_{\alpha}=1\) 时才具有意义，而运算式（34）只有在 \(n_{\alpha}=0\) 时才具有意义。
+最后，将式（18）和式（19）代入式（4），可得场的哈密顿算符为
+\begin{equation}\tag{11.1.48}\label{eq:11.1.48}
+\hat { H } = - \frac { \hbar ^{2} } { 2 m } \sum _ { \alpha , \beta } \langle \alpha | \nabla ^{2} | \beta \rangle a _ { \alpha } ^{\dagger} a _ { \beta } + \frac { 1 } { 2 } \sum _ { \alpha , \beta , \gamma , \lambda } \langle \alpha \beta | u | \gamma \lambda \rangle a _ { \alpha } ^{\dagger} a _ { \beta } ^{\dagger} a _ { \gamma } a _ { \lambda } ,
+\end{equation}
+其中
+\begin{equation}\tag{11.1.49}\label{eq:11.1.49}
+\langle \alpha | \nabla ^{2} | \beta \rangle = \int d ^{3} r u _ { \alpha } ^{*} ( \pmb { r } ) \nabla ^{2} u _ { \beta } ( \pmb { r } )
+\end{equation}
+以及
+\begin{equation}\tag{11.1.50}\label{eq:11.1.50}
+\langle \alpha \beta | u | \gamma \lambda \rangle = \iint d ^{3} r _ { 1 } d ^{3} r _ { 2 } u _ { \alpha } ^{*} ( \pmb { r } _ { 1 } ) u _ { \beta } ^{*} ( \pmb { r } _ { 2 } ) u _ { 12 } u _ { \gamma } ( \pmb { r } _ { 2 } ) u _ { \lambda } ( \pmb { r } _ { 1 } ) .
+\end{equation}
+现在，如果单粒子波函数被选择为
+\begin{equation}\tag{11.1.51}\label{eq:11.1.51}
+u _ { \alpha } ( \pmb { r } ) = \frac { 1 } { \sqrt { V } } e ^{i p _ { \alpha} \cdot \pmb { r } / \hbar } ,
+\end{equation}
+其中 \(p_{\alpha}\) 表示粒子的动量（假设"无自旋"），则矩阵元（38）和（39）变为
+\begin{equation}\tag{11.1.52}\label{eq:11.1.52}
+\langle \alpha | \nabla ^{2} | \beta \rangle = \frac { 1 } { V } \int d ^{3} r e ^{- i { \bf p} _ { \alpha } \cdot { \bf r } / \hbar } \left( - \frac { p _ { \beta } ^{2} } { \hbar ^{2} } \right) e ^{i { \bf p} _ { \beta } \cdot { \bf r } / \hbar } = - \frac { p _ { \beta } ^{2} } { \hbar ^{2} } \delta _ { \alpha \beta }
+\end{equation}
+以及
+\begin{equation}\tag{11.1.53}\label{eq:11.1.53}
+\langle \alpha \beta | u | \gamma \lambda \rangle = \frac { 1 } { V ^{2} } \iint d ^{3} r _ { 1 } d ^{3} r _ { 2 } e ^{- i ( p _ { \alpha} - p _ { \lambda } ) \cdot \mathbf { r } _ { 1 } / \hbar } u ( \mathbf { r } _ { 2 } - \mathbf { r } _ { 1 } ) e ^{- i ( p _ { \beta} - p _ { \gamma } ) \cdot \mathbf { r } _ { 2 } / \hbar } .
+\end{equation}
+鉴于每次碰撞中总动量均被守恒，
+\begin{equation}\tag{11.1.54}\label{eq:11.1.54}
+p _ { \alpha } + p _ { \beta } = p _ { \gamma } + p _ { \lambda } ,
+\end{equation}
+矩阵元（42）的形式为
+\begin{equation}\tag{11.1.55}\label{eq:11.1.55}
+\begin{array}{r} { \langle \alpha \beta | u | \gamma \lambda \rangle = \frac { 1 } { V ^{2} } \iint d ^{3} r _ { 1 } d ^{3} r _ { 2 } e ^{i ( p _ { \gamma} - p _ { \beta } ) \cdot ( r _ { 2 } - r _ { 1 } ) / \hbar } u ( r _ { 2 } - r _ { 1 } ) } \\{ = \frac { 1 } { V } \int d ^{3} r e ^{i p \cdot r / \hbar} u ( \mathbf { r } ) , } \end{array}
+\end{equation}
+其中 \(p\) 表示碰撞过程中动量的传递：
+\begin{equation}\tag{11.1.56}\label{eq:11.1.56}
+p = ( p _ { \gamma } - p _ { \beta } ) = - ( p _ { \lambda } - p _ { \alpha } ) .
+\end{equation}
+将式（41）和式（44）代入式（37），我们最终得到
+\begin{equation}\tag{11.1.57}\label{eq:11.1.57}
+\hat { H } = \sum _ { p } \frac { p ^{2} } { 2 m } a _ { p } ^{\dagger} a _ { p } + \frac { 1 } { 2 } \sum ^{\prime} u _ { p _ { 1 } , p _ { 2 } } ^{p _ { 1} ^{\prime} , p _ { 2 } ^{\prime} } a _ { p _ { 1 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } } a _ { p _ { 1 } } ,
+\end{equation}
+其中 \(u_{p_{1}^{'},p_{2}^{'}}^{p_{1}^{'},p_{2}^{'}}\) 表示矩阵元（44），其
+\begin{equation}\tag{11.1.58}\label{eq:11.1.58}
+p = ( p _ { 2 } - p _ { 2 } ^{\prime} ) = - ( p _ { 1 } - p _ { 1 } ^{\prime} ) ;
+\end{equation}
+请注意，式（46）中第二项中的求和符号仅对那些满足粒子总动量守恒条件的 \(p_{1}\)、\(p_{2}\)、\(p_{1}^{\prime}\) 和 \(p_{2}^{\prime}\) 值进行求和：\(p_{1}^{\prime} + p_{2}^{\prime} = p_{1} + p_{2}\)。显而易见，式（46）中的主项代表场的动能（\(a_{p}^{\dagger}a_{p}\) 是与单粒子态 \(p\) 相关的粒子数算符），而第二项则代表势能。
+对于自旋半整数的费米子而言，单粒子态不仅需要由粒子动量的值 \(p\) 来表征，还需由其自旋在 \(z\) 方向分量的值 \(\sigma\) 来加以区分；因此，创建和湮灭算符将带有双重索引。此时，算符 \(\hat{H}\) 的形式为
+\begin{equation}\tag{11.1.59}\label{eq:11.1.59}
+\hat { H } = \sum _ { p , \sigma } \frac { p ^{2} } { 2 m } a _ { p \sigma } ^{\dagger} a _ { p \sigma } + \frac { 1 } { 2 } \sum ^{\prime} u _ { p _ { 1 } ^{\prime} \sigma _ { 1 } , p _ { 2 } ^{\prime} \sigma _ { 2 } } ^{p _ { 1} ^{\prime} \sigma _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } a _ { p _ { 1 } ^{\prime} \sigma _ { 1 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 1 } \sigma _ { 1 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } \sigma _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 1 } \sigma _ { 1 } ^{\prime} } ^{\dagger} ;
+\end{equation}
+第二项中的求和现在仅针对那些既符合动量守恒条件又符合自旋守恒条件的两个粒子的态进行。
+在接下来的章节中，我们将运用二次量子化的方法来研究由相互作用粒子构成的系统的低温性质。在大多数情况下，我们将在以下近似条件下研究这些系统：\(a/\lambda \ll 1\) 以及 \(na^3 \ll 1\)，其中 \(a\) 是双体相互作用的散射长度，\(\lambda\) 是粒子的平均热波长，\(n\) 则是系统中粒子的密度。对于质量为 \(m\) 的两个粒子相撞时，其有效散射截面主要由"散射振幅"\(a(\mathbf{p})\) 决定，其中
+\begin{equation}\tag{11.1.60}\label{eq:11.1.60}
+a ( p ) = \frac { m } { 4 \pi \hbar ^{2} } \int u ( \mathbf { r } ) e ^{i p \cdot \mathbf { r} / \hbar } d ^{3} r ,
+\end{equation}
+\(p\) 为碰撞过程中动量的传递量；若势能为中心势，则方程（49）的形式为
+\begin{equation}\tag{11.1.61}\label{eq:11.1.61}
+a ( p ) = \frac { m } { 4 \pi \hbar ^{2} } \int _ { 0 } ^{\infty} u ( r ) \frac { \sin ( k r ) } { k r } 4 \pi r ^{2} d r  \left( k = \frac { p } { \hbar } \right) .
+\end{equation}
+对于低能散射（即"慢速"碰撞），我们得到极限结果
+\begin{equation}\tag{11.1.62}\label{eq:11.1.62}
+a = \frac { m u _ { 0 } } { 4 \pi \hbar ^{2} } ,  u _ { 0 } = \int u ( \mathbf { r } ) d ^{3} r ,
+\end{equation}
+量 \(a\) 为给定势能的散射长度。\(^{4}\) 或者，我们也可以采用 S 波散射相移 \(\eta_{0}(k)\)，详见第 10.5 节，并且一方面写出
+\begin{equation}\tag{11.1.63}\label{eq:11.1.63}
+\tan \eta _ { 0 } ( k ) \simeq - \frac { m k } { 4 \pi \hbar ^{2} } \int _ { 0 } ^{\infty} u ( r ) \frac { \sin ^{2} ( k r ) } { ( k r ) ^{2} } 4 \pi r ^{2} d r
+\end{equation}
+另一方面，
+\begin{equation}\tag{11.1.64}\label{eq:11.1.64}
+\cot \eta _ { 0 } ( k ) = - \frac { 1 } { k a } + \frac { 1 } { 2 } k r ^{*} + \cdots ,
+\end{equation}
+其中 \(a\) 为"散射长度"，\(r^{*}\) 为势能的"有效范围"。对于低能散射，方程（52）和（53）再次导出方程（51）。顺便指出，根据所讨论势能是主要呈斥力还是主要呈引力，\(a\) 可能为正，也可能为负；除非另有说明，我们均假设 \(a\) 为正。
+\section{非理想玻色气体的低温行为}\label{ux975eux7406ux60f3ux73bbux8272ux6c14ux4f53ux7684ux4f4eux6e29ux884cux4e3a}
+???????????????? \autoref{eq:11.1.46} ???????? \(u_{p_{1}^{\prime},p_{2}^{\prime}}^{p_{1},p_{2}}\) ?????????? \(p\) ?????? \autoref{eq:11.1.44} ?????????????????????? \(u(\mathbf{p})\) ??? \(p=0\) ??? \(u_{0}/V\) ????? \(u_{0}\) ? \autoref{eq:11.1.51}????????? \(\sum^{\prime}\) ?????????????????
+\begin{equation}\tag{11.2.1}\label{eq:11.2.1}
+\begin{array}{r} { \hat { H } = \sum _ { p } \frac { p ^{2} } { 2 m } a _ { p } ^{\dagger} a _ { p } + \frac { 2 \pi a \hbar ^{2} } { m V } \left[ \sum _ { p } a _ { p } ^{\dagger} a _ { p } ^{\dagger} a _ { p } a _ { p } \right. } \\{ \left. + \sum _ { p _ { 1 } \neq p _ { 2 } } \left( a _ { p _ { 1 } } ^{\dagger} a _ { p _ { 2 } } ^{\dagger} a _ { p _ { 2 } } a _ { p _ { 1 } } + a _ { p _ { 2 } } ^{\dagger} a _ { p _ { 1 } } ^{\dagger} a _ { p _ { 2 } } a _ { p _ { 1 } } \right) \right] . } \end{array}
+\end{equation}
+现在
+\begin{equation}\tag{11.2.2}\label{eq:11.2.2}
+\sum _ { p } a _ { p } ^{\dagger} a _ { p } ^{\dagger} a _ { p } a _ { p } = \sum _ { p } a _ { p } ^{\dagger} ( a _ { p } a _ { p } ^{\dagger} - 1 ) a _ { p } = \sum _ { p } ( n _ { p } ^{2} - n _ { p } ) = \sum _ { p } n _ { p } ^{2} - N ,
+\end{equation}
+\(^{4}\)这一结果与黄遵宪和杨振宁于1957年提出的赝势方法一致。在该方法中，\(u(\boldsymbol{r})\) 被替换为奇异势 \(\frac{4\pi a\hbar^{2}}{m}\delta(\boldsymbol{r})\)，因此积分 \(u_{0}\) 变为 \(4\pi a\hbar^{2}/m\)。有关赝势方法的详细阐述，请参阅本书第一版第~10~章。
+而
+\begin{equation}\tag{11.2.3}\label{eq:11.2.3}
+\sum _ { p _ { 1 } \neq p _ { 2 } } a _ { p _ { 1 } } ^{\dagger} a _ { p _ { 2 } } ^{\dagger} a _ { p _ { 2 } } a _ { p _ { 1 } } = \sum _ { p _ { 1 } \neq p _ { 2 } } n _ { p _ { 1 } } n _ { p _ { 2 } } = \sum _ { p _ { 1 } } n _ { p _ { 1 } } ( N - n _ { p _ { 1 } } ) = N ^{2} - \sum _ { p } n _ { p } ^{2} ,
+\end{equation}
+交换项 \(a_{p_{2}}^{\dagger}a_{p_{1}}^{\dagger}a_{p_{2}}a_{p_{1}}\) 的求和同样成立。将这些结果综合起来，系统的能级 eigenvectors 结果为
+\begin{equation}\tag{11.2.4}\label{eq:11.2.4}
+\begin{array}{rlr} & { } & { E \{ n _ { p } \} = \sum _ { p } n _ { p } \frac { p ^{2} } { 2 m } + \frac { 2 \pi a \hbar ^{2} } { m V } \left[ 2 N ^{2} - N - \sum _ { p } n _ { p } ^{2} \right] } \\& { } & { \simeq \sum _ { p } n _ { p } \frac { p ^{2} } { 2 m } + \frac { 2 \pi a \hbar ^{2} } { m V } ( 2 N ^{2} - n _ { 0 } ^{2} ) . } \end{array}
+\end{equation}
+我们首先考察给定系统的基态，其对应于分布集
+\begin{equation}\tag{11.2.5}\label{eq:11.2.5}
+n _ { p } \simeq \left\{ \begin{array}{ll} { N } & { \mathrm { f o r }  p = 0 } \\{ 0 } & { \mathrm { f o r }  p \neq 0 , } \end{array} \right.
+\end{equation}
+其结果是
+\begin{equation}\tag{11.2.6}\label{eq:11.2.6}
+E _ { 0 } \simeq \frac { 2 \pi a \hbar ^{2} N ^{2} } { m V } .
+\end{equation}
+基态压力则由以下公式给出
+\begin{equation}\tag{11.2.7}\label{eq:11.2.7}
+P _ { 0 } = - \left( \frac { \partial E _ { 0 } } { \partial V } \right) _ { N } = \frac { 2 \pi a \hbar ^{2} N ^{2} } { m V ^{2} } = \frac { 2 \pi a \hbar ^{2} n ^{2} } { m } ,
+\end{equation}
+其中 \(n(=N/V)\) 是系统中的粒子密度。由此可得声速 \(c_{0}\)，其表达式为
+\begin{equation}\tag{11.2.8}\label{eq:11.2.8}
+c _ { 0 } ^{2} = \frac { 1 } { m } \frac { d P _ { 0 } } { d n } = \frac { 4 \pi a \hbar ^{2} n } { m ^{2} } .
+\end{equation}
+将适用于液态氦\(^{4}\)的数值代入，即 \(a\simeq2.2\text{\AA}\)、\(n=1/\nu\)，其中 \(\nu\simeq45\text{\AA}^{3}\)，且 \(m\simeq6.65\times10^{-24}\text{g}\)，我们得到：\(c_{0}\simeq125\text{m/s}\)。然而，与液态氦实际声速约240 m/s相比，这一结果并不算令人沮丧——因为理论
+此处所发展的理论本无意应用于液体。最后，在 \(T=0\) K 时，系统的化学势为
+\begin{equation}\tag{11.2.9}\label{eq:11.2.9}
+\mu _ { 0 } = \left( \frac { \partial E _ { 0 } } { \partial N } \right) _ { V } = \frac { 4 \pi a \hbar ^{2} N } { m V } = \frac { 4 \pi a \hbar ^{2} n } { m } .
+\end{equation}
+在有限但低温条件下，可以通过系统的配分函数来研究系统的物理行为。
+\begin{equation}\tag{11.2.10}\label{eq:11.2.10}
+\begin{array}{rl} & { Q ( N , V , T ) = \sum _ { \{ n _ { p } \} } \exp ( - \beta E \{ n _ { p } \} ) } \\& {  = \sum _ { \{ n _ { p } \} } \exp \left[ - \beta \left\{ \sum _ { p } n _ { p } \frac { p ^{2} } { 2 m } + \frac { 2 \pi \alpha \hbar ^{2} N ^{2} } { m V } \left( 2 - \frac { n _ { 0 } ^{2} } { N ^{2} } \right) \right\} \right] . } \end{array}
+\end{equation}
+在最低近似下，此处出现的量 \((n_{0}/N)\) 可以用其理想气体值替代，正如第7.1节所给出的那样，
+\begin{equation}\tag{11.2.11}\label{eq:11.2.11}
+\begin{array}{rl} { \frac { n _ { 0 } } { N } = 1 - \frac { \lambda _ { c } ^{3} } { \lambda ^{3} }  } & { \left[ \lambda = \frac { h } { ( 2 \pi \, m k T ) ^{1 / 2} } ,  \lambda _ { c } = \{ \nu \zeta ( 3 / 2 ) \} ^{1 / 3} \right] } \\{ = 1 - \frac { \nu } { \nu _ { c } }  } & { \left[ \nu = \frac { V } { N } ,  \nu _ { c } = \frac { \lambda ^{3} } { \zeta ( 3 / 2 ) } \right] . } \end{array}
+\end{equation}
+因此，我们得到，以 \(a\) 为一阶近似，
+\begin{equation}\tag{11.2.12}\label{eq:11.2.12}
+\ln Q ( N , V , T ) \simeq \ln Q _ { i d } ( N , V , T ) - \beta \frac { 2 \pi a \hbar ^{2} N ^{2} } { m V } \left( 1 + \frac { 2 \nu } { \nu _ { c } } - \frac { \nu ^{2} } { \nu _ { c } ^{2} } \right) .
+\end{equation}
+每粒子的亥姆霍兹自由能则由以下公式给出\(^{6}\)
+\begin{equation}\tag{11.2.13}\label{eq:11.2.13}
+\frac { 1 } { N } A ( N , V , T ) = - \frac { k T } { N } \ln Q ( N , V , T ) \simeq \frac { 1 } { N } A _ { i d } ( N , V , T ) + \frac { 2 \pi a \hbar ^{2} } { m } \left( \frac { 1 } { \nu } + \frac { 2 } { \nu _ { c } } - \frac { \nu } { \nu _ { c } ^{2} } \right) .
+\end{equation}
+现在，压力 \(P\) 和化学势 \(\mu\) 可以直接得出：
+\begin{equation}\tag{11.2.14}\label{eq:11.2.14}
+P = - \left( \frac { \partial A } { \partial V } \right) _ { N , T } = - \left( \frac { \partial ( A / N ) } { \partial \nu } \right) _ { T } = P _ { i d } + \frac { 2 \pi a \hbar ^{2} } { m } \left( \frac { 1 } { \nu ^{2} } + \frac { 1 } { \nu _ { c } ^{2} } \right) ,
+\end{equation}
+并且
+\begin{equation}\tag{11.2.15}\label{eq:11.2.15}
+\mu = \frac { A } { N } + P \nu = \mu _ { i d } + \frac { 4 \pi a \hbar ^{2} } { m } \left( \frac { 1 } { \nu } + \frac { 1 } { \nu _ { c } } \right) ,
+\end{equation}
+??? \(\nu_{c}=\infty\) ??????? \autoref{eq:11.2.7} ? \autoref{eq:11.2.9}?
+\^{}\{6\} 这些结果以及后续的推导，最早由李和杨在 1958 年和 1960 年分别采用二元碰撞法得出，而黄则在 1959 年和 1960 年运用赝势法完成了相关研究。
+在过渡点处（即 \(\nu=\nu_{c}\) 且 \(\lambda=\lambda_{c}\)），压力 \(P_{c}\) 和化学势 \(\mu_{c}\) 的值被证明为
+\begin{equation}\tag{11.2.16}\label{eq:11.2.16}
+P _ { c } = P _ { i d } + \frac { 4 \pi a \hbar ^{2} } { m \lambda _ { c } ^{6} } \left\{ \zeta \left( \frac { 3 } { 2 } \right) \right\} ^{2} = \frac { k T _ { c } } { \lambda _ { c } ^{3} } \left[ \zeta \left( \frac { 5 } { 2 } \right) + 2 \left\{ \zeta \left( \frac { 3 } { 2 } \right) \right\} ^{2} \frac { a } { \lambda _ { c } } \right]
+\end{equation}
+并且
+\begin{equation}\tag{11.2.17}\label{eq:11.2.17}
+\mu _ { c } = \mu _ { i d } + \frac { 8 \pi a \hbar ^{2} } { m \lambda _ { c } ^{3} } \zeta \left( \frac { 3 } { 2 } \right) = 4 \zeta \left( \frac { 3 } { 2 } \right) k T _ { c } \frac { a } { \lambda _ { c } } ;
+\end{equation}
+对应于 fugacity 的值 \(z_{c}\) 由以下公式给出：
+\begin{equation}\tag{11.2.18}\label{eq:11.2.18}
+z _ { c } = \exp ( \mu _ { c } / k T _ { c } ) \simeq 1 + 4 \zeta ( 3 / 2 ) ( a / \lambda _ { c } ) .
+\end{equation}
+若采用略有不同的方法来推导这一结果，请参阅问题 11.2。
+\subsection{相互作用对超冷原子玻色-爱因斯坦凝聚的影响}\label{ux76f8ux4e92ux4f5cux7528ux5bf9ux8d85ux51b7ux539fux5b50ux73bbux8272ux7231ux56e0ux65afux5766ux51ddux805aux4f53ux7684ux5f71ux54cd}
+? 7.2 ?????????????????????????-????????????????????? \(a\) ???? \autoref{eq:11.1.51}???????????????????????? \autoref{eq:11.2.6} ? \autoref{eq:11.2.9} ?????????????????? Gross-Pitaevskii ???????????????????? Pitaevskii?1961??Gross?1961?1963??Pitaevskii ? Stringari?2003??? Leggett?2006??
+\begin{equation}\tag{11.2.19}\label{eq:11.2.19}
+V ( \pmb { r } ) = \frac { 1 } { 2 } m ( \omega _ { 1 } ^{2} x ^{2} + \omega _ { 2 } ^{2} y ^{2} + \omega _ { 3 } ^{2} z ^{2} ) ,
+\end{equation}
+这导致了未受扰动的单粒子基态波函数
+\begin{equation}\tag{11.2.20}\label{eq:11.2.20}
+\phi ( \boldsymbol { r } ) = \frac { 1 } { \pi ^{3 / 4} \sqrt { a _ { 1 } a _ { 2 } a _ { 3 } } } \exp \left[ - \frac { 1 } { 2 } \left( \frac { x ^{2} } { a _ { 1 } ^{2} } + \frac { y ^{2} } { a _ { 2 } ^{2} } + \frac { z ^{2} } { a _ { 3 } ^{2} } \right) \right] ,
+\end{equation}
+其中 \(a_{\alpha}=\sqrt{\hbar/m\omega_{\alpha}}\) 是未受扰动的谐振子基态在笛卡尔方向 \(\alpha\) 上的线性尺寸。
+??????????? \(T=0\) ?????? \(N\) ??????????????????????? \(\Psi(\boldsymbol{r})=\sqrt{N}\phi(\boldsymbol{r})\)??????????????????? \(u_{0}\delta(\boldsymbol{r}-\boldsymbol{r}^{\prime})\)??????? \(u_{0}=4\pi a\hbar^{2}/m\)?????????????????????????????? \autoref{eq:11.1.51}?????? \(a\) ?????????????? \(a\) ?????????????
+长度可以在较宽的范围内进行调节，包括符号的改变，而通过费什巴赫共振，磁场仅发生微小变化。当考虑相互作用时，平均场能量可以表示为宏观量子态波函数 \(\Psi(\boldsymbol{r})\) 的函数，其中宏观基态数密度由 \(n(\boldsymbol{r})=|\Psi(\boldsymbol{r})|^{2}\) 给出。于是，格罗斯-皮特夫斯基能量泛函可写为
+\begin{equation}\tag{11.2.21}\label{eq:11.2.21}
+E [ \Psi ] = \int d \boldsymbol { r } \left[ \frac { \hbar ^{2} } { 2 m } | \nabla \Psi ( \boldsymbol { r } ) | ^{2} + V ( \boldsymbol { r } ) | \Psi ( \boldsymbol { r } ) | ^{2} + \frac { 1 } { 2 } u _ { 0 } \, | \Psi ( \boldsymbol { r } ) | ^{4} \right] ;
+\end{equation}
+参见Bahm和Pethick（1996）、Pitaevskii和Stringari（2003）、Leggett（2006）以及Pethick和Smith（2008）。能量 \(E[\Psi]\) 可以对 \(\Psi^*\) 进行最小化，并满足以下约束条件：
+\begin{equation}\tag{11.2.22}\label{eq:11.2.22}
+N = \int n ( \mathbf { r } ) d \mathbf { r } = \int | \Psi ( \mathbf { r } ) | ^{2} \, d \mathbf { r } ,
+\end{equation}
+采用拉格朗日乘子 \(\mu\)。令 \(\delta E - \mu \delta N = 0\)，即可得到格罗斯-皮特夫斯基方程。
+\begin{equation}\tag{11.2.23}\label{eq:11.2.23}
+- \frac { \hbar ^{2} } { 2 m } \nabla ^{2} \Psi ( \pmb { r } ) + V ( \pmb { r } ) \Psi ( \pmb { r } ) + u _ { 0 } \left| \Psi ( \pmb { r } ) \right| ^{2} \Psi ( \pmb { r } ) = \mu \Psi ( \pmb { r } ) .
+\end{equation}
+当散射长度 \(a\) 远小于粒子间平均间距时，方程（21）和方程（23）非常适用于描述零温非均匀玻色气体。方程（23）的形式为单粒子薛定谔方程，其上附加了一个与 \(u_0 \, |\Psi(\boldsymbol{r})|^2\) 成正比的非线性项，从而实现了平均场耦合——即一个粒子与凝聚体中其余所有粒子之间的耦合。要确定平均场基态能量，需解方程（23）求得 \(\Psi(\boldsymbol{r})\)，并利用该解来计算方程（21）。当 \(a=0\) 时，其解为非相互作用的基态波函数 \(\Psi(\boldsymbol{r})=\sqrt{N}\phi(\boldsymbol{r})\)。控制相互作用项大小的无量纲参数为 \(Na/a_{\rm osc}\)，其中 \(a_{\rm osc}=(a_1a_2a_3)^{1/3}\)，因此，在凝聚体中原子数量较大的系统中，相互作用的影响最为显著。
+方程（23）可在若干极限情况下进行解析分析；同时，也可以通过数值方法对其进行研究。特别是，对于 \(V=0\) 的均匀体系，解方程（21）和方程（23）可重现方程（6）至方程（9）所给出的结果。当 \(a>0\) 时，凝聚体波函数会相对于非相互作用的玻色-爱因斯坦凝聚体在各个方向上不断扩展。当 \(Na/a_{\mathrm{osc}}\gg1\) 时，可按照托马斯-费米分析的方式忽略动能项，因此波函数近似变为
+\begin{equation}\tag{11.2.24}\label{eq:11.2.24}
+\Psi ( \pmb { r } ) \approx \sqrt { ( \mu - V ( \pmb { r } ) ) / u _ { 0 } } \, ,
+\end{equation}
+其中，当 \(V(\boldsymbol{r}) > \mu\) 时，托马斯-费米波函数将消失。化学势 \(\mu\) 与玻色子数 \(N\) 之间存在如下关系：
+\begin{equation}\tag{11.2.25}\label{eq:11.2.25}
+N = \frac { 8 \pi } { 15 } \left( \frac { 2 \mu } { m \omega _ { 0 } ^{2} } \right) ^{3 / 2} \frac { \mu } { u _ { 0 } } ,
+\end{equation}
+其中 \(\omega_{0}=(\omega_{1}\omega_{2}\omega_{3})^{1/3}\)，因此
+\begin{equation}\tag{11.2.26}\label{eq:11.2.26}
+\mu = \frac { 1 } { 2 } \left( \frac { 15 N a } { a _ { \mathrm { o s c } } } \right) ^{2 / 5} \hbar \omega _ { 0 } .
+\end{equation}
+在这种极限条件下，凝聚体的总能量为
+\begin{equation}\tag{11.2.27}\label{eq:11.2.27}
+E = \frac { 5 } { 7 } \mu N .
+\end{equation}
+凝聚体在阱的三个方向上的线性尺寸分别为
+\begin{equation}\tag{11.2.28}\label{eq:11.2.28}
+R _ { \alpha } = \sqrt { \frac { 2 \mu } { m \omega _ { \alpha } ^{2} } } = a _ { \mathrm { o s c } } \left( \frac { 15 N a } { a _ { \mathrm { o s c } } } \right) ^{1 / 5} \frac { \omega _ { 0 } } { \omega _ { \alpha } } ,
+\end{equation}
+因此，斥力相互作用会扩大凝聚体的尺寸，使系统的各向异性程度超过非相互作用玻色-爱因斯坦凝聚体的各向异性；参见Pitaevskii和Stringari（2003年）；Leggett（2006年）以及Pethick和Smith（2008年）。在飞行时间测量中，斥力相互作用会导致在那些在阱中被束缚得最紧密的方向上获得更高的速度，因此飞行时间分布也比非相互作用情形更加各向异性；参见Holland和Cooper（1996年）以及Holland等人（1997年）。
+\section{非理想玻色气体的低激发态}\label{ux975eux7406ux60f3ux73bbux8272ux6c14ux4f53ux7684ux4f4eux6fc0ux53d1ux6001}
+????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????-?????????????????Ruprecht ??1995???????????? \(-0.575 \lesssim Na/a_{\mathrm{osc}} < 0\) ?????????????? 11.1?
+
+\begin{equation}\tag{11.2.29}\label{eq:11.2.29}
+u _ { 00 } ^{00} = \frac { 1 } { V } \int u ( \mathbf { r } ) d ^{3} r = \frac { u _ { 0 } } { V } ;
+\end{equation}
+???????? \(u_{p_{1}p_{2}}^{p_{1}^{\prime}p_{2}^{\prime}}\) ?? \autoref{eq:11.1.44} ??????????????????????????????????? \(u_{0}/V\) ???
+\begin{equation}\tag{11.2.30}\label{eq:11.2.30}
+\frac { u _ { 0 } } { V } + \frac { 1 } { V ^{2} } \sum _ { p \neq 0 } \frac { | \int d ^{3} r e ^{i p \cdot r / \hbar} u ( r ) | ^{2} } { - p ^{2} / m } \simeq \frac { u _ { 0 } } { V } - \frac { u _ { 0 } ^{2} m } { V ^{2} } \sum _ { p \neq 0 } \frac { 1 } { p ^{2} } .
+\end{equation}
+? \autoref{eq:11.2.30} ???? \(4\pi a\hbar^{2}/mV\) ?????????????????? \autoref{eq:11.1.51} ???
+\begin{equation}\tag{11.2.31}\label{eq:11.2.31}
+u _ { 0 } \simeq \frac { 4 \pi a \hbar ^{2} } { m } \left( 1 + \frac { 4 \pi a \hbar ^{2} } { V } \sum _ { p \neq 0 } \frac { 1 } { p ^{2} } \right) .
+\end{equation}
+? \autoref{eq:11.2.31} ?????????????????????
+\begin{equation}\tag{11.2.32}\label{eq:11.2.32}
+\begin{array}{r} { \hat { H } = \frac { 2 \pi a \hbar ^{2} } { m } \frac { N ^{2} } { V } \left( 1 + \frac { 4 \pi a \hbar ^{2} } { V } \sum _ { p \neq 0 } \frac { 1 } { p ^{2} } \right) } \\{ + \frac { 2 \pi a \hbar ^{2} } { m } \frac { N } { V } \sum _ { p \neq 0 } ( 2 a _ { p } ^{\dagger} a _ { p } + a _ { p } ^{\dagger} a _ { - p } ^{\dagger} + a _ { p } a _ { - p } ) + \sum _ { p \neq 0 } \frac { p ^{2} } { 2 m } a _ { p } ^{\dagger} a _ { p } . } \end{array}
+\end{equation}
+要计算系统的能级，就必须对哈密顿算符 (7) 进行对角化。这一过程可以通过对算子 \(a_{p}\) 和 \(a_{p}^{\dagger}\) 进行线性变换来实现——该变换最早由博戈柳波夫（1947）提出：
+\begin{equation}\tag{11.2.33}\label{eq:11.2.33}
+b _ { p } = \frac { a _ { p } + \alpha _ { p } a _ { - p } ^{\dagger} } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } ,  b _ { p } ^{\dagger} = \frac { a _ { p } ^{\dagger} + \alpha _ { p } a _ { - p } } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } ,
+\end{equation}
+其中
+\begin{equation}\tag{11.2.34}\label{eq:11.2.34}
+\alpha p = \frac { m V } { 4 \pi a \hbar ^{2} N } \left\{ \frac { 4 \pi a \hbar ^{2} N } { m V } + \frac { p ^{2} } { 2 m } - \varepsilon ( p ) \right\} ,
+\end{equation}
+以
+\begin{equation}\tag{11.2.35}\label{eq:11.2.35}
+\varepsilon ( \pmb { p } ) = \left\{ \frac { 4 \pi a \hbar ^{2} N } { m V } \frac { p ^{2} } { m } + \left( \frac { p ^{2} } { 2 m } \right) ^{2} \right\} ^{1 / 2} ;
+\end{equation}
+?????????????? \(\alpha_{p} < 1\)??? \autoref{eq:11.2.33} ???????
+\begin{equation}\tag{11.2.36}\label{eq:11.2.36}
+a _ { p } = \frac { b _ { p } - \alpha _ { p } b _ { - p } ^{\dagger} } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } ,  a _ { p } ^{\dagger} = \frac { b _ { p } ^{\dagger} - \alpha _ { p } b _ { - p } } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } .
+\end{equation}
+很容易验证，新算子 \(b_{p}\) 和 \(b_{p}^{\dagger}\) 满足与旧算子 \(a_{p}\) 和 \(a_{p}^{\dagger}\) 相同的交换关系，即
+\begin{equation}\tag{11.2.37}\label{eq:11.2.37}
+[ b _ { p } , b _ { p ^{\prime} } ^{\dagger} ] = \delta _ { p p ^{\prime} }
+\end{equation}
+\begin{equation}\tag{11.2.38}\label{eq:11.2.38}
+[ b _ { p } , b _ { p ^{\prime} } ] = [ b _ { p } ^{\dagger} , b _ { p ^{\prime} } ^{\dagger} ] = 0 .
+\end{equation}
+? \autoref{eq:11.2.36} ?? \autoref{eq:11.2.32}???????????????
+\begin{equation}\tag{11.2.39}\label{eq:11.2.39}
+\hat { H } = E _ { 0 } + \sum _ { p \neq 0 } \varepsilon ( p ) b _ { p } ^{\dagger} b _ { p } ,
+\end{equation}
+其中
+\begin{equation}\tag{11.2.40}\label{eq:11.2.40}
+E _ { 0 } = \frac { 2 \pi a \hbar ^{2} N ^{2} } { m V } + \frac { 1 } { 2 } \sum _ { p \neq 0 } \left\{ \varepsilon ( p ) - \frac { p ^{2} } { 2 m } - \frac { 4 \pi a \hbar ^{2} N } { m V } + \left( \frac { 4 \pi a \hbar ^{2} N } { m V } \right) ^{2} \frac { m } { p ^{2} } \right\} .
+\end{equation}
+? \autoref{eq:11.2.37}?\autoref{eq:11.2.38} ? \autoref{eq:11.2.39} ?????? \(b_{p}\) ? \(b_{p}^{\dagger}\) ????????????????????????????????????
+????? \(p\)??????????????? \autoref{eq:11.2.39} ???????????????? \autoref{eq:11.2.40} ????????????????
+\begin{equation}\tag{11.2.41}\label{eq:11.2.41}
+x = p \left( \frac { V } { 8 \pi a \hbar ^{2} N } \right) ^{1 / 2} ,
+\end{equation}
+我们得到系统的基态能量
+\begin{equation}\tag{11.2.42}\label{eq:11.2.42}
+\begin{array}{r} { E _ { 0 } = \frac { 2 \pi a \hbar ^{2} N ^{2} } { m V } \left[ 1 + \left( \frac { 12 8 N a ^{3} } { \pi V } \right) ^{1 / 2} \right. } \\{ \left. \times \int _ { 0 } ^{\infty} d x \left[ x ^{2} \left( x \sqrt { ( x ^{2} + 2 ) } - x ^{2} - 1 + \frac { 1 } { 2 x ^{2} } \right) \right] \right] . } \end{array}
+\end{equation}
+经计算，该积分的值为 \((128)^{1/2}/15\)，结果为
+\begin{equation}\tag{11.2.43}\label{eq:11.2.43}
+\frac { E _ { 0 } } { N } = \frac { 2 \pi \, a \hbar ^{2} n } { m } \left[ 1 + \frac { 12 8 } { 15 \pi ^{1 / 2} } ( n a ^{3} ) ^{1 / 2} \right] ,
+\end{equation}
+?????? \(n\) ????? \autoref{eq:11.2.43} ???????\(E_{0}/N\) ????? \((na^{3})^{1/2}\) ????????????? \autoref{eq:11.2.6} ????
+上述结果最早由李和杨在 1957 年采用二体碰撞法推导出来；然而，这一计算的具体细节则稍后才被提出（参见李和杨，1960a；另见问题 11.6）。借助伪势方法，这一结果又由李、黄和杨在 1957 年重新推导出来。
+系统的基态压力现可表示为
+\begin{equation}\tag{11.2.44}\label{eq:11.2.44}
+\begin{array}{r} { P _ { 0 } = - \left( \frac { \partial E _ { 0 } } { \partial V } \right) _ { N } = n ^{2} \frac { \partial ( E _ { 0 } / N ) } { \partial n } } \\{ = \frac { 2 \pi a \hbar ^{2} n ^{2} } { m } \left[ 1 + \frac { 64 } { 5 \pi ^{1 / 2} } ( n a ^{3} ) ^{1 / 2} \right] , } \end{array}
+\end{equation}
+\(^{7}\)要对这一展开式的高阶项进行求值，还需考虑三体碰撞的影响；因此，一般来说，这些项无法仅用散射长度来表示。硬球气体的特例情况已由吴在 1959 年加以研究，并利用伪势方法得到了结果（
+\begin{equation}\tag{11.2.45}\label{eq:11.2.45}
+\frac { E _ { 0 } } { N } = \frac { 2 \pi a \hbar ^{2} n } { m } \left[ 1 + \frac { 12 8 } { 15 \pi ^{1 / 2} } \left( n a ^{3} \right) ^{1 / 2} + 8 \left( \frac { 4 \pi } { 3 } - \sqrt { 3 } \right) \left( n a ^{3} \right) \ln ( 12 \pi n a ^{3} ) + O ( n a ^{3} ) \right] ,
+\end{equation}
+该结果表明，该展开式并不以 \((na^{3})^{1/2}\) 的简单幂次形式进行。
+由此可得声速
+\begin{equation}\tag{11.2.46}\label{eq:11.2.46}
+c _ { 0 } ^{2} = \frac { 1 } { m } \frac { d P _ { 0 } } { d n } = \frac { 4 \pi a \hbar ^{2} n } { m ^{2} } \left[ 1 + \frac { 16 } { \pi ^{1 / 2} } ( n a ^{3} ) ^{1 / 2} \right] .
+\end{equation}
+? \autoref{eq:11.2.44} ? \autoref{eq:11.2.46} ????????? 11.2 ?????????
+系统的基态特征是完全不存在激发态；因此，准粒子的数算符 \(b_{p}^{\dagger}b_{p}\) 的特征值对于所有 \(p\neq0\) 必须为零。至于实粒子，即使在绝对零度时，也必须存在一些具有非零能量的粒子——否则，系统在基态中就不可能拥有有限的能量。实粒子的动量分布可通过计算数算符 \(a_{p}^{\dagger}a_{p}\) 的基态期望值来确定。而在系统的基态中，
+\begin{equation}\tag{11.2.47}\label{eq:11.2.47}
+a _ { p } | \Psi _ { 0 } \rangle = \frac { 1 } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } ( b _ { p } - \alpha _ { p } b _ { - p } ^{\dagger} ) | \Psi _ { 0 } \rangle = \frac { - \alpha _ { p } } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } b _ { - p } ^{\dagger} | \Psi _ { 0 } \rangle
+\end{equation}
+?? \(b_{p}|\Psi_{0}\rangle\equiv0\)??? \autoref{eq:11.2.47} ?????????? \(\alpha_{p}\) ??????
+\begin{equation}\tag{11.2.48}\label{eq:11.2.48}
+\langle \Psi _ { 0 } | a _ { p } ^{\dagger} = \frac { - \alpha _ { p } } { \sqrt { ( 1 - \alpha _ { p } ^{2} ) } } \langle \Psi _ { 0 } | b _ { - p } .
+\end{equation}
+??? \autoref{eq:11.2.47} ? \autoref{eq:11.2.48}???????????????
+\begin{equation}\tag{11.2.49}\label{eq:11.2.49}
+\langle \Psi _ { 0 } | a _ { p } ^{\dagger} a _ { p } | \Psi _ { 0 } \rangle = \frac { \alpha _ { p } ^{2} } { 1 - \alpha _ { p } ^{2} } \langle \Psi _ { 0 } | b _ { - p } b _ { - p } ^{\dagger} | \Psi _ { 0 } \rangle = \frac { \alpha _ { p } ^{2} } { 1 - \alpha _ { p } ^{2} } ;
+\end{equation}
+在此，我们利用了以下事实：(i) \(b_{p}b_{p}^{\dagger}-b_{p}^{\dagger}b_{p}=1\)，以及 (ii) 在基态中，对于所有 \(p\neq0\)，\(b_{p}^{\dagger}b_{p}=0\)（因此 \(b_{p}b_{p}^{\dagger}=1\)）。于是，对于 \(p\neq0\)，
+\begin{equation}\tag{11.2.50}\label{eq:11.2.50}
+\overline { { n } } _ { p } = \frac { \alpha _ { p } ^{2} } { 1 - \alpha _ { p } ^{2} } = \frac { x ^{2} + 1 } { 2 x \sqrt { ( x ^{2} + 2 ) } } - \frac { 1 } { 2 } ,
+\end{equation}
+其中 \(x=p(8\pi a\hbar^2n)^{-1/2}\)。因此，系统基态中"激发"粒子的总数量可表示为
+\begin{equation}\tag{11.2.51}\label{eq:11.2.51}
+\begin{array}{rl} & { \sum _ { p \neq 0 } \overline { { n } } p = \sum _ { p \neq 0 } \frac { \alpha _ { p } ^{2} } { 1 - \alpha _ { p } ^{2} } = \sum _ { x > 0 } \frac { 1 } { 2 } \left( \frac { x ^{2} + 1 } { x \sqrt { ( x ^{2} + 2 ) } } - 1 \right) } \\& { \simeq N \left\{ \frac { 32 } { \pi } ( n a ^{3} ) \right\} ^{1 / 2} \int _ { 0 } ^{\infty} d x \left[ x ^{2} \left( \frac { x ^{2} + 1 } { x \sqrt { ( x ^{2} + 2 ) } } - 1 \right) \right] . } \end{array}
+\end{equation}
+该积分的值为 \((2)^{1/2}/3\)，其结果为
+\begin{equation}\tag{11.2.52}\label{eq:11.2.52}
+\sum _ { p \neq 0 } \overline { { n } } _ { p } \simeq N \frac { 8 } { 3 \pi ^{1 / 2} } ( n a ^{3} ) ^{1 / 2} .
+\end{equation}
+因此，
+\begin{equation}\tag{11.2.53}\label{eq:11.2.53}
+\overline { { n } } _ { 0 } = N - \sum _ { p \neq 0 } \overline { { n } } _ { p } \simeq N \left[ 1 - \frac { 8 } { 3 \pi ^{1 / 2} } ( n a ^{3} ) ^{1 / 2} \right] .
+\end{equation}
+上述结果最早由李、黄和杨（1957）采用赝势方法得出。在此需要指出的是，彭罗斯和翁萨格（1956）早先已强调过，在研究相互作用玻色系统基态时，实粒子占据数 \(n_{p}\) 的重要性。
+\section{玻色液体的能量谱}\label{ux73bbux8272ux6db2ux4f53ux7684ux80fdux91cfux8c31}
+在本节中，我们拟对玻色液体能量谱的最核心特征进行研究，并探讨这一研究与液氦-4问题之间的关联。在此背景下，我们发现，由弱相互作用玻色子组成的低密度气态系统的低能态，其特征在于存在所谓的"基本激发态"（或"准粒子"），这些准粒子本身是玻色子，其能谱由以下公式给出：
+\begin{equation}\tag{11.4.1}\label{eq:11.4.1}
+\varepsilon ( p ) = \{ p ^{2} u ^{2} + ( p ^{2} / 2 m ) ^{2} \} ^{1 / 2} ,
+\end{equation}
+其中，
+\begin{equation}\tag{11.4.2}\label{eq:11.4.2}
+u = ( 4 \pi a n ) ^{1 / 2} ( \hbar / m ) ;
+\end{equation}
+? \autoref{eq:11.2.35}?\autoref{eq:11.2.37} ? \autoref{eq:11.2.38} ???\(^{8}\) ? \(p \ll \mu\)?? \(p \ll \hbar(an)^{1/2}\) ??? \(\varepsilon \simeq pu\)???? \((\varepsilon,p)\) ???????????????? \(u\) ?????? \(u\) ?????????? \autoref{eq:11.4.2} ? \autoref{eq:11.2.46}??? \(p \gg \mu\) ?????? \(\varepsilon \simeq p^{2}/2m + \Delta^{*}\)??? \(\Delta^{*}=mu^{2}=4\pi an\hbar^{2}/m\)?????????????????????????
+液氦-4）以及由亚内尔等人（1959年）和亨肖与伍兹（1961年）在实验中观测到；详见第7.6节。因此，前几节理论所给出的能谱，仅在声子的范围内模拟了兰道能谱；它并未考虑罗通。这并不令人意外，因为所讨论的理论原本只适用于低密度玻色气体（\(na^{3} \ll 1\)），而非液氦-4（\(na^{3} \simeq 0.2\)）。
+费曼成功解决了液氦-4中的基本激发态问题。在1953年至1954年间，他基于原子理论，对低温下的玻色液体进行了深入研究。通过一系列从基本原理出发的三篇重要论文，费曼得出了以下重要结论。\(^{9}\)
+（i）尽管存在原子间作用力，玻色液体仍会经历一场与理想玻色气体中发生的动量空间凝聚现象相类似的相变；换言之，伦敦在1938年所提出的关于液氦\(^{4}\)的理论设想——详见第7.1节——基本上是正确的。
+（ii）在足够低的温度下，液体中唯一可能存在的激发态是与压缩波相关的状态，即声子。那些不会改变液体密度、因而仅意味着对液体进行简单"搅拌"的长程运动，并不构成激发态，因为它们与基态的区别仅仅在于某些原子的"排列顺序"发生了变化。虽然在原子尺度上确实存在运动的可能性，但这些运动需要一定的最小能量\(\Delta\)才能被激发；显然，这类激发只有在相对较高的温度下（\(T \sim \Delta/k\)）才会显现出来，而且很可能最终被归结为朗道的罗通子。
+（iii）在存在激发的情况下，液体的波函数应近似地具有如下形式：
+\begin{equation}\tag{11.4.3}\label{eq:11.4.3}
+\Psi = \Phi \sum _ { i } f ( r _ { i } ) ,
+\end{equation}
+其中，\(\Phi\) 表示系统的基态波函数，而对 \(f(r_{i})\) 的求和则遍历所有 \(N\) 个坐标 \(r_{1},\ldots,r_{N}\)；显然，波函数 \(\Psi\) 在其各参数的取值上是关于称的。要精确确定函数 \(f(r)\) 的具体性质，需借助一个变分原理：该原理要求态 \(\Psi\) 的能量（以及由此关联的相应激发的能量）达到最小值。
+经验证，对于 \(f(r)\) 来说，最优选择是\ldots\ldots 见问题11.8，
+\begin{equation}\tag{11.4.4}\label{eq:11.4.4}
+f ( \boldsymbol { r } ) = \exp i ( k \cdot \boldsymbol { r } ) ,
+\end{equation}
+\(^{9}\) 对于有兴趣深入探讨费曼论证思路的读者，建议查阅费曼的原始论文，或参考梅赫拉与帕特里亚（1994）撰写的关于费曼超流体研究的综述。
+以（最小化）后的能量值
+\begin{equation}\tag{11.4.5}\label{eq:11.4.5}
+\varepsilon ( \pmb { k } ) = \frac { \hbar ^{2} k ^{2} } { 2 m S ( \pmb { k } ) } ,
+\end{equation}
+其中，\(S(\boldsymbol{k})\) 是液体的结构因子，亦即配对相关函数 \(\mathbf{g}(\boldsymbol{r})\) 的傅里叶变换：
+\begin{equation}\tag{11.4.6}\label{eq:11.4.6}
+S ( k ) = 1 + n \int ( g ( r ) - 1 ) e ^{i k \cdot r} d r ;
+\end{equation}
+在此不妨回顾一下：函数 \(ng(\boldsymbol{r}_{2}-\boldsymbol{r}_{1})\) 表示在已知另一原子位于点 \(\boldsymbol{r}_{1}\) 的情况下，我们有概率在点 \(\boldsymbol{r}_{2}\) 的附近发现该原子；参见第10.7节。因此，最优波函数可由以下公式给出：
+\begin{equation}\tag{11.4.7}\label{eq:11.4.7}
+\Psi = \Phi \sum _ { i } e ^{i k \cdot r _ { i} } .
+\end{equation}
+现在，与这一激发态对应的动量为 \(\hbar\mathbf{k}\)，因为
+\begin{equation}\tag{11.4.8}\label{eq:11.4.8}
+P \Psi = \left( - i \hbar \sum _ { i } \nabla _ { i } \right) \Psi = \hbar k \Psi \, ,
+\end{equation}
+\(P\Phi\) 等于零。自然地，这被理解为与激发相关的动量 \(p\)。因此，我们从基本原理出发，得到了玻色液体中基本激发的能-动量关系。
+从物理角度出发，可以证明：对于小波矢 \(k\)，结构因子 \(S(k)\) 会随 \(\hbar k/2mc\) 的线性增长，在 \(k=2\pi/r_0\) 左右达到峰值（对应于配对关联函数在最接近邻近间距 \(r_0\) 处的极大值——对于液氦 \(^4\) 来说，这一间距约为 3.6 埃），随后逐渐下降，并在伴随轻微振荡的情况下（对应于配对关联函数中次级极大值，出现在下一层邻近间隔处）趋于大 \(k\) 时的极限值 1；而极限值 1 是由于 \(g(r)\) 表达式中存在一个狄拉克函数所致——因为当 \(r_2\) 趋近于 \(r_1\) 时，我们必定会在那里找到一个原子。\(^{10}\) 因此，液氦 \(^4\) 中基本激发的能量 \(\varepsilon(k)\) 将以 \(\hbar kc\) 的线性方式开始增加，在 \(k_0 \simeq 2 \, \text{Å}^{-1}\) 处出现"凹陷"，随后又重新上升，最终趋近于最终极限值 \(\hbar^2k^2/2m\)。\(^{11}\) 这些特征如图~11.2 所示。显然，费曼的方法将声子和罗通统一整合进一个单一的、统一的理论框架之中，而它们分别代表
+正如我们如今所知，这种表达式既不代表声子，也不代表罗通。
+\section{量子化环流态}\label{ux91cfux5b50ux5316ux73afux6d41ux6001}
+接下来，我们来探讨玻色流体基态中"有序运动"的可能性。在此背景下，最重要的概念体现在费曼（1955）的环流定理之中，该定理为流体中"量子化涡旋运动"的存在奠定了物理基础。在液氦II的情况下，这一概念成功解答了长期以来困扰超流体物理学家的一些关键问题。
+由\(N\)个玻色子组成的超流体的基态波函数，可表示为一个对称函数\(\Phi(\boldsymbol{r}_1,\ldots,\boldsymbol{r}_N)\)；若超流体不参与任何有序运动，则\(\Phi\)将是一个纯实数。反之，若超流体具有均匀的质点运动，且速度为\(\boldsymbol{v}_s\)，则其波函数将为
+\begin{equation}\tag{11.5.1}\label{eq:11.5.1}
+\Psi = \Phi e ^{i ( P _ { s} \cdot R ) / \hbar } = \Phi e ^{i m ( v _ { s} \cdot \Sigma _ { i } r _ { i } ) / \hbar } ,
+\end{equation}
+其中，\(P_{s}\) 表示流体的总动量，\(R\) 则为其质心：
+\begin{equation}\tag{11.5.2}\label{eq:11.5.2}
+P _ { s } = N m v _ { s } ;  R = N ^{- 1} \sum _ { i } r _ { i } .
+\end{equation}
+????????? \(\boldsymbol{v}_{s}\) ??????????????? \autoref{eq:11.5.1} ????? \(\boldsymbol{v}_{s}\) ??????????????????????????????? \(\Delta\phi\) ??? \autoref{eq:11.5.1} ????? \(\Delta\boldsymbol{r}_{i}\) ???????????
+\begin{equation}\tag{11.5.3}\label{eq:11.5.3}
+\Delta \phi = \frac { m } { \hbar } \sum _ { i } ( \pmb { v } _ { s i } \cdot \Delta \pmb { r } _ { i } ) ,
+\end{equation}
+此时，\(\boldsymbol{v}_{s}\) 已经成为\(r\) 的函数。
+上述结果可用于计算因原子沿环形路径移动而产生的净相位变化，即从原子在环中的原始位置移动到相邻的位置，最终在位移之后获得与初始状态在物理上完全相同的构型；参见图~11.3。鉴于波函数的对称性，此类位移所导致的净相位变化必然是\(2\pi\) 的整数倍（从而使得位移后的波函数与位移前的波函数完全一致）：
+\begin{equation}\tag{11.5.4}\label{eq:11.5.4}
+\frac { m } { \hbar } \sum _ { i } ^{\prime} ( v _ { s i } \cdot \Delta r _ { i } ) = 2 \pi n ,  n = 0 , \pm 1 , \pm 2 , \ldots ;
+\end{equation}
+这里的求和符号\(\sum'\) 是对构成环的全部原子进行求和。需要注意的是，要使上述结果成立，只需保证每个\(\Delta\boldsymbol{r}_{i}\) 的大小足够小，而非环的整个周长。对于一个宏观尺度的环而言，我们可以将流体视为一种
+???????????????????????????????????? \(h/m\)?? \autoref{eq:11.5.4}?
+\begin{equation}\tag{11.5.5}\label{eq:11.5.5}
+\oint p d q = n h ,
+\end{equation}
+??????????????????????\(^{12}\) ????\autoref{eq:11.5.4} ??????????
+\begin{equation}\tag{11.5.6}\label{eq:11.5.6}
+\int _ { S } ( \operatorname { c u r l } \, v _ { s } ) \cdot d S = n { \frac { h } { m } } ,  n = 0 , \pm 1 , \pm 2 , \ldots ,
+\end{equation}
+其中，\(\mathbf{S}\) 表示由积分回路所包围的面积。若该面积为"单连通"的，并且速度场\(\boldsymbol{v}_{s}\) 在整个区域内保持连续，则可以以连续的方式将积分域不断缩小，且无上限。此时，方程左侧的积分应会持续递减，最终趋近于零。然而，方程右侧却无法持续变化。由此我们推断，在这种特定情况下，量子数\(n\) 必须为零，也就是说，我们的积分必然是恒等于零。因此，"在单连通的区域中，若速度场在整个区域内均保持连续，则条件
+\begin{equation}\tag{11.5.7}\label{eq:11.5.7}
+\mathrm { c u r l } \ v _ { s } = 0
+\end{equation}
+\(^{12}\) 超流体中的涡旋能够被量子化，其环量量子为\(h/m\)，这一观点最早由翁萨格在1949年的一篇论文脚注中提出——该论文探讨的是经典涡旋理论与湍流理论！
+在任何地方都成立。"这正是兰道提出的条件，也是我们理解超流氦流体力学行为的基石。\(^{13}\)
+显然，兰道条件只是费曼定理的一个特例。在那些"多连通"的区域中，如果无法通过连续收缩将其缩小至零（且在速度场中不会出现奇点），那么兰道条件可能并非在所有地方都成立。一个典型的例子便是涡旋流动——这是一种具有圆柱对称性的平面流动，其特征在于：
+\begin{equation}\tag{11.5.8}\label{eq:11.5.8}
+\nu _ { \rho } = 0 ,  \nu _ { \phi } = \frac { K } { 2 \pi \rho } ,  \nu _ { z } = 0 ,
+\end{equation}
+其中，\(\rho\) 是沿垂直于对称轴方向测量的距离，而 \(K\) 则是流动的环量：
+\begin{equation}\tag{11.5.9}\label{eq:11.5.9}
+\oint v \cdot d \mathbf { r } = \oint v _ { \phi } ( \rho \ d \phi ) = K ;
+\end{equation}
+?? \autoref{eq:11.5.9}??????????????????????
+上述结果的另一种表述方式是
+\begin{equation}\tag{11.5.10}\label{eq:11.5.10}
+\int _ { S } ( \operatorname { c u r l } \,  v ) \cdot d S = \int _ { S } \left\{ { \frac { 1 } { \rho } } { \frac { d } { d \rho } } ( \rho v _ { \phi } ) \right\} ( 2 \pi \rho \, d \rho ) = K .
+\end{equation}
+? \(\rho \neq 0\) ??? \(\nabla \times \boldsymbol{\nu}=0\)??? \(\rho=0\) ???? \(\nu_{\phi}\) ???\(\nabla \times \boldsymbol{\nu}\) ???????????????\(\rho=0\) ????????? \autoref{eq:11.5.10} ?????????????????????? \autoref{eq:11.5.10} ??????
+在这一阶段，我们注意到，经典涡旋单位长度所对应的能量可表示为
+\begin{equation}\tag{11.5.11}\label{eq:11.5.11}
+\frac { \mathcal { E } } { L } = \int _ { a } ^{b} \frac { 1 } { 2 } \{ 2 \pi \rho \ d \rho ( m n _ { 0 } ) \} \left( \frac { K } { 2 \pi \rho } \right) ^{2} = \frac { m n _ { 0 } K ^{2} } { 4 \pi } \ln ( b / a ) .
+\end{equation}
+¹³基于超流体与超导体现象之间众所周知的类比，以及由此产生的超流体粒子的机械动量 \(mv_{s}\) 与 Cooper 对电子对的电磁动量 \(2eA/c\) 之间的对应关系，我们发现，超导体中与朗道条件相对应的相应条件将是
+\begin{equation}\tag{11.5.12}\label{eq:11.5.12}
+\operatorname { c u r l } A \equiv B = 0 ,
+\end{equation}
+这正是迈斯纳效应；此外，费曼定理的恰当对应项则是
+\begin{equation}\tag{11.5.13}\label{eq:11.5.13}
+\int _ { S } B \cdot d S = n \frac { h c } { 2 e } ,
+\end{equation}
+这进而导致了"磁通量的量子化"，其磁通量的量子值为 \(hc/2e\)。
+在这里，\((mn_{0})\) 是流体的质量密度（假设为均匀分布），上限 \(b\) 与容器的尺寸相关，而下限 \(a\) 则取决于涡旋的结构；在我们的研究中，\(a\) 与原子间距离大致相当。
+???????????????????? \(\psi(\mathbf{r})\) ????? \autoref{eq:11.5.9} ???????
+\begin{equation}\tag{11.5.14}\label{eq:11.5.14}
+\psi \left( \boldsymbol { r } \right) = n ^{* 1 / 2} e ^{i s \phi} f _ { s } ( \rho ) ,
+\end{equation}
+因此，
+\begin{equation}\tag{11.5.15}\label{eq:11.5.15}
+n ( \pmb { r } ) \equiv | \psi ( \pmb { r } ) | ^{2} = n ^{*} f _ { s } ^{2} ( \rho ) .
+\end{equation}
+当 \(\rho \rightarrow \infty\) 时，\(f_{s}(\rho) \rightarrow 1\)，从而 \(n^{*}\) 成为远离涡旋轴区域的流体中所对应的极限粒子密度。与该波函数相联系的速度场将为
+\begin{equation}\tag{11.5.16}\label{eq:11.5.16}
+\boldsymbol{v}(\boldsymbol{r})=\frac{\hbar}{2im(\psi^{*}\psi)}(\psi^{*}\nabla\psi-\psi\nabla\psi^{*})\\=\frac{\hbar}{m}\nabla(s\phi)=\biggl(0,s\frac{\hbar}{m\rho},0\biggr).
+\end{equation}
+? \autoref{eq:11.5.15} ? \autoref{eq:11.5.9} ?????? \(K\) ??? \(sh/m\) ?????? \(s\) ????
+\begin{equation}\tag{11.5.17}\label{eq:11.5.17}
+s = 0 , \pm 1 , \pm 2 , \ldots .
+\end{equation}
+显然，数值 0 对我们而言毫无意义。此外，s 的负值与正值仅在流体的"旋转方向"上有所不同。因此，我们只需考虑正数值即可，即
+\begin{equation}\tag{11.5.18}\label{eq:11.5.18}
+s = 1 , 2 , 3 , \ldots .
+\end{equation}
+? \autoref{eq:11.5.14} ???? \(f_{s}(\rho)\) ?????????????? \(\psi\) ??????????????
+\begin{equation}\tag{11.5.19}\label{eq:11.5.19}
+\left( - \frac { \hbar ^{2} } { 2 m } \nabla ^{2} + u _ { 0 } | \psi | ^{2} \right) \psi = \varepsilon \psi ,
+\end{equation}
+\(^{14}\)值得注意的是，流体中每粒子的角动量可由以下公式给出
+\begin{equation}\tag{11.5.20}\label{eq:11.5.20}
+\frac { 1 } { \psi } \left( \frac { \hbar } { i } \frac { \partial } { \partial \phi } \psi \right) = s \hbar ( = m \nu _ { \phi } \rho ) ;
+\end{equation}
+这再次让人联想到玻尔的量子条件。
+??? \(u_{0}\) ?? \autoref{eq:11.1.51} ???
+\begin{equation}\tag{11.5.21}\label{eq:11.5.21}
+u _ { 0 } = 4 \pi a \hbar ^{2} / m ,
+\end{equation}
+????? \(a\) ???????? \(\varepsilon\) ?????????????? \(n(\mathbf{r}) \rightarrow n^{*}\) ? \autoref{eq:11.5.19} ?????
+\begin{equation}\tag{11.5.22}\label{eq:11.5.22}
+\varepsilon = u _ { 0 } n ^{*} = 4 \pi \, a \hbar ^{2} n ^{*} / m ,
+\end{equation}
+?? \autoref{eq:11.2.9} ????? \autoref{eq:11.5.21} ?? \autoref{eq:11.5.19}????????????
+\begin{equation}\tag{11.5.23}\label{eq:11.5.23}
+- \left[ \frac { 1 } { \rho } \frac { d } { d \rho } \left\{ \rho \frac { d } { d \rho } f _ { s } ( \rho ) \right\} - \frac { s ^{2} } { \rho ^{2} } f _ { s } ( \rho ) \right] + 8 \pi a n ^{*} f _ { s } ^{3} ( \rho ) = 8 \pi a n ^{*} f _ { s } ( \rho ) .
+\end{equation}
+用特征长度 \(l\) 来表示 \(\rho\)，
+\begin{equation}\tag{11.5.24}\label{eq:11.5.24}
+\rho = l \rho ^{\prime}  \{ l = ( 8 \pi a n ^{*} ) ^{- 1 / 2} \} ,
+\end{equation}
+我们得到
+\begin{equation}\tag{11.5.25}\label{eq:11.5.25}
+\frac { d ^{2} f _ { s } } { d \rho ^{\prime 2} } + \frac { 1 } { \rho ^{\prime} } \frac { d f _ { s } } { d \rho ^{\prime} } + \left( 1 - \frac { s ^{2} } { \rho ^{\prime 2} } \right) f _ { s } - f _ { s } ^{3} = 0 .
+\end{equation}
+? \(\rho \to 0\) ?????????????? \(f_s\) ? \(\rho \to 0\) ?????? \autoref{eq:11.5.23}????????????????
+\begin{equation}\tag{11.5.26}\label{eq:11.5.26}
+f _ { s } ( \rho ^{\prime} ) \sim J _ { s } ( \rho ^{\prime} ) \sim \rho ^{s} ,
+\end{equation}
+? \(J_{s}\) ????? \(s\)??? \(\rho^{\prime} \gg 1\) ??\(f_{s}\simeq 1\)??? \autoref{eq:11.5.23} ????????
+\begin{equation}\tag{11.5.27}\label{eq:11.5.27}
+f _ { s } ( \rho ^{\prime} ) \simeq 1 - \frac { s ^{2} } { 2 \rho ^{\prime 2} } .
+\end{equation}
+完整的解通过数值积分方程获得；所得结果如图~11.4 所示，其中展示了 \(s=1、2\) 和 \(3\) 的解。
+我们由此发现，我们对不完美玻色气体的模型确实允许系统中存在量子化的涡旋。不仅如此，我们在这里无需对涡旋"核心"的性质作出任何特殊假设（如同经典理论中所要求的那样）；我们的处理方法自然会导致粒子密度持续降低。
+\begin{equation}\tag{11.5.28}\label{eq:11.5.28}
+\frac { n ^{*} h ^{2} } { 4 \pi m } \{ 1 \ln ( 1 . 46 R / l ) ,  4 \ln ( 0 . 59 R / l ) ,  9 \ln ( 0 . 38 R / l ) \} ,
+\end{equation}
+其中 \(R\) 表示所涉及区域的外半径。上述结果可与"半经典"理论的结果进行比较，即
+\begin{equation}\tag{11.5.29}\label{eq:11.5.29}
+\frac { n _ { 0 } h ^{2} } { 4 \pi m } \{ 1 \ln ( R / a ) ,  4 \ln ( R / a ) ,  9 \ln ( R / a ) \} ,
+\end{equation}
+??? \autoref{eq:11.5.11} ????????? \(K=sh/m\)?\(b\sim R\)????? \(s>1\) ??????????????????????
+液态氦-II 中存在量子化涡旋线这一事实，已通过维宁（1958--1961）富有创意的实验得到令人信服的证实。在这些实验中，通过测量细导线在液体中浸入时所产生的环量 \(K\)，来研究导线对横向振动的影响。维宁发现，虽然单位环量的涡旋极其稳定，但具有更高环量的涡旋也会出现。在用更粗的导线重复维宁的实验后，惠特莫尔和齐默曼（1965年）得以
+观察到环量高达三个量子单位的稳定涡旋。有关这一现象及其他超流行为方面的综述，请参阅维宁（1968年）以及贝茨等人（1969年）。金和陈（2004年）甚至在低温下观测到了一种氦-4 的"超固态"相——这种相既具有固体的晶体结构，又表现出类似超流的流动特性。
+关于量子化涡旋线与超流"旋转"问题之间的关联，请参阅本书第一版第 10.7 节。
+\section{量子化涡旋环与超流性的破缺}\label{ux91cfux5b50ux5316ux6da1ux65cbux73afux4e0eux8d85ux6d41ux6027ux7684ux7834ux7f3a}
+费曼（1955年）率先提出，液态氦-II 中涡旋的形成可能成为导致液体超流性破缺的机制。他考虑了液态氦-II 从直径为 \(D\) 的孔洞中流出的情况，并通过一些初步的推论得出结论：当流体能量刚好足以在液体中产生量子化涡旋时，其流速 \(v_0\) 可以表示为
+\begin{equation}\tag{11.6.1}\label{eq:11.6.1}
+v _ { 0 } = \frac { \hbar } { m D } \ln ( D / l ) .
+\end{equation}
+因此，对于直径为 \(10^{-5}\) 厘米的孔口，\(v_{0}\) 的数值大约为 \(1\,\mathrm{m/s}\)。\^{}\{15\} 尽管 \(v_{0}\) 的这一理论估算值比相应的实验值 \(v_{c}\) 高出一个数量级——事实上，\(v_{c}\) 的实验值分别为 \(13\,\mathrm{cm/s}\)、\(8\,\mathrm{cm/s}\) 和 \(4\,\mathrm{cm/s}\)，对应于管径分别为 \(1.2 \times 10^{-5}\) 厘米、\(7.9 \times 10^{-5}\) 厘米和 \(3.9 \times 10^{-4}\) 厘米——然而，我们仍倾向于将 \(v_{0}\) 与超流通过该毛细管时的临界速度 \(v_{c}\) 等同起来。不过，值得注意的是，尽管 \(v_{c}\) 的实验值远高于理论估算值，但这一理论估算值仍然远远低于此前基于液体内可能产生声子或罗顿而得出的那些过于庞大的数值；详见第 7.6 节。此外，本研究所得出的临界速度与所采用毛细管的宽度之间存在明确的依赖关系，至少在定性上与实验观测结果中所呈现的趋势相吻合。在接下来的内容中，我们将沿着前一节所提出的思路，进一步发展费曼的这一思想。
+?? II ???????????? Vinen ???????????????????? \autoref{eq:11.5.5} ????????????? 11.5 ?????????????????
+接下来我们将证明，量子化涡旋环的动力学特性决定了：在液氦II中形成这些涡旋环，确实能够为超流态的破坏提供一种机制。要理解这一点，最简单的方式是考虑一种超流体在半径为\(R\)的毛细管中流动的情形。随着流速的增加并逐渐接近临界值\(\nu_{c}\)，量子化涡旋环开始形成，能量耗散随之出现，而这种能量耗散又会引发超流态的破裂。根据对称性，这些涡旋环的中心平面将与毛细管的轴线垂直，并且它们将沿主流动方向运动。根据朗道判据（7.6.24），超流的临界流速直接由所产生激发的能谱决定：
+\begin{equation}\tag{11.6.2}\label{eq:11.6.2}
+v _ { c } = ( \varepsilon / p ) _ { \mathrm { m i n } } .
+\end{equation}
+因此，我们亟需推导出涡旋环动量\(p\)的表达式。类比于经典涡旋环，我们可以取
+\begin{equation}\tag{11.6.3}\label{eq:11.6.3}
+p = 2 \pi ^{2} \hbar n _ { 0 } r ^{2} \, ,
+\end{equation}
+这一表达式似乎相当令人满意，原因在于：(i) 它符合一般结果\(\nu=(\partial\varepsilon/\partial p)\)——尽管仅是近似成立；(ii) 它还导出了一个（近似）色散关系：
+????????????????????? \(\varepsilon \propto p^{1/2}\)??? \autoref{eq:11.6.3}?\autoref{eq:11.6.5} ? \autoref{eq:11.6.4} ??????????
+\begin{equation}\tag{11.6.4}\label{eq:11.6.4}
+\nu _ { c } \sim \left\{ \frac { \hbar } { m r } \ln ( r / l ) \right\} _ { \mathrm { m i n } } .
+\end{equation}
+?? \(\varepsilon/p\) ? \(r\) ??????? \(1/r\) ???? \autoref{eq:11.6.4}????????????????????
+\begin{equation}\tag{11.6.5}\label{eq:11.6.5}
+\nu _ { c } \sim \frac { \hbar } { m R } \ln ( R / l ) ,
+\end{equation}
+??????? \(D\) ?????? \(R\)?? \autoref{eq:11.6.5} ???????? \(\nu_{c}\) ?????????????????????
+Rayfield ? Reif ? 1963 ?????????????????????? \autoref{eq:11.6.3} ??????????????????????
+\begin{equation}\tag{11.6.6}\label{eq:11.6.6}
+\nu _ { c } \simeq \frac { 11 } { 24 } \frac { \hbar } { m R } = 0 . 46 \frac { \hbar } { m R } .
+\end{equation}
+Kawatra ? Pathria?1966???????????????????? \autoref{eq:11.5.23} ???????????????????
+\begin{equation}\tag{11.6.7}\label{eq:11.6.7}
+v _ { c } \simeq 0 . 59 \frac { \hbar } { m R } ,
+\end{equation}
+这一数值比费特的计算结果高出约 30\%；有关毛细管中涡环形成"最有利"位置的讨论，请参阅 Kowatra 与 Pathria（1966）的原始文献。
+第 11.7 节 不完全费米气体的低能态
+????????? \(+\) ? \(-\) ??????????? \autoref{eq:11.1.48} ???
+\begin{equation}\tag{11.6.8}\label{eq:11.6.8}
+\hat { H } = \sum _ { p , \sigma } \frac { p ^{2} } { 2 m } a _ { p \sigma } ^{\dagger} a _ { p \sigma } + \frac { 1 } { 2 } \sum ^{\prime} u _ { p _ { 1 } ^{\prime} \sigma _ { 1 } ^{\prime} , p _ { 2 } ^{\sigma _ { 2} ^{\prime} } } ^{p _ { 1} ^{\prime} \sigma _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } a _ { p _ { 1 } ^{\prime} \sigma _ { 1 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 2 } \sigma _ { 2 } ^{\prime} } ^{\dagger} a _ { p _ { 1 } \sigma _ { 1 } ^{\prime} } ,
+\end{equation}
+其中矩阵元 u 与双体相互作用的散射长度 a 相关；该表达式第二部分中的求和仅针对那些符合动量守恒与自旋守恒原理的两个粒子状态。与玻色系统类似，第二项中的矩阵元 u 可以用其在 p=0 时的值进行近似，即
+\begin{equation}\tag{11.6.9}\label{eq:11.6.9}
+u _ { p _ { 1 } ^{\prime} \sigma _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } ^{p _ { 1} ^{\prime} \sigma _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} \sigma _ { 2 } ^{\prime} } \simeq u _ { 0 \sigma _ { 1 } ^{\prime} , 0 \sigma _ { 2 } ^{\prime} } ^{0 \sigma _ { 1} ^{\prime} , 0 \sigma _ { 2 } ^{\prime} } .
+\end{equation}
+?????? \(a_{p_{1}\sigma_{1}}a_{p_{2}\sigma_{2}}\) ???? \autoref{eq:11.1.24} ? \autoref{eq:11.6.9} ?????????? \(\sigma_{1}=\sigma_{2}\)???? \(p_{1},p_{2}\) ????????? \(\sigma_{1}^{\prime}=\sigma_{2}^{\prime}\) ? \(p_{1}^{\prime},p_{2}^{\prime}\) ??????
+\begin{equation}\tag{11.6.10}\label{eq:11.6.10}
+\begin{array}{rl} { \mathrm { ( i ) } } & { \sigma _ { 1 } = + \frac { 1 } { 2 } ,  \sigma _ { 2 } = - \frac { 1 } { 2 } ;  \sigma _ { 1 } ^{\prime} = + \frac { 1 } { 2 } ,  \sigma _ { 2 } ^{\prime} = - \frac { 1 } { 2 } } \\{ \mathrm { ( i i ) } } & { \sigma _ { 1 } = + \frac { 1 } { 2 } ,  \sigma _ { 2 } = - \frac { 1 } { 2 } ;  \sigma _ { 1 } ^{\prime} = - \frac { 1 } { 2 } ,  \sigma _ { 2 } ^{\prime} = + \frac { 1 } { 2 } } \\{ \mathrm { ( i i i ) } } & { \sigma _ { 1 } = - \frac { 1 } { 2 } ,  \sigma _ { 2 } = + \frac { 1 } { 2 } ;  \sigma _ { 1 } ^{\prime} = - \frac { 1 } { 2 } ,  \sigma _ { 2 } ^{\prime} = + \frac { 1 } { 2 } } \\{ \mathrm { ( i v ) } } & { \sigma _ { 1 } = - \frac { 1 } { 2 } ,  \sigma _ { 2 } = + \frac { 1 } { 2 } ;  \sigma _ { 1 } ^{\prime} = + \frac { 1 } { 2 } ,  \sigma _ { 2 } ^{\prime} = - \frac { 1 } { 2 } . } \end{array}
+\end{equation}
+不难看出，由选择 (i) 引起的贡献将与由选择 (iii) 引起的贡献完全相同，而由选择 (ii) 引起的贡献则与由选择 (iv) 引起的贡献完全相同。因此，我们可以写出
+\begin{equation}\tag{11.6.11}\label{eq:11.6.11}
+\hat { H } = \sum _ { p , \sigma } \frac { p ^{2} } { 2 m } a _ { p \sigma } ^{\dagger} a _ { p \sigma } + \frac { u _ { 0 } } { V } \sum ^{\prime} a _ { p _ { 1 } ^{\prime} + } ^{\dagger} a _ { p _ { 2 } ^{\prime} - } ^{\dagger} a _ { p _ { 2 } - } a _ { p _ { 1 } + } ,
+\end{equation}
+其中
+\begin{equation}\tag{11.6.12}\label{eq:11.6.12}
+\frac { u _ { 0 } } { V } = \left( u _ { 0 + , 0 - } ^{0 + , 0 -} - u _ { 0 + , 0 - } ^{0 - , 0 +} \right) ,
+\end{equation}
+其中符号 + 和 - 分别代表自旋态 σ = +½ 和 σ = -½；(3) 第二部分中的求和现在涵盖所有符合守恒定律的动量。
+\begin{equation}\tag{11.6.13}\label{eq:11.6.13}
+\begin{array}{r} { p _ { 1 } ^{\prime} + p _ { 2 } ^{\prime} = p _ { 1 } + p _ { 2 } . } \end{array}
+\end{equation}
+为了求解哈密顿量 (3) 的特征值，我们将采用摄动理论的相关方法。
+¹⁷ 从物理意义上讲，这意味着在碰撞速度较慢的极限情况下，只有自旋相反的粒子才会彼此相互作用。
+首先，我们注意到，\(\hat{H}\) 表达式中的主项已经为对角矩阵，其特征值为
+\begin{equation}\tag{11.6.14}\label{eq:11.6.14}
+E ^{( 0 )} = \sum _ { p , \sigma } \frac { p ^{2} } { 2 m } n _ { p \sigma } ,
+\end{equation}
+其中 \(n_{p\sigma}\) 是单粒子态 \((p,\sigma)\) 的占据数；在平衡状态下，其平均值由费米分布函数给出
+\begin{equation}\tag{11.6.15}\label{eq:11.6.15}
+\overline { { n } } p ^{\sigma} = \frac { 1 } { z _ { 0 } ^{- 1} \exp ( p ^{2} / 2 m k T ) + 1 } .
+\end{equation}
+? \autoref{eq:11.6.15} ??????????????? 8.1 ???? \(g=2\) ????????
+\begin{equation}\tag{11.6.16}\label{eq:11.6.16}
+E ^{( 0 )} = V \frac { 3 k T } { \lambda ^{3} } f _ { 5 / 2 } ( z _ { 0 } ) ,
+\end{equation}
+其中 \(\lambda\) 是粒子的平均热波长，
+\begin{equation}\tag{11.6.17}\label{eq:11.6.17}
+\lambda = h / ( 2 \pi m k T ) ^{1 / 2} ,
+\end{equation}
+而 \(f_{\nu}(z_{0})\) 是费米-狄拉克函数
+\begin{equation}\tag{11.6.18}\label{eq:11.6.18}
+f _ { \nu } ( z _ { 0 } ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z _ { 0 } ^{- 1} e ^{x} + 1 } = \sum _ { l = 1 } ^{\infty} ( - 1 ) ^{l - 1} \frac { z _ { 0 } ^{l} } { l ^{\nu} } ;
+\end{equation}
+理想气体的逸度 \(z_{0}\) 由系统中总的粒子数决定：
+\begin{equation}\tag{11.6.19}\label{eq:11.6.19}
+N = \sum _ { p , \sigma } n _ { p \sigma } = V \frac { 2 } { \lambda ^{3} } f _ { 3 / 2 } ( z _ { 0 } ) .
+\end{equation}
+系统的能量一阶修正由相互作用项的对角元素给出，即那些满足 \(p_{1}^{\prime}=p_{1}\) 和 \(p_{2}^{\prime}=p_{2}\) 的元素；因此
+\begin{equation}\tag{11.6.20}\label{eq:11.6.20}
+E ^{( 1 )} = \frac { u _ { 0 } } { V } \sum _ { p _ { 1 } , p _ { 2 } } n _ { p _ { 1 } + } n _ { p _ { 2 } - } = \frac { u _ { 0 } } { V } N ^{+} N ^{-} ,
+\end{equation}
+其中 \(N^{+}(N^{-})\) 表示自旋向上（向下）的总粒子数。将平衡状态下的数值 \(\overline{N^{+}}=\overline{N^{-}}=\frac{1}{2}N\) 代入，我们得到
+\begin{equation}\tag{11.6.21}\label{eq:11.6.21}
+E ^{( 1 )} = \frac { u _ { 0 } } { 4 V } N ^{2} = V \frac { u _ { 0 } } { \lambda ^{6} } \left\{ f _ { 3 / 2 } ( z _ { 0 } ) \right\} ^{2} .
+\end{equation}
+???? \(u_{0} \simeq 4\pi a\hbar^{2}/m\)????? \autoref{eq:11.1.51} ????? \(a\) ??????
+\begin{equation}\tag{11.6.22}\label{eq:11.6.22}
+E _ { 1 } ^{( 1 )} = \frac { \pi a \hbar ^{2} } { m } \frac { N } { V } N = V \frac { 2 k T } { \lambda ^{3} } \left( \frac { a } { \lambda } \right) \left\{ f _ { 3 / 2 } ( z _ { 0 } ) \right\} ^{2} .
+\end{equation}
+系统的能量二阶修正可借助以下公式获得
+\begin{equation}\tag{11.6.23}\label{eq:11.6.23}
+E _ { n } ^{( 2 )} = \sum _ { m \neq n } \frac { | V _ { n m } | ^{2} } { E _ { n } - E _ { m } } ,
+\end{equation}
+其中索引 \(n\) 和 \(m\) 分别对应系统的未扰动态。通过简单计算，我们得到：
+\begin{equation}\tag{11.6.24}\label{eq:11.6.24}
+E ^{( 2 )} = 2 \frac { u _ { 0 } ^{2} } { V ^{2} } \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { n _ { p _ { 1 } + } n _ { p _ { 2 } - } \left( 1 - n _ { p _ { 1 } ^{\prime} + } \right) \left( 1 - n _ { p _ { 2 } ^{\prime} - } \right) } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } ,
+\end{equation}
+????? \(p_{1},p_{2}\) ??? \(p_{1}^{\prime},p_{2}^{\prime}\) ??????? \autoref{eq:11.6.16} ?????????? \(p_{1}^{2}+p_{2}^{2}=p_{1}^{\prime 2}+p_{2}^{\prime 2}\)??????????????????
+??? \autoref{eq:11.6.16}??????? \(a\) ?????? \(u_0\)????? \autoref{eq:11.6.12} ?? \autoref{eq:11.2.30}?\autoref{eq:11.2.31} ?????????
+\begin{equation}\tag{11.6.25}\label{eq:11.6.25}
+\frac { 4 \pi a \hbar ^{2} } { m V } \simeq \frac { u _ { 0 } } { V } + 2 \frac { u _ { 0 } ^{2} } { V ^{2} } \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { 1 } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } ,
+\end{equation}
+由此可得
+\begin{equation}\tag{11.6.26}\label{eq:11.6.26}
+u _ { 0 } \simeq \frac { 4 \pi a \hbar ^{2} } { m } \left[ 1 - \frac { 8 \pi a \hbar ^{2} } { m V } \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { 1 } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } \right] .
+\end{equation}
+? \autoref{eq:11.6.17} ?? \autoref{eq:11.6.12}??? \autoref{eq:11.6.14} ?????????????
+\begin{equation}\tag{11.6.27}\label{eq:11.6.27}
+E _ { 2 } ^{( 1 )} = - 2 \left( \frac { 4 \pi a \hbar ^{2} } { m V } \right) ^{2} \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { n _ { p _ { 1 } } + n _ { p _ { 2 } } - } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } .
+\end{equation}
+? \autoref{eq:11.6.16} ???????????????? \(u_0 \simeq 4\pi a\hbar^2/m\)?
+\begin{equation}\tag{11.6.28}\label{eq:11.6.28}
+E _ { 2 } ^{( 2 )} = 2 \left( \frac { 4 \pi a \hbar ^{2} } { m V } \right) ^{2} \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { n _ { p _ { 1 } } + n _ { p _ { 2 } } - \left( 1 - n _ { p _ { 1 } ^{\prime} + } \right) \left( 1 - n _ { p _ { 2 } ^{\prime} - } \right) } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } .
+\end{equation}
+? \autoref{eq:11.6.18} ? \autoref{eq:11.6.19} ?????????????\(^{18}\)
+\begin{equation}\tag{11.6.29}\label{eq:11.6.29}
+E _ { 2 } = E _ { 2 } ^{( 1 )} + E _ { 2 } ^{( 2 )} = - 2 \left( \frac { 4 \pi a \hbar ^{2} } { m V } \right) ^{2} \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} } \frac { n _ { p _ { 1 } } + n _ { p _ { 2 } } - \left( n _ { p _ { 1 } ^{\prime} + } + n _ { p _ { 2 } ^{\prime} - } \right) } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } .
+\end{equation}
+?? \autoref{eq:11.6.20}??? \(p_{1},p_{2},p_{1}^{\prime},p_{2}^{\prime}\) ????\(\delta\) ???????????
+\begin{equation}\tag{11.6.30}\label{eq:11.6.30}
+E _ { 2 } = - 2 \left( \frac { 4 \pi a \hbar ^{2} } { m V } \right) ^{2} \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} } \frac { n _ { p _ { 1 } } + n _ { p _ { 2 } } - \left( n _ { p _ { 1 } ^{\prime} + } + n _ { p _ { 2 } ^{\prime} - } \right) \delta _ { p _ { 1 } + p _ { 2 } , p _ { 1 } ^{\prime} + p _ { 2 } ^{\prime} } } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } .
+\end{equation}
+??? \autoref{eq:11.6.21}???????? \(n_{p_{1}^{+}}\) ? \(n_{p_{2}^{-}}\) ????
+\begin{equation}\tag{11.6.31}\label{eq:11.6.31}
+E _ { 2 } = - 4 \left( \frac { 4 \pi a \hbar ^{2} } { m V } \right) ^{2} \sum _ { p _ { 1 } , p _ { 2 } , p _ { 1 } ^{\prime} , p _ { 2 } ^{\prime} } \frac { n _ { p _ { 1 } } + n _ { p _ { 2 } } - n _ { p _ { 1 } ^{\prime} + \delta _ { p _ { 1 } + p _ { 2 } , p _ { 1 } ^{\prime} + p _ { 2 } ^{\prime} } } } { \left( p _ { 1 } ^{2} + p _ { 2 } ^{2} - p _ { 1 } ^{\prime 2} - p _ { 2 } ^{\prime 2} \right) / 2 m } .
+\end{equation}
+\autoref{eq:11.6.22} ?????? Abrikosov ? Khalatnikov ? 1957 ????\(^{19}\)
+\begin{equation}\tag{11.6.32}\label{eq:11.6.32}
+E _ { 2 } = V \frac { 8 k T } { \lambda ^{3} } \left( \frac { a ^{2} } { \lambda ^{2} } \right) F ( z _ { 0 } ) ,
+\end{equation}
+其中
+\begin{equation}\tag{11.6.33}\label{eq:11.6.33}
+F ( z _ { 0 } ) = - \sum _ { r , s , t = 1 } ^{\infty} \frac { ( - z _ { 0 } ) ^{r + s + t} } { \sqrt { ( r s t ) ( r + s ) ( r + t ) } } .
+\end{equation}
+\(^{18}\)此处我们省略了包含"四个 n 的乘积"这一项的项，原因如下：鉴于此类项的分子是关于交换运算 \((\boldsymbol{p}_1, \boldsymbol{p}_2) \leftrightarrow (\boldsymbol{p}_1', \boldsymbol{p}_2')\) 对称，而分母则关于该交换运算呈反对称性，因此，它们在变量 \(\boldsymbol{p}_1\)、\(\boldsymbol{p}_2\)、\(\boldsymbol{p}_1'\)（以及 \(\boldsymbol{p}_2'\)）上的求和将完全消去。
+\(^{19}\) ?? \autoref{eq:11.6.22} ????? \(T \rightarrow 0\) ??????????? Abrikosov ? Khalatnikov?1957????? 11.12?
+? \autoref{eq:11.6.8}?\autoref{eq:11.6.14} ? \autoref{eq:11.6.23} ???????? \(a\) ???????
+\begin{equation}\tag{11.6.34}\label{eq:11.6.34}
+E = V \frac { k T } { \lambda ^{3} } \left[ 3 f _ { 5 / 2 } ( z _ { 0 } ) + \frac { 2 a } { \lambda } \{ f _ { 3 / 2 } ( z _ { 0 } ) \} ^{2} + \frac { 8 a ^{2} } { \lambda ^{2} } F ( z _ { 0 } ) \right] ,
+\end{equation}
+?? \(z_{0}\) ?? \autoref{eq:11.6.11} ???
+现在，我们很容易就能得到不完美费米气体的基态能量（当 \(z_0 \to \infty\) 时）；我们只需了解所涉及函数的渐近行为。对于函数 \(f_v(z_0)\)，我们可依据索默费尔德引理（参见附录E）
+\begin{equation}\tag{11.6.35}\label{eq:11.6.35}
+f _ { \nu } ( z _ { 0 } ) \approx ( \ln z _ { 0 } ) ^{\nu} / \Gamma ( \nu + 1 ) ,
+\end{equation}
+从而
+\begin{equation}\tag{11.6.36}\label{eq:11.6.36}
+f _ { 5 / 2 } ( z _ { 0 } ) \approx \frac { 8 } { 15 \pi ^{1 / 2} } ( \ln z _ { 0 } ) ^{5 / 2} ;  f _ { 3 / 2 } ( z _ { 0 } ) \approx \frac { 4 } { 3 \pi ^{1 / 2} } ( \ln z _ { 0 } ) ^{3 / 2} .
+\end{equation}
+??????????? \autoref{eq:11.6.11}?
+\begin{equation}\tag{11.6.37}\label{eq:11.6.37}
+n = \frac { N } { V } \approx \frac { 8 } { 3 \pi ^{1 / 2} \lambda ^{3} } ( \ln z _ { 0 } ) ^{3 / 2} ,
+\end{equation}
+从而
+\begin{equation}\tag{11.6.38}\label{eq:11.6.38}
+\ln z _ { 0 } \approx \lambda ^{2} \left( \frac { 3 \pi ^{1 / 2} n } { 8 } \right) ^{2 / 3} .
+\end{equation}
+函数 \(F(z_0)\) 的渐近行为由以下公式给出
+\begin{equation}\tag{11.6.39}\label{eq:11.6.39}
+F ( z _ { 0 } ) \approx \frac { 16 ( 11 - 2 \mathrm { l n } 2 ) } { 10 5 \pi ^{3 / 2} } ( \mathrm { l n } z _ { 0 } ) ^{7 / 2} ;
+\end{equation}
+参见问题11.12。将式（27）和式（30）代入式（25），并利用式（29），我们最终得到
+\begin{equation}\tag{11.6.40}\label{eq:11.6.40}
+\frac { E _ { 0 } } { N } = \frac { 3 } { 10 } \frac { \hbar ^{2} } { m } ( 3 \pi ^{2} n ) ^{2 / 3} + \frac { \pi a \hbar ^{2} } { m } n \left\{ 1 + \frac { 6 } { 35 } ( 11 - 2 \ln 2 ) \left( \frac { 3 } { \pi } \right) ^{1 / 3} n ^{1 / 3} a \right\} .
+\end{equation}
+气体的基态压强则可表示为
+\begin{equation}\tag{11.6.41}\label{eq:11.6.41}
+\begin{array}{rl} & { P _ { 0 } = n ^{2} \frac { \partial ( E _ { 0 } / N ) } { \partial n } } \\& {  = \frac { 1 } { 5 } \frac { \hbar ^{2} } { m } ( 3 \pi ^{2} n ) ^{2 / 3} n + \frac { \pi a \hbar ^{2} } { m } n ^{2} \left\{ 1 + \frac { 8 } { 35 } ( 11 - 2 \mathrm { l n } 2 ) \left( \frac { 3 } { \pi } \right) ^{1 / 3} n ^{1 / 3} a \right\} . } \end{array}
+\end{equation}
+我们还可以计算声速，而声速的计算直接涉及系统的压缩性，其结果为
+\begin{equation}\tag{11.6.42}\label{eq:11.6.42}
+\begin{array}{rl} & { c _ { 0 } ^{2} = \frac { \partial P _ { 0 } } { \partial ( m n ) } } \\& {  = \frac { 1 } { 3 } \frac { \hbar ^{2} } { m ^{2} } ( 3 \pi ^{2} n ) ^{2 / 3} + \frac { 2 \pi a \hbar ^{2} } { m ^{2} } n \left\{ 1 + \frac { 4 } { 15 } ( 11 - 2 \ln 2 ) \left( \frac { 3 } { \pi } \right) ^{1 / 3} n ^{1 / 3} a \right\} . } \end{array}
+\end{equation}
+上述表达式的首项代表理想费米气体的基态结果，而其余项则代表由粒子间相互作用所引起的修正。
+方程（31）所体现的结果最早由黄和杨（1957年）采用赝势法得出；马丁和德多米尼西斯（1957年）则是首批尝试估算三阶修正项的人。²⁰ 李和杨（1957年）基于二体碰撞法得到了（31）；有关其计算细节，请参阅李和杨（1959b、1960a）。稍后，加利茨基（1958年）也采用了格林函数法，得出了同样的结果。
+\section{费米液体的能量谱：朗道唯象理论}\label{ux8d39ux7c73ux6db2ux4f53ux7684ux80fdux91cfux8c31ux6717ux9053ux552fux8c61ux7406ux8bba}
+? 11.4 ??????????????????????????????????????????????????????????????????????????????????\(^{3}\)
+??????????????????????????????????? 11.9 ????
+根据朗道（1956年）的研究——其工作为我们本次讨论提供了基本框架——量子液体的费米型谱是参照理想费米气体的谱来构建的。众所周知，理想费米气体的基态对应于"单粒子能级完全填满，且 \(p \leq p_F\)，而在 \(p > p_F\) 的能级中则完全无粒子"；系统激发则对应于一个或多个粒子从已占位能级跃迁至未占位能级。极限动量 \(p_F\) 与系统的粒子密度相关，而对于
+自旋半粒子的分布由以下公式给出：
+\begin{equation}\tag{11.6.43}\label{eq:11.6.43}
+p _ { F } = \hbar ( 3 \pi ^{2} N / V ) ^{1 / 3} .
+\end{equation}
+在液体中，我们无法直接谈论单个粒子的量子态。然而，为了构建所需的能谱，我们可以假设：随着粒子间相互作用逐渐"开启"，并从气态向液态过渡时，能量级在动量空间中的排列方式将保持不变。当然，在这种排列中，气体粒子的角色将被传递给液体中的"基本激发态"（也被称为"准粒子"），其数量与液体中的粒子数相一致，并且同样遵循费米统计。每个"准粒子"都具有确定的动量 \(\boldsymbol{p}\)，因此我们可以定义一个分布函数 \(n(\boldsymbol{p})\)，使得
+\begin{equation}\tag{11.6.44}\label{eq:11.6.44}
+\int n ( \mathbf { p } ) d \tau = N / V ,
+\end{equation}
+其中 \(d\tau = 2d^{3}p/h^{3}\)。由此我们预期，对分布函数 \(n(\boldsymbol{p})\) 的具体设定，将唯一确定液体的总能量 \(E\)。当然，\(E\) 并不会简单地等于准粒子能量 \(\varepsilon(\boldsymbol{p})\) 的简单求和；相反，\(E\) 将是分布函数 \(n(\boldsymbol{p})\) 的一个泛函。换句话说，能量 \(E\) 并不会简化为简单的积分 \(\int\varepsilon(\boldsymbol{p})n(\boldsymbol{p})Vd\tau\)，不过在第一近似下，其数值的变化可以表示为
+\begin{equation}\tag{11.6.45}\label{eq:11.6.45}
+\delta E = V \int \varepsilon ( \mathbf { p } ) \delta n ( \mathbf { p } ) d \tau ,
+\end{equation}
+其中 \(\delta n(\boldsymbol{p})\) 是对"准粒子"分布函数所作的假设性变化。能量 \(E\) 不会简化为 \(\varepsilon(\boldsymbol{p})n(\boldsymbol{p})\) 这一量的积分，原因在于：\(\varepsilon(\boldsymbol{p})\) 本身也是分布函数的泛函。如果初始分布函数为阶跃函数（对应于系统的基态），那么由于分布函数偏离阶跃函数而产生的 \(\varepsilon(\boldsymbol{p})\) 变化——而这仅意味着系统低能激发态——将由线性泛函关系给出：
+\begin{equation}\tag{11.6.46}\label{eq:11.6.46}
+\delta \varepsilon ( \pmb { p } ) = \int f ( \pmb { p } , \pmb { p } ^{\prime} ) \delta n ( \pmb { p } ^{\prime} ) d \tau ^{\prime} .
+\end{equation}
+因此，\(\varepsilon(\boldsymbol{p})\) 和 \(f(\boldsymbol{p},\boldsymbol{p}^{\prime})\) 分别是 \(E\) 对 \(n(\boldsymbol{p})\) 的一阶和二阶泛函导数。引入自旋依赖性后，我们现在可以写出
+\begin{equation}\tag{11.6.47}\label{eq:11.6.47}
+\delta E = \sum _ { p , \sigma } \varepsilon ( p , \sigma ) \delta n ( p , \sigma ) + \frac { 1 } { 2 V } \sum _ { p , \sigma ; p ^{\prime} , \sigma ^{\prime} } f ( p , \sigma ; p ^{\prime} , \sigma ^{\prime} ) \delta n ( p , \sigma ) \delta n ( p ^{\prime} , \sigma ^{\prime} ) ,
+\end{equation}
+其中 \(\delta n\) 是分布函数 \(n(\boldsymbol{p})\) 从阶跃函数（表征系统的基态）所作的微小变化；显然，这些变化只有在极限动量 \(p_F\) 的附近才会显著发生，而 \(p_F\) 依然被赋予
+? \autoref{eq:11.6.43} ? \autoref{eq:11.6.47} ???????? \(\varepsilon(\boldsymbol{p},\sigma)\) ????????? \(n(\boldsymbol{p},\sigma)\)?????????? \(f(\boldsymbol{p},\sigma;\boldsymbol{p}^{\prime},\sigma^{\prime})\) ?????????????? \(E\) ????????????
+为了探究分布函数 \(n(\boldsymbol{p})\) 与能量 \(\varepsilon(\boldsymbol{p})\) 之间的形式性依赖关系，我们注意到，鉴于液体与理想气体的能量能级之间存在一一对应的关系，液体的微态数（从而熵）与理想气体的微态数（同样）由相同的公式给出；参见式（6.1.15），其中所有 \(g_i=1\)，且 \(a=+1\)，或参见问题 6.1：
+\begin{equation}\tag{11.6.48}\label{eq:11.6.48}
+\frac { S } { k } = - \sum _ { p } \{ n \ln n + ( 1 - n ) \ln ( 1 - n ) \} \approx - V \int \{ n \ln n + ( 1 - n ) \ln ( 1 - n ) \} d \tau .
+\end{equation}
+通过在约束条件 \(\delta E=0\) 和 \(\delta N=0\) 下对这一表达式进行最大化，我们得到平衡分布函数
+\begin{equation}\tag{11.6.49}\label{eq:11.6.49}
+\overline { { n } } = \frac { 1 } { \exp \{ ( \varepsilon - \mu ) / k T \} + 1 } .
+\end{equation}
+在此需要指出的是，尽管该公式在形式上与费米-狄拉克分布函数的标准表达式相似，但二者仍存在差异：此处出现的量 \(\varepsilon\) 其实是 \(\overline{n}\) 的函数；因此，该公式仅给出了 \(\overline{n}\) 函数的一个隐式表达式，而且很可能是一个非常复杂的表达式。
+?? \autoref{eq:11.6.47}?\(\varepsilon\) ??? \(n\) ????? \(T \ll T_F\) ????????? \(p_F\) ????? \(\delta n\) ?????????? \(p\simeq p_F\) ??? \(\varepsilon(\mathbf{p})\)?
+\begin{equation}\tag{11.6.50}\label{eq:11.6.50}
+\varepsilon ( p \simeq p _ { F } ) = \varepsilon _ { F } + \left( \frac { \partial \varepsilon } { \partial p } \right) _ { p = p _ { F } } ( p - p _ { F } ) + \cdots \simeq \varepsilon _ { F } + u _ { F } ( p - p _ { F } ) ,
+\end{equation}
+其中 \(u_{F}\) 表示费米面上准粒子的"速度"。在理想气体的情形下（\(\varepsilon = p^{2}/2m\)），\(u_{F} = p_{F}/m\)。类比地，我们定义了一个参数 \(m^{*}\)，使得
+\begin{equation}\tag{11.6.51}\label{eq:11.6.51}
+m ^{*} \equiv \frac { p _ { F } } { u _ { F } } = \frac { p _ { F } } { ( \partial \varepsilon / \partial p ) _ { p = p _ { F } } }
+\end{equation}
+当然，如果此处所涉及的函数具有自旋依赖性，那么在元素 \(d\tau\)（以及 \(d\tau'\)）中出现的因子 2，就必须替换为对自旋变量（或自旋变量的总和）的求和。
+并将其称为具有动量 \(p_F\) 的准粒子的有效质量（或与 \(p \simeq p_F\) 相关的准粒子的有效质量）。
+另一种看待参数 \(m^{*}\) 的方式源自 Brueckner 和 Gammel（1958 年）的研究。他们写道：
+\begin{equation}\tag{11.6.52}\label{eq:11.6.52}
+\varepsilon ( p \simeq p _ { F } ) = \frac { p ^{2} } { 2 m } + V ( p ) = \frac { p ^{2} } { 2 m ^{*} } + \mathrm { c o n s t . } ;
+\end{equation}
+? \(p\simeq p_{F}\) ??????? \(\varepsilon(p)\) ?????????????? \(m^{*}\)?????????????????? \(p^{2}/2m\) ?????????? \autoref{eq:11.6.52} ? \(p=p_F\) ???????
+\begin{equation}\tag{11.6.53}\label{eq:11.6.53}
+\frac { 1 } { m ^{*} } = \frac { 1 } { m } + \frac { 1 } { p _ { F } } \left( \frac { d V ( p ) } { d p } \right) _ { p = p _ { F } } .
+\end{equation}
+尤其是，参数 \(m^{*}\) 决定了费米液体的低温比热。我们可以清楚地看到，在 \(T \ll T_{F}\) 的情况下，费米液体的比热与理想费米气体的比热之比，恰好等于 \(m^{*}/m\) 的值：
+\begin{equation}\tag{11.6.54}\label{eq:11.6.54}
+\frac { ( C _ { V } ) _ { \mathrm { r e a l } } } { ( C _ { V } ) _ { \mathrm { i d e a l } } } = \frac { m ^{*} } { m } .
+\end{equation}
+? \(S\) ????? \(n\) ?????????? \autoref{eq:8.1.6} ??????????????????????? \(\overline{n}\)?????????????????????????
+\begin{equation}\tag{11.6.55}\label{eq:11.6.55}
+C _ { V } \simeq S \simeq \frac { \pi ^{2} } { 3 } k ^{2} T a ( \varepsilon _ { F } ) ,
+\end{equation}
+这一结论依然成立——唯一的区别在于，在费米表面附近的态密度 \(a(\varepsilon_F)\) 的表达式中，粒子质量 \(m\) 被替换为有效质量 \(m^*\)；请参见\autoref{eq:8.1.21}。
+接下来，我们着手通过特征函数 \(f\) 来建立参数 \(m\) 与 \(m^{*}\) 之间的关系。在此过程中，我们忽略 \(f\) 的自旋依赖性——如有自旋依赖性的话；所需的修正无需任何困难即可引入。我们的指导原则是：在无外力作用的情况下，液体的动量密度必须等于质量传递的密度。前者由 \(\int p n d \tau\) 给出，而后者则由 \(m \int (\partial \varepsilon / \partial \mathbf{p}) n d \tau\) 给出，其中 \((\partial \varepsilon / \partial \mathbf{p})\) 是具有动量的准粒子的"速度"。
+\(p\) 与能量 \(\varepsilon\)。\^{}\{23\} 因此
+\begin{equation}\tag{11.6.56}\label{eq:11.6.56}
+\int p n \, d \tau = m \int { \frac { \partial \varepsilon } { \partial p } } n \, d \tau .
+\end{equation}
+?????? \(\delta n\) ??????????? \autoref{eq:11.6.46} ???
+\begin{equation}\tag{11.6.57}\label{eq:11.6.57}
+\begin{array}{rl} & { \int p \delta n d \tau = m \int \frac { \partial \varepsilon } { \partial \pmb { p } } \delta n d \tau + m \iint \left\{ \frac { \partial f ( \pmb { p } , \pmb { p } ^{\prime} ) } { \partial \pmb { p } } \delta n ^{\prime} d \tau ^{\prime} \right\} n d \tau } \\& {  = m \int \frac { \partial \varepsilon } { \partial \pmb { p } } \delta n d \tau - m \iint f ( \pmb { p } , \pmb { p } ^{\prime} ) \frac { \partial n ^{\prime} } { \partial \pmb { p } ^{\prime} } \delta n d \tau \, d \tau ^{\prime} ; } \end{array}
+\end{equation}
+??????? \(p\) ? \(p^{\prime}\) ???????????? \(\delta n\) ????????? \autoref{eq:11.6.56} ???
+\begin{equation}\tag{11.6.58}\label{eq:11.6.58}
+\frac { p } { m } = \frac { \partial \varepsilon } { \partial p } - \int f ( p , p ^{\prime} ) \frac { \partial n ^{\prime} } { \partial p ^{\prime} } d \tau ^{\prime} .
+\end{equation}
+我们将这一结果应用于动量接近 \(p_{F}\) 的准粒子；同时，我们将分布函数 \(n'\) 替换为"阶跃"函数，从而：
+\begin{equation}\tag{11.6.59}\label{eq:11.6.59}
+\frac { \partial n ^{\prime} } { \partial p ^{\prime} } = - \frac { p ^{\prime} } { p ^{\prime} } \delta ( p ^{\prime} - p _ { F } ) .
+\end{equation}
+这使我们能够对动量的大小 \(p'\) 进行积分，因此：
+\begin{equation}\tag{11.6.60}\label{eq:11.6.60}
+\int f ( p , p ^{\prime} ) \frac { \partial n ^{\prime} } { \partial p ^{\prime} } \frac { 2 p ^{\prime 2} d p ^{\prime} d \omega ^{\prime} } { h ^{3} } = - \frac { 2 p _ { F } } { h ^{3} } \int f ( \theta ) p _ { F } ^{\prime} d \omega ^{\prime} ,
+\end{equation}
+???? \(d\omega^{\prime}\) ???????????? \(f\) ???????????? \autoref{eq:11.6.59} ? \autoref{eq:11.6.58} ????? \(p=p_F\) ????????
+\begin{equation}\tag{11.6.61}\label{eq:11.6.61}
+\frac { 1 } { m } = \frac { 1 } { m ^{*} } + \frac { p _ { F } } { 2 h ^{3} } \cdot 4 \int f ( \theta ) \cos \theta \, d \omega ^{\prime} .
+\end{equation}
+如果函数 \(f\) 取决于所涉及粒子的自旋 \(s_{1}\) 和 \(s_{2}\)，则积分前的系数 4 必须被替换为对自旋变量的求和。
+现在，我们推导出绝对零度下声速的公式。根据第一性原理，我们有\(^{24}\)
+\begin{equation}\tag{11.6.62}\label{eq:11.6.62}
+c _ { 0 } ^{2} = \frac { \partial P _ { 0 } } { \partial ( m N / V ) } = - \frac { V ^{2} } { m N } \left( \frac { \partial P _ { 0 } } { \partial V } \right) _ { N } .
+\end{equation}
+在当前情境下，最好采用以液体化学势为变量的表达式。可通过利用公式 \(Nd\mu_0 = VdP_0\) 来获得这一表达式，参见问题 1.16，由此可得出\(^{25}\)
+\begin{equation}\tag{11.6.63}\label{eq:11.6.63}
+\left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } = - \frac { V } { N } \left( \frac { \partial \mu _ { 0 } } { \partial V } \right) _ { N } = - \frac { V ^{2} } { N ^{2} } \left( \frac { \partial P _ { 0 } } { \partial V } \right) _ { N }
+\end{equation}
+因此，
+\begin{equation}\tag{11.6.64}\label{eq:11.6.64}
+c _ { 0 } ^{2} = \frac { N } { m } \left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } .
+\end{equation}
+现在，\(\mu_{0}=\varepsilon(p_{F})=\varepsilon_{F}\)；因此，系统中总粒子数变化 \(\delta N\) 所引起的 \(\delta\mu_{0}\) 变化，可表示为：
+\begin{equation}\tag{11.6.65}\label{eq:11.6.65}
+\delta \mu _ { 0 } = \frac { \partial \varepsilon _ { F } } { \partial p _ { F } } \delta p _ { F } + \int f ( p _ { F } , p ^{\prime} ) \delta n ^{\prime} d \tau ^{\prime} .
+\end{equation}
+? \autoref{eq:11.6.65} ???????????????????????? \(p_{F}\) ??? \autoref{eq:11.6.43} ????? \(V\) ????????????
+\begin{equation}\tag{11.6.66}\label{eq:11.6.66}
+\delta p _ { F } / p _ { F } = \frac { 1 } { 3 } \delta N / N
+\end{equation}
+因此，
+\begin{equation}\tag{11.6.67}\label{eq:11.6.67}
+\frac { \partial \varepsilon _ { F } } { \partial p _ { F } } \delta p _ { F } = \frac { p _ { F } ^{2} } { 3 m ^{*} } \frac { \delta N } { N } .
+\end{equation}
+\(^{24}\)在 \(T=0\) 且 \(S=0\) 时；因此，无需区分液体的等温压缩性和绝热压缩性。
+\(^{25}\)由于 \(\mu_{0}\) 是一种强度量，因此它仅通过 \(N\) 和 \(V\) 的比值来决定，我们可以写作：\(\mu_{0}=\mu_{0}(N/V)\)。由此，
+\begin{equation}\tag{11.6.68}\label{eq:11.6.68}
+\left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } = \mu _ { 0 } ^{\prime} \left( \frac { \partial ( N / V ) } { \partial N } \right) _ { V } = \mu _ { 0 } ^{\prime} \frac { 1 } { V }
+\end{equation}
+以及
+\begin{equation}\tag{11.6.69}\label{eq:11.6.69}
+\left( \frac { \partial \mu _ { 0 } } { \partial V } \right) _ { N } = \mu _ { 0 } ^{\prime} \left( \frac { \partial ( N / V ) } { \partial V } \right) _ { N } = - \mu _ { 0 } ^{\prime} \frac { N } { V ^{2} } .
+\end{equation}
+因此，
+\begin{equation}\tag{11.6.70}\label{eq:11.6.70}
+\left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } = - \frac { V } { N } \left( \frac { \partial \mu _ { 0 } } { \partial V } \right) _ { N } .
+\end{equation}
+第二部分源自方程（4）。需要注意的是，方程（20）中出现的δn'这一项，仅在p'接近p\_F时才具有显著意义；因此，我们可以写出
+\begin{equation}\tag{11.6.71}\label{eq:11.6.71}
+\int f ( \pmb { p } _ { F } , \pmb { p } ^{\prime} ) \delta \pmb { n } ^{\prime} d \tau ^{\prime} \simeq \frac { \delta N } { 4 \pi V } \int f ( \theta ) d \omega ^{\prime} .
+\end{equation}
+将（21）和（22）代入（20），我们得到
+\begin{equation}\tag{11.6.72}\label{eq:11.6.72}
+\left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } = \frac { p _ { F } ^{2} } { 3 m ^{*} N } + \frac { 1 } { 4 \pi V } \int f ( \theta ) d \omega ^{\prime} .
+\end{equation}
+利用方程（18）和方程（1），我们最终得到
+\begin{equation}\tag{11.6.73}\label{eq:11.6.73}
+c _ { 0 } ^{2} = \frac { N } { m } \left( \frac { \partial \mu _ { 0 } } { \partial N } \right) _ { V } = \frac { p _ { F } ^{2} } { 3 m ^{2} } + \frac { p _ { F } ^{3} } { 6 m h ^{3} } \cdot 4 \int f ( \theta ) ( 1 - \cos \theta ) \, d \omega ^{\prime} .
+\end{equation}
+再次强调，如果函数f依赖于粒子的自旋，则积分前的因子4必须替换为对自旋变量进行求和。
+????????????????? 11.7 ??????????????? \(f(\boldsymbol{p},\sigma;\boldsymbol{p}^{\prime},\sigma^{\prime})\)??? \autoref{eq:11.6.12} ????????????????? \(n(\boldsymbol{p},\sigma)\) ??????????? \(p=p^{\prime}=p_F\) ?????? \(f\) ????????????? \(\hat{\mathbf{s}}_1\cdot\hat{\mathbf{s}}_2\) ???????? Abrikosov ? Khalatnikov?1957?????
+\begin{equation}\tag{11.6.74}\label{eq:11.6.74}
+f ( \pmb { p } , \sigma ; \pmb { p } ^{\prime} , \sigma ^{\prime} ) = A ( \theta ) + B ( \theta ) \hat { \pmb { s } } _ { 1 } \cdot \hat { \pmb { s } } _ { 2 } ,
+\end{equation}
+其中
+\begin{equation}\tag{11.6.75}\label{eq:11.6.75}
+A ( \theta ) = \frac { 2 \pi a \hbar ^{2} } { m } \left[ 1 + 2 a \left( \frac { 3 N } { \pi V } \right) ^{1 / 3} \left\{ 2 + \frac { \cos \theta } { 2 \sin ( \theta / 2 ) } \ln \frac { 1 + \sin ( \theta / 2 ) } { 1 - \sin ( \theta / 2 ) } \right\} \right]
+\end{equation}
+以及
+\begin{equation}\tag{11.6.76}\label{eq:11.6.76}
+B ( \theta ) = - \frac { 8 \pi a \hbar ^{2} } { m } \left[ 1 + 2 a \left( \frac { 3 N } { \pi V } \right) ^{1 / 3} \left\{ 1 - \frac { 1 } { 2 } \sin \left( \frac { \theta } { 2 } \right) \ln \frac { 1 + \sin ( \theta / 2 ) } { 1 - \sin ( \theta / 2 ) } \right\} \right] ,
+\end{equation}
+????? \(a\) ???? \(\theta\) ????????? \(\boldsymbol{p}_{F}\) ? \(\boldsymbol{p}_{F}^{\prime}\) ????????? \autoref{eq:11.6.61}?\autoref{eq:11.6.67} ? \autoref{eq:11.6.73} ????????????????? \(B(\theta)\hat{\mathbf{s}}_{1}\cdot\hat{\mathbf{s}}_{2}\) ??
+最终结果中，与自旋无关的项\(A(\theta)\)则导致\(^{26}\)
+\begin{equation}\tag{11.6.77}\label{eq:11.6.77}
+\frac { 1 } { m ^{*} } = \frac { 1 } { m } - \frac { 8 } { 15 m } ( 7 \ln 2 - 1 ) \left( \frac { 3 N } { \pi V } \right) ^{2 / 3} a ^{2}
+\end{equation}
+以及
+\begin{equation}\tag{11.6.78}\label{eq:11.6.78}
+c _ { 0 } ^{2} = \frac { p _ { F } ^{2} } { 3 m ^{2} } + \frac { 2 \pi a \hbar ^{2} } { m ^{2} } \frac { N } { V } \left[ 1 + \frac { 4 } { 15 } ( 11 - 2 \ln 2 ) \left( \frac { 3 N } { \pi V } \right) ^{1 / 3} a \right] ;
+\end{equation}
+?????? \autoref{eq:11.6.33} ?????? \autoref{eq:11.6.77}?????????? \(P_0\) ????? \(E_0\) ???????? \autoref{eq:11.6.32} ? \autoref{eq:11.6.31} ???? \(\mu_0\) ?????? 11.15?
+\section{费米系统的凝聚}\label{ux8d39ux7c73ux7cfbux7edfux7684ux51ddux805a}
+在第11.7节和第11.8节中对\(T=0\)费米液体的讨论，适用于费米子之间相互作用严格为斥力的情况。由此形成的费米液体具有与理想费米气体在性质上相似的基态以及准粒子激发。然而，对于那些具有吸引力相互作用的费米子——无论这种相互作用有多弱——由于玻色子对的形成，简并费米气体将变得不稳定。这导致了一系列重要的现象，包括金属中的超导性、\(^{3}\)He中的超流性，以及超冷费米气体中的凝聚现象。在低温超导体中，屏蔽效应与电子-声子相互作用共同作用，使得费米面两侧的准粒子之间产生一种迟滞的吸引力。这些所谓的库珀对的形成，促使系统形成具有临界温度的超导态。
+\begin{equation}\tag{11.6.79}\label{eq:11.6.79}
+k T _ { c } \approx \hbar \omega _ { D } \exp \left( - \frac { 1 } { N ( \epsilon _ { F } ) | u _ { 0 } | } \right) ,
+\end{equation}
+其中\(N(\epsilon_{F})\)表示费米面上每种自旋配置的态密度，\(u_{0}\)是电子之间的弱吸引耦合强度，而\(\hbar\omega_{D}\)则是第7.4节所讨论的德拜能，因为该耦合源自声子。正如式（1）所示，相变温度在\(u_{0}\)的非摄动情况下并不依赖于小参数。关于超导性的完整理论处理远超出了本节的范围，因此读者可参考库珀（1956年）以及巴登、库珀和施里弗（1957年）的原始论文，以及蒂利和蒂利（1990年）和廷克汉姆（1996年）编著的超导相关教材。至于\(^{3}\)He中的超流现象，则由沃尔哈特和沃尔夫勒（1990年）进行了综述。
+最近，人们也在囚禁的超冷原子费米气体中观测到了玻色子凝聚现象。超冷气体中原子间相互作用的符号与强度均可被精确调控。
+通过在费什巴赫共振附近施加磁场，实现了对相互作用前所未有的实验调控。特别是，实验者可以创造出低能的分子束缚态，或实现弱吸引相互作用，而无需让分子束缚态得以形成。如果费米子对之间的相互作用能够促成束缚态玻色子分子的形成，那么简并费米气体的基态将变得不稳定，因为分子会不断形成；若玻色子分子的密度足够大，它们便会发生玻色凝聚——详见格莱纳、雷加尔和金（2003年）；约希姆等人（2003年）；以及茨维莱因等人（2003年）。
+对于弱吸引力相互作用，费米子系统会凝聚成类似BCS的状态，并因原子间相互作用的性质清晰且易于实验调控而为理论预测的验证提供了极佳的实验环境。理论预测指出，随着吸引相互作用参数 \(u_0\) 从较小值逐渐增大，从BCS行为平滑过渡到玻色-爱因斯坦凝聚（BEC）行为。BCS理论适用于弱耦合情况下的行为描述。在束缚费米子的宽广Feshbach共振条件下——这是最常见的实验情形——BCS临界温度可由以下公式给出：
+\begin{equation}\tag{11.6.80}\label{eq:11.6.80}
+\frac { k T _ { c } } { \hbar \omega _ { 0 } } \approx \frac { \epsilon _ { F } } { \hbar \omega _ { 0 } } \exp \left( - \frac { \pi } { 2 k _ { F } | a | } \right) \sim N ^{1 / 3} \exp \left( - \frac { a _ { \mathrm { o s c } } } { 1 . 21 4 N ^{1 / 6} | a | } \right) ,
+\end{equation}
+其中 \(\omega_{0}=(\omega_{1}\omega_{2}\omega_{3})^{1/3}\) 是阱中原子的平均振荡频率，\(a_{\mathrm{osc}}=\sqrt{\hbar/m\omega_{0}}\)，\(k_{F}=\sqrt{2m\epsilon_{F}}/\hbar\) 是费米波矢；参见Pitaevskii和Stringari（2003）、Leggett（2006）以及Pethick和Smith（2008）。对于较大的负散射长度，相变温度会平滑地过渡至BEC极限，与非相互作用的玻色凝聚温度相一致，详见式（7.2.6）。
+\begin{equation}\tag{11.6.81}\label{eq:11.6.81}
+\frac { k T _ { c } } { \hbar \omega _ { 0 } } \approx \left( \frac { N } { 2 \zeta ( 3 ) } \right) ^{1 / 3} ,
+\end{equation}
+因为 Cooper 对的数量为 \(N/2\)。根据式（8.4.3），BEC极限下的相变温度与费米温度之比为
+\begin{equation}\tag{11.6.82}\label{eq:11.6.82}
+\frac { k T _ { c } } { \epsilon _ { F } } \approx \left( \frac { 1 } { 12 \zeta ( 3 ) } \right) ^{1 / 3} \simeq 0 . 41 .
+\end{equation}
+对宽广共振极限的平均场分析（Leggett，2006）以及对窄共振极限的解析分析（Gurarie和Radzihovsky，2007）均表明，相变温度在中间耦合时达到最大值。图~11.7是临界温度随耦合参数 \(u_0\) 变化的示意图。
+Regal、Greiner和Jin（2004）在BEC-BCS交叉区域对简并费米气体进行的凝聚实验观测结果如图~11.8所示。他们利用Feshbach共振将\(^{40}\)K的散射长度调整至吸引区间（\(a < 0\)），从而
+?? \(\hat{H}\) ???\autoref{eq:11.1.8} ??????????
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  利用上述结果，证明方程
+\end{enumerate}
+\begin{equation}\tag{11.6.83}\label{eq:11.6.83}
+\begin{array}{rlr} & { } & { \frac { 1 } { \sqrt { N ! } } \langle 0 | \psi ( \pmb { r } _ { 1 } ) \dots \psi ( \pmb { r } _ { N } ) \hat { H } | \Psi _ { N E } \rangle = E \frac { 1 } { \sqrt { N ! } } \langle 0 | \psi ( \pmb { r } _ { 1 } ) \dots \psi ( \pmb { r } _ { N } ) | \Psi _ { N E } \rangle } \\& { } & { = E \Psi _ { N E } ( \pmb { r } _ { 1 } , \dots \pmb { r } _ { N } ) } \end{array}
+\end{equation}
+????????\autoref{eq:11.1.15}?
+11.2. 由相互作用的玻色子组成的气态系统的广义配分函数可表示为
+\begin{equation}\tag{11.6.84}\label{eq:11.6.84}
+\ln \mathcal { Q } \equiv \frac { P V } { k T } = \frac { V } { \lambda ^{3} } \left[ g _ { 5 / 2 } ( z ) - 2 \{ g _ { 3 / 2 } ( z ) \} ^{2} \frac { a } { \lambda } + O \left( \frac { a ^{2} } { \lambda ^{2} } \right) \right] .
+\end{equation}
+研究该表达式在\(z=1\)附近的行为特性，并证明当系统的偏压达到临界值时，系统会表现出玻色-爱因斯坦凝聚的现象。
+\begin{equation}\tag{11.6.85}\label{eq:11.6.85}
+z _ { c } = 1 + 4 \xi \left( \frac { 3 } { 2 } \right) \frac { a } { \lambda _ { c } } + O \left( \frac { a ^{2} } { \lambda _ { c } ^{2} } \right) .
+\end{equation}
+进一步证明，在临界点处，气体的压力可由以下公式给出（Lee和Yang，1958年、1960年B）。
+\begin{equation}\tag{11.6.86}\label{eq:11.6.86}
+\frac { P _ { c } } { k T _ { c } } = \frac { 1 } { \lambda _ { c } ^{3} } \left[ \zeta \left( \frac { 5 } { 2 } \right) + 2 \left\{ \zeta \left( \frac { 3 } { 2 } \right) \right\} ^{2} \frac { a } { \lambda _ { c } } + O \left( \frac { a ^{2} } { \lambda _ { c } ^{2} } \right) \right] ;
+\end{equation}
+??????\autoref{eq:11.2.16} ? \autoref{eq:11.2.18} ?????
+11.3. 对于在第11.2节中研究的不完全玻色气体，计算绝对零度附近的比热容\(C_V\)，并证明随着\(T \to 0\)，比热容会以一种具有"能量间隙"\(\Delta = 4\pi a\hbar^2 n/m\)的系统所特有的方式消失。
+11.4. (a) 证明：在散射长度\(a\)的一阶近似下，不完全玻色气体在转变温度\(T_c\)处的比热容\(C_V\)的不连续性可由以下公式给出
+\begin{equation}\tag{11.6.87}\label{eq:11.6.87}
+( C _ { V } ) _ { T = T _ { c - } } - ( C _ { V } ) _ { T = T _ { c + } } = N k \frac { 9 a } { 2 \lambda _ { c } } \xi ( 3 / 2 ) ,
+\end{equation}
+而体积模量\(K\)的不连续性则由以下公式给出
+\begin{equation}\tag{11.6.88}\label{eq:11.6.88}
+( K ) _ { T = T _ { c ^{-} } } - ( K ) _ { T = T _ { c ^{+} } } = - \frac { 4 \pi a \hbar ^{2} } { m v _ { c } ^{2} } .
+\end{equation}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  同样考察\(\left(\frac{\partial^2 P}{\partial T^2}\right)_\nu\)和\(\left(\frac{\partial^2 \mu}{\partial T^2}\right)_\nu\)这两个量的不连续性，并证明您的结果与热力学关系一致。
+\end{enumerate}
+\begin{equation}\tag{11.6.89}\label{eq:11.6.89}
+C _ { V } = V T \left( \frac { \partial ^{2} P } { \partial T ^{2} } \right) _ { \nu } - N T \left( \frac { \partial ^{2} \mu } { \partial T ^{2} } \right) _ { \nu } .
+\end{equation}
+11.5. (a) ?????\autoref{eq:11.2.44} ? \autoref{eq:11.2.46} ?????? (b) ?????\autoref{eq:11.5.23} ? \autoref{eq:11.5.24} ??????
+11.6. 交互作用玻色气体的基态压强（参见李和杨，1960a）最终被证明为
+\begin{equation}\tag{11.6.90}\label{eq:11.6.90}
+P _ { 0 } = \frac { \mu _ { 0 } ^{2} m } { 8 \pi a \hbar ^{2} } \left[ 1 - \frac { 64 } { 15 \pi } \frac { \mu _ { 0 } ^{1 / 2} m ^{1 / 2} a } { \hbar } + \cdots \right] ,
+\end{equation}
+其中 \(\mu_{0}\) 是该气体的基态化学势。由此可得
+\begin{equation}\tag{11.6.91}\label{eq:11.6.91}
+n \equiv \left( { \frac { d P _ { 0 } } { d \mu _ { 0 } } } \right) = { \frac { \mu _ { 0 } m } { 4 \pi a \hbar ^{2} } } \left[ 1 - { \frac { 16 } { 3 \pi } } { \frac { \mu _ { 0 } ^{1 / 2} m ^{1 / 2} a } { \hbar } } + \cdots \right]
+\end{equation}
+并且
+\begin{equation}\tag{11.6.92}\label{eq:11.6.92}
+\frac { E _ { 0 } } { V } \equiv ( n \mu _ { 0 } - P _ { 0 } ) = \frac { \mu _ { 0 } ^{2} m } { 8 \pi a \hbar ^{2} } \left[ 1 - \frac { 32 } { 5 \pi } \frac { \mu _ { 0 } ^{1 / 2} m ^{1 / 2} a } { \hbar } + \cdots \right] .
+\end{equation}
+???????? \(\mu_{0}\)????\autoref{eq:11.2.44} ? \autoref{eq:11.2.43}?
+11.7. 证明在交互作用玻色气体中，实粒子的平均占据数 \(\overline{n}_{p}\) 与准粒子的平均占据数 \(\overline{N}_{p}\) 之间存在如下关系
+\begin{equation}\tag{11.6.93}\label{eq:11.6.93}
+\overline { { n } } p = \frac { \overline { { N } } p + \alpha _ { p } ^{2} ( \overline { { N } } p + 1 ) } { 1 - \alpha _ { p } ^{2} }  ( p \neq 0 ) ,
+\end{equation}
+?? \(\alpha_{p}\) ?\autoref{eq:11.2.34} ? \autoref{eq:11.2.35} ???????\autoref{eq:11.2.50} ??????? \(\overline{N}_{p}=0\)?
+11.8. 液体 He\(^{4}\) 在基态之上携带单个激发时的激发能，由以下量的最小值决定
+\begin{equation}\tag{11.6.94}\label{eq:11.6.94}
+\varepsilon = \int \Psi ^{*} \left\{ - \frac { \hbar ^{2} } { 2 m } \sum _ { i } \nabla _ { i } ^{2} + V - E _ { 0 } \right\} \Psi d ^{3 N} r \Big / \int \Psi ^{*} \Psi d ^{3 N} r ,
+\end{equation}
+?? \(E_{0}\) ???????????????????\(\Psi\) ?\autoref{eq:11.4.3} ?????????????????????????????????\autoref{eq:11.4.5}?
+【提示：首先将 \(\varepsilon\) 表示为
+\begin{equation}\tag{11.6.95}\label{eq:11.6.95}
+\varepsilon = \frac { \hbar ^{2} } { 2 m } \int | \nabla f ( \pmb { r } ) | ^{2} d ^{3} r \Bigg / \int f ^{*} ( \pmb { r } _ { 1 } ) f ( \pmb { r } _ { 2 } ) g ( \pmb { r } _ { 2 } - \pmb { r } _ { 1 } ) d ^{3} r _ { 1 } d ^{3} r _ { 2 } .
+\end{equation}
+?????? \(f(\mathbf{r})\) ????\autoref{eq:11.4.4} ??\(\varepsilon\) ?????????
+11.9. 证明：对于足够大的动量 \(\hbar k\)（事实上，此时能量谱的斜率 \(d\varepsilon/dk\) 要大于初始斜率 \(\hbar c\)），液体 He\(^{4}\) 中的双激发态在能量上比单激发态更为有利；也就是说，存在波矢量 \(\boldsymbol{k}_{1}\) 和 \(\boldsymbol{k}_{2}\)，使得 \(\boldsymbol{k}_{1}+\boldsymbol{k}_{2}=\boldsymbol{k}\)，且 \(\varepsilon(k_{1})+\varepsilon(k_{2})<\varepsilon(k)\)。
+11.10. 利用费特的解析近似，
+\begin{equation}\tag{11.6.96}\label{eq:11.6.96}
+f _ { 1 } ( \rho ^{\prime} ) = \frac { \rho ^{\prime} } { \sqrt { ( 1 + \rho ^{\prime 2} ) } } ,
+\end{equation}
+????\autoref{eq:11.5.23} ?? \(s=1\)????????????????????????????????????\autoref{eq:11.5.26} ????????????
+11.11. (a) 研究由一对平行涡线产生的速度场的性质，其中 \(s_{1}=+1\)，\(s_{2}=-1\)，两者相距 \(d\)。推导并讨论流线的一般方程。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  ????????? \(f(\rho_{1}^{\prime})\) ? \(f(\rho_{2}^{\prime})\) ?????????????????????? \(d\rightarrow0\) ??????? \(11\pi\hbar^{2}n_{0}/12m\)?????????????????????\autoref{eq:11.6.8}?
+\end{enumerate}
+11.12. ???? \(F(z_0)\) ?????\autoref{eq:11.6.30}?
+?????\autoref{eq:11.6.24} ????????????
+\begin{equation}\tag{11.6.97}\label{eq:11.6.97}
+\begin{array}{rl} & { \frac { 1 } { \sqrt { ( r s t ) ( r + s ) ( r + t ) } } } \\& { = \left( \frac { 2 } { \sqrt { \pi } } \right) ^{3} \int _ { 0 } ^{\infty} e ^{- X ^ { 2} r - Y ^{2} s - Z ^{2} t - \xi ( r + s ) - \eta ( r + t ) } d X \, d Y \, d Z \, d \xi \, d \eta . } \end{array}
+\end{equation}
+???????\autoref{eq:11.6.24}??? \(r\)?\(s\) ? \(t\) ??????????
+\begin{equation}\tag{11.6.98}\label{eq:11.6.98}
+F ( z _ { 0 } ) = \frac { 8 } { \pi ^{3 / 2} } \int _ { 0 } ^{\infty} \frac { 1 } { z _ { 0 } ^{- 1} } e ^{\chi ^ { 2} + \xi + \eta } + 1 \, \frac { 1 } { z _ { 0 } ^{- 1} } e ^{Y ^ { 2} + \xi } + 1 \, \frac { 1 } { z _ { 0 } ^{- 1} } e ^{Z ^ { 2} + \eta } + 1 \, d X \, d Y \, d Z \, d \xi \, d \eta .
+\end{equation}
+在 \(z_{0} \rightarrow \infty\) 的极限情况下，被积函数在由以下区域定义的区域内，基本上等于 1：
+\begin{equation}\tag{11.6.99}\label{eq:11.6.99}
+X ^{2} + \xi + \eta < \ln z _ { 0 } ,  Y ^{2} + \xi < \ln z _ { 0 } ,  \mathrm { a n d }  Z ^{2} + \eta < \ln z _ { 0 } ;
+\end{equation}
+在该区域之外，它基本上为 0。因此，渐近展开式的主导项为：
+\begin{equation}\tag{11.6.100}\label{eq:11.6.100}
+\frac { 8 } { \pi ^{3 / 2} } \int _ { R } 1 \cdot d X \, d Y \, d Z \, d \xi \, d \eta ,
+\end{equation}
+而这一项又可简化为二重积分：
+\begin{equation}\tag{11.6.101}\label{eq:11.6.101}
+\frac { 8 } { \pi ^{3 / 2} } \iint ( \ln z _ { 0 } - \xi - \eta ) ^{1 / 2} ( \ln z _ { 0 } - \xi ) ^{1 / 2} ( \ln z _ { 0 } - \eta ) ^{1 / 2} d \xi \, d \eta ;
+\end{equation}
+这里的积分限是这样的：不仅 \(\xi < (\ln z_0)\) 和 \(\eta < (\ln z_0)\)，而且 \((\xi + \eta) < (\ln z_0)\)。其余的计算过程十分简单。】
+11.13. Lee ? Yang?1957??????????? \(1/2\) ????????????????????\(^{27}\)
+\begin{equation}\tag{11.6.102}\label{eq:11.6.102}
+\begin{array}{r} { \ln \mathcal { Q } \equiv \frac { P V } { k T } = \frac { V } { \lambda ^{3} } \left[ 2 f _ { 5 / 2 } ( z ) - \frac { 2 a } { \lambda } \{ f _ { 3 / 2 } ( z ) \} ^{2} \right. } \\{ \left. + \frac { 4 a ^{2} } { \lambda ^{2} } f _ { 1 / 2 } ( z ) \{ f _ { 3 / 2 } ( z ) \} ^{2} - \frac { 8 a ^{2} } { \lambda ^{2} } F ( z ) + \cdots \right] , } \end{array}
+\end{equation}
+\(^{27}\)有关此计算的详细内容，请参阅李和杨（1959b），其中采用二元碰撞法，分别处理了自旋为 \(J\) 的玻色子和费米子的情况。对于自旋为零的玻色子，其二阶结果最早由黄、杨和拉廷格（1957）采用伪势方法得出。
+?? \(z\) ????fugacity??\(z_{0}\) ?????????????? \(f_{\nu}(z)\) ? \(F(z)\) ????? \autoref{eq:11.6.10} ? \autoref{eq:11.6.24}?????????? \(E(z,V,T)\) ???? \(N(z,V,T)\)?
+\begin{equation}\tag{11.6.103}\label{eq:11.6.103}
+E ( z , V , T ) \equiv k T ^{2} \frac { \partial ( \ln Q ) } { \partial T }  \mathrm { a n d }  N ( z , V , T ) \equiv \frac { \partial ( \ln Q ) } { \partial ( \ln z ) } \left\{ = \frac { 2 V } { \lambda ^{3} } f _ { 3 / 2 } ( z _ { 0 } ) \right\} .
+\end{equation}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  ?? \(z\)??????? \(E\) ?????? \autoref{eq:11.6.25}?
+\item
+  ???? \(\mu\) ?? \((a/\lambda)\) ????????? \autoref{eq:11.6.31} ? \autoref{eq:11.6.32} ???
+\end{enumerate}
+\begin{equation}\tag{11.6.104}\label{eq:11.6.104}
+( E + P V ) _ { T = 0 } = N ( \mu ) _ { T = 0 } .
+\end{equation}
+【提示：在 \(T=0\)K 时，\(\mu = (\partial E/\partial N)_{V}\)。】
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  证明该气体的低温比热和低温熵分别由下式给出（参见 Pathria 和 Kawatra，1962）：
+\end{enumerate}
+\begin{equation}\tag{11.6.105}\label{eq:11.6.105}
+\frac { C _ { V } } { N k } \simeq \frac { S } { N k } \simeq \frac { \pi ^{2} } { 2 } \left( \frac { k T } { \varepsilon _ { F } } \right) \left[ 1 + \frac { 8 } { 15 \pi ^{2} } ( 7 \ln 2 - 1 ) ( k _ { F } a ) ^{2} + \cdots \right] ,
+\end{equation}
+?? \(k_{F}=(3\pi^{2}n)^{1/3}\)???????????????? \(m^{*}/m\) ??????\autoref{eq:11.6.51} ? \autoref{eq:11.6.77}?
+【提示：要将 \(C_V\) 在 \(T\) 中的至第一幂项确定下来，我们必须先知道 \(E\) 在 \(T\) 中的至第二幂项。为此，我们需要利用函数 \(f_v(z)\) 和 \(F(z)\) 的渐近展开式中的高阶项；这些项的表达式如下：
+\begin{equation}\tag{11.6.106}\label{eq:11.6.106}
+\begin{array}{rl} & { f _ { 5 / 2 } ( z ) = \frac { 8 } { 15 \sqrt { \pi } } ( \ln z ) ^{5 / 2} + \frac { \pi ^{3 / 2} } { 3 } ( \ln z ) ^{1 / 2} + O ( 1 ) , } \\& { f _ { 3 / 2 } ( z ) = \frac { 4 } { 3 \sqrt { \pi } } ( \ln z ) ^{3 / 2} + \frac { \pi ^{3 / 2} } { 6 } ( \ln z ) ^{- 1 / 2} + O ( \ln z ) ^{- 5 / 2} , } \\& { f _ { 1 / 2 } ( z ) = \frac { 2 } { \sqrt { \pi } } ( \ln z ) ^{1 / 2} - \frac { \pi ^{3 / 2} } { 12 } ( \ln z ) ^{- 3 / 2} + O ( \ln z ) ^{- 7 / 2} , } \end{array}
+\end{equation}
+以及
+\begin{equation}\tag{11.6.107}\label{eq:11.6.107}
+\begin{array}{r} { F ( z ) = \frac { 16 ( 11 - 2 \ln 2 ) } { 10 5 \pi ^{3 / 2} } ( \ln z ) ^{7 / 2} } \\{ - \frac { 2 ( 2 \ln 2 - 1 ) } { 3 } \pi ^{1 / 2} ( \ln z ) ^{3 / 2} + O ( \ln z ) ^{5 / 4} . } \end{array}
+\end{equation}
+此处的前三个结果源自索默费尔德引理（E.17）；至于最后一个结果，可参考杨（1962）。
+11.14. 由相互作用、自旋半整数费米子组成的气体的能量谱 \(\varepsilon(p)\) 可以表示为（加利茨基，1958；莫林，1961）。
+\begin{equation}\tag{11.6.108}\label{eq:11.6.108}
+\begin{array}{rlr} & { } & { \frac { \varepsilon ( p ) } { p _ { F } ^{2} / 2 m } \simeq x ^{2} + \frac { 4 } { 3 \pi } ( k _ { F } a ) + \frac { 4 } { 15 \pi ^{2} } ( k _ { F } a ) ^{2} } \\& { } & { \times \left[ 11 + 2 x ^{4} \ln \frac { x ^{2} } { | x ^{2} - 1 | } - 10 \left( x - \frac { 1 } { x } \right) \ln \left| \frac { x + 1 } { x - 1 } \right| \right. } \\& { } & { \left. - \frac { ( 2 - x ^{2} ) ^{5 / 2} } { x } \ln \left( \frac { 1 + x \sqrt { ( 2 - x ^{2} ) } } { 1 - x \sqrt { ( 2 - x ^{2} ) } } \right) \right] , } \end{array}
+\end{equation}
+其中 \(x=p/p_{F}\leq\sqrt{2}\)，且 \(k=p/\hbar\)。请证明：当 \(k\) 接近 \(k_{F}\) 时，该谱会简化为
+\begin{equation}\tag{11.6.109}\label{eq:11.6.109}
+\begin{array}{r} { \frac { \varepsilon ( p ) } { p _ { F } ^{2} / 2 m } \simeq x ^{2} + \frac { 4 } { 3 \pi } ( k _ { F } a ) } \\{ + \frac { 4 } { 15 \pi ^{2} } ( k _ { F } a ) ^{2} \left[ ( 11 - 2 \mathrm { l n } 2 ) - 4 ( 7 \mathrm { l n } 2 - 1 ) \left( \frac { k } { k _ { F } } - 1 \right) \right] . } \end{array}
+\end{equation}
+??\autoref{eq:11.6.53} ? \autoref{eq:11.6.61}???????????????
+\begin{equation}\tag{11.6.110}\label{eq:11.6.110}
+\frac { m ^{*} } { m } \simeq 1 + \frac { 8 } { 15 \pi ^{2} } ( 7 \ln 2 - 1 ) ( k _ { F } a ) ^{2} .
+\end{equation}
+11.15. 在费米系统的基态中，化学势与费米能相等：\((\mu)_{T=0} = \varepsilon(p_F)\)。借助上一问题中的能量谱 \(\varepsilon(p)\)，我们得到
+\begin{equation}\tag{11.6.111}\label{eq:11.6.111}
+( \mu ) _ { T = 0 } \simeq \frac { p _ { F } ^{2} } { 2 m } \Bigg [ 1 + \frac { 4 } { 3 \pi } ( k _ { F } a ) + \frac { 4 } { 15 \pi ^{2} } ( 11 - 2 \ln 2 ) ( k _ { F } a ) ^{2} \Bigg ] .
+\end{equation}
+????????????????????????\autoref{eq:11.6.31}?
+11.16. 在外部磁场 \(B\) 的作用下，不完全费米气体的能级在一次近似中可以表示为
+\begin{equation}\tag{11.6.112}\label{eq:11.6.112}
+E _ { n } = \sum _ { p } ( n _ { p } ^{+} + n _ { p } ^{-} ) \frac { p ^{2} } { 2 m } + \frac { 4 \pi a \hbar ^{2} } { m V } N ^{+} N ^{-} - \mu ^{*} B ( N ^{+} - N ^{-} ) ;
+\end{equation}
+??\autoref{eq:8.2.8} ? \autoref{eq:11.6.12}????????? \(E_{n}\)????? 8.2.A ????????????????????????? \(\chi(T)\)????????? \(a > 0\) ????????????????????????
+11.17. ????? \(\omega_0\) ??????????? Gross-Pitaevskii ?????????? \autoref{eq:11.2.21} ? \autoref{eq:11.2.23}??????????? \(\psi = a_{\rm osc}^{3/2}\Psi/\sqrt{N}\)?\(s = r/a_{\rm osc}\)??????? \(E/N\hbar\omega_0\) ??????????? \(Na/a_{\rm osc}\)??? \(N\) ?????\(a\) ??????? \(a_{\rm osc} = \sqrt{\hbar/m\omega_0}\) ???????????????
+\begin{equation}\tag{11.6.113}\label{eq:11.6.113}
+- \frac { 1 } { 2 } \tilde { \nabla } ^{2} \psi + \frac { 1 } { 2 } s ^{2} \psi + \frac { 4 \pi N a } { a _ { \mathrm { o s c } } } \left| \psi \right| ^{2} \psi = \tilde { \mu } \psi \; ,
+\end{equation}
+以及
+\begin{equation}\tag{11.6.114}\label{eq:11.6.114}
+\frac { E [ \psi ] } { N \hbar \omega _ { 0 } } = \int \left( \frac { 1 } { 2 } \left| \tilde { \nabla } \psi \right| ^{2} + \frac { 1 } { 2 } s ^{2} \left| \psi \right| ^{2} + \frac { 2 \pi N a } { a _ { \mathrm { o s c } } } \left| \psi \right| ^{4} \right) d s \, .
+\end{equation}
+11.18. ????????? Gross-Pitaevskii ???????????? \autoref{eq:11.2.21} ? \autoref{eq:11.2.23}?????????? \autoref{eq:11.2.6}?
+11.19. ???????? Gross-Pitaevskii ?? \autoref{eq:11.2.23}??????? \(a\) ?????????????????????????
+11.20. ????? \(\omega_0\) ??????????? \(Na/a_{\rm osc} \gg 1\) ???????????? Gross-Pitaevskii ???????????? \autoref{eq:11.2.21} ? \autoref{eq:11.2.23}??? \autoref{eq:11.2.25} ? \autoref{eq:11.2.28} ????
+
+

@@ -1,0 +1,1102 @@
+﻿\chapter{相变：重正化群方法}\label{ux76f8ux53d8ux91cdux6b63ux5316ux7fa4ux65b9ux6cd5}
+在本章中，我们拟探讨一种被证明是解决相变问题最为成功的途径。这一方法基于卡达诺夫（1966b）首次提出的理论思想，并经威尔逊（1971）及其他学者的进一步发展，最终演变成一种强大的计算工具。卡达诺夫论证的核心观点在于：当系统接近临界点时，其相关长度会变得极其庞大——由此导致系统对长度变换（或称尺度变化，视情况而定）的敏感度大幅下降。而在临界点处，相关长度将趋于无穷大，系统对这种变换也完全失去敏感性。因此，如果距离临界点并不太远（即 \(|t|, h \ll 1\)），那么给定的系统（以晶格常数 \(a\) 为基准）很可能与经过变换后的系统（以晶格常数 \(a' = la\) 为基准，其中 \(l > 1\)，且参数 \(t'\) 和 \(h'\) 也相应地被调整）呈现出高度相似的特征；经过重正化后，系统中所有距离均以新的晶格常数 \(a'\) 为基准进行测量。显然，按 \(a'\) 为单位的重缩相关长度 \(\xi'\) 将是原始相关长度 \(\xi\) 的 \(1/l\) 倍。只有当 \(\xi'\) 也远大于 \(a'\) 时，这种在临界行为上的相似性才有望实现——正如 \(\xi\) 与 \(a\) 之间的关系一样，而这又要求 \(l \ll (\xi/a)\)；由此推知，\(|t'|\) 和 \(h'\) 也应远小于 1。
+这些考量最终导向了一种与第 12.10 节所呈现的公式类似的表述，唯一的区别在于：在那节中我们不得不依赖一个标度假设，而在这里，我们则基于系统微观组成成分之间关联所发挥的作用提出了有力的论证——在临界点附近，这些关联的尺度之大，以至于它们使所有其他长度尺度——包括决定晶格结构的尺度——几乎变得无关紧要。遗憾的是，卡达诺夫的方法并未提供一套系统化的手段来推导临界指数，亦无法构建出现在该公式中的标度函数。这些问题由威尔逊通过引入重正化群（RG）的概念加以弥补。
+我们将在第 14.3 节和第 14.4 节中探讨威尔逊的方法，但在那之前，我们先提出一种沿上述思路展开的标度表述，并在此基础上深入探讨一些简单的重正化实例，这些实例为建立威尔逊理论铺平了道路。最后，在第 14.5 节中，我们将概述有限尺寸标度理论，该理论同样受益于重正化群方法的显著进展。
+\section{标度理论的概念基础}\label{ux6807ux5ea6ux7406ux8bbaux7684ux6982ux5ff5ux57faux7840}
+在给定系统中，标度变换可以通过多种不同的方式实现。最早提出这一概念的是卡达诺夫，他指出：当大尺度相关性占主导时，系统中的单个自旋可以被分组为"自旋块"，每个自旋块由 \(l^{d}\) 个原始自旋组成，并让每个自旋块在变换后的系统中扮演"单个自旋"的角色；参见图~14.1，其中展示了 \(l=2\)、\(d=2\) 的自旋块变换。自旋块的自旋变量可记作 \(\sigma'\)，它源自自旋块中各单个自旋的值；然而，必须制定一条规则，使 \(\sigma'\) 也仅取 \(+1\) 或 \(-1\)，正如原始的 \(\sigma_{i}\) 一样。¹ 变换后的系统由 \(N'\) 个"自旋"组成，其中
+\begin{equation}\tag{14.1.1}\label{eq:14.1.1}
+N ^{\prime} = l ^{- d} N ,
+\end{equation}
+占据一个晶格结构，其晶格常数为 \(a' = la\)。为了保持系统中自由度的空间密度，所有空间距离都必须按因子 \(l\) 进行缩放，因此对于变换后的系统中的任意两个"自旋"
+\begin{equation}\tag{14.1.2}\label{eq:14.1.2}
+r ^{\prime} = l ^{- 1} r .
+\end{equation}
+实现标度变换的另一种方法是，将系统的配分函数写下来，
+\begin{equation}\tag{14.1.3}\label{eq:14.1.3}
+Q = \sum _ { \{ \sigma _ { i } \} } \exp [ - \beta H _ { N } \{ \sigma _ { i } \} ] ,
+\end{equation}
+¹ 为简化起见，我们在此采用标量模型的语言。
+并对 \((N-N')\) 个自旋进行求和，最终只留下对剩余 \(N'\) 个自旋的求和，而这一求和过程，有望能够以类似于 (3) 的形式表示出来，即
+\begin{equation}\tag{14.1.4}\label{eq:14.1.4}
+Q = \sum _ { \{ \sigma _ { i } ^{\prime} \} } \exp [ - \beta H _ { N ^{\prime} } \{ \sigma _ { i } ^{\prime} \} ] .
+\end{equation}
+????????????????\autoref{eq:14.1.3} ? \autoref{eq:14.1.4} ??????????????????\autoref{eq:14.1.3}????????????????\autoref{eq:14.1.4}????????????????????????~14.2????????????????? \(l=\sqrt{2}\)?\(d=2\)??????????????????????????????????????????????? \((N-N\prime)/N\) ????? 1/10?????????????????????
+我们很自然地预期，变换后的系统的自由能——或者至少是那部分决定临界行为的自由能——与原始系统的自由能是相同的。因此，两系统每自旋的自由能中的奇异部分应满足如下关系：
+\begin{equation}\tag{14.1.5}\label{eq:14.1.5}
+N ^{\prime} \psi ^{( s )} ( t ^{\prime} , h ^{\prime} ) = N \psi ^{( s )} ( t , h ) ,
+\end{equation}
+从而
+\begin{equation}\tag{14.1.6}\label{eq:14.1.6}
+\psi ^{( s )} ( t , h ) = l ^{- d} \psi ^{( s )} ( t ^{\prime} , h ^{\prime} ) .
+\end{equation}
+由于 \(t\) 和 \(t'\) 的大小都较小，我们可以假设它们之间存在线性关系，即：
+\begin{equation}\tag{14.1.7}\label{eq:14.1.7}
+t ^{\prime} = l ^{y _ { t} } t ,
+\end{equation}
+其中 \(y_{t}\) 仍是一个未知的数值。同样地，我们也可以假设
+\begin{equation}\tag{14.1.8}\label{eq:14.1.8}
+h ^{\prime} = l ^{y _ { h} } h ,
+\end{equation}
+由此得出
+\begin{equation}\tag{14.1.9}\label{eq:14.1.9}
+\psi ^{( s )} ( t , h ) = l ^{- d} \psi ^{( s )} ( l ^{y _ { t} } t , l ^{y _ { h} } h ) ;
+\end{equation}
+与 \(y_t\) 一样，在这一阶段的博弈中，数值 \(y_h\) 也仍是未知的。
+我们现在断言，支配系统大部分临界行为的函数 \(\psi^{(s)}\) 对尺度的变化基本不敏感；因此，我们应当能够从式（9）中消去尺度因子 \(l\)。这实际上迫使我们用一个独立于 \(l\) 的单一变量来代替变量 \(t'\) 和 \(h'\)，即
+\begin{equation}\tag{14.1.10}\label{eq:14.1.10}
+\frac { h ^{\prime} } { | t ^{\prime} | ^{y _ { h} / y _ { t } } } = \frac { h } { | t | ^{y _ { h} / y _ { t } } } = \frac { h } { | t | ^{\Delta} } , \mathrm { ~ s a y }  \left( \Delta = \frac { y _ { h } } { y _ { t } } \right) ;
+\end{equation}
+与此同时，我们还需要写出
+\begin{equation}\tag{14.1.11}\label{eq:14.1.11}
+\psi ^{( s )} ( t ^{\prime} , h ^{\prime} ) = | t ^{\prime} | ^{d / y _ { t} } \tilde { \psi } \left( h ^{\prime} / | t ^{\prime} | ^{\Delta} \right) ,
+\end{equation}
+最终得到相同的结果
+\begin{equation}\tag{14.1.12}\label{eq:14.1.12}
+\psi ^{( s )} ( t , h ) = | t | ^{d / y _ { t} } \tilde { \psi } \left( h / | t | ^{\Delta} \right) ;
+\end{equation}
+需要注意的是，目前函数 \(\tilde{\psi}\) 仍然未知。² 将式（12）与式（12.10.7）进行比较，我们很容易识别出临界指数 \(\alpha\) 为
+\begin{equation}\tag{14.1.13}\label{eq:14.1.13}
+\alpha = 2 - ( d / y _ { t } ) ;
+\end{equation}
+更重要的是，当前的考量已使系统的自由能密度呈现出与第12.10节所假定的相同尺度形式。因此，我们已将式（12.10.7）的地位从单纯的假设提升为一项有充分依据的结果，其概念基础在于系统中普遍存在大尺度相关性。正如第12.10节所指出的那样，我们推断，指数 \(\beta\)、\(\gamma\) 和 \(\delta\) 现在分别由以下公式给出
+\begin{equation}\tag{14.1.14}\label{eq:14.1.14}
+\beta = 2 - \alpha - \Delta = ( d - y _ { h } ) / y _ { t } ,
+\end{equation}
+\begin{equation}\tag{14.1.15}\label{eq:14.1.15}
+\gamma = - ( 2 - \alpha - 2 \Delta ) = ( 2 y _ { h } - d ) / y _ { t } ,
+\end{equation}
+²有些作者通过将 \(l\) 设为 \(t^{-1/y_t}\) 来从式（9）推导出式（12）。正如稍后将要看到的那样，见式（19），这实际上意味着让 \(l\) 为 \(O(\xi/a)\)，而这违背了先前提到的条件——\(l \ll \xi/a\)。
+以及
+\begin{equation}\tag{14.1.16}\label{eq:14.1.16}
+\delta = \Delta / \beta = y _ { h } / ( d - y _ { h } ) .
+\end{equation}
+如前所述，经过变换后的系统的缩放相关长度 \(\xi'\) 与原系统相关长度 \(\xi\) 之间存在如下关系
+\begin{equation}\tag{14.1.17}\label{eq:14.1.17}
+\xi ^{\prime} = l ^{- 1} \xi \, .
+\end{equation}
+与此同时，我们预期 \(\xi'\) 应当近似为 \(|t'|^{-\nu}\)，正如 \(\xi\) 近似为 \(|t|^{-\nu}\) 一样。由此可以推断
+\begin{equation}\tag{14.1.18}\label{eq:14.1.18}
+\left( \frac { \xi ^{\prime} } { \xi } \right) = \left( \frac { t ^{\prime} } { t } \right) ^{- \nu} = l ^{- \nu y _ { t} } .
+\end{equation}
+将式（17）与式（18）进行比较，我们得出结论
+\begin{equation}\tag{14.1.19}\label{eq:14.1.19}
+\nu = 1 / y _ { t }
+\end{equation}
+因此，根据式（13）
+\begin{equation}\tag{14.1.20}\label{eq:14.1.20}
+d \nu = 2 - \alpha .
+\end{equation}
+因此，我们不仅得到了用于求解临界指数 \(\nu\) 的有用表达式，还得到了基于更健全的理论基础的超标度关系（12.12.15），其水平远高于第 12.12 节所采用的那一种。
+最后，我们来考察这两个系统的相关函数。在临界点处，我们预期对于变换后的系统，
+\begin{equation}\tag{14.1.21}\label{eq:14.1.21}
+g ( \pmb { r } _ { 1 } ^{\prime} , \pmb { r } _ { 2 } ^{\prime} ) = \langle \sigma ^{\prime} ( \pmb { r } _ { 1 } ^{\prime} ) \sigma ^{\prime} ( \pmb { r } _ { 2 } ^{\prime} ) \rangle \sim ( \pmb { r } ^{\prime} ) ^{- ( d - 2 + \eta )} ,
+\end{equation}
+正如对于原始系统一样，
+\begin{equation}\tag{14.1.22}\label{eq:14.1.22}
+g ( \pmb { r } _ { 1 } , \pmb { r } _ { 2 } ) = \langle \sigma ( \pmb { r } _ { 1 } ) \sigma ( \pmb { r } _ { 2 } ) \rangle \sim r ^{- ( d - 2 + \eta )} .
+\end{equation}
+为了使方程（21）和（22）相互兼容，我们必须对自旋变量进行缩放，使其满足如下条件：
+\begin{equation}\tag{14.1.23}\label{eq:14.1.23}
+\sigma ^{\prime} ( \boldsymbol { r } ^{\prime} ) = l ^{( d - 2 + \eta ) / 2} \sigma ( \boldsymbol { r } ) .
+\end{equation}
+至于 \(\eta\)，我们可以利用缩放关系 \(\gamma = (2 - \eta)\nu\) 来得到
+\begin{equation}\tag{14.1.24}\label{eq:14.1.24}
+\eta = d + 2 - 2 y _ { h } .
+\end{equation}
+14.2 一些简单的重正化实例
+14.2.A 一维伊辛模型
+我们从一个由 \(N\) 个自旋组成的封闭伊辛链的配分函数（13.2.3a）入手，即
+\begin{equation}\tag{14.2.1}\label{eq:14.2.1}
+Q _ { N } ( B , T ) = \sum _ { \{ \sigma _ { i } \} } \exp \left[ \sum _ { i = 1 } ^{N} \left\{ K _ { 0 } + K _ { 1 } \sigma _ { i } \sigma _ { i + 1 } + \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { i } + \sigma _ { i + 1 } ) \right\} \right]   ( K _ { 0 } = 0 , K _ { 1 } = \beta J , K _ { 2 } = \beta \mu B ) ;
+\end{equation}
+此处引入参数 \(K_{0}\) 是出于后续讨论中将逐渐清晰的原因。为简化起见，我们假设 \(N\) 为偶数，并在式（1）中对所有自旋变量 \(i\) 为偶数的项进行求和，即对 \(\sigma_{2}, \sigma_{4}, \ldots\) 进行求和；参见图~14.3。将式（1）中的求和项写成
+\begin{equation}\tag{14.2.2}\label{eq:14.2.2}
+\begin{array}{rlr} & { } & { \displaystyle \prod _ { i = 1 } ^{N} \exp \{ K _ { 0 } + K _ { 1 } \sigma _ { i } \sigma _ { i + 1 } + \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { i } + \sigma _ { i + 1 } ) \} = \displaystyle \prod _ { j = 1 } ^{\frac { 1} { 2 } N } \exp \{ 2 K _ { 0 } + K _ { 1 } ( \sigma _ { 2 j - 1 } \sigma _ { 2 j } + \sigma _ { 2 j } \sigma _ { 2 j + 1 } ) } \\& { } & {   + \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { 2 j - 1 } + 2 \sigma _ { 2 j } + \sigma _ { 2 j + 1 } ) \} , } \end{array}
+\end{equation}
+对 \(\sigma_{2j}(=+1\) 或 \(-1)\) 的求和可以非常直观地完成，其结果是
+\begin{equation}\tag{14.2.3}\label{eq:14.2.3}
+\prod _ { j = 1 } ^{\frac { 1} { 2 } N } \exp ( 2 K _ { 0 } ) \cdot 2 \cosh \{ K _ { 1 } ( \sigma _ { 2 j - 1 } + \sigma _ { 2 j + 1 } ) + K _ { 2 } \} \cdot \exp \left\{ \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { 2 j - 1 } + \sigma _ { 2 j + 1 } ) \right\} .
+\end{equation}
+将 \(\sigma_{2j-1}\) 记作 \(\sigma_{i}^{\prime}\)，配分函数 \(Q_{N}\) 变为以下形式：
+\begin{equation}\tag{14.2.4}\label{eq:14.2.4}
+Q _ { N } ( B , T ) = \sum _ { \{ \sigma _ { j } ^{\prime} \} } ^{\frac { 1} { 2 } N } \exp ( 2 K _ { 0 } ) \cdot 2 \cosh \{ K _ { 1 } ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) + K _ { 2 } \} \cdot \exp \left\{ \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) \right\} .
+\end{equation}
+如今的关键步骤在于将式（4）改写成与式（1）相似的形式，即
+\begin{equation}\tag{14.2.5}\label{eq:14.2.5}
+Q _ { N } ( B , T ) = \sum _ { \{ \sigma _ { j } ^{\prime} \} } \exp \left[ \sum _ { j = 1 } ^{N ^ { \prime} } \left\{ K _ { 0 } ^{\prime} + K _ { 1 } ^{\prime} \sigma _ { j } ^{\prime} \sigma _ { j + 1 } ^{\prime} + \frac { 1 } { 2 } K _ { 2 } ^{\prime} ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) \right\} \right] .
+\end{equation}
+为此，对于所有自旋变量 \(\sigma_{j}^{\prime}\) 和 \(\sigma_{j+1}^{\prime}\) 的取值，
+\begin{equation}\tag{14.2.6}\label{eq:14.2.6}
+\begin{array}{rl} & { \exp \Bigl \{ K _ { 0 } ^{\prime} + K _ { 1 } ^{\prime} \sigma _ { j } ^{\prime} \sigma _ { j + 1 } ^{\prime} + \frac { 1 } { 2 } K _ { 2 } ^{\prime} ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) \Bigr \} } \\& {  = \exp ( 2 K _ { 0 } ) \cdot 2 \cosh \{ K _ { 1 } ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) + K _ { 2 } \} \cdot \exp \Bigl \{ \frac { 1 } { 2 } K _ { 2 } ( \sigma _ { j } ^{\prime} + \sigma _ { j + 1 } ^{\prime} ) \Bigr \} \, . } \end{array}
+\end{equation}
+由于有多种取值方式，例如 \(\sigma_{j}^{\prime}=\sigma_{j+1}^{\prime}=+1\)、\(\sigma_{j}^{\prime}=\sigma_{j+1}^{\prime}=-1\)，以及 \(\sigma_{j}^{\prime}=-\sigma_{j+1}^{\prime}=\pm1\)，我们从式（6）中得出
+\begin{equation}\tag{14.2.7}\label{eq:14.2.7}
+\exp ( K _ { 0 } ^{\prime} + K _ { 1 } ^{\prime} + K _ { 2 } ^{\prime} ) = \exp ( 2 K _ { 0 } + K _ { 2 } ) \cdot 2 \cosh ( 2 K _ { 1 } + K _ { 2 } ) ,
+\end{equation}
+\begin{equation}\tag{14.2.8}\label{eq:14.2.8}
+\exp ( K _ { 0 } ^{\prime} + K _ { 1 } ^{\prime} - K _ { 2 } ^{\prime} ) = \exp ( 2 K _ { 0 } - K _ { 2 } ) \cdot 2 \cosh ( 2 K _ { 1 } - K _ { 2 } ) ,
+\end{equation}
+并且
+\begin{equation}\tag{14.2.9}\label{eq:14.2.9}
+\exp ( K _ { 0 } ^{\prime} - K _ { 1 } ^{\prime} ) = \exp ( 2 K _ { 0 } ) \cdot 2 \cosh K _ { 2 } .
+\end{equation}
+通过求解 \(K_{0}^{\prime}\)、\(K_{1}^{\prime}\) 和 \(K_{2}^{\prime}\)，我们得到
+\begin{equation}\tag{14.2.10}\label{eq:14.2.10}
+e ^{K _ { 0} ^{\prime} } = 2 e ^{2 K _ { 0} } \{ \cosh ( 2 K _ { 1 } + K _ { 2 } ) \cosh ( 2 K _ { 1 } - K _ { 2 } ) \cosh ^{2} K _ { 2 } \} ^{1 / 4} ,
+\end{equation}
+\begin{equation}\tag{14.2.11}\label{eq:14.2.11}
+e ^{K _ { 1} ^{\prime} } = \{ \cosh ( 2 K _ { 1 } + K _ { 2 } ) \cosh ( 2 K _ { 1 } - K _ { 2 } ) / \cosh ^{2} K _ { 2 } \} ^{1 / 4} ,
+\end{equation}
+并且
+\begin{equation}\tag{14.2.12}\label{eq:14.2.12}
+e ^{K _ { 2} ^{\prime} } = e ^{K _ { 2} } \{ \cosh ( 2 K _ { 1 } + K _ { 2 } ) / \cosh ( 2 K _ { 1 } - K _ { 2 } ) \} ^{1 / 2} .
+\end{equation}
+我们现在可以指出，有必要在式（1）中纳入参数 \(K_{0}\)，并相应地在式（5）中引入 \(K_{0}^{\prime}\)。由于我们最终会得到三组方程（7a）、（7b）和（7c），要确定适用于变换后系统的参数，仅靠 \(K_{1}\) 和 \(K_{2}\) 是无法解决这一问题的；因此，即便将 \(K_{0}\) 设为零，仍需确保 \(K_{0}^{\prime} \neq 0\)，以准确表征变换后的系统。为了凸显该参数在决定给定系统自由能方面所发挥的作用，我们依据式（1）和式（5）观察到：当 \(K_{0} = 0\) 时，
+\begin{equation}\tag{14.2.13}\label{eq:14.2.13}
+Q _ { N } ( K _ { 1 } , K _ { 2 } ) = e ^{N ^ { \prime} K _ { 0 } ^{\prime} } Q _ { N ^{\prime} } ( K _ { 1 } ^{\prime} , K _ { 2 } ^{\prime} )
+\end{equation}
+因此，对于自由能，我们有（以 \(kT\) 为单位）
+\begin{equation}\tag{14.2.14}\label{eq:14.2.14}
+A _ { N } ( K _ { 1 } , K _ { 2 } ) = - N ^{\prime} K _ { 0 } ^{\prime} + A _ { N ^{\prime} } ( K _ { 1 } ^{\prime} , K _ { 2 } ^{\prime} ) .
+\end{equation}
+由于 \(N' = \frac{1}{2}N\)，我们得到了每转自旋的自由能递推关系
+\begin{equation}\tag{14.2.15}\label{eq:14.2.15}
+f ( K _ { 1 } , K _ { 2 } ) = - \frac { 1 } { 2 } K _ { 0 } ^{\prime} + \frac { 1 } { 2 } f ( K _ { 1 } ^{\prime} , K _ { 2 } ^{\prime} ) ,
+\end{equation}
+该关系将给定系统的每转自旋自由能与变换后系统的自由能联系起来；显然，\(K_{0}^{\prime}\) 所发挥的作用十分显著。例如，在 \(T \rightarrow \infty\) 的极限情况下，当 \((K_{1}, K_{2})\) 以及随之而来的 \((K_{1}^{\prime}, K_{2}^{\prime})\) 都趋于零时，式（8a）和式（11）给出
+\begin{equation}\tag{14.2.16}\label{eq:14.2.16}
+f ( 0 , 0 ) = - K _ { 0 } ^{\prime} = - \ln 2 ,
+\end{equation}
+这确实是一个正确的结果（源自系统熵的极限值 \(Nk\ln2\)）。
+我们注意到，参数 \(K_{0}\) 并未出现在式（8b）和式（8c）中——这两者通过 \(K_{1}\) 和 \(K_{2}\) 来确定 \(K_{1}^{\prime}\) 和 \(K_{2}^{\prime}\)。正如第 14.3 节和第 14.4 节所将要展示的那样，正是这两条关系决定了系统的奇异部分自由能，进而决定了其临界行为；参数 \(K_{0}\) 和 \(K_{0}^{\prime}\) 只影响自由能的常规部分，因此对系统临界行为的决定并无直接作用。我们不妨在此补充说明：虽然重正化通常被用作研究给定系统在临界点附近性质的一种方法，但它在 \(K_{1}\) 和 \(K_{2}\) 这些变量的更广泛范围内同样具有重要作用。举例来说，在没有外场的情况下（即 \(K_{2}=0\)），式（8）和式（11）给出
+\begin{equation}\tag{14.2.17}\label{eq:14.2.17}
+K _ { 0 } ^{\prime} = \ln \{ 2 \sqrt { [ \cosh ( 2 K _ { 1 } ) ] } \} ,  K _ { 1 } ^{\prime} = \ln \sqrt { [ \cosh ( 2 K _ { 1 } ) ] } ,  K _ { 2 } ^{\prime} = 0
+\end{equation}
+因此
+\begin{equation}\tag{14.2.18}\label{eq:14.2.18}
+f ( K _ { 1 } , 0 ) = - \frac { 1 } { 2 } \ln \{ 2 \sqrt { [ \cosh ( 2 K _ { 1 } ) ] } \} + \frac { 1 } { 2 } f ( \ln \sqrt { [ \cosh ( 2 K _ { 1 } ) ] } , 0 ) ;
+\end{equation}
+函数方程（14）的解为
+\begin{equation}\tag{14.2.19}\label{eq:14.2.19}
+f ( K _ { 1 } , 0 ) = - \ln ( 2 \cosh K _ { 1 } ) ,
+\end{equation}
+在所有 \(K_{1}\) 下均成立。另一方面，在顺磁性情形下（即 \(K_{1}=0\)），我们得到
+\begin{equation}\tag{14.2.20}\label{eq:14.2.20}
+K _ { 0 } ^{\prime} = \ln ( 2 \cosh K _ { 2 } ) ,  K _ { 1 } ^{\prime} = 0 ,  K _ { 2 } ^{\prime} = K _ { 2 }
+\end{equation}
+因此
+\begin{equation}\tag{14.2.21}\label{eq:14.2.21}
+f ( 0 , K _ { 2 } ) = - \frac { 1 } { 2 } \ln ( 2 \cosh K _ { 2 } ) + \frac { 1 } { 2 } f ( 0 , K _ { 2 } ) ,
+\end{equation}
+其解为
+\begin{equation}\tag{14.2.22}\label{eq:14.2.22}
+f ( 0 , K _ { 2 } ) = - \ln ( 2 \cosh K _ { 2 } ) ,
+\end{equation}
+在所有 \(K_2\) 下均成立。至于 \(K_1\) 和 \(K_2\) 同时存在的情形，则留给读者作为练习；请参阅问题 14.2。本系统的临界行为将在第 14.4 节中进行深入研究。
+\section{B 一维球形模型}\label{b-ux4e00ux7ef4ux7403ux5f62ux6a21ux578b}
+我们沿用图~14.3中的拓扑结构，写出由\(N\)个自旋组成的单维球形模型的配分函数，见式（13.5.12），
+\begin{equation}\tag{14.2.23}\label{eq:14.2.23}
+\begin{aligned}Q_{N}&=\int_{-\infty}^{\infty}\ldots\int_{-\infty}^{\infty}\exp\biggl[\sum_{i=1}^{N}\:\left\{K_{0}+K_{1}\sigma_{i}\sigma_{i+1}+K_{2}\sigma_{i}-\Lambda\sigma_{i}^{2}\right\}\biggr]d\sigma_{1}\ldots d\sigma_{N}\\&(K_{0}=0,K_{1}=\beta J,K_{2}=\beta\mu B,\Lambda=\beta\lambda),\end{aligned}
+\end{equation}
+其中\(\Lambda\)的取值应使得
+\begin{equation}\tag{14.2.24}\label{eq:14.2.24}
+\left\langle \sum _ { i = 1 } ^{N} \sigma _ { i } ^{2} \right\rangle = - \frac { \partial } { \partial \Lambda } \ln Q _ { N } = N ;
+\end{equation}
+参见式（13.5.9）和式（13.5.13）。假设\(N\)为偶数，我们对\(\sigma_2, \sigma_4, \ldots\)进行积分。为此，我们将被积函数写成：
+\begin{equation}\tag{14.2.25}\label{eq:14.2.25}
+\begin{aligned}\prod_{i=1}^N\exp\Bigl\{K_0+K_1\sigma_i\sigma_{i+1}+K_2\sigma_i-\Lambda\sigma_i^2\Bigr\}&=\prod_{j=1}^N\exp\Bigl\{2K_0+K_1(\sigma_{2j-1}\sigma_{2j}+\sigma_{2j}\sigma_{2j+1})\\&+K_2(\sigma_{2j-1}+\sigma_{2j})-\Lambda\left(\sigma_{2j-1}^2+\sigma_{2j}^2\right)\biggr\}\end{aligned}
+\end{equation}
+并对\(\sigma_{2j}\)进行积分，使用公式
+\begin{equation}\tag{14.2.26}\label{eq:14.2.26}
+\int _ { - \infty } ^{\infty} e ^{- p x ^ { 2} + q x } d x = \left( { \frac { \pi } { p } } \right) ^{1 / 2} e ^{q ^ { 2} / 4 p }  ( p > 0 ) .
+\end{equation}
+经过化简后，我们得到
+\begin{equation}\tag{14.2.27}\label{eq:14.2.27}
+\prod _ { j = 1 } ^{\frac { 1} { 2 } N } \left( \frac { \pi } { \Lambda } \right) ^{1 / 2} \exp \left\{ \left( 2 K _ { 0 } + \frac { K _ { 2 } ^{2} } { 4 \Lambda } \right) + \frac { K _ { 1 } ^{2} } { 2 \Lambda } \sigma _ { 2 j - 1 } \sigma _ { 2 j + 1 } + \left( K _ { 2 } + \frac { K _ { 1 } K _ { 2 } } { \Lambda } \right) \sigma _ { 2 j - 1 } - \left( \Lambda - \frac { K _ { 1 } ^{2} } { 2 \Lambda } \right) \sigma _ { 2 j - 1 } ^{2} \right\} .
+\end{equation}
+将\(\sigma_{2j-1}\)记作\(\sigma_{i}^{\prime}\)，式（14.3.19）现在可以改写为归一化形式
+\begin{equation}\tag{14.2.28}\label{eq:14.2.28}
+Q _ { N } = \int _ { - \infty } ^{\infty} \ldots \int _ { - \infty } ^{\infty} \exp \left[ \sum _ { j = 1 } ^{N ^ { \prime} } \left\{ K _ { 0 } ^{\prime} + K _ { 1 } ^{\prime} \sigma _ { j } ^{\prime} \sigma _ { j + 1 } ^{\prime} + K _ { 2 } ^{\prime} \sigma _ { j } ^{\prime} - \Lambda ^{\prime} \sigma _ { j } ^{\prime 2} \right\} \right] d \sigma _ { 1 } ^{\prime} \ldots d \sigma _ { N ^{\prime} } ^{\prime} ,
+\end{equation}
+其中
+\begin{equation}\tag{14.2.29}\label{eq:14.2.29}
+K _ { 0 } ^{\prime} = \frac { 1 } { 2 } \ln \left( \frac { \pi } { \Lambda } \right) + 2 K _ { 0 } + \frac { K _ { 2 } ^{2} } { 4 \Lambda } ,  K _ { 1 } ^{\prime} = \frac { K _ { 1 } ^{2} } { 2 \Lambda } ,
+\end{equation}
+\begin{equation}\tag{14.2.30}\label{eq:14.2.30}
+K _ { 2 } ^{\prime} = K _ { 2 } \left( 1 + \frac { K _ { 1 } } { \Lambda } \right) ,  \Lambda ^{\prime} = \Lambda - \frac { K _ { 1 } ^{2} } { 2 \Lambda }
+\end{equation}
+当然，\(N' = \frac{1}{2}N\)。由此可知，当\(K_0 = 0\)时，
+\begin{equation}\tag{14.2.31}\label{eq:14.2.31}
+Q _ { N } ( K _ { 1 } , K _ { 2 } , \Lambda ) = e ^{N ^ { \prime} K _ { 0 } ^{\prime} } Q _ { N ^{\prime} } ( K _ { 1 } ^{\prime} , K _ { 2 } ^{\prime} , \Lambda ^{\prime} )
+\end{equation}
+因此，对于每旋转子的自由能（以\(kT\)为单位），我们得到了递推关系
+\begin{equation}\tag{14.2.32}\label{eq:14.2.32}
+f ( K _ { 1 } , K _ { 2 } , \Lambda ) = - \frac { 1 } { 2 } K _ { 0 } ^{\prime} + \frac { 1 } { 2 } f ( K _ { 1 } ^{\prime} , K _ { 2 } ^{\prime} , \Lambda ^{\prime} ) .
+\end{equation}
+???????????14.4????????????????????????(27)?????\autoref{eq:14.2.25}????\(K_{1}\)?\(K_{2}\)????????????????
+首先，我们确定了该变换的两个不变量，即
+\begin{equation}\tag{14.2.33}\label{eq:14.2.33}
+\Lambda ^{\prime 2} - K _ { 1 } ^{\prime 2} = \Lambda ^{2} - K _ { 1 } ^{2}
+\end{equation}
+以及
+\begin{equation}\tag{14.2.34}\label{eq:14.2.34}
+( \Lambda ^{\prime} - K _ { 1 } ^{\prime} ) / K _ { 2 } ^{\prime} = ( \Lambda - K _ { 1 } ) / K _ { 2 } .
+\end{equation}
+????????????????????????????13.18?????????\autoref{eq:14.3.20}?\(RG\)????????????????????????????
+\begin{equation}\tag{14.2.35}\label{eq:14.2.35}
+\left\langle \sum _ { j = 1 } ^{N ^ { \prime} } \sigma _ { j } ^{\prime 2} \right\rangle = N ^{\prime}
+\end{equation}
+????????????????????????????????\(^{3}\) ??????????\(K_{2} = 0\)??\autoref{eq:14.2.25} ? \autoref{eq:14.2.27} ??
+\begin{equation}\tag{14.2.36}\label{eq:14.2.36}
+K _ { 0 } ^{\prime} = \frac { 1 } { 2 } \ln \left( \frac { \pi } { \Lambda } \right) ,  K _ { 1 } ^{\prime} = \frac { K _ { 1 } ^{2} } { 2 \Lambda } ,  K _ { 2 } ^{\prime} = 0 ,  \Lambda ^{\prime} = \Lambda - \frac { K _ { 1 } ^{2} } { 2 \Lambda }
+\end{equation}
+因此，
+\begin{equation}\tag{14.2.37}\label{eq:14.2.37}
+f ( K _ { 1 } , \Lambda ) = - \frac { 1 } { 4 } \ln \left( \frac { \pi } { \Lambda } \right) + \frac { 1 } { 2 } f \left( \frac { K _ { 1 } ^{2} } { 2 \Lambda } , \Lambda - \frac { K _ { 1 } ^{2} } { 2 \Lambda } \right) .
+\end{equation}
+\(^{3}\) ????????????????????????\(\eta\)??1????\autoref{eq:14.1.23}???\(d=1\)???\(\sigma\prime(\boldsymbol{r}\prime)=\sigma(\boldsymbol{r})\)?
+???\autoref{eq:14.2.31}???
+\begin{equation}\tag{14.2.38}\label{eq:14.2.38}
+f ( K _ { 1 } , \Lambda ) = \frac { 1 } { 2 } \ln \left[ \frac { \Lambda + \sqrt { ( \Lambda ^{2} - K _ { 1 } ^{2} ) } } { 2 \pi } \right] ,
+\end{equation}
+在所有\(K_{1}\)下均成立；合适的\(\Lambda\)值由约束方程给出
+\begin{equation}\tag{14.2.39}\label{eq:14.2.39}
+\frac { \partial f } { \partial \Lambda } = \frac { 1 } { 2 \sqrt { ( \Lambda ^{2} - K _ { 1 } ^{2} ) } } = 1 ,  \mathrm { t h a t ~ i s }  \Lambda = \frac { 1 } { 2 } \sqrt { ( 1 + 4 K _ { 1 } ^{2} ) } .
+\end{equation}
+请注意，在这种情况下，不变量（28a）等于 \(\frac{1}{4}\)。另一方面，在顺磁性情形下（\(K_{1}=0\)），我们得到
+\begin{equation}\tag{14.2.40}\label{eq:14.2.40}
+K _ { 0 } ^{\prime} = \frac { 1 } { 2 } \ln \left( \frac { \pi } { \Lambda } \right) + \frac { K _ { 2 } ^{2} } { 4 \Lambda } ,  K _ { 1 } ^{\prime} = 0 ,  K _ { 2 } ^{\prime} = K _ { 2 } ,  \Lambda ^{\prime} = \Lambda
+\end{equation}
+因此，
+\begin{equation}\tag{14.2.41}\label{eq:14.2.41}
+f ( K _ { 2 } , \Lambda ) = - \frac { 1 } { 4 } \ln \left( \frac { \pi } { \Lambda } \right) - \frac { K _ { 2 } ^{2} } { 8 \Lambda } + \frac { 1 } { 2 } f ( K _ { 2 } , \Lambda ) ,
+\end{equation}
+其解为
+\begin{equation}\tag{14.2.42}\label{eq:14.2.42}
+f ( K _ { 2 } , \Lambda ) = - \frac { 1 } { 2 } \ln \left( \frac { \pi } { \Lambda } \right) - \frac { K _ { 2 } ^{2} } { 4 \Lambda } ,
+\end{equation}
+在所有 \(K_2\) 的取值下均成立；此时，合适的 \(\Lambda\) 值由以下公式给出：
+\begin{equation}\tag{14.2.43}\label{eq:14.2.43}
+\frac { \partial f } { \partial \Lambda } = \frac { 1 } { 2 \Lambda } + \frac { K _ { 2 } ^{2} } { 4 \Lambda ^{2} } = 1 ,  \mathrm { t h a t ~ i s }  \Lambda = \frac { \sqrt { ( 1 + 4 K _ { 2 } ^{2} ) } + 1 } { 4 } .
+\end{equation}
+当 \(K_{1}\) 和 \(K_{2}\) 都存在时的特殊情况，留作读者自行练习；参见问题 14.3。
+\section{C 二维伊辛模型}\label{c-ux4e8cux7ef4ux4f0aux8f9bux6a21ux578b}
+作为我们第三次运用重整化方法的例子，我们来考察一个二维正方形晶格上的伊辛模型。在无外加场的情形下，该系统的配分函数可表示为
+\begin{equation}\tag{14.2.44}\label{eq:14.2.44}
+Q _ { N } ( T ) = \sum _ { \{ \sigma _ { i } \} } \exp \left\{ \sum _ { \mathrm { n . n . } } K \sigma _ { i } \sigma _ { j } \right\}  ( K = \beta J ) ,
+\end{equation}
+其中，指数中的求和遍历晶格中所有最近邻自旋对。将式（38）中的项写成不同自旋对相关因子的乘积形式，
+其中，带撇号的乘积是对晶格中剩余最近邻自旋对的求和。这一求和过程应持续进行，直到图~14.4中以空心圆显示的自旋有一半都被求和完毕。显然，这将产生大量如式（40）所示的因子，但如今真正的任务是将这些因子表达成一种与原始式（38）中所出现的因子相似、或至少尽可能接近的形式；此外，这种表达方式应适用于所有可能的剩余自旋值，即 \(\sigma_{2}\)、\(\sigma_{4}\)、\ldots\ldots=\(\pm 1\)。
+对于式（40）中明确展示的因子，所涉及的自旋共有16种可能的取值，而其中只有4种结果不等价；它们分别是
+\begin{equation}\tag{14.2.45}\label{eq:14.2.45}
+( \mathrm { i } ) \, \sigma _ { 2 } = \sigma _ { 4 } = \sigma _ { 6 } = \sigma _ { 8 } ,
+\end{equation}
+\begin{equation}\tag{14.2.46}\label{eq:14.2.46}
+( \mathrm { i i } ) \, \sigma _ { 2 } = \sigma _ { 4 } = \sigma _ { 6 } = - \sigma _ { 8 } ,
+\end{equation}
+\begin{equation}\tag{14.2.47}\label{eq:14.2.47}
+( \mathrm { i i i i } ) \, \sigma _ { 2 } = \sigma _ { 4 } = - \sigma _ { 6 } = - \sigma _ { 8 } ,
+\end{equation}
+\begin{equation}\tag{14.2.48}\label{eq:14.2.48}
+\left( \dot { \mathrm { I V } } \right) \sigma _ { 2 } = - \sigma _ { 4 } = - \sigma _ { 6 } = \sigma _ { 8 } .
+\end{equation}
+然而，即使只有4种取值，也已远远超出了可以用类似形式的因子来容纳的范围。
+\begin{equation}\tag{14.2.49}\label{eq:14.2.49}
+\exp \{ A + B ( \sigma _ { 2 } \sigma _ { 4 } + \sigma _ { 2 } \sigma _ { 6 } + \sigma _ { 4 } \sigma _ { 8 } + \sigma _ { 6 } \sigma _ { 8 } ) \} ,
+\end{equation}
+该模型仅包含在变换后的晶格中发生的最邻近相互作用，因此只需选择两个参数。显然，我们还需要增加两个自由度；而事实证明，这些自由度是由次邻近相互作用以及位于新晶格中基本正方形四个角上的四磁子之间的相互作用所提供的。因此，我们不得不设定
+\begin{equation}\tag{14.2.50}\label{eq:14.2.50}
+\begin{array}{r} { 2 \cosh K ( \sigma _ { 2 } + \sigma _ { 4 } + \sigma _ { 6 } + \sigma _ { 8 } ) = \exp \{ K _ { 0 } ^{\prime} + \frac { 1 } { 2 } K ^{\prime} ( \sigma _ { 2 } \sigma _ { 4 } + \sigma _ { 2 } \sigma _ { 6 } + \sigma _ { 4 } \sigma _ { 8 } + \sigma _ { 6 } \sigma _ { 8 } ) } \\{ + L ^{\prime} ( \sigma _ { 2 } \sigma _ { 8 } + \sigma _ { 4 } \sigma _ { 6 } ) + M ^{\prime} \sigma _ { 2 } \sigma _ { 4 } \sigma _ { 6 } \sigma _ { 8 } \} ; } \end{array}
+\end{equation}
+我们之所以写成 \(\frac{1}{2}K'\)，而非 \(K'\)，其原因很快就会变得清晰。现在，上述四种可能情形要求：
+\begin{equation}\tag{14.2.51}\label{eq:14.2.51}
+2 \cosh 4 K = \exp ( K _ { 0 } ^{\prime} + 2 K ^{\prime} + 2 L ^{\prime} + M ^{\prime} ) ,
+\end{equation}
+\begin{equation}\tag{14.2.52}\label{eq:14.2.52}
+2 \cosh 2 K = \exp ( K _ { 0 } ^{\prime} - M ^{\prime} ) ,
+\end{equation}
+\begin{equation}\tag{14.2.53}\label{eq:14.2.53}
+2 = \exp ( K _ { 0 } ^{\prime} - 2 L ^{\prime} + M ^{\prime} ) ,
+\end{equation}
+\begin{equation}\tag{14.2.54}\label{eq:14.2.54}
+2 = \exp ( K _ { 0 } ^{\prime} - 2 K ^{\prime} + 2 L ^{\prime} + M ^{\prime} ) ,
+\end{equation}
+由此得出，
+\begin{equation}\tag{14.2.55}\label{eq:14.2.55}
+K _ { 0 } ^{\prime} = \ln 2 + \frac { 1 } { 2 } \ln \cosh 2 K + \frac { 1 } { 8 } \ln \cosh 4 K ,
+\end{equation}
+\begin{equation}\tag{14.2.56}\label{eq:14.2.56}
+K ^{\prime} = \frac { 1 } { 4 } \ln \cosh 4 K ,
+\end{equation}
+\begin{equation}\tag{14.2.57}\label{eq:14.2.57}
+\begin{array}{r} { L ^{\prime} = \frac { 1 } { 8 } \ln \cosh 4 K , } \end{array}
+\end{equation}
+\begin{equation}\tag{14.2.58}\label{eq:14.2.58}
+M ^{\prime} = \frac { 1 } { 8 } \ln \cosh 4 K - \frac { 1 } { 2 } \ln \cosh 2 K .
+\end{equation}
+继续这一过程，我们会发现，当对 \(\sigma_{1}\) 进行求和时，因子 \(\exp\left(\frac{1}{2}K^{\prime}\sigma_{2}\sigma_{4}\right)\) 会再次出现；当对 \(\sigma_{3}\) 进行求和时，因子 \(\exp\left(\frac{1}{2}K^{\prime}\sigma_{2}\sigma_{6}\right)\) 也会再次出现，依此类推；再未出现任何涉及 \(\sigma_{2}\sigma_{8}\)、\(\sigma_{4}\sigma_{6}\) 以及 \(\sigma_{2}\sigma_{4}\sigma_{6}\sigma_{8}\) 乘积的因子。最终结果是，分区函数（38）呈现出如下形式：
+\begin{equation}\tag{14.2.59}\label{eq:14.2.59}
+Q _ { N } = e ^{N ^ { \prime} K _ { 0 } ^{\prime} } \sum _ { \{ \sigma _ { j } ^{\prime} \} } \exp \left\{ K ^{\prime} \sum _ { \mathrm { n . n . } } \sigma _ { j } ^{\prime} \sigma _ { k } ^{\prime} + L ^{\prime} \sum _ { \mathrm { n . n . n . } } \sigma _ { j } ^{\prime} \sigma _ { k } ^{\prime} + M ^{\prime} \sum _ { \mathrm { s q . } } \sigma _ { j } ^{\prime} \sigma _ { k } ^{\prime} \sigma _ { l } ^{\prime} \sigma _ { m } ^{\prime} \right\} ,
+\end{equation}
+其中 \(N' = \frac{1}{2}N\)。
+显然，我们尚未能够建立起变换后系统与原始系统之间的一一对应关系（在原始系统中，除了最邻近相互作用之外，其他相互作用均不存在）。如今看来，将原始系统重新定义为这样一个系统——即所有相互作用都出现在式（48）中，但 \(L=M=0\)——似乎更为合理。于是，我们可以写出：
+\begin{equation}\tag{14.2.60}\label{eq:14.2.60}
+Q _ { N } ( K , 0 , 0 ) = e ^{N ^ { \prime} K _ { 0 } ^{\prime} } Q _ { N ^{\prime} } ( K ^{\prime} , L ^{\prime} , M ^{\prime} )
+\end{equation}
+因此，对于每个自旋的自由能（以 \(kT\) 为单位）
+\begin{equation}\tag{14.2.61}\label{eq:14.2.61}
+f ( K , 0 , 0 ) = - \frac { 1 } { 2 } K _ { 0 } ^{\prime} + \frac { 1 } { 2 } f ( K ^{\prime} , L ^{\prime} , M ^{\prime} ) ,
+\end{equation}
+其中，\(K_{0}^{\prime}\)、\(K^{\prime}\)、\(L^{\prime}\) 和 \(M^{\prime}\) 分别由式（44）至式（47）给出。鉴于递归关系式（50）中出现了新的参数——\(L^{\prime}\) 和 \(M^{\prime}\)——若不引入某种近似方法，就无法取得进一步进展，具体细节请参见第14.4节。但有一点是明确的：当在二维或更高维度中进行重整化时，晶格的连通性要求被截断系统的哈密顿量中包含一些原系统所不具备的高阶相互作用，唯有如此，才能在变换过程中准确地表征原系统。显而易见，随着进一步的重整化，这类相互作用的数量将不断增加，因此所需参数的个数也将无限制地增长。在这种情况下，或许可以将给定系统的哈密顿量视为"无限多个参数"的函数——其中除少数参数外，其余参数最初均为零——随着重整化变换的连续进行以及系统的自由度不断减少，具有非零值的参数数量将无限增长。
+现在，我们提出了一种用于研究临界现象的重整化群方法的表述形式。
+\section{重整化群：一般性表述}\label{ux91cdux6574ux5316ux7fa4ux4e00ux822cux6027ux8868ux8ff0}
+我们从一个哈密顿量依赖于大量参数 \(K_{1}\)、\(K_{2}\)、\ldots\ldots（其中除少数参数外，其余均为零）以及晶格自旋配置 \(\{\sigma_{i}\}\) 的系统开始。该系统的自由能则可表示为
+\begin{equation}\tag{14.3.1}\label{eq:14.3.1}
+\exp ( - \beta A ) = \sum _ { \{ \sigma _ { i } \} } \exp [ - \beta H _ { \{ \sigma _ { i } \} } ( \{ K _ { \alpha } \} ) ]  \alpha = 1 , 2 , \ldots .
+\end{equation}
+接下来，我们对系统进行"截断"处理，将自由度从 \(N\) 减少到 \(N'\)，并将关联长度从 \(\xi\) 减少到 \(\xi'\)，使得
+\begin{equation}\tag{14.3.2}\label{eq:14.3.2}
+N ^{\prime} = l ^{- d} N ,  \xi ^{\prime} = l ^{- 1} \xi  ( l > 1 ) .
+\end{equation}
+将变换后系统的哈密顿量以与原系统相似的形式表示出来，只不过此时我们有了新的参数 \(K_{\alpha}^{\prime}\)，并新增了 \(K_{0}^{\prime}\)，同时引入了新的自旋 \(\sigma_{j}^{\prime}\)。因此，式（1）的表达形式变为
+\begin{equation}\tag{14.3.3}\label{eq:14.3.3}
+\exp ( - \beta A ) = \exp ( N ^{\prime} K _ { 0 } ^{\prime} ) \sum _ { \{ \sigma _ { j } ^{\prime} \} } \exp \left[ - \beta H _ { \{ \sigma _ { j } ^{\prime} \} } ( \{ K _ { \alpha } ^{\prime} \} ) \right] ,
+\end{equation}
+这样，每个自旋的自由能（以 \(\beta^{-1}\) 为单位）可表示为
+\begin{equation}\tag{14.3.4}\label{eq:14.3.4}
+f ( \{ K _ { \alpha } \} ) = l ^{- d} [ - K _ { 0 } ^{\prime} + f ( \{ K _ { \alpha } ^{\prime} \} ) ] .
+\end{equation}
+现在，我们仔细考察参数集 \(\{K_{\alpha}\}\) 到 \(\{K_{\alpha}^{\prime}\}\) 的变换过程，为此引入了一个向量空间 \(\mathcal{K}\)，在该空间中，参数集 \(K_{\alpha}\) 通过位置向量 \(\mathbf{K}\) 的端点来表示；在变换过程中，\(\mathbf{K}\) 会变为 \(\mathbf{K}^{\prime}\)，这一过程可被视为一种"从向量空间中的一个位置流向另一个位置"的流动。这种流动可以用以下变换方程来表示：
+\begin{equation}\tag{14.3.5}\label{eq:14.3.5}
+K ^{\prime} = \mathcal { R } _ { l } ( K )
+\end{equation}
+其中，\(\mathcal{R}_{l}\) 是适用于所研究情形的重整化群算子。对该过程进行反复应用，可得到一串向量 \(K', K", \ldots\)，使得
+\begin{equation}\tag{14.3.6}\label{eq:14.3.6}
+\begin{array}{r} { \pmb { K } ^{( n )} = \mathcal { R } _ { l } ( \pmb { K } ^{( n - 1 )} ) = \ldots = \mathcal { R } _ { l } ^{n} ( \pmb { K } ^{( 0 )} )  n = 0 , 1 , 2 , \ldots , } \end{array}
+\end{equation}
+其中，\(K^{(0)}\) 表示原始的 \(K\)。在这一序列的末尾，相关长度 \(\xi\) 与自由能的奇异部分 \(f_{s}\) 分别由以下公式给出：
+\begin{equation}\tag{14.3.7}\label{eq:14.3.7}
+\xi ^{( n )} = l ^{- n} \xi ^{( 0 )} ,  f _ { s } ^{( n )} = l ^{n d} f _ { s } ^{( 0 )} ;
+\end{equation}
+????14.5.2? ? ??14.5.4??
+????????14.5.5? ????????? \(K^{*}\)???
+\begin{equation}\tag{14.3.8}\label{eq:14.3.8}
+\mathcal { R } _ { l } ( K ^{*} ) = K ^{*} .
+\end{equation}
+??14.5.2? ???????\(\xi(\boldsymbol{K}^{*})=l^{-1}\xi(\boldsymbol{K}^{*})\)????? \(\xi(\boldsymbol{K}^{*})\) ????????????????????????????????????????????? \(\boldsymbol{K}=\boldsymbol{K}^{*}\) ??????????????????? \(\boldsymbol{K}^{*}\) ???????????? \(\boldsymbol{K}_{c}\)??????????????14.5.6? ????????? \(\boldsymbol{K}\) ??????????? \(\boldsymbol{K}^{*}\)??????? \(\xi\) ???????????????14.5.7?????????????????????? \(\boldsymbol{K}\) ?????????????? \(\boldsymbol{K}\) ? \(\boldsymbol{K}^{*}\) ????????????????????????????????????? \(\xi\) ???????????????????????????????????????????????????????????????????????????????????????~14.5?????????????????????
+为了分析临界行为，我们考察固定点 \(K^{*}\) 附近的现象流模式。4 设置
+\begin{equation}\tag{14.3.9}\label{eq:14.3.9}
+K = K ^{*} + k ,
+\end{equation}
+\^{}4 在一般情况下，向量 \(\boldsymbol{K}^{*}\) 中会包含原始问题中不存在的分量。在这种情况下，我们必须在临界面上找到一个点 \(\boldsymbol{K}_{c}\)，该点不含有这些"不必要的"分量；由于 \(\xi\) 在 \(\boldsymbol{K}=\boldsymbol{K}_{c}\) 处同样为无穷大，因此后者可被认定为给定系统的临界点。正如后续内容所将展示的那样，系统的临界行为仍然由固定点附近的流动模式所决定。
+其结果是，
+\begin{equation}\tag{14.3.10}\label{eq:14.3.10}
+u _ { i } ^{\prime} = \lambda _ { i } u _ { i }  i = 1 , 2 , \ldots ;
+\end{equation}
+此处出现的系数 \(u_{i}\) 通常被称为问题的标度场。在一系列变换下（所有这些变换都发生在固定点附近），这些场可被表示为：
+\begin{equation}\tag{14.3.11}\label{eq:14.3.11}
+u _ { i } ^{( n )} = \lambda _ { i } ^{n} u _ { i } ^{( 0 )} .
+\end{equation}
+显而易见，场 \(u_{i}\) 是原始参数 \(k_{\alpha}\) 的某些线性组合；因此，它们可以被视为问题的"广义坐标"。这些坐标在决定系统临界行为中的相对重要性，关键取决于各自的特征值 \(\lambda_{i}\)。当 \(u_{i}^{(n)}\) 由式（15）给出时，对于某个坐标 \(u_{i}\)，我们有三种可能的发展方向。
+（a）若 \(\lambda_{i} > 1\)，坐标 \(u_{i}\) 随 \(n\) 增加而增大，并且随着 successive 变换的进行，其重要性也日益凸显。显然，在这种情况下，\(u_{i}\) 是一个关键变量，它本身会推动系统远离固定点——从而使固定点变得不稳定。从经验来看，我们知道温度参数 \(t \left[ = (T - T_{c})/T_{c} \right]\) 和磁场参数 \(h \left[ = \mu B/kT_{c} \right]\) 是在临界点处消失的两个基本量，并且对相变问题具有显著的关联意义。因此，我们预期，我们的分析至少会得出两个关键变量，例如 \(u_{1}\) 和 \(u_{2}\)，它们可以分别与 \(t\) 和 \(h\) 相对应，从而：
+\begin{equation}\tag{14.3.12}\label{eq:14.3.12}
+u _ { 1 } = a t + O ( t ^{2} ) ,  u _ { 2 } = b h + O ( h ^{2} ) ,
+\end{equation}
+当\(\lambda_{1}\)和\(\lambda_{2}\)都大于1时。
+（b）若\(\lambda_{i} < 1\)，坐标\(u_{i}\)会随\(n\)而衰减，并且在经过 successive 变换后，其重要性会越来越小。显然，在这种情况下，\(u_{i}\)是一个无关变量，仅凭自身就足以推动系统向固定点收敛。然而，如果将所有相关变量设为零，则通过一系列的变换（得益于这些无关变量），系统将被引导至固定点。此时，我们实际上正沿着临界表面本身运行——众所周知，所有轨迹最终都会汇聚于该固定点。由此可知，在临界表面上，问题中所有相关变量均等于零；此外，相关长度的发散程度也与这一事实紧密相关。
+（c）若\(\lambda_{i} = 1\)，在线性近似下，坐标\(u_{i}\)保持不变；除非进入变量\(u_{i}\)的非线性、超尺度区间，否则它既不会增长，也不会迅速衰减。恰如其分地，此时的\(u_{i}\)被称为"边缘变量"；它对系统的临界行为的影响并不像相关变量那样显著，但可能会伴随常规的幂律关系，以对数因子的形式出现。能够识别出这类变量，并预测其随后导致的偏离简单幂律标度的现象，正是RG方法所具备的额外优势之一。
+上述考量使我们得以理解图~14.5所示的流动模式。虽然位于临界表面的各点会向固定点汇聚，但那些远离该表面的点则凭借无关变量的作用，朝着固定点方向运动，同时在
+时间上，它们因相关变量的作用而远离该点；最终的结果是，系统先向固定点靠近，但随后又在固定点附近逐渐远离。靠近固定点且与临界表面呈"正交"方向的点，仅需应对相关变量，因此它们一抵达便迅速远离固定点。正是这一部分的流动，决定了给定系统的临界行为。
+抛开无关变量不谈，我们现在来考察系统中的相关长度\(\xi\)以及自由能的（奇异部分）\(f_{s}\)，是如何受到变换（15）影响的。根据方程（7a,b），我们有
+\begin{equation}\tag{14.3.13}\label{eq:14.3.13}
+\xi ( u _ { 1 } , u _ { 2 } , \ldots ) = l ^{n} \xi ( \lambda _ { 1 } ^{n} u _ { 1 } , \lambda _ { 2 } ^{n} u _ { 2 } , \ldots )
+\end{equation}
+以及
+\begin{equation}\tag{14.3.14}\label{eq:14.3.14}
+f _ { s } ( u _ { 1 } , u _ { 2 } , \ldots ) = l ^{- n d} f _ { s } ( \lambda _ { 1 } ^{n} u _ { 1 } , \lambda _ { 2 } ^{n} u _ { 2 } , \ldots ) .
+\end{equation}
+将\(u_{1}\)视为\(t\)，如同式（16）所示，并牢记临界指数\(\nu\)的定义，我们从式（18）中得出
+\begin{equation}\tag{14.3.15}\label{eq:14.3.15}
+u _ { 1 } ^{- \nu} = l ^{n} ( \lambda _ { 1 } ^{n} u _ { 1 } ) ^{- \nu} ,
+\end{equation}
+由此得到
+\begin{equation}\tag{14.3.16}\label{eq:14.3.16}
+\nu = \ln l / \ln \lambda _ { 1 } .
+\end{equation}
+乍一看，人们不禁会疑惑：为什么\(\nu\)要依赖于\(l\)？事实上，并非如此，原因在于以下论证。从物理角度出发，我们预期，两次连续进行、尺度因子分别为\(l_{1}\)和\(l_{2}\)的变换，其效果应等同于一次仅用尺度因子\(l_{1}l_{2}\)的变换，即，\^{}\{5\}
+\begin{equation}\tag{14.3.17}\label{eq:14.3.17}
+\mathcal { A } _ { l _ { 1 } } ^{*} \mathcal { A } _ { l _ { 2 } } ^{*} = \mathcal { A } _ { l _ { 1 } l _ { 2 } } ^{*} .
+\end{equation}
+这迫使特征值\(\lambda_{i}\)的形式为\(l^{\gamma_{i}}\)，对于
+\begin{equation}\tag{14.3.18}\label{eq:14.3.18}
+l _ { 1 } ^{y _ { i} } l _ { 2 } ^{y _ { i} } = ( l _ { 1 } l _ { 2 } ) ^{y _ { i} } .
+\end{equation}
+于是，关系式（21）变为
+\begin{equation}\tag{14.3.19}\label{eq:14.3.19}
+\nu = 1 / \gamma _ { 1 } ,
+\end{equation}
+显然与\(l\)无关。
+现在，方程（19）可以写成
+\begin{equation}\tag{14.3.20}\label{eq:14.3.20}
+f _ { s } ( t , h , \ldots ) = l ^{- n d} f _ { s } ( l ^{n y _ { 1} } t , l ^{n y _ { 2} } h , \ldots ) .
+\end{equation}
+\^{}\{5\}这一要求使算子集合\(\mathcal{R}_{l}\)成为半群——而非群，因为\(\mathcal{R}_{l}\)的逆元并不存在。之所以\(\mathcal{R}_{l}^{-1}\)不存在，是因为一旦将系统的若干自由度相加，就再也无法以确定的方式将其重新构建出来。
+?????????\(l\)????????????14.1????\autoref{eq:14.1.9}?????????????????????
+\begin{equation}\tag{14.3.21}\label{eq:14.3.21}
+f _ { s } ( t , h , \ldots ) = | t | ^{d \nu} \tilde { f } _ { s } ( h / | t | ^{\Delta} , \ldots ) ,
+\end{equation}
+其中
+\begin{equation}\tag{14.3.22}\label{eq:14.3.22}
+\Delta = y _ { 2 } / y _ { 1 } .
+\end{equation}
+方程（26）在形式上与第12.10节中所假定的标度关系完全一致，甚至可以说，它已经在第14.1节中得到了充分的论证。这里最大的不同在于：不仅这一关系得以基于更为坚实的基础加以推导，而且我们现在还掌握了一套从第一性原理出发，评估临界指数\(\nu\)、\(\Delta\)等的公式。在此过程中，我们需要做的，就是为给定的问题确定RG算子\(\mathcal{R}_l\)，在其周围对适当的固定点\(\mathbf{K}^*\)进行线性化，求出特征值\(\lambda_i\)（即\(l^{y_i}）\)，并利用方程（24）和（27）来计算\(\nu\)和\(\Delta\)。与此同时，回顾临界指数\(\alpha\)的定义，我们可从方程（26）中推断出：
+\begin{equation}\tag{14.3.23}\label{eq:14.3.23}
+2 - \alpha = d \nu ;
+\end{equation}
+其余的指数则可通过标度关系得以推导得出。
+\begin{equation}\tag{14.3.24}\label{eq:14.3.24}
+\beta = ( 2 - \alpha ) - \Delta ,  \gamma = 2 \Delta - ( 2 - \alpha ) ,  \delta = \Delta / \beta ,  \eta = 2 - ( \gamma / \nu ) .
+\end{equation}
+我们发现，超标度关系（28）已成为RG理论框架中的一个不可或缺的部分；它自然而然地出现——完全无需任何外部强加。然而，令人困惑的是：根据上述论证，这一关系理应适用于所有维度\(d\)——尽管在\(d > 4\)时，所有的临界指数都"固定"在平均场值附近，而关系式（28）则被替换为
+\begin{equation}\tag{14.3.25}\label{eq:14.3.25}
+2 - \alpha = 4 \nu  ( d > 4 ) ,
+\end{equation}
+当取 \(\alpha = 0\)，且 \(\nu = \frac{1}{2}\) 时。这种奇特行为的成因颇为微妙；其根源在于，在某些特定情境下，"无关变量"很可能突然"冒头"，并以相当显著的方式影响计算结果。
+要理解这一现象是如何发生的，我们可以考虑一个连续自旋模型——与第13.5节所讨论的模型极为相似——其概率分布律为
+\begin{equation}\tag{14.3.26}\label{eq:14.3.26}
+p ( \sigma _ { i } ) d \sigma _ { i } = \mathrm { c o n s t . } \; e ^{- \frac { 1} { 2 } \sigma _ { i } ^{2} - \tilde { u } \sigma _ { i } ^{4} } d \sigma _ { i }  ( \tilde { u } > 0 ) ;
+\end{equation}
+与式（13.5.1）相比，系统的自由能此时既依赖于参数 \(\tilde{u}\)，也依赖于 \(t\) 和 \(h\)。于是我们得到的不再是（25）
+\begin{equation}\tag{14.3.27}\label{eq:14.3.27}
+f _ { s } ( t , h , \tilde { u } ) = l ^{- n d} f _ { s } \left( l ^{n y _ { 1} } t , l ^{n y _ { 2} } h , l ^{n y _ { 3} } \tilde { u } , \ldots \right) .
+\end{equation}
+现在，借助RG方法，我们发现（参见费舍尔，1983年的附录D）对于 \(d > 4\)，
+\begin{equation}\tag{14.3.28}\label{eq:14.3.28}
+y _ { 1 } = 2 ,  y _ { 2 } = \frac { 1 } { 2 } d + 1 ,  y _ { 3 } = 4 - d ,
+\end{equation}
+清晰地表明，对于 \(d > 4\)，参数 \(\tilde{u}\) 是一个无关变量。因此，人们不禁会倾向于忽略 \(\tilde{u}\)，从而得出式（26），其中
+\begin{equation}\tag{14.3.29}\label{eq:14.3.29}
+\nu = \frac { 1 } { 2 }  \mathrm { a n d }  \Delta = ( d + 2 ) / 4 .
+\end{equation}
+\(\Delta\) 事实上呈现出 \(d\) 依赖性，这充分说明这里存在一些问题。事实证明，尽管在一次次变换中，变量 \(\tilde{u}\) 确实会趋于零，但其对函数 \(f_{s}\) 的影响却并未消失。因此，谨慎起见，不妨将
+\begin{equation}\tag{14.3.30}\label{eq:14.3.30}
+f _ { s } ( t , h , \tilde { u } ) = | t | ^{d _ { \nu} } \tilde { f } _ { s } ( h / | t | ^{\Delta} , \tilde { u } / | t | ^{\phi} ) ,
+\end{equation}
+其中
+\begin{equation}\tag{14.3.31}\label{eq:14.3.31}
+\phi = \frac { y _ { 3 } } { y _ { 1 } } = \frac { 4 - d } { 2 } .
+\end{equation}
+通过分析，我们发现
+\begin{equation}\tag{14.3.32}\label{eq:14.3.32}
+\operatorname * { L i m } _ { w \rightarrow 0 } \tilde { f } _ { s } ( v , w ) \approx \frac { 1 } { w } F ( v w ^{1 / 2} ) ,
+\end{equation}
+其中 \(F(vw^{1/2})\) 是一个完全符合规范的函数。\(\tilde{f}_s\) 在 \(w\) 中的奇点彻底改变了整体图景，而在我们所求的极限情形下，
+\begin{equation}\tag{14.3.33}\label{eq:14.3.33}
+f _ { s } ( t , h , \tilde { u } ) \approx | t | ^{d \nu + \phi} F \left( h / | t | ^{\Delta + \frac { 1} { 2 } \phi } \right) .
+\end{equation}
+此时，\(\triangle\) 的"修正"值为
+\begin{equation}\tag{14.3.34}\label{eq:14.3.34}
+\Delta _ { \mathrm { r e v } } = \frac { d + 2 } { 4 } + \frac { 4 - d } { 4 } = \frac { 3 } { 2 } ,
+\end{equation}
+这一值确实与 \(d\) 无关，并且与相应的平均场理论值一致。与此同时，"修正"形式的超标度关系现为
+\begin{equation}\tag{14.3.35}\label{eq:14.3.35}
+2 - \alpha = { \frac { d } { 2 } } + { \frac { 4 - d } { 2 } } = 2 ,
+\end{equation}
+正如（30）中所述。
+在此需要汲取的教训是：标度关系的标准推导往往建立在某些假设之上——这些假设常常未被明确提及——而这些假设涉及各类标度函数及其自变量的无奇点或非零行为。在许多情况下，这些假设是成立的，甚至可以通过明确的计算或其他方式加以验证；然而，在某些特定情境下，这些假设却无法成立——在这种情况下，标度关系的形态可能会发生改变。幸运的是，这类情形并不常见。
+14.4 ???????
+我们从第14.2节所探讨的模型入手展开思考。
+14.4.A 一维伊辛模型
+??????????????\autoref{eq:14.2.8}?????
+\begin{equation}\tag{14.4.1}\label{eq:14.4.1}
+K _ { 1 } ^{\prime} = \frac { 1 } { 4 } \ln [ \cosh ( 2 K _ { 1 } + K _ { 2 } ) \cosh ( 2 K _ { 1 } - K _ { 2 } ) ] - \frac { 1 } { 2 } \ln \cosh K _ { 2 }
+\end{equation}
+以及
+\begin{equation}\tag{14.4.2}\label{eq:14.4.2}
+K _ { 2 } ^{\prime} = K _ { 2 } + \frac { 1 } { 2 } \ln [ \cosh ( 2 K _ { 1 } + K _ { 2 } ) / \cosh ( 2 K _ { 1 } - K _ { 2 } ) ] ,
+\end{equation}
+其中 \(K_{1}=J/kT\)，\(K_{2}=\mu B/kT\)。我们不难看出，这一变换存在一条"平凡固定点线"，其固定点为 \(K_{1}=0\)，而 \(K_{2}\) 为任意值。这些固定点对应于 \(J=0\) 或 \(T=\infty\)；在两种情况下，相关长度都趋近于零。此外，还存在一个非平凡的固定点，其对应的 \(K_{1}=\infty\) 和 \(K_{2}=0\)，可以通过先将 \(B=0\)，再让 \(T\rightarrow0\) 来实现；该固定点处的相关长度将趋于无穷大。在该点附近，我们有
+\begin{equation}\tag{14.4.3}\label{eq:14.4.3}
+K _ { 1 } ^{\prime} \simeq K _ { 1 } - \frac { 1 } { 2 } \ln 2 ,  K _ { 2 } ^{\prime} \simeq 2 K _ { 2 } .
+\end{equation}
+由于 \(K_{1}^{*}=\infty\)，\(K_{1}\) 并不是在固定点附近进行展开的合适变量。我们不妨改用一个新的变量，见式（13.2.17），即
+\begin{equation}\tag{14.4.4}\label{eq:14.4.4}
+t = \exp ( - p K _ { 1 } )  ( p > 0 ) ,
+\end{equation}
+这样，\(t^{*}=0\)；现在，在固定点附近，我们有
+\begin{equation}\tag{14.4.5}\label{eq:14.4.5}
+t ^{\prime} \simeq 2 ^{p / 2} t .
+\end{equation}
+将 \(K_{2}\) 定义为变量 \(h\)，并牢记此处的标度因子 \(l\) 为 2，我们很容易从式（2b）和式（4）中得出
+\begin{equation}\tag{14.4.6}\label{eq:14.4.6}
+y _ { 1 } = p / 2 ,  y _ { 2 } = 1 .
+\end{equation}
+模型的临界指数现在可直接由式（5）推导得到；我们得到
+\begin{equation}\tag{14.4.7}\label{eq:14.4.7}
+\nu = 2 / p ,  \Delta = 2 / p ,
+\end{equation}
+?????\autoref{eq:14.3.28}?\autoref{eq:14.3.29}
+\begin{equation}\tag{14.4.8}\label{eq:14.4.8}
+\alpha = 2 - 2 / p ,  \beta = 0 ,  \gamma = 2 / p ,  \delta = \infty ,  \eta = 1 ,
+\end{equation}
+与第13.2节所获得的结果完全一致。至于 \(p\) 的选择，详见式（13.3.21）之后的说明。
+14.4.B 一维球形模型
+???????RG ???\autoref{eq:14.2.25}????
+\begin{equation}\tag{14.4.9}\label{eq:14.4.9}
+K _ { 1 } ^{\prime} = \frac { K _ { 1 } ^{2} } { 2 \Lambda } ,  K _ { 2 } ^{\prime} = K _ { 2 } \left( 1 + \frac { K _ { 1 } } { \Lambda } \right) ,  \Lambda ^{\prime} = \Lambda - \frac { K _ { 1 } ^{2} } { 2 \Lambda } ,
+\end{equation}
+?? \(K_{1}=J/kT\)?\(K_{2}=\mu B/kT\)?\(\Lambda=\lambda/kT\)?\(\lambda\) ?????????????????????????????? \(T=0\)??? \(\lambda=J\)?????13.5.24???? \(d=1\)???? \(\Lambda=K_{1}\)????\autoref{eq:14.4.9} ???????????? \(T\)??
+\begin{equation}\tag{14.4.10}\label{eq:14.4.10}
+K _ { 1 } ^{\prime} \simeq \frac { 1 } { 2 } K _ { 1 } ,  K _ { 2 } ^{\prime} \simeq 2 K _ { 2 } ,  \Lambda ^{\prime} \simeq \frac { 1 } { 2 } \Lambda .
+\end{equation}
+式（9a）和式（9c）实质上包含相同的信息，即 \(T' \simeq 2T\)。显然，在这种情况下，\(T\) 本身是进行展开的绝佳变量——从而得到 \(y_1 = 1\)。式（9b）与式（2b）一样，给出 \(y_2 = 1\)，我们由此得到
+\begin{equation}\tag{14.4.11}\label{eq:14.4.11}
+\nu = 1 ,  \Delta = 1 ,
+\end{equation}
+由此
+\begin{equation}\tag{14.4.12}\label{eq:14.4.12}
+\alpha = 1 ,  \beta = 0 ,  \gamma = 1 ,  \delta = \infty ,  \eta = 1 ,
+\end{equation}
+与一维模型 \(n \geq 2\) 的结果完全一致，正如式（13.3.20）中所引用的那样。
+14.4.C 二维伊辛模型
+?????RG???\autoref{eq:14.2.45}?\autoref{eq:14.2.47}?????
+\begin{equation}\tag{14.4.13}\label{eq:14.4.13}
+K ^{\prime} = \frac { 1 } { 4 } \ln \cosh 4 K ,
+\end{equation}
+\begin{equation}\tag{14.4.14}\label{eq:14.4.14}
+L ^{\prime} = \frac { 1 } { 8 } \ln \cosh 4 K ,
+\end{equation}
+并且
+\begin{equation}\tag{14.4.15}\label{eq:14.4.15}
+M ^{\prime} = { \frac { 1 } { 8 } } \ln \cosh 4 K - { \frac { 1 } { 2 } } \ln \cosh 2 K .
+\end{equation}
+应当指出，尽管我们在进行这一变换时仅以最邻近的相互作用为起点（其特征参数为单一参数 \(K=\beta J\)），但由于\ldots\ldots{}
+由于晶格的连通性，我们最终得到了更多类型的相互作用——即次邻近的相互作用（由 \(L'\) 表示）以及四自旋相互作用（由 \(M'\) 表示），而这些相互作用都与最邻近的相互作用（由 \(K'\) 表示）并存。在后续的变换过程中，更高阶的相互作用也逐渐发挥作用，除非引入一些近似假设，否则问题将变得极其复杂。
+在一种这样的近似下，最初源于 Wilson（1975）的处理方式是：我们舍弃所有除参数 \(K\) 和 \(L\) 所代表的相互作用之外的其他相互作用，同时假设 \(K\) 和 \(L\) 的值足够小，使得式（12）和式（13）可以简化为
+\begin{equation}\tag{14.4.16}\label{eq:14.4.16}
+K ^{\prime} = 2 K ^{2} ,  L ^{\prime} = K ^{2} .
+\end{equation}
+现在，如果参数 \(L\) 早在一开始就被引入，那么在这一近似条件下，变换方程将变为
+\begin{equation}\tag{14.4.17}\label{eq:14.4.17}
+K ^{\prime} = 2 K ^{2} + L ,  L ^{\prime} = K ^{2} .
+\end{equation}
+我们将把式（16）视为问题的精确变换方程，并探究其最终结果。
+不难看出，变换式（16）在以下点处具有非平凡的固定点：
+\begin{equation}\tag{14.4.18}\label{eq:14.4.18}
+K ^{*} = \frac { 1 } { 3 } ,  L ^{*} = \frac { 1 } { 9 } .
+\end{equation}
+在该固定点附近进行线性化处理，我们得到
+\begin{equation}\tag{14.4.19}\label{eq:14.4.19}
+k _ { 1 } ^{\prime} = \frac { 4 } { 3 } k _ { 1 } + k _ { 2 } ,  k _ { 2 } ^{\prime} = \frac { 2 } { 3 } k _ { 1 } ,
+\end{equation}
+?? \(k_{1}\) ? \(k_{2}\) ?????? \(K\) ? \(L\) ????? \(K^{*}\) ? \(L^{*}\) ??????\autoref{eq:14.3.12}????? \(\mathcal{A}_{l}^{*}\) ?????
+\begin{equation}\tag{14.4.20}\label{eq:14.4.20}
+\mathcal { A } _ { \sqrt { 2 } } ^{*} = \left( \begin{array}{ll} { \frac { 4 } { 3 } } & { 1 } \\{ \frac { 2 } { 3 } } & { 0 } \end{array} \right) ,
+\end{equation}
+其特征值为
+\begin{equation}\tag{14.4.21}\label{eq:14.4.21}
+\lambda _ { 1 } = \frac { 1 } { 3 } ( 2 + \sqrt { 10 } ) ,  \lambda _ { 2 } = \frac { 1 } { 3 } ( 2 - \sqrt { 10 } )
+\end{equation}
+且其特征向量为
+\begin{equation}\tag{14.4.22}\label{eq:14.4.22}
+\phi _ { 1 } \sim \binom { 2 + \sqrt { 10 } } { 2 } ,  \phi _ { 2 } \sim \binom { 2 - \sqrt { 10 } } { 2 } .
+\end{equation}
+???? \(u_{i}\) ??????\autoref{eq:14.3.13}?????????????
+\begin{equation}\tag{14.4.23}\label{eq:14.4.23}
+u _ { 1 } \sim \{ 2 k _ { 1 } + ( \sqrt { 10 - 2 } ) k _ { 2 } \} ,  u _ { 2 } \sim \{ 2 k _ { 1 } - ( \sqrt { 10 + 2 } ) k _ { 2 } \} .
+\end{equation}
+显然，场 \(u_{1}\)，其 \(\lambda_{1} > 1\)，是问题中至关重要的变量，而场 \(u_{2}\) 则无关紧要。在 \((K,L)\) 平面上，"临界曲线"由条件 \(u_{1} = 0\) 确定，而在固定点附近（\(\boldsymbol{u} = 0\)）的这条曲线的线性部分，则由关系式（22a）所映射。从变量 \(k_{1}\) 和 \(k_{2}\) 的角度来看，临界曲线的这一段可以用以下方程表示
+\begin{equation}\tag{14.4.24}\label{eq:14.4.24}
+k _ { 2 } \approx - \frac { \sqrt { 10 + 2 } } { 3 } k _ { 1 } ,
+\end{equation}
+该方程描绘了一条斜率为 \(-1.7208\) 的直线；详见图~14.6。
+要确定该模型的物理临界点，我们必须在临界曲线上找到一个L=0的点——因为在原始问题中，除了由参数K所代表的相互作用之外，其他并无其他相互作用；相应的K值即为我们的K\_c。6 这需要对临界曲线进行精确的映射，直至延伸至K轴。虽然这一过程已通过数值方法得以实现（Wilson, 1975），但只需将直线段（23）沿其方向向下延伸至所需极限，即可粗略估算K\_c。由此可得\(^{7}\)
+\begin{equation}\tag{14.4.25}\label{eq:14.4.25}
+K _ { c } = \frac { 1 } { 3 } + \frac { 1 } { 9 } \frac { 3 } { \sqrt { 10 + 2 } } = \frac { 4 + \sqrt { 10 } } { 18 } = 0 . 39 79 ,
+\end{equation}
+该值可与第13.4节中所求得的精确结果相比较，即0.4407。
+\^{}6 请记住，在临界曲面上的每一个点——在本例中即临界曲线——相关长度均为无穷大；因此，每一个这样的点都具备成为临界点的资格。而物理临界点，则是那些不包含任何不必要的参数的点。
+\^{}7 通过数值分析得到的结果为0.3921。
+该值可与精确值1进行比较。尽管此处所得结果与精确分析得出的结果相比并不十分理想，但RG方法的基本优势却显而易见。
+临界现象的一个重要特征——即其在大量系统类别中的普遍性——甚至在这一简单的例子中也得到了充分体现。试想，如果在给定系统中确实存在次近邻相互作用L\_0，那么我们所做的近似处理将导致与上述结果相同的固定点和相同的临界曲线，只不过我们的物理临界点现在将由"临界曲线上的那个点，其L值为L\_0"来确定；我们可以将这一临界点记作K\_c(L\_0)。至于临界行为，它仍将由围绕固定点的展开式所决定——因为"流的关键部分"正是出现在固定点附近；请再次参考图~14.6。显然，就指数而言，给定系统的临界行为将保持一致，无论L\_0的实际值为何。同样地，对于任何具有相同基本拓扑结构、仅在自旋-自旋相互作用细节上有所差异的两个系统而言，其临界行为也将完全相同。
+???????????????????????????????????\(K\)?\(L\)???????????????????????????????????\(M\)????????????????????????????????????????????\(K\)?\(L\)???????????????????\(K\)???????????????????????????????????????\(\sigma(\boldsymbol{r})\)?\(\sigma\prime(\boldsymbol{r}\prime)\)??????????\autoref{eq:14.1.23}?????????????????????????\((\sqrt{2})^{\eta/2}\)???\(\eta = \frac{1}{4}\)???\(2^{1/16}\)????????????????????????\(\rho\)???????????????????? Wilson, 1975??????????????????????????????????????????????????????????????????????????????? Niemeijer ? van Leeuwen?1976?????????????????????????\(^{8}\)
+\section{\texorpdfstring{D \(\epsilon\) 级数展开}{D \textbackslash epsilon 级数展开}}\label{d-epsilon-ux7ea7ux6570ux5c55ux5f00}
+将RG方法应用于高维系统，即\(d > 2\)的情况，会面临严重的数学困难。此时，人们不得不借助诸如\(\varepsilon\)级数展开等近似方法——该方法最早由Wilson（1972）提出；另请参阅Wilson
+\begin{equation}\tag{14.4.26}\label{eq:14.4.26}
+r = \frac { T - T _ { 0 } } { T _ { 0 } R _ { 0 } ^{2} } = \frac { t _ { 0 } } { R _ { 0 } ^{2} } ,  u = \tilde { u } \frac { T ^{2} a ^{d} } { T _ { 0 } ^{2} R _ { 0 } ^{4} }
+\end{equation}
+????????? \(h\)????\(T_0\) ????????? \(qJ/k\)??? \(q\) ??????\(R_0\) ???????????\(a\) ??????? \(\tilde{u}\) ?????\autoref{eq:14.3.31}??????????????????????????? \(l\) ???????????
+\begin{equation}\tag{14.4.27}\label{eq:14.4.27}
+r ^{\prime} = l ^{2} r + 4 ( l ^{2} - 1 ) c ( n + 2 ) u - l ^{2} \ln l ( n + 2 ) ( 2 \pi ^{2} ) ^{- 1} r u ,
+\end{equation}
+\begin{equation}\tag{14.4.28}\label{eq:14.4.28}
+u ^{\prime} = ( 1 + \varepsilon \ln l ) u - ( n + 8 ) \ln l ( 2 \pi ^{2} ) ^{- 1} u ^{2} ,
+\end{equation}
+并且
+\begin{equation}\tag{14.4.29}\label{eq:14.4.29}
+h ^{\prime} = l ^{3} \left( 1 - \frac { 1 } { 2 } \varepsilon \ln l \right) h ,
+\end{equation}
+??????????\autoref{eq:14.4.27}???? \(c\) ?????????????????????????????????
+???\autoref{eq:14.4.27}?????????????????????
+\begin{equation}\tag{14.4.30}\label{eq:14.4.30}
+r ^{*} = u ^{*} = h ^{*} = 0 ,
+\end{equation}
+以及一个非高斯固定点，其特征是
+\begin{equation}\tag{14.4.31}\label{eq:14.4.31}
+r ^{*} = - \frac { 8 \pi ^{2} c ( n + 2 ) } { ( n + 8 ) } \varepsilon ,  u ^{*} = \frac { 2 \pi ^{2} } { ( n + 8 ) } \varepsilon ,  h ^{*} = 0 .
+\end{equation}
+接下来，我们来探讨两种不同的情形。
+\(^{9}\) ????????????????????????????????\(n=1\)????????????????????????\autoref{eq:14.3.31}?????????????????1983???~A?
+维度 \(d \gtrsim 4\)，因此 \(\varepsilon\) 是一个很小的负数
+?\autoref{eq:14.4.27}???????????????????? \(u\) ??????????????? successive ?????????????????????????????????????????????????????? \(\mathcal{A}_l^*\) ?????
+\begin{equation}\tag{14.4.32}\label{eq:14.4.32}
+\mathcal { A } _ { l } ^{*} = \left( \begin{array}{ll} { l ^{2} } & { 4 ( l ^{2} - 1 ) c ( n + 2 ) } \\{ 0 } & { 1 + \varepsilon \ln l } \end{array} \right) ,
+\end{equation}
+其特征值为
+\begin{equation}\tag{14.4.33}\label{eq:14.4.33}
+\lambda _ { r } = l ^{2} ,  \lambda _ { u } = ( 1 + \varepsilon \ln l ) < 1
+\end{equation}
+当然，
+\begin{equation}\tag{14.4.34}\label{eq:14.4.34}
+\lambda _ { h } = l ^{3} \left( 1 - \frac { 1 } { 2 } \varepsilon \ln l \right) .
+\end{equation}
+由此可知，
+\begin{equation}\tag{14.4.35}\label{eq:14.4.35}
+y _ { 1 } = 2 ,  y _ { 2 } \approx 3 - \frac { 1 } { 2 } \varepsilon ,  y _ { 3 } \approx \varepsilon ,
+\end{equation}
+??\autoref{eq:14.3.33}??????????????????? \(u\) ???????????? 14.3 ?????????????????????????????????????????????
+维度 \(d \lesssim 4\)，因此 \(\varepsilon\) 是一个很小的正数
+????? \(u\) ??????????????????????????????????????????????????????????????\autoref{eq:14.4.31}????~14.7 ??? \((r,u)\) ????????????????????????????????????????????????????????
+\begin{equation}\tag{14.4.36}\label{eq:14.4.36}
+\mathcal { A } _ { l } ^{*} = \left( \begin{array}{ll} { { l ^{2} \left\{ 1 - \frac { n + 2 } { n + 8 } \varepsilon \ln l \right\} } } & { { 4 ( l ^{2} - 1 ) c ( n + 2 ) } } \\{ { 0 } } & { { 1 - \varepsilon \ln l } } \end{array} \right) ,
+\end{equation}
+其特征值为
+\begin{equation}\tag{14.4.37}\label{eq:14.4.37}
+l ^{2} \left\{ 1 - \frac { n + 2 } { n + 8 } \varepsilon \ln l \right\}  \mathrm { a n d }  ( 1 - \varepsilon \ln l ) < 1 .
+\end{equation}
+我们注意到，在由参数 \(\Delta r = (r - r^*)\) 和 \(\Delta u = (u - u^*)\) 的某些线性组合所构成的"广义坐标"\(u_{1}\) 和 \(u_{2}\) 中，只有 \(u_{1}\) 是一个相关的变量。
+问题。将 \(u_{1}\) 与温度参数 \(t\) 对应起来，我们得到
+\begin{equation}\tag{14.4.38}\label{eq:14.4.38}
+y _ { t } \approx 2 - \frac { n + 2 } { n + 8 } \varepsilon .
+\end{equation}
+将此结果与 \(y_h\) 的表达式（33）相结合，即
+\begin{equation}\tag{14.4.39}\label{eq:14.4.39}
+y _ { h } \approx 3 - \frac { 1 } { 2 } \varepsilon ,
+\end{equation}
+???????\autoref{eq:14.3.24}?\autoref{eq:14.3.27}?\autoref{eq:14.3.28}?\autoref{eq:14.3.29}?
+\begin{equation}\tag{14.4.40}\label{eq:14.4.40}
+\nu \approx \frac { 1 } { 2 } + \frac { n + 2 } { 4 ( n + 8 ) } \varepsilon ,  \Delta \approx \frac { 3 } { 2 } + \frac { n - 1 } { 2 ( n + 8 ) } \varepsilon ,
+\end{equation}
+这给出了
+\begin{equation}\tag{14.4.41}\label{eq:14.4.41}
+\alpha \approx \frac { 4 - n } { 2 ( n + 8 ) } \varepsilon ,  \beta \approx \frac { 1 } { 2 } - \frac { 3 } { 2 ( n + 8 ) } \varepsilon ,  \gamma \approx 1 + \frac { n + 2 } { 2 ( n + 8 ) } \varepsilon ,
+\end{equation}
+\begin{equation}\tag{14.4.42}\label{eq:14.4.42}
+\delta \approx 3 + \varepsilon ,  \eta \approx 0 ,
+\end{equation}
+精确到 \(\varepsilon\) 的一次项。
+出于显而易见的原因，对我们而言，最感兴趣的 \(\varepsilon\) 值是 \(\varepsilon = 1\)，而在这一值下，上述结果完全不够用；尽管如此，这些结果确实揭示了正确的趋势。若要获得更精确的数值结果，必须将这些计算扩展到更高阶的 \(\varepsilon\) 项。相当可观的
+在这一方向上已经取得了进展，如今我们已能获得包含 \(\varepsilon^3\) 项，甚至在某些情况下还能包括 \(\varepsilon^4\) 项的表达式；有关详细信息，请参阅 Wallace（1976）。不禁让人思考：这种程度的扩展，是否足以在 \(\varepsilon\) 大于 1 时，依然获得可靠的结果？答案是肯定的，我们将通过一个例子来加以说明。
+对于球形模型，我们已知各种临界指数的精确值，为了便于说明，这些值可以表示为 \(\varepsilon\) 的幂级数。例如，
+\begin{equation}\tag{14.4.43}\label{eq:14.4.43}
+\gamma = \frac { 2 } { d - 2 } = \left( 1 - \frac { 1 } { 2 } \varepsilon \right) ^{- 1} = 1 + \frac { 1 } { 2 } \varepsilon + \frac { 1 } { 4 } \varepsilon ^{2} + \frac { 1 } { 8 } \varepsilon ^{3} + \frac { 1 } { 16 } \varepsilon ^{4} + \cdots .
+\end{equation}
+由于该级数的收敛半径为 2，因此 \(\varepsilon = 1\) 这一值其实并没有看上去那么大。事实上，(41) 中所展示的各项已经使我们在 \(\varepsilon = 1\) 时得出 \(\gamma = 1.9375\)，而非正确的值 2。这一情况显然令人鼓舞；借助更先进的图表求和方法，\(\varepsilon\) 展开式的收敛性可以得到极大改善。事实上，表 13.1 中的部分数据最初就是借助这种方法获得的（或至少经过了重新核对）。
+在结束本小节之前，我们想特别指出，在上述一阶结果中包含的一条颇为不寻常的信息。该信息涉及指数 \(\alpha\)，我们注意到，对于大 \(n\)，\(\alpha\) 的值为负，因此在 \(T=T_{c}\) 时（我们已知球形模型的这一情形）特异性热能会消失；而当 \(n\) 较小时，\(\alpha\) 为正，特异性热能则会发散（我们已知，这正是伊辛类系统的情形）。从一种情况转变为另一种情况的反转点出现在 \(n=4\)，此时根据一阶表达式（39），\(\alpha\) 为零。在 \(\varepsilon\) 中加入二阶项，从定性上维持了这一预测，但在定量上却有所改变。现在我们有
+\begin{equation}\tag{14.4.44}\label{eq:14.4.44}
+\alpha \approx \frac { 4 - n } { 2 ( n + 8 ) } \varepsilon - \frac { ( n + 2 ) ^{2} ( n + 28 ) } { 4 ( n + 8 ) ^{3} } \varepsilon ^{2} ,
+\end{equation}
+因此，当 \(\varepsilon=1\) 时，反转发生在 \(n=1\) 和 \(n=2\) 之间——这与第 13.7 节中所引用的更为精确的结果一致。
+\section{E 1/n 展开式}\label{e-1n-ux5c55ux5f00ux5f0f}
+另一种确定临界指数的方法，即以 \(n=\infty\) 为极限情形作为起点，并对小量 \(1/n\) 进行幂级数展开。显然，这些展开式中的主导项将对应于球形模型——该模型已在第 13.5 节中得到研究——而修正项则能帮助我们获得有关有限 \(n\) 模型的一些有用信息。我们在此引用
+此处的一些一阶结果：\(^{11}\)
+\begin{equation}\tag{14.4.45}\label{eq:14.4.45}
+\eta = \frac { 4 ( 4 - d ) S _ { d } } { d } \frac { 1 } { n } + O \left( \frac { 1 } { n ^{2} } \right) ,
+\end{equation}
+\begin{equation}\tag{14.4.46}\label{eq:14.4.46}
+\gamma = \frac { 2 } { d - 2 } \left\{ 1 - \frac { 6 S _ { d } } { n } + O \left( \frac { 1 } { n ^{2} } \right) \right\} ,
+\end{equation}
+并且
+\begin{equation}\tag{14.4.47}\label{eq:14.4.47}
+\alpha = - \frac { 4 - d } { d - 2 } \left\{ 1 - \frac { 8 ( d - 1 ) S _ { d } } { 4 - d } \frac { 1 } { n } + O \left( \frac { 1 } { n ^{2} } \right) \right\} ,
+\end{equation}
+其中
+\begin{equation}\tag{14.4.48}\label{eq:14.4.48}
+S _ { d } = \frac { \sin \{ \pi ( d - 2 ) / 2 \} \Gamma ( d - 1 ) } { 2 \pi \{ \Gamma ( d / 2 ) \} ^{2} }  ( 2 < d < 4 ) .
+\end{equation}
+我们注意到，采用这种方法进行展开时，其系数是 \(d\) 的函数，正如前一种方法中展开式的系数是 \(n\) 的函数一样；从这个意义上说，这两种展开方式彼此互补。遗憾的是，尽管在这些展开式的后续项的求值方面尚未取得太大进展（除了注释中提到的那一项之外），但这种方法的实际应用价值也相当有限。
+\section{F 其他主题}\label{f-ux5176ux4ed6ux4e3bux9898}
+如前所述，重整化群方法对普适性概念作出了非常清晰的阐释——当多个物理系统尽管在微观结构上存在差异，却都由同一个固定点所支配，并因此展现出共同的临界行为时，普适性便由此产生。通常，这种行为与物理空间的维度 \(d\)、自旋向量 \(\sigma\) 的维度 \(n\) 以及自旋-自旋相互作用的范围密切相关。然而，根据哈密顿量的具体性质及其各参数之间的相对重要性，当特定条件成立时，系统的临界行为很可能"跨过"从某一固定点的特征行为，转变为另一固定点的特征行为。例如，我们可将晶格中的自旋-自旋相互作用写为：
+\begin{equation}\tag{14.4.49}\label{eq:14.4.49}
+H _ { \mathrm { i n t } } = - \frac { 1 } { 2 } \sum _ { r , r ^{\prime} } \sum _ { \alpha , \beta } J ^{\alpha \beta} ( r - r ^{\prime} ) \sigma ^{\alpha} ( r ) \sigma ^{\beta} ( r ^{\prime} )  \alpha , \beta = 1 , \ldots , n .
+\end{equation}
+\^{}\{11\}在特殊情况下，当 \(d=3\) 时，\(\eta\) 的展开式已知到更高阶，即
+\begin{equation}\tag{14.4.50}\label{eq:14.4.50}
+\eta = \frac { 8 } { 3 \pi ^{2} n } - \left( \frac { 8 } { 3 } \right) ^{3} \frac { 1 } { \pi ^{4} n ^{2} } + O \left( \frac { 1 } { n ^{3} } \right) .
+\end{equation}
+若给定的相互作用在物理空间中是各向同性的，但在自旋分量上却是各向异性的（假设自旋分量共有三个），且 \(J^{\alpha\beta}=J^{\alpha}\delta_{\alpha\beta}\)，那么通常认为该系统属于海森堡铁磁体；然而，相互作用的各向异性最终可能促使系统走向伊辛固定点（如果其中某个 \(J^{\alpha}\) 超过另外两个）；或者走向 XY 固定点（如果其中两个 \(J^{\alpha}\) 强度相当，且均超过第三个）。无论哪种情况，我们都会遇到通常被称为"跨相变现象"的现象。
+同样地，物理空间中的各向异性，即 \(J(\boldsymbol{R})=J(R_{i})\delta_{ij}\) 或 \(K(R)R_{i}R_{j}\)，也可能导致从 \(d\) 维的行为转变为 \(d'\) 维的行为（其中 \(d'<d\)）。同样地，我们也可以考虑长程相互作用 \(J(\boldsymbol{R})\sim R^{-d-\sigma}\delta_{ij}\)，其带来的临界行为在 \(\sigma<2\) 时会显著依赖于 \(\sigma\)；例如，请参阅问题 13.22。然而，随着 \(\sigma\) 从 \(2-\) 值逐渐变为 \(2+\) 值，系统会跨入由短程相互作用所表征的普适性类别，并在所有 \(\sigma>2\) 的范围内始终处于该类别之中。跨相变现象是相变理论中一个极其引人入胜的研究课题，但我们在此无法进一步深入探讨；有兴趣的读者可以参考阿哈罗尼（1976）撰写的优秀综述。
+另一个备受关注的课题，涉及磁体和流体中所谓的界面相变。在1944年发表的开创性论文《翁萨格》中，他将一排"不匹配自旋"纳入模型，并计算了这一排自旋的边界张力（或更常见地称为界面自由能），同时研究了当温度 \(T\) 接近临界温度 \(T_c\) 时，这一量如何消失。对于流体系统而言，这对应于液态与气态之间弯月面的消失，从而导致传统表面张力在 \(T \to T_c\) 时趋于零——相关问题请参见第12.27题。对这类界面层进行理论研究，需要考虑非均匀系统的自由能，而这一问题已受到广泛研究，且已有相当长的时间。如需进一步了解该主题，建议读者参阅两篇综述文章——亚伯拉罕（1986）和贾斯诺（1986）所著。
+RG方法所采用的一项重要原理是：系统的临界行为在标度变换下保持不变。人们很快意识到，这种变换与复平面上众所周知的共形变换之间存在着重要的联系——事实上，后者也大致上是一种标度变换，其中标度因子 \(l\) 随位置连续变化。尽管从原则上讲，这种联系可能适用于所有维度，但其最具成效的应用领域仍是在二维空间中（在二维空间中，共形群由复变量的解析函数构成）。在共形变换方法所取得的重要成果中，值得一提的是：多点相关函数的形式、不同尺寸和不同形状的有限尺寸条带的临界行为，以及表面临界效应的本质。有关详细内容，请参阅卡迪（1987）所撰的综述文章。
+另一个备受关注的领域是所谓多临界点。关于这些点的理论研究，可参考劳里和萨巴赫（1984）；至于实验结果，则可参考克诺布勒和斯科特（1984）。
+\section{有限尺寸标度}\label{ux6709ux9650ux5c3aux5bf8ux6807ux5ea6}
+在我们迄今为止对相变的研究中，我们通常采用热力学极限的处理方式——即从一个尺寸为 \(L_1 \times \ldots \times L_d\) 的晶格出发，该晶格包含 \(N_1 \times \ldots \times N_d\) 个自旋（其中 \(N_j = L_j/a\)，\(a\) 为晶格常数），但在计算的某个适当阶段，我们会转而将 \(L_j\) 无限增大。这一极限过程在诸多重要方面都至关重要；它虽然简化了后续的计算，但也会引发奇异点——正如我们所知，这些奇异点正是发生相变系统的典型特征。从理论和实验两个层面来看，若允许部分 \(L_j\) 保持有限值，其结果究竟如何（或是否会发生）一直备受关注。相关分析颇为复杂，但过去约 25 年间，在这一方向上已取得了显著进展。正因如此，"有限尺寸标度"这一全新研究领域应运而生，本文仅作简要概述。如欲了解更详尽的内容，读者可参考 Barber（1983）、Cardy（1988）以及 Privman（1990）的相关文献。
+为了便于理解，我们先从一个 \(d\) 维的体相系统入手——该系统在某一有限的临界温度 \(T_{c}(\infty)\) 下发生相变；显然，维度 \(d\) 必须大于"下临界维数"\(d_{<}\)。此外，我们还假设 \(d\) 小于"上临界维数"\(d_{>}\)，从而使得系统的临界指数依赖于维度 \(d\)，并满足超标度关系：
+\begin{equation}\tag{14.4.51}\label{eq:14.4.51}
+d \nu = 2 - \alpha = 2 \beta + \gamma .
+\end{equation}
+接下来，我们考虑一种类似的系统，该系统仅在 \(d'\) 维中是无限的，且 \(d' < d\)，而在其余维度中则是有限的；该系统的几何结构可表示为 \(L^{d-d'} \times \infty^{d'}\)，其中 \(L \gg a\)，且为简便起见，我们假定所有有限维中的 \(L\) 都相同。我们有理由预期，该系统在有限温度 \(T_c(L)\) 下会处于临界状态，其温度与 \(T_c(\infty)\) 相差不大。然而，实际情况并非如此——只有当 \(d'\) 也大于 \(d_{<}\) 时，情况才会如此；否则，无论温度为何，该系统始终保持着规则的结构，直到温度降至 \(T = 0\) 时，系统才真正进入临界状态。因此，\(d' > d_{<}\) 和 \(d' \leq d_{<}\) 这两种情形，各自都需要单独进行研究。
+????????????????????????????????????? \(L\) ?????????????????????????????????\autoref{eq:12.10.7}?\autoref{eq:14.3.26}???????? \(L\) ????????????????????????????? \(\xi\)????????????? \(\xi\) ??? \(L\)??????????
+\begin{equation}\tag{14.4.52}\label{eq:14.4.52}
+( L / \xi ) \sim L t ^{\nu} = ( L ^{1 / \nu} t ) ^{\nu} .
+\end{equation}
+与此同时，Bulk标度律中出现的式子 \((h/t^{\Delta})\) 可以写成：
+\begin{equation}\tag{14.4.53}\label{eq:14.4.53}
+( h / t ^{\Delta} ) = ( h L ^{\Delta / \nu} ) / ( L ^{1 / \nu} t ) ^{\Delta} .
+\end{equation}
+\(^{12}\)对于特殊情形 \(d'=0\)，即系统完全有限时，这一点已在第12.1节中予以强调。在此我们指出，即使系统的一些维度是无限的（因此自旋总数也是无限的），除非这些无限维度的数量超过 \(d_{<}\)，否则并不会产生有限温度奇点。
+因此，\(L\) 与 \(t\) 和 \(h\) 的合适组合分别为 \(L^{1/\nu}t\) 和 \(L^{\Delta/\nu}h\)。随后，系统的自由能密度中的"奇异"部分可以表示为（参见 Privman 和 Fisher，1984）：
+\begin{equation}\tag{14.4.54}\label{eq:14.4.54}
+f ^{( s )} ( t , h ; L ) \equiv \frac { A ^{( s )} } { V k T } \approx L ^{- d} Y ( x _ { 1 } , x _ { 2 } ) ,
+\end{equation}
+其中 \(x_{1}\) 和 \(x_{2}\) 分别是系统的缩放变量，即：
+\begin{equation}\tag{14.4.55}\label{eq:14.4.55}
+x _ { 1 } = C _ { 1 } L ^{1 / \nu} t ,  x _ { 2 } = C _ { 2 } L ^{\Delta / \nu} h ,
+\end{equation}
+其中
+\begin{equation}\tag{14.4.56}\label{eq:14.4.56}
+t = \frac { T - T _ { c } ( \infty ) } { T _ { c } ( \infty ) } ,  h = \frac { \mu B } { k T }  | t | , h \ll 1 ,
+\end{equation}
+而 \(C_{1}\) 和 \(C_{2}\) 则是特定于所研究系统、具有非普遍性的尺度因子。用 \(x_{1}\) 和 \(x_{2}\) 来表示，函数 \(Y\) 有望成为一种通用函数——适用于与所研究系统处于同一普适类的所有系统。当然，普适类的定义现在将包括（除常规参数 \(d\)、\(n\) 以及自旋-自旋相互作用的范围之外）参数 \(d'\)，以及施加于系统的边界条件的性质（除非另有说明，本研究将假定这些边界条件为周期性边界条件）。
+??????? \(L \to \infty\) ?????????? \(Y\) ??????????14.9.4? ????\autoref{eq:12.10.7}?
+\begin{equation}\tag{14.4.57}\label{eq:14.4.57}
+Y ( x _ { 1 } , x _ { 2 } ) \approx | x _ { 1 } | ^{d _ { \nu} } f _ { \pm } ( x _ { 2 } / | x _ { 1 } | ^{\Delta} )  | x _ { 1 } | , x _ { 2 } \gg 1 ,
+\end{equation}
+由此，我们将非普遍性参数 \(F\) 和 \(G\) 分别对应于 \(C_{1}^{dv}\) 和 \(C_{2}/C_{1}^{\Delta}\)。这使我们能够用 \(F\) 和 \(G\) 来表示 \(C_{1}\) 和 \(C_{2}\)，即：
+\begin{equation}\tag{14.4.58}\label{eq:14.4.58}
+C _ { 1 } \sim F ^{1 / ( 2 - \alpha )} ,  C _ { 2 } \sim F ^{( \beta + \gamma ) / ( 2 - \alpha )} G ,
+\end{equation}
+??????????????? bulk ?? \(F\) ? \(G\) ????????? \(C_{1}\) ? \(C_{2}\)???14.9.8? ??????????????????? \(C_{1}\) ? \(C_{2}\) ????????????????????????????????????????????????????????????? (4) ??????
+???????????????14.9.4?????????????????????????????????????????
+\begin{equation}\tag{14.4.59}\label{eq:14.4.59}
+\begin{array}{rl} { \chi _ { 0 } ( t ; L ) = - \frac { 1 } { V } \left( \frac { \partial ^{2} A ^{( s )} } { \partial B ^{2} } \right) _ { B = 0 } } & { \approx - \frac { k T \mu ^{2} C _ { 2 } ^{2} L ^{2 \Delta / \nu - d} } { ( k T ) ^{2} } \left( \frac { \partial ^{2} Y ( x _ { 1 } , x _ { 2 } ) } { \partial x _ { 2 } ^{2} } \right) _ { x _ { 2 } = 0 } } \\& { = \frac { \mu ^{2} C _ { 2 } ^{2} L ^{\gamma / \nu} } { k T } Y _ { \chi } ( x _ { 1 } ) , } \end{array}
+\end{equation}
+和
+\begin{equation}\tag{14.4.60}\label{eq:14.4.60}
+\begin{array}{rl} & { c _ { 0 } ^{( s )} ( t ; L ) = - \frac { T } { V } \left( \frac { \partial ^{2} A ^{( s )} } { \partial T ^{2} } \right) _ { B = 0 } \approx - \frac { k T ^{2} C _ { 1 } ^{2} L ^{2 / \nu - d} } { T _ { c } ^{2} ( \infty ) } \left( \frac { \partial ^{2} Y ( x _ { 1 } , x _ { 2 } ) } { \partial x _ { 1 } ^{2} } \right) _ { x _ { 2 } = 0 } } \\& {  = \frac { k T ^{2} C _ { 1 } ^{2} L ^{\alpha / \nu} } { T _ { c } ^{2} ( \infty ) } Y _ { c } ( x _ { 1 } ) , } \end{array}
+\end{equation}
+其中，\(Y_{\chi}(x_{1})\) 和 \(Y_{c}(x_{1})\) 分别是通用函数 \(Y(x_{1},x_{2})\) 的相应导数，因而它们本身也具有普遍性。为进一步分析，我们还可以将上述结果与有限尺寸系统相关长度的相应结果相结合，即：
+\begin{equation}\tag{14.4.61}\label{eq:14.4.61}
+\xi ( t , h ; L ) = L S ( x _ { 1 } , x _ { 2 } )
+\end{equation}
+并且
+\begin{equation}\tag{14.4.62}\label{eq:14.4.62}
+\xi _ { 0 } ( t ; L ) = L S ( x _ { 1 } ) ,
+\end{equation}
+其中 \(S(x_{1})=S(x_{1},0)\)；请注意，函数 \(S(x_{1},x_{2})\) 和 \(S(x_{1})\) 也同样具有普遍性。接下来，我们将把注意力集中在方程（9）、（10）和（12）上，以探究这些方程在变量 \(T\) 和 \(L\) 不同取值区间中所传达的含义。
+情形 A：\(T \gtrsim T_{c}(\infty)\)
+当 \(t > 0\) 且 \(L \gg a\) 时，该区域中的变量 \(x_{1}\) 将为正数，并远大于 1。此时，函数 \(Y_{\chi}\)、\(Y_{c}\) 和 \(S\) 预计会呈现出以下形式：
+\begin{equation}\tag{14.4.63}\label{eq:14.4.63}
+Y _ { \chi } ( x _ { 1 } ) \approx \Gamma x _ { 1 } ^{- \gamma} ,  Y _ { c } ( x _ { 1 } ) \approx A x _ { 1 } ^{- \alpha} ,  S ( x _ { 1 } ) \approx N x _ { 1 } ^{- \nu} ,
+\end{equation}
+从而我们能够恢复标准的体相结果。
+\begin{equation}\tag{14.4.64}\label{eq:14.4.64}
+\chi _ { 0 } \approx \frac { \mu ^{2} \Gamma C _ { 1 } ^{- \gamma} C _ { 2 } ^{2} } { k T _ { c } ( \infty ) } t ^{- \gamma} ,  c _ { 0 } ^{( s )} \approx k A C _ { 1 } ^{2 - \alpha} t ^{- \alpha} ,  \xi _ { 0 } \approx N C _ { 1 } ^{- \nu} t ^{- \nu} ,
+\end{equation}
+不仅包含了非普遍性的振幅，还包含普遍性的因子。在这一区域，\(L\) 的影响仅表现为对体相结果的一种修正；在周期性边界条件下，这类修正项实际上呈指数级递减，即 \(O(e^{-L/\xi_0})\)，其中 \(\xi_0 \sim a\)。\^{}\{13\}
+情形 B：\(T \simeq T_{c}(\infty)\)
+本情形指的是"核心区域"，在此区域内，\(|x_{1}|\) 约等于 1，因此 \(|t|\) 约等于 \(L^{-1/\nu}\)；体相临界点 \(t=0\) 正位于该区域的中心。方程（9）、（10）和（12）如今为我们带来了有限尺寸标度的第一批重要结果，即：
+\begin{equation}\tag{14.4.65}\label{eq:14.4.65}
+\chi _ { 0 } \sim \frac { \mu ^{2} C _ { 2 } ^{2} } { k T _ { c } ( \infty ) } L ^{\gamma / \nu} ,  c _ { 0 } ^{( s )} \sim k C _ { 1 } ^{2} L ^{\alpha / \nu} ,  \xi _ { 0 } \sim L .
+\end{equation}
+\^{}\{13\} 例如参见 Luck（1985），以及 Singh 和 Pathria（1985b、1987a）。
+情形 C：\(T < T_{\mathrm{C}}(\infty)\)
+在此，我们必须区分两种情况：\(d' > d_{<}\) 与 \(d' \leq d_{<}\)。在第一种情况下，系统将在温度 \(T_{c}(L)\) 下进入临界状态，而该温度 \(T_{c}(L)\) 与 \(T_{c}(\infty)\) 相差并不算太远；而在第二种情况下，系统在所有有限温度下仍保持规则状态，直到 \(T = 0\) 才真正进入临界态。
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(d' > d_{<}\)
+\end{enumerate}
+鉴于系统现在在 \(T = T_{c}(L)\) 处变得奇异，而非在 \(T_{c}(\infty)\) 处，我们自然会定义一个位移后的温度变量 \(t\)，使得
+\begin{equation}\tag{14.4.66}\label{eq:14.4.66}
+\dot { t } = \frac { T - T _ { c } ( L ) } { T _ { c } ( \infty ) } ;
+\end{equation}
+将此与式（6a）进行比较。因此，对于任意温度 \(T\)，
+\begin{equation}\tag{14.4.67}\label{eq:14.4.67}
+\dot { t } = t - \tau ;  \tau = [ T _ { c } ( L ) - T _ { c } ( \infty ) ] / T _ { c } ( \infty ) ,
+\end{equation}
+这促使我们定义一个位移后的标度变量
+\begin{equation}\tag{14.4.68}\label{eq:14.4.68}
+\dot { x } _ { 1 } = C _ { 1 } L ^{1 / \nu} \dot { t } = x _ { 1 } - X ;  X = C _ { 1 } L ^{1 / \nu} \tau .
+\end{equation}
+显然，支配系统的标度函数在 \(x_{1}=0\) 处将变得奇异，亦即在 \(x_{1}=X\) 处。在没有任何其他假设的情况下，我们推测 \(|X|\) 将约为 1；因此，\(T_{c}\) 的位移量为
+\begin{equation}\tag{14.4.69}\label{eq:14.4.69}
+| \tau | = | X | C _ { 1 } ^{- 1} L ^{- 1 / \nu} = O ( L ^{- 1 / \nu} ) .
+\end{equation}
+如今，当 \(T \rightarrow T_{c}(L)\) 时，系统的相关长度将趋近于无穷大——由此可知，就临界行为的定性特征而言，无论 \(L\) 多大，其有限值都几乎变得不再重要。因此，在 \(T_{c}(L)\) 紧邻的区域中，系统的行为更接近于 \(d'\) 维体相系统的特性，而非 \(d\) 维体相系统的特性；相应地，该系统所遵循的将是与 \(d'\) 维度相关的临界指数 \(\dot{\alpha}, \dot{\beta}, \ldots\)，而非与 \(d\) 维度相关的指数 \(\alpha, \beta, \ldots\)。因此，我们预期，当 \(\dot{x}_{1} \rightarrow 0\) 时，方程（9）、（10）和（12）中的函数 \(Y_{\chi}\)、\(Y_{c}\) 和 \(S\) 将会呈现出如下形式：
+\begin{equation}\tag{14.4.70}\label{eq:14.4.70}
+Y _ { \chi } ( x _ { 1 } ) \approx \dot { \Gamma } \dot { x } _ { 1 } ^{- \dot { \gamma} } ,  Y _ { c } ( x _ { 1 } ) \approx \dot { A } \dot { x } _ { 1 } ^{- \dot { \alpha} } ,  S ( x _ { 1 } ) \approx \dot { N } \dot { x } _ { 1 } ^{- \dot { \nu} } ,
+\end{equation}
+结果是，
+\begin{equation}\tag{14.4.71}\label{eq:14.4.71}
+\chi _ { 0 } \approx [ \mu ^{2} / k T _ { c } ( \infty ) ] \dot { \Gamma } C _ { 1 } ^{- \dot { \gamma} } C _ { 2 } ^{2} L ^{( \gamma - \dot { \gamma} ) / \nu } \dot { t } ^{- \dot { \gamma} } ,
+\end{equation}
+\begin{equation}\tag{14.4.72}\label{eq:14.4.72}
+c _ { 0 } ^{( s )} \approx k \dot { A } C _ { 1 } ^{2 - \dot { \alpha} } L ^{( \alpha - \dot { \alpha} ) / \nu } \dot { t } ^{- \dot { \alpha} } ,
+\end{equation}
+并且
+\begin{equation}\tag{14.4.73}\label{eq:14.4.73}
+\xi _ { 0 } \approx \dot { N } C _ { 1 } ^{- \dot { \nu} } L ^{( \nu - \dot { \nu} ) / \nu } \dot { t } ^{- \dot { \nu} } .
+\end{equation}
+显而易见，对于 \(\dot{t} < 0\) 但同时满足 \(|\dot{t}| \ll 1\) 的情形，上述结论依然成立——只不过 \(\dot{t}\) 将被 \(|\dot{t}|\) 所取代。
+方程（21）的内容，就其对 \(L\) 和 \(t\) 的依赖性而言，多年来已通过多种系统的直接计算得到验证；有关详细信息，请参阅前面提到的 Barber（1983）和 Privman（1990）的综述文章。更为近期的研究中，Allen 和 Pathria（1989）也通过针对球形模型（\(n=\infty\)）在一般几何结构 \(L^{d-d'}\times\infty^{d'}\) 下进行的明确计算，验证了这些非普适振幅的存在。值得注意的是，他们发现：正如临界指数 \(\dot{\alpha}, \dot{\beta}, \ldots\) 与 \(d'\) 相关的函数，与 \(d\) 相关的指数 \(\alpha, \beta, \ldots\) 是同一类函数一样，通用系数 \(\dot{\Gamma}, \dot{A}, \ldots\) 也与 \(d'\) 相关的函数，与 \(d\) 相关的系数 \(\Gamma, A, \ldots\) 是同一类函数；同样的情况也适用于存在磁场时的系数（详见 Allen 和 Pathria，1991）。不禁令人好奇：对于一般的 \(n!\) 值，是否也会出现类似的现象？
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  \(d' \leq d_{<}\)
+\end{enumerate}
+在这种情况下，问题的奇点出现在 \(T=0\)，因此在所有有限温度下，系统均保持规则状态，从而可以由平滑、解析的函数来表示。因此，我们可以将标度律（4）推广至所有温度，直至 \(T=0\)，只需让标度因子 \(C_1\) 和 \(C_2\) 变为随 \(T\) 变化，并写出（参考 Singh 和 Pathria，1985b，1986a）
+\begin{equation}\tag{14.4.74}\label{eq:14.4.74}
+x _ { 1 } = \tilde { C } _ { 1 } ( T ) L ^{1 / \nu} t ,  x _ { 2 } = \tilde { C } _ { 2 } ( T ) L ^{\Delta / \nu} h ,
+\end{equation}
+?? \(t\) ? \(h\) ???\(\tilde{C}_{1}\) ? \(\tilde{C}_{2}\) ?????????????? \(T\) ?????? \(T_{c}(\infty)\) ???????????14.9.5??? \(C_{1}\) ? \(C_{2}\)??????14.9.9? ? ??14.9.10? ???????
+\begin{equation}\tag{14.4.75}\label{eq:14.4.75}
+\chi _ { 0 } ( t ; L ) = \frac { \mu ^{2} \tilde { C } _ { 2 } ^{2} L ^{\gamma / \nu} } { k T } Y _ { \chi } ( x _ { 1 } )
+\end{equation}
+并且
+\begin{equation}\tag{14.4.76}\label{eq:14.4.76}
+c _ { 0 } ^{( s )} ( t ; L ) = k T ^{2} \left[ \frac { \partial } { \partial T } ( \tilde { C } _ { 1 } t ) \right] ^{2} L ^{\alpha / \nu} Y _ { c } ( x _ { 1 } ) ,
+\end{equation}
+????????14.9.12???????????
+现在，当我们接近临界温度 \(T_{c}\)（此处为零）时，我们再次预期 \(\chi_{0}\)、\(c_{0}^{(s)}\) 和 \(\xi_{0}\) 这些量会表现出一种与 \(d'\) 维体相一致的特性。因此，我们假设在 \(d \rightarrow 0\) 的极限下，我们的尺度因子将表现为
+\begin{equation}\tag{14.4.77}\label{eq:14.4.77}
+\tilde { C } _ { 1 } \sim T ^{r} ,  \tilde { C } _ { 2 } \sim T ^{s}  ( T \to 0 ) ,
+\end{equation}
+并且我们的通用函数将表现为
+\begin{equation}\tag{14.4.78}\label{eq:14.4.78}
+Y _ { \chi } ( x _ { 1 } ) \sim | x _ { 1 } | ^{\theta} ,  Y _ { c } ( x _ { 1 } ) \sim | x _ { 1 } | ^{\phi} ,  S ( x _ { 1 } ) \sim | x _ { 1 } | ^{\sigma}  ( x _ { 1 } \to - \infty ) .
+\end{equation}
+由此产生的 \(\chi_{0}\)、\(c_{0}^{(s)}\) 和 \(\xi_{0}\) 与 \(T\) 的依赖关系为
+\begin{equation}\tag{14.4.79}\label{eq:14.4.79}
+\chi _ { 0 } \sim T ^{2 s - 1 + \theta r} ,  c _ { 0 } ^{( s )} \sim T ^{( 2 + \phi ) r} ,  \xi _ { 0 } \sim T ^{\sigma r} .
+\end{equation}
+对于 \(n\) 维向量、\(d'\) 维模型（其中 \(n \geq 2\)，且 \(d' < d_{<}\)，其中 \(d_{<} = 2\)），相应的结果为\(^{14}\)
+\begin{equation}\tag{14.4.80}\label{eq:14.4.80}
+\chi _ { 0 } \sim T ^{- 2 / ( 2 - d ^ { \prime} ) } ,  c _ { 0 } ^{( s )} \sim T ^{d ^ { \prime} / ( 2 - d ^{\prime} ) } ,  \xi _ { 0 } \sim T ^{- 1 / ( 2 - d ^ { \prime} ) } .
+\end{equation}
+???14.9.27? ? ??14.9.28? ??????????
+\begin{equation}\tag{14.4.81}\label{eq:14.4.81}
+\theta = \frac { 1 } { r } \left[ 1 - 2 s - \frac { 2 } { 2 - d ^{\prime} } \right] ,  \phi = \frac { d ^{\prime} } { r ( 2 - d ^{\prime} ) } - 2 ,  \sigma = \frac { - 1 } { r ( 2 - d ^{\prime} ) } .
+\end{equation}
+??????????????14.9.44??
+\begin{equation}\tag{14.4.82}\label{eq:14.4.82}
+r = - 1 / \nu ( d - 2 ) ,  s = \beta / \nu ( d - 2 ) ,
+\end{equation}
+根据这些结果，
+\begin{equation}\tag{14.4.83}\label{eq:14.4.83}
+\theta = 2 \beta + \frac { \nu d ^{\prime} ( d - 2 ) } { ( 2 - d ^{\prime} ) } ,  \phi = - \frac { \nu d ^{\prime} ( d - 2 ) } { ( 2 - d ^{\prime} ) } - 2 ,  \sigma = \frac { \nu ( d - 2 ) } { ( 2 - d ^{\prime} ) } .
+\end{equation}
+各量随 \(L\) 的变化规律最终被揭示为
+\begin{equation}\tag{14.4.84}\label{eq:14.4.84}
+\chi _ { 0 } \sim L ^{( \gamma + \theta ) / \nu} \sim L ^{2 ( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) }
+\end{equation}
+\begin{equation}\tag{14.4.85}\label{eq:14.4.85}
+c _ { 0 } ^{( s )} \sim L ^{( \alpha + \phi ) / \nu} \sim L ^{- 2 ( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) }
+\end{equation}
+并且
+\begin{equation}\tag{14.4.86}\label{eq:14.4.86}
+\xi _ { 0 } \sim L ^{1 + \sigma / \nu} \sim L ^{( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) } .
+\end{equation}
+??????????????????? \(d\) ???????????????????? \(L\) ??????????????????14.9.32? ????? \(\chi_0\) ??????????????????????\(d\prime=0\)??????????\(d\prime=1\)???
+\begin{equation}\tag{14.4.87}\label{eq:14.4.87}
+\chi _ { 0 } \sim \left\{ \begin{array}{ll} { L ^{d} } & { \mathrm { f o r }  d ^{\prime} = 0 } \\{ L ^{2 ( d - 1 )} } & { \mathrm { f o r }  d ^{\prime} = 1 ; } \end{array} \right.
+\end{equation}
+\(^{14}\) 对于球形模型（\(n=\infty\)），这些结果出现在第 13.5 节；请参阅式 (13.5.34)、(13.5.35) 和 (13.5.64)。由于在这种情况下，临界点发生在绝对零度，这些结果适用于所有具有连续对称性的模型，即 \(n \geq 2\)。例如，请参阅第 13.3 节，其中 \(n\) 是一般变量，但 \(d'=1\)。
+参见 Fisher 和 Privman（1985）。对于 \(d'=2\)，此处研究的各量随 \(L\) 的变化规律将变为指数型，而非幂律型。
+要获得在 \(0 < T < T_{c}(\infty)\) 范围内对所有 \(T\) 都适用的结果，我们需要了解标度因子 \(\tilde{C}_{1}\) 和 \(\tilde{C}_{2}\) 全面的 \(T\) 依赖关系。事实证明，这一依赖关系同样可以由相应体相系统的性质来确定——尤其是通过无场体相相关函数 \(G(\boldsymbol{R},T)\) 来确定，已知该函数具有如下形式：
+\begin{equation}\tag{14.4.88}\label{eq:14.4.88}
+G ( R , T ) \sim R ^{- ( d - 2 + \eta )}  T = T _ { c } ( \infty )
+\end{equation}
+并且
+\begin{equation}\tag{14.4.89}\label{eq:14.4.89}
+G ( R , T ) = m _ { 0 } ^{2} ( T ) + A ( T ) R ^{- ( d - 2 )}  T < T _ { c } ( \infty ) ,
+\end{equation}
+其中 \(m_{0}(T)\) 是体相系统的序参量，而 \(A(T)\) 则是另一个依赖于系统参数的量。\^{}\{15\} 现在，有限尺寸系统的相关函数可以表示为缩放形式：
+\begin{equation}\tag{14.4.90}\label{eq:14.4.90}
+G ( R , t , h ; L ) \approx \tilde { D } ( T ) R ^{- ( d - 2 + \eta )} Z ( x _ { 1 } , x _ { 2 } , x _ { 3 } ) ,
+\end{equation}
+其中缩放变量 \(x_{1}\) 和 \(x_{2}\) 与式 (22a, b) 中给出的相同，而 \(x_{3}=R/L\)；与往常一样，标度因子 \(\tilde{D}(T)\) 不是普遍性的，而函数 \(Z(x_{1},x_{2},x_{3})\) 则是普遍性的。
+??14.9.36? ??????14.9.34???? \(x_{1}=x_{2}=x_{3}=0\)??????14.9.35?????? \(Z\) ???????????
+\begin{equation}\tag{14.4.91}\label{eq:14.4.91}
+Z ( x _ { 1 } , x _ { 2 } , x _ { 3 } ) \approx Z _ { 1 } \left( | x _ { 1 } | ^{\nu} x _ { 3 } \right) ^{d - 2 + \eta} + Z _ { 2 } ( | x _ { 1 } | ^{\nu} x _ { 3 } ) ^{\eta}  x _ { 1 } \rightarrow - \infty , \, x _ { 2 } = 0 , \, x _ { 3 } \rightarrow 0 ,
+\end{equation}
+其中
+\begin{equation}\tag{14.4.92}\label{eq:14.4.92}
+Z _ { 1 } = \frac { m _ { 0 } ^{2} ( T ) } { \tilde { D } ( T ) [ \tilde { C } _ { 1 } ( T ) | t | ] ^{\nu ( d - 2 + \eta )} } ,  Z _ { 2 } = \frac { A ( T ) } { \tilde { D } ( T ) [ \tilde { C } _ { 1 } ( T ) | t | ] ^{\nu \eta} } .
+\end{equation}
+由此可知，
+\begin{equation}\tag{14.4.93}\label{eq:14.4.93}
+\tilde { C } _ { 1 } ( T ) | t | \sim \left[ \frac { m _ { 0 } ^{2} ( T ) } { A ( T ) } \right] ^{1 / \nu ( d - 2 )} ,  \tilde { D } ( T ) \sim \left[ \frac { A ^{\beta} ( T ) } { m _ { 0 } ^{\nu \eta} ( T ) } \right] ^{2 / \nu ( d - 2 )} ;
+\end{equation}
+在此，我们利用了这样一个事实：
+\begin{equation}\tag{14.4.94}\label{eq:14.4.94}
+\nu ( d - 2 + \eta ) = ( 2 - \alpha ) - \gamma = 2 \beta .
+\end{equation}
+接下来，我们将建立标度因子 \(\tilde{C}_{2}\) 与 \(\tilde{D}\) 之间的关系。为此，我们借助波动敏感性关系（12.11.12），并借助
+??14.9.36? ??????????????
+\begin{equation}\tag{14.4.95}\label{eq:14.4.95}
+\begin{array}{r} { \chi _ { 0 } ( t ; L ) = \frac { \mu ^{2} \tilde { D } ( T ) } { a ^{2 d} k T } \int \frac { Z ( x _ { 1 } , 0 , R / L ) } { R ^{d - 2 + \eta} } d ^{d} R } \\{ = \frac { \mu ^{2} \tilde { D } ( T ) } { a ^{2 d} k T } L ^{2 - \eta} Z _ { \chi } ( x _ { 1 } ) , } \end{array}
+\end{equation}
+?? \(Z_{\chi}\) ??????????????14.9.41? ? ??14.9.23? ?????????
+\begin{equation}\tag{14.4.96}\label{eq:14.4.96}
+\tilde { D } ( T ) \sim a ^{2 d} \tilde { C } _ { 2 } ^{2} ( T ) .
+\end{equation}
+??14.9.39? ?????
+\begin{equation}\tag{14.4.97}\label{eq:14.4.97}
+\tilde { C } _ { 2 } ( T ) \sim a ^{- d} [ A ^{\beta} ( T ) / m _ { 0 } ^{\nu \eta} ( T ) ] ^{1 / \nu ( d - 2 )} .
+\end{equation}
+??14.9.39? ? ??14.9.43? ?????????? \(\tilde{C}_{1}\)?\(\tilde{C}_{2}\) ? \(\tilde{D}\) ? \(0 < T < T_c(\infty)\) ?????? \(T\) ????????????????? Singh ? Pathria?1987a??????
+????????????????? \(T \to 0\) ??\(m_0(T)\) ??????????? \(A(T) \sim T\)?????14.9.39? ? ??14.9.43? ??
+\begin{equation}\tag{14.4.98}\label{eq:14.4.98}
+\tilde { C } _ { 1 } | t | \sim T ^{- 1 / \nu ( d - 2 )} ,  \tilde { C } _ { 2 } \sim T ^{\beta / \nu ( d - 2 )} ,
+\end{equation}
+??????25????30??????????? \(\chi_{0}\)?\(c_{0}^{(s)}\) ? \(\xi_{0}\) ? \(T\) ???????????????? \(L\) ???? \(T \to 0\)????? \(T\) ???? \(L \to \infty\)????????\(x_{1} \to -\infty\)???????? \(Y_{\chi}\)?\(Y_{c}\) ? \(S\) ????????14.9.26??????????????????? \(\theta\)?\(\phi\) ? \(\sigma\) ?????31????????? \(\chi_{0}\)?\(c_{0}^{(s)}\) ? \(\xi_{0}\) ???????
+\begin{equation}\tag{14.4.99}\label{eq:14.4.99}
+\chi _ { 0 } \sim \frac { \mu ^{2} A ( T ) } { a ^{2 d} k T } \left[ \frac { m _ { 0 } ^{2} ( T ) } { A ( T ) } \right] ^{2 / ( 2 - d ^ { \prime} ) } L ^{2 ( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) } ,
+\end{equation}
+\begin{equation}\tag{14.4.100}\label{eq:14.4.100}
+c _ { 0 } ^{( s )} \sim k \left\{ T \frac { \partial } { \partial T } \left[ \frac { m _ { 0 } ^{2} ( T ) } { A ( T ) } \right] \right\} ^{2} \left[ \frac { m _ { 0 } ^{2} ( T ) } { A ( T ) } \right] ^{- ( 4 - d ^ { \prime} ) / ( 2 - d ^{\prime} ) } L ^{- 2 ( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) } ,
+\end{equation}
+并且
+\begin{equation}\tag{14.4.101}\label{eq:14.4.101}
+\xi _ { 0 } \sim \left[ \frac { m _ { 0 } ^{2} ( T ) } { A ( T ) } \right] ^{1 / ( 2 - d ^ { \prime} ) } L ^{( d - d ^ { \prime} ) / ( 2 - d ^{\prime} ) } ,
+\end{equation}
+包含非普遍性的振幅。将式（45）与式（47）进行比较，我们发现，在所研究的 regime 中，
+\begin{equation}\tag{14.4.102}\label{eq:14.4.102}
+\chi _ { 0 } / \xi _ { 0 } ^{2} \sim \mu ^{2} A ( T ) / a ^{2 d} k T ,
+\end{equation}
+仅依赖于 \(T\) 的函数。在球形模型中，由于 \(A(T)\) 在所有 \(T < T_c(\infty)\) 时都与 \(T\) 成正比，详见式（13.5.71），量 \(\chi_0/\xi_0^2\) 是一个常数——既不依赖于 \(T\)，也不依赖于 \(L\)；另请参阅式（13.5.64）。
+值得注意的是，上述表述与式（5）中尺度因子 \(C_1\) 和 \(C_2\) 提供的表述高度契合，这些表述分别适用于 \(A\) 和 \(B\) 情况，对应于 \(T \gtrsim T_c(\infty)\) 和 \(T \simeq T_c(\infty)\) 这两个区域。要理解这一点，我们注意到：当 \(T\) 从下方趋近于 \(T_c(\infty)\) 时，\(m_0(T)\) 变为 \(\sim |t|^{\beta}\)，而 \(A(T) \sim |t|^{\nu\eta}\)；此时，式（39a）和式（43）便呈现出如下形式：
+\begin{equation}\tag{14.4.103}\label{eq:14.4.103}
+\tilde { C } _ { 1 } ( T ) | t | \sim | t | ^{( 2 \beta - \nu \eta ) / \nu ( d - 2 )} \sim | t | ^{1}
+\end{equation}
+以及
+\begin{equation}\tag{14.4.104}\label{eq:14.4.104}
+\tilde { C } _ { 2 } ( T ) \sim | t | ^{0} .
+\end{equation}
+显然，\(\tilde{C}_{1}(T)\) 和 \(\tilde{C}_{2}(T)\) 现在已取定一些常数值，这些值可以与 \(C_{1}\) 和 \(C_{2}\) 相对应——从而通过相同的通用函数 \(Y(x_{1},x_{2})\)、\(S(x_{1},x_{2})\) 和 \(Z(x_{1},x_{2},x_{3})\)，实现了统一的表述，覆盖了第一类和第二类相变的各个区域！尽管这一发现十分引人注目，但其实并不令人意外：在 \(L\) 有限且 \(d' \leq d_{<}\) 的情况下，系统仅在 \(T=0\) 处处于临界状态，而在其他所有地方则解析可积；因此，其性质理应能够用一组单一的函数来完整地描述。当然，随着 \(L \to \infty\)，临界性会从 \(T=0\) 一直延伸至 \(T=T_{c}(\infty)\)。
+就自旋维数 \(n\) 而言，我们对 \(A\)、\(B\) 和 \(C\)（i）情况的分析结果相当一般化；唯有在 \(C\)（ii）情形下，我们才将研究范围限定于具有连续对称性的系统（\(n \geq 2\)）。稍作修改后，离散对称性（\(n = 1\)）的情况也可以纳入考量。其最终结果本质上是：将式（28）中的数字 2 替换为系统的"低临界维数"\(d_{<}\)——由此得出诸如 \(^{16}\) 等结果。
+\begin{equation}\tag{14.4.105}\label{eq:14.4.105}
+\chi _ { 0 } \sim L ^{\xi} ,  c _ { 0 } ^{( s )} \sim L ^{- \xi} ,  \xi _ { 0 } \sim L ^{\xi / d <}  T < T _ { c } ( \infty ) ,
+\end{equation}
+设 \(\zeta = d_{<}(d - d')/(d_{<} - d')\)；与式（32）进行比较。再次强调，各关键量的 \(L\) 依赖关系遵循幂律，当 \(d' = d_{<}\) 时，这一关系会转变为指数形式；在标量模型中，这一转变发生在 \(d' = 1\) 时。
+在本次讨论中，我们假设系统的总维数 \(d\) 小于"上临界维数"\(d_{>}\)。当 \(d \geq d_{>}\) 时，虽然会出现一些特殊问题，但总体结果是：尽管在 \(T < T_{c}(\infty)\) 的区域，其描述方式与上述相同，但在 \(T \simeq T_{c}(\infty)\) 的区域，情况却会发生显著变化。例如，在 \(T \simeq T_{c}(\infty)\) 的区域，对于 \(d > d_{>}\) 和 \(d' < d_{<}\)，
+\begin{equation}\tag{14.4.106}\label{eq:14.4.106}
+\chi _ { 0 } \sim L ^{2 ( d - d ^ { \prime} ) / ( d _ { > } - d ^{\prime} ) } ,  c _ { 0 } ^{( s )} \sim L ^{0} ,  \xi _ { 0 } \sim L ^{( d - d ^ { \prime} ) / ( d _ { > } - d ^{\prime} ) } ,
+\end{equation}
+¹⁶ 例如，可参见 Singh 和 Pathria（1986b）。
+这些结果可与 \(d < d_{>}\) 时对应的公式（15a、b、c）相比较。此外，若 \(d = d_{>}\) 和/或 \(d' = d_{<}\)，则包含 \(\ln L\) 的项会与式（51）中所呈现的幂律同时出现。有关详细内容，请参阅 Singh 和 Pathria（1986b、1988、1992）。
+最后，我们想强调一点：任何系统中的有限尺寸效应都对系统所施加的边界条件的选择极为敏感。为简化起见，我们假定边界条件为周期性边界条件。而在实际情况下，可能出于各种原因需要采用不同的边界条件，例如反周期边界条件、自由边界条件等。通常而言，这会改变有限尺寸效应的数学特征，不仅会影响所研究各量的奇异部分，还会对它们的常规部分产生影响。为了实现理论与实验之间的对比，这一问题的处理方式至关重要，值得深入探讨。由于篇幅所限，我们在此无法进一步展开论述；有兴趣的读者可以参考 Privman（1990）撰写的综述文章，其中还收录了更多相关文献。与此相关的另一重要课题是"表面的临界行为"，可参考 Binder（1983）和 Diehl（1986）的相关著作。
+\section{问题}\label{ux95eeux9898_chap14}
+14.1. 证明，对于一个一维伊辛模型，若 \(l=2\)，其降维变换可以表示为转移矩阵 \(P\) 的形式：
+\begin{equation}\tag{14.4.107}\label{eq:14.4.107}
+P ^{\prime} \left\{ K ^{\prime} \right\} = P ^{2} \left\{ K \right\} ,
+\end{equation}
+其中 \(K\) 和 \(K'\) 分别为原始晶格与降维晶格的耦合常数。接下来，证明：若 \(P\) 如下给出，
+\begin{equation}\tag{14.4.108}\label{eq:14.4.108}
+( P \{ K \} ) = e ^{K _ { 0} } \left( \begin{array}{cc} { { e ^{K _ { 1} + K _ { 2 } } } } & { { e ^{- K _ { 1} } } } \\{ { e ^{- K _ { 1} } } } & { { e ^{K _ { 1} - K _ { 2 } } } } \end{array} \right) ,
+\end{equation}
+????13.2.4?????1??????????? \(K\) ? \(K\prime\) ??????????????\autoref{eq:14.2.7}?\autoref{eq:14.2.9}???
+14.2. ????14.2??????15???????????????????14?????????????????????????????8???? \(K\prime\)?????????11??????????????
+\begin{equation}\tag{14.4.109}\label{eq:14.4.109}
+f ( K _ { 1 } , K _ { 2 } ) = - \ln \left[ e ^{K _ { 1} } \cosh K _ { 2 } + \left\{ e ^{- 2 K _ { 1} } + e ^{2 K _ { 1} } \sinh ^{2} K _ { 2 } \right\} ^{1 / 2} \right] .
+\end{equation}
+14.3. ????14.2??????32???????????????????31?????????????????????????????25???? \(K\prime\)?????????27??????????????
+\begin{equation}\tag{14.4.110}\label{eq:14.4.110}
+f ( K _ { 1 } , K _ { 2 } , \Lambda ) = \frac { 1 } { 2 } \ln \left[ \frac { \Lambda + \sqrt { \Lambda ^{2} - K _ { 1 } ^{2} } } { 2 \pi } \right] - \frac { K _ { 2 } ^{2} } { 4 ( \Lambda - K _ { 1 } ) } ,
+\end{equation}
+其中 \(\Lambda\) 的值由约束方程决定。
+\begin{equation}\tag{14.4.111}\label{eq:14.4.111}
+\frac { \partial f } { \partial \Lambda } = \frac { 1 } { 2 \sqrt { \Lambda ^{2} - K _ { 1 } ^{2} } } + \frac { K _ { 2 } ^{2} } { 4 \left( \Lambda - K _ { 1 } \right) ^{2} } = \mathbf { 1 } .
+\end{equation}
+14.4. ??????????????????\autoref{eq:14.2.24}?????\autoref{eq:14.2.19}???? \(K_2\prime = K_2 = 0\)?? \(\sigma_j\prime = (2\Lambda/K_1)^{1/2}s_j\prime\) ????????????????????????
+\begin{equation}\tag{14.4.112}\label{eq:14.4.112}
+Q _ { N } ( K _ { 1 } , \Lambda ) = \left( \frac { 2 \pi } { K _ { 1 } } \right) ^{N ^ { \prime} / 2 } Q _ { N ^{\prime} } ( K _ { 1 } , \Lambda ^{\prime \prime} ) ,
+\end{equation}
+其中 \(N' = \frac{1}{2}N\)，\(\Lambda" = (2\Lambda^2/K_1) - K_1\)。由此得出泛函关系：
+\begin{equation}\tag{14.4.113}\label{eq:14.4.113}
+f ( K _ { 1 } , \Lambda ) = - \frac { 1 } { 4 } \ln \left( \frac { 2 \pi } { K _ { 1 } } \right) + \frac { 1 } { 2 } f ( K _ { 1 } , \Lambda ^{\prime \prime} ) .
+\end{equation}
+?????14.2.32??????????
+14.5. 对于正方形晶格，一种近似实现 RG 变换的方法，是由图~14.8所示的所谓米格达尔---卡达诺夫变换所提供的。该变换包含两个关键步骤：
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  首先，简单地移除晶格中一半的键，从而将晶格的长度尺度放大两倍；为弥补这一变化，剩余键的耦合强度从 \(J\) 改为 \(2J\)。这样，我们便从图~14.8(a) 进入图~14.8(b)。
+\item
+  接着，通过一系列一维消去变换，消除图~14.8(b) 中用十字标记的节点，最终得到图~14.8(c)，其耦合强度为 \(J'\)。
+\end{enumerate}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明，根据上述变换，平方晶格上自旋 \(\frac{1}{2}\) 的伊辛模型的递归关系为：
+\end{enumerate}
+\begin{equation}\tag{14.4.114}\label{eq:14.4.114}
+x ^{\prime} = 2 x ^{2} / ( 1 + x ^{4} ) ,
+\end{equation}
+其中 \(x = \exp(-2K)\)，\(x' = \exp(-2K')\)。不考虑平凡的固定点 \(x^* = 0\) 和 \(x^* = 1\)，请证明该变换的非平凡固定点为：
+\begin{equation}\tag{14.4.115}\label{eq:14.4.115}
+x ^{*} = \frac { 1 } { 3 } \left[ - 1 + 2 \sqrt { 2 } \sinh \left\{ \frac { 1 } { 3 } \sinh ^{- 1} \frac { 17 } { 2 \sqrt { 2 } } \right\} \right] \simeq 0 . 54 37 ;
+\end{equation}
+将此结果与实际的 \(x_{c}\) 值进行对比，即 \((\sqrt{2} - 1) \approx 0.4142\)。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  在该非平凡固定点附近进行线性化处理，证明该变换的特征值 \(\lambda\) 为：
+\end{enumerate}
+\begin{equation}\tag{14.4.116}\label{eq:14.4.116}
+\lambda = 2 ( 1 - x ^{*} ) / x ^{*} \simeq 1 . 67 85
+\end{equation}
+因此，指数 \(\nu = \ln 2 / \ln \lambda \approx 1.338\)；将其与实际的 \(\nu\) 值进行对比，即 1。
+使得 \((a_{11}a_{22}-a_{12}a_{21})\neq0\)。接下来，我们通过方程（14.3.13）引入"广义坐标"\(u_{1}\)和\(u_{2}\)；显然，\(u_{1}\)和\(u_{2}\)是系统参数 \(k_{1}\) 和 \(k_{2}\) 的某些线性组合。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明，在\((k_{1},k_{2})\)平面上，直线 \(u_{1}=0\) 和 \(u_{2}=0\) 的斜率分别为
+\end{enumerate}
+\begin{equation}\tag{14.4.117}\label{eq:14.4.117}
+m _ { 1 } = \frac { a _ { 21 } } { \lambda _ { 2 } - a _ { 22 } } = \frac { \lambda _ { 2 } - a _ { 11 } } { a _ { 12 } }  \mathrm { a n d }  m _ { 2 } = \frac { a _ { 21 } } { \lambda _ { 1 } - a _ { 22 } } = \frac { \lambda _ { 1 } - a _ { 11 } } { a _ { 12 } } ,
+\end{equation}
+分别对应；在此，\(\lambda_{1}\) 和 \(\lambda_{2}\) 分别是矩阵 \(\mathcal{A}_{l}^{*}\) 的特征值。验证：乘积 \(m_{1}m_{2}=-a_{21}/a_{12}\)，并且只有当 \(a_{12}=a_{21}\) 时，这两条直线才相互垂直。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  检查在特殊情况下，当 \(a_{12}=0\) 但 \(a_{21}\neq0\) 时，上述斜率会呈现出简单的形式
+\end{enumerate}
+\begin{equation}\tag{14.4.118}\label{eq:14.4.118}
+m _ { 1 } = \infty  \mathrm { a n d }  m _ { 2 } = a _ { 21 } / \left( a _ { 11 } - a _ { 22 } \right)
+\end{equation}
+而在特殊情况下，当 \(a_{21}=0\) 但 \(a_{12}\neq0\) 时，它们则变为
+\begin{equation}\tag{14.4.119}\label{eq:14.4.119}
+m _ { 1 } = ( a _ { 22 } - a _ { 11 } ) / a _ { 12 }  \mathrm { a n d }  m _ { 2 } = 0 ;
+\end{equation}
+请注意，图~14.7所描述的是后一种情况。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  同样考察那些 \(a_{11}\) 或 \(a_{22}\) 中至少有一个为零的情况；图~14.6所描述的就是后一种情形。
+\end{enumerate}
+14.7. ????? \(n \to \infty\) ???\autoref{eq:14.4.38}?\autoref{eq:14.4.40}??????????13.5????????????????????? \(d \lesssim 4\)?
+14.8. ?\autoref{eq:14.4.43}?\autoref{eq:14.4.46}???????? \(d \lesssim 4\)
+\begin{equation}\tag{14.4.120}\label{eq:14.4.120}
+\eta \simeq \frac { 1 } { 2 n } \varepsilon ^{2} ,  \gamma \simeq 1 + \frac { 1 } { 2 } \left( 1 - \frac { 6 } { n } \right) \varepsilon ,  \alpha \simeq - \frac { 1 } { 2 } \left( 1 - \frac { 12 } { n } \right) \varepsilon ,
+\end{equation}
+?? \(\varepsilon=(4-d)\ll1\)??????????? \(n\gg1\) ???\autoref{eq:14.4.38}?\autoref{eq:14.4.40}????????
+14.9. ??????????\autoref{eq:14.4.43}?\autoref{eq:14.4.45}??????? \(\beta\)?\(\delta\) ? \(\nu\) ??????????????????????????
+
+
+

@@ -1,0 +1,163 @@
+\contentsline {chapter}{\numberline {1}热力学的统计学基础}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}宏观状态与微观状态}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}统计学与热力学之间的联系：\(\Omega (N, V, E)\)这一数值的物理意义}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}经典理想气体}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}混合熵与吉布斯悖论}{12}{section.1.4}%
+\contentsline {section}{\numberline {1.5}"正确"的微态枚举}{15}{section.1.5}%
+\contentsline {section}{\numberline {1.6}问题}{16}{section.1.6}%
+\contentsline {chapter}{\numberline {2}集合论的基本要素}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}经典系统的相空间}{18}{section.2.1}%
+\contentsline {section}{\numberline {2.2}刘维尔定理及其推论}{19}{section.2.2}%
+\contentsline {section}{\numberline {2.3}微正则系综}{21}{section.2.3}%
+\contentsline {section}{\numberline {2.4}示例}{23}{section.2.4}%
+\contentsline {section}{\numberline {2.5}问题}{26}{section.2.5}%
+\contentsline {chapter}{\numberline {3}常规集合}{28}{chapter.3}%
+\contentsline {section}{\numberline {3.1}系统与热库之间的平衡}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}正则系综中的系统}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}正则系综中各统计量的物理意义}{35}{section.3.3}%
+\contentsline {section}{\numberline {3.4}分配函数的其他表达式}{37}{section.3.4}%
+\contentsline {section}{\numberline {3.5}正则系综中的能量波动：与微正则系综的对应关系}{41}{section.3.5}%
+\contentsline {section}{\numberline {3.6}两个定理——"能量均分定理"与"维里定理"}{44}{section.3.6}%
+\contentsline {section}{\numberline {3.7}基于谐振子的系统}{46}{section.3.7}%
+\contentsline {section}{\numberline {3.8}问题}{53}{section.3.8}%
+\contentsline {chapter}{\numberline {4}巨观规范态}{61}{chapter.4}%
+\contentsline {section}{\numberline {4.1}系统与粒子-能量储罐之间的平衡}{61}{section.4.1}%
+\contentsline {section}{\numberline {4.2}巨正则系综中的系统}{62}{section.4.2}%
+\contentsline {section}{\numberline {4.3}各种统计量的物理意义}{63}{section.4.3}%
+\contentsline {section}{\numberline {4.4}示例}{65}{section.4.4}%
+\contentsline {section}{\numberline {4.5}巨正则系综中的密度与能量涨落：与其他系综的对应关系}{69}{section.4.5}%
+\contentsline {section}{\numberline {4.6}热力学相图}{71}{section.4.6}%
+\contentsline {section}{\numberline {4.7}问题}{74}{section.4.7}%
+\contentsline {chapter}{\numberline {5}量子统计的表述}{77}{chapter.5}%
+\contentsline {section}{\numberline {5.1}量子力学中的统计理论：密度矩阵}{77}{section.5.1}%
+\contentsline {section}{\numberline {5.2}各种统计系综的统计特性}{80}{section.5.2}%
+\contentsline {section}{\numberline {5.3}微正则系综}{80}{section.5.3}%
+\contentsline {section}{\numberline {5.4}正则系综}{82}{section.5.4}%
+\contentsline {section}{\numberline {5.5}巨正则系综}{83}{section.5.5}%
+\contentsline {section}{\numberline {5.6}示例}{83}{section.5.6}%
+\contentsline {section}{\numberline {5.7}磁场中的电子}{83}{section.5.7}%
+\contentsline {section}{\numberline {5.8}箱内自由粒子}{84}{section.5.8}%
+\contentsline {section}{\numberline {5.9}线性谐振子}{86}{section.5.9}%
+\contentsline {section}{\numberline {5.10}自由粒子系统的密度矩阵与配分函数}{92}{section.5.10}%
+\contentsline {chapter}{\numberline {6}简单气体理论}{98}{chapter.6}%
+\contentsline {section}{\numberline {6.1}在量子力学微正则系综中的理想气体}{98}{section.6.1}%
+\contentsline {section}{\numberline {6.2}其他量子力学系综下的理想气体}{101}{section.6.2}%
+\contentsline {section}{\numberline {6.3}占据数的统计性质}{104}{section.6.3}%
+\contentsline {section}{\numberline {6.4}动力学考量}{106}{section.6.4}%
+\contentsline {section}{\numberline {6.5}由具有内部运动的分子构成的气体系统}{107}{section.6.5}%
+\contentsline {section}{\numberline {6.6}单原子分子}{108}{section.6.6}%
+\contentsline {section}{\numberline {6.7}B 二原子分子}{109}{section.6.7}%
+\contentsline {section}{\numberline {6.8}化学平衡}{116}{section.6.8}%
+\contentsline {section}{\numberline {6.9}问题}{118}{section.6.9}%
+\contentsline {chapter}{\numberline {7}理想玻色系统}{124}{chapter.7}%
+\contentsline {section}{\numberline {7.1}理想玻色气体的热力学行为}{124}{section.7.1}%
+\contentsline {section}{\numberline {7.2}超冷原子气体中的玻色-爱因斯坦凝聚}{131}{section.7.2}%
+\contentsline {section}{\numberline {7.3}A 玻色-爱因斯坦凝聚的探测}{133}{section.7.3}%
+\contentsline {section}{\numberline {7.4}B 玻色-爱因斯坦凝聚体的热力学性质}{134}{section.7.4}%
+\contentsline {section}{\numberline {7.5}黑体辐射的热力学}{136}{section.7.5}%
+\contentsline {section}{\numberline {7.6}声波领域}{139}{section.7.6}%
+\contentsline {section}{\numberline {7.7}声场的惯性密度}{143}{section.7.7}%
+\contentsline {section}{\numberline {7.8}问题}{150}{section.7.8}%
+\contentsline {chapter}{\numberline {8}理想费米系统}{155}{chapter.8}%
+\contentsline {section}{\numberline {8.1}理想费米气体的热力学行为}{155}{section.8.1}%
+\contentsline {section}{\numberline {8.2}B 兰道磁化率}{163}{section.8.2}%
+\contentsline {section}{\numberline {8.3}A 热电子发射（理查德森效应）}{168}{section.8.3}%
+\contentsline {section}{\numberline {8.4}原子的统计模型}{174}{section.8.4}%
+\contentsline {section}{\numberline {8.5}问题}{176}{section.8.5}%
+\contentsline {chapter}{\numberline {9}热力学与早期宇宙}{180}{chapter.9}%
+\contentsline {section}{\numberline {9.1}大爆炸的观测证据}{180}{section.9.1}%
+\contentsline {section}{\numberline {9.2}相对论电子、正电子与中微子}{183}{section.9.2}%
+\contentsline {section}{\numberline {9.3}中子分数}{185}{section.9.3}%
+\contentsline {section}{\numberline {9.4}正电子与电子的湮灭}{186}{section.9.4}%
+\contentsline {section}{\numberline {9.5}原始核合成}{188}{section.9.5}%
+\contentsline {section}{\numberline {9.6}再结合}{189}{section.9.6}%
+\contentsline {chapter}{\numberline {10}相互作用的系统统计力学：簇展开方法}{193}{chapter.10}%
+\contentsline {section}{\numberline {10.1}经典气体的簇展开}{193}{section.10.1}%
+\contentsline {section}{\numberline {10.2}状态方程的维里展开}{198}{section.10.2}%
+\contentsline {section}{\numberline {10.3}维里系数的评估}{199}{section.10.3}%
+\contentsline {section}{\numberline {10.4}关于簇展开的一般评论}{202}{section.10.4}%
+\contentsline {section}{\numberline {10.5}第二维里系数的精确处理}{206}{section.10.5}%
+\contentsline {section}{\numberline {10.6}量子力学系统的簇展开}{210}{section.10.6}%
+\contentsline {section}{\numberline {10.7}相关性和散射}{214}{section.10.7}%
+\contentsline {section}{\numberline {10.8}静态结构因子}{216}{section.10.8}%
+\contentsline {section}{\numberline {10.9}问题}{218}{section.10.9}%
+\contentsline {chapter}{\numberline {11}相互作用系统的统计力学：量子场方法}{223}{chapter.11}%
+\contentsline {section}{\numberline {11.1}二次量子化的理论框架}{223}{section.11.1}%
+\contentsline {section}{\numberline {11.2}非理想玻色气体的低温行为}{230}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}相互作用对超冷原子玻色-爱因斯坦凝聚的影响}{233}{subsection.11.2.1}%
+\contentsline {section}{\numberline {11.3}非理想玻色气体的低激发态}{234}{section.11.3}%
+\contentsline {section}{\numberline {11.4}玻色液体的能量谱}{237}{section.11.4}%
+\contentsline {section}{\numberline {11.5}量子化环流态}{239}{section.11.5}%
+\contentsline {section}{\numberline {11.6}量子化涡旋环与超流性的破缺}{242}{section.11.6}%
+\contentsline {section}{\numberline {11.7}费米液体的能量谱：朗道唯象理论}{247}{section.11.7}%
+\contentsline {section}{\numberline {11.8}费米系统的凝聚}{252}{section.11.8}%
+\contentsline {chapter}{\numberline {12}相变：临界现象、普遍性与标度行为}{258}{chapter.12}%
+\contentsline {section}{\numberline {12.1}关于凝聚问题的一般性说明}{259}{section.12.1}%
+\contentsline {section}{\numberline {12.2}范德华气体的凝结}{261}{section.12.2}%
+\contentsline {section}{\numberline {12.3}相变的动力学模型}{264}{section.12.3}%
+\contentsline {section}{\numberline {12.4}晶格气体与二元合金}{267}{section.12.4}%
+\contentsline {section}{\numberline {12.5}零次近似下的伊辛模型}{270}{section.12.5}%
+\contentsline {section}{\numberline {12.6}关键指数}{279}{section.12.6}%
+\contentsline {section}{\numberline {12.7}热力学不等式}{282}{section.12.7}%
+\contentsline {section}{\numberline {12.8}朗道的唯象理论}{285}{section.12.8}%
+\contentsline {section}{\numberline {12.9}热力学函数的标度假设}{288}{section.12.9}%
+\contentsline {section}{\numberline {12.10}相关性和涨落的作用}{291}{section.12.10}%
+\contentsline {section}{\numberline {12.11}临界指数 \(\nu \) 和 \(\eta \)}{296}{section.12.11}%
+\contentsline {section}{\numberline {12.12}最后一瞥：平均场理论}{298}{section.12.12}%
+\contentsline {section}{\numberline {12.13}问题}{301}{section.12.13}%
+\contentsline {chapter}{\numberline {13}相变：各类模型的精确（或近乎精确）结果}{308}{chapter.13}%
+\contentsline {section}{\numberline {13.1}一维流体模型}{308}{section.13.1}%
+\contentsline {section}{\numberline {13.2}A 环形硬球}{309}{section.13.2}%
+\contentsline {section}{\numberline {13.3}B 一维流体的等压系综}{310}{section.13.3}%
+\contentsline {section}{\numberline {13.4}一维中的\(n\)维向量模型}{314}{section.13.4}%
+\contentsline {section}{\numberline {13.5}低温展开}{320}{section.13.5}%
+\contentsline {section}{\numberline {13.6}其他性质}{323}{section.13.6}%
+\contentsline {section}{\numberline {13.7}A 有限尺寸晶格上的二维伊辛模型}{324}{section.13.7}%
+\contentsline {section}{\numberline {13.8}热力学函数}{330}{section.13.8}%
+\contentsline {section}{\numberline {13.9}临界行为}{332}{section.13.9}%
+\contentsline {section}{\numberline {13.10}任意维度下的理想玻色气体}{337}{section.13.10}%
+\contentsline {section}{\numberline {13.11}其他模型}{342}{section.13.11}%
+\contentsline {section}{\numberline {13.12}约化群方法}{344}{section.13.12}%
+\contentsline {section}{\numberline {13.13}Monte Carlo 方法}{344}{section.13.13}%
+\contentsline {section}{\numberline {13.14}问题}{346}{section.13.14}%
+\contentsline {chapter}{\numberline {14}相变：重正化群方法}{353}{chapter.14}%
+\contentsline {section}{\numberline {14.1}标度理论的概念基础}{353}{section.14.1}%
+\contentsline {section}{\numberline {14.2}B 一维球形模型}{358}{section.14.2}%
+\contentsline {section}{\numberline {14.3}C 二维伊辛模型}{360}{section.14.3}%
+\contentsline {section}{\numberline {14.4}重整化群：一般性表述}{362}{section.14.4}%
+\contentsline {section}{\numberline {14.5}D \(\epsilon \) 级数展开}{370}{section.14.5}%
+\contentsline {section}{\numberline {14.6}E 1/n 展开式}{372}{section.14.6}%
+\contentsline {section}{\numberline {14.7}F 其他主题}{373}{section.14.7}%
+\contentsline {section}{\numberline {14.8}有限尺寸标度}{374}{section.14.8}%
+\contentsline {section}{\numberline {14.9}问题}{381}{section.14.9}%
+\contentsline {chapter}{\numberline {15}涨落与非平衡统计力学}{384}{chapter.15}%
+\contentsline {section}{\numberline {15.1}平衡热力学涨落}{384}{section.15.1}%
+\contentsline {section}{\numberline {15.2}爱因斯坦-斯莫卢霍夫斯基的布朗运动理论}{388}{section.15.2}%
+\contentsline {section}{\numberline {15.3}朗之万理论下的布朗运动}{392}{section.15.3}%
+\contentsline {section}{\numberline {15.4}A ?????????}{398}{section.15.4}%
+\contentsline {section}{\numberline {15.5}波动-耗散定理}{409}{section.15.5}%
+\contentsline {section}{\numberline {15.6}B ?????}{415}{section.15.6}%
+\contentsline {section}{\numberline {15.7}问题}{421}{section.15.7}%
+\contentsline {chapter}{\numberline {16}计算机模拟}{426}{chapter.16}%
+\contentsline {section}{\numberline {16.1}引言与统计学}{426}{section.16.1}%
+\contentsline {section}{\numberline {16.2}蒙特卡洛模拟}{428}{section.16.2}%
+\contentsline {section}{\numberline {16.3}A 梅特罗波利斯蒙特卡洛算法}{429}{section.16.3}%
+\contentsline {section}{\numberline {16.4}A 分子动力学算法}{432}{section.16.4}%
+\contentsline {section}{\numberline {16.5}粒子模拟}{433}{section.16.5}%
+\contentsline {section}{\numberline {16.6}A 硬球的模拟}{433}{section.16.6}%
+\contentsline {section}{\numberline {16.7}计算机模拟的局限性}{435}{section.16.7}%
+\contentsline {section}{\numberline {16.8}问题}{436}{section.16.8}%
+\contentsline {section}{\numberline {A}边界条件对量子态分布的影响}{438}{section.Alph0.1}%
+\contentsline {section}{\numberline {B}某些数学函数}{440}{section.Alph0.2}%
+\contentsline {section}{\numberline {C}"体积"与"表面积"——n维球体的体积，半径为 \(R\)}{445}{section.Alph0.3}%
+\contentsline {section}{\numberline {D}关于玻色-爱因斯坦函数}{447}{section.Alph0.4}%
+\contentsline {section}{\numberline {E}关于费米-狄拉克函数}{449}{section.Alph0.5}%
+\contentsline {section}{\numberline {F}一种对理想玻色气体及玻色-爱因斯坦凝聚起始阶段的严格分析}{451}{section.Alph0.6}%
+\contentsline {section}{\numberline {G}关于沃森函数}{455}{section.Alph0.7}%
+\contentsline {section}{\numberline {H}热力学关系}{457}{section.Alph0.8}%
+\contentsline {section}{\numberline {I}熵 \(S(N,V,U)\) 与微正则系综}{457}{section.Alph0.9}%
+\contentsline {section}{\numberline {J}赫尔姆霍兹自由能 \(A(N,V,T)=U-TS\) 与规范系综}{458}{section.Alph0.10}%
+\contentsline {section}{\numberline {K}热力学势 \(\Pi (\mu ,V,T)=-A+\mu N=PV\) 与大正则系综}{458}{section.Alph0.11}%
+\contentsline {section}{\numberline {L}算法}{463}{section.Alph0.12}%
+\contentsline {section}{\numberline {M}高斯分布的伪随机数}{463}{section.Alph0.13}%
+\contentsline {chapter}{Appendix}{438}{AMS.2818}%

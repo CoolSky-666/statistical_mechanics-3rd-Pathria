@@ -1,0 +1,806 @@
+﻿\chapter{理想费米系统}\label{ux7406ux60f3ux8d39ux7c73ux7cfbux7edf}
+\section{理想费米气体的热力学行为}\label{ux7406ux60f3ux8d39ux7c73ux6c14ux4f53ux7684ux70edux529bux5b66ux884cux4e3a}
+根据第6.1节和第6.2节，我们得到理想费米气体的以下结果
+\begin{equation}\tag{8.1.1}\label{eq:8.1.1}
+\frac { P V } { k T } \equiv \ln Q = \sum _ { \varepsilon } \ln ( 1 + z e ^{- \beta \varepsilon} )
+\end{equation}
+并且
+\begin{equation}\tag{8.1.2}\label{eq:8.1.2}
+N \equiv \sum _ { \varepsilon } \langle n _ { \varepsilon } \rangle = \sum _ { \varepsilon } \frac { 1 } { \mathcal { Z } ^{- 1} e ^{\beta \varepsilon} + 1 } ,
+\end{equation}
+其中 \(\beta=1/kT\)，\(z=\exp(\mu/kT)\)。与玻色系统不同，费米系统的参数 \(z\) 可以取任意非限制值：\(0\leq z<\infty\)。此外，鉴于泡利不相容原理，在这种情况下，根本不会出现大量粒子占据同一能级的现象；因此，这里不存在类似玻色-爱因斯坦凝聚的现象。不过，在足够低的温度下，费米气体仍会展现出其独特的量子行为，对其深入研究具有极高的物理意义。
+如果我们用相应的积分代替对 \(\varepsilon\) 的求和，那么在非相对论气体的情况下，\autoref{eq:8.1.1}和\autoref{eq:8.1.2}将变为
+\begin{equation}\tag{8.1.3}\label{eq:8.1.3}
+\frac { P } { k T } = \frac { g } { \lambda ^{3} } f _ { 5 / 2 } ( z )
+\end{equation}
+并且
+\begin{equation}\tag{8.1.4}\label{eq:8.1.4}
+\frac { N } { V } = \frac { g } { \lambda ^{3} } f _ { 3 / 2 } ( z ) ,
+\end{equation}
+其中 g 是由粒子的"内部结构"（例如 \(自旋\)）所引发的权重因子，\(\lambda\) 是粒子的平均热波长。
+\begin{equation}\tag{8.1.5}\label{eq:8.1.5}
+\lambda = h / ( 2 \pi m k T ) ^{1 / 2} ,
+\end{equation}
+而 \(f_{\nu}(z)\) 是由费米-狄拉克函数定义的，具体见附录E，
+\begin{equation}\tag{8.1.6}\label{eq:8.1.6}
+f _ { \nu } ( z ) = \frac { 1 } { \Gamma ( \nu ) } \int _ { 0 } ^{\infty} \frac { x ^{\nu - 1} d x } { z ^{- 1} e ^{x} + 1 } = z - \frac { z ^{2} } { 2 ^{\nu} } + \frac { z ^{3} } { 3 ^{\nu} } - \cdots .
+\end{equation}
+通过消去\autoref{eq:8.1.3}和\autoref{eq:8.1.4}中的 \(z\)，我们得到了费米气体的状态方程。
+费米气体的内能 \(U\) 由以下公式给出
+\begin{equation}\tag{8.1.7}\label{eq:8.1.7}
+\begin{array}{rl} & { U \equiv - \left( \frac { \partial } { \partial \beta } \ln \mathcal { Q } \right) _ { z , V } = k T ^{2} \left( \frac { \partial } { \partial T } \ln \mathcal { Q } \right) _ { z , V } } \\& { = \frac { 3 } { 2 } k T \frac { g V } { \lambda ^{3} } f _ { 5 / 2 } ( z ) = \frac { 3 } { 2 } N k T \frac { f _ { 5 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } ; } \end{array}
+\end{equation}
+因此，从广义上讲，该系统满足以下关系
+\begin{equation}\tag{8.1.8}\label{eq:8.1.8}
+P = \frac { 2 } { 3 } ( U / V ) .
+\end{equation}
+气体的比热 \(C_{V}\) 可以通过对\autoref{eq:8.1.7}关于 \(T\) 求导、同时保持 \(N\) 和 \(V\) 不变，并借助以下关系获得
+\begin{equation}\tag{8.1.9}\label{eq:8.1.9}
+\frac { 1 } { z } \left( \frac { \partial z } { \partial T } \right) _ { \nu } = - \frac { 3 } { 2 T } \frac { f _ { 3 / 2 } ( z ) } { f _ { 1 / 2 } ( z ) } ,
+\end{equation}
+这一结果源于\autoref{eq:8.1.4}以及附录E中的递推公式（E.6）。最终结果为
+\begin{equation}\tag{8.1.10}\label{eq:8.1.10}
+\frac { C _ { V } } { N k } = \frac { 15 } { 4 } \frac { f _ { 5 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } - \frac { 9 } { 4 } \frac { f _ { 3 / 2 } ( z ) } { f _ { 1 / 2 } ( z ) } .
+\end{equation}
+对于气体的亥姆霍兹自由能，我们得到
+\begin{equation}\tag{8.1.11}\label{eq:8.1.11}
+A \equiv N \mu - P V = N k T \left\{ \ln z - \frac { f _ { 5 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } \right\} ,
+\end{equation}
+以及熵
+\begin{equation}\tag{8.1.12}\label{eq:8.1.12}
+S \equiv \frac { U - A } { T } = N k \left\{ \frac { 5 } { 2 } \frac { f _ { 5 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } - \ln z \right\} .
+\end{equation}
+为了根据粒子密度 \(n\)（\(= N/V\)）和温度 \(T\) 来确定费米气体的各种性质，我们需要了解参数 \(z\) 与 \(n\) 和 \(T\) 之间的函数关系；这些信息在形式上蕴含于隐含关系\autoref{eq:8.1.4}中。若需进行详细研究，有时不得不借助对 \(f_{\nu}(z)\) 函数的数值计算；然而，若要获得物理上的理解，这些函数的各种极限形式同样能够很好地发挥作用（详见附录E）。
+如今，如果气体的密度非常低，且/或温度极高，那么情况可能对应于
+\begin{equation}\tag{8.1.13}\label{eq:8.1.13}
+f _ { 3 / 2 } ( z ) = \frac { n \lambda ^{3} } { g } = \frac { n h ^{3} } { g ( 2 \pi m k T ) ^{3 / 2} } \ll 1 ;
+\end{equation}
+我们在此将气体视为非简并气体，因此其性质等同于第3.5节中所讨论的经典理想气体。鉴于\autoref{eq:8.1.6}的推导过程，这表明 \(z \ll 1\)，从而 \(f_{\nu}(z) \simeq z\)。由此，气体的各项热力学性质可表示为：
+\begin{equation}\tag{8.1.14}\label{eq:8.1.14}
+P = N k T / V ,  U = \frac { 3 } { 2 } N k T ,  C _ { V } = \frac { 3 } { 2 } N k ,
+\end{equation}
+\begin{equation}\tag{8.1.15}\label{eq:8.1.15}
+A = N k T \left\{ \ln \left( \frac { n \lambda ^{3} } { g } \right) - 1 \right\} ,
+\end{equation}
+并且
+\begin{equation}\tag{8.1.16}\label{eq:8.1.16}
+S = N k \left\{ \frac { 5 } { 2 } - \ln \left( \frac { n \lambda ^{3} } { g } \right) \right\} .
+\end{equation}
+若参数 \(z\) 相较于一而言较小，但又并非极其微小，则我们应更充分地利用级数\autoref{eq:8.1.6}，以在\autoref{eq:8.1.3}和\autoref{eq:8.1.4}之间消去 \(z\)。其操作步骤与相应的玻色气体情形完全相同：首先对\autoref{eq:8.1.4}中出现的级数进行求逆，得到 \(z\) 的幂级数展开式，然后将该展开式代入\autoref{eq:8.1.3}中出现的级数。此时，状态方程将呈现维里展开的形式。
+\begin{equation}\tag{8.1.17}\label{eq:8.1.17}
+\frac { P V } { N k T } = \sum _ { l = 1 } ^{\infty} ( - 1 ) ^{l - 1} a _ { l } \left( \frac { \lambda ^{3} } { g \nu } \right) ^{l - 1} ,
+\end{equation}
+其中 \(\nu=1/n\)，而系数 \(a_{l}\) 与\autoref{eq:7.1.14}中所列相同，但符号与玻色气体的情形相反，呈交替变化。尤其在比热方面，我们得到：
+\begin{equation}\tag{8.1.18}\label{eq:8.1.18}
+\begin{array}{rl} & { C _ { V } = \frac { 3 } { 2 } N k \sum _ { l = 1 } ^{\infty} ( - 1 ) ^{l - 1} \frac { 5 - 3 l } { 2 } a _ { l } \left( \frac { \lambda ^{3} } { g v } \right) ^{l - 1} } \\& { = \frac { 3 } { 2 } N k \left[ 1 - 0 . 08 84 \left( \frac { \lambda ^{3} } { g v } \right) + 0 . 00 66 \left( \frac { \lambda ^{3} } { g v } \right) ^{2} - 0 . 00 04 \left( \frac { \lambda ^{3} } { g v } \right) ^{3} + \cdots \right] . } \end{array}
+\end{equation}
+因此，在有限温度下，气体的比热低于其极限值 \(\frac{3}{2}Nk\)。正如后续章节所将看到的那样，理想费米气体的比热会随着气体温度的降低而单调递减；请参阅本节稍后的图~8.2，并将其与理想玻色气体对应的图~7.4进行对比。
+若密度 \(n\) 和温度 \(T\) 的值使得参数 \((n\lambda^{3}/g)\) 大约等于一，那么上述展开式便难以发挥太大作用。在这种情况下，可能不得不借助数值计算来求解。不过，若 \((n\lambda^{3}/g) \gg 1\)，则相关函数可以表示为以 \((\ln z)^{-1}\) 为幂的渐近展开式；此时，我们便将气体视为简并气体。随着 \((n\lambda^{3}/g)\) 趋向无穷大，我们的函数将呈现出封闭形式，从而使得系统各项热力学量的表达式变为：
+经过高度简化后，我们便将气体视为完全简并气体。为便于理解，我们先从完全简并态出发，探讨系统的主要特征。
+在 \(T \to 0\) 的极限条件下，即 \((n\lambda^3/g) \to \infty\)，单粒子能级 \(\varepsilon(\mathbf{p})\) 的平均占据数变为：
+\begin{equation}\tag{8.1.19}\label{eq:8.1.19}
+\langle n _ { \varepsilon } \rangle \equiv \frac { 1 } { e ^{( \varepsilon - \mu ) / k T} + 1 } = \left\{ \begin{array}{lll} { 1 } & { \mathrm { f o r } } & { \varepsilon < \mu _ { 0 } } \\{ 0 } & { \mathrm { f o r } } & { \varepsilon > \mu _ { 0 } , } \end{array} \right.
+\end{equation}
+其中，\(\mu_{0}\) 是系统在 \(T=0\) 时的化学势。因此，函数 \(\langle n_{\varepsilon}\rangle\) 是一个阶跃函数，在从 \(\varepsilon=0\) 到 \(\varepsilon=\mu_{0}\) 这一区间内始终维持常数值 1，随后突然降至最低值 0——详见图~8.1 中的虚线所示。由此可见，在 \(T=0\) 时，所有单粒子能级（直至 \(\varepsilon=\mu_{0}\)）均被"完全"填满，每个能级上都占据一个粒子（符合泡利原理），而所有 \(\varepsilon>\mu_{0}\) 的单粒子能级则全部处于空置状态。通常将极限能量 \(\mu_{0}\) 称为系统的费米能级，并用符号 \(\varepsilon_{F}\) 表示；相应的单粒子动量则被称为费米动量，用符号 \(p_{F}\) 表示。这些参数的定义方程为：
+\begin{equation}\tag{8.1.20}\label{eq:8.1.20}
+\int _ { 0 } ^{\varepsilon _ { F} } a ( \varepsilon ) d \varepsilon = N ,
+\end{equation}
+其中，\(a(\varepsilon)\) 表示系统的态密度，其表达式为：
+\begin{equation}\tag{8.1.21}\label{eq:8.1.21}
+a ( \varepsilon ) = \frac { g V } { h ^{3} } 4 \pi p ^{2} \frac { d p } { d \varepsilon } .
+\end{equation}
+我们很容易得出
+\begin{equation}\tag{8.1.22}\label{eq:8.1.22}
+N = \frac { 4 \pi g V } { 3 h ^{3} } p _ { F } ^{3} ,
+\end{equation}
+由此可得
+\begin{equation}\tag{8.1.23}\label{eq:8.1.23}
+p _ { F } = \left( \frac { 3 N } { 4 \pi g V } \right) ^{1 / 3} h ;
+\end{equation}
+由此可得
+\begin{equation}\tag{8.1.24}\label{eq:8.1.24}
+\frac { E _ { 0 } } { N } = \frac { 3 p _ { F } ^{2} } { 10 m } = \frac { 3 } { 5 } \varepsilon _ { F } .
+\end{equation}
+系统的基态压力则由以下公式给出
+\begin{equation}\tag{8.1.25}\label{eq:8.1.25}
+P _ { 0 } = \frac { 2 } { 3 } ( E _ { 0 } / V ) = \frac { 2 } { 5 } n \varepsilon _ { F } .
+\end{equation}
+将 \(\varepsilon_{F}\) 代入上述表达式，可得
+\begin{equation}\tag{8.1.26}\label{eq:8.1.26}
+P _ { 0 } = \left( \frac { 6 \pi ^{2} } { g } \right) ^{2 / 3} \frac { \hbar ^{2} } { 5 m } n ^{5 / 3} \propto n ^{5 / 3} .
+\end{equation}
+此处所观察到的零点运动，显然是由于泡利原理而产生的量子效应。根据泡利原理，即使在 \(T=0\)K 时，构成系统的粒子也无法稳定地定位于单一的能量态（正如我们在玻色体系中所见），因此它们会被分散到足够多的最低可用能级之中。正因如此，即便在绝对零度下，费米体系依然充满活力！
+若要探讨系统的比热、熵等性质，我们还需将研究范围扩展至有限温度。如果我们决定仅关注低温情况，则与基态结果的偏差不会太大；因此，基于函数 \(f_{\nu}(z)\) 的渐近展开式进行分析，将十分合适。不过，在此之前，借助该表达式对实际情况进行物理评估，似乎更为有益。
+\begin{equation}\tag{8.1.27}\label{eq:8.1.27}
+\langle n _ { \varepsilon } \rangle = \frac { 1 } { e ^{( \varepsilon - \mu ) / k T} + 1 } .
+\end{equation}
+对应于 \(T=0\) 的情形在\autoref{eq:8.1.19} 中得到了总结，并以阶跃函数的形式在图~8.1 中展示出来。当 \(T\) 为有限值（但仍然远小于特征温度 \(\mu_0/k\)）时，与这一情形的偏差只有在那些满足以下条件的 \(\varepsilon\) 值下才会变得显著：
+量 \((\varepsilon - \mu)/kT\) 的大小约为一个单位（否则，\autoref{eq:8.1.29} 中的指数项将与基态值 \(e^{\pm\infty}\) 相差无几）；请参阅图~8.1 中的实线曲线。
+因此，我们得出结论：粒子的热激发仅发生在一条狭窄的能量范围内，该范围位于能量值 \(\varepsilon=\mu_{0}\) 附近，且其宽度为 \(O(kT)\)。因此，热激发的粒子所占比例为 \(O(kT/\varepsilon_{F})\)——系统中的大部分粒子仍未受到温度上升的影响。¹ 这正是简并费米系统的最显著特征，也是导致该系统物理行为与相应经典系统之间在定性与定量上存在差异的根本原因。
+为了完成论证，我们注意到，由于每颗"激发"粒子所具有的热能为 \(O(kT)\)，整个系统的热能将为 \(O(Nk^2T^2/\varepsilon_F)\)；相应地，系统的比热将为 \(O(Nk \cdot kT/\varepsilon_F)\)。由此可见，费米系统的低温比热与经典值 \(\frac{3}{2}Nk\) 相比，不仅在数值上大幅降低，而且还呈现出温度依赖性（随温度变化，呈 \(T^1\) 形式）。我们会反复看到，\(C_V\) 随温度升高而呈现的一次方依赖关系，是费米系统在低温下的典型特征。
+在对费米气体在有限但低温下的进行解析研究时，我们发现，在绝对零度时取值为无穷大的 \(z\)，如今已变为有限值，尽管与 1 相比依然偏大。因此，函数 \(f_{\nu}(z)\) 可以表示为 \((\ln z)^{-1}\) 的幂级数展开式；请参阅附录 E 中的索默费尔德引理（E.17）。对于我们当前所关注的 \(\nu\) 值——即 \(\frac{5}{2}\)、\(\frac{3}{2}\) 和 \(\frac{1}{2}\)——在第一近似中，
+\begin{equation}\tag{8.1.28}\label{eq:8.1.28}
+f _ { 5 / 2 } ( z ) = \frac { 8 } { 15 \pi ^{1 / 2} } ( \ln z ) ^{5 / 2} \left[ 1 + \frac { 5 \pi ^{2} } { 8 } ( \ln z ) ^{- 2} + \cdots \right] ,
+\end{equation}
+\begin{equation}\tag{8.1.29}\label{eq:8.1.29}
+f _ { 3 / 2 } ( z ) = \frac { 4 } { 3 \pi ^{1 / 2} } ( \ln z ) ^{3 / 2} \left[ 1 + \frac { \pi ^{2} } { 8 } ( \ln z ) ^{- 2} + \cdots \right] ,
+\end{equation}
+以及
+\begin{equation}\tag{8.1.30}\label{eq:8.1.30}
+f _ { 1 / 2 } ( z ) = \frac { 2 } { \pi ^{1 / 2} } ( \ln z ) ^{1 / 2} \left[ 1 - \frac { \pi ^{2} } { 24 } ( \ln z ) ^{- 2} + \cdots \right] .
+\end{equation}
+将\autoref{eq:8.1.29}代入\autoref{eq:8.1.4}，我们得到
+\begin{equation}\tag{8.1.31}\label{eq:8.1.31}
+\frac { N } { V } = \frac { 4 \pi g } { 3 } \left( \frac { 2 m } { h ^{2} } \right) ^{3 / 2} ( k T \mathrm { l n } z ) ^{3 / 2} \left[ 1 + \frac { \pi ^{2} } { 8 } ( \mathrm { l n } z ) ^{- 2} + \cdots \right] .
+\end{equation}
+\(^{1}\)因此，我们把在 \(T=0\) 时已填满的所有能级统称为"费米海"，而当 \(T>0\) 时，那些处于能级顶部附近被激发的少数粒子，则被称作"海面上的薄雾"。从物理意义上讲，这种现象的根源再次在于泡利不相容原理：根据该原理，若能级 \(\varepsilon+\varepsilon_{T}\) 已经被填满，那么能量为 \(\varepsilon\) 的费米子就无法吸收一个热激发量子 \(\varepsilon_{T}\)。由于 \(\varepsilon_{T}=O(kT)\)，只有那些占据能级顶部附近、能量至多达到 \(O(kT)\) 的费米子，才有可能被热激发，从而跃迁至尚未被填满的能级。
+在零阶近似下，这可得
+\begin{equation}\tag{8.1.32}\label{eq:8.1.32}
+k T \ln z \equiv \mu \simeq \left( \frac { 3 N } { 4 \pi g V } \right) ^{2 / 3} \frac { h ^{2} } { 2 m } ,
+\end{equation}
+这一结果与基态下的结果 \(\mu_{0}=\varepsilon_{F}\) 完全相同；详见\autoref{eq:8.1.24}。在下一阶近似中，我们得到
+\begin{equation}\tag{8.1.33}\label{eq:8.1.33}
+k T \mathrm { l n } z \equiv \mu \simeq \varepsilon _ { F } \left[ 1 - \frac { \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} \right] .
+\end{equation}
+将\autoref{eq:8.1.30}和\autoref{eq:8.1.31}代入\autoref{eq:8.1.7}，我们得到
+\begin{equation}\tag{8.1.34}\label{eq:8.1.34}
+\frac { U } { N } = \frac { 3 } { 5 } ( k T \ln z ) \left[ 1 + \frac { \pi ^{2} } { 2 } ( \ln z ) ^{- 2} + \cdots \right] ;
+\end{equation}
+借助\autoref{eq:8.1.33}，这一表达式变为
+\begin{equation}\tag{8.1.35}\label{eq:8.1.35}
+\frac { U } { N } = \frac { 3 } { 5 } \varepsilon _ { F } \left[ 1 + \frac { 5 \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} + \cdots \right] .
+\end{equation}
+气体的压力则由以下公式给出
+\begin{equation}\tag{8.1.36}\label{eq:8.1.36}
+P = \frac { 2 } { 3 } \frac { U } { V } = \frac { 2 } { 5 } n \varepsilon _ { F } \left[ 1 + \frac { 5 \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} + \cdots \right] .
+\end{equation}
+正如预期的那样，\autoref{eq:8.1.35}和\autoref{eq:8.1.36}中的主要项与基态结果（26）和（27）完全一致。从\autoref{eq:8.1.35}中温度依赖的部分出发，我们得到气体的低温比热
+\begin{equation}\tag{8.1.37}\label{eq:8.1.37}
+\frac { C _ { V } } { N k } = \frac { \pi ^{2} } { 2 } \frac { k T } { \varepsilon _ { F } } + \cdots .
+\end{equation}
+因此，在 \(T \ll T_{F}\) 的条件下，其中 \(T_{F}=(\varepsilon_{F}/k)\) 是系统的费米温度，比热随温度呈一次方变化；而且，其数值远低于经典值 \(\frac{3}{2}Nk\)。图~8.2 展示了 \(C_{V}\) 随 \(T\) 的整体变化趋势。
+系统的亥姆霍兹自由能直接由\autoref{eq:8.1.33}和\autoref{eq:8.1.36}得出：
+\begin{equation}\tag{8.1.38}\label{eq:8.1.38}
+\begin{array}{r} { \frac { A } { N } = \mu - \frac { P V } { N } } \\{ = \frac { 3 } { 5 } \varepsilon _ { F } \left[ 1 - \frac { 5 \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} + \cdots \right] , } \end{array}
+\end{equation}
+其中，\(\mu^*\) 为粒子的固有磁矩，\(m\) 为其质量。为简化起见，我们假设粒子自旋为 \(\frac{1}{2}\)；此时，矢量 \(\mu^*\) 或与矢量 \(B\) 平行，或与 \(B\) 相反。因此，气体中存在两组粒子：
+（一）那些 \(\mu^*\) 与 \(B\) 平行的粒子，其能量为 \(\varepsilon = \frac{p^2}{2m} - \mu^*B\)；（二）那些 \(\mu^*\) 与 \(B\) 相反的粒子，其能量为 \(\varepsilon = \frac{p^2}{2m} + \mu^*B\)。
+在绝对零度时，所有能量水平直至费米能级 \(\varepsilon_F\) 都将被填满，而超出 \(\varepsilon_F\) 的所有能级则处于空置状态。相应地，第一组粒子的动能范围为 0 到 \((\varepsilon_F + \mu^*B)\)，而第二组粒子的动能范围为 0 到 \((\varepsilon_F - \mu^*B)\)。因此，这两组粒子中分别占据的能量水平数量（以及由此产生的粒子数）分别为：
+\begin{equation}\tag{8.1.39}\label{eq:8.1.39}
+N ^{+} = \frac { 4 \pi \, V } { 3 h ^{3} } \{ 2 m ( \varepsilon _ { F } + \mu ^{*} B ) \} ^{3 / 2}
+\end{equation}
+并且
+\begin{equation}\tag{8.1.40}\label{eq:8.1.40}
+N ^{-} = \frac { 4 \pi V } { 3 h ^{3} } \{ 2 m ( \varepsilon _ { F } - \mu ^{*} B ) \} ^{3 / 2} .
+\end{equation}
+气体所获得的净磁矩可表示为
+\begin{equation}\tag{8.1.41}\label{eq:8.1.41}
+M = \mu ^{*} ( N ^{+} - N ^{-} ) = \frac { 4 \pi \mu ^{*} V ( 2 m ) ^{3 / 2} } { 3 h ^{3} } \{ ( \varepsilon _ { F } + \mu ^{*} B ) ^{3 / 2} - ( \varepsilon _ { F } - \mu ^{*} B ) ^{3 / 2} \} .
+\end{equation}
+由此，我们得到气体的低场磁化率（单位体积）为
+\begin{equation}\tag{8.1.42}\label{eq:8.1.42}
+\chi _ { 0 } = \operatorname* { L i m } _ { B \to 0 } \left( \frac { M } { V B } \right) = \frac { 4 \pi \mu ^{* 2} ( 2 m ) ^{3 / 2} \varepsilon _ { F } ^{1 / 2} } { h ^{3} } .
+\end{equation}
+利用\autoref{eq:8.1.24}，其中 \(g=2\)，上述结果可写成
+\begin{equation}\tag{8.1.43}\label{eq:8.1.43}
+\chi _ { 0 } = \frac { 3 } { 2 } n \mu ^{* 2} / \varepsilon _ { F } .
+\end{equation}
+为了进行比较，相应的高温结果由式（3.9.26）给出，其中 \(g=2\)，且 \(J=\frac{1}{2}\)：
+\begin{equation}\tag{8.1.44}\label{eq:8.1.44}
+\chi _ { \infty } = n \mu ^{* 2} / k T .
+\end{equation}
+我们注意到，\(\chi_0/\chi_\infty = O(kT/\varepsilon_F)\)。
+为了得到一个适用于所有温度 \(T\) 的 \(\chi\) 表达式，我们按如下步骤进行计算。将具有动量 \(\boldsymbol{p}\) 且磁矩与磁场平行（或相反）的粒子数记作 \(n_{\boldsymbol{p}}^{+}\)（或 \(n_{\boldsymbol{p}}^{-}\)），则气体的总能量可表示为
+\begin{equation}\tag{8.1.45}\label{eq:8.1.45}
+\begin{array}{rl} & { E _ { n } = \sum _ { p } \left[ \left( \frac { p ^{2} } { 2 m } - \mu ^{*} B \right) n _ { p } ^{+} + \left( \frac { p ^{2} } { 2 m } + \mu ^{*} B \right) n _ { p } ^{-} \right] } \\& { = \sum _ { p } ( n _ { p } ^{+} + n _ { p } ^{-} ) \frac { p ^{2} } { 2 m } - \mu ^{*} B ( N ^{+} - N ^{-} ) , } \end{array}
+\end{equation}
+其中 \(N^{+}\) 和 \(N^{-}\) 分别表示两组粒子的总数量。系统的配分函数可表示为
+\begin{equation}\tag{8.1.46}\label{eq:8.1.46}
+Q ( N ) = \sum _ { \{ n _ { p } ^{+} \} , \{ n _ { p } ^{-} \} } ^{\prime} \exp ( - \beta E _ { n } ) ,
+\end{equation}
+其中，求和符号"′"需满足以下条件
+\begin{equation}\tag{8.1.47}\label{eq:8.1.47}
+n _ { p } ^{+} , n _ { p } ^{-} = 0 \mathrm { ~ o r ~ } 1 ,
+\end{equation}
+并且
+\begin{equation}\tag{8.1.48}\label{eq:8.1.48}
+\sum _ { p } n _ { p } ^{+} + \sum _ { p } n _ { p } ^{-} = N ^{+} + N ^{-} = N .
+\end{equation}
+要对\autoref{eq:8.1.46}中的求和进行计算，我们首先固定任意一个 \(N^{+}\) 的值（该值也会自动确定 \(N^{-}\) 的值），然后对所有符合 \(N^{+}\) 和 \(N^{-}\) 固定值，并同时满足条件\autoref{eq:8.1.48}的 \(n_{p}^{+}\) 和 \(n_{p}^{-}\) 进行求和。接下来，我们对所有可能的 \(N^{+}\) 值进行求和，即从 \(N^{+}=0\) 到 \(N^{+}=N\)。因此，我们得到
+\begin{equation}\tag{8.1.49}\label{eq:8.1.49}
+Q ( N ) = \sum _ { N ^{+} = 0 } ^{N} \left[ e ^{\beta \mu ^ { *} B ( 2 N ^{+} - N ) } \left\{ \sum _ { \{ n _ { p } ^{+} \} } ^{\prime \prime} \exp \left( - \beta \sum _ { p } \frac { p ^{2} } { 2 m } n _ { p } ^{+} \right) \sum _ { \{ n _ { p } ^{-} \} } ^{\prime \prime \prime \prime} \exp \left( - \beta \sum _ { p } \frac { p ^{2} } { 2 m } n _ { p } ^{-} \right) \right\} \right] ;
+\end{equation}
+在此，求和符号 \(\sum^{\prime\prime}\) 须满足条件 \(\sum_{p}n_{p}^{+}=N^{+}\)，而 \(\sum^{\prime\prime\prime}\) 则需满足条件 \(\sum_{p}n_{p}^{-}=N-N^{+}\)。 现在，设 \(Q_{0}(\dot{N})\) 表示由 \(\mathcal{N}\) 个"无自旋"粒子组成的理想费米气体的配分函数；显然，
+\begin{equation}\tag{8.1.50}\label{eq:8.1.50}
+Q _ { 0 } ( \mathcal { N } ) = \sum _ { \{ n _ { p } \} } ^{\prime} \exp \left( - \beta \sum _ { p } \frac { p ^{2} } { 2 m } n _ { p } \right) \equiv \exp \{ - \beta A _ { 0 } ( \mathcal { N } ) \} ,
+\end{equation}
+其中 \(A_{0}(\mathcal{N})\) 是该假想系统的自由能。于是，\autoref{eq:8.1.12} 可写为
+\begin{equation}\tag{8.1.51}\label{eq:8.1.51}
+Q ( N ) = e ^{- \beta \mu ^ { *} B N } \sum _ { N ^{+} = 0 } ^{N} [ e ^{2 \beta \mu ^ { *} B N ^{+} } Q _ { 0 } ( N ^{+} ) Q _ { 0 } ( N - N ^{+} ) ] ,
+\end{equation}
+由此可得
+\begin{equation}\tag{8.1.52}\label{eq:8.1.52}
+\frac { 1 } { N } \ln Q ( N ) = - \beta \mu ^{*} B + \frac { 1 } { N } \ln \sum _ { N ^{+} = 0 } ^{N} [ \exp \{ 2 \beta \mu ^{*} B N ^{+} - \beta A _ { 0 } ( N ^{+} ) - \beta A _ { 0 } ( N - N ^{+} ) \} ] .
+\end{equation}
+与之前相同，求和 \(\sum_{N^{+}}\) 的对数可以替换为求和中最大项的对数；在这样做的过程中所犯的误差，与所保留的项相比几乎可以忽略不计。现在，通过将一般项对 \(N^{+}\) 的微分系数设为零，即可确定 \(N^{+}\) 的值——即对应于求和中最大项的 \(N^{+}\) 值；由此得到
+\begin{equation}\tag{8.1.53}\label{eq:8.1.53}
+2 \mu ^{*} B - \left[ \frac { \partial A _ { 0 } ( N ^{+} ) } { \partial N ^{+} } \right] _ { N ^{+} = \overline { { N ^{+} } } } - \left[ \frac { \partial A _ { 0 } ( N - N ^{+} ) } { \partial N ^{+} } \right] _ { N ^{+} = \overline { { N ^{+} } } } = 0 ,
+\end{equation}
+即
+\begin{equation}\tag{8.1.54}\label{eq:8.1.54}
+\mu _ { 0 } ( \overline { { N ^{+} } } ) - \mu _ { 0 } ( N - \overline { { N ^{+} } } ) = 2 \mu ^{*} B ,
+\end{equation}
+其中 \(\mu_{0}(\mathcal{N})\) 是由 \(\mathcal{N}\) 个"无自旋"费米子构成的假想系统的化学势。
+上述方程包含了我们所寻求的一般解。为了得到 \(\chi\) 的显式表达式，我们引入一个无量纲参数 \(r\)，其定义如下：
+\begin{equation}\tag{8.1.55}\label{eq:8.1.55}
+M = \mu ^{*} ( \overline { { N ^{+} } } - \overline { { N ^{-} } } ) = \mu ^{*} ( 2 \overline { { N ^{+} } } - N ) = \mu ^{*} N r  ( 0 \leq r \leq 1 ) ;
+\end{equation}
+\autoref{eq:8.1.16} 于是变为
+\begin{equation}\tag{8.1.56}\label{eq:8.1.56}
+\mu _ { 0 } \left( \frac { 1 + r } { 2 } N \right) - \mu _ { 0 } \left( \frac { 1 - r } { 2 } N \right) = 2 \mu ^{*} B .
+\end{equation}
+若磁场 \(B\) 为零，则参数 \(r\) 亦为零，这对应于基本磁矩完全随机取向的情况。对于小值的 \(B\)，\(r\) 也会很小；因此，我们可以继续
+对 (18) 左侧在 \(r=0\) 附近进行泰勒展开。仅保留展开式的首项，我们得到
+\begin{equation}\tag{8.1.57}\label{eq:8.1.57}
+r \simeq \frac { 2 \mu ^{*} B } { \frac { \partial \mu _ { 0 } ( x N ) } { \partial x } \bigg | _ { x = 1 / 2 } } .
+\end{equation}
+该系统在低场下的比容磁化率（单位体积）则可表示为
+\begin{equation}\tag{8.1.58}\label{eq:8.1.58}
+\chi = \frac { M } { V B } = \frac { \mu ^{*} N r } { V B } = \frac { 2 n \mu ^{* 2} } { \frac { \partial \mu _ { 0 } ( x N ) } { \partial x } \big | _ { x = 1 / 2 } } \, ,
+\end{equation}
+这一结果正是我们所期望的，且对所有 \(T\) 都适用。
+当 \(T\to0\) 时，假想系统的化学势可由\autoref{eq:8.1.34} 求得，其中 \(g=1\)：
+\begin{equation}\tag{8.1.59}\label{eq:8.1.59}
+\mu _ { 0 } ( x N ) = \left( \frac { 3 x N } { 4 \pi \, V } \right) ^{2 / 3} \frac { h ^{2} } { 2 m } ,
+\end{equation}
+由此可得
+\begin{equation}\tag{8.1.60}\label{eq:8.1.60}
+\left. \frac { \partial \mu _ { 0 } ( x N ) } { \partial x } \right| _ { x = 1 / 2 } = \frac { 2 ^{4 / 3} } { 3 } \left( \frac { 3 N } { 4 \pi V } \right) ^{2 / 3} \frac { h ^{2} } { 2 m } .
+\end{equation}
+另一方面，实际系统的费米能级则由同一\autoref{eq:8.1.34} 给出，只是 \(g=2\)：
+\begin{equation}\tag{8.1.61}\label{eq:8.1.61}
+\varepsilon _ { F } = \left( \frac { 3 N } { 8 \pi V } \right) ^{2 / 3} \frac { h ^{2} } { 2 m } .
+\end{equation}
+借助\autoref{eq:8.1.21} 和 \autoref{eq:8.1.22}，我们从 (20) 中得出
+\begin{equation}\tag{8.1.62}\label{eq:8.1.62}
+\chi _ { 0 } = \frac { 2 n \mu ^{* 2} } { \frac { 4 } { 3 } \varepsilon _ { F } } = \frac { 3 } { 2 } n \mu ^{* 2} / \varepsilon _ { F } ,
+\end{equation}
+与我们先前所得的\autoref{eq:8.1.6} 完全一致。在有限但低温的情况下，我们应使用\autoref{eq:8.1.35} 而非 (8.1.34)。最终结果表明，
+\begin{equation}\tag{8.1.63}\label{eq:8.1.63}
+\chi \simeq \chi _ { 0 } \left[ 1 - \frac { \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} \right] .
+\end{equation}
+另一方面，当 \(T \to \infty\) 时，虚设系统的化学势可直接由\autoref{eq:8.1.4}得出，其中 \(g=1\)，且 \(f_{3/2}(z) \simeq z\)，其结果为
+\begin{equation}\tag{8.1.64}\label{eq:8.1.64}
+\mu _ { 0 } ( x N ) = k T \mathrm { l n } ( x N \lambda ^{3} / V ) ,
+\end{equation}
+由此可得
+\begin{equation}\tag{8.1.65}\label{eq:8.1.65}
+\left. \frac { \partial \mu _ { 0 } ( x N ) } { \partial x } \right| _ { x = 1 / 2 } = 2 k T .
+\end{equation}
+\autoref{eq:8.1.58} 随后给出
+\begin{equation}\tag{8.1.66}\label{eq:8.1.66}
+\chi _ { \infty } = n \mu ^{* 2} / k T ,
+\end{equation}
+与我们先前所得的结果（7）完全一致。在温度较大但有限的情况下，需取 \(f_{3/2}(z) \simeq z - (z^2/2^{3/2})\)。最终结果则变为
+\begin{equation}\tag{8.1.67}\label{eq:8.1.67}
+\chi \simeq \chi _ { \infty } \left( 1 - \frac { n \lambda ^{3} } { 2 ^{5 / 2} } \right) ;
+\end{equation}
+此处的修正项与 \((T_F/T)^{3/2}\) 成正比，并且当 \(T \to \infty\) 时趋于零。
+\section{B 兰道磁化率}\label{b-ux5170ux9053ux78c1ux5316ux7387}
+现在，我们来研究在外部磁场作用下，带电粒子轨道运动量子化的所引起的磁性。在沿 \(z\) 轴方向、强度为 \(B\) 的均匀磁场中，带电粒子将沿一条螺旋轨迹运动，其轴线平行于 \(z\) 轴，而在 \((x,y)\) 平面上的投影是一条圆周。沿 \(z\) 方向的运动具有恒定的线速度 \(u_z\)，而沿 \((x,y)\) 平面的运动则具有恒定的角速度 \(eB/mc\)；后者源于粒子所受到的洛伦兹力 \(e(u \times B)/c\)。从量子力学的角度来看，与圆周运动相关的能量以 \(e\hbar B/mc\) 为单位被量子化。沿 \(z\) 轴方向的线性运动所对应的能量同样被量子化，但由于能量间隔较小，这一能量可以被视为连续变量。因此，粒子的总能量为
+\begin{equation}\tag{8.2.1}\label{eq:8.2.1}
+\varepsilon = \frac { e \hbar B } { m c } \left( j + \frac { 1 } { 2 } \right) + \frac { p _ { z } ^{2} } { 2 m }  ( j = 0 , 1 , 2 , \ldots ) .
+\end{equation}
+如今，这些量子化后的能级是简并的，因为它们源自一组几乎连续的零场能级"合并"而成。稍加思索便会发现，那些满足条件 \((p_{x}^{2}+p_{y}^{2})/2m\) 之值介于 \(e\hbar Bj/mc\) 与 \(e\hbar B(j+1)/mc\) 之间的能级，如今会"合并"为一个单一的能级，该能级由量子数 \(j\) 表征。这些能级的数量由以下公式给出
+\begin{equation}\tag{8.2.2}\label{eq:8.2.2}
+\begin{array}{r} { \frac { 1 } { \hbar ^{2} } \int d x \, d y \, d p _ { x } d p _ { y } = \frac { L _ { x } L _ { y } } { \hbar ^{2} } \pi \left[ 2 m \frac { e \hbar B } { m c } \{ ( j + 1 ) - j \} \right] } \\{ = L _ { x } L _ { y } \frac { e B } { h c } , } \end{array}
+\end{equation}
+²例如参见 Goldman 等人（1960）；问题 6.3。
+其中，求和范围需涵盖系统中所有单粒子态。将（28）代入 \(\varepsilon\) 中，利用多重度因子（29），并用积分代替对 \(p_z\) 的求和，我们得到
+\begin{equation}\tag{8.2.3}\label{eq:8.2.3}
+\ln \varrho = \int _ { - \infty } ^{\infty} \frac { L _ { z } d p _ { z } } { h } \left[ \sum _ { j = 0 } ^{\infty} \left( L _ { x } L _ { y } \frac { e B } { h c } \right) \ln \left\{ 1 + z e ^{- \beta e \hbar B [ j + ( 1 / 2 ) ] / m c - \beta p _ { z} ^{2} / 2 m } \right\} \right] .
+\end{equation}
+在高温下，\(z \ll 1\)；因此，系统实际上处于玻尔兹曼统计状态。此时，巨分区函数可简化为
+\begin{equation}\tag{8.2.4}\label{eq:8.2.4}
+\begin{array}{rl} & { \ln \mathcal { Q } = \frac { z V e B } { h ^{2} c } \int _ { - \infty } ^{\infty} e ^{- \beta p _ { z} ^{2} / 2 m } d p _ { z } \sum _ { j = 0 } ^{\infty} e ^{- \beta e \hbar B [ j + ( 1 / 2 ) ] / m c} } \\& {  = \frac { z V e B } { h ^{2} c } \left( \frac { 2 \pi \, m } { \beta } \right) ^{1 / 2} \left\{ 2 \sinh \left( \frac { \beta e \hbar B } { 2 m c } \right) \right\} ^{- 1} . } \end{array}
+\end{equation}
+气体的平衡粒子数 \(\overline{N}\) 和磁矩 \(M\) 分别由以下公式给出
+\begin{equation}\tag{8.2.5}\label{eq:8.2.5}
+\overline { { N } } = \left( z \frac { \partial } { \partial z } \ln \mathcal { Q } \right) _ { B , V , T } ,
+\end{equation}
+以及
+\begin{equation}\tag{8.2.6}\label{eq:8.2.6}
+M = \left\langle - \frac { \partial H } { \partial B } \right\rangle = \frac { 1 } { \beta } \left( \frac { \partial } { \partial B } \ln \varrho \right) _ { z , V , T } ,
+\end{equation}
+其中 \(H\) 是系统的哈密顿算符；请与式（3.9.4）进行对比。由此我们得到
+\begin{equation}\tag{8.2.7}\label{eq:8.2.7}
+\overline { { { N } } } = \frac { z V } { \lambda ^{3} } \frac { x } { \sinh x } ,
+\end{equation}
+以及
+\begin{equation}\tag{8.2.8}\label{eq:8.2.8}
+M = \frac { z V } { \lambda ^{3} } \mu _ { \mathrm { e f f } } \left\{ \frac { 1 } { \sinh x } - \frac { x \cosh x } { \sinh ^{2} x } \right\} ,
+\end{equation}
+其中 \(\lambda\{=h/(2\pi mkT)^{1/2}\}\) 是粒子的平均热波长，而
+\begin{equation}\tag{8.2.9}\label{eq:8.2.9}
+x = \beta \mu _ { \mathrm { e f f } } B  \left( \mu _ { \mathrm { e f f } } = e h / 4 \pi m c \right) .
+\end{equation}
+显然，若 \(e\) 和 \(m\) 分别为电子电荷和电子质量，则 \(\mu_{\mathrm{eff}}\) 就是熟悉的玻尔磁子 \(\mu_{B}\)。将\autoref{eq:8.2.7}与\autoref{eq:8.2.8}结合，我们得到
+\begin{equation}\tag{8.2.10}\label{eq:8.2.10}
+M = - \overline { { { N } } } \mu _ { \mathrm { e f f } } L ( x ) ,
+\end{equation}
+其中 \(L(x)\) 是朗之万函数：
+\begin{equation}\tag{8.2.11}\label{eq:8.2.11}
+L ( x ) = \coth x - { \frac { 1 } { x } } .
+\end{equation}
+这一结果与朗之万理论中关于顺磁性所获得的结果极为相似；详见第 3.9 节。然而，负号的存在意味着，在本例中所获得的效果本质上属于反磁性。我们还注意到，这一效应正是量子化直接导致的后果；若让 \(h \to 0\)，该效应便会消失。这与玻尔-范莱文定理完全一致——根据该定理，反磁性现象并不出现在经典物理学中；请参阅问题 3.43。
+若磁场强度 \(B\) 与温度 \(T\) 满足 \(\mu_{\mathrm{eff}}B \ll kT\) 的条件，则上述结果变为
+\begin{equation}\tag{8.2.12}\label{eq:8.2.12}
+\overline { { N } } \simeq \frac { z V } { \lambda ^{3} }
+\end{equation}
+以及
+\begin{equation}\tag{8.2.13}\label{eq:8.2.13}
+M \simeq - \overline { { N } } \mu _ { \mathrm { e f f } } ^{2} B / 3 k T .
+\end{equation}
+\autoref{eq:8.2.12}与零场公式 \(z \simeq n\lambda^{3}\) 一致，而\autoref{eq:8.2.13}则导出了居里定律的反磁性对应形式：
+\begin{equation}\tag{8.2.14}\label{eq:8.2.14}
+\chi _ { \infty } = \frac { M } { V B } = - \overline { { n } } \mu _ { \mathrm { e f f } } ^{2} / 3 k T ;
+\end{equation}
+参见式（3.9.12）。需要注意的是，这一现象的抗磁性与粒子电荷的正负无关。尤其对于电子气体而言，其在高温下的总磁化率可由\autoref{eq:8.2.7}中的求和项给出，其中\(\mu^{*}\)用\(\mu_{B}\)替代，并结合\autoref{eq:8.2.14}：
+\begin{equation}\tag{8.2.15}\label{eq:8.2.15}
+\chi _ { \infty } = \frac { n \left( \mu _ { B } ^{2} - \frac { 1 } { 3 } \mu _ { B } ^{\prime 2} \right) } { k T } ,
+\end{equation}
+其中\(\mu_{B}^{\prime}=eh/4\pi m^{\prime}c\)，\(m^{\prime}\)为给定系统中电子的有效质量。
+现在我们从所有温度下对这一问题进行研究，不过我们将继续假设磁场强度较弱，因此\(\mu_{\mathrm{eff}}B\ll kT\)。鉴于上述情况，\autoref{eq:8.2.3}中的求和项可借助欧拉求和公式来处理。
+\begin{equation}\tag{8.2.16}\label{eq:8.2.16}
+\sum _ { j = 0 } ^{\infty} f \left( j + \frac { 1 } { 2 } \right) \simeq \int _ { 0 } ^{\infty} f ( x ) d x + \frac { 1 } { 24 } f ^{\prime} ( 0 ) ,
+\end{equation}
+其结果为
+\begin{equation}\tag{8.2.17}\label{eq:8.2.17}
+\begin{array}{r} { \ln \varrho \simeq \frac { V e B } { h ^{2} c } \left[ \int _ { 0 } ^{\infty} d x \int _ { - \infty } ^{\infty} d p _ { z } \ln \left\{ 1 + z e ^{- \beta ( 2 \mu _ { \mathrm { e f f} } B x + p _ { z } ^{2} / 2 m ) } \right\} \right. } \\{ \left. - \frac { 1 } { 12 } \beta \mu _ { \mathrm { e f f } } B \int _ { - \infty } ^{\infty} \frac { d p _ { z } } { z ^{- 1} e ^{\beta ( p _ { z} ^{2} / 2 m ) } + 1 } \right] . } \end{array}
+\end{equation}
+此处的第一部分与\(B\)无关，这可以通过将变量由\(x\)改为\(x' = Bx\)来直观理解。第二部分则通过将\(\beta p_z^2/2m = y\)代入，变为
+\begin{equation}\tag{8.2.18}\label{eq:8.2.18}
+- \frac { \pi V ( 2 m ) ^{3 / 2} } { 6 h ^{3} } ( \mu _ { \mathrm { e f f } } B ) ^{2} \beta ^{1 / 2} \int _ { 0 } ^{\infty} \frac { y ^{- 1 / 2} d y } { z ^{- 1} e ^{y} + 1 } .
+\end{equation}
+气体在低场下的单位体积磁化率由此得出
+\begin{equation}\tag{8.2.19}\label{eq:8.2.19}
+\begin{array}{r} { \chi = \frac { M } { V B } = \frac { 1 } { \beta V B } \left( \frac { \partial } { \partial B } \ln \varrho \right) _ { z , V , T } } \\{ = - \frac { ( 2 \pi \, m ) ^{3 / 2} \mu _ { \mathrm { e f f } } ^{2} } { 3 h ^{3} \beta ^{1 / 2} } f ^{1 / 2} ( z ) , } \end{array}
+\end{equation}
+这正是我们所期望的结果。值得注意的是，与之前一样，这一效应具有抗磁性——无论粒子电荷的正负如何。
+当\(z\ll1\)时，\(f_{1/2}(z)\simeq z\simeq\overline{n}\lambda^{3}\)；此时我们便恢复了先前的结论\autoref{eq:8.2.14}。而当\(z\gg1\)（对应于\(T\ll T_{F}\)）时，\(f_{1/2}(z)\approx(2/\pi^{1/2})(\ln z)^{1/2}\)；此时我们得到
+\begin{equation}\tag{8.2.20}\label{eq:8.2.20}
+\chi _ { 0 } \approx - \frac { 2 \pi ( 2 m ) ^{3 / 2} \mu _ { \mathrm { e f f } } ^{2} \varepsilon _ { F } ^{1 / 2} } { 3 \hbar ^{3} } = - \frac { 1 } { 2 } n \mu _ { \mathrm { e f f } } ^{2} / \varepsilon _ { F } ;
+\end{equation}
+在此，我们还利用了这样一个事实：\((\beta^{-1} \ln z) \simeq \varepsilon_F\)。需注意的是，从数值上看，这一结果恰好是相应顺磁性结果\autoref{eq:8.2.6}的三分之一——前提是将该表达式中的\(\mu^*\)视为与本式中的\(\mu_{\mathrm{eff}}\)相等。
+8.3 金属中的电子气体
+在应用费米-狄拉克统计学来消除诸多不一致与差异的物理系统中，金属中导电电子这一领域尤为突出。历史上，金属电子理论由德鲁德（1900年）和洛伦兹（1904--1905年）提出，他们将麦克斯韦和玻尔兹曼的统计力学应用于电子气体，并由此推导出了金属各项性质的理论结果。德鲁德---洛伦兹模型确实为部分理解金属的物理行为提供了合理的理论基础；然而，该模型在定性与定量两方面都遇到了诸多严重问题。例如，人们观察到的金属比热几乎完全归因于晶格振动，而电子气体似乎几乎没有贡献。然而，该理论要求根据等分定理，气体中的每个电子都应具有平均热能\(\frac{3}{2}kT\)，从而为金属的比热贡献\(\frac{3}{2}k\)。同样地，人们原本预期电子气体会表现出顺磁性现象，其根源在于电子固有的磁矩\(\mu_{B}\)。按照经典理论，顺磁性磁化率可由\autoref{eq:8.2.7}给出，其中\(\mu^{*}\)被\(\mu_{B}\)所取代。然而，实际观测却发现，普通非铁磁金属的磁化率不仅与温度无关，而且在室温下，其数值几乎不到预期值的1\%。
+德鲁德---洛伦兹理论也被用于研究金属的输运特性，例如热导率\(K\)和电导率\(\sigma\)。尽管各单项电导率的结果并不十分令人鼓舞，但它们的比值却符合维德曼与弗朗茨（1853年）的经验法则——该法则由洛伦兹（1872年）加以表述，即量值\(K/\sigma T\)是一个（普遍）常数。这一量值的理论值，通常被称为洛伦兹数，结果为\(3(k/e)^2 \simeq 2.48 \times 10^{-13}\) e.s.u./deg\(^2\)；然而，对于大多数碱金属和碱土金属，其实验值却呈现出分散状态，平均值仅为\(2.72 \times 10^{-13}\) e.s.u./deg\(^2\)。更为令人不安的是，经典理论在为电子的平均自由程赋予恰当数值时，还存在较大的不确定性。
+对某一特定金属而言，并为其赋予合适的温度依赖性。正因如此，金属输运特性的研究问题在很长一段时间内都未能得到圆满解决，直到索默费尔德（1928年）提出了正确的思路。
+索默费尔德所作出的最重大贡献，便是用费米-狄拉克统计取代麦克斯韦-玻尔兹曼统计，以用于描述金属中电子气体的行为。凭借这一天才般的创见，他成功地将大部分问题都迎刃而解。要了解其工作原理，我们先来估算一下典型金属——比如钠——中电子气体的费米能级 \(\varepsilon_F\)。根据\autoref{eq:8.1.24}，若取 \(g=2\)，
+\begin{equation}\tag{8.3.1}\label{eq:8.3.1}
+\varepsilon _ { F } = \left( \frac { 3 N } { 8 \pi V } \right) ^{2 / 3} \frac { h ^{2} } { 2 m ^{\prime} } ,
+\end{equation}
+其中 \(m'\) 为气体中电子的有效质量。³ 在立方晶格的情况下，电子密度 \(N/V\) 可以表示为
+\begin{equation}\tag{8.3.2}\label{eq:8.3.2}
+\frac { N } { V } = \frac { n _ { e } n _ { a } } { a ^{3} } ,
+\end{equation}
+其中 \(n_{e}\) 是每原子中的导电电子数，\(n_{a}\) 是每单元晶胞中的原子数，而 \(a\) 则是晶格常数（或晶胞长度）。⁴ 对于钠而言，\(n_{e}=1\)，\(n_{a}=2\)，且 \(a=4.29\) Å。将这些数值代入\autoref{eq:8.3.2}，并令 \(m'=0.98m_{e}\)，我们可从\autoref{eq:8.3.1}得出
+\begin{equation}\tag{8.3.3}\label{eq:8.3.3}
+( \varepsilon _ { F } ) _ { \mathrm { N a } } = 5 . 03 \times 10 ^{- 12} \, \mathrm { e r g } = 3 . 14 \, \mathrm { e V } .
+\end{equation}
+因此，该气体的费米温度为
+\begin{equation}\tag{8.3.4}\label{eq:8.3.4}
+\begin{array}{r} { ( T _ { F } ) _ { \mathrm { N a } } = ( 1 . 16 \times 10 ^{4} ) \times \varepsilon _ { F } \, ( \text { in eV } ) } \\{ = 3 . 64 \times 10 ^{4} \mathrm { K } , } \end{array}
+\end{equation}
+这一温度远高于室温 \(T(\sim 3 \times 10^{2} \mathrm{K})\)。由于 \(T / T_{F}\) 的比值约为 1\%，钠中的导电电子构成了一个高度简并的费米系统。事实上，这一结论适用于所有金属，因为它们的费米温度通常在 \(10^{4}-10^{5} \mathrm{K}\) 左右。
+如今，金属中电子气体本身就是高度简并的费米系统这一事实，已经足以解释德鲁德---洛伦兹理论中的一些基本难题。例如，该气体的比热不再可以用经典公式来计算，
+\(C_{V}=\frac{3}{2}Nk\)，而是应采用\autoref{eq:8.1.37}来计算，即
+\begin{equation}\tag{8.3.5}\label{eq:8.3.5}
+C _ { V } = \frac { \pi ^{2} } { 2 } N k ( k T / \varepsilon _ { F } ) ;
+\end{equation}
+显然，新结果的数值要小得多，因为在普通温度下，比值 \((kT/\varepsilon_F) \equiv (T/T_F) = O(10^{-2})\)。因此，在普通温度下，金属的比热几乎完全由晶格的振动模式决定，而导电电子所起的作用微乎其微。当然，随着温度降低，由晶格振动引起的比热也会随之下降，最终会远远小于经典值；请参阅第 7.4 节，尤其是图~7.14。当温度降至某一特定水平时，这两种非经典贡献的数值将变得相当接近。最终，在极低温度下，由晶格振动引起的比热与电子比热相比，前者往往呈 \(T^3\) 比例关系，甚至比后者小得多——电子比热则与 \(T^1\) 成正比。一般来说，对于金属的低温比热，我们可以写成：
+\begin{equation}\tag{8.3.6}\label{eq:8.3.6}
+C _ { V } = \gamma T + \delta T ^{3} ,
+\end{equation}
+系数 \(\gamma\) 由\autoref{eq:8.3.5}给出，或者更一般地，可以证明其与费米能级处的状态密度成正比（参见问题8.13），而系数 \(\delta\) 则由式（7.4.23）给出。因此，人们预期在低温下对金属比热的实验测定，不仅能够验证基于量子统计理论的理论结果，还能对这一问题中的若干参数进行精确评估。
+包括科拉克等人（1955年）在内的研究者，曾在1至5开尔文的温度范围内，对铜、银和金进行了此类测定。图~8.4展示了他们针对铜所获得的结果。\((C_V/T)\) 与 \(T^2\) 的关系曲线被很好地近似为一条直线，这充分证实了理论公式\autoref{eq:8.3.6}。此外，该直线的斜率即为系数 \(\delta\) 的值，由此可推算出德拜温度 \(\Theta_D\)。
+非铁磁性金属中电子气体的磁性行为总体规律，同样可以得到理解。鉴于该气体具有高度简并的特性，磁化率 \(\chi\) 由泡利公式\autoref{eq:8.2.6}与朗道公式共同给出，而非经典公式\autoref{eq:8.2.7}。与实验观察完全一致的是，新得出的结果表明：（一）与温度无关；（二）其数值远小于经典公式所计算的结果。
+在输运性质 \(K\) 和 \(\sigma\) 方面，新理论再次揭示了维德曼-弗兰茨定律；然而，洛伦兹数却变为 \((\pi^2/3)(k/e)^2\)，而非经典的 \(3(k/e)^2\)。由此得出的理论值——即 \(2.71 \times 10^{-13}\) e.s.u./deg\(^2\)——实际上与先前所引用的实验平均值更为接近。当然，就单个电导率以及电子自由程的平均值而言，情况并未得到改善，直到布洛赫（1928年）提出了一项理论，该理论考虑了电子气体与金属离子体系之间的相互作用。金属理论不断趋于完善与精进；值得注意的是，这一发展始终以全新的统计学理论为指导！
+在结束本话题之前，我们想简要介绍金属中热电子发射和光电发射的现象。鉴于电子发射并非自发发生，我们推断，金属内部的电子被某种由离子所形成的"势阱"所束缚。该势阱中电子的势能细节，必然取决于所用金属的结构特征。不过，若要研究电子发射现象，我们无需过多关注这些细节，而可假设电子在金属内部的势能始终保持恒定（例如为负值 \(-W\)），并在金属表面处突然跃迁至零。因此，在金属内部，电子可以自由地、彼此独立地运动；然而，一旦其中某一个电子接近金属表面并试图逃逸，它便会遭遇一道高度为 \(W\) 的势垒。相应地，只有那些动能（与垂直于表面的运动相关）大于 \(W\) 的电子，才有望穿过这道势垒逃逸出去。在常温下，尤其是在缺乏任何外部激励的情况下，这类电子在某一金属中的数量极其稀少，因此金属中几乎不会发生自发发射。而在高温条件下，尤其是当存在外部激励时，某一金属中此类电子的数目可能会变得足够多，从而引发可观的发射现象。此时，我们便称之为热电子效应和光电效应等现象。
+严格来说，这些现象并非平衡态现象，因为电子正持续不断地从金属表面流出。然而，如果在给定时间间隔内损失的电子数与其总数量相比微不足道，
+在假设气体内部仍处于准静态热平衡状态的前提下，便可计算出金属的发射电流大小。该计算的数学方法与第6.4节中所采用的方法基本一致——用于确定气体粒子通过容器壁开口逸出的速率 \(R\)。不过，二者存在一个细微差别：在扩散过程中，只要任何粒子以 \(u_{z} > 0\) 的速度到达开口处，便能毫无疑问地逸出；而在这里，我们必须满足 \(u_{z} > (2W/m)^{1/2}\)，以便该粒子能够成功跨越表面的势垒。此外，即便上述条件得以满足，也并不能保证粒子一定能真正逸出，因为仍不能完全排除向内反射的可能性。在接下来的讨论中，我们将忽略这一可能性；然而，若需对理论与实验结果进行数值对比，此处得出的结论须乘以一个因子 \((1 - r)\)，其中 \(r\) 为表面的反射系数。
+\section{A 热电子发射（理查德森效应）}\label{a-ux70edux7535ux5b50ux53d1ux5c04ux7406ux67e5ux5fb7ux68eeux6548ux5e94}
+单位时间内，金属表面单位面积上发射的电子数量可表示为
+\begin{equation}\tag{8.3.7}\label{eq:8.3.7}
+\begin{array}{rl} { R = } & { { } \displaystyle \int _ { p _ { z } = ( 2 m W ) ^{1 / 2} } ^{\infty} \int _ { p _ { x } = - \infty } ^{\infty} \int _ { p _ { y } = - \infty } ^{\infty} \left\{ \frac { 2 d p _ { x } d p _ { y } d p _ { z } } { h ^{3} } \frac { 1 } { e ^{( \varepsilon - \mu ) / k T} + 1 } \right\} u _ { z } ; } \end{array}
+\end{equation}
+与第6.4节中的相应表达式进行比较。通过对变量 \(p_{x}\) 和 \(p_{y}\) 进行积分，可改用极坐标 \((p', \phi)\) 来完成，其结果为
+\begin{equation}\tag{8.3.8}\label{eq:8.3.8}
+\begin{array}{rl} & { R = \frac { 2 } { h ^{3} }  \int _ { p _ { z } = ( 2 m W ) ^{1 / 2} } ^{\infty} \frac { p _ { z } } { m } d p _ { z } \int _ { p ^{\prime} = 0 } ^{\infty} \frac { 2 \pi p ^{\prime} d p ^{\prime} } { \exp \{ [ ( p ^{\prime 2} / 2 m ) + ( p _ { z } ^{2} / 2 m ) - \mu ] / k T \} + 1 } } \\& { = \frac { 4 \pi \, k T } { h ^{3} }  \int _ { p _ { z } = ( 2 m W ) ^{1 / 2} } ^{\infty} p _ { z } d p _ { z } \ln [ 1 + \exp \{ ( \mu - p _ { z } ^{2} / 2 m ) / k T \} ] } \\& { = \frac { 4 \pi \, m k T } { h ^{3} } \int _ { \varepsilon _ { z } = W } ^{\infty} d \varepsilon _ { z } \ln [ 1 + e ^{( \mu - \varepsilon _ { z} ) / k T } ] . } \end{array}
+\end{equation}
+巧合的是，在所有感兴趣的温度下，对数内的指数项都远小于1；参见注5。因此，我们可以将 \(\ln(1+x) \simeq x\) 进行近似处理，且
+结果
+\begin{equation}\tag{8.3.9}\label{eq:8.3.9}
+\begin{array}{r} { R = \frac { 4 \pi m k T } { h ^{3} } \int _ { \varepsilon _ { z } = W } ^{\infty} d \varepsilon _ { z } e ^{( \mu - \varepsilon _ { z} ) / k T } } \\{ = \frac { 4 \pi m k ^{2} T ^{2} } { h ^{3} } e ^{( \mu - W ) / k T} . } \end{array}
+\end{equation}
+热电子电流密度随后可表示为
+\begin{equation}\tag{8.3.10}\label{eq:8.3.10}
+J = e R = \frac { 4 \pi m e k ^{2} } { h ^{3} } T ^{2} e ^{( \mu - W ) / k T} .
+\end{equation}
+直到此时，经典统计学与费米统计学之间的差异才真正显现出来！在经典统计学的框架下，气体的逸度（fugacity）可由以下公式给出（参见\autoref{eq:8.1.4}，其中 \(f_{3/2}(z) \simeq z\)），
+\begin{equation}\tag{8.3.11}\label{eq:8.3.11}
+z \equiv e ^{\mu / k T} = \frac { n \lambda ^{3} } { g } = \frac { n h ^{3} } { 2 ( 2 \pi m k T ) ^{3 / 2} } ;
+\end{equation}
+据此，
+\begin{equation}\tag{8.3.12}\label{eq:8.3.12}
+J _ { \mathrm { c l a s s } } = n e \left( \frac { k } { 2 \pi m } \right) ^{1 / 2} T ^{1 / 2} e ^{- \phi / k T}  ( \phi = W ) .
+\end{equation}
+而在费米统计学的框架下，高度简并的电子气的化学势几乎不随温度变化，并且几乎等于该气体的费米能级 (\(\mu \simeq \mu_0 \equiv \varepsilon_F\))；因此，
+\begin{equation}\tag{8.3.13}\label{eq:8.3.13}
+J _ { \mathrm { F . D . } } = \frac { 4 \pi m e k ^{2} } { \hbar ^{3} } T ^{2} e ^{- \phi / k T}  ( \phi = W - \varepsilon _ { F } ) .
+\end{equation}
+通常将量 \(\phi\) 称为金属的功函数。根据\autoref{eq:8.3.12}，\(\phi\) 恰好等于表面势垒的高度；根据\autoref{eq:8.3.13}，\(\phi\) 等于位于费米能级之上的势垒高度（参见图~8.5）。
+因此，金属的折射率可由下式给出：
+\begin{equation}\tag{8.3.14}\label{eq:8.3.14}
+n = \frac { \lambda _ { \mathrm { o u t } } } { \lambda _ { \mathrm { i n } } } = \left( \frac { E + W } { E } \right) ^{1 / 2} .
+\end{equation}
+通过研究不同\(E\)值下的电子衍射现象，我们可以推导出相应的\(W\)值。正是通过这种方式，戴维森和格默（1927）为多种金属推导出了\(W\)的值。例如，他们测得钨的\(W\)值约为13.5 eV。钨的热电子发射实验结果如图~8.6所示。实验所得直线斜率所对应的\(\phi\)值约为4.5 eV。这两者之间的巨大差异，
+当然，这一步骤尚未乘以传输系数 \((1-r)\)。对于表面洁净的大多数金属而言，相应的实验数值通常在 60 至 120 安培·厘米⁻²·开尔文⁻² 的范围内。
+最后，我们来探讨中等强度电场对金属热电子发射的影响——也就是所谓的肖特基效应。将电场强度记作 \(F\)，并假设电场均匀且垂直于金属表面，则电子在距离表面 \(x\) 处的势能与电子在金属内部的势能之差 \(\Delta\) 可以表示为：
+\begin{equation}\tag{8.3.15}\label{eq:8.3.15}
+\Delta ( x ) = W - e F x - { \frac { e ^{2} } { 4 x } }  ( x > 0 ) ,
+\end{equation}
+其中，第一项源于金属的势阱，第二项源于存在的（吸引力）电场，第三项则源于离开的电子与金属中所诱导出的"图像"之间的相互吸引；参见图~8.7。函数 \(\Delta(x)\) 的最大值出现在 \(x=(e/4F)^{1/2}\) 处，因此，
+\begin{equation}\tag{8.3.16}\label{eq:8.3.16}
+\Delta _ { \mathrm { m a x } } = W - e ^{3 / 2} F ^{1 / 2} ,
+\end{equation}
+由此可见，电场实际上使势垒的高度降低了 \(e^{3/2}F^{1/2}\) 的量。与此同时，功函数也应相应地降低。
+其中 \(\nu\) 为入射光的频率（假设为单色光）。沿用与热电子发射情形相同的步骤，我们得到的不再是（8）式，
+\begin{equation}\tag{8.3.17}\label{eq:8.3.17}
+R = \frac { 4 \pi \, m k T } { h ^{3} } \, \, \, \, \, \int _ { \varepsilon _ { z } = W - h \nu } ^{\infty} d \varepsilon _ { z } \ln [ 1 + e ^{( \mu - \varepsilon _ { z} ) / k T } ] .
+\end{equation}
+一般来说，我们无法像在那里的那样对这一积分进行近似处理；因此，这里的被积函数仍保持原样。不过，建议我们改用一个新的变量 \(x\)，由以下关系定义：
+\begin{equation}\tag{8.3.18}\label{eq:8.3.18}
+x = ( \varepsilon _ { Z } - W + h \nu ) / k T ,
+\end{equation}
+在撰写这一条件时，我们已默认电子的动量分量 \(p_{x}\) 和 \(p_{y}\) 在吸收光子的过程中保持不变。
+由此，\autoref{eq:8.3.17} 变为
+\begin{equation}\tag{8.3.19}\label{eq:8.3.19}
+R = \frac { 4 \pi \, m ( k T ) ^{2} } { h ^{3} } \int _ { 0 } ^{\infty} d x \ln \left[ 1 + \exp \left\{ \frac { h ( \nu - \nu _ { 0 } ) } { k T } - x \right\} \right] ,
+\end{equation}
+其中
+\begin{equation}\tag{8.3.20}\label{eq:8.3.20}
+h \nu _ { 0 } = W - \mu \simeq W - \varepsilon _ { F } = \phi .
+\end{equation}
+\(\phi\) 这一量将被认定为金属的（热电子）功函数；相应地，特征频率 \(\nu_{0} = (\phi/h)\) 可被视为该金属发生光电发射的阈值频率。
+因此，光电发射的电流密度可表示为
+\begin{equation}\tag{8.3.21}\label{eq:8.3.21}
+J = \frac { 4 \pi m e k ^{2} } { h ^{3} } T ^{2} \int _ { 0 } ^{\infty} d x \ln ( 1 + e ^{\delta - x} ) ,
+\end{equation}
+其中
+\begin{equation}\tag{8.3.22}\label{eq:8.3.22}
+\delta = h ( \nu - \nu _ { 0 } ) / k T .
+\end{equation}
+通过分部积分，我们发现
+\begin{equation}\tag{8.3.23}\label{eq:8.3.23}
+\int _ { 0 } ^{\infty} d x \ln ( 1 + e ^{\delta - x} ) = \int _ { 0 } ^{\infty} \frac { x d x } { e ^{x - \delta} + 1 } \equiv f _ { 2 } ( e ^{\delta} ) ;
+\end{equation}
+参见\autoref{eq:8.1.6}。据此，
+\begin{equation}\tag{8.3.24}\label{eq:8.3.24}
+J \equiv \frac { 4 \pi \, m e k ^{2} } { h ^{3} } T ^{2} f _ { 2 } ( e ^{\delta} ) .
+\end{equation}
+当 \(h(\nu - \nu_0) \gg kT\)、\(e^\delta \gg 1\)，且函数 \(f_2(e^\delta) \approx \delta^2/2\) 时；请参阅附录E中的索默费尔德引理（E.17）。此时，\autoref{eq:8.3.24} 变为
+\begin{equation}\tag{8.3.25}\label{eq:8.3.25}
+J \approx \frac { 2 \pi m e } { h } ( \nu - \nu _ { 0 } ) ^{2} \, ,
+\end{equation}
+这一结果完全不依赖于 \(T\)；因此，当光量子的能量远大于金属的功函数时，电子气体的温度便成为问题中的一个"死"参数。而在另一极端，当 \(\nu < \nu_0\) 且 \(h|\nu - \nu_0| \gg kT\) 时，\(e^\delta \ll 1\)，函数 \(f_2(e^\delta) \approx e^\delta\)。此时，\autoref{eq:8.3.24} 变为
+\begin{equation}\tag{8.3.26}\label{eq:8.3.26}
+J \approx \frac { 4 \pi m e k ^{2} } { h ^{3} } T ^{2} e ^{( h \nu - \phi ) / k T} ,
+\end{equation}
+即热电子发射的电流密度\autoref{eq:8.3.13}，并经由光子因子 \(\exp(h\nu/kT)\) 的增强；换句话说，目前的情况与热电子发射的情形几乎完全相同，只是工作函数 \(\phi'(\equiv\phi-h\nu)\) 有所降低。在阈值频率处（\(\nu=\nu_0\)），\(\delta=0\)，函数 \(f_2(e^\delta)=f_2(1)=\pi^2/12\)；参见公式（E.16），其中 \(j=1\)。随后，\autoref{eq:8.3.24} 给出
+\begin{equation}\tag{8.3.27}\label{eq:8.3.27}
+J _ { 0 } = \frac { \pi ^{3} m e k ^{2} } { 3 h ^{3} } T ^{2} .
+\end{equation}
+图~8.8展示了钯的光电发射实验结果图（\(\phi = 4.97\) eV）。与理论预测的吻合度极为出色。值得注意的是，该图中还包含了部分在 \(\nu < \nu_0\) 时的观测数据。即使在低于所谓阈值频率的频率下，我们仍能获得有限的光电流，这一事实与本文所采用的模型完全一致。其原因在于：在任意有限温度 \(T\) 下，系统中都存在相当一部分电子，其能量 \(\varepsilon\) 超过费米能级 \(\varepsilon_F\)，且超出量级为 \(O(kT)\)。因此，若光量子 \(h\nu\) 被这些电子中的某一个吸收，即便 \(h\nu < (W - \varepsilon_F) = h\nu_0\)，光电子发射的条件（20）依然可以得到满足。当然，光子能量差 \(h(\nu_0 - \nu)\) 必须不超过 \(kT\) 的几倍，否则，能够获得合适类型电子的概率将极低。因此，只要 \(h(\nu_0 - \nu) = O(kT)\)，我们便有望在低于阈值频率 \(\nu_0\) 的辐射下，获得有限的光电流。
+图~8.8所示的曲线——即 \(\ln(J/T^2)\) 对比 \(\delta\)——通常被称为"福勒图"。通过将观测到的光电发射数据拟合至该图，我们可以得到特征频率 \(\nu_0\)，进而推算出给定金属的工作函数 \(\phi\)。我们此前已经看到，金属的工作函数同样可以通过热电子发射数据加以推导。令人欣慰的是，对于不同金属的工作函数，两种方法所得出的结果之间完全一致。
+其中，\(\omega_{0}=(\omega_{1}\omega_{2}\omega_{3})^{1/3}\) 是笛卡尔坐标系中阱频率的几何平均值；参见式（7.2.3）。化学势与阱内费米子数之间的关系为
+\begin{equation}\tag{8.3.28}\label{eq:8.3.28}
+N ( \mu , T ) = \frac { 1 } { 2 \left( \hbar \omega _ { 0 } \right) ^{3} } \int _ { 0 } ^{\infty} \frac { \varepsilon ^{2} d \varepsilon } { e ^{\beta ( \varepsilon - \mu )} + 1 } \; ,
+\end{equation}
+由此可得费米能级
+\begin{equation}\tag{8.3.29}\label{eq:8.3.29}
+\varepsilon _ { F } = \hbar \omega _ { 0 } ( 6 N ) ^{1 / 3} \ ,
+\end{equation}
+对于一个包含 \(10^{6}\) 个原子、处于 \(100\,\mathrm{Hz}\) 陷阱中的系统，费米温度 \(T_{F}=\varepsilon_{F}/k=870\,\mathrm{nK}\)；而对于基态能量 \(U_{0}=\frac{3}{4}N\varepsilon_{F}\)。通过时间飞行测量，可以得到束缚气体的内能，如第 7.2 节所述，并可直接与理论结果进行对比。
+\begin{equation}\tag{8.3.30}\label{eq:8.3.30}
+\frac { U } { U _ { 0 } } = 4 \left( \frac { T } { T _ { F } } \right) ^{4} \int _ { 0 } ^{\infty} \frac { x ^{3} d x } { e ^{x} e ^{- \beta \mu} + 1 } \, ,
+\end{equation}
+其中，温度与化学势之间的关系为
+\begin{equation}\tag{8.3.31}\label{eq:8.3.31}
+3 \left( \frac { T } { T _ { F } } \right) ^{3} \int _ { 0 } ^{\infty} \frac { x ^{2} d x } { e ^{x} e ^{- \beta \mu} + 1 } = 1 ;
+\end{equation}
+请参见图~8.9 和图~8.10。在温度足够低的情况下，吸引力相互作用会导致玻色-爱因斯坦凝聚与巴克明斯特-施特劳斯凝聚的形成，相关讨论详见第 11.9 节。
+这一数值与电子的特征动量 \(mc\) 相当接近。因此，电子气体的费米能 \(\varepsilon_{F}\) 将与电子的静止能 \(mc^{2}\) 相当，即 \(\varepsilon_{F}=O(10^{6})\) eV，进而得出费米温度 \(T_{F}=O(10^{10})\) K。基于以上估算，我们得出以下结论：(i) 在此问题中，电子的运动状态属于相对论性；(ii) 虽然电子气体的温度远高于地球标准，但从统计学角度来看，它仍处于近乎完全简并的状态：\((T/T_{F})=O(10^{-3})\)。第二点早已被福勒本人充分认识到并予以充分考虑；而第一点则在之后由安德森（1928年）以及斯通纳（1929年、1930年）加以研究和处理。这一问题在更一般的意义上，由钱德拉塞卡（1931--1935）加以深入探讨，而白矮星理论的最终图景也主要归功于他；有关详细内容，请参阅钱德拉塞卡（1939年），该书还提供了该领域的完整参考文献列表。
+如今，氦核在问题的动力学中所起的作用远不及电子；因此，在第一近似下，我们可以忽略系统中原子核的存在。出于同样的原因，我们也可以忽略辐射的影响。由此，我们只需考虑电子气体。此外，为了简化计算，我们不妨假设电子气体在恒星的整个体积内均匀分布；因此，
+忽略问题中各参数的空间变化——而这种空间变化对于恒星的稳定性而言，从物理意义上来说是至关重要的！本文的核心观点在于：尽管我们忽略了相关参数的空间变化，但我们仍预期，此处得出的结果至少在定性意义上是正确的。
+我们研究由 \(N\) 个相对论性电子（\(g=2\)）组成的简并费米气体的基态性质。首先，我们有
+\begin{equation}\tag{8.3.32}\label{eq:8.3.32}
+N = \frac { 8 \pi \, V } { h ^{3} } \int _ { 0 } ^{p _ { F} } p ^{2} d p = \frac { 8 \pi \, V } { 3 h ^{3} } p _ { F } ^{3} ,
+\end{equation}
+这给出了
+\begin{equation}\tag{8.3.33}\label{eq:8.3.33}
+p _ { F } = \left( { \frac { 3 n } { 8 \pi } } \right) ^{1 / 3} h .
+\end{equation}
+相对论性粒子的能量-动量关系为
+\begin{equation}\tag{8.3.34}\label{eq:8.3.34}
+\varepsilon = m c ^{2} [ \{ 1 + ( p / m c ) ^{2} \} ^{1 / 2} - 1 ] ,
+\end{equation}
+粒子的速度为
+\begin{equation}\tag{8.3.35}\label{eq:8.3.35}
+u \equiv \frac { d \varepsilon } { d p } = \frac { ( p / m ) } { \{ 1 + ( p / m c ) ^{2} \} ^{1 / 2} } ;
+\end{equation}
+在此，\(m\) 表示电子的静止质量。气体的压力 \(P_{0}\) 则由式（6.4.3） 给出，
+\begin{equation}\tag{8.3.36}\label{eq:8.3.36}
+P _ { 0 } = \frac { 1 } { 3 } \frac { N } { V } \langle p u \rangle _ { 0 } = \frac { 8 \pi } { 3 h ^{3} } \int _ { 0 } ^{p _ { F} } \frac { ( p ^{2} / m ) } { \{ 1 + ( p / m c ) ^{2} \} ^{1 / 2} } p ^{2} d p .
+\end{equation}
+现在，我们引入一个无量纲变量 \(\theta\)，其定义如下：
+\begin{equation}\tag{8.3.37}\label{eq:8.3.37}
+p = m c \sinh \theta ,
+\end{equation}
+这使得
+\begin{equation}\tag{8.3.38}\label{eq:8.3.38}
+u = c \operatorname { t a n h } \theta .
+\end{equation}
+随后，式（8.4.4） 和式（8.4.8） 变为
+\begin{equation}\tag{8.3.39}\label{eq:8.3.39}
+N = \frac { 8 \pi \, V m ^{3} c ^{3} } { 3 h ^{3} } \sinh ^{3} \theta _ { F } = \frac { 8 \pi \, V m ^{3} c ^{3} } { 3 h ^{3} } x ^{3}
+\end{equation}
+并且
+\begin{equation}\tag{8.3.40}\label{eq:8.3.40}
+P _ { 0 } = \frac { 8 \pi \, m ^{4} c ^{5} } { 3 h ^{3} } \int _ { 0 } ^{\theta _ { F} } \sinh ^{4} \theta d \theta = \frac { \pi \, m ^{4} c ^{5} } { 3 h ^{3} } A ( x ) ,
+\end{equation}
+其中
+\begin{equation}\tag{8.3.41}\label{eq:8.3.41}
+A ( x ) = x ( x ^{2} + 1 ) ^{1 / 2} ( 2 x ^{2} - 3 ) + 3 \sinh ^{- 1} x ,
+\end{equation}
+同时，
+\begin{equation}\tag{8.3.42}\label{eq:8.3.42}
+x = \sinh \theta _ { F } = p _ { F } / m c = ( 3 n / 8 \pi ) ^{1 / 3} ( h / m c ) .
+\end{equation}
+函数 \(A(x)\) 可以针对任意期望的 \(x\) 值进行计算。然而，对于 \(x \ll 1\) 和 \(x \gg 1\) 的渐近结果往往更为有用；这些结果可由 (见 Kothari 和 Singh，1942) 得到。
+\begin{equation}\tag{8.3.43}\label{eq:8.3.43}
+\begin{array}{rl} & { A ( x ) = \frac { 8 } { 5 } x ^{5} - \frac { 4 } { 7 } x ^{7} + \frac { 1 } { 3 } x ^{9} - \frac { 5 } { 22 } x ^{11} + \cdots  \mathrm { ~ f o r ~ } \ x \ll 1 \Bigg \} } \\& { = 2 x ^{4} - 2 x ^{2} + 3 ( \ln 2 x - \frac { 7 } { 12 } ) + \frac { 5 } { 4 } x ^{- 2} + \cdots  \mathrm { ~ f o r ~ } \ x \gg 1 \Bigg \} . } \end{array}
+\end{equation}
+接下来，我们将对这一模型的平衡构型进行略显粗略的探讨。在没有引力的情况下，我们需要设置"外部壁"，以将电子气体维持在给定的密度 \(n\) 下。气体会对壁施加压力 \(P_0(n)\)，而任何气体的压缩或膨胀都会消耗一定的功。假设该构型为球形，当 \(V\) 发生绝热变化时，气体的能量也会随之发生变化，其变化量可由以下公式给出：
+\begin{equation}\tag{8.3.44}\label{eq:8.3.44}
+d E _ { 0 } = - P _ { 0 } ( n ) d V = - P _ { 0 } ( R ) \cdot 4 \pi R ^{2} d R .
+\end{equation}
+在有引力存在的条件下，无需设置外壁；然而，由于球体尺寸发生变化而引起的气体动能变化，依然可以用\autoref{eq:8.3.44} 来描述。当然，\(P_{0}\) 的表达式，即以"平均"密度 \(n\) 为自变量的函数，现在必须考虑到系统的非均匀性——这一事实在当前这种浅薄的处理方式中被忽略了。不过，仅凭\autoref{eq:8.3.44} 已无法再准确地计算出系统能量的净变化量；若真如其然，系统将无限膨胀，直至 \(n\) 和 \(P_{0}(n)\) 都趋近于零。实际上，我们此时还面临着势能的变化；其值由以下公式给出：
+\begin{equation}\tag{8.3.45}\label{eq:8.3.45}
+d E _ { g } = \left( \frac { d E _ { g } } { d R } \right) d R = \alpha \frac { G M ^{2} } { R ^{2} } d R ,
+\end{equation}
+其中 \(M\) 为气体的总质量，\(G\) 为万有引力常数，而 \(\alpha\) 是一个数值（约等于一），其确切取值取决于球体内 \(n\) 空间分布的特性。若系统处于平衡状态，则其总能量（\(E_0 + E_g\)）在尺寸发生微小变化时的净变化应为零；因此，在平衡状态下，
+\begin{equation}\tag{8.3.46}\label{eq:8.3.46}
+P _ { 0 } ( R ) = \frac { \alpha } { 4 \pi } \frac { G M ^{2} } { R ^{4} } .
+\end{equation}
+对于 \(P_{0}(R)\)，我们可以从\autoref{eq:8.3.12} 中代入，此时参数 \(x\) 的值为
+\begin{equation}\tag{8.3.47}\label{eq:8.3.47}
+x = \left( { \frac { 3 n } { 8 \pi } } \right) ^{1 / 3} { \frac { h } { m c } } = \left( { \frac { 9 N } { 32 \pi ^{2} } } \right) ^{1 / 3} { \frac { h / m c } { R } }
+\end{equation}
+或者，根据（1）的推导，我们可得
+\begin{equation}\tag{8.3.48}\label{eq:8.3.48}
+x = \left( \frac { 9 M } { 64 \pi ^{2} m _ { p } } \right) ^{1 / 3} \frac { h / m c } { R } = \left( \frac { 9 \pi M } { 8 m _ { p } } \right) ^{1 / 3} \frac { \hbar / m c } { R } .
+\end{equation}
+\autoref{eq:8.3.46} 随后变为
+\begin{equation}\tag{8.3.49}\label{eq:8.3.49}
+\begin{array}{rlr} & { } & { A \left( \left\{ \frac { 9 \pi M } { 8 m _ { p } } \right\} ^{1 / 3} \frac { \hbar / m c } { R } \right) = \frac { 3 \alpha \hbar ^{3} } { 4 \pi ^{2} m ^{4} c ^{5} } \frac { G M ^{2} } { R ^{4} } } \\& { } & { = 6 \pi \alpha \left( \frac { \hbar / m c } { R } \right) ^{3} \frac { G M ^{2} / R } { m c ^{2} } ; } \end{array}
+\end{equation}
+函数 \(A(x)\) 的表达式分别由\autoref{eq:8.3.41} 和 \autoref{eq:8.3.43} 给出。
+\autoref{eq:8.3.49} 确立了白矮星质量 \(M\) 与半径 \(R\) 之间的一一对应关系；因此，这一关系也被称为白矮星的质量---半径关系。值得注意的是，这一关系中所出现的各参数组合颇具趣味：我们在这里既有了以质子质量为基准的恒星质量，又有了以电子康普顿波长为基准的恒星半径，以及以电子静止能量为基准的恒星引力能。由此可见，这一关系巧妙地融合了量子力学、狭义相对论与引力理论。
+鉴于关系（20）的隐含性，我们无法将恒星半径明确地表示为其质量的函数，除非在两种极端情况下。为此，我们注意到：由于 \(M \sim 10^{33}\) 克，\(m_{p} \sim 10^{-24}\) 克，且 \(\hbar/mc \sim 10^{-11}\) 厘米，当 \(R \sim 10^{8}\) 厘米时，函数 \(A(x)\) 的自变量将接近于一。因此，我们可以将这两种极端情况分别定义如下：
+（i）\(R \gg 10^{8}\) 厘米，此时 \(x \ll 1\)，因而 \(A(x) \approx \frac{8}{5}x^{5}\)，其结果为
+\begin{equation}\tag{8.3.50}\label{eq:8.3.50}
+R \approx \frac { 3 ( 9 \pi ) ^{2 / 3} } { 40 \alpha } \frac { \hbar ^{2} M ^{- 1 / 3} } { G m m _ { p } ^{5 / 3} } \propto M ^{- 1 / 3} .
+\end{equation}
+（ii）\(R \ll 10^{8}\) 厘米，此时 \(x \gg 1\)，因而 \(A(x) \approx 2x^{4} - 2x^{2}\)，其结果为
+\begin{equation}\tag{8.3.51}\label{eq:8.3.51}
+R \approx \frac { ( 9 \pi ) ^{1 / 3} } { 2 } \frac { \hbar } { m c } \left( \frac { M } { m _ { p } } \right) ^{1 / 3} \left\{ 1 - \left( \frac { M } { M _ { 0 } } \right) ^{2 / 3} \right\} ^{1 / 2} ,
+\end{equation}
+哪里
+\begin{equation}\tag{8.3.52}\label{eq:8.3.52}
+M _ { 0 } = \frac { 9 } { 64 } \left( \frac { 3 \pi } { \alpha ^{3} } \right) ^{1 / 2} \frac { ( \hbar c / G ) ^{3 / 2} } { m _ { p } ^{2} } .
+\end{equation}
+因此，我们发现，白矮星的质量越大，其体积就越小。不仅如此，还存在一个极限质量 \(M_{0}\)，由\autoref{eq:8.3.52} 给出，该质量对应于恒星尺寸趋近于零。显然，当 \(M > M_{0}\) 时，我们的质量-半径关系将不再具有任何实际解。因此，我们得出结论：所有处于平衡状态的白矮星质量都必须小于 \(M_{0}\)——这一结论也得到了观测的充分证实。
+白矮星的正确极限质量通常被称为钱德拉塞卡极限。之所以会出现这一极限，其物理原因在于：当恒星质量超过这一极限时，电子气体的基态压力（这种压力源于电子遵循泡利不相容原理）将不足以支撑恒星，使其抵御"引力坍缩的趋势"。根据\autoref{eq:8.3.52} 所给出的极限质量数值，其值约为 \(10^{33}\) 克。钱德拉塞卡所做的详细研究最终得出了以下结论：
+\begin{equation}\tag{8.3.53}\label{eq:8.3.53}
+M _ { 0 } = \frac { 5 . 75 } { \mu _ { e } ^{2} } \odot ,
+\end{equation}
+其中，\(\odot\) 表示太阳的质量，约为 \(2 \times 10^{33}\) 克；而 \(\mu_{e}\) 是一个表示气体中氦离子化程度的数值。根据定义，\(\mu_{e} = M / N m_{H}\)；与\autoref{eq:8.3.1} 进行对比。因此，在大多数情况下，\(\mu_{e} \simeq 2\)；相应地，\(M_{0} \simeq 1.44 \odot\)。
+图~8.11 展示了白矮星质量与半径之间理论关系的曲线图。我们可以看到，对于两个极端区域——即 \(R \gg l\) 和 \(R \ll l\)——其行为均能被本章所介绍的处理方法中的\autoref{eq:8.3.50} 和 \autoref{eq:8.3.51} 很好地描述。钱德拉塞卡极限\autoref{eq:8.3.53} 是导致恒星坍缩成中子星和黑洞的机制。特别是，那些因来自伴星双星的物质流入而质量超过钱德拉塞卡极限的白矮星，被认为是Ia型超新星的主要来源；参见 Hillebrandt 和 Niemeyer（2000）。这类事件在典型的银河系中大约每一百年发生一次。在坍缩及随后的爆炸之后的几天里，这些超新星的亮度甚至可能与银河系中其余恒星的总和相当。它们经过精心校准的光变曲线，可作为明亮的"标准烛光"，用于测定遥远星系的距离，从而帮助我们测量宇宙的膨胀速率；参见第九章。
+\section{原子的统计模型}\label{ux539fux5b50ux7684ux7edfux8ba1ux6a21ux578b}
+托马斯（1927年）和费米（1928年）对费米统计的另一种应用，用于计算重原子核外空间中的电荷分布及电场。他们的研究方法基于这样一项观察：该体系中的电子可以被视为一种完全简并的费米气体，其密度为非均匀的 \(n(\mathbf{r})\)。
+其中，\(e\) 表示电子电荷的大小。当系统处于静止状态时，\(\varepsilon(\boldsymbol{r})\) 的值应在整个系统中保持一致，这样系统中任意位置的电子都不会出现整体"流向"系统其他区域的趋势。在系统的边界处，\(p_F\) 必须为零；通过适当选择能量的参考点，我们也可以使该处的 \(\phi = 0\)。因此，系统边界处的 \(\varepsilon\) 值为零；同样，系统整体的 \(\varepsilon\) 值也必为零。由此我们得到，对于所有 \(\boldsymbol{r}\)，
+\begin{equation}\tag{8.6.1}\label{eq:8.6.1}
+\frac { 1 } { 2 m } p _ { F } ^{2} ( \pmb { r } ) - e \phi ( \pmb { r } ) = 0 .
+\end{equation}
+将\autoref{eq:8.6.1} 代入，并利用泊松方程，
+\begin{equation}\tag{8.6.2}\label{eq:8.6.2}
+\nabla ^{2} \phi ( \pmb { r } ) = - 4 \pi \rho ( \pmb { r } ) = 4 \pi \, e n ( \pmb { r } ) ,
+\end{equation}
+我们得到
+\begin{equation}\tag{8.6.3}\label{eq:8.6.3}
+\nabla ^{2} \phi ( \pmb { r } ) = \frac { 4 e ( 2 m e ) ^{3 / 2} } { 3 \pi \hbar ^{3} } \{ \phi ( \pmb { r } ) \} ^{3 / 2} .
+\end{equation}
+假设系统具有球对称性，\autoref{eq:8.6.3} 可化为
+\begin{equation}\tag{8.6.4}\label{eq:8.6.4}
+\frac { 1 } { r ^{2} } \frac { d } { d r } \left\{ r ^{2} \frac { d } { d r } \phi ( r ) \right\} = \frac { 4 e ( 2 m e ) ^{3 / 2} } { 3 \pi \hbar ^{3} } \{ \phi ( r ) \} ^{3 / 2} ,
+\end{equation}
+这一方程被称为系统的托马斯---费米方程。引入无量纲变量 \(x\) 和 \(\Phi\)，其定义如下：
+\begin{equation}\tag{8.6.5}\label{eq:8.6.5}
+x = 2 \left( \frac { 4 } { 3 \pi } \right) ^{2 / 3} Z ^{1 / 3} \frac { m e ^{2} } { \hbar ^{2} } r = \frac { Z ^{1 / 3} } { 0 . 88 53 4 a _ { B } } r
+\end{equation}
+以及
+\begin{equation}\tag{8.6.6}\label{eq:8.6.6}
+\Phi ( x ) = \frac { \phi ( r ) } { Z e / r } ,
+\end{equation}
+其中 \(Z\) 是系统的原子序数，\(a_{B}\) 是氢原子的第一玻尔半径，\autoref{eq:8.6.4} 可简化为
+\begin{equation}\tag{8.6.7}\label{eq:8.6.7}
+{ \frac { d ^{2} \Phi } { d x ^{2} } } = { \frac { \Phi ^{3 / 2} } { x ^{1 / 2} } } .
+\end{equation}
+\autoref{eq:8.6.7} 就是系统的无量纲托马斯---费米方程。该方程解的边界条件可按如下方式求得。当我们接近系统的原子核（\(r \to 0\)）时，势能 \(\phi(r)\) 接近于未屏蔽的值 \(Ze/r\)；相应地，我们应有：\(\Phi(x \to 0) = 1\)。另一方面，当我们接近系统的边界（\(r \to r_0\)）时，中性原子的情况下的 \(\phi(r)\) 必须趋于零；因此，我们应有：\(\Phi(x \to x_0) = 0\)。从理论上讲，这两个条件足以完全确定函数 \(\Phi(x)\)。然而，如果还能知道该函数的初始斜率，那就更有助于解决问题——而这个初始斜率又取决于边界的确切位置。若将边界设为无穷大（\(r_0 = \infty\)），则函数 \(\Phi(x)\) 的合适初始斜率恰好接近 \(-1.5886\)；事实上，该解在原点附近的性质是
+\begin{equation}\tag{8.6.8}\label{eq:8.6.8}
+\Phi ( x ) = 1 - 1 . 58 86 x + \frac { 4 } { 3 } x ^{3 / 2} + \cdots
+\end{equation}
+对于 \(x > 10\)，近似解已由索默费尔德（1932）确定：
+\begin{equation}\tag{8.6.9}\label{eq:8.6.9}
+\Phi ( x ) \approx \left\{ 1 + \left( \frac { x ^{3} } { 14 4 } \right) ^{\lambda} \right\} ^{- 1 / \lambda} ,
+\end{equation}
+其中
+\begin{equation}\tag{8.6.10}\label{eq:8.6.10}
+\lambda = \frac { \sqrt { ( 73 ) - 7 } } { 6 } \simeq 0 . 25 7 .
+\end{equation}
+当 \(x \rightarrow \infty\) 时，解趋于简单的形式：\(\Phi(x) \approx 144/x^{3}\)。完整的解，即一个随 \(x\) 单调递减的函数，已由布什和考德威尔（1931）进行表格化。作为对数值结果的验证，我们注意到，该解必须满足积分条件
+\begin{equation}\tag{8.6.11}\label{eq:8.6.11}
+\int _ { 0 } ^{\infty} \Phi ^{3 / 2} x ^{1 / 2} d x = 1 ,
+\end{equation}
+该公式表明，电子密度 \(n(r)\) 在整个系统可利用空间内的积分值必须等于总电子数 \(Z\)。
+从函数 \(\Phi(x)\) 可以很容易地求得电势 \(\phi(r)\) 和电子密度 \(n(r)\)：
+\begin{equation}\tag{8.6.12}\label{eq:8.6.12}
+\phi ( r ) = \frac { Z e } { r } \Phi \left( \frac { r Z ^{1 / 3} } { 0 . 88 53 4 a _ { B } } \right) \propto Z ^{4 / 3}
+\end{equation}
+以及
+\begin{equation}\tag{8.6.13}\label{eq:8.6.13}
+n ( r ) = \frac { ( 2 m e ) ^{3 / 2} } { 3 \pi ^{2} \hbar ^{3} } \{ \phi ( r ) \} ^{3 / 2} \propto Z ^{2} .
+\end{equation}
+这些出现在 \(E_{0}\) 表达式中的积分，可以直接用函数 \(\Phi(x)\) 的初始斜率来表示，也就是用\autoref{eq:8.6.8} 中的数值 \(-1.5886\) 来表示。经过简单的微积分运算，我们发现
+\begin{equation}\tag{8.6.14}\label{eq:8.6.14}
+E _ { 0 } = \frac { 1 . 58 86 } { 0 . 88 53 4 } \left( \frac { e ^{2} } { 2 a _ { B } } \right) Z ^{7 / 3} \left( \frac { 1 } { 7 } - 1 \right) ,
+\end{equation}
+由此，我们得到了原子的（托马斯---费尔米）结合能：
+\begin{equation}\tag{8.6.15}\label{eq:8.6.15}
+E _ { B } = - E _ { 0 } = 1 . 53 8 Z ^{7 / 3} \chi ,
+\end{equation}
+其中 \(\chi(=e^{2}/2a_{B}\simeq13.6\,\mathrm{eV})\) 是氢原子的（实际）结合能。
+显然，我们的统计结果\autoref{eq:8.6.15} 所给出的，除了能提供结合能 \(E_{B}\) 在参数 \(Z^{-1/3}\) 的幂次展开式中的首项之外，已无法再提供其他信息。对于实际取值的 \(Z\) 来说，展开式的其他项同样至关重要；然而，这些项却无法通过此处所给出的简单化处理得到。有兴趣的读者可参阅 March 于 1957 年发表的综述文章。
+最终我们注意到，由于电子云的总能量与 \(Z^{7/3}\) 成正比，因此每颗电子的平均能量将与 \(Z^{4/3}\) 成正比；相应地，云中电子的平均德布罗意波长也将与 \(Z^{-2/3}\) 成正比。与此同时，云的整体线性尺寸则与 \(Z^{-1/3}\) 成正比——详见\autoref{eq:8.6.5}。由此我们发现，在托马斯-费米模型中采用的准经典描述，更适合用于较重的原子（即 \(Z^{-2/3} \ll Z^{-1/3}\)）。此外，该方法所具有的统计性质也要求系统中的粒子数量尽可能庞大。
+\section{问题}\label{ux95eeux9898_chap8}
+8.1 让低温度下的费米分布用一条折线来表示，如图~8.13 所示，该直线在 \(\varepsilon=\mu\) 处与实际曲线相切。请证明：尽管这一近似表示法在费米气体的低温比热上得到了"正确"的结果，但数值系数却比实际值小了 \(4/\pi^2\)。请从定性角度探讨这一数值差异的来源。
+8.2 对于费米-狄拉克气体，我们可以定义一个温度 \(T_0\)，使该气体的化学势为零（\(z=1\)）。请用费米温度 \(T_F\) 表示 \(T_0\)。
+【提示：使用式（E.16）】
+其中 \(n(=N/V)\) 是气体中的粒子密度。请验证，在低温条件下，
+\begin{equation}\tag{8.2.21}\label{eq:8.2.21}
+\kappa _ { T } \simeq \frac { 3 } { 2 n \varepsilon _ { F } } \left[ 1 - \frac { \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} \right] ,  \kappa _ { S } \simeq \frac { 3 } { 2 n \varepsilon _ { F } } \left[ 1 - \frac { 5 \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} \right] .
+\end{equation}
+（b）利用热力学关系
+\begin{equation}\tag{8.2.22}\label{eq:8.2.22}
+C _ { P } - C _ { V } = T \left( \frac { \partial P } { \partial T } \right) _ { V } \left( \frac { \partial V } { \partial T } \right) _ { P } = T V \kappa _ { T } \left( \frac { \partial P } { \partial T } \right) _ { V } ^{2} ,
+\end{equation}
+证明，
+\begin{equation}\tag{8.2.23}\label{eq:8.2.23}
+\begin{array}{rl} { \frac { C _ { P } - C _ { V } } { C _ { V } } = \frac { 4 } { 9 } \frac { C _ { V } } { N k } \frac { f _ { 1 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } } & { } \\{ \simeq \frac { \pi ^{2} } { 3 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} } & { ( k T \ll \varepsilon _ { F } ) . } \end{array}
+\end{equation}
+（c）最后，利用热力学关系 \(\gamma = \kappa_T / \kappa_S\)，验证问题 8.3 的结果。
+8.5 对理想费米气体的 \((\partial^2P/\partial T^2)_v\)、\((\partial^2\mu/\partial T^2)_v\) 和 \((\partial^2\mu/\partial T^2)_P\) 进行计算，并验证所得结果是否满足热力学关系。
+\begin{equation}\tag{8.5.1}\label{eq:8.5.1}
+C _ { V } = V T \left( \frac { \partial ^{2} P } { \partial T ^{2} } \right) _ { \nu } - N T \left( \frac { \partial ^{2} \mu } { \partial T ^{2} } \right) _ { \nu }
+\end{equation}
+以及
+\begin{equation}\tag{8.5.2}\label{eq:8.5.2}
+C _ { P } = - N T \left( \frac { \partial ^{2} \mu } { \partial T ^{2} } \right) _ { P } .
+\end{equation}
+考察这些量在低温下的行为。
+8.6 证明，理想费米气体中的声速 \(w\) 可以表示为：
+\begin{equation}\tag{8.6.16}\label{eq:8.6.16}
+w ^{2} = \frac { 5 k T } { 3 m } \frac { f _ { 5 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } = \frac { 5 } { 9 } \langle u ^{2} \rangle ,
+\end{equation}
+其中 \(\langle u^{2}\rangle\) 是气体中粒子的平均平方速度。在 \(z\to\infty\) 的极限下求 \(w\) 的值，并将其与费米速度 \(u_{F}\) 进行比较。
+8.7 证明，对于理想费米气体，
+\begin{equation}\tag{8.7.1}\label{eq:8.7.1}
+\langle u \rangle \left\langle \frac { 1 } { u } \right\rangle = \frac { 4 } { \pi } \frac { f _ { 1 } ( z ) f _ { 2 } ( z ) } { \{ f _ { 3 / 2 } ( z ) \} ^{2} } ,
+\end{equation}
+\(u\) 为粒子的速度。进一步证明，在低温下，
+\begin{equation}\tag{8.7.2}\label{eq:8.7.2}
+\langle u \rangle \left\langle \frac { 1 } { u } \right\rangle \simeq \frac { 9 } { 8 } \left[ 1 + \frac { \pi ^{2} } { 12 } \left( \frac { k T } { \mathcal { E } _ { F } } \right) ^{2} \right] ;
+\end{equation}
+与问题 6.6 进行比较。
+8.8 对以下系统获取费米能级（以 eV 为单位）和费米温度（以 K 为单位）的数值估算：
+（a）银、铅和铝中的传导电子；
+（b）重核中的核子，例如 \(^{80}\)Hg\(^{200}\)，以及
+（c）液态氦-3 中的 He\(^{3}\) 原子（原子体积：每原子 63 Å\(^{3}\)）。
+8.9 利用索默费尔德引理的另一项公式（E.17），证明在二阶近似下，低温下费米气体的化学势可表示为
+\begin{equation}\tag{8.9.1}\label{eq:8.9.1}
+\mu \simeq \varepsilon _ { F } \left[ 1 - \frac { \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} - \frac { \pi ^{4} } { 80 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{4} \right] ,
+\end{equation}
+而每粒子的平均能量则为
+\begin{equation}\tag{8.9.2}\label{eq:8.9.2}
+\frac { U } { N } \simeq \frac { 3 } { 5 } \varepsilon _ { F } \left[ 1 + \frac { 5 \pi ^{2} } { 12 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} - \frac { \pi ^{4} } { 16 } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{4} \right] .
+\end{equation}
+因此，确定电子气体比热的常规 \(T^{1}\) 结果所对应的 \(T^{3}\) 修正项。将该 \(T^{3}\) 项的大小——以铜等典型金属为例——与由晶格德拜模式引起的低温比热进行比较。有关这些展开式的更多项，请参阅 Kiess（1987）。
+8.10 考虑一个理想费米气体，其能谱为 \(\varepsilon \propto p^{\mathrm{s}}\)，并置于 \(n\) 维空间中"体积"为 \(V\) 的盒中。证明，对于该系统，
+（a）\(PV=\frac{s}{n}U\)；
+（b）\(\frac{C_V}{Nk}=\frac{n}{s}\left(\frac{n}{s}+1\right)\frac{f_{(n/s)+1}(z)}{f_{n/s}(z)}-\left(\frac{n}{s}\right)^2\frac{f_{n/s}(z)}{f_{(n/s)-1}(z)}\)；
+（c）\(\frac{C_P-C_V}{Nk}=\left(\frac{sC_V}{nNk}\right)^2\frac{f_{(n/s)-1}(z)}{f_{(n/s)}(z)}\)；
+（d）绝热过程的方程为 \(PV^{1+(s/n)}=\text{常数}\)，并且
+（e）在上述公式中，指数 \((1+(s/n))\) 只有在 \(T \gg T_F\) 的条件下，才与气体的比值 \((C_P/C_V)\) 一致。另一方面，当 \(T \ll T_F\) 时，无论 \(s\) 和 \(n\) 的取值如何，比值 \((C_P/C_V) \simeq 1 + (\pi^2/3)(kT/\varepsilon_F)^2\) 都成立。
+8.11 分别在高温极限 (\(T \gg T_F\)) 和低温极限 (\(T \ll T_F\)) 下，对前一个问题的结论（b）和（c）进行分析，并将所得结果与三维非相对论气体和极端相对论气体的相关表达式进行比较。
+8.12 证明，在二维情况下，理想费米气体的比热 \(C_{V}(N,T)\) 对于所有 \(N\) 和 \(T\) 都与理想玻色气体的比热相同。
+【提示：只需证明：对于给定的 \(N\) 和 \(T\)，这两个系统的热能差异最多仅相差一个常数。为此，首先证明两个系统的 fugacity \(z_{F}\) 和 \(z_{B}\) 是相互关联的：
+\begin{equation}\tag{8.12.1}\label{eq:8.12.1}
+( \mathbf { 1 } + z _ { F } ) ( \mathbf { 1 } - z _ { B } ) = \mathbf { 1 } ,  \mathrm { i . e . , }  z _ { B } = z _ { F } / ( \mathbf { 1 } + z _ { F } ) .
+\end{equation}
+接下来，证明函数 \(f_{2}(z_{F})\) 和 \(g_{2}(z_{B})\) 也彼此相关：
+\begin{equation}\tag{8.12.2}\label{eq:8.12.2}
+\begin{array}{r} { f _ { 2 } ( z _ { F } ) = \int _ { 0 } ^{z _ { F} } \frac { \ln ( 1 + z ) } { z } d z } \\{ = g _ { 2 } \left( \frac { z _ { F } } { 1 + z _ { F } } \right) + \frac { 1 } { 2 } \ln ^{2} ( 1 + z _ { F } ) . } \end{array}
+\end{equation}
+现在，我们很容易证明：
+\begin{equation}\tag{8.12.3}\label{eq:8.12.3}
+E _ { F } ( N , T ) = E _ { B } ( N , T ) + \mathrm { c o n s t . } ,
+\end{equation}
+该常数为 \(E_{F}(N,0)\)。】
+8.13 证明，从一般意义上讲，理想费米气体的化学势、比热以及熵在低温下的行为可由以下公式给出：
+\begin{equation}\tag{8.13.1}\label{eq:8.13.1}
+\mu \simeq \varepsilon _ { F } \left[ 1 - \frac { \pi ^{2} } { 6 } \left( \frac { \partial \ln a ( \varepsilon ) } { \partial \ln \varepsilon } \right) _ { \varepsilon = \varepsilon _ { F } } \left( \frac { k T } { \varepsilon _ { F } } \right) ^{2} \right] ,
+\end{equation}
+以及
+\begin{equation}\tag{8.13.2}\label{eq:8.13.2}
+C _ { V } \simeq S \simeq \frac { \pi ^{2} } { 3 } k ^{2} T a ( \varepsilon _ { F } ) ,
+\end{equation}
+其中 \(a(\varepsilon)\) 表示系统中单粒子态的密度。对能量谱 \(\varepsilon \propto p^{s}\) 的气体进行研究，该气体被限制在 \(n\) 维空间内，并讨论特殊情形：\(s=1\) 和 \(2\)，分别对应 \(n=2\) 和 \(3\)。
+【提示：使用附录 E 中的方程 (E.18)。】
+8.14 研究具有固有磁矩 \(\mu^{*}\) 和自旋 \(J\hbar\)（\(J=\frac{1}{2}\)、\(\frac{3}{2}\)、\ldots\ldots）的理想费米气体的泡利顺磁性，并推导出该气体在低温和高温下的磁化率表达式。
+8.15 证明，理想费米气体的顺磁性磁化率\autoref{eq:8.2.20} 可以写成如下形式：
+\begin{equation}\tag{8.15.1}\label{eq:8.15.1}
+\chi = \frac { n \mu ^{* 2} } { k T } \frac { f _ { 1 / 2 } ( z ) } { f _ { 3 / 2 } ( z ) } .
+\end{equation}
+利用这一结果，验证方程 (8.2.24) 和 (8.2.27)。
+8.16 根据\autoref{eq:8.3.6} 所观测到的钠的 γ 值为 \(4.3 \times 10^{-4}\) cal mol\(^{-1}\)K\(^{-2}\)。计算钠金属中费米能级 \(\varepsilon_F\) 以及导电电子的原子密度 \(n\)。将后者的数值与原子密度进行比较（已知对于钠， \(\rho = 0.954\) g cm\(^{-3}\)，且 \(M = 23\)）。
+8.17 计算在3000 K时，钨中导电电子（\(\varepsilon_{F}\)=9.0 eV）的分数，其动能\(\varepsilon\)（=\(\frac{1}{2}mu^{2}\)）大于\(W\)（=13.5 eV）。同时，计算那些与运动的\(z\)分量相关的动能——即\(\left(\frac{1}{2}mu_{z}^{2}\right)\)——大于13.5 eV的电子所占的比例。
+8.18 证明，相对论性电子气体的基态能量\(E_{0}\)可由以下公式给出：
+\begin{equation}\tag{8.18.1}\label{eq:8.18.1}
+E _ { 0 } = \frac { \pi V m ^{4} c ^{5} } { 3 h ^{3} } B ( x ) ,
+\end{equation}
+其中，
+\begin{equation}\tag{8.18.2}\label{eq:8.18.2}
+B ( x ) = 8 x ^{3} \{ ( x ^{2} + 1 ) ^{1 / 2} - 1 \} - A ( x ) ,
+\end{equation}
+\(A(x)\) 和 \(x\) 分别由式（8.5.13）和式（8.5.14）给出。验证上述关于\(E_0\)的结果以及式（8.5.12）中关于\(P_0\)的表达式，是否满足热力学关系。
+\begin{equation}\tag{8.18.3}\label{eq:8.18.3}
+E _ { 0 } + P _ { 0 } V = N \mu _ { 0 }  \mathrm { a n d }  P _ { 0 } = - ( \partial E _ { 0 } / \partial V ) _ { N } .
+\end{equation}
+3.19 证明，在第8.5节中研究的相对论费米气体的低温比热，可由以下公式给出：
+\begin{equation}\tag{8.18.4}\label{eq:8.18.4}
+\frac { C _ { V } } { N k } = \pi ^{2} \frac { ( x ^{2} + 1 ) ^{1 / 2} } { x ^{2} } \frac { k T } { m c ^{2} }  \left( x = \frac { p _ { F } } { m c } \right) .
+\end{equation}
+验证该公式在非相对论情形下，以及在极端相对论情形下，均能得出正确的结果。
+8.20 将式（8.6.19）中的积分表示为函数\(\Phi(x)\)的初始斜率的函数，并验证式（8.6.20）。
+8.21 原子中电子云的总能量\(E\)可以写成：
+\begin{equation}\tag{8.21.1}\label{eq:8.21.1}
+E = K + V _ { n e } + V _ { e e } ,
+\end{equation}
+其中，\(K\)为电子的动能，\(V_{ne}\)为电子与原子核之间的相互作用能，\(V_{ee}\)为电子之间的相互作用能。证明，根据汤姆斯---费米模型对中性原子的描述，
+\begin{equation}\tag{8.21.2}\label{eq:8.21.2}
+K = - E ,  V _ { n e } = + \frac { 7 } { 3 } E ,  \mathrm { a n d }  V _ { e e } = - \frac { 1 } { 3 } E ,
+\end{equation}
+因此，总能量\(V = V_{ne} + V_{ee} = 2E\)。需要注意的是，这些结果与维里定理相一致；请参阅问题3.20，其中\(n = -1\)。
+8.22 推导出适用于谐振阱中费米气体的式（8.4.3）至式（8.4.5）的方程。通过数值计算求解式（8.3.4）和式（8.3.5），以重现图~8.9和图~8.10中所示的理论曲线。
+

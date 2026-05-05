@@ -1,0 +1,960 @@
+﻿\chapter{相互作用的系统统计力学：簇展开方法}\label{ux76f8ux4e92ux4f5cux7528ux7684ux7cfbux7edfux7edfux8ba1ux529bux5b66ux7c07ux5c55ux5f00ux65b9ux6cd5}
+前几章考虑的所有系统都是由非相互作用实体组成的，或者可以被视为由非相互作用实体组成的。因此，尽管获得的结果具有相当重要的内在价值，但在应用于自然界中实际存在的系统时可能存在局限性。为了使理论与实验真正联系起来，必须考虑系统中运作的粒子间相互作用。这可以通过第3至5章中发展的形式主义来帮助实现，原则上可以应用于无限多样的物理系统和问题；然而，在实践中，大多数情况下会遇到严重的分析困难。对于低密度气体等系统，这些困难不那么严格，因为相应的非相互作用系统可以作为近似。与此类系统相关的各种物理量的数学表达式可以写成级数展开的形式，其主要项描述了相应的理想系统结果，而后续项提供了由系统中的粒子间相互作用引起的修正。Mayer及其合作者（从1937年开始）开发了一种系统的方法来进行这种展开，在实际气体遵循经典统计的情况下，这种方法被称为簇展开方法。Kahn和Uhlenbeck（1938年）开始了对量子统计气体同样适用的推广，并由Lee和Yang（1959a,b；1960a,b,c）完善。
+\section{经典气体的簇展开}\label{ux7ecfux5178ux6c14ux4f53ux7684ux7c07ux5c55ux5f00}
+我们从一个相对简单的物理系统开始，即单组分、经典的单原子气体，其势能由两粒子相互作用\(u_{ij}\)之和给出。然后系统的哈密顿量由下式给出
+\begin{equation}\tag{10.1.1}\label{eq:10.1.1}
+H = \sum _ { i } \left( \frac { 1 } { 2 m } p _ { i } ^{2} \right) + \sum _ { i < j } u _ { i j }  ( i , j = 1 , 2 , \ldots , N ) ;
+\end{equation}
+第二部分中的求和涵盖了系统中的所有\(N(N-1)/2\)对粒子。通常，势能\(u_{ij}\)是相对位置向量\(r_{ij}(=r_j - r_i)\)的函数；
+然而，如果两体力是中心力，则函数\(u_{ij}\)仅依赖于粒子间距离\(r_{ij}\)。
+有了前面的哈密顿量，系统的配分函数由\autoref{eq:3.5.5}给出，
+\begin{equation}\tag{10.1.2}\label{eq:10.1.2}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! h ^{3 N} } \int \exp \left\{ - \beta \sum _ { i } \left( \frac { 1 } { 2 m } p _ { i } ^{2} \right) - \beta \sum _ { i < j } u _ { i j } \right\} d ^{3 N} p \, d ^{3 N} r .
+\end{equation}
+对粒子动量的积分可以直接进行，结果是
+\begin{equation}\tag{10.1.3}\label{eq:10.1.3}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! \lambda ^{3 N} } \int \exp \left[ - \beta \sum _ { i < j } u _ { i j } \right] d ^{3 N} r = \frac { 1 } { N ! \lambda ^{3 N} } Z _ { N } ( V , T ) ,
+\end{equation}
+其中\(\lambda\{=h/(2\pi mkT)^{1/2}\}\)是粒子的平均热波长，而函数\(Z_{N}(V,T)\)代表对空间坐标\(r_{1},r_{2},\ldots,r_{N}\)的积分：
+\begin{equation}\tag{10.1.4}\label{eq:10.1.4}
+Z _ { N } ( V , T ) = \int \exp \left[ - \beta \sum _ { i < j } u _ { i j } \right] d ^{3 N} r = \int \prod _ { i < j } ( e ^{- \beta u _ { i j} } ) \, d ^{3 N} r .
+\end{equation}
+函数\(Z_{N}(V,T)\)通常被称为系统的构型积分。对于非相互作用粒子的气体，\autoref{eq:10.1.4} 中的被积函数为单位；因此我们有
+\begin{equation}\tag{10.1.5}\label{eq:10.1.5}
+Z _ { N } ^{( 0 )} ( V , T ) = V ^{N}  \mathrm { a n d }  Q _ { N } ^{( 0 )} ( V , T ) = \frac { V ^{N} } { N ! \lambda ^{3 N} } ,
+\end{equation}
+与我们之前的结果\autoref{eq:3.5.9} 一致。
+为了处理非理想情况，在Mayer之后引入了两粒子函数\(f_{ij}\)，由关系式定义
+\begin{equation}\tag{10.1.6}\label{eq:10.1.6}
+f _ { i j } = e ^{- \beta u _ { i j} } - 1 .
+\end{equation}
+在没有相互作用的情况下，函数\(f_{ij}\)恒为零；在有相互作用的情况下，它不为零，但在足够高的温度下与单位相比非常小。因此，我们预期函数\(f_{ij}\)非常适合用于进行\autoref{eq:10.1.4} 中被积函数的高温展开。
+图~10.1显示了函数\(u_{ij}\)和\(f_{ij}\)的典型图；我们注意到(i)函数\(f_{ij}\)在任何地方都是有界的，并且(ii)当粒子间距离\(r_{ij}\)相对于势能的"有效"范围\(r_{0}\)变大时，它变得可以忽略不计地小。
+列举(7)中各项的一种方便方法是将其与相应的\(N\)粒子图关联起来。例如，如果\(N\)是8，则各项
+\begin{equation}\tag{10.1.7}\label{eq:10.1.7}
+t _ { A } = \int f _ { 34 } f _ { 68 } d ^{3} r _ { 1 } \cdots d ^{3} r _ { 8 }  \mathrm { a n d }  t _ { B } = \int f _ { 12 } f _ { 14 } f _ { 67 } d ^{3} r _ { 1 } \cdots d ^{3} r _ { 8 }
+\end{equation}
+在构型积分\(Z_{8}\)的展开中可以与8粒子图关联起来
+\begin{equation}\tag{10.1.8}\label{eq:10.1.8}
+\left[ \begin{array}{llll} { 1 } & { 3 } & { 5 } & { 7 } \\{ 2 } & { 4 } & { 6 } & { 8 } \end{array} \right]  \mathrm { a n d }  \left[ \begin{array}{llll} { 1 } & { 3 } & { 5 } & { 7 } \\{ 2 } & { 4 } & { 6 } & { 8 } \end{array} \right] ,
+\end{equation}
+分别对应。仔细观察项\(t_{A}\)和\(t_{B}\)（以及相应的图表）表明，我们最好将这些项视为适当分解的（并且图表相应地
+分解），即，
+\begin{equation}\tag{10.1.9}\label{eq:10.1.9}
+\begin{array}{rl} & { t _ { A } = \int d ^{3} r _ { 1 } \int d ^{3} r _ { 2 } \int d ^{3} r _ { 5 } \int d ^{3} r _ { 7 } \int f _ { 34 } d ^{3} r _ { 3 } d ^{3} r _ { 4 } \int f _ { 68 } d ^{3} r _ { 6 } d ^{3} r _ { 8 } } \\& {  \equiv [ \text{(1)} ] \, . \, [ \text{(2)} ] \, . \, [ \text{(5)} ] \, . \, [ \text{(7)} ] \, . \, [ \text{(3)} \longrightarrow \text{(4)} ] \, . \, [ \text{(6)} \longrightarrow \text{(8)} ] } \end{array}
+\end{equation}
+同样地
+\begin{equation}\tag{10.1.10}\label{eq:10.1.10}
+\begin{aligned}t_B&=\int d^3r_3\int d^3r_5\int d^3r_8\int f_{12}f_{14}d^3r_1d^3r_2d^3r_4\int f_{67}d^3r_6d^3r_7\\\\&\equiv[\text{(3)}].[\text{(5)}].[\text{(8)}].[\text{(6)}-\text{(7)}].[\text{(2)}+\text{(1)}+\text{(4)}].\end{aligned}
+\end{equation}
+然后我们可以说，在积分\(Z_{8}\)的展开中项\(t_{A}\)代表一种"构型"，其中包含四个"簇"，每个簇有一个粒子，以及两个"簇"，每个簇有两个粒子；而项\(t_{B}\)代表一种"构型"，其中包含三个"簇"，每个簇有一个粒子，一个簇有两个粒子，还有一个簇有三个粒子。
+鉴于此，我们可以引入一个\(N\)粒子图的概念，根据定义，它是一个由\(N\)个不同的圆圈组成的集合，编号为\(1,2,\ldots,N\)，这些圆圈之间通过一些（或全部）线条相连；如果通过这些线条相连的不同圆圈对（用符号\(\alpha,\beta,\ldots,\lambda\)表示）表示出来（每个符号表示集合\(1,2,\ldots,N\)中的一个不同索引对），那么这个图就代表了展开式\autoref{eq:10.1.7} 中的项：
+\begin{equation}\tag{10.1.11}\label{eq:10.1.11}
+\int ( f _ { \alpha } f _ { \beta } \cdots f _ { \lambda } ) d ^{3} r _ { 1 } \cdots d ^{3} r _ { N }
+\end{equation}
+展开式\autoref{eq:10.1.7} 中的项。一个与这个图具有相同数量的连接对，但其集合\((\alpha',\beta',\ldots,\lambda')\)与集合\((\alpha,\beta,\ldots,\lambda)\)不同的图将被视为不同的图，因为它代表了展开式中的不同项；当然，这些项在展开式中属于同一个组。现在，鉴于展开式\autoref{eq:10.1.7} 中各项与各种\(N\)粒子图之间的一一对应关系，我们有：
+\begin{equation}\tag{10.1.12}\label{eq:10.1.12}
+Z _ { N } ( V , T ) = \mathrm { s u m ~ o f ~ a l l ~ d i s t i n c t ~ } N \mathrm { - p a r t i c l e ~ g r a p h s } .
+\end{equation}
+此外，鉴于各项的可能分解（或各种图的可能分解），我们可以引入一个\(l\)-簇的概念，根据定义，它是一个"\(l\)粒子图，其中每个编号为\(1,2,\ldots,l\)的圆圈都直接或间接地与其他圆圈相连"。例如，我们在这里写下一个5粒子图，它也是一个5-簇：
+5粒子图也是一个5-簇：
+\begin{equation}\tag{10.1.13}\label{eq:10.1.13}
+\text{(3)}-\text{(4)}\sum_{5}^{1}\frac{\sqrt{2}}{\sqrt{2}}=\int f_{12}f_{14}f_{15}f_{25}f_{34}d^3r_1\cdots d^3r_5.
+\end{equation}
+显然，这样的簇不能被分解成更简单的图，因为相应的项不能被分解成更简单的项。此外，一组\(l\)个粒子（除非\(l=1\)或\(2\)）可以导致多种\(l\)-簇，其中一些可能在值上相等；例如，一组三个粒子会导致四个不同的3-簇，即：
+因此，定义好的簇积分\(b_{l}(V,T)\)是无量纲的，并且在\(V\to\infty\)的极限情况下，趋近于一个有限值\(b_{l}(T)\)，这个值不依赖于容器的大小和形状（除非后者异常不正常）。第一个性质非常明显。第二个性质可以通过注意到如果我们固定\(l\)个粒子中的一个，在点\(r_{1}\)处进行积分，并对剩余的\((l-1)\)个粒子的坐标进行积分，那么由于函数\(f_{ij}\)只在一个小的有限距离范围内延伸，这个积分只会覆盖有限的空间区域——这个区域的线性尺寸与函数\(f_{ij}\)的范围相当；这个积分的结果实际上不依赖于容器的体积。最后，我们对固定点的粒子\(r_{1}\)进行积分，并得到一个与\(V\)成正比的因子；这个因子抵消了定义\autoref{eq:10.1.16} 分母中的\(V\)。因此，簇积分\(b_{l}(V,T)\)对容器大小的依赖不过是一个简单的"表面效应"——随着\(V\to\infty\)，这个效应消失，我们最终得到一个与体积无关的数\(b_{l}(T)\)。
+一些更简单的簇积分是
+\begin{equation}\tag{10.1.14}\label{eq:10.1.14}
+\begin{aligned}&b_{1}=\frac{1}{V}[\:\bigcirc\:]=\frac{1}{V}\int d^{3}r_{1}\equiv1,\\&b_{2}=\frac{1}{2\lambda^{3}V}[\:\bigcirc-2\:]=\frac{1}{2\lambda^{3}V}\int\int f_{12}d^{3}r_{1}\:d^{3}r_{2}\\&\approx\frac{1}{2\lambda^{3}}\int f_{12}d^{3}r_{12}=\frac{2\pi}{\lambda^{3}}\int_{0}^{\infty}f(r)r^{2}\:dr\\&=\frac{2\pi}{\lambda^{3}}\int_{0}^{\infty}(e^{-u(r)/kT}-1)r^{2}dr,\end{aligned}
+\end{equation}
+\begin{equation}\tag{10.1.15}\label{eq:10.1.15}
+\begin{array}{rl} & { b _ { 3 } = \frac { 1 } { 6 \lambda ^{6} V } \times \ [ \mathrm { s u m ~ o f ~ t h e ~ c l u s t e r s ~ ( 15 ) } ] } \\& { = \frac { 1 } { 6 \lambda ^{6} V } \int ( \underbrace { f _ { 12 } f _ { 13 } + f _ { 12 } f _ { 23 } + f _ { 13 } f _ { 23 } } _ { } + f _ { 12 } f _ { 13 } f _ { 23 } ) d ^{3} r _ { 1 } d ^{3} r _ { 2 } d ^{3} r _ { 3 } } \\& { \approx \frac { 1 } { 6 \lambda ^{6} V } \left[ 3 V \iint f _ { 12 } f _ { 13 } d ^{3} r _ { 12 } d ^{3} r _ { 13 } + V \iint f _ { 12 } f _ { 13 } f _ { 23 } d ^{3} r _ { 12 } d ^{3} r _ { 13 } \right] } \\& { = 2 b _ { 2 } ^{2} + \frac { 1 } { 6 \lambda ^{6} } \iint f _ { 12 } f _ { 13 } f _ { 23 } d ^{3} r _ { 12 } d ^{3} r _ { 13 } , } \end{array}
+\end{equation}
+等等。
+我们现在继续评估（13）中的关键表达式。显然，一个\(N\)粒子图将由若干簇组成，其中，比如说，\(m_1\)是l-簇，\(m_2\)是2-簇，\(m_3\)是3-簇，等等；数字\(\{m_l\}\)必须满足限制性条件
+\begin{equation}\tag{10.1.16}\label{eq:10.1.16}
+\sum _ { l = 1 } ^{N} l m _ { l } = N ,  m _ { l } = 0 , 1 , 2 , \ldots , N .
+\end{equation}
+然而，给定的数字集合\(\{m_l\}\)并不指定一个唯一的单一图；它代表了一组"图"，其总和可以用符号\(S\{m_l\}\)表示。然后我们可以写
+\begin{equation}\tag{10.1.17}\label{eq:10.1.17}
+Z _ { N } ( V , T ) = \sum _ { \{ m _ { l } \} } ^{\prime} S \{ m _ { l } \} ,
+\end{equation}
+其中首字母大写的求和\(\sum'\)遍历所有符合限制性条件\autoref{eq:10.1.16} 的集合\(\{m_l\}\)。\autoref{eq:10.1.17} 代表了图的系统性重组，与\autoref{eq:10.1.7} 中首次出现的简单分组相反。
+我们的下一个任务是评估总和\(S\{m_l\}\)。为此，我们观察到在分布集合\(\{m_l\}\)下的"图族"基本上是由以下两个原因产生的：
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  一般来说，有许多不同的方法可以将系统中的\(N\)个粒子分配到\(\sum_{l} m_{l}\)个簇中，
+\item
+  对于任何给定的分配，通常有许多不同的方式来形成各种簇，即使对于给定的\(l\)个粒子组，一个\(l\)-簇（如果\(l > 2\)）也可以通过多种不同的方式形成；例如，参见(15)中列出的四种不同的方式，用给定的三个粒子组形成一个3-簇。
+\end{enumerate}
+由于原因(i)，我们得到一个直接的因子
+\begin{equation}\tag{10.1.18}\label{eq:10.1.18}
+\frac { N ! } { ( 1 ! ) ^{m _ { 1} } ( 2 ! ) ^{m _ { 2} } \ldots } \equiv \frac { N ! } { \prod ( l ! ) ^{m _ { l} } } .
+\end{equation}
+现在，如果没有原因(ii)，也就是说，如果所有的\(l\)-簇在形成上都是唯一的，那么总和\(S\{m_l\}\)将由组合因子(22)与设置中任何一个图的值相乘得到，即
+\begin{equation}\tag{10.1.19}\label{eq:10.1.19}
+\prod _ { l } \mathrm { ( t h e ~ v a l u e ~ o f ~ a n ~ } l \mathrm { - c l u s t e r } ) ^{m _ { l} } ,
+\end{equation}
+进一步校正了这样一个事实：任何两个仅在一个簇中的所有粒子与另一个相同大小的簇中的所有粒子交换位置而不同的排列，不应被视为不同的，相应的校正因子为
+\begin{equation}\tag{10.1.20}\label{eq:10.1.20}
+\prod _ { l } ( 1 / m _ { l } ! ) .
+\end{equation}
+稍作思考就会发现，如果我们用表达式\(^{3}\)替换\autoref{eq:10.1.23} 和 \autoref{eq:10.1.24} 的乘积，原因(ii)就被完全且正确地处理了
+\begin{equation}\tag{10.1.21}\label{eq:10.1.21}
+\prod _ { l } [ ( \mathrm { t h e ~ s u m ~ o f ~ t h e ~ v a l u e s ~ o f ~ a l l ~ p o s s i b l e ~ } l { \mathrm { - c l u s t e r s } } ) ^{m _ { l} } / m _ { l } ! ]
+\end{equation}
+借助\autoref{eq:10.1.16}，可以将其写成
+\begin{equation}\tag{10.1.22}\label{eq:10.1.22}
+\prod _ { l } \Big [ ( b _ { l } l ! \, \lambda ^{3 ( l - 1 )} V ) ^{m _ { l} / m _ { l } ! } \Big ] .
+\end{equation}
+\(^{3}\)为了理解这种替换背后的逻辑，请考虑(25)中的表达式{[} {]}作为一个多项式展开，并根据\(l\)-簇的多样性来解释这个展开的各个项。
+现在总和\(S\{m_{l}\}\)由因子\autoref{eq:10.1.18}和\autoref{eq:10.1.21}相乘得到。将这个结果代入\autoref{eq:10.1.17}，我们得到配置积分
+\begin{equation}\tag{10.1.23}\label{eq:10.1.23}
+Z _ { N } ( V , T ) = N ! \lambda ^{3 N} \sum _ { \{ m _ { l } \} } ^{\prime} \left[ \prod _ { l } \left\{ \left( b _ { l } \frac { V } { \lambda ^{3} } \right) ^{m _ { l} } \frac { 1 } { m _ { l } ! } \right\} \right] .
+\end{equation}
+这里利用了这样一个事实
+\begin{equation}\tag{10.1.24}\label{eq:10.1.24}
+\prod _ { l } ( \lambda ^{3 l} ) ^{m _ { l} } = \lambda ^{3 \Sigma _ { l} l m _ { l } } = \lambda ^{3 N} ;
+\end{equation}
+参见限制性条件\autoref{eq:10.1.16}。系统的配分函数现在由\autoref{eq:10.1.3} 和 \autoref{eq:10.1.23} 得出，结果是
+\begin{equation}\tag{10.1.25}\label{eq:10.1.25}
+Q _ { N } ( V , T ) = \sum _ { \{ m _ { l } \} } ^{\prime} \left[ \prod _ { l = 1 } ^{N} \left\{ \left( b _ { l } \frac { V } { \lambda ^{3} } \right) ^{m _ { l} } \frac { 1 } { m _ { l } ! } \right\} \right] .
+\end{equation}
+由于限制性条件\autoref{eq:10.1.16}，必须遵守每个集合\(\{m_l\}\)的约束，因此在\autoref{eq:10.1.25} 中对带撇号的求和变得复杂。因此，我们转向系统的总配分函数：
+\begin{equation}\tag{10.1.26}\label{eq:10.1.26}
+\mathcal { Q } ( z , V , T ) = \sum _ { N = 0 } ^{\infty} z ^{N} Q _ { N } ( V , T ) .
+\end{equation}
+写成
+\begin{equation}\tag{10.1.27}\label{eq:10.1.27}
+z ^{N} = z ^{\Sigma _ { l} l m _ { l } } = \prod _ { l } ( z ^{l} ) ^{m _ { l} } ,
+\end{equation}
+用\autoref{eq:10.1.25} 中的\(Q_{N}(V,T)\)替换，并注意到对集合\(\{m_{l}\}\)的受限求和，受条件\(\sum_{l}lm_{l}=N\)的限制，然后对所有\(N\)值（从\(N=0\)到\(N=\infty\)）的求和，等同于对所有可能的集合\(\{m_{l}\}\)的无限制求和，我们得到
+\begin{equation}\tag{10.1.28}\label{eq:10.1.28}
+\begin{array}{rl} & { \mathcal { Q } ( z , V , T ) = \displaystyle \sum _ { m _ { 1 } , m _ { 2 } , \ldots = 0 } ^{\infty} \left[ \displaystyle \prod _ { l = 1 } ^{\infty} \left\{ \left( b _ { l } z ^{l} \frac { V } { \lambda ^{3} } \right) ^{m _ { l} } \frac { 1 } { m _ { l } ! } \right\} \right] } \\& {  = \displaystyle \prod _ { l = 1 } ^{\infty} \left[ \displaystyle \sum _ { m _ { l } = 0 } ^{\infty} \left\{ \left( b _ { l } z ^{l} \frac { V } { \lambda ^{3} } \right) ^{m _ { l} } \frac { 1 } { m _ { l } ! } \right\} \right] } \\& {  = \displaystyle \prod _ { l = 1 } ^{\infty} \left[ \exp \left( b _ { l } z ^{l} \frac { V } { \lambda ^{3} } \right) \right] = \exp \left[ \displaystyle \sum _ { l = 1 } ^{\infty} b _ { l } z ^{l} \frac { V } { \lambda ^{3} } \right] } \end{array}
+\end{equation}
+因此，
+\begin{equation}\tag{10.1.29}\label{eq:10.1.29}
+\frac { 1 } { V } \ln \mathcal { Q } = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} b _ { l } z ^{l} .
+\end{equation}
+在\(V \rightarrow \infty\)的极限下，
+\begin{equation}\tag{10.1.30}\label{eq:10.1.30}
+\frac { P } { k T } \equiv \operatorname* { L i m } _ { V \to \infty } \left( \frac { 1 } { V } \ln \mathcal { Q } \right) = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} \mathfrak { b } _ { l } z ^{l} ,
+\end{equation}
+并且
+\begin{equation}\tag{10.1.31}\label{eq:10.1.31}
+\frac { N } { V } \equiv \operatorname* { L i m } _ { V \to \infty } \left( \frac { z } { V } \frac { \partial \ln \mathcal { Q } } { \partial z } \right) = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} l \, \mathfrak { b } _ { l } z ^{l} .
+\end{equation}
+\autoref{eq:10.1.30} 和 \autoref{eq:10.1.31} 构成了著名的Mayer--Ursell形式主义的簇展开。在这些方程中消去逸度\(z\)后，我们得到了系统的状态方程。
+\section{状态方程的维里展开}\label{ux72b6ux6001ux65b9ux7a0bux7684ux7ef4ux91ccux5c55ux5f00}
+前一节中发展的方法只有在我们仅将其应用于气相时才能得到精确结果。如果我们试图在我们的研究中包含凝聚现象、临界点和液相，我们会遇到与（i）\autoref{eq:10.1.30} 和 \autoref{eq:10.1.31} 中涉及的极限程序、（ii）对\(l\)求和的收敛性以及（iii）簇积分\(b_{l}\)的体积依赖性相关的严重困难。因此，我们将研究限制在仅气相上。然后状态方程可以写成
+\begin{equation}\tag{10.2.1}\label{eq:10.2.1}
+\frac { P \nu } { k T } = \sum _ { l = 1 } ^{\infty} a _ { l } ( T ) \left( \frac { \lambda ^{3} } { \nu } \right) ^{l - 1} ,
+\end{equation}
+其中\(\nu(=V/N)\)表示系统中每个粒子的体积。展开式\autoref{eq:10.2.1} 被认为是通过消去\autoref{eq:10.1.30} 和 \autoref{eq:10.1.31} 之间的\(z\)得到的，被称为系统的维里展开，数字\(a_{l}(T)\)称为维里系数。⁴为了确定系数\(a_{l}\)与簇积分\(\dot{b}_{l}\)之间的关系，我们反转\autoref{eq:10.1.31} 以获得\(z\)作为\((\lambda^{3}/\nu)\)的幂级数，并将其代入\autoref{eq:10.1.30}。这导致了\autoref{eq:10.2.1}，其中
+\begin{equation}\tag{10.2.2}\label{eq:10.2.2}
+a _ { 1 } = \ddot { b } _ { 1 } \equiv 1 ,
+\end{equation}
+\begin{equation}\tag{10.2.3}\label{eq:10.2.3}
+a _ { 2 } = - \bar { b } _ { 2 } = - \frac { 2 \pi } { \lambda ^{3} } \int _ { 0 } ^{\infty} \left( e ^{- u ( r ) / k T} - 1 \right) r ^{2} d r ,
+\end{equation}
+\begin{equation}\tag{10.2.4}\label{eq:10.2.4}
+a _ { 3 } = 4 \, \ddot { b } _ { 2 } ^{2} - 2 \, \ddot { b } _ { 3 } = - \frac { 1 } { 3 \lambda ^{6} } \int _ { 0 } ^{\infty}    \int _ { 0 } ^{\infty}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+\end{equation}
+\begin{equation}\tag{10.2.5}\label{eq:10.2.5}
+a _ { 4 } = - 20 \, \bar { b } _ { 2 } ^{3} + 18 \, \bar { b } _ { 2 } \, \bar { b } _ { 3 } - 3 \, \bar { b } _ { 4 } = \cdots ,
+\end{equation}
+等等；这里还使用了\autoref{eq:10.1.17} 到 \autoref{eq:10.1.19}。我们注意到系数\(a_{l}\)完全由量\(\dot{b}_{1}, \dot{b}_{2}, \ldots, \dot{b}_{l}\)决定，即由配置积分序列\(Z_{1}, Z_{2}, \ldots, Z_{l}\)决定；另见\autoref{eq:10.4.5} 到 \autoref{eq:10.4.8}。
+从\autoref{eq:10.2.4} 我们观察到气体的第三个维里系数完全由3簇\(\stackrel{1}{\rightarrow}\)决定。这表明高阶维里系数也可能完全由各种\(l\)簇的特定"子群"决定。这确实是正确的，相关结果是，在无限体积的极限下，
+\begin{equation}\tag{10.2.6}\label{eq:10.2.6}
+a _ { l } = - \frac { l - 1 } { l } \beta _ { l - 1 }  ( l \geq 2 ) ,
+\end{equation}
+其中\(\beta_{l-1}\)是所谓的不可约簇积分，定义为
+\begin{equation}\tag{10.2.7}\label{eq:10.2.7}
+\beta _ { l - 1 } = \frac { 1 } { ( l - 1 ) ! \lambda ^{3 ( l - 1 )} V } \times \mathrm { ~ ( t h e ~ s u m ~ o f ~ a l l ~ i r r e d u c i b l e ~ } l \mathrm { - c l u s t e r s ) ; }
+\end{equation}
+我们所说的不可约\(l\)-簇是指一个"l-粒子图是多重连通的（意味着图中每对圆圈之间至少存在两条完全独立、不相交的路径）"。例如，在四个可能的3-簇中，见\autoref{eq:10.1.15}，只有最后一个是不可约的。实际上，如果我们用这个特定的簇来表达\autoref{eq:10.2.4}，并利用定义\autoref{eq:10.2.7} 来表示\(\beta_2\)，我们确实可以得到第三个维里系数
+\begin{equation}\tag{10.2.8}\label{eq:10.2.8}
+a _ { 3 } = - \frac { 2 } { 3 } \beta _ { 2 } ,
+\end{equation}
+与一般结果\autoref{eq:10.2.6}\(^{6}\)一致
+量\(\beta_{l-1}\)，像\(b_{l}\)一样，是无量纲的，并且在\(V \rightarrow \infty\)的极限情况下，它们趋近于与容器的大小和形状无关的有限值（除非
+后者是不适当的异常值）。此外，这两组量是相互关联的；见\autoref{eq:10.4.27} 和 \autoref{eq:10.4.29}。
+\section{维里系数的评估}\label{ux7ef4ux91ccux7cfbux6570ux7684ux8bc4ux4f30}
+如果一个给定的系统没有偏离理想气体行为太多，其状态方程可以通过前几个维里系数得到充分描述。现在，由于\(a_{1} \equiv 1\)，我们需要考虑的最低阶维里系数是\(a_{2}\)，它由\autoref{eq:10.2.3} 给出：
+\begin{equation}\tag{10.3.1}\label{eq:10.3.1}
+a _ { 2 } = - \dot { b } _ { 2 } = \frac { 2 \pi } { \lambda ^{3} } \int _ { 0 } ^{\infty} \left( 1 - e ^{- u ( r ) / k T} \right) r ^{2} \, d r ,
+\end{equation}
+\(u(r)\)是粒子间相互作用的势能。函数\(u(r)\)的典型图示在图~10.1中早先展示过；一个典型的半经验公式（Lennard-Jones, 1924）由
+\begin{equation}\tag{10.3.2}\label{eq:10.3.2}
+u ( r ) = 4 \varepsilon \left[ \left( \frac { \sigma } { r } \right) ^{12} - \left( \frac { \sigma } { r } \right) ^{6} \right] .
+\end{equation}
+\autoref{eq:10.3.2} 所给出的 Lennard-Jones 势很好地模拟了实际粒子间势能的最显著特征。例如，由\autoref{eq:10.3.2} 给出的函数\(u(r)\)在距离\(r_0(=2^{1/6}\sigma)\)处展示出一个"最小值"，其值为\(-\varepsilon\)，对于\(r<\sigma\)则上升到无限大的（正）值，而对于\(r\gg\sigma\)则上升到极小的（负）值。在"最小值"左侧的部分主要由排斥相互作用主导，当两个粒子靠得太近时起作用，而在右侧的部分主要由吸引相互作用主导，当粒子相隔相当远的距离时起作用。对于大多数实际目的来说，势能的排斥部分的精确形式并不是很重要；它可以用粗略的近似
+\begin{equation}\tag{10.3.3}\label{eq:10.3.3}
+u ( r ) = + \infty  ( \mathrm { f o r } \ r < r _ { 0 } ) ,
+\end{equation}
+来代替，这相当于为每个粒子赋予一个直径为\(r_0\)的"不可穿透"的核心。然而，吸引部分的精确形式很重要；鉴于第六次幂吸引势能存在良好的理论基础（见问题3.36），这部分可以简单地写成
+\begin{equation}\tag{10.3.4}\label{eq:10.3.4}
+u ( r ) = - u _ { 0 } ( r _ { 0 } / r ) ^{6}  ( r \geq r _ { 0 } ) .
+\end{equation}
+因此，如果只对情况的定性评估感兴趣而不需要对理论与实验进行定量比较，那么可以使用\autoref{eq:10.3.3} 和 \autoref{eq:10.3.4} 给出的势能。
+将\autoref{eq:10.3.3} 和 \autoref{eq:10.3.4} 代入\autoref{eq:10.3.1}，我们得到第二个维里系数
+\begin{equation}\tag{10.3.5}\label{eq:10.3.5}
+a _ { 2 } = \frac { 2 \pi } { \lambda ^{3} } \left[ \int _ { 0 } ^{r _ { 0} } r ^{2} d r + \int _ { r _ { 0 } } ^{\infty} \left[ 1 - \exp \left\{ \frac { u _ { 0 } } { k T } \left( \frac { r _ { 0 } } { r } \right) ^{6} \right\} \right] r ^{2} d r \right] .
+\end{equation}
+第一个积分很简单；如果我们假设\((u_0/kT) \ll 1\)，则第二个积分可以大大简化，这使得被积函数几乎等于\(-(u_0/kT)(r_0/r)^6\)。然后\autoref{eq:10.3.5} 给出
+\begin{equation}\tag{10.3.6}\label{eq:10.3.6}
+a _ { 2 } \simeq \frac { 2 \pi r _ { 0 } ^{3} } { 3 \lambda ^{3} } \left( 1 - \frac { u _ { 0 } } { k T } \right) .
+\end{equation}
+将\autoref{eq:10.3.6} 代入展开式\autoref{eq:10.2.1}，我们得到理想气体定律的一阶改进，即
+\begin{equation}\tag{10.3.7}\label{eq:10.3.7}
+P \simeq \frac { k T } { \nu } \left\{ 1 + \frac { 2 \pi r _ { 0 } ^{3} } { 3 \nu } \left( 1 - \frac { u _ { 0 } } { k T } \right) \right\}
+\end{equation}
+\begin{equation}\tag{10.3.8}\label{eq:10.3.8}
+= \frac { k T } { \nu } \left\{ 1 + \frac { B _ { 2 } ( T ) } { \nu } \right\} , \mathrm { ~ s a y } .
+\end{equation}
+系数\(B_{2}\)，有时也被称为系统的第二个维里系数，由下式给出
+\begin{equation}\tag{10.3.9}\label{eq:10.3.9}
+B _ { 2 } \equiv a _ { 2 } \lambda ^{3} \simeq \frac { 2 \pi r _ { 0 } ^{3} } { 3 } \left( 1 - \frac { u _ { 0 } } { k T } \right) .
+\end{equation}
+在我们的推导中，明确假设了（i）势函数\(u(r)\)由简化的\autoref{eq:10.3.3} 和 \autoref{eq:10.3.4} 给出，以及（ii）\((u_0/kT) \ll 1\)。因此，我们不能期望\autoref{eq:10.3.8} 能忠实地表示真实气体的第二个维里系数。尽管如此，它几乎完全对应于真实气体状态方程的范德华近似。这可以通过将\autoref{eq:10.3.7} 重写成形式
+\begin{equation}\tag{10.3.10}\label{eq:10.3.10}
+\left( P + \frac { 2 \pi r _ { 0 } ^{3} u _ { 0 } } { 3 v ^{2} } \right) \simeq \frac { k T } { \nu } \left( 1 + \frac { 2 \pi r _ { 0 } ^{3} } { 3 \nu } \right) \simeq \frac { k T } { \nu } \left( 1 - \frac { 2 \pi r _ { 0 } ^{3} } { 3 \nu } \right) ^{- 1} ,
+\end{equation}
+这很容易导致范德华状态方程
+\begin{equation}\tag{10.3.11}\label{eq:10.3.11}
+\left( P + \frac { a } { \nu ^{2} } \right) ( \nu - b ) \simeq k T ,
+\end{equation}
+其中
+\begin{equation}\tag{10.3.12}\label{eq:10.3.12}
+a = \frac { 2 \pi r _ { 0 } ^{3} u _ { 0 } } { 3 }  \mathrm { a n d }  b = \frac { 2 \pi r _ { 0 } ^{3} } { 3 } \equiv 4 \nu _ { 0 } .
+\end{equation}
+其中
+\begin{equation}\tag{10.3.13}\label{eq:10.3.13}
+u ^{\prime} ( r ^{\prime} ) = \left\{ \left( \frac { 1 } { r ^{\prime} } \right) ^{12} - 2 \left( \frac { 1 } { r ^{\prime} } \right) ^{6} \right\} ,
+\end{equation}
+\(r'\)等于\((r/r_0)\)；以这种形式表达，量\(B_2'\)是\(T'\)的通用函数。图中包括了多种气体的实验结果。我们注意到，在大多数情况下，一致性相当好；考虑到在每种情况下我们只有两个可调参数\(r_0\)和\(\varepsilon\)，而可用的实验点数量要多得多，这一点尤其令人满意。首先，这种一致性证明了
+Lennard-Jones势能对于提供典型粒子间势能的解析描述是充分的。其次，它使得人们能够推导出势能相应参数的经验值；例如，对于氩气，我们得到\(r_{0}\)=3.82 Å和\(\varepsilon/k\)=120 K.7。人们不能不注意到，较轻的气体氢气和氦气是理论与实验之间相当普遍一致性规则的例外。原因在于，在这些气体的情况下，量子力学效应占据了相当重要的地位——尤其是在低温下。为了证实这一点，我们在图~10.2中包括了考虑量子力学效应的H\(_{2}\)和He的理论曲线；结果，我们再次发现理论与实验之间有相当好的一致性。
+关于高阶维里系数（\(l > 2\)），我们将讨论限制在直径为\(D\)的硬球气体上。然后我们有
+\begin{equation}\tag{10.3.14}\label{eq:10.3.14}
+u ( r ) = \left\{ \begin{array}{ll} { { 0 } } & { { \mathrm { i f ~ } r > D , } } \\{ { \infty } } & { { \mathrm { i f ~ } r \leq D , } } \end{array} \right.
+\end{equation}
+因此，
+\begin{equation}\tag{10.3.15}\label{eq:10.3.15}
+f ( r ) = \left\{ \begin{array}{ll} { 0 } & { \mathrm { i f ~ } r > D , } \\{ - 1 } & { \mathrm { i f ~ } r \leq D . } \end{array} \right.
+\end{equation}
+气体的第二个维里系数由下式给出
+\begin{equation}\tag{10.3.16}\label{eq:10.3.16}
+a _ { 2 } = \frac { 2 \pi D ^{3} } { 3 \lambda ^{3} } = 4 \frac { \nu _ { 0 } } { \lambda ^{3} } ;
+\end{equation}
+与\autoref{eq:10.3.6} 比较。第三个维里系数可以通过\autoref{eq:10.2.4} 来确定，即
+\begin{equation}\tag{10.3.17}\label{eq:10.3.17}
+a _ { 3 } = - \frac { 1 } { 3 \lambda ^{6} } \int _ { 0 } ^{\infty}   \int _ { 0 } ^{\infty}    \int f _ { 12 } f _ { 13 } f _ { 23 } \, d ^{3} r _ { 12 } \, d ^{3} r _ { 13 } .
+\end{equation}
+为了评估这个积分，我们首先固定粒子1和2的位置（使得\(r_{12} < D\)），并让粒子3采取所有可能的位置，以便我们可以对变量\(r_{13}\)进行积分；见图~10.3。由于我们的被积函数在每个距离\(r_{13}\)和\(r_{23}\)（如\(r_{12}\)）小于\(D\)时等于\(-1\)，否则等于0，我们有
+\begin{equation}\tag{10.3.18}\label{eq:10.3.18}
+a _ { 3 } = \frac { 1 } { 3 \lambda ^{6} } \int _ { r _ { 12 } = 0 } ^{D} \left\{ \int ^{\prime} d ^{3} r _ { 13 } \right\} a ^{3} r _ { 12 } ,
+\end{equation}
+其中引号内的积分来自于粒子3采取所有感兴趣的可能位置。鉴于条件\(r_{13} < D\)和\(r_{23} < D\)，这个积分正好等于"体积
+图~10.3
+以及
+\begin{equation}\tag{10.3.19}\label{eq:10.3.19}
+a _ { 6 } = ( 0 . 03 86 \pm 0 . 00 4 ) a _ { 2 } ^{5} .
+\end{equation}
+里和胡佛对第七维里系数的估计值为\(0.0127a_{2}^{6}\)。直到十阶的项已通过数值确定；见汉森和麦克唐纳（1986年）以及马利耶夫斯基和科拉法（2008年）。如果硬球的维里状态方程用体积堆积分数\(\eta=\pi nD^{3}/6\)来表示，则前十项是
+\begin{equation}\tag{10.3.20}\label{eq:10.3.20}
+\begin{array}{r} { \frac { P } { n k T } = 1 + 4 \eta + 10 \eta ^{2} + 18 . 36 47 68 \eta ^{3} + 28 . 22 44 5 \eta ^{4} + 39 . 81 54 5 \eta ^{5} } \\{ + 53 . 34 18 \eta ^{6} + 68 . 53 4 \eta ^{7} + 85 . 80 5 \eta ^{8} + 10 5 . 8 \eta ^{9} + \cdots . } \end{array}
+\end{equation}
+卡纳汉和斯塔林（1969年）提出了一个简单的状态方程形式，它能够紧密地近似所有已知的维里系数：
+\begin{equation}\tag{10.3.21}\label{eq:10.3.21}
+\begin{array}{rl} & { \frac { P } { n k T } \approx \frac { 1 + \eta + \eta ^{2} - \eta ^{3} } { ( 1 - \eta ) ^{3} } } \\& { = 1 + 4 \eta + 10 \eta ^{2} + 18 \eta ^{3} + 28 \eta ^{4} + 40 \eta ^{5} } \\& {  + 54 \eta ^{6} + 70 \eta ^{7} + 88 \eta ^{8} + 10 8 \eta ^{9} + 13 0 \eta ^{10} + \cdots } \end{array}
+\end{equation}
+这为计算机模拟确定的整个流体相的硬球状态方程提供了极好的拟合。流体相是平衡相，对于\(0 < \eta \lesssim 0.491\)成立。硬球的高密度平衡相是面心立方固体；见第~16~章。还提出了许多其他近似解析形式，以紧密地再现维里级数；例如见穆勒罗等人（2008年）。
+\section{关于簇展开的一般评论}\label{ux5173ux4e8eux7c07ux5c55ux5f00ux7684ux4e00ux822cux8bc4ux8bba}
+在Mayer及其合作者Kahn和Uhlenbeck（1938年）的开创性工作之后不久，Kahn和Uhlenbeck开始开发用于量子力学系统的类似方法。当然，他们的方法也适用于经典系统的极限情况，但它面临某些固有的分析困难，其中一些后来被Lee和Yang（1959a,b；1960a,b,c）发展的形式方法所消除。我们计划在本章接下来的三个部分中探讨这些发展。然而，在此之前，我们想对簇展开问题做一些一般性的观察。这些观察主要归功于Ono（1951年）和Kilpatrick（1953年），对于非常广泛的物理系统类别来说，它们具有相当大的兴趣价值。例如，系统可以是量子力学的或经典的，可以是多组分或单组分的，其分子可以是多原子的或单原子的，等等。我们只需要假设（i）系统处于气态，并且（ii）对于某些低值的N，其配分函数\(Q_{N}(V,T)\)可以通过某种方式获得。然后我们可以以以下直接的方式计算系统的"簇积分"\(b_{l}\)和维里系数\(a_{l}\)。
+一般来说，系统的总配分函数可以写成
+\begin{equation}\tag{10.4.1}\label{eq:10.4.1}
+\mathcal { Q } ( z , V , T ) \equiv \sum _ { N = 0 } ^{\infty} Q _ { N } ( V , T ) z ^{N} = \sum _ { N = 0 } ^{\infty} \frac { Z _ { N } ( V , T ) } { N ! } \left( \frac { z } { \lambda ^{3} } \right) ^{N} ,
+\end{equation}
+其中我们引入了"构型积分"\(Z_{N}(V,T)\)，其定义类似于经典处理中的\autoref{eq:10.1.3}：
+\begin{equation}\tag{10.4.2}\label{eq:10.4.2}
+Z _ { N } ( V , T ) \equiv N ! \lambda ^{3 N} Q _ { N } ( V , T ) .
+\end{equation}
+在维度上，量\(Z_{N}\)类似于（体积）\(^{N}\)；此外，量\(Z_{0}\)（类似于\(Q_{0}\)）应该恒等于1，而\(Z_{1}(\equiv\lambda^{3}Q_{1})\)恒等于\(V\)。然后，在\(V\to\infty\)的极限下，
+\begin{equation}\tag{10.4.3}\label{eq:10.4.3}
+\begin{array}{rl} & { \frac { P } { k T } \equiv \frac { 1 } { V } \ln \mathcal { Q } = \frac { 1 } { V } \ln \left\{ 1 + \frac { Z _ { 1 } } { 1 ! } \left( \frac { z } { \lambda ^{3} } \right) ^{1} + \frac { Z _ { 2 } } { 2 ! } \left( \frac { z } { \lambda ^{3} } \right) ^{2} + \cdots \right\} } \\& { = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} \bar { b } _ { l } z ^{l} , \mathrm { ~ s a y } . } \end{array}
+\end{equation}
+同样，最后一个表达式也是按照经典展开（10.1.34）的方式写成的；因此，系数\(b_{l}\)可以被视为给定系统的簇积分。将（3）展开为\(z\)的幂级数，并将相应的系数与
+（4）中的\(b_{l}\)相乘，我们得到
+\begin{equation}\tag{10.4.4}\label{eq:10.4.4}
+\begin{array}{r} { \mathcal { B } _ { 1 } = \frac { 1 } { V } Z _ { 1 } \equiv 1 , } \end{array}
+\end{equation}
+\begin{equation}\tag{10.4.5}\label{eq:10.4.5}
+\ddot { b } _ { 2 } = \frac { 1 } { 2 ! \lambda ^{3} V } ( Z _ { 2 } - Z _ { 1 } ^{2} ) ,
+\end{equation}
+\begin{equation}\tag{10.4.6}\label{eq:10.4.6}
+b _ { 3 } = \frac { 1 } { 3 ! \lambda ^{6} V } ( Z _ { 3 } - 3 Z _ { 2 } Z _ { 1 } + 2 Z _ { 1 } ^{3} ) ,
+\end{equation}
+\begin{equation}\tag{10.4.7}\label{eq:10.4.7}
+\bar { b } _ { 4 } = \frac { 1 } { 4 ! \lambda ^{9} V } ( Z _ { 4 } - 4 Z _ { 3 } Z _ { 1 } - 3 Z _ { 2 } ^{2} + 12 Z _ { 2 } Z _ { 1 } ^{2} - 6 Z _ { 1 } ^{4} ) ,
+\end{equation}
+等等。我们注意到，对于所有\(l > 1\)，括号内出现的系数的总和恒等于零。因此，在理想经典气体的情况下，对于\(Z_i \equiv V^i\)的情况，见\autoref{eq:10.1.4}，所有\(l > 1\)的簇积分都消失。这反过来意味着气体的所有维里系数（当然，除了\(a_1\)，它恒等于单位）都消失。
+比较\autoref{eq:10.4.6} 至 \autoref{eq:10.4.8} 与 \autoref{eq:10.1.16}，我们发现括号内出现的各种\(Z_i\)乘积的表达式在这里扮演的角色与经典情况下"所有可能的\(l\)-簇之和"相同。因此，我们预期在\(V \to \infty\)的极限情况下，这里的\(b_l\)也将独立于容器的大小和形状（除非后者异常不正常）。这反过来要求这里括号内出现的各种\(Z_i\)组合必须都与\(V\)的一次方成正比。这一观察导致了非常有趣的结果，首先由Rushbrooke注意到，即
+\begin{equation}\tag{10.4.8}\label{eq:10.4.8}
+\bar { b } _ { l } = \frac { 1 } { l ! \lambda ^{3 ( l - 1 )} } \times ( \mathrm { t h e ~ c o e f f i c i e n t ~ o f ~ } V ^{l} \mathrm { ~ i n ~ t h e ~ v o l u m e ~ e x p a n s i o n ~ o f ~ } Z _ { l } ) .
+\end{equation}
+在这个阶段，值得指出的是，在数学统计中，\autoref{eq:10.4.6} 至 \autoref{eq:10.4.8} 括号内的表达式作为 Thiele 的半不变量是众所周知的。这些表达式的一般公式是
+\begin{equation}\tag{10.4.9}\label{eq:10.4.9}
+\begin{array}{rl} & { ( \ldots ) _ { l } \equiv \mathfrak { H } _ { l } \{ l ! \lambda ^{3 ( l - 1 )} V \} } \\& {  = l ! \sum _ { \{ m _ { i } \} } ^{\prime} ( - 1 ) ^{\Sigma _ { i} m _ { i } - 1 } \left[ \left( \sum _ { i } m _ { i } - 1 \right) ! \prod _ { i } \left\{ \frac { ( Z _ { i } / i ! ) ^{m _ { i} } } { m _ { i } ! } \right\} \right] , } \end{array}
+\end{equation}
+其中带撇号的求和遍及所有符合条件
+\begin{equation}\tag{10.4.10}\label{eq:10.4.10}
+\sum _ { i = 1 } ^{l} i m _ { i } = l ;  m _ { i } = 0 , 1 , 2 , . . . .
+\end{equation}
+通过参考经典处理中的\autoref{eq:10.1.29}，可以写出与\autoref{eq:10.4.10} 互为逆的关系；因此
+\begin{equation}\tag{10.4.11}\label{eq:10.4.11}
+Z _ { M } \equiv M ! \lambda ^{3 M} Q _ { M } = M ! \lambda ^{3 M} \sum _ { \{ m _ { l } \} } ^{\prime} \prod _ { l = 1 } ^{M} \left\{ \frac { ( V \, \mathfrak { H } _ { l } / \lambda ^{3} ) ^{m _ { l} } } { m _ { l } ! } \right\} \, ,
+\end{equation}
+其中带撇号的求和遍及所有符合条件
+\begin{equation}\tag{10.4.12}\label{eq:10.4.12}
+\sum _ { l = 1 } ^{M} l m _ { l } = M ;  m _ { l } = 0 , 1 , 2 , \ldots .
+\end{equation}
+现在计算维里系数\(a_{l}\)包括一个简单的步骤，涉及使用\autoref{eq:10.4.5} 至 \autoref{eq:10.4.8} 以及 \autoref{eq:10.2.2} 至 \autoref{eq:10.2.5}。然而，在这里展示一般关系\autoref{eq:10.2.6} 在数学上是如何产生的，即维里系数\(a_{l}\)与"不可约簇积分"\(\beta_{l-1}\)之间的关系，似乎很有意义。作为额外的收获，我们将获得对\(\beta_{k}\)的另一种解释。
+现在，考虑到关系
+\begin{equation}\tag{10.4.13}\label{eq:10.4.13}
+\frac { P } { k T } \equiv \operatorname* { L i m } _ { V \to \infty } \left( \frac { 1 } { V } \ln \mathcal { Q } \right) = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} \mathfrak { b } _ { l } z ^{l}
+\end{equation}
+以及
+\begin{equation}\tag{10.4.14}\label{eq:10.4.14}
+\frac { 1 } { \nu } \equiv \operatorname* { L i m } _ { V \to \infty } \left( \frac { z } { V } \frac { \partial \ln \mathcal { Q } } { \partial z } \right) = \frac { 1 } { \lambda ^{3} } \sum _ { l = 1 } ^{\infty} l \mathfrak { b } _ { l } z ^{l} ,
+\end{equation}
+我们可以写出
+\begin{equation}\tag{10.4.15}\label{eq:10.4.15}
+{ \frac { P ( z ) } { k T } } = \int _ { 0 } ^{z} { \frac { 1 } { \nu ( z ) } } { \frac { d z } { z } } .
+\end{equation}
+我们引入一个新的变量\(x\)，定义为
+\begin{equation}\tag{10.4.16}\label{eq:10.4.16}
+x = n \lambda ^{3} = \lambda ^{3} / \nu .
+\end{equation}
+用这个变量表示，\autoref{eq:10.4.15} 变为
+\begin{equation}\tag{10.4.17}\label{eq:10.4.17}
+x ( z ) = \sum _ { l = 1 } ^{\infty} l \, \breve { b } _ { l } z ^{l} ,
+\end{equation}
+其逆可以写成（见Mayer和Harrison，1938；Harrison和Mayer，1938；还有Kahn，1938）形式
+\begin{equation}\tag{10.4.18}\label{eq:10.4.18}
+z ( x ) = x \exp \{ - \phi ( x ) \} .
+\end{equation}
+鉴于对于\(z \ll 1\)，变量\(z\)和\(x\)实际上是相同的，函数\(\phi(x)\)必须随着\(x \to 0\)而趋于零；因此，它可以表示为\(x\)的幂级数：
+\begin{equation}\tag{10.4.19}\label{eq:10.4.19}
+\phi ( x ) = \sum _ { k = 1 } ^{\infty} \beta _ { k } x ^{k} .
+\end{equation}
+可能在此前提到，这个展开式的系数\(\beta_{k}\)最终将与"不可约簇积分"\(\beta_{l-1}\)相对应。将\autoref{eq:10.4.17}、\autoref{eq:10.4.19} 和 \autoref{eq:10.4.20} 代入\autoref{eq:10.4.16}，我们得到
+\begin{equation}\tag{10.4.20}\label{eq:10.4.20}
+\begin{array}{rl} & { \frac { P ( x ) } { k T } = \int _ { 0 } ^{x} \frac { x } { \lambda ^{3} } \left\{ \frac { 1 } { x } - \phi ^{\prime} ( x ) \right\} d x = \frac { 1 } { \lambda ^{3} } \left[ x - \int _ { 0 } ^{x} \left\{ \sum _ { k = 1 } ^{\infty} k \beta _ { k } x ^{k} \right\} d x \right] } \\& { = \frac { x } { \lambda ^{3} } \left[ 1 - \sum _ { k = 1 } ^{\infty} \left( \frac { k } { k + 1 } \beta _ { k } x ^{k} \right) \right] . } \end{array}
+\end{equation}
+结合（17）和（21），我们得到
+\begin{equation}\tag{10.4.21}\label{eq:10.4.21}
+\frac { P \nu } { k T } = 1 - \sum _ { k = 1 } ^{\infty} \left( \frac { k } { k + 1 } \beta _ { k } x ^{k} \right) .
+\end{equation}
+将这个结果与维里展开式\autoref{eq:10.2.1} 进行比较，我们得到了期望的关系：
+\begin{equation}\tag{10.4.22}\label{eq:10.4.22}
+a _ { l } = - \frac { l - 1 } { l } \beta _ { l - 1 }  ( l > 1 ) .
+\end{equation}
+出于显而易见的原因，这里出现的\(\beta_{k}\)可以被视为Mayer不可约簇积分的推广。
+最后，我们希望推导出\(\beta_{k}\)与\(b_{l}\)之间的关系。为此，我们利用了拉格朗日的一个定理，该定理指出，"方程
+\begin{equation}\tag{10.4.23}\label{eq:10.4.23}
+z ( x ) = x / f ( x )
+\end{equation}
+的解\(x(z)\)由级数给出
+\begin{equation}\tag{10.4.24}\label{eq:10.4.24}
+x ( z ) = \sum _ { j = 1 } ^{\infty} \frac { z ^{j} } { j ! } \left[ \frac { d ^{j - 1} } { d \xi ^{j - 1} } \{ f ( \xi ) \} ^{j} \right] _ { \xi = 0 } ^{\prime \prime} ;
+\end{equation}
+很明显，方括号内的表达式是\((j-1)!\)乘以"函数\(\{f(\xi)\}^{j}\)关于点\(\xi=0\)的泰勒展开式中\(\xi^{j-1}\)的系数"。应用这个
+定理到函数
+\begin{equation}\tag{10.4.25}\label{eq:10.4.25}
+f ( x ) = \exp \{ \phi ( x ) \} = \exp \left\{ \sum _ { k = 1 } ^{\infty} \beta _ { k } x ^{k} \right\} = \prod _ { k = 1 } ^{\infty} \exp ( \beta _ { k } x ^{k} ) ,
+\end{equation}
+我们得到
+\(x(z)=\sum_{j=1}^{\infty}\frac{z^{j}}{j!}(j-1)!\times\begin{cases}\text{泰勒展开式中}\xi^{j-1}\text{的系数}\end{cases}\)
+\begin{equation}\tag{10.4.26}\label{eq:10.4.26}
+\mathrm { o f } \prod _ { k = 1 } ^{\infty} \exp ( j \beta _ { k } \xi ^{k} ) \; \mathrm { a b o u t } \; \xi = 0 \biggr \} .
+\end{equation}
+将其与\autoref{eq:10.4.18} 进行比较，我们得到
+\begin{equation}\tag{10.4.27}\label{eq:10.4.27}
+\begin{array}{rl} & { b _ { j } = \frac { 1 } { j ^{2} } \times \left\{ \mathrm { t h e ~ c o e f f i c i e n t ~ o f ~ } \xi ^{j - 1} \mathrm { ~ i n ~ } \prod _ { k = 1 } ^{\infty} \left[ \sum _ { m _ { k } \geq 0 } \frac { ( j \beta _ { k } ) ^{m _ { k} } } { m _ { k } ! } \xi ^{k m _ { k} } \right] \right\} } \\& { = \frac { 1 } { j ^{2} } \sum _ { \{ m _ { k } \} } ^{\prime} \prod _ { k = 1 } ^{j - 1} \frac { ( j \beta _ { k } ) ^{m _ { k} } } { m _ { k } ! } , } \end{array}
+\end{equation}
+其中带撇号的求和遍及所有符合条件
+\begin{equation}\tag{10.4.28}\label{eq:10.4.28}
+\sum _ { k = 1 } ^{j - 1} k m _ { k } = j - 1 ;  m _ { k } = 0 , 1 , 2 , \ldots .
+\end{equation}
+\autoref{eq:10.4.27} 最初是由 Maria Goeppert-Mayer 在 1937 年获得的。然而，它的逆则是在很久之后才被建立起来的（Mayer等人，1942年；Kilpatrick，1953年）：
+\begin{equation}\tag{10.4.29}\label{eq:10.4.29}
+\beta _ { l - 1 } = \sum _ { \{ m _ { i } \} } ^{\prime} ( - 1 ) ^{\Sigma _ { i} m _ { i } - 1 } \frac { ( l - 2 + \Sigma _ { i } m _ { i } ) ! } { ( l - 1 ) ! } \prod _ { i } \frac { ( i \, \mathcal { B } _ { i } ) ^{m _ { i} } } { m _ { i } ! } ,
+\end{equation}
+其中带撇号的求和遍及所有符合条件
+\begin{equation}\tag{10.4.30}\label{eq:10.4.30}
+\sum _ { i = 2 } ^{l} ( i - 1 ) m _ { i } = l - 1 ;  m _ { i } = 0 , 1 , 2 , . . . .
+\end{equation}
+不难看出，在集合\(\{m_i\}\)中，指数\(i\)的最高值将是\(l\)（相应的集合所有\(m_i\)都等于0，除了\(m_l\)等于1）；因此，\(b_i\)在\(\beta_{l-1}\)表达式中出现的最高阶是\(b_l\)的阶。因此，我们再次看到，维里系数\(a_l\)完全由量\(b_1\)、\(b_2\)、\ldots、\(b_l\)决定。
+\section{第二维里系数的精确处理}\label{ux7b2cux4e8cux7ef4ux91ccux7cfbux6570ux7684ux7cbeux786eux5904ux7406}
+我们现在提出一个公式，最初来自 Uhlenbeck 和 Beth（1936年）以及 Beth 和 Uhlenbeck（1937年），它使我们能够根据两体势\(u(r)\)的知识精确计算量子力学系统的第二维里系数。考虑到\autoref{eq:10.4.6}，
+\begin{equation}\tag{10.5.1}\label{eq:10.5.1}
+\dot { b } _ { 2 } = - a _ { 2 } = \frac { 1 } { 2 \lambda ^{3} V } \left( Z _ { 2 } - Z _ { 1 } ^{2} \right) .
+\end{equation}
+对于相应的非相互作用系统，我们有
+\begin{equation}\tag{10.5.2}\label{eq:10.5.2}
+\ddot { b } _ { 2 } ^{( 0 )} = - a _ { 2 } ^{( 0 )} = \frac { 1 } { 2 \lambda ^{3} V } \left( Z _ { 2 } ^{( 0 )} - Z _ { 1 } ^{( 0 ) 2} \right) ;
+\end{equation}
+这里各个符号上的上标（0）表示它们属于非相互作用系统。结合\autoref{eq:10.5.1} 和 \autoref{eq:10.5.2}，并记住\(Z_{1}=Z_{1}^{(0)}=V\)，我们得到
+\begin{equation}\tag{10.5.3}\label{eq:10.5.3}
+\ddot { b } _ { 2 } - \ddot { b } _ { 2 } ^{( 0 )} = \frac { 1 } { 2 \lambda ^{3} V } \left( Z _ { 2 } - Z _ { 2 } ^{( 0 )} \right)
+\end{equation}
+根据\autoref{eq:10.4.2}，它变为
+\begin{equation}\tag{10.5.4}\label{eq:10.5.4}
+\ddot { b } _ { 2 } - \ddot { b } _ { 2 } ^{( 0 )} = \frac { \lambda ^{3} } { V } \left( Q _ { 2 } - Q _ { 2 } ^{( 0 )} \right) = \frac { \lambda ^{3} } { V } \operatorname { T r } \left( e ^{- \beta \hat { H} _ { 2 } } - e ^{- \beta \hat { H} _ { 2 } ^{( 0 )} } \right) .
+\end{equation}
+为了评估（4）中的迹，我们需要知道两体哈密顿量的特征值，这反过来需要解薛定谔方程\(^{10}\)
+\begin{equation}\tag{10.5.5}\label{eq:10.5.5}
+\hat { H } _ { 2 } \Psi _ { \alpha } ( \pmb { r } _ { 1 } , \pmb { r } _ { 2 } ) = E _ { \alpha } \Psi _ { \alpha } ( \pmb { r } _ { 1 } , \pmb { r } _ { 2 } ) ,
+\end{equation}
+其中
+\begin{equation}\tag{10.5.6}\label{eq:10.5.6}
+\hat { H } _ { 2 } = - \frac { \hbar ^{2} } { 2 m } \left( \nabla _ { 1 } ^{2} + \nabla _ { 2 } ^{2} \right) + u ( r _ { 12 } ) .
+\end{equation}
+变换到质心坐标\(R\left\{=\frac{1}{2}(r_{1}+r_{2})\right\}\)和相对坐标\(r\{=(r_{2}-r_{1})\}\)，我们有
+\begin{equation}\tag{10.5.7}\label{eq:10.5.7}
+\Psi _ { \alpha } ( R , r ) = \psi _ { j } ( R ) \psi _ { n } ( r ) = \left\{ \frac { 1 } { V ^{1 / 2} } e ^{i ( \mathbf { P} _ { j } \cdot R ) / \hbar } \right\} \psi _ { n } ( r ) ,
+\end{equation}
+其中
+\begin{equation}\tag{10.5.8}\label{eq:10.5.8}
+E _ { \alpha } = \frac { P _ { j } ^{2} } { 2 ( 2 m ) } + \varepsilon _ { n } .
+\end{equation}
+\(^{9}\)关于第三维里系数的讨论，请参见Pais和Uhlenbeck（1959年）。
+\(^{10}\)为了简单起见，我们假设粒子是"无自旋的"。关于自旋的影响，请参见问题10.11和10.12。
+这里，\(P\)表示两个粒子的总动量，\(2m\)表示它们的总质量，而\(\varepsilon\)表示与粒子相对运动相关的能量；符号\(\alpha\)指的是确定变量\(P\)和\(\varepsilon\)实际值的量子数集\(j\)和\(n\)。相对运动的波动方程将是
+\begin{equation}\tag{10.5.9}\label{eq:10.5.9}
+\left\{ - \frac { \hbar ^{2} } { 2 \left( \frac { 1 } { 2 } m \right) } \nabla _ { r } ^{2} + u ( r ) \right\} \psi _ { n } ( \pmb { r } ) = \varepsilon _ { n } \psi _ { n } ( \pmb { r } ) ,
+\end{equation}
+\(\frac{1}{2}m\)是粒子的 reduced mass；相对波函数的归一化条件将是
+\begin{equation}\tag{10.5.10}\label{eq:10.5.10}
+\int | \psi _ { n } ( \mathbf { r } ) | ^{2} d ^{3} r = 1 .
+\end{equation}
+因此\autoref{eq:10.5.4} 变为
+\begin{equation}\tag{10.5.11}\label{eq:10.5.11}
+\begin{array}{r} { \bar { b } _ { 2 } - \bar { b } _ { 2 } ^{( 0 )} = \frac { \lambda ^{3} } { V } \sum _ { \alpha } \left\{ e ^{- \beta E _ { \alpha} } - e ^{- \beta E _ { \alpha} ^{( 0 )} } \right\} } \\{ = \frac { \lambda ^{3} } { V } \sum _ { j } e ^{- \beta P _ { j} ^{2} / 4 m } \sum _ { n } \left\{ e ^{- \beta \varepsilon _ { n} } - e ^{- \beta \varepsilon _ { n} ^{( 0 )} } \right\} . } \end{array}
+\end{equation}
+对于第一个求和，我们得到
+\begin{equation}\tag{10.5.12}\label{eq:10.5.12}
+\sum _ { j } e ^{- \beta P _ { j} ^{2} / 4 m } \approx \frac { 4 \pi V } { h ^{3} } \int _ { 0 } ^{\infty} e ^{- \beta P ^ { 2} / 4 m } P ^{2} d P = \frac { 8 ^{1 / 2} V } { \lambda ^{3} } ,
+\end{equation}
+因此\autoref{eq:10.5.11} 变为
+\begin{equation}\tag{10.5.13}\label{eq:10.5.13}
+\bar { b } _ { 2 } - \bar { b } _ { 2 } ^{( 0 )} = \mathfrak { g } ^{1 / 2} \sum _ { n } \left\{ e ^{- \beta \varepsilon _ { n} } - e ^{- \beta \varepsilon _ { n} ^{( 0 )} } \right\} .
+\end{equation}
+下一步包括检查两个系统的能量谱，\(\varepsilon_{n}\)和\(\varepsilon_{n}^{(0)}\)。在非相互作用系统的情况下，我们只有一个"连续谱"
+\begin{equation}\tag{10.5.14}\label{eq:10.5.14}
+\varepsilon _ { n } ^{( 0 )} = \frac { p ^{2} } { 2 \left( \frac { 1 } { 2 } m \right) } = \frac { \hbar ^{2} k ^{2} } { m }  ( k = p / \hbar ) ,
+\end{equation}
+具有标准态密度\(g^{(0)}(k)\)。在相互作用系统的情况下，我们可能有一组离散的特征值\(\varepsilon_B\)（对应于"束缚"态），以及一个"连续谱"
+\begin{equation}\tag{10.5.15}\label{eq:10.5.15}
+\varepsilon _ { n } = \frac { \hbar ^{2} k ^{2} } { m }  ( k = p / \hbar ) ,
+\end{equation}
+具有特征态密度\(g(k)\)。因此，\autoref{eq:10.5.13} 可以写成
+\begin{equation}\tag{10.5.16}\label{eq:10.5.16}
+\bar { b } 2 - \bar { b } _ { 2 } ^{( 0 )} = 8 ^{1 / 2} \sum _ { B } e ^{- \beta \varepsilon _ { B} } + 8 ^{1 / 2} \int _ { 0 } ^{\infty} e ^{- \beta \hbar ^ { 2} k ^{2} / m } \{ g ( k ) - g ^{( 0 )} ( k ) \} \, d k ,
+\end{equation}
+其中第一部分中的求和遍及由两体相互作用产生的所有束缚态。
+这里要考虑的下一个问题是态密度\(g(k)\)。为此，我们注意到，由于假设两体势是中心的，相对运动的波函数\(\psi_{n}(\boldsymbol{r})\)可以写成径向函数\(\chi(r)\)和球谐函数\(Y(\theta, \varphi)\)的乘积：
+\begin{equation}\tag{10.5.17}\label{eq:10.5.17}
+\psi _ { k l m } ( \pmb { r } ) = A _ { k l m } \frac { \chi _ { k l } ( r ) } { r } Y _ { l , m } ( \theta , \varphi ) .
+\end{equation}
+此外，对称性的要求，即对于玻色子有\(\psi(-\boldsymbol{r})=\psi(\boldsymbol{r})\)，对于费米子有\(\psi(-\boldsymbol{r})=-\psi(\boldsymbol{r})\)，限制了量子数\(l\)对于玻色子是偶数对于费米子是奇数。波函数的外边界条件可以写成
+\begin{equation}\tag{10.5.18}\label{eq:10.5.18}
+\chi _ { k l } ( R _ { 0 } ) = 0 ,
+\end{equation}
+其中\(R_{0}\)是一个相当大的值（变量\(r\)的某个值），最终趋于无穷大。现在，函数\(\chi_{kl}(r)\)的渐近形式是众所周知的：
+\begin{equation}\tag{10.5.19}\label{eq:10.5.19}
+\chi _ { k l } ( r ) \propto \sin \left\{ k r - \frac { l \pi } { 2 } + \eta _ { l } ( k ) \right\} ;
+\end{equation}
+因此，我们必须有
+\begin{equation}\tag{10.5.20}\label{eq:10.5.20}
+k R _ { 0 } - \frac { l \pi } { 2 } + \eta _ { l } ( k ) = n \pi ,  n = 0 , 1 , 2 , . . . . .
+\end{equation}
+这里的符号\(\eta_{l}(k)\)代表由两体势\(u(r)\)引起的第\(l\)个偏振波的散射相移，对于波数\(k\)。
+\autoref{eq:10.5.20} 决定了偏振波的全部谱。为了从中得到态密度\(g_{l}(k)\)的表达式，我们观察到两个连续状态\(n\)和\(n+1\)之间的波数差\(\Delta k\)由下式给出
+\begin{equation}\tag{10.5.21}\label{eq:10.5.21}
+\left\{ R _ { 0 } + \frac { d \eta _ { l } ( k ) } { d k } \right\} \Delta k = \pi ,
+\end{equation}
+结果是
+\begin{equation}\tag{10.5.22}\label{eq:10.5.22}
+g _ { l } ( k ) = \frac { 2 l + 1 } { \Delta k } = \frac { 2 l + 1 } { \pi } \left\{ R _ { 0 } + \frac { \partial \eta _ { l } ( k ) } { \partial k } \right\} ;
+\end{equation}
+这里包含因子\((2l+1)\)是为了考虑到每个属于第\(l\)个偏振波的特征值\(k\)都是\((2l+1)\)重简并的（因为磁量子数\(m\)可以取任何值\(l, (l-1), \ldots, -l\)，而不影响特征值）。因此，所有波数在值\(k\)附近的偏振波的总态密度\(g(k)\)由下式给出
+\begin{equation}\tag{10.5.23}\label{eq:10.5.23}
+g ( k ) = \sum _ { l } ^{\prime} g _ { l } ( k ) = \frac { 1 } { \pi } \sum _ { l } ^{\prime} ( 2 l + 1 ) \left\{ R _ { 0 } + \frac { \partial \eta _ { l } ( k ) } { \partial k } \right\} ;
+\end{equation}
+注意，在玻色子的情况下，首字母大写的求和\(\sum'\)遍及\(l=0,2,4,\ldots\)；在费米子的情况下，遍及\(l=1,3,5,\ldots\)。对于相应的非相互作用情况，我们有（因为所有\(\eta_l(k)=0\)）
+\begin{equation}\tag{10.5.24}\label{eq:10.5.24}
+g ^{( 0 )} ( k ) = \frac { R _ { 0 } } { \pi } \sum _ { l } ^{\prime} ( 2 l + 1 ) .
+\end{equation}
+结合\autoref{eq:10.5.23} 和 \autoref{eq:10.5.24}，我们得到
+\begin{equation}\tag{10.5.25}\label{eq:10.5.25}
+g ( k ) - g ^{( 0 )} ( k ) = \frac { 1 } { \pi } \sum _ { l } ^{\prime} ( 2 l + 1 ) \frac { \partial \eta _ { l } ( k ) } { \partial k } .
+\end{equation}
+将\autoref{eq:10.5.25} 代入\autoref{eq:10.5.16}，我们得到所需的结果
+\begin{equation}\tag{10.5.26}\label{eq:10.5.26}
+\ddot { b } _ { 2 } - \ddot { b } _ { 2 } ^{( 0 )} = 8 ^{1 / 2} \sum _ { B } e ^{- \beta \varepsilon _ { B} } + \frac { 8 ^{1 / 2} } { \pi } \sum _ { l } ^{\prime} ( 2 l + 1 ) \int _ { 0 } ^{\infty} e ^{- \beta \hbar ^ { 2} k ^{2} / m } \frac { \partial \eta _ { l } ( k ) } { \partial k } d k
+\end{equation}
+原则上，对于任何给定的势\(u(r)\)，都可以通过相应的相移\(\eta_{l}(k)\)来计算。
+\autoref{eq:10.5.26} 可以用来确定量\(b_{2}-b_{2}^{(0)}\)。为了确定\(b_{2}\)本身，我们必须知道\(b_{2}^{(0)}\)的值。这在第7.1节中已经得到了玻色子的值，在第8.1节中得到了费米子的值；见\autoref{eq:7.1.13} 和 \autoref{eq:8.1.17}。因此
+\begin{equation}\tag{10.5.27}\label{eq:10.5.27}
+\ddot { b } _ { 2 } ^{( 0 )} = - a _ { 2 } ^{( 0 )} = \pm \frac { 1 } { 2 ^{5 / 2} } ,
+\end{equation}
+其中上标表示玻色子，下标表示费米子。值得注意的是，上述结果可以直接从关系式
+\begin{equation}\tag{10.5.28}\label{eq:10.5.28}
+\ddot { b } _ { 2 } ^{( 0 )} = \frac { 1 } { 2 \lambda ^{3} V } \left( Z _ { 2 } ^{( 0 )} - Z _ { 1 } ^{( 0 ) 2} \right) = \frac { \lambda ^{3} } { V } \left( Q _ { 2 } ^{( 0 )} - \frac { 1 } { 2 } Q _ { 1 } ^{( 0 ) 2} \right)
+\end{equation}
+通过用第5章给出的\(Q_{2}^{(0)}\)精确表达式替换\(Q_{2}^{(0)}\)：
+\begin{equation}\tag{10.5.29}\label{eq:10.5.29}
+\bar { b } _ { 2 } ^{( 0 )} = \frac { \lambda ^{3} } { V } \left[ \left\{ \frac { 1 } { 2 } \left( \frac { V } { \lambda ^{3} } \right) ^{2} \pm \frac { 1 } { 2 ^{5 / 2} } \left( \frac { V } { \lambda ^{3} } \right) ^{1} \right\} - \frac { 1 } { 2 } \left( \frac { V } { \lambda ^{3} } \right) ^{2} \right] = \pm \frac { 1 } { 2 ^{5 / 2} } .
+\end{equation}
+值得注意的是，这个结果也可以通过使用经典公式\autoref{eq:10.1.18} 并将两体势\(u(r)\)替换为"统计势"\autoref{eq:5.4.46} 来获得；因此
+\begin{equation}\tag{10.5.30}\label{eq:10.5.30}
+\begin{array}{r} { \dot { b } _ { 2 } ^{( 0 )} = \frac { 2 \pi } { \lambda ^{3} } \int _ { 0 } ^{\infty} \left( e ^{- u _ { s} ( r ) / k T } - 1 \right) r ^{2} d r } \\{ = \pm \frac { 2 \pi } { \lambda ^{3} } \int _ { 0 } ^{\infty} e ^{- 2 \pi r ^ { 2} / \lambda ^{2} } r ^{2} d r = \pm \frac { 1 } { 2 ^{5 / 2} } . } \end{array}
+\end{equation}
+作为这种方法的一个示例，我们现在计算一个硬球气体的第二维里系数。在这种情况下，两体势可以写成
+\begin{equation}\tag{10.5.31}\label{eq:10.5.31}
+u ( r ) = \left\{ \begin{array}{ll} { + \infty } & { \mathrm { f o r }  r < \bar { D } } \\{ 0 } & { \mathrm { f o r }  r > D . } \end{array} \right.
+\end{equation}
+现在可以通过使用（内部）边界条件来确定散射相移\(\eta_{l}(k)\)，即对所有\(r<D\)有\(\chi(r)=0\)，因此当\(r\rightarrow D\)时它从上述条件消失。因此我们得到（例如，参见Schiff, 1968）
+\begin{equation}\tag{10.5.32}\label{eq:10.5.32}
+\eta _ { l } ( k ) = \tan ^{- 1} \frac { j _ { l } ( k D ) } { n _ { l } ( k D ) } ,
+\end{equation}
+其中\(j_{l}(x)\)和\(n_{l}(x)\)分别是"球贝塞尔函数"和"球诺伊曼函数"：
+\begin{equation}\tag{10.5.33}\label{eq:10.5.33}
+\begin{array}{rl} & { j _ { 0 } ( x ) = \frac { \sin x } { x } ,  j _ { 1 } ( x ) = \frac { \sin x - x \cos x } { x ^{2} } , } \\& { j _ { 2 } ( x ) = \frac { ( 3 - x ^{2} ) \sin x - 3 x \cos x } { x ^{3} } , \ldots } \end{array}
+\end{equation}
+以及
+\begin{equation}\tag{10.5.34}\label{eq:10.5.34}
+\begin{array}{rl} & { n _ { 0 } ( x ) = - \frac { \cos x } { x } ,  n _ { 1 } ( x ) = - \frac { \cos x + x \sin x } { x ^{2} } , } \\& { n _ { 2 } ( x ) = - \frac { ( 3 - x ^{2} ) \cos x + 3 x \sin x } { x ^{3} } , . . . . . } \end{array}
+\end{equation}
+\(^{11}\)这个计算顺便验证了通用公式\autoref{eq:10.4.9} 对于\(l=2\)的情况。根据该公式，给定系统的"簇积分"\(\mathfrak{b}_2\)等于系统"构型积分"\(Z_2\)的体积展开中\(V^1\)系数的\(1/(2\lambda^3)\)倍。在研究的情况中，这个系数是\(\pm\lambda^3/2^{3/2}\)；因此结果是
+因此，
+\begin{equation}\tag{10.5.35}\label{eq:10.5.35}
+\begin{array}{rl} & { \eta _ { 0 } ( k ) = \tan ^{- 1} \{ - \tan ( k D ) \} = - k D , } \\& { \eta _ { 1 } ( k ) = \tan ^{- 1} \left\{ - \frac { \tan ( k D ) - k D } { 1 + k D \tan ( k D ) } \right\} = - \{ k D - \tan ^{- 1} ( k D ) \} } \\& {  = - \frac { ( k D ) ^{3} } { 3 } + \frac { ( k D ) ^{5} } { 5 } - \cdots , } \\& { \eta _ { 2 } ( k ) = \tan ^{- 1} \left\{ - \frac { \tan ( k D ) - 3 ( k D ) / [ 3 - ( k D ) ^{2} ] } { 1 + 3 ( k D ) \tan ( k D ) / [ 3 - ( k D ) ^{2} ] } \right\} } \\& {  = - \left\{ k D - \tan ^{- 1} \frac { 3 ( k D ) } { 3 - ( k D ) ^{2} } \right\} = - \frac { ( k D ) ^{5} } { 45 } + \cdots , } \end{array}
+\end{equation}
+等等。我们现在必须将这些结果代入\autoref{eq:10.5.26}。然而，在这样做之前我们应该指出，在硬球相互作用的情况下，（i）我们根本不可能有束缚态，以及（ii）由于对所有\(l, \eta_l(0) = 0\)，\autoref{eq:10.5.26} 中的积分可以通过先前的分部积分简化。因此，我们有
+\begin{equation}\tag{10.5.36}\label{eq:10.5.36}
+\ddot { b } _ { 2 } - \ddot { b } _ { 2 } ^{( 0 )} = \frac { 8 ^{1 / 2} \lambda ^{2} } { \pi ^{2} } \sum _ { l } ^{\prime} ( 2 l + 1 ) \int _ { 0 } ^{\infty} e ^{- \beta \hbar ^ { 2} k ^{2} / m } \eta _ { l } ( k ) k \, d k .
+\end{equation}
+在玻色子的情况下代入\(l=0\)和2，在费米子的情况下代入\(l=1\)，我们得到（在\(D/\lambda\)的五次方中）
+\begin{equation}\tag{10.5.37}\label{eq:10.5.37}
+\begin{array}{rl} & { \ddot { b } _ { 2 } - \ddot { b } _ { 2 } ^{( 0 )} = - 2 \left( \frac { D } { \lambda } \right) ^{1} - \frac { 10 \pi ^{2} } { 3 } \left( \frac { D } { \lambda } \right) ^{5} - \cdots  \mathrm { ( B o s e ) } } \\& {  = - 6 \pi \left( \frac { D } { \lambda } \right) ^{3} + 18 \pi ^{2} \left( \frac { D } { \lambda } \right) ^{5} - \cdots  \mathrm { ( F e r m i ) } } \end{array}
+\end{equation}
+这可以与相应的经典结果\(-(2\pi/3)(D/\lambda)^3\)进行比较。
+\section{量子力学系统的簇展开}\label{ux91cfux5b50ux529bux5b66ux7cfbux7edfux7684ux7c07ux5c55ux5f00}
+当计算\(l > 2\)时的\(b_{l}\)时，我们没有与\autoref{eq:10.5.26} 对于\(b_{2}\)那样简单相媲美的公式。这是因为我们没有像处理两体问题那样简洁的\(l\)体问题（对于\(l > 2\)）的处理方法。尽管如此，Kahn和Uhlenbeck（1938年）已经发展出了一种用于计算高阶"簇积分"的正式理论；Lee和Yang（1959a,b；1960a,b,c）的详细阐述使这个理论几乎与Mayer的理论一样适用于处理量子力学系统。这个理论的基本方法是
+发展一种方案，以基本上与Mayer的簇展开对经典气体所做的那样表达给定系统的巨配分函数。然而，由于量子统计效应和粒子间相互作用效应的相互作用，这个理论的数学结构相当复杂。
+我们在这里考虑一个由\(N\)个相同粒子组成的量子力学系统，这些粒子被封闭在一个体积为\(V\)的盒子中。假设系统的哈密顿量形式为
+\begin{equation}\tag{10.6.1}\label{eq:10.6.1}
+\hat { H } _ { N } = - \frac { \hbar ^{2} } { 2 m } \sum _ { i = 1 } ^{N} \nabla _ { i } ^{2} + \sum _ { i < j } u ( r _ { i j } ) .
+\end{equation}
+现在，系统的配分函数由下式给出
+\begin{equation}\tag{10.6.2}\label{eq:10.6.2}
+\begin{array}{rl} & { Q _ { N } ( V , T ) \equiv \mathrm { T r } ( e ^{- \beta \hat { H} _ { N } } ) = \sum _ { \alpha } e ^{- \beta E _ { \alpha} } } \\& {  = \sum _ { \alpha } \int _ { V } \{ \Psi _ { \alpha } ^{*} ( 1 , \ldots , N ) e ^{- \beta \hat { H} _ { N } } \Psi _ { \alpha } ( 1 , \ldots , N ) \} d ^{3 N} r , } \end{array}
+\end{equation}
+其中函数\(\Psi_{\alpha}\)被假设形成系统的一组完整的（适当对称化的）正交波函数，而数字1,\ldots,N分别表示位置坐标\(r_{1},\ldots,r_{N}\)。我们也可以通过矩阵元素引入系统的概率密度算符\(\hat{W}_{N}\)
+\begin{equation}\tag{10.6.3}\label{eq:10.6.3}
+\begin{array}{rlr} & { } & { \langle 1 ^{\prime} , \ldots , N ^{\prime} | \hat { W } _ { N } | 1 , \ldots , N \rangle \equiv N ! \lambda ^{3 N} \sum _ { \alpha } \{ \Psi _ { \alpha } ( 1 ^{\prime} , \ldots , N ^{\prime} ) e ^{- \beta \hat { H} _ { N } } \Psi _ { \alpha } ^{*} ( 1 , \ldots , N ) \} } \\& { } & { = N ! \lambda ^{3 N} \sum _ { \alpha } \{ \Psi _ { \alpha } ( 1 ^{\prime} , \ldots , N ^{\prime} ) \Psi _ { \alpha } ^{*} ( 1 , \ldots , N ) \} e ^{- \beta E _ { \alpha} } . } \end{array}
+\end{equation}
+我们将算符\(\hat{W}_N\)的对角元素表示为符号\(W_N(1,\dots,N)\)；因此
+\begin{equation}\tag{10.6.4}\label{eq:10.6.4}
+W _ { N } ( 1 , \ldots , N ) = N ! \lambda ^{3 N} \sum _ { \alpha } \{ \Psi _ { \alpha } ( 1 , \ldots , N ) \Psi _ { \alpha } ^{*} ( 1 , \ldots , N ) \} e ^{- \beta E _ { \alpha} } \, ,
+\end{equation}
+由此\autoref{eq:10.6.2} 变为
+\begin{equation}\tag{10.6.5}\label{eq:10.6.5}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! \lambda ^{3 N} } \int _ { V } W _ { N } ( 1 , \ldots , N ) d ^{3 N} r = \frac { 1 } { N ! \lambda ^{3 N} } \operatorname { T r } \left( \hat { W } _ { N } \right) .
+\end{equation}
+将\autoref{eq:10.6.5} 与 \autoref{eq:10.1.3} 和 \autoref{eq:10.4.2} 进行比较，可以看出"概率密度算符\(\hat{W}_N\)的迹"是"构型积分"\(Z_N\)的类比，而量\(W_N(1,\ldots,N)d^{3N}r\)是测量给定系统的"构型"位于区间\([(r_1,\ldots,r_N), (r_1+dr_1,\ldots,r_N+dr_N)]\)内的概率的量度。
+在我们进一步讨论之前，让我们熟悉一下矩阵元素（3）的一些基本属性：
+\begin{equation}\tag{10.6.6}\label{eq:10.6.6}
+\begin{array}{rl} & { \langle 1 ^{\prime} | \hat { W } _ { 1 } | 1 \rangle = \lambda ^{3} \sum _ { p } \left\{ \frac { 1 } { \sqrt { V } } e ^{i ( p \cdot \pmb { r} _ { 1 } ^{\prime} ) / \hbar } \frac { 1 } { \sqrt { V } } e ^{- i ( p \cdot \pmb { r} _ { 1 } ) / \hbar } \right\} e ^{- \beta p ^ { 2} / 2 m } } \\& {  \simeq \frac { \lambda ^{3} } { V } \iiint _ { - \infty } ^{+ \infty} \frac { V d ^{3} p } { h ^{3} } e ^{\{ i \pmb { p} \cdot ( \pmb { r } _ { 1 } ^{\prime} - \pmb { r } _ { 1 } ) / \hbar - \beta p ^{2} / 2 m \} } } \\& {  = e ^{- \pi | \pmb { r} _ { 1 } ^{\prime} - \pmb { r } _ { 1 } | ^{2} / \lambda ^{2} } ; } \end{array}
+\end{equation}
+与单个粒子的密度矩阵\autoref{eq:5.3.14} 进行比较。上述结果是量子力学而非量子统计的相关性的体现，这种相关性存在于给定粒子（或者系统中的任何粒子）的位置\(r\)和\(r'\)之间。这种相关性延伸到\(\lambda\)量级的距离，因此是表示粒子的波包线性维度的度量。当\(T \to \infty\)时，即\(\lambda \to 0\)时，矩阵元素\autoref{eq:10.6.6} 对于所有有限的\(|r'_1 - r_1|\)值趋于零。
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+\end{enumerate}
+\begin{equation}\tag{10.6.7}\label{eq:10.6.7}
+\langle \mathbf { l } | \hat { W } _ { 1 } | \mathbf { l } \rangle = \mathbf { l } ;
+\end{equation}
+因此，根据\autoref{eq:10.6.5}，
+\begin{equation}\tag{10.6.8}\label{eq:10.6.8}
+Q _ { 1 } ( V , T ) = \frac { 1 } { \lambda ^{3} } \int \mathbf { 1 } d ^{3} r = \frac { V } { \lambda ^{3} } .
+\end{equation}
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  无论波函数\(\Psi\)的对称性特征如何，概率密度算符\(\hat{W}_{N}\)的对角元素\(W_{N}(1,\ldots,N)\)都关于参数\((1,\ldots,N)\)之间的排列对称。
+\item
+  元素\(W_{N}(1,\ldots,N)\)在集合\(\{\Psi_{\alpha}\}\)的幺正变换下是不变的。
+\item
+  假设坐标\(r_{1},\ldots,r_{N}\)可以分成两组\(A\)和\(B\)，具有这样的性质：任意两个坐标，比如\(r_{i}\)和\(r_{j}\)，其中一个属于组\(A\)，另一个属于组\(B\)，满足条件
+\end{enumerate}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  分离\(r_{ij}\)远大于粒子的平均热波长\(\lambda\)，
+\item
+  它也远大于两体势的有效范围\(r_{0}\)， 那么
+\end{enumerate}
+\begin{equation}\tag{10.6.9}\label{eq:10.6.9}
+W _ { N } ( \pmb { r } _ { 1 } , \ldots , \pmb { r } _ { N } ) \simeq W _ { A } ( \pmb { r } _ { A } ) W _ { B } ( \pmb { r } _ { B } ) ,
+\end{equation}
+其中\(r_{A}\)和\(r_{B}\)分别表示组\(A\)和组\(B\)中的坐标。虽然物理上可以理解这一点，但在这里很难给出严格的数学证明。通过注意到，在条件(a)和(b)下，组\(A\)中的粒子与组\(B\)中的粒子之间不存在任何空间相关性（无论是通过统计还是通过粒子间相互作用），可以直观地看出这一点。因此，两组表现得像两个独立的实体。然后
+很自然地，复合配置的概率密度\(W_{N}\)可以非常接近地等于概率密度\(W_{A}\)和\(W_{B}\)的乘积。
+我们现在继续进行公式化。首先，为了明确要遵循的方法思路，我们可以考虑\(N=2\)的情况。在这种情况下，由于\(r_{12} \rightarrow \infty\)，根据性质(v)，我们预期
+\begin{equation}\tag{10.6.10}\label{eq:10.6.10}
+W _ { 2 } ( 1 , 2 ) \rightarrow W _ { 1 } ( 1 ) W _ { 1 } ( 2 ) = 1 .
+\end{equation}
+然而，一般来说，\(W_{2}(1,2)\)将与\(W_{1}(1)W_{1}(2)\)不同。现在，如果我们用符号\(U_{2}(1,2)\)表示\(W_{2}(1,2)\)与\(W_{1}(1)W_{1}(2)\)之间的差异，那么，当\(r_{12} \rightarrow \infty\)时，
+\begin{equation}\tag{10.6.11}\label{eq:10.6.11}
+U _ { 2 } ( 1 , 2 ) \rightarrow 0 .
+\end{equation}
+不难看出，量\(U_{2}(1,2)\)是量子力学中Mayer函数\(f_{ij}\)的类比。考虑到这一点，我们引入了一系列由层次结构\(^{12}\)定义的簇函数\(\hat{U}_{l}\)
+\begin{equation}\tag{10.6.12}\label{eq:10.6.12}
+\langle 1 ^{\prime} | \hat { W } _ { 1 } | 1 \rangle = \langle 1 ^{\prime} | \hat { U } _ { 1 } | 1 \rangle ,
+\end{equation}
+\begin{equation}\tag{10.6.13}\label{eq:10.6.13}
+\langle 1 ^{\prime} , 2 ^{\prime} | \hat { W } _ { 2 } | 1 , 2 \rangle = \langle 1 ^{\prime} | \hat { U } _ { 1 } | 1 \rangle \langle 2 ^{\prime} | \hat { U } _ { 1 } | 2 \rangle + \langle 1 ^{\prime} , 2 ^{\prime} | \hat { U } _ { 2 } | 1 , 2 \rangle ,
+\end{equation}
+\begin{equation}\tag{10.6.14}\label{eq:10.6.14}
+\begin{array}{rl} & { \langle 1 ^{\prime} , 2 ^{\prime} , 3 ^{\prime} | \hat { W } _ { 3 } | 1 , 2 , 3 \rangle = \langle 1 ^{\prime} | \hat { U } _ { 1 } | 1 \rangle \langle 2 ^{\prime} | \hat { U } _ { 1 } | 2 \rangle \langle 3 ^{\prime} | \hat { U } _ { 1 } | 3 \rangle } \\& {   + \langle 1 ^{\prime} | \hat { U } _ { 1 } | 1 \rangle \langle 2 ^{\prime} , 3 ^{\prime} | \hat { U } _ { 2 } | 2 , 3 \rangle } \\& {   + \langle 2 ^{\prime} | \hat { U } _ { 1 } | 2 \rangle \langle 1 ^{\prime} , 3 ^{\prime} | \hat { U } _ { 2 } | 1 , 3 \rangle } \\& {   + \langle 3 ^{\prime} | \hat { U } _ { 1 } | 3 \rangle \langle 1 ^{\prime} , 2 ^{\prime} | \hat { U } _ { 2 } | 1 , 2 \rangle } \\& {   + \langle 1 ^{\prime} , 2 ^{\prime} , 3 ^{\prime} | \hat { U } _ { 3 } | 1 , 2 , 3 \rangle , } \end{array}
+\end{equation}
+等等。因此，特定的\(\hat{U}_{l}\)是通过层次结构的第一个\(l\)个方程来定义的。这个层次结构中的最后一个方程将是（仅写对角元素）
+\begin{equation}\tag{10.6.15}\label{eq:10.6.15}
+W _ { N } ( 1 , \ldots , N ) = \sum _ { \{ m _ { l } \} } ^{\prime} \left\{ \sum _ { P } [ U _ { 1 } ( \, ) \cdots U _ { 1 } ( \, ) ] [ U _ { 2 } ( \, ) \cdots U _ { 2 } ( \, ) ] \cdots \right\} ,
+\end{equation}
+其中首字母标记的求和遍历所有符合条件\(\{m_l\}\)的集合
+\begin{equation}\tag{10.6.16}\label{eq:10.6.16}
+\sum _ { l = 1 } ^{N} l m _ { l } = N ;  m _ { l } = 0 , 1 , 2 , \ldots .
+\end{equation}
+\(^{12}\)函数\(U_{l}\)最初是由Ursell在1927年引入的，目的是简化经典配置积分。它们被引入量子力学处理是由于Kahn和Uhlenbeck（1938年）的工作。
+此外，在选择（15）中出现的各种\(U_l\)的参数时，从数字\(1,\ldots,N\)中必须记住，同一括号内参数的排列不被视为导致与排列前有明显不同的结果；符号\(\sum_P\)则表示对所有在集合\(\{m_l\}\)下选择参数的不同方式的求和。
+与前述关系相反的关系很容易获得。可以得到
+\begin{equation}\tag{10.6.17}\label{eq:10.6.17}
+\langle 1 ^{\prime} | \hat { U } _ { 1 } | 1 \rangle = \langle 1 ^{\prime} | \hat { W } _ { 1 } | 1 \rangle ,
+\end{equation}
+\begin{equation}\tag{10.6.18}\label{eq:10.6.18}
+\langle 1 ^{\prime} , 2 ^{\prime} | \hat { U } _ { 2 } | 1 , 2 \rangle = \langle 1 ^{\prime} , 2 ^{\prime} | \hat { W } _ { 2 } | 1 , 2 \rangle - \langle 1 ^{\prime} | \hat { W } _ { 1 } | 1 \rangle \langle 2 ^{\prime} | \hat { W } _ { 1 } | 2 \rangle ,
+\end{equation}
+\begin{equation}\tag{10.6.19}\label{eq:10.6.19}
+\begin{aligned}\langle1',2',3'|\hat{U}_3|1,2,3\rangle&=\langle1',2',3'|\hat{W}_3|1,2,3\rangle\\&-\langle1'|\hat{W}_1|1\rangle\langle2',3'|\hat{W}_2|2,3\rangle\\&-\langle2'|\hat{W}_1|2\rangle\langle1',3'|\hat{W}_2|1,3\rangle\\&-\langle3'|\hat{W}_1|3\rangle\langle1',2'|\hat{W}_2|1,2\rangle\\&+2\langle1'|\hat{W}_1|1\rangle\langle2'|\hat{W}_1|2\rangle\langle3'|\hat{W}_1|3\rangle,\end{aligned}
+\end{equation}
+等等；将这些方程的右侧与\autoref{eq:10.4.5} 至 \autoref{eq:10.4.7} 中括号内的表达式进行比较。我们注意到（i）这里一般项的系数是
+\begin{equation}\tag{10.6.20}\label{eq:10.6.20}
+( - 1 ) ^{\frac { \sum} { l } m _ { l } - 1 } \Big ( \sum _ { l } m _ { l } - 1 \Big ) ! ,
+\end{equation}
+其中\(\sum_{l} m_{l}\)是项中\(W_{n}\)的数量，（ii）\autoref{eq:10.6.18}、\autoref{eq:10.6.19} 等右侧所有项的系数之和恒为零。此外，对角元素\(U_{l}(1, \ldots, l)\)，就像算符\(\hat{W}_{n}\)的对角元素一样，在参数\((1, \ldots, l)\)之间的排列下是对称的，并且由对角元素序列\(W_{1}, W_{2}, \ldots, W_{l}\)确定。最后，考虑到\(W_{n}\)的性质（v），如\autoref{eq:10.6.9} 所体现的，\(U_{l}\)具有以下性质：
+\begin{equation}\tag{10.6.21}\label{eq:10.6.21}
+U _ { l } ( 1 , \ldots , l ) \simeq 0  \mathrm { i f }  r _ { i j } \gg \lambda , r _ { 0 } ;
+\end{equation}
+这里，\(r_{ij}\)是任意两个坐标\((1,\ldots,l)\)之间的分离距离。13
+我们现在通过公式定义"簇积分"\(b_{l}\)
+\begin{equation}\tag{10.6.22}\label{eq:10.6.22}
+b _ { l } ( V , T ) = \frac { 1 } { l ! \lambda ^{3 ( l - 1 )} V } \int U _ { l } ( 1 , \ldots , l ) d ^{3 l} r ;
+\end{equation}
+与\autoref{eq:10.1.16} 比较。显然，量\(b_{l}(V,T)\)是无量纲的，并且由于对角元素\(U_{l}(1,\ldots,l)\)的性质\autoref{eq:10.6.21}，它实际上与\(V\)无关（只要\(V\)很大）。在\(V\to\infty\)的极限情况下，\(b_{l}(V,T)\)趋向于一个与体积无关的有限值
+值，可以表示为\(b_{l}(T)\)。然后我们得到系统的配分函数，见\autoref{eq:10.6.5} 和 \autoref{eq:10.6.15}，
+\begin{equation}\tag{10.6.23}\label{eq:10.6.23}
+\begin{array}{rlr} & { } & { Q _ { N } ( V , T ) = \frac { 1 } { N ! \lambda ^{3 N} } \int d ^{3 N} r \left\{ \sum _ { \{ m _ { l } \} } ^{\prime} \left[ \sum _ { P } [ U _ { 1 } \cdots U _ { 1 } ] [ U _ { 2 } \cdots U _ { 2 } ] \cdots \right] \right\} } \\& { } & { = \frac { 1 } { N ! \lambda ^{3 N} } \sum _ { \{ m _ { l } \} } ^{\prime} \frac { N ! } { ( 1 ! ) ^{m _ { 1} } ( 2 ! ) ^{m _ { 2} } \cdots m _ { 1 } ! m _ { 2 } ! \cdots } } \\& { } & { \times \int d ^{3 N} r \{ [ U _ { 1 } \cdots U _ { 1 } ] [ U _ { 2 } \cdots U _ { 2 } ] \cdots \} . } \end{array}
+\end{equation}
+在写出最后一个结果时，我们利用了这样一个事实：由于函数\(U_l\)的参数之间的排列不影响所涉及积分的值，因此可以对\(P\)的求和替换为求和中的任何一项，乘以集合\(\{m_l\}\)允许的不同排列的数量；与相应的数字乘积\autoref{eq:10.1.22} 和 \autoref{eq:10.1.24} 进行比较。利用定义\autoref{eq:10.6.22}，\autoref{eq:10.6.24} 可以写成
+\begin{equation}\tag{10.6.24}\label{eq:10.6.24}
+\begin{array}{r} { Q _ { N } ( V , T ) = \frac { 1 } { \lambda ^{3 N} } \sum _ { \{ m _ { l } \} } ^{\prime} \left[ \prod _ { l = 1 } ^{N} \{ b _ { l } \lambda ^{3 ( l - 1 )} V ) ^{m _ { l} } / m _ { l } ! \} \right] } \\{ = \sum _ { \{ m _ { l } \} } ^{\prime} \left[ \prod _ { l = 1 } ^{N} \left\{ \left( b _ { l } \frac { V } { \lambda ^{3} } \right) ^{m _ { l} } \frac { 1 } { m _ { l } ! } \right\} \right] ; } \end{array}
+\end{equation}
+再次利用了这样一个事实
+\begin{equation}\tag{10.6.25}\label{eq:10.6.25}
+\prod _ { l } ( \lambda ^{3 l} ) ^{m _ { l} } = \lambda ^{\frac { 3} { l } \sum _ { l } l m _ { l } } = \lambda ^{3 N} .
+\end{equation}
+\autoref{eq:10.6.25} 在形式上与 Mayer 理论的\autoref{eq:10.1.29} 相同。随后形式主义的发展，导致系统的状态方程，与那个理论在形式上是相同的。因此，我们最终得到
+\begin{equation}\tag{10.6.26}\label{eq:10.6.26}
+{ \frac { P } { k T } } = { \frac { 1 } { \lambda ^{3} } } \sum _ { l = 1 } ^{\infty} { \bar { b } } _ { l } z ^{l}  { \mathrm { a n d } }  { \frac { 1 } { \nu } } = { \frac { 1 } { \lambda ^{3} } } \sum _ { l = 1 } ^{\infty} l \, { \bar { b } } _ { l } z ^{l} .
+\end{equation}
+然而，存在重要的物理差异。我们可以回忆一下，在经典情况下计算簇积分\(b_{l}\)涉及评估多个有限的3l维积分。在量子力学情况下的相应计算需要了解函数\(U_{l}\)，因此需要了解所有\(W_{n}\)，其中\(n \leq l\)；这反过来又需要解所有\(n \leq l\)的\(n\)体薛定谔方程。对于\(l=2\)的情况可以像第10.5节中所做的那样处理得很好。对于\(l>2\)，数学过程相当繁琐。尽管如此，Lee和Yang (1959a,b; 1960a,b,c)发展了一种方案，使我们能够在连续近似中计算更高的\(b_{l}\)。根据
+对于该方案，可以通过"分离"统计效应和粒子间相互作用效应来评估给定系统的函数\(U_{l}\)，也就是说，我们首先处理问题的统计方面，然后处理其动力学方面。因此，整个壮举是通过两个步骤完成的。
+首先，给定系统相关的\(U\)函数被表示为与遵循玻尔兹曼统计的相应量子力学系统相关的\(U\)函数，即由非对称波函数描述的（虚构）系统。这一步处理了给定系统的统计特性，即描述系统的波函数的对称性质。接下来，（虚构的）玻尔兹曼系统的\(U\)函数被展开，粗略地说，是以二元核\(B\)的幂次展开的，这个核可以通过给定相互作用下的双体问题解得到。这种方法的一个值得称赞的特点是，即使给定相互作用包含一个奇异的排斥核心，即即使系统的某些构型的势能变得无限大，该方法也可以应用。尽管这种方法在原理上系统而相当直接，但其应用于实际系统却相当复杂。因此，我们将转向一种更实用的方法——量子化场方法（见第~11~章），它在研究由相互作用粒子组成的量子力学系统时非常有用。关于李和杨的（二元碰撞）方法的详细阐述，请参见本书第一版的第9.7节和第9.8节。
+顺便提一下，我们注意到量子力学情况与经典情况之间的另一个重要区别。在后者情况下，如果粒子间相互作用不存在，则所有\(b_{l}\)（其中\(l \geq 2\)）都消失。这在量子力学情况中并不成立；参见第7.1节和第8.1节，
+\begin{equation}\tag{10.6.27}\label{eq:10.6.27}
+\bar { b } _ { l } ^{( 0 )} = ( \pm 1 ) ^{l - 1} l ^{- 5 / 2} ,
+\end{equation}
+其中\autoref{eq:10.5.27} 是一个特例。
+\section{相关性和散射}\label{ux76f8ux5173ux6027ux548cux6563ux5c04}
+在现代统计力学中，相关性和散射起着极其重要的作用。不同相态通常可以通过它们表现出的不同空间有序性来轻易区分。低密度蒸汽中的分子几乎是不相关的，而高密度液体中的分子可以强烈相关，并由于强烈的空间排斥力表现出短程有序性，但这种相关性在大距离处迅速衰减。在晶体固体中，每个粒子的位置与其他所有粒子的位置高度相关，并且这些相关性在粒子之间的大距离处不会衰减到零；这被称为长程有序。在临界点，系统表现出介于短程和长程之间的有序性，所谓的准长程有序的特点是相关性的幂律衰减。晶体和液晶相态除了分子的多种空间有序性外，还表现出分子取向相关性，这些相关性可以是短程、长程或准长程的。不同相态的磁体
+磁偶极子的空间排序不同：顺磁体中是短程排序，铁磁体和反铁磁体中是长程排序，在磁临界点相关性的衰减遵循幂律。
+空间相关函数基于\(n\)粒子密度。单体数密度由平均量定义
+\begin{equation}\tag{10.7.1}\label{eq:10.7.1}
+n _ { 1 } ( \boldsymbol { r } ) = \left\langle \sum _ { i } \delta ( \boldsymbol { r } - \boldsymbol { r } _ { i } ) \right\rangle .
+\end{equation}
+这定义了局部数密度，在该密度中\(n_{1}(\boldsymbol{r})dr\)是测量在位置\(\boldsymbol{r}\)的无限小体积\(dr\)内找到一个粒子的概率的量度。如果系统是平移不变的，单体密度就是通常的数密度\(n_{1}(\boldsymbol{r})=n=\langle N\rangle/V\)。单体密度在体积\(V\)上的空间积分给出了该体积内粒子的平均数：
+\begin{equation}\tag{10.7.2}\label{eq:10.7.2}
+\int n _ { 1 } ( \pmb { r } ) d \pmb { r } = \langle N \rangle \, .
+\end{equation}
+两体数密度定义为
+\begin{equation}\tag{10.7.3}\label{eq:10.7.3}
+n _ { 2 } ( \pmb { r } , \pmb { r } ^{\prime} ) = \left\langle \sum _ { i \neq j } \delta ( \pmb { r } - \pmb { r } _ { i } ) \delta ( \pmb { r } ^{\prime} - \pmb { r } _ { j } ) \right\rangle .
+\end{equation}
+量\(n_{2}(\boldsymbol{r},\boldsymbol{r}^{\prime})drdr^{\prime}\)是测量在位置\(\boldsymbol{r}\)的无限小体积\(dr\)内找到一个粒子，在位置\(\boldsymbol{r}^{\prime}\)的无限小体积\(dr^{\prime}\)内找到另一个粒子的概率的量度。在稀薄的经典气体中，粒子只有在彼此靠近时才会相互作用，因此，在相距许多原子直径的两个不同位置找到两个不同粒子的概率简单地就是分别找到任一粒子的概率的乘积，即\(n_{2}(\boldsymbol{r},\boldsymbol{r}^{\prime})\rightarrow n_{1}(\boldsymbol{r})n_{1}(\boldsymbol{r}^{\prime})\)当\(|\boldsymbol{r}-\boldsymbol{r}^{\prime}|\rightarrow\infty\)时。正是这种非相关行为的偏差既有趣又重要。两体密度在体积\(V\)上的积分给出
+\begin{equation}\tag{10.7.4}\label{eq:10.7.4}
+\int n _ { 2 } ( \pmb { r } , \pmb { r } ^{\prime} ) d \pmb { r } d \pmb { r } ^{\prime} = \left\langle N ^{2} \right\rangle - \left\langle N \right\rangle .
+\end{equation}
+如果系统是平移和旋转不变的，单体数密度与位置无关，两体数密度仅取决于\(r\)和\(r'\)之间的距离大小。这允许我们定义配对相关函数\(g(r)\)：
+\begin{equation}\tag{10.7.5}\label{eq:10.7.5}
+n _ { 2 } ( \boldsymbol { r } , \boldsymbol { r } ^{\prime} ) = n ^{2} g \left( \left| \boldsymbol { r } - \boldsymbol { r } ^{\prime} \right| \right) .
+\end{equation}
+显然，对于\(r < D\)，配对相关函数消失，因为由于无限排斥力，系统中的任意两个粒子都不能彼此靠近超过\(D\)的距离。这些空间排斥力导致\(g(r)\)振荡衰减。在略大于\(D\)的间距处，配对相关函数大于1，因为流体的局部几何形状增强了找到两个相距略大于\(D\)的粒子的概率；作为示例，请参见图~10.6。在略大的距离处，由于硬排斥距离外粒子簇的排斥作用，配对相关函数小于1。振荡的相关性随距离迅速衰减，因此在大间距处\(g(r)\)趋近于1。这种配对相关函数的行为是所有密集流体的典型特征
+压力由粒子对之间的量\(r(\partial u/\partial r)\)的平均值决定，如第3.7节所讨论。在正则系综中，压力\(P\)由下式给出
+\begin{equation}\tag{10.7.6}\label{eq:10.7.6}
+P \equiv - \left( \frac { \partial A } { \partial V } \right) _ { T , N } = \frac { k T } { Z _ { N } } \left( \frac { \partial Z _ { N } } { \partial V } \right) _ { T , N } ,
+\end{equation}
+其中\(Z_{N}\)是构型配分函数
+\begin{equation}\tag{10.7.7}\label{eq:10.7.7}
+Z _ { N } = \frac { 1 } { N ! } \int d ^{N} \mathbf { r } \, \exp \left( - \beta \sum _ { i < j } u ( r _ { i j } ) \right) .
+\end{equation}
+在体积\(V\)上的\(d\)维积分可以用一组缩放变量\(\{\mathbf{s}_i\}\)来重写，这些变量由\(\mathbf{r}_i = V^{1/d}\mathbf{s}_i\)定义，因此缩放积分是在单位区域上的积分。
+体积：
+\begin{equation}\tag{10.7.8}\label{eq:10.7.8}
+Z _ { N } = \frac { V ^{N} } { N ! } \int d ^{N} \mathbf { s } \, \exp \left( - \beta \sum _ { i < j } u ( V ^{1 / d} s _ { i j } ) \right) .
+\end{equation}
+\autoref{eq:10.7.8} 和 \autoref{eq:10.7.10} 因此给出
+\begin{equation}\tag{10.7.9}\label{eq:10.7.9}
+P = n k T \left( 1 - \frac { n } { 2 d k T } \int \frac { d u } { d r } r g ( r ) d r \right) .
+\end{equation}
+这被称为维里状态方程，对于从配对相关函数的近似表达式确定压力很有用。比较\autoref{eq:10.7.11} 与第3章中维里状态方程的形式。
+对于硬球的特殊情况，不连续势能导致压力由接触处的配对相关函数决定。在一维、二维和三维中，硬球压力由下式给出
+\begin{equation}\tag{10.7.10}\label{eq:10.7.10}
+\frac { p ^{\mathrm { H S} } } { n k T } = \left\{ \begin{array}{ll} { 1 + \eta g ( D ^{+} ) } & { \eta = n D } \\{ 1 + 2 \eta g ( D ^{+} ) } & { \eta = \frac { \pi } { 4 } n D ^{2} } \\{ 1 + 4 \eta g ( D ^{+} ) } & { \eta = \frac { \pi } { 6 } n D ^{3} } \end{array} \right.  d = 1 ,
+\end{equation}
+其中\(g(D^{+})\)是接触处的相关函数，\(\eta\)是体积分数，即样品的\(d\)维体积中被球体占据的比例；见问题10.14。同样，流体的内能可以写成对配对相关函数和配对势能的积分：
+\begin{equation}\tag{10.7.11}\label{eq:10.7.11}
+U ( N , V , T ) = \langle H \rangle = \frac { d N k T } { 2 } + \frac { n N } { 2 } \int u ( r ) g ( r ) d r .
+\end{equation}
+配对相关函数本身包含了构建系统完整热力学行为所需的所有统计信息。例如，\autoref{eq:10.7.4} 可以用来显示等温压缩性，它与数密度波动成正比，也与对配对相关函数的积分成正比：
+\begin{equation}\tag{10.7.12}\label{eq:10.7.12}
+n k T \kappa _ { T } = \frac { \kappa _ { T } } { \kappa _ { T } ^{\mathrm { i d e a l} } } = \mathbf { 1 } + n \int ( g ( r ) - 1 ) d \mathbf { r } = \frac { \langle N ^{2} \rangle - \langle N \rangle ^{2} } { \langle N \rangle } ;
+\end{equation}
+这被称为压缩性状态方程。由于\(\kappa_{T}^{-1}=n\left(\frac{\partial P}{\partial n}\right)_{T}^{-}\)，可以使用\autoref{eq:10.7.12} 通过对粒子密度进行热力学积分来确定系统的压力和自由能。
+\section{静态结构因子}\label{ux9759ux6001ux7ed3ux6784ux56e0ux5b50}
+配对相关函数\(g(r)\)可以通过准弹性散射实验测量。如果样品被单色X射线、中子、可见光等照射，散射强度作为入射角函数的变化
+束流方向与\(g(r)\)的傅里叶变换成正比。单个粒子在位置\(r_i\)被平面波（振幅为\(\phi_0\)，波矢为\(k_0\)）照射后，在位置\(R\)的探测器中的准弹性散射振幅是
+\begin{equation}\tag{10.7.13}\label{eq:10.7.13}
+\Phi _ { 1 } ( \pmb { k } ) = \phi _ { 0 } f ( \pmb { k } ) \frac { e ^{i \pmb { k} _ { 0 } \cdot \pmb { r } _ { i } } e ^{i \pmb { k} _ { 1 } \cdot ( \pmb { R } - \pmb { r } _ { i } ) } } { | \pmb { R } - \pmb { r } _ { i } | } \, ,
+\end{equation}
+其中\(k=k_{1}-k_{0}\)是波矢传递，\(f(k)\)是单粒子散射形状因子；见图~10.7。样品中\(N\)个粒子的总散射振幅是
+\begin{equation}\tag{10.7.14}\label{eq:10.7.14}
+\Phi _ { N } ( \pmb { k } ) \approx \frac { \phi _ { 0 } f ( \pmb { k } ) } { | R | } e ^{i \pmb { k} _ { 1 } \cdot R } \sum _ { i } e ^{- i \pmb { k} \cdot \pmb { r } _ { i } } ,
+\end{equation}
+我们假设探测器远离样品。\(N\)粒子样品的散射强度为
+\begin{equation}\tag{10.7.15}\label{eq:10.7.15}
+I _ { N } ( \pmb { k } ) = \left| \Phi _ { N } ( \pmb { k } ) \right| ^{2} \approx \frac { \left| \phi _ { 0 } f ( \pmb { k } ) \right| ^{2} } { | \pmb { R } | ^{2} } \left\langle \sum _ { i , j } e ^{- i \pmb { k} \cdot ( \pmb { r } _ { i } - \pmb { r } _ { j } ) } \right\rangle = N I _ { 1 } ( \pmb { k } ) S ( \pmb { k } ) ,
+\end{equation}
+是静态结构因子。它表示实际散射强度除以在相同粒子密度\(n\)下，由虚随机分布且因此不相关的原子样本产生的散射强度。
+如果样品在平移上不变且各向同性，如均匀流体中那样，静态结构因子仅取决于波矢传递量的大小，即\(S(\boldsymbol{k})=S(k)\)。在这种情况下，\(S(k)\)可以写成对相关函数的傅里叶变换：
+\begin{equation}\tag{10.7.16}\label{eq:10.7.16}
+S ( k ) = 1 + \frac { N } { V } \int ( { \bf g } ( r ) - 1 ) e ^{i { \bf k} \cdot { \bf r } } d { \bf r } + \frac { N } { V ^{2} } \left| \int e ^{i { \bf k} \cdot { \bf r } } d { \bf r } \right| ^{2} .
+\end{equation}
+\autoref{eq:10.7.19} 中的最后一项代表样品体积的前向形状散射。对于\(k \gg 1/L\)，形状散射项可以忽略不计，因此在热力学极限下可以忽略\(k \neq 0\)的情况。然后，一维、二维和三维各向同性流体的结构因子由下式给出
+\begin{equation}\tag{10.7.17}\label{eq:10.7.17}
+S ( k ) = 1 + 2 n \int _ { 0 } ^{\infty} ( g ( r ) - 1 ) \cos ( k r ) d r  d = 1 ,
+\end{equation}
+\begin{equation}\tag{10.7.18}\label{eq:10.7.18}
+S ( k ) = 1 + 2 \pi n \int _ { 0 } ^{\infty} r ( g ( r ) - 1 ) J _ { 0 } ( k r ) d r  d = 2 ,
+\end{equation}
+\begin{equation}\tag{10.7.19}\label{eq:10.7.19}
+S ( k ) = 1 + \frac { 4 \pi n } { k } \int _ { 0 } ^{\infty} r ( g ( r ) - 1 ) \sin ( k r ) d r  d = 3 .
+\end{equation}
+对相关函数\(g(r)\)可以使用测量到的结构因子的逆傅里叶变换来确定，如图~10.8所示。对于液体和其他短程有序材料，当\(k \to \infty\)时，结构因子趋于单位值。当\(k \to 0\)时，\(S(k)\)的值是样品中数密度波动的度量：
+\begin{equation}\tag{10.7.20}\label{eq:10.7.20}
+\operatorname* { l i m } _ { k \to 0 } S ( k ) = 1 + n \int ( { \mathfrak { g } } ( r ) - 1 ) d { \mathbf { r } } = { \frac { \kappa T } { \kappa { \frac { \mathrm { i d e a l } } { T } } } } = { \frac { \langle N ^{2} \rangle - \langle N \rangle ^{2} } { \langle N \rangle } } .
+\end{equation}
+\autoref{eq:10.7.20} 称为涨落-可压缩性关系，是我们将在第15.6节讨论的涨落-耗散定理的平衡极限。
+图~10.8 在85 K下测量得到的液态氩的对相关函数\(g(r)\)和结构因子\(S(k)\)。结构因子(b)是通过中子散射确定的，对相关函数(a)是通过结构因子的傅里叶逆变换确定的。\(g(r)\)在\(r=0\)附近的小振荡是散射数据傅里叶变换的实验伪影。该图显示了流体中相关性的典型特征：短距离处几乎为零的\(g(r)\)，粒子相隔约一个分子直径时\(g(r)\)较大，大距离处相关性振荡衰减到单位值，由于致密流体的小可压缩性，小波矢下的\(S(k)\)较小，而在大波矢下\(S(k)\)接近单位值。图来自Yarnell、Katz、Wenzel和Koenig（1973年）。经许可转载；版权©1973年美国物理学会。
+10.7.B 晶体固体的散射
+在理想的晶体固体中，晶体中的原子位于周期性结构的位点上。对于简单的晶体，相同的原子位于布拉维格点阵\{\(\mathbf{R}\)\}上。例如，一个简单的立方晶格具有晶格向量\(\mathbf{R} \in \{(n_1 \hat{x} + n_2 \hat{y} + n_3 \hat{z}) a\}\)，其中\(n_1\)、\(n_2\)和\(n_3\)是整数，\(a\)是晶格常数。倒格点阵\{\(\mathbf{G}\)\}由一组倒格点阵向量\(\mathbf{G}\)定义——使得\(\mathbf{G} \cdot \mathbf{R} = 2\pi m\)，其中\(m\)是所有\{\(\mathbf{G}\)\}和\{\(\mathbf{R}\)\}的整数。简单立方晶格的倒格点阵也是一个简单立方晶格：\(\mathbf{G} \in \{(m_1 \hat{x} + m_2 \hat{y} + m_3 \hat{z}) \frac{2\pi}{a}\}\)，其中\(m_1\)、\(m_2\)和\(m_3\)是整数。对于完美的布拉维格格点阵，结构因子\(S(\mathbf{k})\)的形式为
+\begin{equation}\tag{10.7.21}\label{eq:10.7.21}
+S ( \pmb { k } ) = \frac { 1 } { N } \left\langle \sum _ { R , R ^{\prime} } e ^{i \pmb { k} \cdot ( R - R ^{\prime} ) } \right\rangle = N \sum _ { G } \delta _ { \pmb { k } , G } ,
+\end{equation}
+其中\(\delta_{k,G}\)是克罗内克δ函数。由于来自长程有序原子阵列的散射的相干建设性干涉，结构因子在每个倒格点阵向量上被增强了一个因子\(N\)。可以从这些尖锐布拉格峰的实验模式确定固体的晶体结构；参见Ashcroft和Mermin（1976年）。
+热激发使原子偏离其平衡位置。一个原子的平衡位置为\(R\)时，其位移位置可以写成\(R + u(R)\)，其中\(u(R)\)表示与平衡位置的偏差。只要原子保持靠近它们的晶格位点，结构因子中的尖锐布拉格峰也将保持
+但每个峰的强度会因偏差平方的平均值\(\left|\left|\boldsymbol{u}(\boldsymbol{R})\right|^{2}\right\rangle\)的不同而有所减少。对于正常的三维固体来说，情况确实如此。然后结构因子呈现如下形式
+\begin{equation}\tag{10.7.22}\label{eq:10.7.22}
+S ( k ) = \frac { 1 } { N } \sum _ { R , R ^{\prime} } e ^{i k \cdot ( R - R ^ { \prime} ) } \left\langle e ^{i k \cdot ( u ( R ) - u ( R ^ { \prime} ) ) } \right\rangle .
+\end{equation}
+如果关于平衡位置的激发是高斯的（即，哈密顿量中高于\(u(R)\)二阶的项可以忽略），那么指数偏差的平均值可以简化为
+\begin{equation}\tag{10.7.23}\label{eq:10.7.23}
+\left\langle e ^{i k \cdot ( u ( R ) - u ( R ^ { \prime} ) ) } \right\rangle = e ^{- \frac { 1} { 2 } \left\langle \left| k \cdot ( u ( R ) - u ( R ^{\prime} ) \right| ^{2} \right\rangle } .
+\end{equation}
+如果晶格上原子远离彼此的位移是不相关的，就像三维晶体中的那样，
+\begin{equation}\tag{10.7.24}\label{eq:10.7.24}
+\frac { 1 } { 2 } \left\langle | \pmb { k } \cdot ( \pmb { u } ( R ) - \pmb { u } ( R ^{\prime} ) | ^{2} \right\rangle \approx \frac { k ^{2} \left\langle \pmb { u } ^{2} \right\rangle } { 3 }  \mathrm { f o r } \, | \pmb { R } - \pmb { R } ^{\prime} | \rightarrow \infty ,
+\end{equation}
+那么结构因子呈现如下形式
+\begin{equation}\tag{10.7.25}\label{eq:10.7.25}
+S ( k ) = N \sum _ { G } W _ { G } \delta _ { k , G } ,
+\end{equation}
+其中
+\begin{equation}\tag{10.7.26}\label{eq:10.7.26}
+W _ { G } = \exp \left( - \frac { G ^{2} \left\langle \boldsymbol { u } ^{2} \right\rangle } { 3 } \right)
+\end{equation}
+被称为德拜-瓦勒因子。原子从晶格位点的随机偏差会降低布拉格峰的强度，但表示长程晶体有序的尖锐散射仍然保持不变；参见Ashcroft和Mermin（1976）。
+这种计算的一个有趣变体发生在二维固体中。Peierls（1935）和Landau（1937）表明，在二维中的谐波热涨落会破坏晶体长程有序。Mermin（1968）将其推广到表明对于任何具有短程相互作用的二维粒子系统，长程晶体有序是不可能的。二维固体表现出平移相关性的幂律衰减，同时保持晶格取向相关性的长程有序。这导致静态结构因子中出现幂律奇点而不是δ函数。固体可以通过两个类似Kosterlitz-Thouless的连续转变而不是单一的一级转变来熔化。中间的"六角形"相表现出短程平移相关性和准长程取向相关性；参见第13.7节，Kosterlitz和Thouless（1972, 1973），Halperin和Nelson（1978），以及Young（1979）。
+\section{问题}\label{ux95eeux9898_chap10}
+10.1. 对于不完全气体计算，有时会采用Sutherland势
+\begin{equation}\tag{10.7.27}\label{eq:10.7.27}
+u ( r ) = \left\{ \begin{array}{ll} { \infty } & { \mathrm { f o r } \ r < D } \\{ - \varepsilon ( D / r ) ^{6} } & { \mathrm { f o r } \ r > D . } \end{array} \right.
+\end{equation}
+使用这个势，确定经典气体的第二维里系数。同时确定理想气体定律的一级修正以及系统的各种热力学性质的一级修正。
+10.2. 根据Lennard-Jones的观点，如果假设分子间势的形式为
+\begin{equation}\tag{10.7.28}\label{eq:10.7.28}
+u ( r ) = \frac { A } { r ^{m} } - \frac { B } { r ^{n} } ,
+\end{equation}
+其中 \(n\) 非常接近于6，而 \(m\) 的范围在11到13之间。确定Lennard-Jones气体的第二维里系数，并将其结果与范德华气体的结果进行比较；见\autoref{eq:10.3.8}。
+10.3. (a) 证明对于遵循范德华状态方程\autoref{eq:10.3.9} 的气体，
+\begin{equation}\tag{10.7.29}\label{eq:10.7.29}
+C _ { P } - C _ { V } = N k \left\{ 1 - \frac { 2 a } { k T v ^{3} } ( v - b ) ^{2} \right\} ^{- 1} .
+\end{equation}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  还要证明，对于具有恒定比热容 \(C_V\) 的范德华气体，绝热过程符合方程
+\end{enumerate}
+\begin{equation}\tag{10.7.30}\label{eq:10.7.30}
+( \nu - b ) T ^{C _ { V} / N k } = \mathrm { c o n s t } ;
+\end{equation}
+与方程（1.4.30）进行比较。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  进一步证明，气体从体积 \(V_{1}\) 扩张到体积 \(V_{2}\)（进入真空）时产生的温度变化由下式给出
+\end{enumerate}
+\begin{equation}\tag{10.7.31}\label{eq:10.7.31}
+T _ { 2 } - T _ { 1 } = \frac { N ^{2} a } { C _ { V } } \left( \frac { 1 } { V _ { 2 } } - \frac { 1 } { V _ { 1 } } \right) .
+\end{equation}
+10.4. 气体的体积膨胀系数 \(\alpha\) 和等温体积模量 \(B\) 由经验表达式给出
+\begin{equation}\tag{10.7.32}\label{eq:10.7.32}
+\alpha = \frac { 1 } { T } \left( 1 + \frac { 3 a ^{\prime} } { v T ^{2} } \right)  \mathrm { a n d }  B = P \left( 1 + \frac { a ^{\prime} } { v T ^{2} } \right) ^{- 1} ,
+\end{equation}
+其中 \(a'\) 是一个常数参数。证明这些表达式是相互兼容的。同时推导出这种气体的状态方程。
+10.5. 证明气体的一级焦耳-汤姆逊系数由公式给出
+\begin{equation}\tag{10.7.33}\label{eq:10.7.33}
+\left( \frac { \partial T } { \partial P } \right) _ { H } = \frac { N } { C _ { P } } \left( T \frac { \partial ( a _ { 2 } \lambda ^{3} ) } { \partial T } - a _ { 2 } \lambda ^{3} \right) ,
+\end{equation}
+其中 \(a_{2}(T)\) 是气体的第二维里系数，\(H\) 是其焓；见\autoref{eq:10.2.1}。推导出具有粒子间相互作用的气体的焦耳-汤姆逊系数的显式表达式
+\begin{equation}\tag{10.7.34}\label{eq:10.7.34}
+u ( r ) = \left\{ \begin{array}{ll} { + \infty } & { \mathrm { f o r ~ } 0 < r < D , } \\{ - u _ { 0 } } & { \mathrm { f o r ~ } D < r < r _ { 1 } , } \\{ 0 } & { \mathrm { f o r ~ } r _ { 1 } < r < \infty , } \end{array} \right.
+\end{equation}
+并讨论这个系数的温度依赖性。
+10.6. 假设氮气分子的相互作用通过前一个问题中的势能进行。利用接下来给出的实验数据，确定参数 \(D\)、\(r_{1}\) 和 \(u_{0}/k\) 的"最佳"经验值：
+\begin{equation}\tag{10.7.35}\label{eq:10.7.35}
+a _ { 2 } \lambda ^{3} \ ( \mathrm { i n \ K } ) \ \ \ \ \ \ 10 0 \ \ \ \ \ \ 20 0 \ \ \ \ \ \ \ 30 0 \ \ \ \ \ \ \ 40 0 \ \ \ \ \ \ \ 50 0
+\end{equation}
+10.7. 确定对理想气体值进行的最低阶修正，包括真实气体的亥姆霍兹自由能、吉布斯自由能、熵、内能、焓以及（恒容和恒压）比热容。讨论在分子通过问题10.5中的势能相互作用的气体的情况下，这些修正的温度依赖性。
+10.8. 固体的分子之间通过力 \(F(r)=\alpha(l/r)^{5}\) 相互吸引。由 \(n\) 个分子组成的两个半无限固体相隔一个距离 \(d\)，即固体填充了整个空间，其中 \(x\leq0\) 和 \(x\geq d\)。计算两个固体之间的单位表面积吸引力。
+10.9. 参考\autoref{eq:10.5.31} 中关于硬球气体相位移 \(\eta_{l}(k)\) 的表达式，证明对于 \(kD \ll 1\)
+\begin{equation}\tag{10.7.36}\label{eq:10.7.36}
+\eta _ { l } ( k ) \simeq - \frac { ( k D ) ^{2 l + 1} } { ( 2 l + 1 ) \{ 1 \cdot 3 \cdots ( 2 l - 1 ) \} ^{2} } .
+\end{equation}
+10.10. 使用波函数
+\begin{equation}\tag{10.7.37}\label{eq:10.7.37}
+u _ { p } ( \boldsymbol { r } ) = \frac { 1 } { \sqrt { V } } e ^{i ( p \cdot \boldsymbol { r} ) \hbar }
+\end{equation}
+为了描述自由粒子的运动，写出一对非相互作用玻色子/费米子的对称化波函数，并证明
+\begin{equation}\tag{10.7.38}\label{eq:10.7.38}
+\langle 1 ^{\prime} , 2 ^{\prime} | \hat { U } _ { 2 } ^{S / A} | \mathbf { 1 } , 2 \rangle = \pm \langle 2 ^{\prime} | \hat { W } _ { 1 } | 1 \rangle \langle 1 ^{\prime} | \hat { W } _ { 1 } | 2 \rangle .
+\end{equation}
+10.11. 证明对于由自旋为\(J\)的粒子组成的气体
+\begin{equation}\tag{10.7.39}\label{eq:10.7.39}
+\bar { b } _ { 2 } ^{S} ( J ) = ( J + 1 ) ( 2 J + 1 ) \, \bar { b } _ { 2 } ^{S} ( 0 ) + J ( 2 J + 1 ) \, \bar { b } _ { 2 } ^{A} ( 0 )
+\end{equation}
+和
+\begin{equation}\tag{10.7.40}\label{eq:10.7.40}
+\begin{array}{r} { \mathcal { B } _ { 2 } ^{A} ( J ) = J ( 2 J + 1 ) \, \mathcal { B } _ { 2 } ^{S} ( 0 ) + ( J + 1 ) ( 2 J + 1 ) \, \mathcal { B } _ { 2 } ^{A} ( 0 ) . } \end{array}
+\end{equation}
+10.12. 证明由"无自旋"粒子组成的量子力学玻尔兹曼气体的系数\(b_{2}\)满足以下关系：
+\begin{equation}\tag{10.7.41}\label{eq:10.7.41}
+\begin{array}{rl} & { \bar { b } _ { 2 } = \operatorname* { L i m } _ { J \to \infty } \Big \{ \frac { 1 } { ( 2 J + 1 ) ^{2} } \, \bar { b } _ { 2 } ^{S} ( J ) \Big \} = \operatorname* { L i m } _ { J \to \infty } \Big \{ \frac { 1 } { ( 2 J + 1 ) ^{2} } \, \bar { b } _ { 2 } ^{A} ( J ) \Big \} } \\& { = \frac { 1 } { 2 } \{ \bar { b } _ { 2 } ^{S} ( 0 ) + \bar { b } _ { 2 } ^{A} ( 0 ) \} . } \end{array}
+\end{equation}
+使用 Beth--Uhlenbeck 表达式\autoref{eq:10.5.36} 和 \autoref{eq:10.5.37}，得到\(b_{2}\)的值，精确到\((D/\lambda)\)的五阶，并将其与经典值\(b_{2}\)，即\(-(2\pi/3)(D/\lambda)^{3}\)进行比较。
+10.13. 使用维里展开方法确定\(d\)维中成对关联函数\(g(r)\)的前几个非平凡阶贡献。证明成对关联函数的形式为\(g(r) = e^{-\beta u(r)}y(r)\)，其中\(u(r)\)是成对势能，\(y(r)\)是\(r\)的平滑函数。证明即使对于硬球相互作用的情况，\(y(r)\)及其前几个导数也是连续的。
+10.14. 对于硬球的特殊情况，维里状态方程中的压力是通过在接触点评估成对关联函数来确定的。将成对关联函数写为\(g(r)=e^{-\beta u(r)}y(r)\)并推导出一维、二维和三维中硬球的\autoref{eq:10.7.12}。
+{[}提示：对于硬球，玻尔兹曼因子\(e^{-\beta u(r)}\)是一个海维赛阶跃函数{]}。
+10.15. 使用成对关联函数\(g(r)\)和数密度\(n\)推导出到最近邻粒子的距离的概率分布\(w(r)\)。证明在三维中
+\begin{equation}\tag{10.7.42}\label{eq:10.7.42}
+w ( r ) = 4 \pi \, n r ^{2} g ( r ) \exp \left( - \int _ { 0 } ^{r} 4 \pi \, n s ^{2} g ( s ) d s \right) ,
+\end{equation}
+并且理想气体的平均最近邻距离是
+\begin{equation}\tag{10.7.43}\label{eq:10.7.43}
+r _ { 1 } = \int _ { 0 } ^{\infty} r w ( r ) d r = \Gamma \left( \frac { 4 } { 3 } \right) \left( \frac { 4 \pi n } { 3 } \right) ^{- 1 / 3} .
+\end{equation}
+10.16. 考虑一个无限范围的气体，被一个穿过系统的虚平面分成区域\(A\)和\(B\)。气体分子通过势能函数\(u(r)\)相互作用。证明由\(B\)侧所有分子引起的\(A\)侧所有分子的平均净力\(F\)垂直于平面，并且其大小（单位面积）由下式给出
+\begin{equation}\tag{10.7.44}\label{eq:10.7.44}
+\frac { F } { A } = - \frac { 2 \pi n ^{2} } { 3 } \int _ { 0 } ^{\infty} \left( \frac { d u } { d r } \right) g ( r ) r ^{3} d r .
+\end{equation}
+10.17. 证明对于非相互作用玻色子或费米子的气体，成对关联函数\(g(r)\)由下式给出
+\begin{equation}\tag{10.7.45}\label{eq:10.7.45}
+g ( r ) = 1 \pm \frac { g _ { s } } { n ^{2} h ^{6} } \left| \int _ { - \infty } ^{\infty} \frac { e ^{i ( p \cdot r ) / \hbar} \, d ^{3} p } { e ^{( p ^ { 2} / 2 m - \mu ) / k T } \mp 1 } \right| ^{2} ,
+\end{equation}
+其中\(g_{s}(=2s+1)\)是自旋多重性因子。注意，这里的正号适用于玻色子，负号适用于费米子。\(^{14}\)
+{[}提示：要解决这个问题，可以使用第~11~章中发展的第二量子化方法。然后粒子密度算符\(\hat{n}\)由和给出，
+\begin{equation}\tag{10.7.46}\label{eq:10.7.46}
+\sum _ { \alpha , \beta } a _ { \alpha } ^{\dagger} a _ { \beta } u _ { \alpha } ^{*} ( \boldsymbol { r } ) u _ { \beta } ( \boldsymbol { r } ) ,
+\end{equation}
+其对角项直接与系统中的平均粒子密度\(n\)相关。非对角项给出密度涨落算符\((\hat{n}-n)\)，等等；见\autoref{eq:11.1.25}。18. 证明，在费米子简并气体（\(T\ll T_{F}\)）的情况下，对于\(r\gg\hbar/p_{F}\)，相关函数\(g(r)\)简化为表达式
+\begin{equation}\tag{10.7.47}\label{eq:10.7.47}
+g ( r ) - 1 = - \frac { 3 ( m k T ) ^{2} } { 4 p _ { F } ^{3} \hbar r ^{2} } \left\{ \sinh \left( \frac { \pi m k T r } { p _ { F } \hbar } \right) \right\} ^{- 2} .
+\end{equation}
+注意，当\(T \rightarrow 0\)时，这个表达式趋向于极限形式
+\begin{equation}\tag{10.7.48}\label{eq:10.7.48}
+g ( r ) - 1 = - \frac { 3 \hbar } { 4 \pi ^{2} p _ { F } r ^{4} } \propto \frac { 1 } { r ^{4} } .
+\end{equation}
+注意，在经典极限（\(\hbar \to 0\)）下，因子\(\exp\{i(\boldsymbol{p} \cdot \boldsymbol{r})/\hbar\}\)的无限快速振荡使得积分消失。因此，对于理想的经典气体，函数\(\mathbf{g}(r)\)恒等于1。即使在无相互作用的情况下，相同粒子的量子力学系统也会由于玻色和费米统计而表现出空间相关性。不难看出，对于\(n\lambda^3 \ll 1\)，其中\(\lambda = h/\sqrt{(2\pi mkT)}\)，
+\begin{equation}\tag{10.7.49}\label{eq:10.7.49}
+g ( r ) \simeq 1 \pm \frac { 1 } { g _ { s } } \exp ( - 2 \pi r ^{2} / \lambda ^{2} ) ;
+\end{equation}
+与方程（5.5.27）比较。
+10.19. (a) 对于稀薄气体，配对相关函数\(g(r)\)可以近似为
+\begin{equation}\tag{10.7.50}\label{eq:10.7.50}
+g ( r ) \simeq \exp \{ - u ( r ) / k T \} .
+\end{equation}
+证明，在这种近似下，维里状态方程\autoref{eq:10.7.11} 采取形式
+\begin{equation}\tag{10.7.51}\label{eq:10.7.51}
+\frac { P V } { N k T } \simeq 1 - 2 \pi n \int _ { 0 } ^{\infty} f ( r ) r ^{2} d r ,
+\end{equation}
+其中\(f(r) \left[=\exp \{-u(r)/kT\}-1\right]\)是迈尔函数，见\autoref{eq:10.1.6}。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对于硬球气体，这个结果会采取什么形式？将你的结果与问题1.4的结果进行比较。
+\end{enumerate}
+10.20. 证明，通过从选定密度到理想气体参考状态进行等温可压缩性的逆向热力学积分，可以确定温度\(T\)下流体的压力和亥姆霍兹自由能。
+10.21. 证明，对于一般的高斯变量分布\(u_j\)，变量线性组合的指数的平均值遵循关系
+\begin{equation}\tag{10.7.52}\label{eq:10.7.52}
+\left\langle \exp \left( \sum _ { j } a _ { j } u _ { j } \right) \right\rangle = \exp \left[ \frac { 1 } { 2 } \left\langle \left( \sum _ { j } a _ { j } u _ { j } \right) ^{2} \right\rangle \right] .
+\end{equation}
+10.22. 计算卡纳汉-斯塔林状态方程\autoref{eq:10.3.21} 的等温可压缩性和亥姆霍兹自由能，并证明亥姆霍兹自由能由下式给出
+\begin{equation}\tag{10.7.53}\label{eq:10.7.53}
+\frac { \beta A } { N } = \frac { \beta A ^{\mathrm { i d e a l} } } { N } + \frac { \eta ( 4 - 3 \eta ) } { ( 1 - \eta ) ^{2} } \, ,
+\end{equation}
+其中\(A^{\mathrm{ideal}}\)是相同密度下经典单原子理想气体的亥姆霍兹自由能。{[}10.23{]}。对于二维硬盘系统，当用二维堆积分数\(\eta=\pi nD^{2}/4\)表示时，维里展开给出以下级数：
+\begin{equation}\tag{10.7.54}\label{eq:10.7.54}
+\begin{array}{r} { \frac { P } { n k T } = 1 + 2 \eta + 3 . 12 80 18 \eta ^{2} + 4 . 25 78 54 \eta ^{3} + 5 . 33 68 96 64 \eta ^{4} + 6 . 36 30 26 \eta ^{5} } \\{ + 7 . 35 20 80 \eta ^{6} + 8 . 31 86 68 \eta ^{7} + 9 . 27 23 6 \eta ^{8} + 10 . 21 61 \eta ^{9} + \cdots ; } \end{array}
+\end{equation}
+参见Malijevsky和Kolafa (2008)。提出一些简单的解析函数\(f(\eta)\)，这些函数能紧密地近似这个级数。
+
+
+

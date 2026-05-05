@@ -1,0 +1,1059 @@
+﻿\chapter{常规集合}\label{ux5e38ux89c4ux96c6ux5408}
+在前一章中，我们奠定了系综理论（ensemble theory）的基础，并对微正则系综（microcanonical ensemble）进行了较为详尽的研究。在该系综中，系统的宏观状态是通过固定数量的粒子 \(N\)、固定体积 \(V\) 以及固定能量 \(E\) {[}或者更理想的情况是，固定能量范围 \((E-\frac{1}{2}\Delta, E+\frac{1}{2}\Delta)\){]} 来定义的。由此产生的基本问题在于：确定系统可达到的不同微观状态的数量 \(\Omega(N,V,E)\)，或 \(\Gamma(N,V,E;\Delta)\)。通过这些数目的渐近表达式，可以以相当直观的方式推导出系统的完全热力学性质。然而，对于大多数物理系统而言，求解这些数目的数学问题却极其复杂。仅凭这一点，就足以说明，在系综理论的框架内寻找一种替代性方法已是势在必行。
+实际上，对于现实世界中的系统而言，所谓固定能量（甚至固定能量范围）这一概念也并不十分令人满意。一方面，系统的总能量 \(E\) 很少能被精确测量；另一方面，要将系统的能量值严格地控制在特定范围内也几乎不可能。相比之下，一个更为理想的替代方案似乎是：谈论系统的固定温度 \(T\)——这一参数不仅可以直接观测（只需将"温度计"与系统接触即可），而且还可以被调控（通过使系统与合适的"热库"保持接触）。在大多数情况下，热库的具体性质并不十分重要；我们只需要确保其热容无限大，这样无论系统与热库之间如何进行能量交换，都能维持整体恒定的温度。而如果热库由给定系统无穷多的"精神副本"组成，那么我们又会得到一组系统——不过这一次，这是一组通过参数 \(N\)、\(V\) 和 \(T\) 来定义系统宏观状态的集合。这样的集合被称为"常规定集"。
+在正则系综中，系统的能量 \(E\) 是可变的；原则上，它可以在零与无穷之间任意取值。由此便产生了一个问题：在任意时刻 \(t\)，若系统处于该系综中的某一状态，且该状态的能量值为 \(E_r\)，那么这一情况发生的概率是多少？我们用符号 \(P_r\) 表示这一概率。显然，\(P_r\) 与 \(E_r\) 之间的关系有以下两种确定方式：一种是将系统视为与一个具有共同温度 \(T\) 的热库处于平衡状态，并研究二者之间能量交换的统计规律；另一种则是将系统视为正则系综 \((N, V, T)\) 中的一员，在这种状态下，能量 \(\mathcal{E}\) 由构成该系综的 \(\mathcal{N}\) 个相同系统共享，并研究
+这一共享过程的统计规律。我们预期，在热力学极限下，无论采用哪种方法，最终结果都将相同。一旦 \(P_{r}\) 被确定，其余步骤便不难完成。
+\section{系统与热库之间的平衡}\label{ux7cfbux7edfux4e0eux70edux5e93ux4e4bux95f4ux7684ux5e73ux8861}
+我们考虑给定的系统 \(A\)，将其置于一个体积极其庞大的热库 \(A'\) 中；参见图~3.1。当系统达到相互平衡的状态时，系统与热库将拥有相同的温度，例如 \(T\)。然而，它们的能量却是可变的，原则上，在任意时刻 \(t\)，这些能量值都可以位于 0 与 \(E^{(0)}\) 之间——其中 \(E^{(0)}\) 表示复合系统 \(A^{(0)}(\equiv A+A')\) 的能量。如果在某一特定时刻，系统 \(A\) 正好处于能量值为 \(E_r\) 的状态，那么热库将拥有能量 \(E'_r\)，使得
+\begin{equation}\tag{3.1.1}\label{eq:3.1.1}
+E _ { r } + E _ { r } ^{\prime} = E ^{( 0 )} = \mathrm { c o n s t . }
+\end{equation}
+当然，由于热库的体积远大于给定系统，任何实际的 \(E_{r}\) 值都只是 \(E^{(0)}\) 的极小一部分；因此，在实际应用中，
+\begin{equation}\tag{3.1.2}\label{eq:3.1.2}
+\frac { E _ { r } } { E ^{( 0 )} } = \left( 1 - \frac { E _ { r } ^{\prime} } { E ^{( 0 )} } \right) \ll 1 .
+\end{equation}
+在系统 \(A\) 的状态被明确之后，热库 \(A'\) 仍然可以处于与能量值 \(E'_r\) 相容的众多状态之中。我们不妨将这些状态的数量记作 \(\Omega'(E'_r)\)。符号 \(\Omega\) 上的"prime"强调了其函数形式将取决于热库的性质；当然，这种依赖关系的具体细节对我们最终的结果并无特别重要的意义。如今，热库可用的状态数量越多，热库倾向于取用特定能量值 \(E'_r\) 的概率也就越大（从而，系统 \(A\) 也更有可能取用相应的能量值 \(E_r\)）。此外，由于各种可能的状态（对应于某一特定能量值）出现的概率是均等的，因此相关概率将与这一数量成正比；于是，
+\begin{equation}\tag{3.1.3}\label{eq:3.1.3}
+P _ { r } \propto \Omega ^{\prime} ( E _ { r } ^{\prime} ) \equiv \Omega ^{\prime} ( E ^{( 0 )} - E _ { r } ) .
+\end{equation}
+其中已采用公式（1.2.3），据此，
+\begin{equation}\tag{3.1.4}\label{eq:3.1.4}
+\left( \frac { \partial \ln \Omega } { \partial E } \right) _ { N , V } \equiv \beta ;
+\end{equation}
+请注意，在平衡状态下，\(\beta' = \beta = 1/kT\)。根据式（3）和式（4），我们得到了所需的结果：
+\begin{equation}\tag{3.1.5}\label{eq:3.1.5}
+P _ { r } \propto \exp ( - \beta E _ { r } ) .
+\end{equation}
+将式（6）归一化后，我们得到
+\begin{equation}\tag{3.1.6}\label{eq:3.1.6}
+P _ { r } = \frac { \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } ,
+\end{equation}
+分母中的求和是对系统A可访问的所有状态进行的。值得注意的是，我们的最终结果（7）与热库A的物理本质毫无关联。
+现在，我们从统计力学的角度来审视同一个问题。
+\section{正则系综中的系统}\label{ux5e38ux89c4ux7cfbux7efcux4e2dux7684ux7cfbux7edf}
+我们考虑一组由\(\mathcal{N}\)个相同系统组成的系综（这些系统可以分别标记为1、2、\ldots\ldots、\(\mathcal{N}\)），它们共享总能量\(\mathcal{E}\)；设\(E_{r}(r=0,1,2,...)\)表示各系统的能级。若\(n_{r}\)表示在任意时刻\(t\)，拥有能量值\(E_{r}\)的系统数量，则数值集合\(\{n_{r}\}\)必须满足以下显而易见的条件：
+\begin{equation}\tag{3.2.1}\label{eq:3.2.1}
+\left. \begin{array}{l} { { \displaystyle \sum _ { r } n _ { r } = \mathcal { N } } } \\{ { \displaystyle \sum _ { r } n _ { r } E _ { r } = \mathcal { E } = \mathcal { N } U , } } \end{array} \right\}
+\end{equation}
+其中\(U=\mathcal{E}/\mathcal{N}\)表示系综中每个系统的平均能量。任何满足限制性条件（1）的数值集合\(\{n_{r}\}\)，都代表着将总能量\(\mathcal{E}\)在系综\(\mathcal{N}\)个成员之间进行分配的一种可能方式。此外，这种分配方式可以通过多种途径实现——因为我们可以在那些能量值不同的成员之间进行重新排列，从而获得一种新的状态。
+与原始系综截然不同的新系综。用符号\(W\{n_r\}\)表示实现这一操作的不同方式的数量，我们有
+\begin{equation}\tag{3.2.2}\label{eq:3.2.2}
+W ^{\{ n _ { r} \} } = \frac { \mathcal { N } ! } { n _ { 0 } ! n _ { 1 } ! n _ { 2 } ! \ldots } .
+\end{equation}
+鉴于与条件（1）相容的所有可能的集合状态，其出现的概率均等，因此分布集 \(\{n_r\}\) 出现的频率将与数值 \(W\{n_r\}\) 的大小成正比。相应地，"最可能"的分布模式，将是使得数值 \(W\) 达到最大值的那一种。我们用 \(\{n_r^*\}\) 来表示对应的分布集；显然，\(\{n_r^*\}\) 也必须满足条件（1）。正如后续所将要展示的那样，其他分布模式的出现概率——无论它们与最可能的分布模式相差多远——都极其微小！因此，在实际应用中，我们只需考虑唯一一个最可能的分布集 \(\{n_r^*\}\)。
+然而，除非已通过数学手段加以证明，否则我们必须将所有可能的分布模式纳入考量，这些模式由不同的分布集 \(\{n_r\}\) 所表征，并结合各自的权重因子 \(W\{n_r\}\)。因此，数值 \(n_r\) 的期望值或平均值 \(\langle n_r \rangle\) 将被定义为：
+\begin{equation}\tag{3.2.3}\label{eq:3.2.3}
+\langle n _ { r } \rangle = \frac { \sum _ { \{ n _ { r } \} } ^{\prime} n _ { r } W \{ n _ { r } \} } { \sum _ { \{ n _ { r } \} } ^{\prime} W \{ n _ { r } \} } \, ,
+\end{equation}
+其中，求和符号"′"用于遍历所有符合条件（1）的分布集。原则上，平均值 \(\langle n_{r}\rangle\) 作为总数量 \(\mathcal{N}\) 的一部分，应当是前一节中所计算的概率 \(P_{r}\) 的自然类比。然而，在实践中，分数 \(n_{r}^{*}/\mathcal{N}\) 也恰好等于这一数值。
+接下来，我们着手推导 \(n_{r}^{*}\) 和 \(\langle n_{r}\rangle\) 的表达式，并证明在 \(\mathcal{N} \rightarrow \infty\) 的极限情况下，这两者将完全一致。
+最可能值法——我们的目标在于确定这样一个分布集：它虽然满足条件（1），却能最大化权重因子（2）。为了简化问题，我们改用 \(\ln W\) 来进行计算：
+\begin{equation}\tag{3.2.4}\label{eq:3.2.4}
+\ln W = \ln ( \mathcal { N } ! ) - \sum _ { r } \ln ( n _ { r } ! ) .
+\end{equation}
+毕竟，我们最终打算采用 \(\mathcal{N} \rightarrow \infty\) 的极限情形，因此，那些具有任何实际意义的 \(n_{r}\) 值，在该极限下也将趋于无穷大。因此，我们有充分理由对式（4）应用斯特林公式：\(\ln(n!) \approx n \ln n - n\)，并将其写成：
+\begin{equation}\tag{3.2.5}\label{eq:3.2.5}
+\ln W = \mathcal { N } \ln \mathcal { N } - \sum _ { r } n _ { r } \ln n _ { r } .
+\end{equation}
+如果我们从集合 \(\{n_r\}\) 转换到稍有不同的集合 \(\{n_r + \delta n_r\}\)，则式（5）的表达式将会发生如下变化：
+\begin{equation}\tag{3.2.6}\label{eq:3.2.6}
+\delta ( \ln W ) = - \sum _ { r } ( \ln n _ { r } + 1 ) \delta n _ { r } .
+\end{equation}
+现在，如果集合 \(\{n_r\}\) 是最大的，那么 \(\delta(\ln W)\) 的变化量应趋近于零。与此同时，鉴于条件（1）的严格限制，各 \(\delta n_r\) 自身也必须满足相应的条件。
+\begin{equation}\tag{3.2.7}\label{eq:3.2.7}
+\left. \begin{array}{l} { { \displaystyle \sum _ { r } \delta n _ { r } = 0 } } \\{ { \displaystyle \sum _ { r } E _ { r } \delta n _ { r } = 0 . } } \end{array} \right\}
+\end{equation}
+随后，所求的集合 \(\{n_{r}^{*}\}\) 通过拉格朗日乘数法确定，而这一条件的确定方式则为：
+\begin{equation}\tag{3.2.8}\label{eq:3.2.8}
+\sum _ { r } \{ - ( \ln n _ { r } ^{*} + 1 ) - \alpha - \beta E _ { r } \} \delta n _ { r } = 0 ,
+\end{equation}
+其中，\(\alpha\) 和 \(\beta\) 是拉格朗日未定乘数，用于处理约束条件（7）。在式（8）中，变量 \(\delta n_{r}\) 变得完全任意；因此，要满足这一条件的唯一途径，就是使该条件的所有系数均同零，即对于所有 \(r\)，
+\begin{equation}\tag{3.2.9}\label{eq:3.2.9}
+\ln n _ { r } ^{*} = - ( \alpha + 1 ) - \beta E _ { r } ,
+\end{equation}
+这将得出
+\begin{equation}\tag{3.2.10}\label{eq:3.2.10}
+n _ { r } ^{*} = C \exp ( - \beta E _ { r } ) ,
+\end{equation}
+其中，\(C\) 再次是一个未定参数。
+为了确定 \(C\) 和 \(\beta\)，我们对式（9）施加条件（1），其结果为
+\begin{equation}\tag{3.2.11}\label{eq:3.2.11}
+\frac { n _ { r } ^{*} } { \mathcal { N } } = \frac { \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } ,
+\end{equation}
+参数 \(\beta\) 是方程
+\begin{equation}\tag{3.2.12}\label{eq:3.2.12}
+\frac { \varepsilon } { \mathcal { N } } = U = \frac { \sum _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } .
+\end{equation}
+²关于拉格朗日乘数法，请参阅 Ter Haar 和 Wergeland（1966，附录~C.1）。
+将统计学考量与热力学考量相结合，如第 3.3 节所示，我们可以证明：此处的参数 \(\beta\) 与第 3.1 节中出现的参数完全相同，即 \(\beta = 1/kT\)。
+平均值法
+在此，我们尝试根据权重因子（2）以及约束条件（1），对表达式（3）进行 \(\langle n_{r}\rangle\) 的计算。为此，我们将式（2）替换为
+\begin{equation}\tag{3.2.13}\label{eq:3.2.13}
+\tilde { W } \{ n _ { r } \} = \frac { \mathcal { N } ! \omega _ { 0 } ^{n _ { 0} } \omega _ { 1 } ^{n _ { 1} } \omega _ { 2 } ^{n _ { 2} } \cdots } { n _ { 0 } ! n _ { 1 } ! n _ { 2 } ! \cdots } ,
+\end{equation}
+在理解到最终所有 \(\omega_{r}\) 都将被设定为单位值的前提下，并引入一个函数
+\begin{equation}\tag{3.2.14}\label{eq:3.2.14}
+\Gamma ( \mathcal { N } , U ) = \sum _ { \{ n _ { r } \} } ^{\prime} \tilde { W } ^{\{ n _ { r} \} } ,
+\end{equation}
+其中，与之前一样，求和符号 \(\prime\) 会遍历所有符合条件（1）的分布集合。于是，表达式（3）可以写成
+\begin{equation}\tag{3.2.15}\label{eq:3.2.15}
+\langle n _ { r } \rangle = \omega _ { r } \frac { \partial } { \partial \omega _ { r } } ( \ln \Gamma ) \bigg | _ { \mathrm { a l l } \ \omega _ { r } = 1 } .
+\end{equation}
+因此，我们在这里只需了解量 \(\ln\Gamma\) 与参数 \(\omega_{r}\) 之间的依赖关系。现在，
+\begin{equation}\tag{3.2.16}\label{eq:3.2.16}
+\Gamma ( \mathcal { N } , U ) = \mathcal { N } ! \sum _ { \{ n _ { r } \} } ^{\prime} \left( \frac { \omega _ { 0 } ^{n _ { 0} } } { n _ { 0 } ! } \cdot \frac { \omega _ { 1 } ^{n _ { 1} } } { n _ { 1 } ! } \cdot \frac { \omega _ { 2 } ^{n _ { 2} } } { n _ { 2 } ! } \cdots \right)
+\end{equation}
+然而，此处出现的求和式无法被明确求解，因为它仅限于那些满足条件（1）的集合。倘若我们的分布集合仅受条件\(\sum_{r} n_{r}=\mathcal{N}\)的限制，那么对式（15）的求值本应轻而易举；根据多项式定理，\(\Gamma(\mathcal{N})\)将简单地等于\((\omega_{0}+\omega_{1}+\cdots)^{\mathcal{N}}\)。然而，新增的限制条件\(\sum_{r} n_{r} E_{r}=\mathcal{N} U\)却只允许在求和中包含"有限"的若干项——而这正是该问题真正的难点所在。尽管如此，我们仍有望取得一些进展，因为从物理角度来看，我们并不需要任何超出渐近结果的东西——即在\(\mathcal{N} \rightarrow \infty\)的极限情况下依然成立的结果。通常用于此目的的方法，是达尔文与福勒（1922a、b，1923）所提出的那套方法，而该方法本身正是借助积分的鞍点法，或所谓的"最陡下降法"来实现。
+我们构造了一个生成函数\(G(\mathcal{N},z)\)，用于表示\(\Gamma(\mathcal{N},U)\)这一量：
+\begin{equation}\tag{3.2.17}\label{eq:3.2.17}
+G ( \mathcal { N } , z ) = \sum _ { U = 0 } ^{\infty} \Gamma ( \mathcal { N } , U ) z ^{\mathcal { N} U }
+\end{equation}
+鉴于式（15）以及第二条约束条件（1），该表达式可写成：
+\begin{equation}\tag{3.2.18}\label{eq:3.2.18}
+G ( \mathcal { N } , z ) = \sum _ { U = 0 } ^{\infty} \left[ \sum _ { \{ n _ { r } \} } ^{\prime} \frac { \mathcal { N } ! } { n _ { 0 } ! n _ { 1 } ! \ldots } \left( \omega _ { 0 } z ^{E _ { 0} } \right) ^{n _ { 0} } \left( \omega _ { 1 } z ^{E _ { 1} } \right) ^{n _ { 1} } \ldots \right] .
+\end{equation}
+很容易看出，先对\(\{n_r\}\)进行双重限制的求和，再对所有可能的\(U\)值进行求和，其结果等同于对\(\{n_r\}\)进行单重限制的求和——即那些仅满足一个条件的集合：\(\sum_r n_r = \mathcal{N}\)。式（17）可借助多项式定理加以求解，其结果为
+\begin{equation}\tag{3.2.19}\label{eq:3.2.19}
+\begin{array}{rl} & { G ( \mathcal { N } , z ) = \left( \omega _ { 0 } z ^{E _ { 0} } + \omega _ { 1 } z ^{E _ { 1} } + \cdots \right) ^{\mathcal { N} } } \\& {  = [ f ( z ) ] ^{\mathcal { N} } , \mathrm { ~ s a y . } } \end{array}
+\end{equation}
+现在，若我们假设\(E_{r}\)（以及由此得出的总能量值\(\mathcal{E}=\mathcal{N}U\)）均为整数，则根据式（16），\(\Gamma(\mathcal{N},U)\)不过就是函数\(G(\mathcal{N},z)\)在\(z\)展开式中，\(z^{\mathcal{N}U}\)项的系数。因此，它可以通过复数\(z\)平面上的留数法予以求解。
+为了使这一方案得以实施，我们假定在一开始就选择了一种极小的能量单位，以至于无论精度要求多高，我们都可以将\(E_{r}\)能量（以及规定的总能量\(\mathcal{N}U\)）视为该单位的整数倍。以这一单位为基准，我们遇到的任何能量值都将是整数。此外，我们还无须损失一般性地假设：序列\(E_{0}, E_{1}, \ldots\)是一个非递减序列，且无公因子；³ 同时，为了简化问题，我们假设\(E_{0} = 0\)。⁴ 现在，解决方案便是
+\begin{equation}\tag{3.2.20}\label{eq:3.2.20}
+\Gamma ( \mathcal { N } , U ) = \frac { 1 } { 2 \pi i } \oint \frac { [ f ( z ) ] ^{\mathcal { N} } } { z ^{\mathcal { N} U + 1 } } d z ,
+\end{equation}
+在原点周围沿任何封闭曲线进行积分时，我们需注意：当然，我们必须始终位于函数 \(f(z)\) 的收敛圆之内，这样才不会产生解析延拓的必要。
+首先，我们从原点出发，沿实数正轴逐点考察被积函数的行为。请记住，所有 \(\omega_{r}\) 都几乎等于 1，且 \(0 = E_{0} \leq E_{1} \leq E_{2} \cdots\)。我们发现，因子 \([f(z)]^{\mathcal{N}}\) 在 \(z=0\) 处从数值 1 开始，随 \(z\) 沿着 \(f(z)\) 的收敛圆趋近而单调递增，并在 \(z\) 接近 \(f(z)\) 收敛圆的任意位置时趋于无穷大。另一方面，因子 \(z^{-(\mathcal{N}U+1)}\) 在 \(z=0\) 处从一个正无穷大开始，随着 \(z\) 的增大而单调递减。此外，因子 \([f(z)]^{\mathcal{N}}\) 自身的递增速率也在不断加快，而相对递增速率
+因子 \(z^{-(\mathcal{N}U+1)}\) 的递减速率也在不断加快。在这种情况下，被积函数必须在收敛圆内的某个值 \(x_0\) 处取得极小值（且无其他极值）。鉴于 \(\mathcal{N}\) 和 \(\mathcal{N}U\) 这些数字的规模十分庞大，这一极小值实际上可能非常陡峭！
+因此，在 \(z=x_{0}\) 处，被积函数的一阶导数必为零，而二阶导数则必须为正，并且有望达到非常大的数值。相应地，如果我们沿着与实轴垂直的方向穿过点 \(z=x_{0}\)，被积函数将呈现出同样陡峭的最大值。\(^{5}\) 因此，在复数 \(z\) 平面上，当我们沿实轴移动时，被积函数在 \(z=x_{0}\) 处表现出极小值；而若我们沿一条平行于虚轴、但经过点 \(z=x_{0}\) 的路径移动，则被积函数会在该点处表现出最大值。自然地，我们将点 \(x_{0}\) 称为鞍点；参见图~3.2。对于积分路径，我们选择以 \(z=0\) 为圆心、半径等于 \(x_{0}\) 的圆，希望在沿该路径积分时，只有位于点 \(x_{0}\) 处尖锐最大值附近的邻近区域，才会对积分值作出最显著的贡献。\(^{6}\)
+为了完成积分运算，我们首先需要确定点 \(x_0\)。为此，我们将被积函数写成如下形式：
+\begin{equation}\tag{3.2.21}\label{eq:3.2.21}
+\frac { [ f ( z ) ] ^{\mathcal { N} } } { z ^{\mathcal { N} } U + 1 } = \exp [ \mathcal { N } \mathbf { g } ( z ) ] ,
+\end{equation}
+其中
+\begin{equation}\tag{3.2.22}\label{eq:3.2.22}
+g ( z ) = \ln f ( z ) - \left( U + \frac { 1 } { \mathcal { N } } \right) \ln z ,
+\end{equation}
+鉴于 \(\mathcal{N}U\gg1\) 这一事实，该式可写为
+\begin{equation}\tag{3.2.23}\label{eq:3.2.23}
+U \approx x _ { 0 } \frac { f ^{\prime} ( x _ { 0 } ) } { f ( x _ { 0 } ) } = \frac { \sum _ { r } \omega _ { r } E _ { r } x _ { 0 } ^{E _ { r} } } { \sum _ { r } \omega _ { r } x _ { 0 } ^{E _ { r} } } .
+\end{equation}
+我们进一步有
+\begin{equation}\tag{3.2.24}\label{eq:3.2.24}
+\begin{array}{r} { g ^{\prime \prime} ( x _ { 0 } ) = \left( \frac { f ^{\prime \prime} ( x _ { 0 } ) } { f ( x _ { 0 } ) } - \frac { [ f ^{\prime} ( x _ { 0 } ) ] ^{2} } { [ f ( x _ { 0 } ) ] ^{2} } \right) + \frac { \mathcal { N } U + 1 } { \mathcal { N } x _ { 0 } ^{2} } } \\{ \approx \frac { f ^{\prime \prime} ( x _ { 0 } ) } { f ( x _ { 0 } ) } - \frac { U ^{2} - U } { x _ { 0 } ^{2} } . } \end{array}
+\end{equation}
+在此需要注意的是，在极限 \(\mathcal{N} \to \infty\) 且 \(\mathcal{E}(\equiv \mathcal{N} U) \to \infty\) 时，若 \(U\) 保持不变，则数值 \(x_0\) 和量 \(g"(x_0)\) 都会与 \(\mathcal{N}\) 无关。
+沿积分方向，即沿直线 \(z=x_0+iy\)，将 \(g(z)\) 在点 \(z=x_0\) 附近展开，我们得到
+\begin{equation}\tag{3.2.25}\label{eq:3.2.25}
+g ( z ) = g ( x _ { 0 } ) - \frac { 1 } { 2 } g ^{\prime \prime} ( x _ { 0 } ) y ^{2} + \cdots ;
+\end{equation}
+相应地，被积函数（20）可以近似为
+\begin{equation}\tag{3.2.26}\label{eq:3.2.26}
+\frac { [ f ( x _ { 0 } ) ] ^{\mathcal { N} } } { x _ { 0 } ^{\mathcal { N} U + 1 } } \exp \left[ - \frac { \mathcal { N } } { 2 } g ^{\prime \prime} ( x _ { 0 } ) y ^{2} \right] .
+\end{equation}
+根据式（19），我们得到
+\begin{equation}\tag{3.2.27}\label{eq:3.2.27}
+\begin{array}{rlr} & { } & { \Gamma ( \mathcal { N } , U ) \simeq \frac { 1 } { 2 \pi i } \frac { [ f ( x _ { 0 } ) ] ^{\mathcal { N} } } { x _ { 0 } ^{\mathcal { N} U + 1 } } \int _ { - \infty } ^{\infty} \exp \left[ - \frac { \mathcal { N } } { 2 } g ^{\prime \prime} ( x _ { 0 } ) y ^{2} \right] i \, d y } \\& { } & { = \frac { [ f ( x _ { 0 } ) ] ^{\mathcal { N} } } { x _ { 0 } ^{\mathcal { N} U + 1 } } \cdot \frac { 1 } { \{ 2 \pi \mathcal { N } g ^{\prime \prime} ( x _ { 0 } ) \} ^{1 / 2} } , } \end{array}
+\end{equation}
+由此得出
+\begin{equation}\tag{3.2.28}\label{eq:3.2.28}
+\frac { 1 } { \mathcal { N } } \ln \Gamma ( \mathcal { N } , U ) = \{ \ln f ( x _ { 0 } ) - U \ln x _ { 0 } \} - \frac { 1 } { \mathcal { N } } \ln x _ { 0 } - \frac { 1 } { 2 \mathcal { N } } \ln \{ 2 \pi \mathcal { N } g ^{\prime \prime} ( x _ { 0 } ) \} .
+\end{equation}
+在极限 \(\mathcal{N} \rightarrow \infty\)（\(U\) 保持不变）时，该表达式中的最后两项趋于零，最终得到
+\begin{equation}\tag{3.2.29}\label{eq:3.2.29}
+\frac { 1 } { \mathcal { N } } \ln \Gamma ( \mathcal { N } , U ) = \ln f ( x _ { 0 } ) - U \ln x _ { 0 } .
+\end{equation}
+将 \(f(x_0)\) 代入，并引入新变量 \(\beta\)，其定义关系为
+\begin{equation}\tag{3.2.30}\label{eq:3.2.30}
+x _ { 0 } \equiv \exp ( - \beta ) ,
+\end{equation}
+我们得到
+\begin{equation}\tag{3.2.31}\label{eq:3.2.31}
+\frac { 1 } { \mathcal { N } } \ln \Gamma ( \mathcal { N } , U ) = \ln \left\{ \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) \right\} + \beta U .
+\end{equation}
+数 \(n_{r}\) 的期望值则可由式（14）和式（31）得出：
+\begin{equation}\tag{3.2.32}\label{eq:3.2.32}
+\frac { \langle n _ { r } \rangle } { \mathcal { N } } = \left[ \frac { \omega _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) } + \left\{ - \frac { \sum _ { r } \omega _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) } + U \right\} \omega _ { r } \frac { \partial \beta } { \partial \omega _ { r } } \right] _ { \mathrm { a l l } \ \omega _ { r } = 1 } .
+\end{equation}
+括号内的项因式（24）和（30）而完全消去。此处将其纳入，旨在强调：在 \(U\) 为固定值的情况下，\(\beta(\equiv -\ln x_0)\) 实际上取决于 \(\omega_r\) 的选择；详见式（24）。当我们对数 \(n_r\) 的均方波动进行计算时，将会深刻体会到这一事实的重要性；但在计算 \(n_r\) 的期望值时，这一点其实并不重要。因此，我们得到
+\begin{equation}\tag{3.2.33}\label{eq:3.2.33}
+\frac { \langle n _ { r } \rangle } { \mathcal { N } } = \frac { \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } ,
+\end{equation}
+与式（10）中对于 \(n_{r}^{*}/\mathcal{N}\) 的表达式完全相同。参数 \(\beta\) 的物理意义与该表达式中的含义一致，因为它由式（24）决定，且所有 \(\omega_{r}=1\)，即由式（11）决定——而式（11）与式（33）自然契合，因为 \(U\) 无非是变量 \(E_{r}\) 的平均值：
+\begin{equation}\tag{3.2.34}\label{eq:3.2.34}
+U = \sum _ { r } E _ { r } P _ { r } = \frac { 1 } { \mathcal { N } } \sum _ { r } E _ { r } \langle n _ { r } \rangle .
+\end{equation}
+最后，我们计算数值 \(n_{r}\) 的波动。首先，
+\begin{equation}\tag{3.2.35}\label{eq:3.2.35}
+\langle n _ { r } ^{2} \rangle \equiv \frac { \sum _ { \{ n _ { r } \} } ^{\prime} n _ { r } ^{2} W \{ n _ { r } \} } { \sum _ { \{ n _ { r } \} } ^{\prime} W \{ n _ { r } \} } = \frac { 1 } { \Gamma } \left( \omega _ { r } \frac { \partial } { \partial \omega _ { r } } \right) \left( \omega _ { r } \frac { \partial } { \partial \omega _ { r } } \right) \Gamma \Big | _ { \mathrm { a l l } \ \omega _ { r } = 1 } ;
+\end{equation}
+参见式（12）至式（14）。由此可知，
+\begin{equation}\tag{3.2.36}\label{eq:3.2.36}
+\langle ( \Delta n _ { r } ) ^{2} \rangle \equiv \langle \{ n _ { r } - \langle n _ { r } \rangle \} ^{2} \rangle = \langle n _ { r } ^{2} \rangle - \langle n _ { r } \rangle ^{2} = \left. \left( \omega _ { r } \frac { \partial } { \partial \omega _ { r } } \right) \left( \omega _ { r } \frac { \partial } { \partial \omega _ { r } } \right) \ln \Gamma \right| _ { \mathrm { a l l } \ \omega _ { r } = 1 } .
+\end{equation}
+将式（31）代入，并利用式（32），我们得到
+\begin{equation}\tag{3.2.37}\label{eq:3.2.37}
+\begin{array}{rl} & { \frac { \langle ( \Delta n _ { r } ) ^{2} \rangle } { \mathcal { N } } = \omega _ { r } \frac { \partial } { \partial \omega _ { r } } \left[ \frac { \omega _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) } \right. } \\& { \left. + \left\{ - \frac { \sum _ { r } \omega _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) } + U \right\} \omega _ { r } \frac { \partial \beta } { \partial \omega _ { r } } \right] _ { \mathrm { a l l } \ \omega _ { r } = 1 } . } \end{array}
+\end{equation}
+我们注意到，括号内的项不会产生任何贡献，因为无论选择何种 \(\omega_{r}\)，它都等于零。然而，在对第一项进行求导时，我们绝不能忘记考虑 \(\beta\) 对 \(\omega_{r}\) 的隐含依赖——这一依赖源于这样一个事实：除非将 \(\omega_{r}\) 设为一，否则决定 \(\beta\) 的关系式中就必然包含 \(\omega_{r}\)；请参阅式（24）和式（30），其中
+\begin{equation}\tag{3.2.38}\label{eq:3.2.38}
+U = \left. \frac { \sum _ { r } \omega _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \omega _ { r } \exp ( - \beta E _ { r } ) } \right| _ { \mathrm { a l l } \ \omega _ { r } = 1 } .
+\end{equation}
+通过简单的计算，我们得到
+\begin{equation}\tag{3.2.39}\label{eq:3.2.39}
+\left( \frac { \partial \beta } { \partial \omega _ { r } } \right) _ { U } \Big | _ { \mathrm { a l l } \ \omega _ { r } = 1 } = \frac { E _ { r } - U } { \langle E _ { r } ^{2} \rangle - U ^{2} } \frac { \langle n _ { r } \rangle } { \mathcal { N } } .
+\end{equation}
+现在我们可以对式（37）进行求值，其结果为
+\begin{equation}\tag{3.2.40}\label{eq:3.2.40}
+\begin{array}{rl} & { \frac { \langle ( \Delta n _ { r } ) ^{2} \rangle } { \mathcal { N } } = \frac { \langle n _ { r } \rangle } { \mathcal { N } } - \left( \frac { \langle n _ { r } \rangle } { \mathcal { N } } \right) ^{2} + \frac { \langle n _ { r } \rangle } { \mathcal { N } } ( U - E _ { r } ) \left( \frac { \partial \beta } { \partial \omega _ { r } } \right) _ { U } \Big | _ { \mathrm { a l l } \ \omega _ { r } = 1 } } \\& { = \frac { \langle n _ { r } \rangle } { \mathcal { N } } \left[ 1 - \frac { \langle n _ { r } \rangle } { \mathcal { N } } - \frac { \langle n _ { r } \rangle } { \mathcal { N } } \frac { ( E _ { r } - U ) ^{2} } { \langle ( E _ { r } - U ) ^{2} \rangle } \right] . } \end{array}
+\end{equation}
+对于 \(n_{r}\) 的相对波动，我们得到
+\begin{equation}\tag{3.2.41}\label{eq:3.2.41}
+\left\langle \left( \frac { \Delta n _ { r } } { \langle n _ { r } \rangle } \right) ^{2} \right\rangle = \frac { 1 } { \langle n _ { r } \rangle } - \frac { 1 } { \mathcal { N } } \left\{ 1 + \frac { ( E _ { r } - U ) ^{2} } { \langle ( E _ { r } - U ) ^{2} \rangle } \right\} .
+\end{equation}
+当 \(\mathcal{N} \rightarrow \infty\) 时，\(\langle n_{r} \rangle\) 也会趋于无穷大，因此 \(n_{r}\) 的相对波动会趋近于零；相应地，规范分布变得无限尖锐，而随之而来的是，均值、最可能值——事实上，任何以非零概率出现的 \(n_{r}\) 值——在本质上变得几乎相同。而这正是本节所采用的两种截然不同的规范分布求法最终得出相同结果的原因。
+\section{正则系综中各统计量的物理意义}\label{ux6b63ux5219ux7cfbux7efcux7edfux8ba1ux91cfux7269ux7406ux610fux4e49}
+我们从规范分布入手
+\begin{equation}\tag{3.3.1}\label{eq:3.3.1}
+P _ { r } \equiv \frac { \langle n _ { r } \rangle } { \mathcal { N } } = \frac { \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } ,
+\end{equation}
+其中 \(\beta\) 由下式确定
+\begin{equation}\tag{3.3.2}\label{eq:3.3.2}
+U = \frac { \sum _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } = - \frac { \partial } { \partial \beta } \ln \left\{ \sum _ { r } \exp ( - \beta E _ { r } ) \right\} .
+\end{equation}
+现在，我们寻求一种通用的公式，依据上述统计结果，推导出关于给定系统各项宏观性质的信息。为此，我们回顾一些涉及亥姆霍兹自由能 \(A(=U-TS)\) 的热力学关系，即
+\begin{equation}\tag{3.3.3}\label{eq:3.3.3}
+d A = d U - T d S - S d T = - S d T - P d V + \mu \, d N ,
+\end{equation}
+\begin{equation}\tag{3.3.4}\label{eq:3.3.4}
+S = - \left( \frac { \partial A } { \partial T } \right) _ { N , V } ,  P = - \left( \frac { \partial A } { \partial V } \right) _ { N , T } ,  \mu = \left( \frac { \partial A } { \partial N } \right) _ { V , T } ,
+\end{equation}
+以及
+\begin{equation}\tag{3.3.5}\label{eq:3.3.5}
+U = A + T S = A - T \left( \frac { \partial A } { \partial T } \right) _ { N , V } = - T ^{2} \left[ \frac { \partial } { \partial T } \left( \frac { A } { T } \right) \right] _ { N , V } = \left[ \frac { \partial ( A / T ) } { \partial ( 1 / T ) } \right] _ { N , V } ,
+\end{equation}
+各类符号所具有的常规含义。将式（5）与式（2）进行比较，我们可推断：通过统计处理进入系统的量与来自热力学的量之间存在着密切的对应关系，即
+\begin{equation}\tag{3.3.6}\label{eq:3.3.6}
+\beta = \frac { 1 } { k T } ,  \ln \left\{ \sum _ { r } \exp ( - \beta E _ { r } ) \right\} = - \frac { A } { k T } ,
+\end{equation}
+其中 \(k\) 是一个尚未确定的普适常数；不久我们就会发现，\(k\) 实际上就是玻尔兹曼常数。
+式（6）中的方程构成了规范系综理论中最基本的结果。通常，我们将其写成如下形式：
+\begin{equation}\tag{3.3.7}\label{eq:3.3.7}
+A ( N , V , T ) = - k T \ln Q _ { N } ( V , T ) ,
+\end{equation}
+其中
+\begin{equation}\tag{3.3.8}\label{eq:3.3.8}
+Q _ { N } ( V , T ) = \sum _ { r } \exp ( - E _ { r } / k T ) .
+\end{equation}
+量 \(Q_{N}(V,T)\) 被称为系统的配分函数；有时它也被称为"状态求和"（德语：Zustandssumme）。\(Q\) 依赖于 \(T\) 的关系显而易见。而 \(Q\) 依赖于 \(N\) 和 \(V\) 的关系，则源自能量特征值 \(E_{r}\)；事实上，任何可能支配 \(E_{r}\) 值的其他参数，也都应出现在 \(Q\) 的自变量中。此外，为了使量 \(A(N,V,T)\) 成为系统的广延性质，\(\ln Q\) 也必须是一个广延量。
+一旦知道了亥姆霍兹自由能，其余的热力学量便可以轻松得出。熵、压力和化学势可通过公式（4）求得，而定容比热则由以下公式得出：
+\begin{equation}\tag{3.3.9}\label{eq:3.3.9}
+C _ { V } = \left( \frac { \partial U } { \partial T } \right) _ { N , V } = - T \left( \frac { \partial ^{2} A } { \partial T ^{2} } \right) _ { N , V }
+\end{equation}
+而吉布斯自由能则由以下公式给出：
+\begin{equation}\tag{3.3.10}\label{eq:3.3.10}
+G = A + P V = A - V \left( { \frac { \partial A } { \partial V } } \right) _ { N , T } = N \left( { \frac { \partial A } { \partial N } } \right) _ { V , T } = N \mu ;
+\end{equation}
+参见问题3.5。
+在这一阶段，我们不妨对上述结果作几点说明。首先，从式（4）和式（6）中我们可以看出，压力 \(P\) 可以表示为：
+\begin{equation}\tag{3.3.11}\label{eq:3.3.11}
+P = - \frac { \sum _ { r } \frac { \partial E _ { r } } { \partial V } \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } ,
+\end{equation}
+因此，
+\begin{equation}\tag{3.3.12}\label{eq:3.3.12}
+P d V = - \sum _ { r } P _ { r } d E _ { r } = - d U .
+\end{equation}
+等式右侧的量显然代表了系统（在该系综中）在某一改变能量水平 \(E_{r}\) 的过程中，平均能量的变化量，而此时概率 \(P_{r}\) 保持不变。而等式左侧则告诉我们，体积变化 \(dV\) 正是此类过程的一个典型例子，而压力 \(P\) 则是伴随这一过程的"力"。因此，通过热力学关系（3）引入的量 \(P\)，也获得了机械意义上的内涵。
+系统的熵可按如下方式确定。由于 \(P_{r}=Q^{-1}\exp(-\beta E_{r})\)，
+\begin{equation}\tag{3.3.13}\label{eq:3.3.13}
+\langle \ln P _ { r } \rangle = - \ln Q - \beta \langle E _ { r } \rangle = \beta ( A - U ) = - S / k ,
+\end{equation}
+由此得出，
+\begin{equation}\tag{3.3.14}\label{eq:3.3.14}
+S = - k \langle \ln P _ { r } \rangle = - k \sum _ { r } P _ { r } \ln P _ { r } .
+\end{equation}
+这是一条极其有趣的规律，因为它表明，一个物理系统的熵完全且唯一地由系统的概率值 \(P_{r}\)（即系统处于其可访问的不同动态状态的概率）所决定！
+从其外观来看，方程（13）似乎具有根本性的意义；事实上，它揭示了许多有趣的结论。其中之一与系统在基态（\(T=0K\)）下的行为有关。如果基态是唯一的，那么该系统必定处于这一特定状态，而绝不会处于其他任何状态；因此，在这种状态下，\(P_r\) 等于 1，而在其他所有状态下则等于 0。方程（13）进一步告诉我们，系统的熵恰好为零——这正是能斯特热力学定理或热力学第三定律的核心内容。我们还推断出，熵为零与完全的统计秩序（即对系统的完全可预测性）是相辅相成的。随着可访问状态数量的增加，越来越多的 \(P_r\) 变为非零值；由此，系统的熵也随之上升。当状态数量变得极其庞大时，大部分 \(P\) 值会变得极其微小（其对数则会取到巨大且负的数值）；最终的结果是，系统的熵会变得极其庞大。因此，系统的熵之大与高度的统计无序（或不可预测性）也往往相伴而生。
+正是由于熵与信息缺失之间存在着这种根本性的联系，方程（13）才成为香农（1948、1949）在通信理论发展领域开创性研究的起点。
+值得注意的是，公式（13）同样适用于微正则系综。在该系综中，对于每一个组成系统而言，都有一组 \(\Omega\) 个状态，且这些状态发生的概率均相等。因此，对于每一种状态，\(P_{r}\) 的值均为 \(1/\Omega\)，而其他所有状态的 \(P_{r}\) 则为 0。由此可见，
+\begin{equation}\tag{3.3.15}\label{eq:3.3.15}
+S = - k \sum _ { r = 1 } ^{\Omega} \left\{ \frac { 1 } { \Omega } \ln \left( \frac { 1 } { \Omega } \right) \right\} = k \ln \Omega ,
+\end{equation}
+这正是微正则系综理论中的核心结果；请参阅方程（1.2.6）或（2.3.6）。
+\section{分配函数的其他表达式}\label{ux5206ux914dux51fdux6570ux7684ux5176ux4ed6ux8868ux8fbeux5f0f}
+在大多数物理情境中，系统可达到的能量水平是简并的，也就是说，系统存在一组状态，其数目为 \(g_i\)，且这些状态都属于相同的能量值 \(E_i\)。在这种情况下，将分配函数（3.3.8）写成如下形式更为实用：
+\begin{equation}\tag{3.3.16}\label{eq:3.3.16}
+Q _ { N } ( V , T ) = \sum _ { i } g _ { i } \exp ( - \beta E _ { i } ) ;
+\end{equation}
+\^{}\{7\}当然，如果系统的基态是简并的（其多重度为 \(\Omega_{0}\)），那么基态的熵就不是零，而是由公式 \(k \ln \Omega_{0}\) 给出；请参阅方程（14）。
+对应地，系统处于能量为 \(E_{i}\) 的状态的概率 \(P_{i}\) 的表达式为
+\begin{equation}\tag{3.3.17}\label{eq:3.3.17}
+P _ { i } = \frac { g _ { i } \exp ( - \beta E _ { i } ) } { \sum _ { i } g _ { i } \exp ( - \beta E _ { i } ) } .
+\end{equation}
+显然，具有共同能量 \(E_{i}\) 的 \(g_{i}\) 能态，其出现的概率是完全相等的。因此，系统具有能量 \(E_{i}\) 的概率与该能级的多重度 \(g_{i}\) 成正比；由此，\(g_{i}\) 扮演着"权重因子"的角色，用于描述能级 \(E_{i}\)。实际的概率则由权重因子 \(g_{i}\) 以及该能级的玻尔兹曼因子 \(\exp(-\beta E_{i})\) 共同决定，正如我们在式（2）中所阐述的那样。不过，前一节所建立的基本关系依然保持不变。
+鉴于构成某一系统的粒子数量众多，且这些粒子所处的体积也十分庞大，系统的连续能量值 \(E_{i}\) 通常彼此非常接近。因此，在任意合理的能量区间 \((E, E + dE)\) 内，都存在着数量极其庞大的能级。我们可以将 \(E\) 视为一个连续变量，并用 \(P(E)dE\) 来表示，作为给定系统在统计力学经典系综中，其能量处于区间 \((E, E + dE)\) 内的概率。显然，这一概率将由相应单态概率与位于指定区间内的能量态数之积给出。我们用 \(g(E)dE\) 表示后者，其中 \(g(E)\) 表示围绕能量值 \(E\) 的能态密度，于是我们有
+\begin{equation}\tag{3.3.18}\label{eq:3.3.18}
+P ( E ) d E \propto \exp ( - \beta E ) g ( E ) d E
+\end{equation}
+经过归一化处理后，该表达式变为
+\begin{equation}\tag{3.3.19}\label{eq:3.3.19}
+P ( E ) d E = \frac { \exp ( - \beta E ) g ( E ) d E } { \int _ { 0 } ^{\infty} \exp ( - \beta E ) g ( E ) d E } .
+\end{equation}
+这里的分母，正是系统配分函数的另一种表述方式：
+\begin{equation}\tag{3.3.20}\label{eq:3.3.20}
+Q _ { N } ( V , T ) = \int _ { 0 } ^{\infty} e ^{- \beta E} g ( E ) d E .
+\end{equation}
+物理量 \(f\) 的期望值 \(\langle f\rangle\) 的表达式，现可写成
+\begin{equation}\tag{3.3.21}\label{eq:3.3.21}
+\langle f \rangle \equiv \sum _ { i } f _ { i } P _ { i } = \frac { \sum _ { i } f ( E _ { i } ) g _ { i } e ^{- \beta E _ { i} } } { \sum _ { i } g _ { i } e ^{- \beta E _ { i} } } \rightarrow \frac { \int _ { 0 } ^{\infty} f ( E ) e ^{- \beta E} g ( E ) d E } { \int _ { 0 } ^{\infty} e ^{- \beta E} g ( E ) d E } .
+\end{equation}
+在继续深入之前，我们先仔细审视式（5），并注意到：当 \(\beta > 0\) 时，配分函数 \(Q(\beta)\) 仅是能态密度 \(g(E)\) 的拉普拉斯变换。因此，我们可以将 \(g(E)\) 写作 \(Q(\beta)\) 的反拉普拉斯变换：
+\begin{equation}\tag{3.3.22}\label{eq:3.3.22}
+\begin{array}{rl} & { g ( E ) = \frac { 1 } { 2 \pi i } \int _ { \beta ^{\prime} - i \infty } ^{\beta ^ { \prime} + i \infty } e ^{\beta E} Q ( \beta ) d \beta  ( \beta ^{\prime} > 0 ) } \\& { = \frac { 1 } { 2 \pi } \int _ { - \infty } ^{\infty} e ^{( \beta ^ { \prime} + i \beta ^{\prime \prime} ) E } Q ( \beta ^{\prime} + i \beta ^{\prime \prime} ) d \beta ^{\prime \prime} , } \end{array}
+\end{equation}
+在此，\(\beta\) 现被视作复变量，即 \(\beta' + i\beta"\)，而积分路径则平行于虚轴，并位于虚轴的右侧——也就是沿着直线 Re \(\beta = \beta' > 0\) 进行。当然，只要积分收敛，路径可以不断变形。
+3.5 经典系统
+前几节所阐述的理论具有极为广泛的适用性。它既适用于量子力学效应至关重要的系统，也适用于那些可以采用经典方法进行处理的系统。在后一种情况下，我们的理论框架可以用相空间的语言来表述；因此，量子态的求和运算将被相空间的积分所取代。
+我们回顾一下在第2.1节和第2.2节中所阐述的概念，尤其是用于计算物理量\(f(q,p)\)的集合平均值\(\langle f \rangle\)的公式（2.1.3），即：
+\begin{equation}\tag{3.5.1}\label{eq:3.5.1}
+\langle f \rangle = \frac { \int f ( q , p ) \rho ( q , p ) d ^{3 N} q d ^{3 N} p } { \int \rho ( q , p ) d ^{3 N} q \, d ^{3 N} p } ,
+\end{equation}
+其中，\(\rho(q,p)\)表示相空间中代表点的密度；此处我们省略了函数\(\rho\)对时间\(t\)的显式依赖关系，因为我们仅关注平衡态情形的研究。显然，函数\(\rho(q,p)\)是衡量在相点\((q,p)\)附近找到一个代表点的概率的指标，而该概率又取决于系统的哈密顿量对应的值\(H(q,p)\)。在规范系综中，
+\begin{equation}\tag{3.5.2}\label{eq:3.5.2}
+\rho ( q , p ) \propto \exp \{ - \beta H ( q , p ) \} ;
+\end{equation}
+与式（3.1.6）进行比较。于是，\(\langle f \rangle\)的表达式变为
+\begin{equation}\tag{3.5.3}\label{eq:3.5.3}
+\langle f \rangle = \frac { \int f ( q , p ) \exp ( - \beta H ) d \omega } { \int \exp ( - \beta H ) d \omega } ,
+\end{equation}
+其中，\(d\omega(\equiv d^{3N}q d^{3N}p)\)表示相空间的一个体积元素。该表达式的分母与系统的配分函数直接相关。然而，要写出后者的精确表达式，我们必须考虑相空间中的体积元素与系统相应数量的独立量子态之间的关系。这一关系已在第2.4节和第2.5节中得到确立：相空间中的体积元素\(d\omega\)对应于
+\begin{equation}\tag{3.5.4}\label{eq:3.5.4}
+\frac { d \omega } { N ! \hbar ^{3 N} }
+\end{equation}
+系统中独立的量子态。因此，配分函数的恰当表达式应为
+\begin{equation}\tag{3.5.5}\label{eq:3.5.5}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! \, h ^{3 N} } \int e ^{- \beta H ( q , p )} d \omega ;
+\end{equation}
+需要明确的是，式（5）中的积分是在整个相空间内进行的。
+作为本公式的第一种应用实例，我们以理想气体为例。在此，我们有一个由\(N\)个相同分子组成的系统，假设这些分子均为单原子分子（因此无需考虑其内部的运动自由度），被限制在体积为\(V\)的空间中，并处于温度为\(T\)的平衡态。由于不涉及分子间相互作用，系统的能量完全属于动能：
+\begin{equation}\tag{3.5.6}\label{eq:3.5.6}
+H ( q , p ) = \sum _ { i = 1 } ^{N} ( p _ { i } ^{2} / 2 m ) .
+\end{equation}
+系统的配分函数将为
+\begin{equation}\tag{3.5.7}\label{eq:3.5.7}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! \hbar ^{3 N} } \int e ^{- ( \beta / 2 m ) \Sigma _ { i} p _ { i } ^{2} } \prod _ { i = 1 } ^{N} ( d ^{3} q _ { i } d ^{3} p _ { i } ) .
+\end{equation}
+对空间坐标进行的积分相当简单；它们会得到一个因子\(V^{N}\)。一旦我们注意到积分（7）不过是\(N\)个相同积分的乘积，对动量坐标的积分也同样十分容易。因此，我们得到
+\begin{equation}\tag{3.5.8}\label{eq:3.5.8}
+\begin{array}{r} { Q _ { N } ( V , T ) = \frac { V ^{N} } { N ! \, h ^{3 N} } \left[ \int _ { 0 } ^{\infty} e ^{- p ^ { 2} / 2 m k T } \left( 4 \pi p ^{2} d p \right) \right] ^{N} } \\{ = \frac { 1 } { N ! } \left[ \frac { V } { h ^{3} } ( 2 \pi m k T ) ^{3 / 2} \right] ^{N} ; } \end{array}
+\end{equation}
+关于因子 \(h^{3N}\) 的充分理由早已给出。因子 \(N!\) 来自第 1.5 节和第 1.6 节的讨论；其产生本质上源于这样一个事实：构成给定系统的粒子不仅彼此相同，而且实际上无法区分。有关该结果的完整证明，请参阅第 5.5 节。
+此处已采用式 (B.13a)。随后，利用斯特林公式 (B.29)，Helmholtz 自由能可表示为：
+\begin{equation}\tag{3.5.9}\label{eq:3.5.9}
+A ( N , V , T ) \equiv - k T \ln Q _ { N } ( V , T ) = N k T \left[ \ln \left\{ \frac { N } { V } \left( \frac { h ^{2} } { 2 \pi \, m k T } \right) ^{3 / 2} \right\} - 1 \right] .
+\end{equation}
+上述结果与式 (1.5.8) 完全相同，而式 (1.5.8) 是通过截然不同的方法得出的。不过，本方法的简洁性令人印象深刻。毋庸置疑，理想气体的完整热力学可以非常直观地从\autoref{eq:3.5.10} 推导出来。例如，
+\begin{equation}\tag{3.5.10}\label{eq:3.5.10}
+\mu \equiv \left( \frac { \partial A } { \partial N } \right) _ { V , T } = k T \mathrm { l n } \left\{ \frac { N } { V } \left( \frac { h ^{2} } { 2 \pi m k T } \right) ^{3 / 2} \right\} ,
+\end{equation}
+\begin{equation}\tag{3.5.11}\label{eq:3.5.11}
+P \equiv - \left( { \frac { \partial A } { \partial V } } \right) _ { N , T } = { \frac { N k T } { V } }
+\end{equation}
+以及
+\begin{equation}\tag{3.5.12}\label{eq:3.5.12}
+S \equiv - \left( \frac { \partial A } { \partial T } \right) _ { N , V } = N k \left[ \ln \left\{ \frac { V } { N } \left( \frac { 2 \pi \, m k T } { h ^{2} } \right) ^{3 / 2} \right\} + \frac { 5 } { 2 } \right] .
+\end{equation}
+这些结果与先前推导出的结果完全一致，即分别对应于式 (1.5.7)、式 (1.4.2) 和式 (1.5.1a)。事实上，将\autoref{eq:3.5.12} 与理想气体定律 \(PV = nRT\) 进行对照，就确立了常数 \(k\)（此前尚未确定）与玻尔兹曼常数之间的等同关系；详见\autoref{eq:3.3.6}。我们进一步得到
+\begin{equation}\tag{3.5.13}\label{eq:3.5.13}
+U \equiv - \left[ \frac { \partial } { \partial \beta } ( \ln Q ) \right] _ { E _ { r } } \equiv - T ^{2} \left[ \frac { \partial } { \partial T } \left( \frac { A } { T } \right) \right] _ { N , V } \equiv A + T S = \frac { 3 } { 2 } N k T ,
+\end{equation}
+诸如此类。
+在这一阶段，我们有重要的一点需要说明。从\autoref{eq:3.5.8} 的形式及其产生过程来看，我们可以这样写：
+\begin{equation}\tag{3.5.14}\label{eq:3.5.14}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! } [ Q _ { 1 } ( V , T ) ] ^{N} ,
+\end{equation}
+其中 \(Q_{1}(V,T)\) 可被视为系统中单个分子的配分函数。稍加思索便会发现，这一结果本质上源于我们系统的基本组成成分彼此不相互作用（因此，系统的总能量不过是其各部分能量之和）。显然，即使系统中的分子还具有内部运动自由度，情况也不会发生改变。要使\autoref{eq:3.5.15} 成立，关键在于系统的基本组成成分之间不存在相互作用（当然，也必须不存在量子力学上的相关性）。
+回到理想气体，我们同样可以先从状态密度 \(g(E)\) 开始。根据式 (1.4.17)，并结合吉布斯修正因子，我们得到
+\begin{equation}\tag{3.5.15}\label{eq:3.5.15}
+g ( E ) = \frac { \partial \Sigma } { \partial E } \approx \frac { 1 } { N ! } \left( \frac { V } { h ^{3} } \right) ^{N} \frac { ( 2 \pi m ) ^{3 N / 2} } { \{ ( 3 N / 2 ) - 1 \} ! } E ^{( 3 N / 2 ) - 1} .
+\end{equation}
+将此代入式（3.4.5），并注意到所涉及的积分等于 \(\{(3N/2)-1\}/\beta^{3N/2}\)，我们得到
+\begin{equation}\tag{3.5.16}\label{eq:3.5.16}
+Q _ { N } ( \beta ) = \frac { 1 } { N ! } \left( \frac { V } { h ^{3} } \right) ^{N} \left( \frac { 2 \pi m } { \beta } \right) ^{3 N / 2} ,
+\end{equation}
+这与\autoref{eq:3.5.9} 完全相同。此外，值得注意的是，若我们从单粒子状态密度（2.4.7）入手，即
+\begin{equation}\tag{3.5.17}\label{eq:3.5.17}
+a ( \varepsilon ) \approx \frac { 2 \pi V } { h ^{3} } ( 2 m ) ^{3 / 2} \varepsilon ^{1 / 2} ,
+\end{equation}
+则可计算出单粒子配分函数，
+\begin{equation}\tag{3.5.18}\label{eq:3.5.18}
+Q _ { 1 } ( \beta ) = \int _ { 0 } ^{\infty} e ^{- \beta \varepsilon} a ( \varepsilon ) d \varepsilon = \frac { V } { \hbar ^{3} } \left( \frac { 2 \pi m } { \beta } \right) ^{3 / 2} ,
+\end{equation}
+然后利用公式（15），我们便可得出\(Q_{N}(V,T)\)的相同结果。
+最后，我们来探讨如何根据配分函数表达式\(Q(\beta)\)来确定态密度\(g(E)\)——前提是已知后者；事实上，公式（9）中关于\(Q(\beta)\)的表达式是在完全不依赖于\(g(E)\)这一函数相关知识的前提下推导出来的。根据公式（3.4.7）和（9），我们有
+\begin{equation}\tag{3.5.19}\label{eq:3.5.19}
+g ( E ) = \frac { V ^{N} } { N ! } \left( \frac { 2 \pi \, m } { h ^{2} } \right) ^{3 N / 2} \frac { 1 } { 2 \pi \, i } \int _ { \beta ^{\prime} - i \infty } ^{\beta ^ { \prime} + i \infty } \frac { e ^{\beta E} } { \beta ^{3 N / 2} } d \beta  ( \beta ^{\prime} > 0 ) .
+\end{equation}
+注意到，对于所有正整数\(n\)，
+\begin{equation}\tag{3.5.20}\label{eq:3.5.20}
+\frac { 1 } { 2 \pi i } \int _ { s ^{\prime} - i \infty } ^{s ^ { \prime} + i \infty } \frac { e ^{s x} } { s ^{n + 1} } d s = \left\{ \begin{array}{ll} { \frac { x ^{n} } { n ! } } & { \mathrm { f o r }  x \geq 0 } \\{ 0 } & { \mathrm { f o r }  x \leq 0 , } \end{array} \right.
+\end{equation}
+公式（20）变为
+\begin{equation}\tag{3.5.21}\label{eq:3.5.21}
+g ( E ) = \left\{ \begin{array}{ll} { \frac { V ^{N} } { N ! } \left( \frac { 2 \pi \, m } { h ^{2} } \right) ^{3 N / 2} \, \frac { E ^{( 3 N / 2 ) - 1} } { \{ ( 3 N / 2 ) - 1 \} ! } } & { \mathrm { f o r }  E \geq 0 } \\{ 0 } & { \mathrm { f o r }  E \leq 0 , } \end{array} \right.
+\end{equation}
+\^{}\{9\}有关此求解过程的详细说明，请参阅Kubo（1965年，第165--168页）。
+这确实正是理想气体态密度的正确结果；请与公式（16）进行对比。上述推导可能看似并不特别有价值，因为在本例中我们早已知晓\(g(E)\)的表达式。然而，有时也会遇到这样的情况：对某一系统进行配分函数的计算，并由此推导出其态密度，其过程其实相当简单；而若要从基本原理出发直接计算态密度，则往往十分复杂。在这些情况下，此处所介绍的方法确实具有实用价值；例如，可将该方法与问题3.15进行比较，以对照问题1.7和问题2.8。
+\section{正则系综中的能量波动：与微正则系综的对应关系}\label{ux5e38ux6a21ux7cfbux4e2dux7684ux80fdux7ea7ux6ce2ux52a8ux4e0eux5faeux5206ux7cfbux7684ux5bf9ux5e94ux5173ux7cfb}
+在正则系综中，系统的能量可以在零到无穷大之间任意取值。另一方面，微正则系综中系统的能量则被严格限制在极为狭窄的范围内。那么，我们又该如何断言，通过正则系综形式主义所推导出的系统热力学性质，会与通过微正则系综形式主义所推导出的热力学性质完全一致呢？当然，我们理所当然地期望这两种形式主义能够得到相同结论，否则理论体系将出现内在矛盾。事实上，在理想经典气体情形下，采用任一方法所得结果都一致。那么，这种等价性的根本原因究竟是什么？
+要解答这个问题，我们需要考察正则系综中各系统能量在多大程度上具有显著的概率分布范围；唯有如此，我们才能真正了解正则系综与微正则系综之间究竟存在怎样的差异。为了深入探究这一点，我们先写出平均能量的表达式：
+\begin{equation}\tag{3.5.22}\label{eq:3.5.22}
+U \equiv \langle E \rangle = \frac { \sum _ { r } E _ { r } \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) }
+\end{equation}
+并对该表达式关于参数\(\beta\)求导，同时保持能量值\(E_{r}\)恒定。我们得到
+\begin{equation}\tag{3.5.23}\label{eq:3.5.23}
+\begin{array}{rl} & { \frac { \partial U } { \partial \beta } = - \frac { \sum _ { r } E _ { r } ^{2} \exp ( - \beta E _ { r } ) } { \sum _ { r } \exp ( - \beta E _ { r } ) } + \frac { \left[ \sum _ { r } E _ { r } \exp ( - \beta E _ { r } ) \right] ^{2} } { \left[ \sum _ { r } \exp ( - \beta E _ { r } ) \right] ^{2} } } \\& { = - \langle E ^{2} \rangle + \langle E \rangle ^{2} , } \end{array}
+\end{equation}
+由此可以得出
+\begin{equation}\tag{3.5.24}\label{eq:3.5.24}
+\langle ( \Delta E ) ^{2} \rangle \equiv \langle E ^{2} \rangle - \langle E \rangle ^{2} = - \left( \frac { \partial U } { \partial \beta } \right) = k T ^{2} \left( \frac { \partial U } { \partial T } \right) = k T ^{2} C _ { V } .
+\end{equation}
+请注意，这里所讨论的是定容比热，因为式（2）中的偏导数是在\(E_{r}\)保持恒定的条件下进行的！对于\(E\)的相对均方根波动，式（3）给出
+\begin{equation}\tag{3.5.25}\label{eq:3.5.25}
+\frac { \sqrt { [ \langle ( \Delta E ) ^{2} \rangle ] } } { \langle E \rangle } = \frac { \sqrt { ( k T ^{2} C _ { V } ) } } { U } ,
+\end{equation}
+其值为\(O(N^{-1/2})\)，其中\(N\)代表系统中粒子数。因此，对于大\(N\)（这对统计系统几乎总成立），\(E\)的相对均方根波动几乎可以忽略不计。由此可见，在实际应用中，处于正则系综的系统其能量等于或几乎等于平均能量\(U\)；因此，该系综与微正则系综在实践中会给出几乎相同的结论。
+为了更深入地理解这一情形，我们来探讨能量在"规范"集合中各成员之间的分配方式。为此，我们将\(E\)视为一个连续变量，并从式（3.4.3）入手，即
+\begin{equation}\tag{3.5.26}\label{eq:3.5.26}
+P ( E ) d E \propto \exp ( - \beta E ) g ( E ) d E .
+\end{equation}
+概率密度\(P(E)\)由两个因素相乘得到：第一，玻尔兹曼因子，其随\(E\)单调递减；第二，状态密度，其随\(E\)单调递增。因此，该乘积在某个\(E\)值处达到极值，例如\(E^*\)。¹⁰ \(E^*\) 的值由以下条件决定：
+\begin{equation}\tag{3.5.27}\label{eq:3.5.27}
+\left. \frac { \partial } { \partial E } \{ e ^{- \beta E} g ( E ) \} \right| _ { E = E ^{*} } = 0 ,
+\end{equation}
+即，由
+\begin{equation}\tag{3.5.28}\label{eq:3.5.28}
+\left. \frac { \partial \ln g ( E ) } { \partial E } \right| _ { E = E ^{*} } = \beta .
+\end{equation}
+回想一下，
+\begin{equation}\tag{3.5.29}\label{eq:3.5.29}
+S = k \mathrm { l n g }  \mathrm { a n d }  \left( \frac { \partial S ( E ) } { \partial E } \right) _ { E = U } = \frac { 1 } { T } = k \beta ,
+\end{equation}
+上述条件表明，
+\begin{equation}\tag{3.5.30}\label{eq:3.5.30}
+E ^{*} = U .
+\end{equation}
+这是一项非常有趣的结果，因为它表明，无论给定系统的物理本质如何，其能量的最可能值与其平均值完全一致。因此，如果有利可图，我们可以选择使用其中一个，而非另一个。
+现在，我们围绕\(E^*\) 近似等于\(U\) 的值，对概率密度\(P(E)\)的对数进行展开；由此得到
+\begin{equation}\tag{3.5.31}\label{eq:3.5.31}
+\begin{array}{rl} & { \ln \Big [ e ^{- \beta E} g ( E ) \Big ] = \Big ( - \beta U + \frac { S } { k } \Big ) + \frac { 1 } { 2 } \frac { \partial ^{2} } { \partial E ^{2} } \ln \Big \{ e ^{- \beta E} g ( E ) \Big \} \Bigg | _ { E = U } ( E - U ) ^{2} + \cdots } \\& {  = - \beta ( U - T S ) - \frac { 1 } { 2 k T ^{2} C _ { V } } ( E - U ) ^{2} + \cdots , } \end{array}
+\end{equation}
+从中我们获得
+\begin{equation}\tag{3.5.32}\label{eq:3.5.32}
+P ( E ) \propto e ^{- \beta E} g ( E ) \simeq e ^{- \beta ( U - T S )} \exp \left\{ - \frac { ( E - U ) ^{2} } { 2 k T ^{2} C _ { V } } \right\} .
+\end{equation}
+这是一个关于\(E\)的高斯分布，其均值为\(U\)，标准差为\(\sqrt{(kT^2C_V)}\)；请与式（3）进行对比。以归一化变量\(E/U\) 来看，该分布再次呈高斯形态，均值为1，标准差为\(\sqrt{(kT^2C_V)/U}\)（其值为\(O(N^{-1/2})\)）；因此，当\(N \gg 1\) 时，我们得到的分布极为尖锐，且随着\(N\) 趋向无穷大，该分布将逐渐逼近狄拉克函数！
+在此，我们不妨再次深入探讨经典理想气体的案例。在该案例中，\(g(E)\) 与 \(E^{(3N/2-1)}\) 成正比，因此随着 \(E\) 的增大，\(g(E)\) 会迅速上升；当然，因子 \(e^{-\beta E}\) 则会随 \(E\) 的增加而减小。乘积 \(g(E)\exp(-\beta E)\) 在 \(E^*=(3N/2-1)\beta^{-1}\) 处达到最大值，这一值几乎与平均能量 \(U=(3N/2)\beta^{-1}\) 相同。对于与 \(E^*\) 相差甚远的 \(E\) 值，该乘积基本趋近于零（在 \(E\) 较小的情况下，由于可用的能量态相对稀少；而在 \(E\) 较大时，则是因为玻尔兹曼因子导致的能量状态相对匮乏）。整体图景如图~3.3 所示，其中我们展示了在 \(N=10\) 这一特殊情形下，这些函数的实际行为。此时，\(E\) 的最可能值为平均值的 \(\frac{14}{15}\)；因此，分布呈现出一定的非对称性。有效宽度 \(\Delta\) 可以通过式（3.6.3） 轻松计算得出，其结果为 \((2/3N)^{1/2}U\)，对于 \(N=10\) 来说，这一值约为 \(U\) 的四分之一。我们可以看到，随着 \(N\) 的增大，\(E^*\) 和 \(U\) 都会随之增加（且基本上与 \(N\) 成线性关系），\(E^*/U\) 的比值逐渐接近于 1，而分布则趋于围绕 \(E^*\) 对称。与此同时，宽度 \(\Delta\) 也会随之增大（但仅以 \(N^{1/2}\) 的速率增长）；从相对意义上讲，它往往会趋于消失（即以 \(N^{-1/2}\) 的速率下降）。
+最后，我们来看由式（3.4.5） 给出的配分函数 \(Q_{N}(V,T)\)，其被积函数已替换为式（3.6.8）。我们有
+\begin{equation}\tag{3.5.33}\label{eq:3.5.33}
+\begin{aligned}Q_{N}(V,T)&\simeq e^{-\beta(U-TS)}\int_{0}^{\infty}e^{-(E-U)^{2}/2kT^{2}C_{V}}dE\\&\simeq e^{-\beta(U-TS)}\sqrt{(2kT^{2}C_{V})}\int_{-\infty}^{\infty}e^{-x^{2}}dx\\&=e^{-\beta(U-TS)}\sqrt{(2\pi\:kT^{2}C_{V})},\end{aligned}
+\end{equation}
+最后一项，其阶数为 \(O(\ln N)\)，相较于其他各项而言几乎可以忽略不计——所有这些项都属于 \(O(N)\) 级别。因此，
+\begin{equation}\tag{3.5.34}\label{eq:3.5.34}
+A \approx U - T S .
+\end{equation}
+值得注意的是，公式中的量 \(A\) 是通过规范系综的形式化推导得出的，而量 \(S\) 则源自微观系综的定义。正是最终我们得以获得一致的热力学关系，这无疑证明了在实际应用中，这两种方法在本质上是完全相同的。
+\section{两个定理——"能量均分定理"与"维里定理"}\label{ux4e24ux4e2aux5b9aux7406ux80fdux91cfux5747ux5206ux5b9aux7406ux4e0eux7ef4ux91ccux5b9aux7406}
+为了推导这些定理，我们首先求得量 \(x_i(\partial H/\partial x_j)\) 的期望值。其中，\(H(q,p)\) 是系统的哈密顿量（假设为经典系统），而 \(x_i\)
+并且 \(x_{j}\) 是 \(6N\) 个广义坐标中的任意两个（\(q, p\)）。在规范系综中，
+\begin{equation}\tag{3.5.35}\label{eq:3.5.35}
+\left\langle x _ { i } \frac { \partial H } { \partial x _ { j } } \right\rangle = \frac { \int \left( x _ { i } \frac { \partial H } { \partial x _ { j } } \right) e ^{- \beta H} d \omega } { \int e ^{- \beta H} d \omega }  \left( d \omega = d ^{3 N} q d ^{3 N} p \right) .
+\end{equation}
+我们来考察分子中的积分。通过对 \(x_j\) 进行分部积分，该积分可化为
+\begin{equation}\tag{3.5.36}\label{eq:3.5.36}
+\int \left[ - \frac { 1 } { \beta } x _ { i } e ^{- \beta H} \bigg | _ { ( x _ { j } ) _ { 1 } } ^{( x _ { j} ) _ { 2 } } + \frac { 1 } { \beta } \int \left( \frac { \partial x _ { i } } { \partial x _ { j } } \right) e ^{- \beta H} d x _ { j } \right] d \omega _ { ( j ) } ;
+\end{equation}
+在这里，\((x_j)_1\) 和 \((x_j)_2\) 分别是坐标 \(x_j\) 的"极值"；而 \(d\omega_{(j)}\) 表示"去除了 \(dx_j\) 的 \(d\omega\)"。由于当任意一个坐标取到"极值"时，系统的哈密顿量会趋于无穷大，因此此处的积分部分为零。¹¹ 在剩下的积分中，因子 \(\partial x_i/\partial x_j\) 由于等于 \(\delta_{ij}\)，从而从积分号中被消去，最终我们得到
+\begin{equation}\tag{3.5.37}\label{eq:3.5.37}
+\frac { 1 } { \beta } \delta _ { i j } \int e ^{- \beta H} d \omega .
+\end{equation}
+将此代入式（3.7.1），我们得到了一个极为显著的结果：
+\begin{equation}\tag{3.5.38}\label{eq:3.5.38}
+\left\langle x _ { i } \frac { \partial H } { \partial x _ { j } } \right\rangle = \delta _ { i j } k T ,
+\end{equation}
+该结果与函数 \(H\) 的具体形式无关。
+在特殊情况下，当 \(x_{i}=x_{j}=p_{i}\) 时，式（3.7.2） 变为
+\begin{equation}\tag{3.5.39}\label{eq:3.5.39}
+\left\langle p _ { i } \frac { \partial H } { \partial p _ { i } } \right\rangle \equiv \langle p _ { i } \dot { q } _ { i } \rangle = k T ,
+\end{equation}
+而当 \(x_{i}=x_{j}=q_{i}\) 时，它则变为
+\begin{equation}\tag{3.5.40}\label{eq:3.5.40}
+\left\langle q _ { i } \frac { \partial H } { \partial q _ { i } } \right\rangle \equiv - \left\langle q _ { i } \dot { p } _ { i } \right\rangle = k T .
+\end{equation}
+将所有 \(i\) 从 \(i=1\) 到 \(3N\) 相加，我们得到
+\begin{equation}\tag{3.5.41}\label{eq:3.5.41}
+\left\langle \sum _ { i } p _ { i } { \frac { \partial H } { \partial p _ { i } } } \right\rangle \equiv \left\langle \sum _ { i } p _ { i } { \dot { q } } _ { i } \right\rangle = 3 N k T
+\end{equation}
+¹¹ 例如，若 \(x_{j}\) 是空间坐标，则其极值将对应于"容器壁上的位置"；相应地，系统的势能将趋于无穷大。另一方面，若 \(x_{j}\) 是动量坐标，则其极值本身将为 \(\pm\infty\)，此时系统的动能也将趋于无穷大。
+并且
+\begin{equation}\tag{3.5.42}\label{eq:3.5.42}
+\left\langle \sum _ { i } q _ { i } \frac { \partial H } { \partial q _ { i } } \right\rangle \equiv - \left\langle \sum _ { i } q _ { i } \dot { p } _ { i } \right\rangle = 3 N k T .
+\end{equation}
+如今，在许多物理情境中，系统的哈密顿量恰好是其坐标的一次方函数；因此，通过正则变换，可以将其转化为以下形式
+\begin{equation}\tag{3.5.43}\label{eq:3.5.43}
+H = \sum _ { j } A _ { j } P _ { j } ^{2} + \sum _ { j } B _ { j } Q _ { j } ^{2} ,
+\end{equation}
+其中 \(P_{j}\) 和 \(Q_{j}\) 是经过变换后的规范共轭坐标，而 \(A_{j}\) 和 \(B_{j}\) 则是问题中的若干常数。对于这样的系统，我们显然有
+\begin{equation}\tag{3.5.44}\label{eq:3.5.44}
+\sum _ { j } \left( P _ { j } \frac { \partial H } { \partial P _ { j } } + Q _ { j } \frac { \partial H } { \partial Q _ { j } } \right) = 2 H ;
+\end{equation}
+据此，根据式（3.7.3） 和式（3.7.4），
+\begin{equation}\tag{3.5.45}\label{eq:3.5.45}
+\langle H \rangle = \frac { 1 } { 2 } f k T ,
+\end{equation}
+其中 \(f\) 是式（3.7.7） 中非零系数的个数。因此，我们得出结论：在（变换后的）哈密顿量中，每一项谐波贡献了 \(\frac{1}{2}kT\)，从而对系统的内能有所贡献，并且进一步对比热 \(C_V\) 贡献了 \(\frac{1}{2}k\)。这一结果体现了能量等分定理的经典表述（适用于系统的各个自由度）。值得一提的是，关于仅涉及动能分布的等分定理，最早由玻尔兹曼于 1871 年提出。
+在随后的研究中，我们将会发现，此处所阐述的等分定理并非始终成立；它仅在相关自由度能够自由激发时才适用。在给定温度 \(T\) 下，某些自由度由于能量供应不足，会因量子力学效应而或多或少处于"冻结"状态。这类自由度对系统的内能或比热贡献微乎其微；例如，请参阅第6.5节、第7.4节和第8.3节。当然，系统温度越高，该定理的适用性就越好。
+接下来，我们来探讨公式（6）的含义。首先，我们注意到，该公式蕴含了克劳修斯于1870年提出的所谓"维里定理"，用于计算量 \(\langle\sum_{i}q_{i}\dot{p}_{i}\rangle\)——即系统中各粒子坐标与其各自所受力之乘积之和的期望值；这一量通常被称为系统的"维里"，并用符号 \(\mathcal{V}\) 表示。维里定理则表述为：
+即
+\begin{equation}\tag{3.5.46}\label{eq:3.5.46}
+\mathcal { V } = - 3 N k T .
+\end{equation}
+维里与系统其他物理量之间的关系，最好先从研究非相互作用的古典气体入手。在这种情况下，唯一起作用的力仅来自容器壁；这些力可由外部压力 \(P\) 来表示，而该压力之所以作用于系统，是因为系统被容器壁所约束。因此，我们这里存在一种与容器壁面积元素 \(dS\) 相关的力 \(-PdS\)；之所以出现负号，是因为该力方向指向内部，而矢量 \(dS\) 则指向外部。气体的维里则可表示为：
+\begin{equation}\tag{3.5.47}\label{eq:3.5.47}
+\pmb { \mathcal { V } } _ { 0 } = \left( \sum _ { i } q _ { i } F _ { i } \right) _ { 0 } = - P \oint _ { S } \pmb { r } \cdot d S ,
+\end{equation}
+其中 \(r\) 是某粒子的位置矢量，该粒子恰好位于表面元素 \(dS\) 的近邻区域；因此，\(r\) 也可被视为表面元素本身的位矢。根据散度定理，式（11）变为：
+\begin{equation}\tag{3.5.48}\label{eq:3.5.48}
+\mathcal { V } _ { 0 } = - P \int _ { V } ( \mathrm { d i v } \, \mathbf { r } ) d V = - 3 P V .
+\end{equation}
+将式（12）与式（10）进行比较，我们得到了广为人知的结果：
+\begin{equation}\tag{3.5.49}\label{eq:3.5.49}
+P V = N k T .
+\end{equation}
+在这种情况下，气体的内能完全由动能构成，可根据等分定理（9）得出，其值等于 \(\frac{3}{2}NkT\)，其中 \(3N\) 代表自由度的数量。将这一结果与式（10）进行对比，我们便得到了经典的关联式：
+\begin{equation}\tag{3.5.50}\label{eq:3.5.50}
+\mathcal { V } = - 2 K ,
+\end{equation}
+其中 \(K\) 表示系统的平均动能。
+将该定理应用于由两体势 \(u(r)\) 作用于粒子组成的系统，其实非常直观。在热力学极限下，\(d\) 维系统的压力仅取决于由粒子对间相互作用产生的威里亚项：
+\begin{equation}\tag{3.5.51}\label{eq:3.5.51}
+\frac { P } { n k T } = 1 + \frac { 1 } { N d k T } \left\langle \sum _ { i < j } F ( r _ { i j } ) \cdot r _ { i j } \right\rangle = 1 - \frac { 1 } { N d k T } \left\langle \sum _ { i < j } \frac { \partial u ( r _ { i j } ) } { \partial r _ { i j } } r _ { i j } \right\rangle .
+\end{equation}
+\(^{12}\)需要注意的是，威里亚定义中涉及的系统中各粒子的求和，已替换为对容器表面的积分——其原因很简单：容器内部并不会产生任何威里亚项的贡献。
+方程（15）被称为威里亚状态方程。该方程也可以用配对相关函数来表示，即方程（10.7.11），并且在计算机模拟中也被广泛用于确定系统的压力；请参阅问题3.14、第10.7节以及第16.4节。
+\section{基于谐振子的系统}\label{ux57faux4e8eux8c10ux632fux5b50ux7684ux7cfbux7edf}
+接下来，我们将研究一个由 \(N\) 个几乎彼此独立的谐振子组成的系统。这项研究不仅能够生动地阐释正则系综的表述方式，还将为后续若干内容奠定基础。在这一领域中，有两个重要课题：一是黑体辐射理论（或“光子的统计力学”），二是晶格振动理论（或“声子的统计力学”）；具体细节请参见第7.3节和第7.4节。
+我们首先从一种特殊情形入手：当这些谐振子可以被经典地处理时。其中任意一个谐振子（假设为一维系统）的哈密顿量可表示为：
+\begin{equation}\tag{3.5.52}\label{eq:3.5.52}
+H ( q _ { i } , p _ { i } ) = \frac { 1 } { 2 } m \omega ^{2} q _ { i } ^{2} + \frac { 1 } { 2 m } p _ { i } ^{2}  ( i = 1 , \ldots , N ) .
+\end{equation}
+对于单个谐振子的配分函数，我们很容易得到：
+\begin{equation}\tag{3.5.53}\label{eq:3.5.53}
+\begin{array}{r} { Q _ { 1 } ( \beta ) = \displaystyle \int _ { - \infty - \infty } ^{\infty} \displaystyle \int _ { - \infty } ^{\infty} \exp \left\{ - \beta \left( \frac { 1 } { 2 } m \omega ^{2} q ^{2} + \frac { 1 } { 2 m } p ^{2} \right) \right\} \frac { d q d p } { h } } \\{ = \displaystyle \frac { 1 } { h } \left( \frac { 2 \pi } { \beta m \omega ^{2} } \right) ^{1 / 2} \left( \frac { 2 \pi \, m } { \beta } \right) ^{1 / 2} = \displaystyle \frac { 1 } { \beta \hbar \omega } = \displaystyle \frac { k T } { \hbar \omega } , } \end{array}
+\end{equation}
+其中 \(\hbar = h/2\pi\)。这实际上是对可访问微态平均数进行的经典计数——也就是将 \(kT\) 除以量子谐振子的能量间隔。而 \(N\) 个谐振子系统的配分函数则为：
+\begin{equation}\tag{3.5.54}\label{eq:3.5.54}
+Q _ { N } ( \beta ) = [ Q _ { 1 } ( \beta ) ] ^{N} = ( \beta \hbar \omega ) ^{- N} = \left( \frac { k T } { \hbar \omega } \right) ^{N} ;
+\end{equation}
+请注意，在撰写式（3）时，我们假定了这些谐振子是可区分的。之所以如此，是因为正如我们稍后将看到的那样，这些谐振子仅仅只是系统中可用能级的一种表征；它们并非真正的粒子（甚至也称不上"准粒子"）。事实上，在一种情况下，是光子在各个谐振子能级之间分布；而在另一种情况下，则是声子在各个谐振子能级之间分布——而这两者都具有不可区分性！
+系统的亥姆霍兹自由能现在可表示为：
+\begin{equation}\tag{3.5.55}\label{eq:3.5.55}
+A \equiv - k T \ln Q _ { N } = N k T \ln \left( \frac { \hbar \omega } { k T } \right) ,
+\end{equation}
+其中
+\begin{equation}\tag{3.5.56}\label{eq:3.5.56}
+\mu = k T \ln \left( \frac { \hbar \omega } { k T } \right) ,
+\end{equation}
+\begin{equation}\tag{3.5.57}\label{eq:3.5.57}
+P = 0 ,
+\end{equation}
+\begin{equation}\tag{3.5.58}\label{eq:3.5.58}
+S = N k \left[ \ln \left( \frac { k T } { \hbar \omega } \right) + 1 \right] ,
+\end{equation}
+\begin{equation}\tag{3.5.59}\label{eq:3.5.59}
+U = N k T ,
+\end{equation}
+且
+\begin{equation}\tag{3.5.60}\label{eq:3.5.60}
+C _ { P } = C _ { V } = N k .
+\end{equation}
+我们注意到，每个振子的平均能量与等价定理完全一致，即为 \(2 \times \frac{1}{2}kT\)，因为在单个振子的哈密顿量中，我们这里存在两个独立的二次项。
+我们可以根据其分组函数的表达式（3），来确定该系统的态密度 \(g(E)\)。鉴于（3.4.7），
+\begin{equation}\tag{3.5.61}\label{eq:3.5.61}
+g ( E ) = \frac { 1 } { ( \hbar \omega ) ^{N} } \frac { 1 } { 2 \pi i } \int _ { \beta ^{\prime} - i \infty } ^{\beta ^ { \prime} + i \infty } \frac { e ^{\beta E} } { \beta ^{N} } d \beta  ( \beta ^{\prime} > 0 ) ,
+\end{equation}
+即，
+\begin{equation}\tag{3.5.62}\label{eq:3.5.62}
+g ( E ) = \left\{ \begin{array}{ll} { \frac { 1 } { ( \hbar \omega ) ^{N} } \frac { E ^{N - 1} } { ( N - 1 ) ! } } & { \mathrm { f o r }  E \geq 0 } \\{ 0 } & { \mathrm { f o r }  E \leq 0 . } \end{array} \right.
+\end{equation}
+为了检验（10）的正确性，我们可以借助这一公式计算系统的熵。在 \(N \gg 1\) 的条件下，并利用斯特林近似，我们得到
+\begin{equation}\tag{3.5.63}\label{eq:3.5.63}
+S ( N , E ) = k \ln g ( E ) \approx N k \left[ \ln \left( \frac { E } { N \hbar \omega } \right) + \mathbf { 1 } \right] ,
+\end{equation}
+这给出了系统的温度
+\begin{equation}\tag{3.5.64}\label{eq:3.5.64}
+T = \left( { \frac { \partial S } { \partial E } } \right) _ { N } ^{- 1} = { \frac { E } { N k } } .
+\end{equation}
+通过消去这两个关系中的 \(E\)，我们精确地得到了先前关于函数 \(S(N,T)\) 的结果（7）。
+现在我们来探讨量子力学的情形：在一维谐振子的能级由以下公式给出
+\begin{equation}\tag{3.5.65}\label{eq:3.5.65}
+\varepsilon _ { n } = \left( n + \frac { 1 } { 2 } \right) \hbar \omega ;  n = 0 , 1 , 2 , \ldots
+\end{equation}
+据此，我们得到单个振子的分组函数
+\begin{equation}\tag{3.5.66}\label{eq:3.5.66}
+\begin{array}{r} { Q _ { 1 } ( \beta ) = \displaystyle \sum _ { n = 0 } ^{\infty} e ^{- \beta ( n + 1 / 2 ) \hbar \omega} = \displaystyle \frac { \exp \left( - \frac { 1 } { 2 } \beta \hbar \omega \right) } { 1 - \exp ( - \beta \hbar \omega ) } } \\{ = \left\{ 2 \sinh \left( \frac { 1 } { 2 } \beta \hbar \omega \right) \right\} ^{- 1} . } \end{array}
+\end{equation}
+因此，\(N\) 个振子的分组函数为
+\begin{equation}\tag{3.5.67}\label{eq:3.5.67}
+\begin{array}{r} { Q _ { N } ( \beta ) = [ Q _ { 1 } ( \beta ) ] ^{N} = \left[ 2 \sinh \left( \frac { 1 } { 2 } \beta \hbar \omega \right) \right] ^{- N} } \\{ = e ^{- ( N / 2 ) \beta \hbar \omega} \{ 1 - e ^{- \beta \hbar \omega} \} ^{- N} . } \end{array}
+\end{equation}
+对于系统的亥姆霍兹自由能，我们得到
+\begin{equation}\tag{3.5.68}\label{eq:3.5.68}
+A = N k T \ln \left[ 2 \sinh \left( \frac { 1 } { 2 } \beta \hbar \omega \right) \right] = N \left[ \frac { 1 } { 2 } \hbar \omega + k T \ln \{ 1 - e ^{- \beta \hbar \omega} \} \right] ,
+\end{equation}
+其中
+\begin{equation}\tag{3.5.69}\label{eq:3.5.69}
+\mu = A / N ,
+\end{equation}
+\begin{equation}\tag{3.5.70}\label{eq:3.5.70}
+P = 0 ,
+\end{equation}
+\begin{equation}\tag{3.5.71}\label{eq:3.5.71}
+\begin{array}{rl} & { S = N k \left[ \frac { 1 } { 2 } \beta \hbar \omega \coth \left( \frac { 1 } { 2 } \beta \hbar \omega \right) - \ln \left\{ 2 \sinh \left( \frac { 1 } { 2 } \beta \hbar \omega \right) \right\} \right] } \\& { = N k \left[ \frac { \beta \hbar \omega } { e ^{\beta \hbar \omega} - 1 } - \ln \{ 1 - e ^{- \beta \hbar \omega} \} \right] , } \end{array}
+\end{equation}
+\begin{equation}\tag{3.5.72}\label{eq:3.5.72}
+U = \frac { 1 } { 2 } N \hbar \omega \coth \left( \frac { 1 } { 2 } \beta \hbar \omega \right) = N \left[ \frac { 1 } { 2 } \hbar \omega + \frac { \hbar \omega } { e ^{\beta \hbar \omega} - 1 } \right] ,
+\end{equation}
+并且
+\begin{equation}\tag{3.5.73}\label{eq:3.5.73}
+\begin{array}{rl} & { C _ { P } = C _ { V } = N k \left( \frac { 1 } { 2 } \beta \hbar \omega \right) ^{2} \mathrm { c o s e c h } ^{2} \left( \frac { 1 } { 2 } \beta \hbar \omega \right) } \\& { = N k ( \beta \hbar \omega ) ^{2} \frac { e ^{\beta \hbar \omega} } { ( e ^{\beta \hbar \omega} - 1 ) ^{2} } . } \end{array}
+\end{equation}
+公式（20）尤其具有重要意义，因为它表明量子力学中的振子并不遵循等价定理。每个振子的平均能量是不同的
+我们得出结论，
+\begin{equation}\tag{3.5.74}\label{eq:3.5.74}
+g ( E ) = \sum _ { R = 0 } ^{\infty} \left( \frac { N + R - 1 } { R } \right) \delta \left( E - \left\{ R + \frac { 1 } { 2 } N \right\} \hbar \omega \right) ,
+\end{equation}
+其中，\(\delta(x)\) 表示狄拉克δ函数。方程（23）表明，当系统的能量 \(E\) 等于离散值 \((R+\frac{1}{2}N)\hbar\omega\)（其中 \(R=0,1,2,\ldots\)），系统共有 \((N+R-1)!/R!(N-1)!\) 种不同的微观状态可供选择；而对于其他能量值，则不存在任何微观状态可用。这并不令人意外，但从稍有不同的视角来看待这一结果，却颇具启发性。
+我们来思考这样一个问题：这个问题自然地出现在微正则系综理论中。给定一组 \(N\) 个谐振子的能量 \(E\)，而每个谐振子均可处于任意一个本征态（13）之中，那么，完成这一能量分配过程一共有多少种不同的方式？鉴于特征值 \(\varepsilon_{n}\) 的形式，我们不妨在一开始就将零点能 \(\frac{1}{2}\hbar\omega\) 分配给每一个谐振子，并将剩余的能量转化为量子（能量为 \(\hbar\omega\) 的量子）。设 \(R\) 为这些量子的数量；那么
+\begin{equation}\tag{3.5.75}\label{eq:3.5.75}
+R = \left( E - \frac { 1 } { 2 } N \hbar \omega \right) \Bigg / \hbar \omega .
+\end{equation}
+显然，\(R\) 必须是整数；由此推知，\(E\) 必须满足 \((R+\frac{1}{2}N)\hbar\omega\) 的形式。于是，问题便转化为：在 \(N\) 个振子中，如何以不同的方式分配 \(R\) 个量子，使得每个振子可以拥有 0 个、1 个、2 个\ldots\ldots 量子？换句话说，我们需要确定将 \(R\) 个不可区分的球放入 \(N\) 个可区分的盒中，且每个盒可以容纳 0 个、1 个、2 个\ldots\ldots 球的不同分配方式的数量。稍加思考便会发现，这正是将 \(R\) 个球沿一行排列，并通过 \((N-1)\) 条分隔线（将给定空间划分为 \(N\) 个盒子）进行排列时，所能实现的排列总数；参见图~3.5。显然，答案是：
+\begin{equation}\tag{3.5.76}\label{eq:3.5.76}
+\frac { ( R + N - 1 ) ! } { R ! \, ( N - 1 ) ! } \, ,
+\end{equation}
+这与 (23) 相符。
+现在，我们可以通过式（3.8.25） 确定系统的熵。由于 \(N \gg 1\)，我们有
+因此，
+\begin{equation}\tag{3.5.77}\label{eq:3.5.77}
+\frac { E } { N } = \frac { 1 } { 2 } \hbar \omega \frac { \exp ( \hbar \omega / k T ) + 1 } { \exp ( \hbar \omega / k T ) - 1 } ,
+\end{equation}
+这与 (20) 完全一致。进一步验证表明，通过消去式（3.8.26） 和式（3.8.27） 中的 \(R\)，我们恰好得到了用于计算 \(S(N,T)\) 的公式式（3.8.19）。因此，再次证明，在热力学极限下，遵循微正则方法和正则方法所得到的结果是相同的。
+最后，我们不妨考虑经典极限：此时，\(E/N\)——即每个振子的平均能量——远大于能量量子 \(\hbar\omega\)，也就是当 \(R \gg N\) 时。在这种情况下，式（3.8.25） 可以被替换为
+\begin{equation}\tag{3.5.78}\label{eq:3.5.78}
+\frac { ( R + N - 1 ) ( R + N - 2 ) \ldots ( R + 1 ) } { ( N - 1 ) ! } \approx \frac { R ^{N - 1} } { ( N - 1 ) ! } ,
+\end{equation}
+其中，
+\begin{equation}\tag{3.5.79}\label{eq:3.5.79}
+R \approx E / \hbar \omega .
+\end{equation}
+相应的熵表达式最终变为
+\begin{equation}\tag{3.5.80}\label{eq:3.5.80}
+S \approx k \{ N \ln ( R / N ) + N \} \approx N k \left\{ \ln \left( \frac { E } { N \hbar \omega } \right) + 1 \right\} ,
+\end{equation}
+这给出了
+\begin{equation}\tag{3.5.81}\label{eq:3.5.81}
+\frac { 1 } { T } = \left( \frac { \partial S } { \partial E } \right) _ { N } \approx \frac { N k } { E } ,
+\end{equation}
+因此，
+\begin{equation}\tag{3.5.82}\label{eq:3.5.82}
+\frac { E } { N } \approx k T .
+\end{equation}
+这些结果与本节前文在经典极限下得出的结论完全一致。
+第 3.9 节：顺磁性统计
+接下来，我们研究由 \(N\) 个磁偶极子组成的系统，每个磁偶极子具有磁矩 \(\mu\)。在外部磁场 \(H\) 的作用下，这些磁偶极子会受到一个力矩，该力矩倾向于
+将它们沿场的方向对齐。若除此之外无其他需要考量的因素，这些偶极子便会精确地沿这一方向排列，从而实现系统的完全磁化。然而，在实际情况下，系统中的热扰动会对这一趋势构成阻力，在平衡状态下，我们只能获得部分磁化。显然，随着 \(T \to 0\)K，热扰动逐渐失效，系统会呈现出偶极矩的完全取向——无论外加磁场的强度如何；而在另一极端，当 \(T \to \infty\) 时，系统会接近偶极矩完全随机分布的状态，这意味著磁化度趋近于零。在介于两者之间的温度下，系统的状态则由参数 \((\mu H/kT)\) 决定。
+本研究采用的模型由 \(N\) 个相同、局域化（因而可区分）、几乎静止、彼此不相互作用且可自由取向的偶极子组成。我们首先考虑经典偶极子的情况，这些偶极子可以相对于外加磁场任意方向进行取向。显而易见，此处我们只需考虑偶极子因外部磁场 \(H\) 的存在而产生的势能，其大小取决于偶极子相对于磁场方向的取向：
+\begin{equation}\tag{3.5.83}\label{eq:3.5.83}
+E = \sum _ { i = 1 } ^{N} E _ { i } = - \sum _ { i = 1 } ^{N} \mu _ { i } \cdot H = - \mu H \sum _ { i = 1 } ^{N} \cos \theta _ { i } .
+\end{equation}
+系统的配分函数由此给出
+\begin{equation}\tag{3.5.84}\label{eq:3.5.84}
+Q _ { N } ( \beta ) = [ Q _ { 1 } ( \beta ) ] ^{N} ,
+\end{equation}
+其中
+\begin{equation}\tag{3.5.85}\label{eq:3.5.85}
+Q _ { 1 } ( \beta ) = \sum _ { \theta } \exp ( \beta \mu H \cos \theta ) .
+\end{equation}
+系统的平均磁矩 \(M\) 显然将沿磁场 \(H\) 的方向；其大小为
+\begin{equation}\tag{3.5.86}\label{eq:3.5.86}
+\begin{array}{r} { M _ { Z } = N \langle \mu \cos \theta \exp ( \beta \mu H \cos \theta ) } \\{ = N \frac { \sum _ { \theta } \mu \cos \theta \exp ( \beta \mu H \cos \theta ) } { \sum _ { \theta } \exp ( \beta \mu H \cos \theta ) } } \\{ = \frac { N } { \beta } \frac { \partial } { \partial H } \ln Q _ { 1 } ( \beta ) = - \left( \frac { \partial A } { \partial H } \right) _ { T } . } \end{array}
+\end{equation}
+因此，要确定系统中的磁化程度，我们只需计算单偶极子的配分函数（式3）。
+首先，我们采用经典方法进行推导（参考 Langevin，1905a,b）。以 \((\sin\theta d\theta d\phi)\) 作为表示偶极子微小取向范围的元素立体角，我们得到
+\begin{equation}\tag{3.5.87}\label{eq:3.5.87}
+Q _ { 1 } ( \beta ) = \int _ { 0 } ^{2 \pi} \int _ { 0 } ^{\pi} e ^{\beta \mu H \cos \theta} \sin \theta d \theta d \phi = 4 \pi \, \frac { \sinh ( \beta \mu H ) } { \beta \mu H } ,
+\end{equation}
+于是，
+\begin{equation}\tag{3.5.88}\label{eq:3.5.88}
+\overline { { \mu } } _ { z } \equiv \frac { M _ { z } } { N } = \mu \, \left\{ \coth ( \beta \mu H ) - \frac { 1 } { \beta \mu H } \right\} = \mu L ( \beta \mu H ) ,
+\end{equation}
+其中 \(L(x)\) 是所谓的 Langevin 函数
+\begin{equation}\tag{3.5.89}\label{eq:3.5.89}
+L ( x ) = \coth x - { \frac { 1 } { x } } ;
+\end{equation}
+图~3.6 展示了 Langevin 函数的图像。我们注意到，参数 \(\beta\mu H\) 表示磁势能 \(\mu H\) 相对于热动能 \(kT\) 的强度。
+如果系统中每单位体积含有 \(N_{0}\) 个偶极子，则系统的磁化度，即单位体积内的平均磁矩，可表示为
+\begin{equation}\tag{3.5.90}\label{eq:3.5.90}
+M _ { z 0 } = N _ { 0 } \overline { { \mu } } _ { z } = N _ { 0 } \mu L ( x )  ( x = \beta \mu H ) .
+\end{equation}
+对于那些磁场强度极高（或温度极低）以至于参数 \(x \gg 1\) 的情况，函数 \(L(x)\) 几乎等于 1；此时，系统将进入磁饱和状态：
+\begin{equation}\tag{3.5.91}\label{eq:3.5.91}
+\overline { { \mu } } _ { z } \simeq \mu  \mathrm { a n d }  M _ { z 0 } \simeq N _ { 0 } \mu .
+\end{equation}
+对于温度如此之高（或磁场如此之弱）以至于参数 \(x \ll 1\) 的情形，函数 \(L(x)\) 可以写成：
+\begin{equation}\tag{3.5.92}\label{eq:3.5.92}
+{ \frac { x } { 3 } } - { \frac { x ^{3} } { 45 } } + \cdots
+\end{equation}
+在最低近似下，这一表达式可得
+\begin{equation}\tag{3.5.93}\label{eq:3.5.93}
+M _ { z 0 } \simeq \frac { N _ { 0 } \mu ^{2} } { 3 k T } H .
+\end{equation}
+方程（12）即为顺磁性中的居里定律，其中参数 \(C\) 为系统的居里常数。图~3.7 展示了铜-钾硫酸盐六水合物粉末样品的磁化率随 \(T^{-1}\) 变化的曲线；该曲线呈线性，并且几乎通过原点，这充分证明了该特定盐类的居里定律。
+接下来，我们将从量子力学的角度来研究顺磁性的相关问题。此处的主要修改源于这样一个事实：磁偶极矩 \(\mu\) 及其在施加磁场方向上的分量 \(\mu_{z}\) 并不能取任意值。一般来说，给定偶极子的磁矩 \(\mu\) 与其角动量 \(l\) 之间存在直接关系：
+\begin{equation}\tag{3.5.94}\label{eq:3.5.94}
+\mu = \left( g \frac { e } { 2 m c } \right) l ,
+\end{equation}
+其中
+\begin{equation}\tag{3.5.95}\label{eq:3.5.95}
+l ^{2} = J ( J + 1 ) \hbar ^{2} ;  J = \frac { 1 } { 2 } , \frac { 3 } { 2 } , \frac { 5 } { 2 } , \ldots  \mathrm { o r }  0 , 1 , 2 , \ldots .
+\end{equation}
+量 \(g(e/2mc)\) 是偶极子的旋磁比，而数值 \(g\) 则是兰德的 \(g\) 因子。如果偶极子的总角动量完全由电子自旋贡献，则
+S 和 L 分别代表偶极子的自旋量子数和轨道量子数。请注意，\(g\) 的取值并无上下限！
+将 \((13)\) 和 \((14)\) 结合起来，我们可写出
+\begin{equation}\tag{3.5.96}\label{eq:3.5.96}
+\mu ^{2} = g ^{2} \mu _ { B } ^{2} J ( J + 1 ) ,
+\end{equation}
+其中 \(\mu_{B}(=e\hbar/2mc)\) 是玻尔磁子。另一方面，施加磁场方向上的磁矩分量 \(\mu_{z}\) 可表示为
+\begin{equation}\tag{3.5.97}\label{eq:3.5.97}
+\mu _ { z } = g \mu _ { B } m ,  m = - J , - J + 1 , \ldots , J - 1 , J .
+\end{equation}
+因此，磁矩 \(\mu\) 满足式（16）的偶极子，除满足分量 \(\mu_{z}\) 的值（17）的那些方向外，不可能有其他指向与施加磁场平行的方向；显然，对于给定的 \(J\) 值，允许的取向数量为 \((2J+1)\)。鉴于此，单偶极子的配分函数 \(Q_{1}(\beta)\) 现在可由式（3）给出，
+\begin{equation}\tag{3.5.98}\label{eq:3.5.98}
+Q _ { 1 } ( \beta ) = \sum _ { m = - J } ^{J} \exp ( \beta g \mu _ { B } m H ) .
+\end{equation}
+引入一个参数 \(x\)，其定义如下：
+\begin{equation}\tag{3.5.99}\label{eq:3.5.99}
+x = \beta ( g \mu _ { B } J ) H ,
+\end{equation}
+方程（18）变为
+\begin{equation}\tag{3.5.100}\label{eq:3.5.100}
+\begin{array}{r} { Q _ { 1 } ( \beta ) = \displaystyle \sum _ { m = - J } ^{J} e ^{m x / J} = \frac { e ^{- x} \{ e ^{( 2 J + 1 ) x / J} - 1 \} } { e ^{x / J} - 1 } } \\{ = \frac { e ^{( 2 J + 1 ) x / 2 J} - e ^{- ( 2 J + 1 ) x / 2 J} } { e ^{x / 2 J} - e ^{- x / 2 J} } } \\{ = \sinh \left\{ \left( 1 + \frac { 1 } { 2 J } \right) x \right\} \bigg / \sinh \left\{ \frac { 1 } { 2 J } x \right\} . } \end{array}
+\end{equation}
+系统的平均磁矩由此给出，详见方程（4），
+\begin{equation}\tag{3.5.101}\label{eq:3.5.101}
+\begin{array}{rl} & { M _ { z } = N \overline { { \mu } } _ { z } = \frac { N } { \beta } \frac { \partial } { \partial H } \ln Q _ { 1 } ( \beta ) } \\& {  = N ( g \mu _ { B } J ) \left[ \left( 1 + \frac { 1 } { 2 J } \right) \coth \left\{ \left( 1 + \frac { 1 } { 2 J } \right) x \right\} - \frac { 1 } { 2 J } \coth \left\{ \frac { 1 } { 2 J } x \right\} \right] . } \end{array}
+\end{equation}
+因此
+\begin{equation}\tag{3.5.102}\label{eq:3.5.102}
+\overline { { \mu } } _ { z } = ( g \mu _ { B } J ) B _ { J } ( x ) ,
+\end{equation}
+其中 \(B_{J}(x)\) 是阶数为 \(J\) 的布里渊函数：
+\begin{equation}\tag{3.5.103}\label{eq:3.5.103}
+B _ { J } ( x ) = \left( 1 + \frac { 1 } { 2 J } \right) \coth \left\{ \left( 1 + \frac { 1 } { 2 J } \right) x \right\} - \frac { 1 } { 2 J } \coth \left\{ \frac { 1 } { 2 J } x \right\} .
+\end{equation}
+在图~3.8 中，我们绘制了 \(B_{J}(x)\) 函数，其对应于若干典型的量子数 \(J\) 值。
+接下来，我们将探讨几个特殊情形。首先，我们注意到，在强磁场和低温条件下（\(x \gg 1\)），对于所有 \(J\)，函数 \(B_{J}(x)\) 都近似等于 1，这对应于磁饱和态。另一方面，在高温和弱磁场条件下（\(x \ll 1\)），函数 \(B_{J}(x)\) 可以写成
+\begin{equation}\tag{3.5.104}\label{eq:3.5.104}
+\frac { 1 } { 3 } ( 1 + 1 / J ) x + \ldots ,
+\end{equation}
+因此
+\begin{equation}\tag{3.5.105}\label{eq:3.5.105}
+\overline { { \mu } } _ { z } \simeq \frac { ( g \mu _ { B } J ) ^{2} } { 3 k T } \left( 1 + \frac { 1 } { J } \right) H = \frac { g ^{2} \mu _ { B } ^{2} J ( J + 1 ) } { 3 k T } H .
+\end{equation}
+居里定律 \(\chi \propto 1/T\) 再次得以满足；然而，居里常数现在由以下公式给出
+\begin{equation}\tag{3.5.106}\label{eq:3.5.106}
+C _ { J } = \frac { N _ { 0 } g ^{2} \mu _ { B } ^{2} J ( J + 1 ) } { 3 k } = \frac { N _ { 0 } \mu ^{2} } { 3 k } ;
+\end{equation}
+参见方程（16）。有趣的是，高温条件下的结果（25）和（26）直接涉及算符 \(\mu^{2}\) 的特征值。
+由此可得
+\begin{equation}\tag{3.5.107}\label{eq:3.5.107}
+S = - \left( \frac { \partial A } { \partial T } \right) _ { H } = N k \left[ \ln \left\{ 2 \cosh \left( \frac { \varepsilon } { k T } \right) \right\} - \frac { \varepsilon } { k T } \operatorname { t a n h } \left( \frac { \varepsilon } { k T } \right) \right] ,
+\end{equation}
+\begin{equation}\tag{3.5.108}\label{eq:3.5.108}
+U = A + T S = - N \varepsilon \operatorname { t a n h } \left( \frac { \varepsilon } { k T } \right) ,
+\end{equation}
+\begin{equation}\tag{3.5.109}\label{eq:3.5.109}
+M = - \left( \frac { \partial A } { \partial H } \right) _ { T } = N \mu _ { B } \operatorname { t a n h } \left( \frac { \varepsilon } { k T } \right)
+\end{equation}
+最终，
+\begin{equation}\tag{3.5.110}\label{eq:3.5.110}
+C = \left( \frac { \partial U } { \partial T } \right) _ { H } = N k \left( \frac { \varepsilon } { k T } \right) ^{2} \mathrm { s e c h } ^{2} \left( \frac { \varepsilon } { k T } \right) .
+\end{equation}
+方程（5）与\((3.9.27)\)本质上相同；而且，正如预期的那样，\(U = -MH\)。
+图~3.10至图~3.13展示了量\(S\)、\(U\)、\(M\)和\(C\)随温度的变化规律。我们注意到，当\(kT \ll \varepsilon\)时，系统的熵几乎可以忽略不计；然而，随着温度升高，
+\begin{equation}\tag{3.5.111}\label{eq:3.5.111}
+Q _ { N } ( \beta ) \simeq \left[ \sum _ { n } \left\{ 1 - \beta \varepsilon _ { n } + \frac { 1 } { 2 } \beta ^{2} \varepsilon _ { n } ^{2} \right\} \right] ^{N} .
+\end{equation}
+设g表示系统中微观组成单元在外部磁场方向上的可能取向数；则，量\(\sum_{n} \varepsilon_{n}^{\alpha}(\alpha=0,1,2)\)可被替换为\(g^{\overline{\varepsilon^{\alpha}}}\)。由此我们得到
+\begin{equation}\tag{3.5.112}\label{eq:3.5.112}
+\begin{array}{rl} & { \ln Q _ { N } ( \beta ) \simeq N \Big [ \ln g + \ln \Big ( 1 - \beta \bar { \varepsilon } + \frac { 1 } { 2 } \beta ^{2} \overline { { \varepsilon ^{2} } } \Big ) \Big ] } \\& {  \simeq N \Big [ \ln g - \beta \bar { \varepsilon } + \frac { 1 } { 2 } \beta ^{2} \Big ( \overline { { \varepsilon ^{2} } } - \overline { { \varepsilon } } ^{2} \Big ) \Big ] . } \end{array}
+\end{equation}
+系统的亥姆霍兹自由能则可表示为
+\begin{equation}\tag{3.5.113}\label{eq:3.5.113}
+A ( N , \beta ) \simeq - \frac { N } { \beta } \ln g + N \bar { \varepsilon } - \frac { N } { 2 } \beta \frac { ( \varepsilon - \bar { \varepsilon } ) ^{2} } { ( \varepsilon - \bar { \varepsilon } ) ^{2} } ,
+\end{equation}
+由此
+\begin{equation}\tag{3.5.114}\label{eq:3.5.114}
+S ( N , \beta ) \simeq N k \ln g - \frac { N k } { 2 } \beta ^{2} \overline { { ( \varepsilon - \bar { \varepsilon } ) ^{2} } } ,
+\end{equation}
+\begin{equation}\tag{3.5.115}\label{eq:3.5.115}
+U ( N , \beta ) \simeq N \overline { { \varepsilon } } - N \beta \overline { { ( \varepsilon - \bar { \varepsilon } ) ^{2} } } ,
+\end{equation}
+以及
+\begin{equation}\tag{3.5.116}\label{eq:3.5.116}
+C ( N , \beta ) \simeq N k \beta ^{2} \overline { { ( \varepsilon - \bar { \varepsilon } ) ^{2} } } .
+\end{equation}
+方程（12）至（16）中的公式，用于确定系统在\(\beta \simeq 0\)条件下的热力学性质。在此需要特别注意的是，这些公式不仅适用于\(\beta \gtrsim 0\)，也适用于\(\beta \lesssim 0\)。事实上，这些公式在\(S-U\)曲线的峰值附近及两侧均成立；详见图~3.14。正如预期的那样，\(S\)的最大值由\(Nk\ln g\)给出，且该最大值出现在\(\beta = \pm 0\)处；无论\(U\)是下降（\(\beta > 0\)），还是上升（\(\beta < 0\)），\(S\)都会朝两个方向递减。值得注意的是，在这两种情况下，系统的比热均为正值。
+不难证明，若将两套以温度参数\(\beta_{1}\)和\(\beta_{2}\)为特征的系统进行热接触，则能量会从\(\beta\)较小的系统流向\(\beta\)较大的系统；这一过程将持续下去，直到两系统获得该参数的共同值。更值得重视的是，即使其中一个或两个\(\beta\)为负值，这一结果依然完全适用。因此，若\(\beta_{1}\)为负值而\(\beta_{2}\)为正值，则能量将从系统1流向系统2，即从温度为负值的系统流向温度为正值的系统。从这个意义上说，温度为负值的系统比温度为正值的系统更"热"；事实上，负温度甚至高于\(+\infty\)，而非低于零！
+如需进一步探讨此主题，可参考拉姆齐（1956）所著的论文。
+\section{问题}\label{ux95eeux9898_chap3}
+3.1. (a) 从方程（3.2.14）和（3.2.35）推导出公式（3.2.36）。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  从方程（3.2.37）和（3.2.38）推导出公式（3.2.39）和（3.2.40）。
+\end{enumerate}
+3.2. 证明式（3.2.25）中所示的量\(g"(x_0)\)等于\(\langle (E-U)^2 \rangle \exp(2\beta)\)。从而证明方程（3.2.28）在物理上与方程（3.6.9）等价。
+3.3. 利用\((1/n!)\)是函数\(\exp(x)\)的幂级数展开式中\(x^n\)项的系数这一事实，通过鞍点积分法推导出该系数的渐近公式。将你的结果与\(n!\)的斯特林公式进行比较。
+3.4. 检验公式 \((k/\mathcal{N})\ln\Gamma\) 中的数值，其中
+\begin{equation}\tag{3.5.117}\label{eq:3.5.117}
+\Gamma ( \mathcal { N } , U ) = \sum _ { \{ n _ { r } \} } ^{\prime} W \{ n _ { r } \} ,
+\end{equation}
+等于给定系统的平均熵。请证明，如果我们仅在前述求和中取该求和中的最大项——即对应于最可能分布的项 \(W\{n_r^*\}\)——则这一做法将得出几乎相同的 \(\ln\Gamma\) 结果。
+【惊讶吗？那么，请注意以下这个例子：
+对于所有 \(N\)，对二项式系数 \(^{N}C_{r}=N!/[r!(N-r!)]\) 的求和结果为
+\begin{equation}\tag{3.5.118}\label{eq:3.5.118}
+\sum _ { r = 0 } ^{N} \sum _ { r = 0 } ^{N} C _ { r } = 2 ^{N} ;
+\end{equation}
+因此，
+\begin{equation}\tag{3.5.119}\label{eq:3.5.119}
+\ln \left\{ \sum _ { r = 0 } ^{N} { } ^{N} C _ { r } \right\} = N \ln 2 .
+\end{equation}
+现在，这一求和中的最大项对应于 \(r \simeq N/2\)；因此，在 \(N\) 很大的情况下，最大项的对数几乎等于
+\begin{equation}\tag{3.5.120}\label{eq:3.5.120}
+\begin{array}{rlr} & { } & { \ln \{ N ! \} - 2 \ln \{ ( N / 2 ) ! \} } \\& { } & { \approx N \ln N - 2 \frac { N } { 2 } \ln \frac { N } { 2 } = N \ln 2 , } \end{array}
+\end{equation}
+这与 (a) 中的结果一致。】
+利用热力学系统亥姆霍兹自由能 \(A(N,V,T)\) 是系统的一个广延性质这一事实，证明
+\begin{equation}\tag{3.5.121}\label{eq:3.5.121}
+N  \left( \frac { \partial A } { \partial N } \right) _ { V , T } + V  \left( \frac { \partial A } { \partial V } \right) _ { N , T } = A .
+\end{equation}
+【请注意，这一结果蕴含着众所周知的关系：\(N\mu = A + PV(\equiv G).\)】
+3.6. (a) 假设给定统计系统可访问的微观状态总数为 \(\Omega\)，请证明：根据\autoref{eq:3.3.13}，系统的熵在所有 \(\Omega\) 个状态都等概率出现时达到最大值。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  另一方面，如果我们将一组系统视为共享能量（其平均值为 \(\overline{E}\)），则请证明：根据同一正式表达式，当 \(P_{r} \propto \exp(-\beta E_{r})\) 时，系统的熵达到最大值，其中 \(\beta\) 是由给定的 \(\overline{E}\) 值所确定的常数。
+\item
+  此外，如果我们将一组系统视为共享能量（其平均值为 \(\overline{E}\)），同时又共享粒子（其平均值为 \(\overline{N}\)），则请证明：根据类似的表达式，当 \(P_{r,s} \propto \exp(-\alpha N_{r}-\beta E_{s})\) 时，系统的熵达到最大值，其中 \(\alpha\) 和 \(\beta\) 分别是根据给定的 \(\overline{N}\) 和 \(\overline{E}\) 值所确定的常数。
+\end{enumerate}
+3.7. 证明：在一般情况下，
+\begin{equation}\tag{3.5.122}\label{eq:3.5.122}
+C _ { P } - C _ { V } = - k \frac { \left[ \frac { \partial } { \partial T } \left\{ T \left( \frac { \partial \ln Q } { \partial V } \right) _ { T } \right\} \right] _ { V } ^{2} } { \left( \frac { \partial ^{2} \ln Q } { \partial V ^{2} } \right) _ { T } } > 0 .
+\end{equation}
+验证经典理想气体的这一量值为 \(Nk\)。
+3.8. 证明：对于经典理想气体，
+\begin{equation}\tag{3.5.123}\label{eq:3.5.123}
+\frac { S } { N k } = \ln \left( \frac { Q _ { 1 } } { N } \right) + T \left( \frac { \partial \ln Q _ { 1 } } { \partial T } \right) _ { P } .
+\end{equation}
+3.9. 如果一个理想的单原子气体通过绝热过程膨胀至初始体积的两倍，那么最终压力与初始压力之比是多少？如果在此过程中向系统输入了热量，那么最终压力会比前一种情况更高还是更低？请通过推导出比例 \(P_{f}/P_{i}\) 的相关公式来支持你的答案。
+3.10. （a）通过抽出容器气瓶中的活塞，使一定量的氦气体积增大。最终压力 \(P_{f}\) 与初始压力 \(P_{i}\) 的乘积相等，且等于 \((V_{i}/V_{f})^{1.2}\)，其中 \(V_{i}\) 和 \(V_{f}\) 分别为初始体积和最终体积。假设产物 \(PV\) 始终等于 \(\frac{2}{3}U\)，则在这一过程中，气体的能量会（i）增加、（ii）保持不变，还是（iii）减少？
+（b）若该过程为可逆过程，当气体体积加倍时，将完成多少功？又将吸收多少热量？已知 \(P_{i}=1\) atm，\(V_{i}=1\) m³。
+3.11. 根据 \(PV^n = \text{const}\) 的规律，求出从体积 \(V_1\) 压缩到体积 \(V_2\) 时，气体所作的功以及其吸收的热量。
+3.12. 若经典系统中的"自由体积"\(\overline{V}\) 定义为：
+\begin{equation}\tag{3.5.124}\label{eq:3.5.124}
+\overline { { { V } } } ^{N} = \int e ^{\{ \overline { { { U} } } - U ( \pmb { q } _ { i } ) \} / k T } \prod _ { i = 1 } ^{N} d ^{3} q _ { i } ,
+\end{equation}
+其中 \(\overline{U}\) 是系统的平均势能，而 \(U(q_{i})\) 则是根据分子构型变化的实际势能，那么请证明：
+\begin{equation}\tag{3.5.125}\label{eq:3.5.125}
+S = N k \left[ \ln \left\{ \frac { \overline { { { V } } } } { N } \left( \frac { 2 \pi \, m k T } { h ^{2} } \right) ^{3 / 2} \right\} + \frac { 5 } { 2 } \right] .
+\end{equation}
+从何种意义上来说，将量 \(\overline{V}\) 称作系统的"自由体积"是合理的？请结合一个具体案例来佐证你的答案——例如，硬球气体的情形。
+3.13. （a）计算由 \(N_1\) 个质量为 \(m_1\) 的分子和 \(N_2\) 个质量为 \(m_2\) 的分子组成的理想气体的配分函数及主要热力学性质，该气体被限制在体积为 \(V\) 的空间中，温度为 \(T\)。假设同种分子彼此无法区分，而不同种分子则可以区分。
+（b）将你的结果与由 \((N_1 + N_2)\) 个同种分子、质量为 \(m\) 的分子组成的理想气体的结果进行比较，这些分子的质量满足 \(m(N_1 + N_2) = m_1N_1 + m_2N_2\)。
+考虑一个由 N 个经典粒子组成的系统，每个粒子的质量为 \(m\)，它们在体积为 \(v-L\) 的电缆盒中运动。这些粒子之间通过短程的对称势 \(u(r_{ij})\) 进行相互作用，而每个粒子又与每面壁以短程相互作用 \(u_{\mathrm{wall}}(z)\) 相互作用，其中 \(z\) 是粒子与壁之间的垂直距离。写出该模型的拉格朗日函数，并利用勒让德变换求出哈密顿量 \(H\)。
+（a）证明，量 \(P=-\left(\frac{\partial H}{\partial V}\right)=\frac{-1}{3L^{2}}\left(\frac{\partial H}{\partial L}\right)\) 可以清晰地被识别为瞬时压力——即单位面积上对壁施加的力。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  将拉格朗日函数重新表述为箱内各粒子的相对位置 \(r_{i}=Ls_{i}\)，其中变量 \(s_{i}\) 均位于一个单位立方体内。利用勒让德变换，以这一组变量来确定哈密顿量。
+\item
+  使用第二版哈密顿量重新计算压力。证明此时的压力包含三项贡献：
+\end{enumerate}
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  一项与动能成正比的贡献，
+\item
+  一项与两粒子间相互作用力相关的贡献，
+\item
+  一项与壁面作用力相关的贡献。
+\end{enumerate}
+证明在热力学极限下，第三项贡献相较于前两项已可忽略不计。对贡献1和贡献2进行解释，并将其与维里状态方程（3.7.15）进行比较。
+3.15. 证明由 \(N\) 个单原子分子组成的极端相对论性气体的配分函数 \(Q_{N}(V,T)\)，其能量-动量关系为 \(\varepsilon=pc\)，其中 \(c\) 为光速，可表示为
+\begin{equation}\tag{3.5.126}\label{eq:3.5.126}
+Q _ { N } ( V , T ) = \frac { 1 } { N ! } \left\{ 8 \pi V \left( \frac { k T } { h c } \right) ^{3} \right\} ^{N} .
+\end{equation}
+研究该系统的热力学性质，尤其需验证
+\begin{equation}\tag{3.5.127}\label{eq:3.5.127}
+P V = \frac { 1 } { 3 } U ,  U / N = 3 k T ,  \mathrm { a n d }  \gamma = \frac { 4 } { 3 } .
+\end{equation}
+接下来，利用反演公式 \((3.4.7)\)，推导出该系统态密度 \(g(E)\) 的表达式。
+3.16. 考虑一个与前一问题中相同的系统，但该系统由 \(3N\) 个粒子组成，且这些粒子沿一维空间运动。证明在这种情况下，配分函数可表示为
+\begin{equation}\tag{3.5.128}\label{eq:3.5.128}
+Q _ { 3 N } ( L , T ) = \frac { 1 } { ( 3 N ) ! } \left[ 2 L \left( \frac { k T } { h c } \right) \right] ^{3 N} ,
+\end{equation}
+\(L\) 为可用空间的"长度"。将该系统的热力学性质与态密度与前一问题中所得的相应参数进行对比。
+3.17. 若将\autoref{eq:3.5.3} 中的函数 \(f(q,p)\) 定义为 \(U-H(q,p)\)，则显然 \(\langle f \rangle = 0\)；从形式上讲，这意味
+\begin{equation}\tag{3.5.129}\label{eq:3.5.129}
+\int [ U - H ( q , p ) ] e ^{- \beta H ( q , p )} d \omega = 0 .
+\end{equation}
+从该方程出发，推导出用于描述嵌入于规范系综中的系统的能量均方波动的式（3.6.3）。
+3.18. 证明对于处于规范系综中的系统
+\begin{equation}\tag{3.5.130}\label{eq:3.5.130}
+\langle ( \Delta E ) ^{3} \rangle = k ^{2} \left\{ T ^{4} \left( \frac { \partial C _ { V } } { \partial T } \right) _ { V } + 2 T ^{3} C _ { V } \right\} .
+\end{equation}
+验证对于理想气体
+\begin{equation}\tag{3.5.131}\label{eq:3.5.131}
+\left\langle \left( \frac { \Delta E } { U } \right) ^{2} \right\rangle = \frac { 2 } { 3 N }  \mathrm { a n d }  \left\langle \left( \frac { \Delta E } { U } \right) ^{3} \right\rangle = \frac { 8 } { 9 N ^{2} } .
+\end{equation}
+3.19. 考虑量 \(dG/dt\) 的长期平均行为，其中
+\begin{equation}\tag{3.5.132}\label{eq:3.5.132}
+G = \sum _ { i } q _ { i } p _ { i } ,
+\end{equation}
+并证明，式（3.7.5） 的有效性，必然导致式（3.7.6） 的有效性，反之亦然。
+3.20. 证明对于一个统计系统而言，若粒子间势能 \(u(\boldsymbol{r})\) 是粒子坐标的一次齐次函数（次数为 \(n\)），则维里参数 \(\mathcal{V}\) 可表示为
+\begin{equation}\tag{3.5.133}\label{eq:3.5.133}
+\mathcal { V } = - 3 P V - n U
+\end{equation}
+因此，系统的平均动能 \(K\) 为
+\begin{equation}\tag{3.5.134}\label{eq:3.5.134}
+K = - { \frac { 1 } { 2 } } { \mathbf { v } } = { \frac { 1 } { 2 } } ( 3 P V + n U ) = { \frac { 1 } { ( n + 2 ) } } ( 3 P V + n E ) ;
+\end{equation}
+在此，\(U\) 表示系统的平均势能，而 \(E = K + U\)。需要注意的是，这一结果不仅适用于经典系统，同样也适用于量子力学系统。
+3.21. （a）分别从经典力学和量子力学的角度计算一维谐振子的平均动能与平均势能，并证明所得到的结果与前一个问题中所确立的结论（其中 \(n=2\)）一致。
+（b）同样地，以玻尔-索末费模型和薛定谔模型为基础，考虑氢原子的情况（\(n=-1\)）。
+（c）最后，考虑行星在围绕太阳运行时的情形，其轨道可以是圆周轨道，也可以是椭圆轨道。
+3.22. 非谐振子的恢复力与位移的立方成正比。证明该振子的平均动能是其平均势能的两倍。
+3.23. 从经典规范配分函数（3.5.5）推导出威里亚方程状态方程（3.7.15）。并证明，在热力学极限下，粒子间项将主导由粒子与容器壁相互作用所产生的项。
+3.24. 证明在相对论情形下，等热分布定理的形式为
+\begin{equation}\tag{3.5.135}\label{eq:3.5.135}
+\langle m _ { 0 } u ^{2} ( 1 - u ^{2} / c ^{2} ) ^{- 1 / 2} \rangle = 3 k T ,
+\end{equation}
+其中 \(m_{0}\) 是粒子的静止质量，\(u\) 是其速度。验证在极端相对论情形下，每粒子的平均热能是非相对论情形下平均热能的两倍。
+3.25. 通过动力学论证，证明在非相互作用系统中，量 \(\sum_{i}p_{i}\dot{q}_{i}\) 的平均值恰好等于 \(3PV\)。由此表明，无论是否考虑相对论效应，\(PV=NkT\) 始终成立。
+3.26. s 维谐振子的能级特征值可表示为
+\begin{equation}\tag{3.5.136}\label{eq:3.5.136}
+\varepsilon _ { j } = ( j + s / 2 ) \hbar \omega ;  j = 0 , 1 , 2 , \ldots
+\end{equation}
+证明第 \(j\) 能级的多重度为 \((j+s-1)!/j!(s-1)!\)。对由 \(N\) 个此类振子组成的系统进行配分函数的求解，并计算其主要热力学性质，然后将所得结果与由 \(sN\) 个一维振子组成的相应系统进行比较。特别地，证明化学势 \(\mu_{s}=s\mu_{1}\)。
+3.27. 利用反演公式（3.4.7）和配分函数（3.8.15），为由 \(N\) 个量子力学谐振子组成的系统，求得 \(\ln g(E)\) 的渐近表达式。由此证明
+\begin{equation}\tag{3.5.137}\label{eq:3.5.137}
+\frac { S } { N k } = \left( \frac { E } { N \hbar \omega } + \frac { 1 } { 2 } \right) \ln \left( \frac { E } { N \hbar \omega } + \frac { 1 } { 2 } \right) - \left( \frac { E } { N \hbar \omega } - \frac { 1 } { 2 } \right) \ln \left( \frac { E } { N \hbar \omega } - \frac { 1 } { 2 } \right) .
+\end{equation}
+【提示：运用达尔文-福勒方法。】
+3.28. （a）当一个总能量为 \(E\) 的 \(N\) 个振子系统处于热平衡时，其中某个特定的振子处于量子态 \(n\) 的概率 \(p_{n}\) 是多少？【提示：利用式（3.8.25）】证明：当 \(N \gg 1\) 且 \(R \gg n\) 时，\(p_{n} \approx (\overline{n})^{n}/(\overline{n} + 1)^{n+1}\)，其中 \(\overline{n} = R/N\)。
+（b）当一个由 \(N\) 个单原子分子组成的理想气体处于热平衡时，证明：某一特定分子的能量位于 \(\varepsilon\) 附近的概率与 \(\exp(-\beta \varepsilon)\) 成正比，其中 \(\beta = 3N/2E\)。
+【提示：利用式（3.5.16），并假设 \(N \gg 1\) 且 \(E \gg \varepsilon\)。】
+3.29. 一维各向异性振子的势能可表示为
+\begin{equation}\tag{3.5.138}\label{eq:3.5.138}
+V ( q ) = c q ^{2} - g q ^{3} - f q ^{4} ,
+\end{equation}
+其中 \(c\)、\(g\) 和 \(f\) 是正的常数；通常情况下，可以假定 \(g\) 和 \(f\) 的值非常小。证明：各向异性项对热容的主导贡献为
+经典假设下的振子，其能量表达式为
+\begin{equation}\tag{3.5.139}\label{eq:3.5.139}
+\frac { 3 } { 2 } k ^{2} \left( \frac { f } { c ^{2} } + \frac { 5 } { 4 } \frac { g ^{2} } { c ^{3} } \right) T
+\end{equation}
+并且，在同一量级上，位置坐标 \(q\) 的平均值可表示为
+\begin{equation}\tag{3.5.140}\label{eq:3.5.140}
+{ \frac { 3 } { 4 } } { \frac { g k T } { c ^{2} } } .
+\end{equation}
+3.30. 一维各向异性量子振子的能级可近似表示为
+\begin{equation}\tag{3.5.141}\label{eq:3.5.141}
+\varepsilon _ { n } = \left( n + \frac { 1 } { 2 } \right) \hbar \omega - x \left( n + \frac { 1 } { 2 } \right) ^{2} \hbar \omega ;  n = 0 , 1 , 2 , \ldots
+\end{equation}
+参数 \(x\) 通常远小于 1，代表各向异性程度。证明：在 \(x\) 的一次项以及 \(u(\equiv\hbar\omega/kT)\) 的四次项中，一个由 \(N\) 个此类振子组成的系统的比热可表示为
+\begin{equation}\tag{3.5.142}\label{eq:3.5.142}
+C = N k \Bigg [ \Bigg ( 1 - \frac { 1 } { 12 } u ^{2} + \frac { 1 } { 24 0 } u ^{4} \Bigg ) + 4 x \Bigg ( \frac { 1 } { u } + \frac { 1 } { 80 } u ^{3} \Bigg ) \Bigg ] .
+\end{equation}
+请注意，此处的修正项会随温度升高而增加。
+沿着第 3.8 节的思路，研究由 \(N\) 个"费米振子"组成的系统的统计力学——这些振子仅具有两个特征值，即 0 和 \(\varepsilon\)。
+3.32. 给定物理系统所允许的量子态包括：（i）一组概率相等的 \(g_1\) 个状态，它们具有共同的能量 \(\varepsilon_1\)；以及（ii）一组概率相等的 \(g_2\) 个状态，它们具有共同的能量 \(\varepsilon_2 > \varepsilon_1\)。证明：该系统的熵可表示为
+\begin{equation}\tag{3.5.143}\label{eq:3.5.143}
+S = - k [ p _ { 1 } \ln ( p _ { 1 } / g _ { 1 } ) + p _ { 2 } \ln ( p _ { 2 } / g _ { 2 } ) ] ,
+\end{equation}
+其中 \(p_{1}\) 和 \(p_{2}\) 分别表示系统处于第一组状态或第二组状态的概率：\(p_{1} + p_{2} = 1\)。
+（a）假设 \(p_{i}\) 由规范分布给出，证明
+\begin{equation}\tag{3.5.144}\label{eq:3.5.144}
+S = k \left[ \ln g _ { 1 } + \ln \{ 1 + ( g _ { 2 } / g _ { 1 } ) e ^{- x} \} + \frac { x } { 1 + ( g _ { 1 } / g _ { 2 } ) e ^{x} } \right] ,
+\end{equation}
+其中 \(x=(\varepsilon_{2}-\varepsilon_{1})/kT\)，且假设 \(x\) 为正。将特殊情形 \(g_{1}=g_{2}=1\) 与前一个问题中费米振子的情况进行比较。
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  通过从系统的配分函数推导出该表达式，验证其对 \(S\) 的适用性。（c）检查当 \(T \rightarrow 0\) 时，\(S \rightarrow k \ln g_1\)。从物理角度解释这一结果。
+\end{enumerate}
+3.33. 磷酸钆在几开尔文的温度范围内，仍遵循朗之万顺磁理论。其分子磁矩为 \(7.2 \times 10^{-23}\) amp·m²。在温度为 2K、磁场强度为 2 特斯拉的条件下，确定该盐的磁饱和度。
+3.34. 氧气是一种顺磁性气体，遵循朗之万顺磁理论。在 293K、常压下，其单位体积磁化率约为 \(1.80 \times 10^{-6}\) mks 单位。求出其分子磁矩，并将其与玻尔磁子进行比较（玻尔磁子的值几乎等于 \(9.27 \times 10^{-24}\) amp·m²）。
+3.35. (a) 考虑一个由 \(N\) 个非相互作用的双原子分子组成的气体系统，每个分子都具有电偶极矩 \(\mu\)，并置于外加电场中，电场强度为 \(E\)。此类分子的能量可表示为旋转动能与平动动能之和，再加上其在所加电场中取向的势能：
+\begin{equation}\tag{3.5.145}\label{eq:3.5.145}
+\varepsilon = \frac { p ^{2} } { 2 m } + \left\{ \frac { p _ { \theta } ^{2} } { 2 I } + \frac { p _ { \phi } ^{2} } { 2 I \sin ^{2} \theta } \right\} - \mu E \cos \theta ,
+\end{equation}
+其中 \(I\) 为分子的转动惯量。研究该系统的热力学性质，包括电极化和介电常数。假设（i）系统为经典系统，且（ii）\(|\mu E| \ll kT\).\(^{16}\)
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  分子 \(H_{2}O\) 具有 \(1.85 \times 10^{-18}\) e.s.u 的电偶极矩。依据前述理论，计算在 100°C、常压下水蒸气的介电常数。
+\end{enumerate}
+3.36. 考虑一对电偶极子 \(\mu\) 和 \(\mu'\)，它们分别沿 \((\theta, \phi)\) 和 \((\theta', \phi')\) 方向排列；假设两偶极子中心之间的距离 \(R\) 保持恒定。在这种取向下的势能可表示为
+\begin{equation}\tag{3.5.146}\label{eq:3.5.146}
+- \frac { \mu \mu ^{\prime} } { R ^{3} } \{ 2 \cos \theta \cos \theta ^{\prime} - \sin \theta \sin \theta ^{\prime} \cos ( \phi - \phi ^{\prime} ) \} .
+\end{equation}
+现在，考虑这对偶极子处于热平衡状态，其取向由一个规范分布所支配。证明，在高温下，这两对偶极子之间的平均力可表示为
+\begin{equation}\tag{3.5.147}\label{eq:3.5.147}
+- 2 \frac { ( \mu \mu ^{\prime} ) ^{2} } { k T } \frac { \hat { R } } { R ^{7} } ,
+\end{equation}
+\(\hat{R}\) 为连接两偶极子中心的直线方向上的单位矢量。
+3.37. 对磁偶极子系统的配分函数进行高温近似计算，以证明居里常数 \(C_J\) 可表示为
+\begin{equation}\tag{3.5.148}\label{eq:3.5.148}
+C _ { J } = \frac { N _ { 0 } g ^{2} \mu _ { B } ^{2} } { k } \frac { m ^{2} } { m ^{2} } .
+\end{equation}
+由此推导出公式 \((3.9.26)\)。
+3.38. 将 (3.9.18) 中的求和替换为积分，计算给定磁偶极子的 \(Q_{1}(\beta)\)，并研究由此得出的热力学性质。将这些结果与根据朗之万理论所得的结果进行比较。
+3.39。每一种银蒸气原子，其磁矩为 \(\mu_{B}(\mathrm{g}=2, J=\frac{1}{2})\)，都会沿与外加磁场方向平行或反平行的方向排列。在温度为1000K时，求在磁通密度为0.1韦伯/平方米的磁场中，原子分别以平行和反平行方向排列的原子分数。
+3.40。（a）证明：对于任何可磁化材料，恒定磁场强度 \(H\) 与恒定磁化强度 \(M\) 的热容之间存在如下关系：
+\begin{equation}\tag{3.5.149}\label{eq:3.5.149}
+C _ { H } - C _ { M } = - T \left( \frac { \partial H } { \partial T } \right) _ { M } \left( \frac { \partial M } { \partial T } \right) _ { H } .
+\end{equation}
+（b）证明：对于遵循居里定律的顺磁性材料，
+\begin{equation}\tag{3.5.150}\label{eq:3.5.150}
+C _ { H } - C _ { M } = C H ^{2} / T ^{2} ,
+\end{equation}
+其中，等式右侧的 \(C\) 表示该样品的居里常数。
+3.41。将一个由 \(N\) 个自旋组成的系统，处于负温态（\(E > 0\)），与由 \(N'\) 个分子构成的理想气体温度计相接触。它们之间的相互平衡状态将呈现何种性质？它们的共同温度是负值还是正值？又会如何受到 \(N'/N\) 这一比值的影响？
+3.42。考虑第3.10节所研究的、处于微正则系综中的 \(N\) 个磁偶极子系统。列举该系统在能量 \(E\) 下可达到的微观状态数 \(\Omega(N,E)\)，并计算 \(S(N,E)\) 和 \(T(N,E)\) 的数值。将你的结果与方程 (3.10.8) 和 (3.10.9) 进行比较。
+¹⁶ 分子的电偶极矩通常约为 \(10^{-18}\) e.s.u.（或一个德拜单位）。在1 e.s.u.（即300伏/厘米）的电场中，且在300K的温度下，参数 \(\beta\mu E = O(10^{-4})\)。
+3.43。考虑一个由带电粒子（而非偶极子）组成的系统，该系统遵循经典力学和经典统计学。证明：该系统的磁化率完全为零（玻尔-范利文定理）。
+【注意，当系统处于磁场 \(H(= \nabla \times A)\) 的作用下时，其哈密顿量将依赖于 \(p_j + (e_j/c)A(r_j)\) 这些量，而不再仅仅依赖于 \(p_j\)。现在需要证明，该系统的配分函数与外加磁场无关。】
+3.44。熵 \(S\) 的\autoref{eq:3.3.13} 与香农（1949）对消息 \(I = -\sum_r P_r \ln(P_r)\) 所含信息的定义是等价的，其中 \(P_r\) 表示消息 \(r\) 的概率。
+消息 \(r\)。
+（a）证明：如果所有消息的概率相同，则信息达到最大值。任何其他概率分布都会降低信息量。在英语中，"e"比"z"更常见，因此 \(P_{\mathrm{e}} > P_{\mathrm{z}}\)，这意味着在英语消息中，每个字符所含的信息量低于基于英语文本中所用不同字符数量所能达到的最佳信息量。
+（b）文本中的信息也会受到文本中字符之间相关性的显著影响。例如，在英语中，"q"总是紧跟"u"，因此这对字符所包含的信息与单独的"q"完全相同。由字符\(r\)索引的字符紧随其后、且紧接着由字符\(r'\)索引的字符的概率为 \(P_{r,r'} = P_{r}P_{r'}G_{r,r'}\)，其中 \(G_{r,r'}\) 是字符对相关性函数。如果字符对彼此不相关，则 \(G_{r,r'} = 1\)。请证明：若字符彼此不相关，则由两个字符组成的消息所含的信息量是单个字符消息信息量的两倍；而若存在相关性（即 \(G_{r,r'} \neq 1\)），则信息量会相应减少。
+【提示：利用不等式 \(\ln x \leq x - 1\)。】
+（c）编写一个计算机程序，通过计算单个字符的概率 \(P_{r}\) 和字符对相关性 \(G_{r,r'}\) 来确定文本文件中每个字符的信息量。通常，计算机会使用一个完整的字节来存储每个字符的信息。由于一个字节可以存储 256 种不同的消息，因此每个字节可能蕴含的信息量为 \(\ln 256 = 8 \ln 2 \equiv 8\) 比特。请证明，您所使用的文本文件中每个字符的信息量远低于 8 比特，并解释为什么文件压缩算法能够在不损失文件中任何信息的前提下，将计算机文件的大小缩小。
+
